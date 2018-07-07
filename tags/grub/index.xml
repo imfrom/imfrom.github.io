@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grub on Blog del tecnólogo</title>
+    <link>https://imfrom.github.io/tags/grub/</link>
+    <description>Recent content in Grub on Blog del tecnólogo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 20 Jan 2018 08:38:47 -0500</lastBuildDate>
+    
+	<atom:link href="https://imfrom.github.io/tags/grub/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Antergos Grub Selection</title>
+      <link>https://imfrom.github.io/post/antergos-grub-selection/</link>
+      <pubDate>Sat, 20 Jan 2018 08:38:47 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/antergos-grub-selection/</guid>
+      <description>During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.
+Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.
+this is even after running the usual mkinitcpio -p that loads the modules and other dependencies accordingly.
+It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</description>
+    </item>
+    
+  </channel>
+</rss>

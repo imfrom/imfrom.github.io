@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Setup Remote and Master Branches Before Updating Hugo &middot; Lanyon
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/">Home</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/about">About</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+ 
+    <span class="sidebar-nav-item">Currently on master</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://imfrom.github.io/" title="Home">Lanyon</a>
+            <small>A Jekyll theme</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Setup Remote and Master Branches Before Updating Hugo</h1>
+  <span class="post-date">Aug 18 2017</span>
+  <p>A while ago, I had to set remote and master branches on a different machine.</p>
+
+<p>The methods included setting it up through the <code>git pull</code> command. By going tis route, both the master and remote branches were consequently set and configured without a major inconvenience.</p>
+
+<p>Recently, although I tried to replicate the same method above, I faced problems that included among many other errors, the infamous <code>error: src refspec master does not match any. error: failed to push some refs to 'origin</code></p>
+
+<p>I wasn’t going to go through the poor method of setting up a new site and copy-paste among other files, the <code>posts</code> folder, the <code>theme</code>, the <code>config</code> files, and any other modification I had previously committed.</p>
+
+<p>The site was being generated without a mishap, so I knew it had to do with the no less complicated <code>git</code>, since some of the errors, like the above, were clearly describing that <code>origin</code> did not match the one from the remote.</p>
+
+<p>the necessary steps are as follow:</p>
+
+<p>1-Remove with <code>git</code> all leftovers from the <code>public</code> folder with <code>git rm -rf public</code></p>
+
+<p>2-Remove the <code>public</code> folder itself with <code>rm -rf.</code></p>
+
+<p>3-Add the static site as a submodule to the master with <code>git submodule add -b master &lt;git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public&gt;.</code></p>
+
+<p>And that should be more than enough to have it working in no time. Push your changes and update it accordingly.</p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

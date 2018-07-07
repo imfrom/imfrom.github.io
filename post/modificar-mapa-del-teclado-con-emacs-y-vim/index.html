@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Modificar Mapa Del Teclado Con Emacs Y Vim &middot; Lanyon
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/">Home</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/about">About</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+ 
+    <span class="sidebar-nav-item">Currently on master</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://imfrom.github.io/" title="Home">Lanyon</a>
+            <small>A Jekyll theme</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Modificar Mapa Del Teclado Con Emacs Y Vim</h1>
+  <span class="post-date">Nov 21 2016</span>
+  <p>Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs <a href="https://imfrom.github.io/post/modificar-mapa-del-teclado/#emacs"><sup>1</sup></a> y Vim <a href="https://imfrom.github.io/post/modificar-mapa-del-teclado/#vim"><sup>2</sup></a>, para cambiar el mapa del teclado.</p>
+
+<h2 id="emacs">Emacs</h2>
+
+<p>El altamente configurable y extensible editor de texto Emacs también nos puede ayudar con modificaciones del teclado, o cambiar la localización de las teclas, sin la necesidad de cambiar todo el diseño, y sin la necesidad de tener que utilizar algún teclado en específico.</p>
+
+<p>Primero se crea una función que se le asigna un nombre determinado. En este caso utilizamos el nombre de “backslash”. Posteriormente a esto, se le atribuye el comando <code>insert</code> seguido de <code>kbd</code> y el mapa del registro del teclado que se desea modificar.</p>
+
+<p>En mi caso, encontré conveniente intercambiar las teclas <code>\</code> por <code>;</code> y viceversa. Por ejemplo:</p>
+
+<pre><code>(defun backslash ()
+  (interactive)
+  (insert (kbd "\\")))
+
+(global-set-key (kbd "; " ) 'backslash)
+</code></pre>
+
+<p>al igual que:</p>
+
+<pre><code>(defun semicolon ()
+  (interactive)
+  (insert (kbd ";" )))
+
+(global-set-key (kbd "\\" ) 'semicolon)
+</code></pre>
+
+<p>Como se puede ver en los ejemplos anteriores, después de esto se le asigna <code>global-set-key</code> a la recién nombrada función. Es decir, en el primer caso, la función se le asignó el nombre <code>backslash</code>, y la cual fue directamente entrelazada con el ya mencionado comando <code>global-set-key</code> seguido de la tecla <code>;</code>.</p>
+
+<p>De esta manera se logra el objetivo deseado. Esto es, que el ingreso de una tecla dada en el mapa del teclado del registro de entrada del sistema operativo, sea interpretado  posteriormente, - mediante la nueva asignación que proveyó la función - con el registro del mapa de otra tecla que haya sido predeterminada, dando lugar con ello a que ese ingreso del mapa del teclado, se registre apropiadamente con los resultados de la salida.</p>
+
+<p>En el primer ejemplo, cada vez que la tecla <code>;</code>sea presionada, la tecla <code>\</code> tomará precedencia. Y viceversa.</p>
+
+<h2 id="vim">Vim</h2>
+
+<p>en el caso de Vim, el editor de texto más utilizado en Unix, y el cual está disponible de fábrica, o en la mayoría de las variaciones de Unix, el modificar el mapa del teclado se obtiene de varias maneras.</p>
+
+<p>Solamente mostraré el comando que lograría esto de la manera más simple y durante el modo de insertar: <code>inoremap</code>, el cual es seguido de la tecla que se desea modificar, con la que tomaría la nueva posición.</p>
+
+<p>Es decir:</p>
+
+<pre><code> inoremap ; \
+</code></pre>
+
+<p>lograría lo que en este caso se quisiera. Cada vez que la tecla <code>;</code> se presione, la <code>\</code> tomará su lugar.</p>
+
+<p>De la misma manera, cuando se especifica el anterior comando en el fichero de inicialización, conlleva a especificar el mismo comando, es decir <code>inoremap</code> pero en esta ocasión con los símbolos de manera inversa. De otra manera, ambas teclas tendrán asignadas el mismo mapa en el registro del teclado.</p>
+
+<p>Por lo tanto</p>
+
+<pre><code>inoremap \ ; 
+</code></pre>
+
+<p>sería imprescindible para finalizar la modificación de estas teclas.</p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

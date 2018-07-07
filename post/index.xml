@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Blog del tecnólogo</title>
+    <link>https://imfrom.github.io/post/</link>
+    <description>Recent content in Posts on Blog del tecnólogo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 29 May 2018 06:34:49 -0400</lastBuildDate>
+    
+	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing Pacman Breaks Dependency</title>
+      <link>https://imfrom.github.io/post/installing-pacman-breaks-dependency/</link>
+      <pubDate>Tue, 29 May 2018 06:34:49 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/installing-pacman-breaks-dependency/</guid>
+      <description>Running one of the usual updates from the pamac gui package, returned
+ pamac: installing pacman (5.1.0-1) breaks dependency ‘pacman&amp;lt;5.1  I noticed that any package on the list with a dependency must be unchecked before continuing.
+Later I checked the antergos forum to see if there was any solution.
+The suggested workaround was to run
+ pacman -Syyu -d --nodeps  The following commit apparently introduced the issue in the first place:</description>
+    </item>
+    
+    <item>
+      <title>Antergos Keyboard Selection During Installation</title>
+      <link>https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/</link>
+      <pubDate>Sat, 27 Jan 2018 08:49:17 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/</guid>
+      <description>One of the drawbacks during the installation of Antergos Linux was in identifying the keyboard layout option that was previously selected during the media installation.
+As a result only the default variant was being used after installing the system.
+I was able to identify the problem by going to the X window system xorg configuration file /etc/X11/xorg.d/00-keyboard.conf and noticing that the XkbLayout variant was not being properly identified as originally intended.</description>
+    </item>
+    
+    <item>
+      <title>Antergos Grub Selection</title>
+      <link>https://imfrom.github.io/post/antergos-grub-selection/</link>
+      <pubDate>Sat, 20 Jan 2018 08:38:47 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/antergos-grub-selection/</guid>
+      <description>During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.
+Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.
+this is even after running the usual mkinitcpio -p that loads the modules and other dependencies accordingly.
+It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</description>
+    </item>
+    
+    <item>
+      <title>Udisks2 Udiskie Fares Better Than Ntfs 3g</title>
+      <link>https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/</link>
+      <pubDate>Tue, 16 Jan 2018 08:45:02 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/</guid>
+      <description>It is my opinion, based mostly not on what I’ve read, but instead on what I’ve encountered during the handling of a failed hard disk, that the disk volume mounting utility udisks2 fares better than say, ntfs-3g.
+Quite possibly there could be many improvements with this software, and there is no doubt about it, but considering wear-and-tear conditions of the disk, among other considerations, and, as long as udisks2 is run without an interruption, no other mounting options utility that is currently available may be able to improve its overall performance.</description>
+    </item>
+    
+    <item>
+      <title>Metadata Irreversible</title>
+      <link>https://imfrom.github.io/post/metadata-irreversible/</link>
+      <pubDate>Fri, 22 Dec 2017 04:13:37 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/metadata-irreversible/</guid>
+      <description>One of the easiest ways to remove all metadata from a file, is by invoking 1
+ $ exiftool -all= &amp;lt;file&amp;gt;  However, this has the inconvenience of providing a security risk by reversing it as well with:
+ $ exiftool -pdf-update:all= &amp;lt;file&amp;gt;  which pretty much inserts the metadata back into the file:
+According to the author of exiftool this can be circumvented by issuing qpdf --linearize &amp;lt;file.in&amp;gt; &amp;lt;file.out&amp;gt;. For further info about this see: PDF tags</description>
+    </item>
+    
+    <item>
+      <title>Manjaro Kde Plasma Dolphin Mtp Cant Open File</title>
+      <link>https://imfrom.github.io/post/manjaro-kde-plasma-dolphin-mtp-cant-open-file/</link>
+      <pubDate>Sat, 16 Dec 2017 13:26:25 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/manjaro-kde-plasma-dolphin-mtp-cant-open-file/</guid>
+      <description>MTP implementation runs on most desktop environments without a problem. Except on KDE where it has had several problems in identifying and initializing a simple file from any of the devices that have been connected to the system, mainly through the USB port.
+It’s really a shame that although Plasma KDE fairly supports Bluetooth protocol better than the rest of other desktop environments, it largely fails with both gwenview and its default Dolphin manager to open up files directly.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro Kde Plasma Error Unknown Application Folder</title>
+      <link>https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/</link>
+      <pubDate>Thu, 14 Dec 2017 13:28:52 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/</guid>
+      <description>It’s apparently a foolish idea to login as root from a file manager on Plasma KDE.
+This was exactly what caused a number of problems, and among them, most notably, that I could not get past the login screen.
+Of course, little did it matter that I installed any of the other display managers available and removed the current in use from the command line. I was still unable to get past the login screen.</description>
+    </item>
+    
+    <item>
+      <title>Errors During Hugo Git</title>
+      <link>https://imfrom.github.io/post/errors-during-hugo-git/</link>
+      <pubDate>Wed, 13 Dec 2017 15:56:07 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/errors-during-hugo-git/</guid>
+      <description>During the last setup of Hugo, I was faced again with the sometimes difficult handling of submodules. This was of course after the corresponding configuration for the user.name and user.email had already been set accordingly.
+The next error which dealt with the git submodule was that it already existed in the index. Which made me look it up on Google.
+Among the first results that came up after my query, was the following from the stackoverflow site at the StackExchange Network, entitled Issue with adding common code as git submodule: “already exists in the index”</description>
+    </item>
+    
+    <item>
+      <title>Screen Locker Broken Manjaro Kde</title>
+      <link>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</link>
+      <pubDate>Sat, 09 Dec 2017 13:58:20 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</guid>
+      <description>While updating a fresh installation of Manjaro KDE, the screen locked. Apparently the default settings for the system, enabled this behavior without further ado.
+As a result of this problem, the surprising part came afterward when the updates that were being downloaded, suddenly crashed the system. This led to the nonetheless bothersome problem of modules.devname not found error followed by the no more troublesome error you are now being dropped into an emergency shell and sh can&#39;t access tty; job control turned off.</description>
+    </item>
+    
+    <item>
+      <title>Configuring Kakoune Kakrc</title>
+      <link>https://imfrom.github.io/post/configuring-kakoune-kakrc/</link>
+      <pubDate>Wed, 06 Dec 2017 12:50:38 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/configuring-kakoune-kakrc/</guid>
+      <description>Configuring the kakoune text editor initialization file has been nothing short of a chore, as it requires the path environment to be correctly set, before any changes on the kakrc take ahold of the settings.
+As the tutorial suggests, see Configuration and autoloading, if it is launched with the -n switch, kakoune will source the ../share/kak/kakrc, but on a unrelated issue but nonetheless relevant about the correct location for the initialization file, the developer clearly stated that:</description>
+    </item>
+    
+    <item>
+      <title>Network Has Been Disconnected Manjaro Kde Xfce</title>
+      <link>https://imfrom.github.io/post/network-has-been-disconnected-manjaro-kde-xfce/</link>
+      <pubDate>Fri, 01 Dec 2017 13:41:54 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/network-has-been-disconnected-manjaro-kde-xfce/</guid>
+      <description>For some unknown reason, I was getting the message network has been disconnected even on connections that have been previously used.
+Contrary to the post entitled NetworkManager doesn’t automatically ask for a password for new network, see see this post on bbs.archlinux.org in my case the connection was used many times before.
+The dependency problem that has plagued this bug seemed to make a comeback on a most of Manjaro desktop environments.</description>
+    </item>
+    
+    <item>
+      <title>Mounting a Windows Hard Drive on Arch Linux</title>
+      <link>https://imfrom.github.io/post/mounting-a-windows-hard-drive-on-arch-linux/</link>
+      <pubDate>Fri, 24 Nov 2017 13:40:27 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/mounting-a-windows-hard-drive-on-arch-linux/</guid>
+      <description>After following some of the advice on ntfs-3g arch linux entry which described the procedure to mount a windows system:
+A lsblk -f call on the filesystem returned:
+ sdb ├─sdb1 vfat SYSTEM ├─sdb2 ntfs Recovery ├─sdb3 ├─sdb4 ntfs OS └─sdb5 ntfs Restore  I was after sdb4 in this case. So I invoked on the command line:
+ $ ntfs-3g /dev/sdb4 /mnt/fat/  Which returned the message:
+ Unprivileged user can not mount NTFS block devices using the external FUSE library.</description>
+    </item>
+    
+    <item>
+      <title>Git Committing by User Name Config</title>
+      <link>https://imfrom.github.io/post/git-committing-by-user-name-config/</link>
+      <pubDate>Thu, 16 Nov 2017 13:01:35 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/git-committing-by-user-name-config/</guid>
+      <description>I recently had to set up again the local branches through git.
+An error that was not uncommon came up on the screen:
+ *** Please tell me who you are. Run git config --global user.email &#34;you@example.com&#34; git config --global user.name &#34;Your Name&#34; to set your account&#39;s default identity. Omit --global to set the identity only in this repository.  This time around it was done through configuring a user.name and a user.</description>
+    </item>
+    
+    <item>
+      <title>Npm Warn Saveerror Enonent During Uninstall</title>
+      <link>https://imfrom.github.io/post/npm-warn-saveerror-enonent-during-uninstall/</link>
+      <pubDate>Wed, 08 Nov 2017 13:44:21 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/npm-warn-saveerror-enonent-during-uninstall/</guid>
+      <description>I recently tried a few utility programs through npm javascript manager. For further info see Npm package manager on Wikipedia.
+But after trying them, I noticed that the output compilation was not what I had expected.
+Usually, or so it seems, that by default the programs end up on /usr/lib/node_modules.
+I kept one of the programs which I found it handy and very convenient. But I just wanted to remove the rest from the system.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro Xfce Qpdfview Problem With Qt5ct Unable to Load Plugin in First Attempt</title>
+      <link>https://imfrom.github.io/post/manjaro-xfce-qpdfview-problem-with-qt5ct-unable-to-load-plugin-in-first-attempt/</link>
+      <pubDate>Thu, 19 Oct 2017 03:52:43 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/manjaro-xfce-qpdfview-problem-with-qt5ct-unable-to-load-plugin-in-first-attempt/</guid>
+      <description>I currently have two (2) identical - or that’s what it seemed like - xfce environments on two (2) different hardware systems.
+I always keep at hand a list of viewers and if there is any problem removing those to be found unnecessarily large or extremely light to the point of rendering them useless, I tend to check the Arch Wiki at List of Applications for a refresher on what’s available at the moment.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro Xfce Bluetooth Problem</title>
+      <link>https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/</link>
+      <pubDate>Fri, 29 Sep 2017 13:32:01 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/</guid>
+      <description>Bluetooth recognition - at least on Manjaro Xfce - has been erratic and inconsistent.
+For no clear reason the LTS kernel and even a newer kernel have identified the hardware, while it has failed to do so in a great many occasions.
+Many of the tweaks included reinstalling bluez, bluez-firmware, bluez-libs, bluez-tools, and bluez-utils.
+Back to the drawing room and back again.
+The bluetooth adapters were not being recognized however. And after logging out and back into the session, and even after sudo /sbin/shutdown -r now, nothing seemed to work.</description>
+    </item>
+    
+    <item>
+      <title>Urxvt Copy Paste Tweaking</title>
+      <link>https://imfrom.github.io/post/urxvt-copy-paste-tweaking/</link>
+      <pubDate>Fri, 18 Aug 2017 14:07:29 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/urxvt-copy-paste-tweaking/</guid>
+      <description>I haven’t read the man pages enough to figure out some of the parameters that play an important behavior for the full functionality of the mighty urxvt, and it was not until I read a post - which was more of a comment on the thread entitled right click paste in urxvt terminal on the archlinux.org forum - when I realized that by the combination of ctrl and right mouse click would copy and paste the selected text on the X window system.</description>
+    </item>
+    
+    <item>
+      <title>Urxvt Background Tweaking</title>
+      <link>https://imfrom.github.io/post/urxvt-background-tweaking/</link>
+      <pubDate>Fri, 18 Aug 2017 14:05:19 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/urxvt-background-tweaking/</guid>
+      <description>I’ve never bothered with urxvt in the past. Perhaps was the way that dealt with the default glyph, which discouraged me from using it.
+Later I found that the above was easily answered here at how can I get better looking fonts in my terminal (urxvt)
+Nonetheless, the simple fact that I had to modify it directly on .Xresources, stopped me from doing all the necessary modifications to accomplish it.</description>
+    </item>
+    
+    <item>
+      <title>Setup Remote and Master Branches Before Updating Hugo</title>
+      <link>https://imfrom.github.io/post/setup-remote-and-master-branches-before-updating-hugo/</link>
+      <pubDate>Fri, 18 Aug 2017 14:00:51 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/setup-remote-and-master-branches-before-updating-hugo/</guid>
+      <description>A while ago, I had to set remote and master branches on a different machine.
+The methods included setting it up through the git pull command. By going tis route, both the master and remote branches were consequently set and configured without a major inconvenience.
+Recently, although I tried to replicate the same method above, I faced problems that included among many other errors, the infamous error: src refspec master does not match any.</description>
+    </item>
+    
+    <item>
+      <title>Xfce Carpalx Layout</title>
+      <link>https://imfrom.github.io/post/xfce-carpalx-layout/</link>
+      <pubDate>Sun, 09 Jul 2017 12:09:38 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/xfce-carpalx-layout/</guid>
+      <description>There are many ways to add the carpalx layout to X window system on GNU/Linux.
+The desktop environment Plasma KDE does not have that problem. One could easily add it from the Input Devices from the settings of the system.
+If however, one is running Xfce, things are not as straightforward as one would like them to be.
+At the bottom of this post, one can find the zip archive where the carpax.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro Announces Password Weakness en Los Instaladores De Dvd/usb</title>
+      <link>https://imfrom.github.io/post/manjaro-announces-password-weakness-en-los-instaladores-de-dvd_usb/</link>
+      <pubDate>Tue, 27 Jun 2017 13:20:54 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/manjaro-announces-password-weakness-en-los-instaladores-de-dvd_usb/</guid>
+      <description>Recientemente en DistroWatch se publicó el anuncio del lanzamiento de la última versión de Manjaro que incluye importantes actualizaciones.
+Entre estas actualizaciones se encuentran las nuevas versiones de los instaladores gráficos tanto como thus al igual que calamares.
+También se anuncia la fragilidad en la generación de la contraseña o la clave que tanto el programa thus como calamares emplean durante el proceso de instalación a través tanto del ya mencionado thus o de calamares que en hashtag con modo predecible se utiliza durante la creación de estas contraseñas.</description>
+    </item>
+    
+    <item>
+      <title>Gcc Multilib in Conflict With Gcc During Manjaro Upgrade</title>
+      <link>https://imfrom.github.io/post/gcc-multilib-in-conflict-with-gcc-during-manjaro-upgrade/</link>
+      <pubDate>Thu, 08 Jun 2017 04:04:38 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/gcc-multilib-in-conflict-with-gcc-during-manjaro-upgrade/</guid>
+      <description>During the latest Manjaro upgrade, a conflict of packages already installed on the system, was preventing to proceed with the upgrade.
+A quick search on Google returned among the results, a post which had recently been opened on the archlinux forum with the title conflict with gcc-libs and gcc-libs-multilib
+Even though the conflict of packages on my system, was not the same conflict than the ones reported on the archlinux forum such as with the package gcc-fortran, it was clear as a user suggested:</description>
+    </item>
+    
+    <item>
+      <title>Gigabyte Computer Sleep Suspend Under Manjaro</title>
+      <link>https://imfrom.github.io/post/gigabyte-computer-sleep-suspend-under-manjaro/</link>
+      <pubDate>Mon, 22 May 2017 12:08:23 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/gigabyte-computer-sleep-suspend-under-manjaro/</guid>
+      <description>I had configured Manjaro under an old system and was never pressed with the issue of suspend on that old hardware.
+When the Gigabyte computer was finally up and running, I noticed that the system was unable to suspend or sleep.
+After failing to find a quick solution to the problem on the archlinux forums, I came across this post from the Manjaro site: Manjaro not waking from suspend or sleep and I almost knew - not right away - that the discussion was the underlying cause of the problems I was experiencing.</description>
+    </item>
+    
+    <item>
+      <title>Firefox Problem With Xclip</title>
+      <link>https://imfrom.github.io/post/firefox-problem-with-xclip/</link>
+      <pubDate>Sat, 20 May 2017 13:58:18 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/firefox-problem-with-xclip/</guid>
+      <description>I’ve used both vim and neovim editors. The latter is just the newest implementation with out of the box pre-configurations.
+As expected, whenever I was trying to use the copy paste command tool such as xclip, both vim and neovim produced the newlines on the X window system across different applications.
+But when I set out to write an email on Gmail from Alphabet Inc., using a copy paste command tool such as xclip, the process was to no avail: newlines were not being displayed on Gmail’s interface.</description>
+    </item>
+    
+    <item>
+      <title>Libreoffice Implementación Del Guión en La Separación Silábica</title>
+      <link>https://imfrom.github.io/post/libreoffice-implementaci%C3%B3n-del-gui%C3%B3n-en-la-separaci%C3%B3n-sil%C3%A1bica/</link>
+      <pubDate>Fri, 21 Apr 2017 02:29:35 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/libreoffice-implementaci%C3%B3n-del-gui%C3%B3n-en-la-separaci%C3%B3n-sil%C3%A1bica/</guid>
+      <description>Para implementar la separación silábica en cualquier documento en Libreoffice, es necesario bajar los correspondientes archivos de extensiones para este programa: https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6
+Una vez descargado y guardado este archivo, se utiliza el mismo programa Libreoffice para cargarlo posteriormente.
+Después se selecciona bajo el menú de tools, y options como se muestra:
+que por consiguiente inicia la ventana correspondiente que especifica el recién bajado diccionario y como muestra la siguiente figura:</description>
+    </item>
+    
+    <item>
+      <title>Gigabyte Motherboard Fails to Load Live Cd but Succeeds With Flash Drive</title>
+      <link>https://imfrom.github.io/post/gigabyte-motherboard-fails-to-load-live-cd-but-succeeds-with-flash-drive/</link>
+      <pubDate>Sat, 08 Apr 2017 13:10:35 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/gigabyte-motherboard-fails-to-load-live-cd-but-succeeds-with-flash-drive/</guid>
+      <description>I can’t say whether some of the systems that NUC Intel produces, face the same problems while loading a LiveCD/LiveDVD iso image via an external drive, as the manufacturer Gigabyte currently does. The latter manufacturer gave me the proverbial run for the money when I wanted to install an image that was burned on a DVD and had been successfully installed on an old system.
+Not only I tried to load two (2) different images that proved to have been installed without issues and worked correctly on two (2) separate old Dell systems, but it seemed that even after specifying the external DVD/Writer on the first prioritized boot order of the BIOS, the motherboard was simply unable to identify it.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro Desplaza a Ubuntu</title>
+      <link>https://imfrom.github.io/post/manjaro-desplaza-a-ubuntu/</link>
+      <pubDate>Tue, 14 Mar 2017 13:23:51 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/manjaro-desplaza-a-ubuntu/</guid>
+      <description>Hace más o menos un mes que escribí acerca de la configuración del tema splash de la pantalla y el cual se podía anular en la susodicha configuración a través de las preferencias, seguido del tema del escritorio cuando se utiliza un disco de estado sólido o un SSD (solid state drive).
+En el momento de escribir acerca de ello, y de acuerdo a las estadísticas que se mostraban en distrowatch.</description>
+    </item>
+    
+    <item>
+      <title>Configurar El Idioma en Manjaro Kde</title>
+      <link>https://imfrom.github.io/post/configurar-el-idioma-en-manjaro-kde/</link>
+      <pubDate>Sun, 26 Feb 2017 12:44:42 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/configurar-el-idioma-en-manjaro-kde/</guid>
+      <description>Para modificar el idioma que los elementos del menú muestren, al igual que el idioma con el que aparecería la hora, la fecha, y otros valores como los de la representación monetaria, se puede ir hasta las preferencias del sistema y después dándole a clic a Configuración regional.
+La ventana siguiente que lleva de título añadir y configurar la configuración regional, muestra las configuraciones regionales del sistema que te permite (a mano derecha) añadir el otro idioma que deseas, a la pre-configurada lista de las regiones en el sistema.</description>
+    </item>
+    
+    <item>
+      <title>Pantalla en Reposo Con Manjaro KDE</title>
+      <link>https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/</link>
+      <pubDate>Fri, 24 Feb 2017 13:45:58 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/</guid>
+      <description>Cada vez que se trabaja con algún entorno gráfico en los sistemas GNU/Linux, como GNOME, xfce, MATE, al igual que en KDE, uno se pone al amparo de los desarrolladores de estos sistemas.
+Digo al amparo, porque uno tiene que estar a esperas de lo que estos programadores decidan sobre las configuraciones idóneas del sistema. Y muchas veces, como es de esperar y se ha comprobado a través del tiempo, no han sido las más eficientes decisiones, desde el punto de vista del usuario.</description>
+    </item>
+    
+    <item>
+      <title>Turn Off Manjaro Kde Splash Screen if on Ssd</title>
+      <link>https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/</link>
+      <pubDate>Wed, 15 Feb 2017 04:02:19 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/</guid>
+      <description>Posicionado desde hace meses en el quinto escalafón de la lista de las distribuciones basadas en Linux, la distribución Manjaro , basada en la impresionante distribución Arch Linux, y que hace uso del magnífico sistema de administración de paquetes Pacman de este último, emplea los últimos e innovadores temas de interfaz gráficos en muchas de las ediciones, tanto de la comunidad, como aquellas que son aprobadas oficialmente. 1
+No tuve problema alguno con la instalación del sistema operativo.</description>
+    </item>
+    
+    <item>
+      <title>Reemplazo De Minúsculas Con Mayúsculas Con Emacs</title>
+      <link>https://imfrom.github.io/post/reemplazo-de-min%C3%BAsculas-con-may%C3%BAsculas-con-emacs/</link>
+      <pubDate>Thu, 09 Feb 2017 02:31:55 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/reemplazo-de-min%C3%BAsculas-con-may%C3%BAsculas-con-emacs/</guid>
+      <description>Para un simple reemplazo de caracteres al principio de una oración, es decir, de minúsculas por mayúsculas, se puede emplear un simple y eficiente método de expresión regular también en Emacs.
+Ya existe un modo de capitalization que logra este reemplazo de una cadena de caracteres o cadena de texto como se dice en inglés: string, y aunque tiene un inigualable mérito para este propósito, de igual manera retrasa el ingreso de caracteres.</description>
+    </item>
+    
+    <item>
+      <title>Reemplazar Con Vim. Reemplazos de minúsculas con mayúsculas</title>
+      <link>https://imfrom.github.io/post/reemplazar-con-vim/</link>
+      <pubDate>Wed, 08 Feb 2017 13:48:53 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/reemplazar-con-vim/</guid>
+      <description>O como se dice en Inglés: capitalization, se puede lograr fácilmente en vim  mediante el empleo de mayúsculas al comienzo de oraciones a través del uso de una expresión regular o regex, sin la necesidad de utilizar algún que otro script (que puede causar efectos secundarios en el funcionamiento), para lograr el reemplazo de las minúsculas.
+En el website de programadores de superuser.com, superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim se hace esta misma pregunta para lograr el reemplazo automático de minúsculas por mayúsculas al principio de cada oración.</description>
+    </item>
+    
+    <item>
+      <title>Modificar Mapa Del Teclado Con Emacs Y Vim</title>
+      <link>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</link>
+      <pubDate>Mon, 21 Nov 2016 14:40:45 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</guid>
+      <description>Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs 1 y Vim 2, para cambiar el mapa del teclado.
+Emacs El altamente configurable y extensible editor de texto Emacs también nos puede ayudar con modificaciones del teclado, o cambiar la localización de las teclas, sin la necesidad de cambiar todo el diseño, y sin la necesidad de tener que utilizar algún teclado en específico.</description>
+    </item>
+    
+    <item>
+      <title>Reemplazos en Vim</title>
+      <link>https://imfrom.github.io/post/reemplazos-en-vim/</link>
+      <pubDate>Mon, 07 Nov 2016 14:42:55 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/reemplazos-en-vim/</guid>
+      <description>Estos son algunos de los reemplazos que se pudieran realizar en vim:
+:s/\zs/\r/g  will have this string of characters: abcdefghi
+tendrá esta cadena de caracteres: abcdefghi
+result:
+a
+b
+c
+d
+e
+f
+g
+h
+i
+Por otra parte la siguiente ejecución:
+:s/\s/\r/g  will have
+esto es una prueba
+result:
+esto
+es
+una
+prueba
+and :s/\n//g
+will have something like
+a
+b
+c
+d
+results:
+abcde
+:s/\n/ /g  will have something like</description>
+    </item>
+    
+    <item>
+      <title>Hugo No Sincroniza Directorio Estatico en Github</title>
+      <link>https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/</link>
+      <pubDate>Sat, 10 Sep 2016 10:09:44 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/</guid>
+      <description>Después de realizar varias pruebas donde traté de evaluar algún que otro theme en Hugo, me di cuenta que el problema era más serio que lo pensaba.
+Tenía en mente llevar las pruebas con ciertos temas minimalistas, o como se diría en español: simples, que me permitiesen llevar a cabo flexibles modificaciones locales., y de ahí partir con ello.
+La mayoría de los temas en Hugo están constituidos por ciertos paquetes de láminas en estilo de cascadas, o con las siglas en inglés por CSS, y al igual que otros pequeños ficheros en Javascript.</description>
+    </item>
+    
+    <item>
+      <title>Flechas en Gimp</title>
+      <link>https://imfrom.github.io/post/flechas-en-gimp/</link>
+      <pubDate>Wed, 10 Aug 2016 14:16:59 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/flechas-en-gimp/</guid>
+      <description>Una de las maneras más fáciles en crear flechas en Gimp, sería con la adición de un plugin al directorio scripts de Gimp.
+En el sitio de https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp se puede encontrar más información en cuanto a esto. Solamente mostraré los pasos visuales para lograrlo.
+ $cd /directorio-de-gimp/scripts/  Seguido de
+ $wget http://registry.gimp.org/files/arrow.scm  Y recomienza el programa Gimp.
+Digamos por ejemplo, que seleccionas un nuevo documento. En la caja de herramientas de Gimp (recuerda que si no está visible, siempre puedes activarla a través de la combinación en el teclado de Ctrl y b), podrás ver la nueva inclusión de la ventana de herramienta.</description>
+    </item>
+    
+    <item>
+      <title>Git in Six Hundred Words by Mary Rose Cook</title>
+      <link>https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/</link>
+      <pubDate>Wed, 03 Aug 2016 14:45:04 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/</guid>
+      <description>Imagine you have a directory called alpha. It contains a file called number.txt that contains the text first.
+You run git init to set up alpha as a Git repository.
+You run git add number.txt to add number.txt to the index. The index is a list of all the files that Git is keeping track of. It maps filenames to the content of the files. It now has the mapping number.</description>
+    </item>
+    
+    <item>
+      <title>Círculos en Gimp</title>
+      <link>https://imfrom.github.io/post/circulos-en-gimp/</link>
+      <pubDate>Wed, 03 Aug 2016 14:13:46 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/circulos-en-gimp/</guid>
+      <description>Esto es solamente un recordatorio para realizar varias modificaciones a cualquier imagen en GNU Gimp.
+No soy un usuario de este programa, pero reconozco que como manipulador de gráficos e imágenes, es incomparable.
+Hace un tiempo, recuerdo haber leído algo acerca de esto a través del blog de Alvin Alexander que toca sobre la creación de círculos, elipses y demás.
+Algunos de los pasos los omitiré, porque algunos son innecesarios.</description>
+    </item>
+    
+    <item>
+      <title>Cambia Tu Contraseña en Gmail Y Google</title>
+      <link>https://imfrom.github.io/post/cambia-tu-contrase%C3%B1a-en-gmail-y-google/</link>
+      <pubDate>Tue, 02 Aug 2016 14:48:19 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/cambia-tu-contrase%C3%B1a-en-gmail-y-google/</guid>
+      <description>Toda la ayuda que se necesite acerca de GMail, y cualquier otro producto de Google, se puede obtener a través de la página de estos en https://support.google.com/ pero no obstante a ello, enumeraré algunos que otros pasos para recuperar la contraseña o clave, en caso que se haya extraviado o por cualquier otro motivo.
+Estas son algunas imágenes que se mostrarán, si tienes el idioma seleccionado como Español, o castellano, en tu navegador.</description>
+    </item>
+    
+  </channel>
+</rss>

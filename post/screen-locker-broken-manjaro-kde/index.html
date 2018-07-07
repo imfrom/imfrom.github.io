@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Screen Locker Broken Manjaro Kde &middot; Lanyon
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/">Home</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/about">About</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+ 
+    <span class="sidebar-nav-item">Currently on master</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://imfrom.github.io/" title="Home">Lanyon</a>
+            <small>A Jekyll theme</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Screen Locker Broken Manjaro Kde</h1>
+  <span class="post-date">Dec 9 2017</span>
+  <p>While updating a fresh installation of Manjaro KDE, the screen locked.
+Apparently the default settings for the system, enabled this behavior without
+further ado.</p>
+
+<p>As a result of this problem, the surprising part came afterward when the updates that were being downloaded, suddenly crashed the system. This led to the nonetheless bothersome problem of <code>modules.devname not found</code> error followed by the no more troublesome error <code>you are now being dropped into an emergency shell</code> and <code>sh can't access tty; job control turned off</code>.</p>
+
+<p>I didn’t have at the time a live media to access the system. Although I knew the that the sudden crashing during the download of updates , was one of the problems underlying the <code>modules.devname not found</code> error.</p>
+
+<p>A quick google searched returned  <a href="https://unix.stackexchange.com/questions/355689/manjaro-fails-to-boot-modules-devname-not-found-then-unknown-disk-uuid-error" target="_blank">Manjaro fails to boot, modules.devname not found</a> a result which provided an answer that pointed to access the system with Manjaro’s own <code>mhwd-chroot</code> command to access the emergency shell. See <a href="https://wiki.manjaro.org/index.php/Restore_the_GRUB_Bootloader#Chroot_into_your_existing_Manjaro_Installation" target="_blank">Chroot into your existing Manjaro Installation</a></p>
+
+<p><img src="https://imfrom.github.io/images/mhwd-chroot-steps.png" alt=""></p>
+
+<p>And as the already mentioned answer on the unix.stackexchange.com site suggested, it was necessary to reload the image again.</p>
+
+<p><img src="https://imfrom.github.io/images/chroot-answer-mkinitcpio.png" alt=""></p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arch on Blog del tecnólogo</title>
+    <link>https://imfrom.github.io/tags/arch/</link>
+    <description>Recent content in Arch on Blog del tecnólogo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 24 Feb 2017 13:45:58 -0500</lastBuildDate>
+    
+	<atom:link href="https://imfrom.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pantalla en Reposo Con Manjaro KDE</title>
+      <link>https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/</link>
+      <pubDate>Fri, 24 Feb 2017 13:45:58 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/</guid>
+      <description>Cada vez que se trabaja con algún entorno gráfico en los sistemas GNU/Linux, como GNOME, xfce, MATE, al igual que en KDE, uno se pone al amparo de los desarrolladores de estos sistemas.
+Digo al amparo, porque uno tiene que estar a esperas de lo que estos programadores decidan sobre las configuraciones idóneas del sistema. Y muchas veces, como es de esperar y se ha comprobado a través del tiempo, no han sido las más eficientes decisiones, desde el punto de vista del usuario.</description>
+    </item>
+    
+    <item>
+      <title>Turn Off Manjaro Kde Splash Screen if on Ssd</title>
+      <link>https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/</link>
+      <pubDate>Wed, 15 Feb 2017 04:02:19 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/</guid>
+      <description>Posicionado desde hace meses en el quinto escalafón de la lista de las distribuciones basadas en Linux, la distribución Manjaro , basada en la impresionante distribución Arch Linux, y que hace uso del magnífico sistema de administración de paquetes Pacman de este último, emplea los últimos e innovadores temas de interfaz gráficos en muchas de las ediciones, tanto de la comunidad, como aquellas que son aprobadas oficialmente. 1
+No tuve problema alguno con la instalación del sistema operativo.</description>
+    </item>
+    
+  </channel>
+</rss>

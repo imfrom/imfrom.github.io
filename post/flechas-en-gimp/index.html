@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Flechas en Gimp &middot; Lanyon
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/">Home</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/about">About</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+ 
+    <span class="sidebar-nav-item">Currently on master</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://imfrom.github.io/" title="Home">Lanyon</a>
+            <small>A Jekyll theme</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Flechas en Gimp</h1>
+  <span class="post-date">Aug 10 2016</span>
+  <p>Una de las maneras más fáciles en crear <strong>flechas</strong> en Gimp, sería con la adición de un plugin al directorio <code>scripts</code> de Gimp.</p>
+
+<p>En el sitio de <a href="https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp">https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp</a> se puede encontrar más información en cuanto a esto. Solamente mostraré los pasos visuales para lograrlo.</p>
+
+<pre><code> $cd /directorio-de-gimp/scripts/
+</code></pre>
+
+<p>Seguido de</p>
+
+<pre><code> $wget http://registry.gimp.org/files/arrow.scm
+</code></pre>
+
+<p>Y recomienza el programa Gimp.</p>
+
+<p>Digamos por ejemplo, que seleccionas un nuevo documento. En la caja de herramientas de Gimp (recuerda que si no está visible, siempre puedes activarla a través de la combinación en el teclado de <code>Ctrl</code> y <code>b</code>), podrás ver la nueva inclusión de la ventana de herramienta.</p>
+
+<p>Veamos como funciona con la selección de esta misma caja de herramientas.</p>
+
+<p><img src="https://imfrom.github.io/images/selecciona-toolbox.png" alt="caja de herramientas toolbox"></p>
+
+<p>El próximo paso sería seleccionar el icono con el que se marcan los dos puntos de la flecha.</p>
+
+<p><img src="https://imfrom.github.io/images/click-twice.png" alt="clic dos vecs"></p>
+
+<p>Asegúrate que el color como se muestra en la figura anterior, esté seleccionado apropiadamente en la caja de herramientas (toolbox).</p>
+
+<p>Una vez que los dos puntos hayan sido marcados, selecciona la barra del menú principal de <code>Herramientas/tools</code>, descendiendo hasta el final y dándole clic a <code>Arrows</code>.</p>
+
+<p>Una vez que le des a <code>Arrows</code> del menú principal de la barra, una ventana que es similar a la que se muestra a continuación te permitirá especificar ciertos valores.</p>
+
+<p><img src="https://imfrom.github.io/images/select-tools-arrow.png" alt="selecciona el menú principal de arrows"></p>
+
+<p>Una vez que tengas la ventana abierta, ajusta los valores de porcentajes según el grosor, o el ancho que los ángulos de la flecha debiesen tener cuando se le aplique el color configurado. También puedes especificar otros valores como en rellenar a todo color la punta de la flecha.</p>
+
+<p>Clic <code>ok</code> una vez que los valores sean los acordados.</p>
+
+<p><img src="https://imfrom.github.io/images/arrow-done.png" alt="flecha finalizadai"></p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

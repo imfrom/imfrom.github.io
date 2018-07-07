@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+	<meta name="generator" content="Hugo 0.40.3" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lanyon &middot; A Jekyll theme
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item  active " href="https://imfrom.github.io/">Home</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/about">About</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+ 
+    <span class="sidebar-nav-item">Currently on master</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://imfrom.github.io/" title="Home">Lanyon</a>
+            <small>A Jekyll theme</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+
+
+
+<div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/reemplazo-de-min%C3%BAsculas-con-may%C3%BAsculas-con-emacs/">Reemplazo De Minúsculas Con Mayúsculas Con Emacs</a></h1>
+        <span class="post-date">Feb 9 2017</span>
+        <p>Para un simple reemplazo de caracteres al principio de una oración, es decir, de minúsculas por mayúsculas, se puede emplear un simple y eficiente método de expresión regular también en Emacs.</p>
+
+<p>Ya existe un modo de <em>capitalization</em> que logra este reemplazo de una cadena de caracteres o cadena de texto como se dice en inglés: string, y aunque tiene un inigualable mérito para este propósito, de igual manera retrasa el ingreso de caracteres., como es de esperar, el retraso o el lapso que esto conlleva, es una desventaja para una óptima funcionalidad.</p>
+
+<p>Digamos por ejemplo que:</p>
+
+<p>foo bar. foo bar. foo bar.</p>
+
+<p>Para modificar la minúscula por una mayúscula:</p>
+
+<pre><code> M-x replace-regex
+ \(\. \w\)
+ \,(capitalize \1)
+</code></pre>
+
+<p>que nos da como resultado:</p>
+
+<p>foo bar. Foo bar. Foo bar.</p>
+
+<p>pero el comienzo de la oración o de la línea no se ha modificado, entonces:</p>
+
+<pre><code> M-x replace-regex
+ \(^\w\)
+ \,(capitalize \1)
+</code></pre>
+
+<p>logra hacer la modificación restante a:</p>
+
+<p>Foo bar. Foo bar. Foo bar</p>
+
+<p>Si deseas hacer la modificación de una vez y por todas, y abreviando por consiguiente las dos expresiones regulares anteriores, utilizarías en este caso el delimitador <code>|</code> antes de la barra oblicua <code>\</code>. Es decir:</p>
+
+<pre><code> M-x replace-regex
+ \(^\w\|\. \w\)
+ \,(capitalize \1) 
+</code></pre>
+
+<p>Reemplaza el original foo bar. foo bar. foo bar. A Foo bar. Foo bar. Foo bar.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/reemplazar-con-vim/">Reemplazar Con Vim. Reemplazos de minúsculas con mayúsculas</a></h1>
+        <span class="post-date">Feb 8 2017</span>
+        <p>O como se dice en Inglés: <em>capitalization</em>, se puede lograr fácilmente en <a href="http://www.vim.org/" target="_blank">vim </a> mediante el empleo de mayúsculas al comienzo de oraciones a través del uso de una expresión regular o regex, sin la necesidad de utilizar algún que otro script (que puede causar efectos secundarios en el funcionamiento), para lograr el reemplazo de las minúsculas.</p>
+
+<p>En el website de programadores de superuser.com, <a href="http://superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim" target="_blank">superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim</a> se hace esta misma pregunta para lograr el reemplazo automático de minúsculas por mayúsculas al principio de cada oración.</p>
+
+<p>Una de las repuestas <a href="https://imfrom.github.io/post/reemplazo-de-minusculas-por-mayuscula-en-oracion/#script"><sup id="fnref">1</sup></a> hace énfasis de esto mediante la adición de un unas líneas de script o programa de ejecución.</p>
+
+<p>El problema que esto conlleva, y como uno de los usuarios comentó,</p>
+
+<blockquote>
+<p>The only problem is this script seems to add a noticeable lag when typing</p>
+</blockquote>
+
+<p>Es que mientras más extenso sea el documento, más se experimenta el lag o el retraso en el ingreso de caracteres. Es decir, la óptima funcionalidad se pierde parcialmente. Solo es necesario en tener un documento que comprenda un número de ciento y algo líneas, (y esto es sin contar que haya encima de ello algunas que otras líneas de código), para notar la diferencia.</p>
+
+<p>Considero que sin tanta complicación que más tarde nos puede afectar, la mínima utilización de un reemplazo de caracteres mediante una expresión regular, tuviese mejores resultados.</p>
+
+<p>Para cambiar la minúscula por mayúscula sería necesario entonces algo como:</p>
+
+<pre><code> $ :%s/\.[a-z]/\U&amp;/g
+</code></pre>
+
+<p>e. g.,  si el espacio después de la puntuación fue ingresado, no se te olvide cambiar el código encima con el espacio sobrante correspondiente, tal como</p>
+
+<pre><code> $ :%s/\. [a-z]/\U&amp;/g
+</code></pre>
+
+<p>y para lograr el intercambio al comienzo de cada línea, entonces</p>
+
+<pre><code> $ :%s/^[a-z]/\U&amp;/g
+</code></pre>
+
+<p>reemplaza la minúscula desde el comienzo.</p>
+
+<p>Para reemplazar múltiples patrones de búsqueda, se debe emplear el sufijo <code>e</code> después de la expresión regular con la que se modificaría la búsqueda,  separado de una barra vertical <code>|</code> que separe los dos grupos, es decir:</p>
+
+<pre><code> $ :%s/^[a-z]/\U&amp;/ge | %s/\. [a-z]/\U&amp;/ge
+</code></pre>
+
+<p>Otras de las maneras de emplear esta <em>expresión regular</em> es mediante la substitución de <code>[a-z]</code> por <code>\w</code>. una búsqueda rápida en <code>:help</code> nos indica que <code>\w</code> equivale a <code>[0-9A-Za-z]</code></p>
+
+<p>por lo tanto se pudiese emplear algo tal como</p>
+
+<pre><code> $ :%s/^\w/\U&amp;/ge | %s/\. \w/\U&amp;/ge 
+</code></pre>
+
+<p><strong>Footnotes</strong></p>
+
+<p><a href="https://imfrom.github.io/post/reemplazo-de-minusculas-por-mayuscula-en-oracion/#fnref"> ↩︎</a>
+   <a name="script"> </a>Respuesta de usuario de vim para el empleo de un script que reemplace minúscula por mayúscula pero que causa lag en documentos <a href="http://superuser.com/a/737155">http://superuser.com/a/737155</a></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/">Modificar Mapa Del Teclado Con Emacs Y Vim</a></h1>
+        <span class="post-date">Nov 21 2016</span>
+        <p>Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs <a href="https://imfrom.github.io/post/modificar-mapa-del-teclado/#emacs"><sup>1</sup></a> y Vim <a href="https://imfrom.github.io/post/modificar-mapa-del-teclado/#vim"><sup>2</sup></a>, para cambiar el mapa del teclado.</p>
+
+<h2 id="emacs">Emacs</h2>
+
+<p>El altamente configurable y extensible editor de texto Emacs también nos puede ayudar con modificaciones del teclado, o cambiar la localización de las teclas, sin la necesidad de cambiar todo el diseño, y sin la necesidad de tener que utilizar algún teclado en específico.</p>
+
+<p>Primero se crea una función que se le asigna un nombre determinado. En este caso utilizamos el nombre de “backslash”. Posteriormente a esto, se le atribuye el comando <code>insert</code> seguido de <code>kbd</code> y el mapa del registro del teclado que se desea modificar.</p>
+
+<p>En mi caso, encontré conveniente intercambiar las teclas <code>\</code> por <code>;</code> y viceversa. Por ejemplo:</p>
+
+<pre><code>(defun backslash ()
+  (interactive)
+  (insert (kbd "\\")))
+
+(global-set-key (kbd "; " ) 'backslash)
+</code></pre>
+
+<p>al igual que:</p>
+
+<pre><code>(defun semicolon ()
+  (interactive)
+  (insert (kbd ";" )))
+
+(global-set-key (kbd "\\" ) 'semicolon)
+</code></pre>
+
+<p>Como se puede ver en los ejemplos anteriores, después de esto se le asigna <code>global-set-key</code> a la recién nombrada función. Es decir, en el primer caso, la función se le asignó el nombre <code>backslash</code>, y la cual fue directamente entrelazada con el ya mencionado comando <code>global-set-key</code> seguido de la tecla <code>;</code>.</p>
+
+<p>De esta manera se logra el objetivo deseado. Esto es, que el ingreso de una tecla dada en el mapa del teclado del registro de entrada del sistema operativo, sea interpretado  posteriormente, - mediante la nueva asignación que proveyó la función - con el registro del mapa de otra tecla que haya sido predeterminada, dando lugar con ello a que ese ingreso del mapa del teclado, se registre apropiadamente con los resultados de la salida.</p>
+
+<p>En el primer ejemplo, cada vez que la tecla <code>;</code>sea presionada, la tecla <code>\</code> tomará precedencia. Y viceversa.</p>
+
+<h2 id="vim">Vim</h2>
+
+<p>en el caso de Vim, el editor de texto más utilizado en Unix, y el cual está disponible de fábrica, o en la mayoría de las variaciones de Unix, el modificar el mapa del teclado se obtiene de varias maneras.</p>
+
+<p>Solamente mostraré el comando que lograría esto de la manera más simple y durante el modo de insertar: <code>inoremap</code>, el cual es seguido de la tecla que se desea modificar, con la que tomaría la nueva posición.</p>
+
+<p>Es decir:</p>
+
+<pre><code> inoremap ; \
+</code></pre>
+
+<p>lograría lo que en este caso se quisiera. Cada vez que la tecla <code>;</code> se presione, la <code>\</code> tomará su lugar.</p>
+
+<p>De la misma manera, cuando se especifica el anterior comando en el fichero de inicialización, conlleva a especificar el mismo comando, es decir <code>inoremap</code> pero en esta ocasión con los símbolos de manera inversa. De otra manera, ambas teclas tendrán asignadas el mismo mapa en el registro del teclado.</p>
+
+<p>Por lo tanto</p>
+
+<pre><code>inoremap \ ; 
+</code></pre>
+
+<p>sería imprescindible para finalizar la modificación de estas teclas.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/reemplazos-en-vim/">Reemplazos en Vim</a></h1>
+        <span class="post-date">Nov 7 2016</span>
+        <p>Estos son algunos de los reemplazos que se pudieran realizar en vim:</p>
+
+<pre><code>:s/\zs/\r/g
+</code></pre>
+
+<p>will have this string of characters: abcdefghi</p>
+
+<p>tendrá esta cadena de caracteres: abcdefghi</p>
+
+<p><strong>result</strong>:</p>
+
+<p>a<br>
+b<br>
+c<br>
+d<br>
+e<br>
+f<br>
+g<br>
+h<br>
+i</p>
+
+<p>Por otra parte la siguiente ejecución:</p>
+
+<pre><code>:s/\s/\r/g 
+</code></pre>
+
+<p>will have</p>
+
+<p>esto es una prueba</p>
+
+<p><strong>result</strong>:</p>
+
+<p>esto<br>
+es<br>
+una<br>
+prueba</p>
+
+<p>and <code>:s/\n//g</code></p>
+
+<p>will have something like</p>
+
+<p>a<br>
+b<br>
+c<br>
+d</p>
+
+<p><strong>results</strong>:</p>
+
+<p>abcde</p>
+
+<pre><code>:s/\n/ /g
+</code></pre>
+
+<p>will have something like</p>
+
+<p>esto<br>
+es<br>
+una<br>
+prueba</p>
+
+<p><strong>result</strong>: esto es una prueba</p>
+
+<p>por supuesto, se puede ver que en algunos casos se utiliza <code>\n</code>, mientras que en otros se utiliza <code>\r</code>, es necesario recordar que en cada reemplazo y substitución en vim, se logra mediante <code>:s/texto para reemplazar/substituir con</code>.</p>
+
+<p>Primero antes que todo el delimitador de barra oblicua <code>/</code> es la separación de lo que se quiere modificar con lo que se modificaría.</p>
+
+<p>Es decir, por ejemplo, donde <code>texto para reemplazar</code> es la expresión regular que se desea cambiar, o los caracteres del texto que se desean modificar, mientras que <code>substituir con</code> es el nuevo ingreso que tomará lugar.</p>
+
+<p>En este caso, para entender este procedimiento, no hay mejor ayuda en vim, que ir directo a la documentación con <code>:help \n</code> o mediante <code>:h \n</code> para abreviar, y también entender el por qué difiere de <code>:help \r</code></p>
+
+<p>Creo que una de las mejores respuestas sobre esto, se encuentra en <a href="http://stackoverflow.com/a/18961239">http://stackoverflow.com/a/18961239</a> que especifica que “in the syntax <code>s/foo/bar</code>, <code>\r</code> and <code>\n</code> have different meanings depending on context.</p>
+
+<p>En nuestro caso sería <code>s/texto para reemplazar/substituir con</code>.</p>
+
+<p>Por lo tanto esto equivaldría a:</p>
+
+<p>En el caso de <code>texto para reemplazar</code>, es decir, <code>s/&lt;texto para reemplazar&gt;</code> antes del segundo delimitador <code>/</code>:<br>
+<code>\n</code> sería una newline  o un salto de línea.<br>
+<code>\r</code> en este caso sería CR que es la tecla <code>Enter</code>, tecla de retorno o de regreso.</p>
+
+<p>En el caso de <code>substituir con</code>, es decir, <code>s/&lt;texto para reemplazar&gt;/&lt;substituir con&gt;</code>, o los caracteres que se encuentren después de la segunda barra <code>/</code>:<br>
+<code>\n</code> seria un octeto nulo<br>
+<code>\r</code> en este caso es una <code>newline</code> o un salto de línea.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/">Hugo No Sincroniza Directorio Estatico en Github</a></h1>
+        <span class="post-date">Sep 10 2016</span>
+        <p>Después de realizar varias pruebas donde traté de evaluar algún que otro theme en Hugo, me di cuenta que el problema era más serio que lo pensaba.</p>
+
+<p>Tenía en mente llevar las pruebas con ciertos temas minimalistas, o como se diría en español: simples, que me permitiesen llevar a cabo flexibles modificaciones locales., y de ahí partir con ello.</p>
+
+<p>La mayoría de los temas en Hugo están constituidos por ciertos paquetes de láminas en estilo de cascadas, o con las siglas en inglés por CSS, y al igual que otros pequeños ficheros en Javascript.</p>
+
+<p>Cabe aclarar que la mayoría, por no decir todos, emplean las últimas tecnologías en gráficos que validen la convención estándar establecida por el consorcio W3C.</p>
+
+<p>Les recomiendo a todos aquellos que estén interesados en generadores estáticos del web, que evalúen a <a href="https://gohugo.io/" title="Hugo" target="_blank">Hugo</a> y de ahí decidir si es o no el motor más eficiente y fiable que hace uso de estas últimas tecnologías. Por supuesto que no sería justo si no se menciona otros como <a href="https://hexo.io/" target="blank">hexo</a>, desarrollado en Javascript por ejemplo, que al igual que el primero, son motores que valen la pena en emplearlos en la producción de sitios web, en la elaboración de blogs, al igual que con cualquier otra documentación.</p>
+
+<p>El motor <a href="https://gohugo.io/" target="blank">Hugo</a>, fue desarrollado en golang - un lenguaje de programación que fue creado en Google - es uno de los más recientes en este campo de generadores estáticos que ha sido recibido con mucho interés por programadores y otros entusiastas en computación. Pero sobre esto hablaré en otro artículo.</p>
+
+<p>Como dije al principio, en esta ocasión me interesaba más la flexible estructuración del blog que más que nada, mediante la evaluación de algunos de los <a href="https://themes.gohugo.io/" target="blank">temas</a> que están disponibles.</p>
+
+<p>Le había hecho algunos que otros cambios a uno de ellos intitulado purehugo y basado mayormente en <a href="https://en.wikipedia.org/wiki/bootstrapCDN" target="blank">bootstrapCDN</a> logré llevar a cabo algunos que otros cambios, me mortificaba la idea que no podía omitir la generación de todos los posts en la raíz del servidor. Por mucho que traté de hacer los cambios, la creación de una página que no sería mostrada en la página principal del servidor, era casi imposible. Tampoco quería emplear más tiempo que el necesario en lograr esto.</p>
+
+<p>Decidí entonces en descargar una plantilla temática que lleva de nombre <a href="https://themes.gohugo.io/shiori/" target="blank">shiori</a>, que fue portado o transferido de la implementación original del tema del mismo nombre por su autor Shusaku Uesugi.</p>
+
+<p>Estaba tratando de implementar en la estructura de la página un tema sencillo y este susodicho tema mostraba llenar los requisitos para ello.</p>
+
+<p>Después de descargarlo en el directorio <code>themes</code></p>
+
+<pre><code>$ git clone https://github.com/chibicode/hugo-theme-shiori shiori
+</code></pre>
+
+<p>decidí en ponerlo en práctica</p>
+
+<pre><code>$ hugo server -t shiori 
+</code></pre>
+
+<p>y el servidor local en el ordenador mostraba sin problemas la paginación correcta, al igual que todos los posts. No intenté en llevar otros cambios de modificación, porque la primera vez que ejecuté <code>hugo new post/test</code> que proseguiría con la creación de un post en el archivo de contenido, un error acerca del fichero <code>archetypes</code> se había generado.</p>
+
+<p>Traté de encontrar más información acerca de ello. Pero la única explicación acerca de esto tenía que ver con la actualización no solo de <code>hugo</code> sino de todas las dependencias de este:</p>
+
+<pre><code>go get -u -v github.com/spf13/hugo
+github.com/spf13/hugo (download)
+github.com/fsnotify/fsnotify (download)
+Fetching https://golang.org/x/sys/unix?go-get=1
+</code></pre>
+
+<p>El servidor local me mostraba las modificaciones.</p>
+
+<p>Una búsqueda más tarde en Google me refirió a <a href="https://github.com/spf13/hugo/issues/1802" target="_blank">iHugo 0.16-DEV (Jan 2016) fails to sync theme’s static directory on Linux</a> el cual trataba este problema.</p>
+
+<p>Aparentemente una de las dependencias tenía que ser actualizada, y por lo tanto la bandera <code>-u</code> tenía que ser especificada apropiadamente para la instalación del motor <a href="https://gohugo.io/" target="blank">Hugo</a>.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/flechas-en-gimp/">Flechas en Gimp</a></h1>
+        <span class="post-date">Aug 10 2016</span>
+        <p>Una de las maneras más fáciles en crear <strong>flechas</strong> en Gimp, sería con la adición de un plugin al directorio <code>scripts</code> de Gimp.</p>
+
+<p>En el sitio de <a href="https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp">https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp</a> se puede encontrar más información en cuanto a esto. Solamente mostraré los pasos visuales para lograrlo.</p>
+
+<pre><code> $cd /directorio-de-gimp/scripts/
+</code></pre>
+
+<p>Seguido de</p>
+
+<pre><code> $wget http://registry.gimp.org/files/arrow.scm
+</code></pre>
+
+<p>Y recomienza el programa Gimp.</p>
+
+<p>Digamos por ejemplo, que seleccionas un nuevo documento. En la caja de herramientas de Gimp (recuerda que si no está visible, siempre puedes activarla a través de la combinación en el teclado de <code>Ctrl</code> y <code>b</code>), podrás ver la nueva inclusión de la ventana de herramienta.</p>
+
+<p>Veamos como funciona con la selección de esta misma caja de herramientas.</p>
+
+<p><img src="https://imfrom.github.io/images/selecciona-toolbox.png" alt="caja de herramientas toolbox"></p>
+
+<p>El próximo paso sería seleccionar el icono con el que se marcan los dos puntos de la flecha.</p>
+
+<p><img src="https://imfrom.github.io/images/click-twice.png" alt="clic dos vecs"></p>
+
+<p>Asegúrate que el color como se muestra en la figura anterior, esté seleccionado apropiadamente en la caja de herramientas (toolbox).</p>
+
+<p>Una vez que los dos puntos hayan sido marcados, selecciona la barra del menú principal de <code>Herramientas/tools</code>, descendiendo hasta el final y dándole clic a <code>Arrows</code>.</p>
+
+<p>Una vez que le des a <code>Arrows</code> del menú principal de la barra, una ventana que es similar a la que se muestra a continuación te permitirá especificar ciertos valores.</p>
+
+<p><img src="https://imfrom.github.io/images/select-tools-arrow.png" alt="selecciona el menú principal de arrows"></p>
+
+<p>Una vez que tengas la ventana abierta, ajusta los valores de porcentajes según el grosor, o el ancho que los ángulos de la flecha debiesen tener cuando se le aplique el color configurado. También puedes especificar otros valores como en rellenar a todo color la punta de la flecha.</p>
+
+<p>Clic <code>ok</code> una vez que los valores sean los acordados.</p>
+
+<p><img src="https://imfrom.github.io/images/arrow-done.png" alt="flecha finalizadai"></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/">Git in Six Hundred Words by Mary Rose Cook</a></h1>
+        <span class="post-date">Aug 3 2016</span>
+        <p>Imagine you have a directory called <code>alpha</code>. It contains a file called <code>number.txt</code> that contains the text <code>first</code>.</p>
+
+<p>You run <code>git init</code> to set up <code>alpha</code> as a Git repository.</p>
+
+<p>You run <code>git add number.txt</code> to add <code>number.txt</code> to the index. The index is a list of all the files that Git is keeping track of. It maps filenames to the content of the files. It now has the mapping <code>number.txt -&gt; first</code>. Running the add command has also added a blob object containing <code>first</code> to the Git object database.</p>
+
+<p><div class="main __reader_view_article_wrap_4270907014602854__">
+      <p>(This essay is a companion piece to <a href="http://gitlet.maryrosecook.com/">Gitlet</a>, my implementation of Git in JavaScript.)</p></p>
+
+<p>Imagine you have a directory called <code>alpha</code>. It contains a file called <code>number.txt</code> that contains the text <code>first</code>.</p>
+
+<p>You run <code>git init</code> to set up <code>alpha</code> as a Git repository.</p>
+
+<p>You run <code>git add number.txt</code> to add <code>number.txt</code> to the index. The index is a list of all the files that Git is keeping track of. It maps filenames to the content of the files. It now has the mapping <code>number.txt -&gt; first</code>. Running the add command has also added a blob object containing <code>first</code> to the Git object database.</p>
+
+<p>You run <code>git commit -m first</code>. This does three things. First, it creates a tree object in the objects database. This object represents the list of items in the top level of the alpha directory. This object has a pointer to the <code>first</code> blob object that was created when you ran <code>git add</code>. Second, it creates a commit object that represents the version of the repository that you have just committed. This includes a pointer to the tree object. Third, it points the master branch at the new commit object.</p>
+
+<p>You run <code>git clone . ../beta</code>. This creates a new directory called <code>beta</code>. It initializes it as a Git repository. It copies the objects in the alpha objects database to the beta objects database. It points the master branch on beta at the commit object that the master branch points at on the alpha repository. It sets the index on beta to mirror the content of the first commit. It updates your files - <code>number.txt</code> - to mirror the index.</p>
+
+<p>You move to the beta repository. You change the content of <code>number.txt</code> to <code>second</code>. You run <code>git add number.txt</code> and <code>git commit -m second</code>. The commit object that is created has a pointer to its parent, the first commit. The commit command points the master branch at the second commit.</p>
+
+<p>You move back to the alpha repository. You run <code>git remote add beta ../beta</code>. This sets the beta repository as a remote repository.</p>
+
+<p>You run <code>git pull beta master</code>.</p>
+
+<p>Under the covers, this runs <code>git fetch beta master</code>. This finds the objects for the second commit and copies them from the beta repository to the alpha repository. It points alpha’s record of beta’s master at the second commit object. It updates <code>FETCH_HEAD</code> to show that the master branch was fetched from the beta repository.</p>
+
+<p>Under the covers, the pull command runs <code>git merge FETCH_HEAD</code>. This reads <code>FETCH_HEAD</code>, which shows that the master branch on the beta repository was the most recently fetched branch. It gets the commit object that alpha’s record of beta’s master is pointing at. This is the second commit. The master branch on alpha is pointing at the first commit, which is the ancestor of the second commit. This means that, to complete the merge, the merge command can just point the master branch at the second commit. The merge command updates the index to mirror the contents of the second commit. It updates the working copy to mirror the index.</p>
+
+<p>You run <code>git branch red</code>. This creates a branch called <code>red</code> that points at the second commit object.</p>
+
+<p>You run <code>git checkout red</code>. Before the checkout, <code>HEAD</code> pointed at the master branch. It now points at the red branch. This makes the red branch the current branch.</p>
+
+<p>You set the content of <code>number.txt</code> to <code>third</code>, run <code>git add numbers.txt</code> and run <code>git commit -m third</code>.</p>
+
+<p>You run <code>git push beta red</code>. This finds the objects for the third commit and copies them from the alpha repository to the beta repository. It points the red branch on the beta repository at the third commit object, and that’s it.</p>
+
+<p>(If you would like to learn about the internals of Git in detail, you can read my essay, <a href="https://maryrosecook.com/blog/post/git-from-the-inside-out">Git from the inside out</a>.)</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/circulos-en-gimp/">Círculos en Gimp</a></h1>
+        <span class="post-date">Aug 3 2016</span>
+        <p>Esto es solamente un recordatorio para realizar varias modificaciones a cualquier imagen en <a href="https://www.gimp.org/">GNU  Gimp</a>.</p>
+
+<p>No soy un usuario de este programa, pero reconozco que como manipulador de gráficos e imágenes, es incomparable.</p>
+
+<p>Hace un tiempo, recuerdo haber leído algo acerca de esto a través del blog de <a href="http://alvinalexander.com/gimp/gimp-how-to-create-draw-circle-in-gimp-tutorial/">Alvin Alexander</a> que toca sobre la creación de círculos, elipses y demás.</p>
+
+<p>Algunos de los pasos los omitiré, porque algunos son innecesarios.</p>
+
+<ul>
+<li><p>Primero crea una imagen, un nuevo documento, aunque por supuesto, que puedes abrir cualquier otra imagen <code>png</code>, <code>jpeg</code>, <code>jpg</code>, etc.</p></li>
+
+<li><p>Después en la caja de herramienta, selecciona el elipsis que te servirá para demarcar el trazo.</p></li>
+</ul>
+
+<p><img src="https://imfrom.github.io/images/selectelilipse.png" alt="Selecciona elipse"></p>
+
+<ul>
+<li>Dibuja el trazo del círculo</li>
+</ul>
+
+<p><img src="https://imfrom.github.io/images/dibujaimagen.png" alt="dibuja imagen"></p>
+
+<ul>
+<li><p>Una vez realizado este círculo, dale a clic al menú de <code>Select</code>, y desciende hasta que te encuentres con el <code>Border</code> (borde).</p></li>
+
+<li><p>En la nueva ventana que aparece donde te especifica en seleccionar en pixels la dimensión de este borde, incrementa o disminuye estos pixels.</p></li>
+</ul>
+
+<p><img src="https://imfrom.github.io/images/selectmenuborder.png" alt="Selecciona el borde del Menú"></p>
+
+<ul>
+<li><p>Asegúrate que el color que tienes seleccionado en la caja de herramientas sea el correcto.</p></li>
+
+<li><p>Clic en el menú de <code>Edit</code> desde la ventana principal de Gimp y selecciona <code>Fill with FG Color</code></p></li>
+</ul>
+
+<p><img src="https://imfrom.github.io/images/círculocolor.png" alt="Círculo después de fill with color"></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/cambia-tu-contrase%C3%B1a-en-gmail-y-google/">Cambia Tu Contraseña en Gmail Y Google</a></h1>
+        <span class="post-date">Aug 2 2016</span>
+        <p>Toda la ayuda que se necesite acerca de GMail, y cualquier otro producto de Google, se puede obtener a través de la página de estos en <a href="https://support.google.com/">https://support.google.com/</a> pero no obstante a ello, enumeraré algunos que otros pasos para recuperar la contraseña o clave, en caso que se haya extraviado o por cualquier otro motivo.</p>
+
+<p>Estas son algunas imágenes que se mostrarán, si tienes el idioma seleccionado como Español, o castellano,  en tu navegador.</p>
+
+<p><img src="https://imfrom.github.io/images/111.jpg" alt="Example image"></p>
+
+<p>Que como se explica en <a href="https://support.google.com/mail/answer/41078?hl=es">https://support.google.com/mail/answer/41078?hl=es</a> puedes reiniciar tu sesión para restablecer otra.</p>
+
+<p><img src="https://imfrom.github.io/images/7.png" alt="inicia sesión"></p>
+
+<p>Una vez que le des clic te dirigirá hacia un enlace que te preguntará con tres (3) opciones:</p>
+
+<p><img src="https://imfrom.github.io/images/555.jpg" alt="inicio de sesión"></p>
+
+<p>Acto seguido a ello, seleccionas una de ellas.</p>
+
+<p>Por ejemplo, si seleccionas la primera de estas, porque simplemente se te ha olvidado, te da la opción de ingresar el correo electrónico que normalmente utilizas para el inicio de la sesión.</p>
+
+<p><img src="https://imfrom.github.io/images/8.png" alt="correo de inicio para gmail"></p>
+
+<p>El próximo enlace te preguntará por la última clave que recuerdas.</p>
+
+<p>Le das clic a <strong>No lo sé</strong></p>
+
+<p><img src="https://imfrom.github.io/images/444.jpg" alt="escribe lo que te recuerdas"></p>
+
+<p>Después que ingreses tu correo electrónico, o cualquier otro método de verificación secundario: así sea mediante otro correo electrónico, o mediante SMS de mensaje de texto, que empleaste durante el registro de la cuenta, Google te enviará un enlace, un link, que te permitirá restablecer otra contraseña.</p>
+
+<p>Recuerda en clic <strong>Continuar</strong> para que el proceso comience, o de lo contrario la recuperación de la contraseña no será posible, según las actuales configuraciones que Google emplea para este proceso,  que requiere que se sigan los pasos como se muestra antes que Google te reenvíe otro email que te permita ingresar otra contraseña.</p>
+
+<p><img src="https://imfrom.github.io/images/99.png" alt="clic continuar"></p>
+
+<p>Si no tienes acceso al método de recuperación que especificaste, aún así, Google te permite verificar tu identidad mediante otras preguntas con respuestas que se utilizaron durante el registro de la cuenta.</p>
+
+    </div>
+  
+</div>
+
+<div class="pagination">
+  
+  <span class="pagination-item older">Older</span>
+  
+
+  
+  <a class="pagination-item newer" href="https://imfrom.github.io/page/3/">Newer</a>
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

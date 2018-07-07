@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Manjaro Xfce Bluetooth Problem &middot; Lanyon
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/">Home</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="https://imfrom.github.io/about">About</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+ 
+    <span class="sidebar-nav-item">Currently on master</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://imfrom.github.io/" title="Home">Lanyon</a>
+            <small>A Jekyll theme</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Manjaro Xfce Bluetooth Problem</h1>
+  <span class="post-date">Sep 29 2017</span>
+  <p>Bluetooth recognition - at least on Manjaro Xfce - has been erratic and inconsistent.</p>
+
+<p>For no clear reason the LTS kernel and even a newer kernel have identified the hardware, while it has failed to do so in a great many occasions.</p>
+
+<p>Many of the tweaks included reinstalling <code>bluez</code>, <code>bluez-firmware</code>, <code>bluez-libs</code>, <code>bluez-tools</code>, and <code>bluez-utils</code>.</p>
+
+<p>Back to the drawing room and back again.</p>
+
+<p>The bluetooth adapters were not being recognized however. And after logging out and back into the session, and even after <code>sudo /sbin/shutdown -r now</code>, nothing seemed to work.</p>
+
+<p>The following day - to my surprise - I booted the system and it picked the bluetooth adapters without a problem.</p>
+
+<p>It reminded me of a comment on the manjaro forum thread entitled <a href="https://forum.manjaro.org/t/bluetooth-adapters-app-not-opening-bluetooth-manager-bluez-failed/4367/19" target="_blank">Bluetooth adapters app not opening Bluetooth Manager</a> in which one of the participants said:</p>
+
+<blockquote>
+<p>Bluetooth support in Linux is always troublesome, even in Windows, smartphone, etc. So yeah, I think staying away from bluetooth related hardwares if you want a trouble free experience. Wireless hardwares nowadays are going towards a dedicated receiver way to handle wireless connection and that’s a better approach. Just my two cents <a href="https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/#blueref"><sup id="blueref">1</sup></a></p>
+</blockquote>
+
+<p>I have to agree with him on that regard.</p>
+
+<p>On the other hand, the desktop environment <strong>KDE</strong> hasn’t - I ran it for a short while and perhaps my feedback is worthless of consideration on that regard - given me the same problems than the current configuration under <strong>xfce</strong>.</p>
+
+<p>But I never thought that the problems would persist even after the installation of a newer kernel. That is perhaps the main reason which has been drifting me away from <strong>xfce</strong> until further notice.</p>
+
+<p>And while <strong>KDE</strong>-fanboys have come up with the slogan that <em>it grows on you</em>, <strong>xfce</strong> is perhaps a more GNU/Linux-centric configurable environment than the former. I still enjoy tweaking with its features even though its less polished than Plasma <strong>KDE</strong>. There is no question about this. <strong>KDE</strong> aims at the latest hardware, while <strong>xfce</strong> focuses on the rest. I’ve never tried to benchmark its memory and CPU consumption, but I’m almost certain it fairs much better than <strong>KDE</strong>.</p>
+
+<p>Whether <strong>xfce</strong> will be a daily desktop environment driver running the main programs on which my workflow depends upon, it’s a question of time and how well it will handle them without a major setback.</p>
+
+<p><strong>References</strong></p>
+
+<p><a href="https://forum.manjaro.org/t/bluetooth-adapters-app-not-opening-bluetooth-manager-bluez-failed/4367/19" target="_blank">bluetooth adapters not opening bluetooth-manager-bluez-failed</a><a href="#blueref">_↩︎</a></p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

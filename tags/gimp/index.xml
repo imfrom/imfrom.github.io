@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gimp on Blog del tecnólogo</title>
+    <link>https://imfrom.github.io/tags/gimp/</link>
+    <description>Recent content in Gimp on Blog del tecnólogo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 10 Aug 2016 14:16:59 -0500</lastBuildDate>
+    
+	<atom:link href="https://imfrom.github.io/tags/gimp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flechas en Gimp</title>
+      <link>https://imfrom.github.io/post/flechas-en-gimp/</link>
+      <pubDate>Wed, 10 Aug 2016 14:16:59 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/flechas-en-gimp/</guid>
+      <description>Una de las maneras más fáciles en crear flechas en Gimp, sería con la adición de un plugin al directorio scripts de Gimp.
+En el sitio de https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp se puede encontrar más información en cuanto a esto. Solamente mostraré los pasos visuales para lograrlo.
+ $cd /directorio-de-gimp/scripts/  Seguido de
+ $wget http://registry.gimp.org/files/arrow.scm  Y recomienza el programa Gimp.
+Digamos por ejemplo, que seleccionas un nuevo documento. En la caja de herramientas de Gimp (recuerda que si no está visible, siempre puedes activarla a través de la combinación en el teclado de Ctrl y b), podrás ver la nueva inclusión de la ventana de herramienta.</description>
+    </item>
+    
+    <item>
+      <title>Círculos en Gimp</title>
+      <link>https://imfrom.github.io/post/circulos-en-gimp/</link>
+      <pubDate>Wed, 03 Aug 2016 14:13:46 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/circulos-en-gimp/</guid>
+      <description>Esto es solamente un recordatorio para realizar varias modificaciones a cualquier imagen en GNU Gimp.
+No soy un usuario de este programa, pero reconozco que como manipulador de gráficos e imágenes, es incomparable.
+Hace un tiempo, recuerdo haber leído algo acerca de esto a través del blog de Alvin Alexander que toca sobre la creación de círculos, elipses y demás.
+Algunos de los pasos los omitiré, porque algunos son innecesarios.</description>
+    </item>
+    
+  </channel>
+</rss>
