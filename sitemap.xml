@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/</loc>
+    <lastmod>2018-07-18T00:12:54-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imfrom.github.io/post/installing-pacman-breaks-dependency/</loc>
     <lastmod>2018-05-29T06:34:49-04:00</lastmod>
   </url>
@@ -221,7 +226,7 @@
   
   <url>
     <loc>https://imfrom.github.io/</loc>
-    <lastmod>2018-05-29T06:34:49-04:00</lastmod>
+    <lastmod>2018-07-18T00:12:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -269,7 +274,7 @@
   
   <url>
     <loc>https://imfrom.github.io/post/</loc>
-    <lastmod>2018-05-29T06:34:49-04:00</lastmod>
+    <lastmod>2018-07-18T00:12:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   

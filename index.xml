@@ -6,8 +6,51 @@
     <language>en-us</language>
     <author>Mark Otto</author>
     <rights>(C) 2018</rights>
-    <updated>2018-05-29 06:34:49 -0400 -0400</updated>
+    <updated>2018-07-18 00:12:54 -0500 CDT</updated>
 
+    
+      
+        <item>
+          <title>Could Not Satisfy Dependencies Hunspell Antergos Common Meta</title>
+          <link>https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/</link>
+          <pubDate>Wed, 18 Jul 2018 00:12:54 CDT</pubDate>
+          <author>Mark Otto</author>
+          <guid>https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/</guid>
+          <description>&lt;p&gt;It seems as if &lt;strong&gt;antergos-common-meta&lt;/strong&gt; has been removed
+from some of the repositories.&lt;/p&gt;
+
+&lt;p&gt;In the latest updates by using pamac or even pacman returned
+the &lt;em&gt;could not satisfy dependency&lt;/em&gt; error that was required
+in this case for the hunspell Spanish dictionary &lt;strong&gt;hunspell-es&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/Screenshot_2018-07-17_23-51-16.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus by removing &lt;strong&gt;antergos-common-meta&lt;/strong&gt; or whatever was left
+of it, resolved the problem, it seems that the Antergos
+community haven&amp;rsquo;t been able to resolve some of these issues
+that keep coming up every now and then with the
+distribution.&lt;/p&gt;
+
+&lt;p&gt;A Google search about this problem returned, among the
+results some posts like &lt;a
+href=&#34;https://forum.antergos.com/topic/10303/cant-solve-dependencies-hunspell&#34;
+target=&#34;_blank&#34;&gt;can&amp;rsquo;t solve dependencies hunspell&lt;/a&gt; which
+summarised the same error message.&lt;/p&gt;
+
+&lt;p&gt;Unlike other occasions, I didn&amp;rsquo;t read about this particular issue this time, The reason for not following up on it is due to the fact that a few days ago a dependency problem had appeared about a &lt;code&gt;..libso.2&lt;/code&gt; (I can&amp;rsquo;t remember the name of the file, this time around), but it was a file that needed to be removed before successfully continuing with the updates.&lt;/p&gt;
+
+&lt;p&gt;Hopefully the Antergos developers will be able to correct some
+of these inconsistencies in an otherwise great distribution
+that is based on Arch, before a greater share of users who are
+fond of Arch, not only migrate to it, but fully adopt it as
+the main OS in their systems.&lt;/p&gt;
+
+&lt;p&gt;Until then some of these errors and dependency satisfaction
+from the packages would have to be resolved manually by the
+end-users on their own.&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
