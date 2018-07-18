@@ -487,6 +487,9 @@ further ado.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/dont-use-share-kakrc.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
+&lt;p&gt;See &lt;a href=&#34;https://github.com/mawww/kakoune/issues/1102&#34;
+target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Thus, it is necessary to set the environment first on any Unix system. The command &lt;code&gt;setenv&lt;/code&gt; is used for the &lt;strong&gt;csh&lt;/strong&gt; shell, whereas in &lt;strong&gt;bash&lt;/strong&gt;, this is accomplished through the &lt;code&gt;export&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;p&gt;To find out whether for example, &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt; was set, is necessary to invoke on the terminal:&lt;/p&gt;
