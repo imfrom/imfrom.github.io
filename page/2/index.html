@@ -173,6 +173,8 @@
     
       
     
+      
+    
 
 
   </nav>
@@ -201,6 +203,27 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/">Screen Locker Broken Manjaro Kde</a></h1>
+        <span class="post-date">Dec 9 2017</span>
+        <p>While updating a fresh installation of Manjaro KDE, the screen locked.
+Apparently the default settings for the system, enabled this behavior without
+further ado.</p>
+
+<p>As a result of this problem, the surprising part came afterward when the updates that were being downloaded, suddenly crashed the system. This led to the nonetheless bothersome problem of <code>modules.devname not found</code> error followed by the no more troublesome error <code>you are now being dropped into an emergency shell</code> and <code>sh can't access tty; job control turned off</code>.</p>
+
+<p>I didn’t have at the time a live media to access the system. Although I knew the that the sudden crashing during the download of updates , was one of the problems underlying the <code>modules.devname not found</code> error.</p>
+
+<p>A quick google searched returned  <a href="https://unix.stackexchange.com/questions/355689/manjaro-fails-to-boot-modules-devname-not-found-then-unknown-disk-uuid-error" target="_blank">Manjaro fails to boot, modules.devname not found</a> a result which provided an answer that pointed to access the system with Manjaro’s own <code>mhwd-chroot</code> command to access the emergency shell. See <a href="https://wiki.manjaro.org/index.php/Restore_the_GRUB_Bootloader#Chroot_into_your_existing_Manjaro_Installation" target="_blank">Chroot into your existing Manjaro Installation</a></p>
+
+<p><img src="https://imfrom.github.io/images/mhwd-chroot-steps.png" alt=""></p>
+
+<p>And as the already mentioned answer on the unix.stackexchange.com site suggested, it was necessary to reload the image again.</p>
+
+<p><img src="https://imfrom.github.io/images/chroot-answer-mkinitcpio.png" alt=""></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/configuring-kakoune-kakrc/">Configuring Kakoune Kakrc</a></h1>
@@ -599,31 +622,6 @@ target="_blank">clang completion #1102</a></p>
 <p>It wasn’t until a post which was replying to a thread opened on the Arch\Linux forums entitled <a href="https://bbs.archlinux.org/viewtopic.php?pid=957150#p957150" target="_blank">rxvt-unicode font color too dark</a> which pretty much condensed what I was after, and made me feel more stupid afterward.</p>
 
 <p><img src="https://imfrom.github.io/images/2017-08-18-karol-answer.png" alt=""></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/setup-remote-and-master-branches-before-updating-hugo/">Setup Remote and Master Branches Before Updating Hugo</a></h1>
-        <span class="post-date">Aug 18 2017</span>
-        <p>A while ago, I had to set remote and master branches on a different machine.</p>
-
-<p>The methods included setting it up through the <code>git pull</code> command. By going tis route, both the master and remote branches were consequently set and configured without a major inconvenience.</p>
-
-<p>Recently, although I tried to replicate the same method above, I faced problems that included among many other errors, the infamous <code>error: src refspec master does not match any. error: failed to push some refs to 'origin</code></p>
-
-<p>I wasn’t going to go through the poor method of setting up a new site and copy-paste among other files, the <code>posts</code> folder, the <code>theme</code>, the <code>config</code> files, and any other modification I had previously committed.</p>
-
-<p>The site was being generated without a mishap, so I knew it had to do with the no less complicated <code>git</code>, since some of the errors, like the above, were clearly describing that <code>origin</code> did not match the one from the remote.</p>
-
-<p>the necessary steps are as follow:</p>
-
-<p>1-Remove with <code>git</code> all leftovers from the <code>public</code> folder with <code>git rm -rf public</code></p>
-
-<p>2-Remove the <code>public</code> folder itself with <code>rm -rf.</code></p>
-
-<p>3-Add the static site as a submodule to the master with <code>git submodule add -b master &lt;git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public&gt;.</code></p>
-
-<p>And that should be more than enough to have it working in no time. Push your changes and update it accordingly.</p>
 
     </div>
   

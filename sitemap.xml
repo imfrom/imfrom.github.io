@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://imfrom.github.io/post/pamac-runs-post-install-hooks-but-fails-to-install-new-updates/</loc>
+    <lastmod>2018-07-18T21:31:56-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/</loc>
     <lastmod>2018-07-18T00:12:54-05:00</lastmod>
   </url>
@@ -226,7 +231,7 @@
   
   <url>
     <loc>https://imfrom.github.io/</loc>
-    <lastmod>2018-07-18T00:12:54-05:00</lastmod>
+    <lastmod>2018-07-18T21:31:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -274,7 +279,7 @@
   
   <url>
     <loc>https://imfrom.github.io/post/</loc>
-    <lastmod>2018-07-18T00:12:54-05:00</lastmod>
+    <lastmod>2018-07-18T21:31:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
