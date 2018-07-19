@@ -19,8 +19,8 @@
       
       <guid>https://imfrom.github.io/post/pamac-runs-post-install-hooks-but-fails-to-install-new-updates/</guid>
       <description>The GUI version of pacman which runs under Antergos installed the scheduled updates as expected.
-But as soon as new updates were found
-after running the post installation hooks, it found a new update for one of the programs. But this time however, it failed to even initialized the transaction.
+But as soon as new updates were found it just failed to install them.
+In this case, after running the post installation hooks, it found a new update for one of the programs. But this time however, it failed to even initialized the transaction.
 Although it could have been relatively simple to circumvent the problem by seeing through pacman itself what the error was, but just closing the pamac application, seemed all that was needed to have the problem fixed.</description>
     </item>
     

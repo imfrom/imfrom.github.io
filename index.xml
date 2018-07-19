@@ -19,11 +19,12 @@
           <description>&lt;p&gt;The GUI version of &lt;strong&gt;pacman&lt;/strong&gt; which runs under Antergos
 installed the scheduled updates as expected.&lt;/p&gt;
 
-&lt;p&gt;But as soon as new updates were found&lt;/p&gt;
+&lt;p&gt;But as soon as new updates were found it just failed to
+install them.&lt;/p&gt;
 
-&lt;p&gt;after running the post installation hooks, it found a new
-update for one of the programs. But this time however, it
-failed to even initialized the transaction.&lt;/p&gt;
+&lt;p&gt;In this case, after running the post installation hooks, it
+found a new update for one of the programs. But this time
+however, it failed to even initialized the transaction.&lt;/p&gt;
 
 &lt;p&gt;Although it could have been relatively simple to circumvent
 the problem by seeing through &lt;strong&gt;pacman&lt;/strong&gt; itself what the error

@@ -210,11 +210,12 @@
         <p>The GUI version of <strong>pacman</strong> which runs under Antergos
 installed the scheduled updates as expected.</p>
 
-<p>But as soon as new updates were found</p>
+<p>But as soon as new updates were found it just failed to
+install them.</p>
 
-<p>after running the post installation hooks, it found a new
-update for one of the programs. But this time however, it
-failed to even initialized the transaction.</p>
+<p>In this case, after running the post installation hooks, it
+found a new update for one of the programs. But this time
+however, it failed to even initialized the transaction.</p>
 
 <p>Although it could have been relatively simple to circumvent
 the problem by seeing through <strong>pacman</strong> itself what the error
