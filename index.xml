@@ -6,8 +6,51 @@
     <language>en-us</language>
     <author>Mark Otto</author>
     <rights>(C) 2018</rights>
-    <updated>2018-07-18 21:31:56 -0500 CDT</updated>
+    <updated>2018-07-24 23:48:49 -0500 CDT</updated>
 
+    
+      
+        <item>
+          <title>Gscan2pdf Sane Start Invalid Argument</title>
+          <link>https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/</link>
+          <pubDate>Tue, 24 Jul 2018 23:48:49 CDT</pubDate>
+          <author>Mark Otto</author>
+          <guid>https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/</guid>
+          <description>&lt;p&gt;Antergos wins here. Manjaro could have done better but it
+didn&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;Anyone who would want to avoid having to go through the
+hassle of reinstalling and testing sane drivers under Arch
+Linux should look no further. The comparison wasn&amp;rsquo;t done
+between all the Arch Linux based distributions, but Antergos
+is the clear winner here.&lt;/p&gt;
+
+&lt;p&gt;No Desktop Environment under Manjaro worked to have this
+driver functioning as it should have been functioning. And
+this is after trying Manjaro KDE, Manjaro XFCE, the most
+popular of the bunch. Didn&amp;rsquo;t try it with GNOME and I wasn&amp;rsquo;t
+going to waste my time with it.&lt;/p&gt;
+
+&lt;p&gt;Perhaps later versions would fared better, but this time
+around it didn&amp;rsquo;t deliver what it was expected from this
+distribution. The main issue had to with the &lt;code&gt;invalid
+argument&lt;/code&gt; error message from programs such as &lt;strong&gt;gscan2pdf&lt;/strong&gt;
+and also from &lt;strong&gt;xsane&lt;/strong&gt; and in identifying and picking up
+the right device other than the infamous &lt;code&gt;Noname integrated
+camera&lt;/code&gt; that it would only identify from the list.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/Screenshot_2018-07-24_23-45-03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After reinstalling both Manjaro KDE and the XFCF version the
+problem continued in identifying the correct device.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/Screenshot_2018-07-25_00-17-57.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With Antergos it worked without a major issue and for that
+reason alone I recommend this distribution over Manjaro.&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>

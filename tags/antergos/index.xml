@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 27 Jan 2018 08:49:17 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jul 2018 23:48:49 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/tags/antergos/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gscan2pdf Sane Start Invalid Argument</title>
+      <link>https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/</link>
+      <pubDate>Tue, 24 Jul 2018 23:48:49 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/</guid>
+      <description>Antergos wins here. Manjaro could have done better but it didn&amp;rsquo;t.
+Anyone who would want to avoid having to go through the hassle of reinstalling and testing sane drivers under Arch Linux should look no further. The comparison wasn&amp;rsquo;t done between all the Arch Linux based distributions, but Antergos is the clear winner here.
+No Desktop Environment under Manjaro worked to have this driver functioning as it should have been functioning.</description>
+    </item>
     
     <item>
       <title>Antergos Keyboard Selection During Installation</title>
