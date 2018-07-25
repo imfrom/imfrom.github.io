@@ -264,7 +264,7 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
 
 &lt;p&gt;Quite possibly there could be many improvements with this software, and there is no doubt about it, but considering wear-and-tear conditions of the disk, among other considerations, and, as long as udisks2 is run without an interruption, no other mounting options utility that is currently available may be able to improve its overall performance.&lt;/p&gt;
 
-&lt;p&gt;If time is not a constraint, and the program is allowed to run on its own, udisks2 fairs relatively better on previously loaded Windows OS partitions than any other. Of this I can attest without a doubt. The utility has been able to eventually access corrupted filesystems that would have been rendered unrecoverable otherwise&lt;/p&gt;
+&lt;p&gt;If time is not a constraint, and the program is allowed to run on its own, udisks2 fares relatively better on previously loaded Windows OS partitions than any other. Of this I can attest without a doubt. The utility has been able to eventually access corrupted filesystems that would have been rendered unrecoverable otherwise&lt;/p&gt;
 
 &lt;h2 id=&#34;for-futher-info-and-configuration-visit-the-wiki&#34;&gt;For futher info and configuration, visit the wiki:&lt;/h2&gt;
 
