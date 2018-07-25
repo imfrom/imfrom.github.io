@@ -1773,7 +1773,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
           <pubDate>Mon, 21 Nov 2016 14:40:45 -0500</pubDate>
           <author>Mark Otto</author>
           <guid>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</guid>
-          <description>&lt;p&gt;Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs &lt;a href=&#34;https://imfrom.github.io/post/modificar-mapa-del-teclado/#emacs&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; y Vim &lt;a href=&#34;https://imfrom.github.io/post/modificar-mapa-del-teclado/#vim&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;, para cambiar el mapa del teclado.&lt;/p&gt;
+          <description>&lt;p&gt;Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs &lt;a href=&#34;#emacs&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; y Vim &lt;a href=&#34;#vim&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;, para cambiar el mapa del teclado.&lt;/p&gt;
 
 &lt;h2 id=&#34;emacs&#34;&gt;Emacs&lt;/h2&gt;
 
