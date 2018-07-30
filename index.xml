@@ -6,8 +6,185 @@
     <language>en-us</language>
     <author>Mark Otto</author>
     <rights>(C) 2018</rights>
-    <updated>2018-07-24 23:48:49 -0500 CDT</updated>
+    <updated>2018-07-30 00:54:59 -0500 CDT</updated>
 
+    
+      
+        <item>
+          <title>Linux Market Share</title>
+          <link>https://imfrom.github.io/post/linux-market-share/</link>
+          <pubDate>Mon, 30 Jul 2018 00:54:59 CDT</pubDate>
+          <author>Mark Otto</author>
+          <guid>https://imfrom.github.io/post/linux-market-share/</guid>
+          <description>
+
+&lt;p&gt;A while ago someone whom I came across on a technical forum
+was vouching so much for one of the most used/popular Linux
+Distributions that he/she almost gave the impression of
+fully endorsing the distro in question, without further
+proof.&lt;/p&gt;
+
+&lt;p&gt;I said that he/she stated it without further proof because
+all distributions consist of several software which make up
+the whole system. So it would be gullible to think that one
+particular distro employs free software while clearly
+stating that the rest of the license by which the distro
+developers implement it, is - as a result - within the
+framework of say for example, what the Free Software
+Foundation accepts.&lt;/p&gt;
+
+&lt;p&gt;This is not the case. Most Linux distros, and much more
+those that are amongst the most popular, are not very clear
+in their terms with the programs that the distro&amp;rsquo; s
+developers include and employ within it for further mass
+use. No distribution out there but only a handful of them do
+this.&lt;/p&gt;
+
+&lt;p&gt;The problem that the above presents to the adoption of the free
+software license is that many of these distributions do
+not uphold licenses as they should or have included other
+elements such as firmware nonfree blobs, or have provided
+ambiguously writing in the documentation, and have offered
+other methods that have provided download venues which in
+turn officially endorse nonfree programs. More information
+about this can be seen on the article entitled
+&lt;em&gt;Explaining Why We Don&amp;rsquo;t Endorse Other Systems&lt;/em&gt;
+&lt;a href=&#34;#nonfree&#34;&gt;&lt;sup id=&#34;nonfreeref&#34;&gt;1&lt;/sup&gt;&lt;/a&gt; posted on
+the Free Software Foundation website.&lt;/p&gt;
+
+&lt;p&gt;So the poor statements that this user was trying to make
+about one of the most popular Linux distributions could no
+longer hold valid together under the license for which the
+Free Software Foundation stands upon.&lt;/p&gt;
+
+&lt;p&gt;For further info about this, one could visit the Free
+Software Foundation to get a glimpse at what this is about.&lt;/p&gt;
+
+&lt;p&gt;But to make matters even worse, the user who was trying to
+make his silly point, brought up one if not the most
+inaccurate and misleading source of Linux Market Share
+measure counter out there, a website named &lt;strong&gt;Distrowatch&lt;/strong&gt;
+that lists the most popular GNU/Linux distributions.&lt;/p&gt;
+
+&lt;p&gt;Which takes me to the second rant about why the above cannot
+be taken as an statistical absolute. For &lt;strong&gt;Distrowatch&lt;/strong&gt; is
+just a community-driven, heavily edited,
+-bureaucratically-biased-reviewed epicenter which sits on
+the web  with layers of html markup with a domain
+registration.  Let me emphasize once again about its biased
+one sided view about the Linux Market Share. It is important
+to do so because it is almost and will always be imprecise
+to measure the use of GNU/Linux distributions across the
+spectrum and compare these - whether community or commercial
+- to many of the most heard- of Operating systems without
+  reliable methods and just by a simple likes/preferences
+  which is nothing in the end, more than a preconceived
+  notion of what distro should and should not be on the top.&lt;/p&gt;
+
+&lt;p&gt;Because of this, Distrowatch statement is vague to say the least.&lt;/p&gt;
+
+&lt;p&gt;According to &lt;em&gt;Stack Frames: A Look From Inside&lt;/em&gt;, its author
+said that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Each website has its own list of the most popular
+distributions, updated on the basis of different criteria,
+    hence with different results. To give one example,
+    Linux Mint was the most popular distribution in
+    2013 and in the first half of 2014 according to
+    Distrowatch, but is ranked twelfth on the
+    LinuxCounter and LWN.  &lt;a href=&#34;#stack&#34;&gt;&lt;sup id=&#34;stackref&#34;&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And this is important because the disparity on numbers when
+all the distributions are compared across LinuxCounter
+&lt;a href=&#34;#linuxcounter&#34;&gt;&lt;sup id=&#34;linuxcounterref&#34;&gt;3&lt;/sup&gt;&lt;/a&gt;
+and LWN &lt;a href=&#34;#lwn&#34;&gt;&lt;sup id=&#34;lwnref&#34;&gt;4&lt;/sup&gt;&lt;/a&gt;,
+greatly differ from Distrowatch. The differences would
+be much more profound if other websites would try to gather
+these numbers as long as the list is not edited or
+maintained by users who manipulate this data.&lt;/p&gt;
+
+&lt;p&gt;In the case of the site LWN as was explained by the author
+of &lt;em&gt;Stock Frames: A Look From Inside&lt;/em&gt;, some inconsistencies
+may be noted with the top market share of the distros in
+use. The chronologically order of the book as the author
+pointed out, is certainly troublesome.  Its list is
+enumerated alphabetically and it does not necessarily offers
+numbers that could be used as a better counter/predictor in
+this case. It does show, however, the mainstream
+distributions or the ones that have been around the longest
+- commercial and community - in the computing world.&lt;/p&gt;
+
+&lt;p&gt;Reading about this pervasive problem with the market share
+of GNU/Linux programs and the distributions that include
+these programs in addition with the share of these
+distributions and the biases that are taking place in such
+community sites such as Distrowatch, a blog on the Medium
+blogging service platform said that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I notice when they have an axe to grind against a
+particular distribution bad reviews are allowed to flourish
+but if I or others submit positive reviews they tend to get
+ignored and there are more than a handful of distributions
+where I have noticed that trend&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But what it&amp;rsquo;s unfortunate is that such misleading bits of
+information occur nowadays, especially within the culture of
+the GNU/Linux Operating system which includes its kernel
+without which the vast GNU software accomplishes nothing.
+But most importantly listing the so called &amp;lsquo;popular&amp;rsquo; when
+most of the &amp;lsquo;popular&amp;rsquo; distributions do not even adhere to
+the Free Software Foundation standards of Free Software.&lt;/p&gt;
+
+&lt;p&gt;The author in that blog stated that Distrowatch is biased
+towards free-as-in-beer distributions, but I would disagree
+because I do think the bias is there regardless whether is
+more commercially oriented by which the
+distribution in question implements free software or not. It
+makes no difference. The users responsible to update the
+counter list for the distros or in this case the distro that
+should appear on the top is undoubtedly misinforming real
+market share data without further repercussions. And by the
+looks of it, what matters is the ad-driven commercially
+source of income that derives from this data manipulation.&lt;/p&gt;
+
+&lt;p&gt;I have no idea whether this GNU/Linux users that commented
+about how that Linux distro fared in comparison with the
+rest, were aware of these facts, but Distrowatch in general
+has been around for a while and I wonder whether they have
+affected the objective of the Free Software Foundation
+Guidelines overall.&lt;/p&gt;
+
+&lt;p&gt;No doubt that the reviews need further revision but they&amp;rsquo;re
+doing so while promoting their own, without regard for the
+particular distro and whether this is community-driven or not.&lt;/p&gt;
+
+&lt;p&gt;The Linux Distribution Timeline offers in turn the progress
+of the Linux Distributions and although is a great project
+on its own right, it does not undertake where all the sites
+have fallen short to accomplish this difficult task of having a
+better Market Share Model that tackles the Linux world.&lt;/p&gt;
+
+&lt;p&gt;The website for this project is located at &lt;a
+href=&#34;http://futurist.se/gldt/&#34; target=&#34;_blank&#34;&gt;futurist.se&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;sources&#34;&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;1&lt;/strong&gt;- &lt;a name=&#34;nonfree&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://www.gnu.org/distros/common-distros.en.html&#34; target=&#34;_blank&#34;&gt;Explaining Why We Don&amp;rsquo;t Endorse Other Systems&lt;/a&gt;&lt;a href=&#34;#nonfreeref&#34;&gt;&amp;crarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2&lt;/strong&gt;-&lt;a name=&#34;stack&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://books.google.com/books?id=YZIoDQAAQBAJ&#34;
+target=&#34;_blank&#34;&gt;Stack Frames: A Look From Inside&lt;/a&gt;&lt;a href=&#34;#stackref&#34;&gt;&amp;crarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3&lt;/strong&gt;-&lt;a name=&#34;linuxcounter&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://www.linuxcounter.net/statistics/distributions&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;https://www.linuxcounter.net/statistics/distributions&#34;&gt;https://www.linuxcounter.net/statistics/distributions&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#linuxcounterref&#34;&gt;&amp;crarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4&lt;/strong&gt;-&lt;a name=&#34;lwn&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://lwn.net/Distributions&#34;
+target=&#34;_blan&#34;&gt;&lt;a href=&#34;https://lwn.net/Distributions&#34;&gt;https://lwn.net/Distributions&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#lwnref&#34;&gt;&amp;crarr;&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
