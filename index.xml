@@ -11,7 +11,7 @@
     
       
         <item>
-          <title>Linux Market Share</title>
+          <title>Linux Market Share pitfalls: data manipulation and non-existent ranking markers</title>
           <link>https://imfrom.github.io/post/linux-market-share/</link>
           <pubDate>Mon, 30 Jul 2018 00:54:59 CDT</pubDate>
           <author>Mark Otto</author>
@@ -63,8 +63,9 @@ Software Foundation to get a glimpse at what this is about.&lt;/p&gt;
 &lt;p&gt;But to make matters even worse, the user who was trying to
 make his silly point, brought up one if not the most
 inaccurate and misleading source of Linux Market Share
-measure counter out there, a website named &lt;strong&gt;Distrowatch&lt;/strong&gt;
-that lists the most popular GNU/Linux distributions.&lt;/p&gt;
+measure rankings&amp;rsquo; markers out there, a website named
+&lt;strong&gt;Distrowatch&lt;/strong&gt; that lists the most popular GNU/Linux
+distributions.&lt;/p&gt;
 
 &lt;p&gt;Which takes me to the second rant about why the above cannot
 be taken as an statistical absolute. For &lt;strong&gt;Distrowatch&lt;/strong&gt; is
