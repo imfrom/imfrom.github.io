@@ -15,17 +15,17 @@
   </title>
 
   
-  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
-  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
-  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
 
   
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 </head>
 
 
@@ -47,8 +47,8 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item " href="https://imfrom.github.io/">Home</a>
-    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a>
 
     
     
@@ -193,7 +193,7 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="https://imfrom.github.io/" title="Home">Blog atrasado</a>
+            <a href="/" title="Home">Blog atrasado</a>
             <small>con gajes del oficio</small>
           </h3>
         </div>
@@ -204,7 +204,7 @@
 
 <div class="post">
   <h1 class="post-title">Configuring Kakoune Kakrc</h1>
-  <span class="post-date">Dec 6 2017</span>
+  <span class="post-date">Dec 6, 2017</span>
   <p>Configuring the <a href="https://github.com/mawww/kakoune" target="_blank">kakoune text editor</a> initialization file has been nothing short of a chore, as it requires the path environment to be correctly set, before any changes on the <code>kakrc</code> take ahold of the settings.</p>
 
 <p>As the tutorial suggests, see <a href="https://github.com/mawww/kakoune#configuration-autoloading" target="_blank">Configuration and autoloading</a>, if it is launched with the <code>-n</code> switch, kakoune will source the <code>../share/kak/kakrc</code>, but on a unrelated issue but nonetheless relevant about the correct location for the initialization file, the developer clearly stated that:</p>
@@ -213,7 +213,7 @@
 <p>The kakrc file in share is Kakounes init script, it is not intended to be user edited. It is actually that script that will load your user configuration in ~/.config/kak/kakrc.</p>
 </blockquote>
 
-<p><img src="https://imfrom.github.io/images/dont-use-share-kakrc.png" alt=""></p>
+<p><img src="/images/dont-use-share-kakrc.png" alt=""></p>
 
 <p>See <a href="https://github.com/mawww/kakoune/issues/1102"
 target="_blank">clang completion #1102</a></p>
@@ -253,7 +253,7 @@ target="_blank">clang completion #1102</a></p>
 
 <p>See <a href="https://github.com/mawww/kakoune/issues/419" target="_blank">Noob questions</a></p>
 
-<p><img src="https://imfrom.github.io/images/autowrap-kakrc.png" alt=""></p>
+<p><img src="/images/autowrap-kakrc.png" alt=""></p>
 
 <p>Further customizations to map certain keys are also necessary.</p>
 

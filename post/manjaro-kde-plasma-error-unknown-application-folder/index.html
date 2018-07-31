@@ -15,17 +15,17 @@
   </title>
 
   
-  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
-  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
-  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
 
   
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 </head>
 
 
@@ -47,8 +47,8 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item " href="https://imfrom.github.io/">Home</a>
-    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a>
 
     
     
@@ -193,7 +193,7 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="https://imfrom.github.io/" title="Home">Blog atrasado</a>
+            <a href="/" title="Home">Blog atrasado</a>
             <small>con gajes del oficio</small>
           </h3>
         </div>
@@ -204,7 +204,7 @@
 
 <div class="post">
   <h1 class="post-title">Manjaro Kde Plasma Error Unknown Application Folder</h1>
-  <span class="post-date">Dec 14 2017</span>
+  <span class="post-date">Dec 14, 2017</span>
   <p>It’s apparently a foolish idea to login as root from a file manager on Plasma KDE.</p>
 
 <p>This was exactly what caused a number of problems, and among them, most notably, that I could not get past the login screen.</p>
@@ -222,7 +222,7 @@
 <pre><code> exec startkde
 </code></pre>
 
-<p><img src="https://imfrom.github.io/images/change-xinitrc-for-kde-plasma-login.png" alt=""></p>
+<p><img src="/images/change-xinitrc-for-kde-plasma-login.png" alt=""></p>
 
 <p>but it made no difference.</p>
 
@@ -232,19 +232,19 @@
 
 <p>See for example <a href="https://bbs.archlinux.org/viewtopic.php?id=147721" target="_blank">Can’t get past the login screen</a>, where modifying the <code>.xinitrc</code> was more than enough to get it started.</p>
 
-<p><img src="https://imfrom.github.io/images/change-xinitrc-for-xfce-login.png" alt=""></p>
+<p><img src="/images/change-xinitrc-for-xfce-login.png" alt=""></p>
 
 <p>At this point it was futile to modify any further the <strong>.xinitrc</strong> initialization file when moments before I had restarted the system, an error related to Plasma KDE had popped up on the screen:</p>
 
-<p><img src="https://imfrom.github.io/images/plasma-error-window.png" width="500"></p>
+<p><img src="/images/plasma-error-window.png" width="500"></p>
 
 <p>A couple more errors from the main file manager Dolphin showed for example the following:</p>
 
-<p><img src="https://imfrom.github.io/images/user-xbel-kde-plasma.png" width="500"></p>
+<p><img src="/images/user-xbel-kde-plasma.png" width="500"></p>
 
 <p>And also</p>
 
-<p><img src="https://imfrom.github.io/images/kio_applicationsrc-error.png" width="500"></p>
+<p><img src="/images/kio_applicationsrc-error.png" width="500"></p>
 
 <p>At this point, after the infamous error with the <strong>kio_applicationsrc</strong>, I very well knew that the culprit of it all occurred when trying to login as root to Plasma from the Dolphin file manager.</p>
 
@@ -252,7 +252,7 @@
 
 <p>On the same post that for example was highlighted earlier, there is useful information as why running as root as KDE is altogether discouraged:</p>
 
-<p><img src="https://imfrom.github.io/images/dont-run-as-root-on-kde.png" alt=""></p>
+<p><img src="/images/dont-run-as-root-on-kde.png" alt=""></p>
 
 </div>
 

@@ -15,17 +15,17 @@
   </title>
 
   
-  <link rel="stylesheet" href="https://imfrom.github.io/css/poole.css">
-  <link rel="stylesheet" href="https://imfrom.github.io/css/syntax.css">
-  <link rel="stylesheet" href="https://imfrom.github.io/css/lanyon.css">
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imfrom.github.io/assets/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="https://imfrom.github.io/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
 
   
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://imfrom.github.io/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 </head>
 
 
@@ -47,8 +47,8 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item " href="https://imfrom.github.io/">Home</a>
-    <a class="sidebar-nav-item " href="https://imfrom.github.io/post">Posts</a>
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a>
 
     
     
@@ -193,7 +193,7 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="https://imfrom.github.io/" title="Home">Blog atrasado</a>
+            <a href="/" title="Home">Blog atrasado</a>
             <small>con gajes del oficio</small>
           </h3>
         </div>
@@ -204,7 +204,7 @@
 
 <div class="post">
   <h1 class="post-title">Firefox Problem With Xclip</h1>
-  <span class="post-date">May 20 2017</span>
+  <span class="post-date">May 20, 2017</span>
   <p>I’ve used both vim and neovim editors. The latter is just the newest implementation with out of the box pre-configurations.</p>
 
 <p>As expected, whenever I was trying to use the copy paste command tool such as <code>xclip</code>, both vim and neovim produced the newlines on the X window system across different applications.</p>
@@ -242,13 +242,13 @@ On vim: pasting worked under the Gmail’s interface, whereas with neovim the pr
 
 <p>The bug is one of those outstanding and hence unresolved that for years has plagued the Firefox browser and its counterpart such as Firebird:</p>
 
-<p><img src="https://imfrom.github.io/images/firefox_bug_newlines.png" alt="Paste in content editable div from xclip removes newlines"></p>
+<p><img src="/images/firefox_bug_newlines.png" alt="Paste in content editable div from xclip removes newlines"></p>
 
 <p><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1049785" target="_blank">Paste in contentEditable div from xclip removes newlines</a></p>
 
 <p>The above post made a reference to <a href="https://productforums.google.com/forum/#!msg/gmail/aV8bdPFiR24/3Owwd9rSaD0J" target="_blank">Gmail ignoring newlines on Copy/Paste</a> and the unhelpful answer of a user did nothing to pinpoint at the problem:</p>
 
-<p><img src="https://imfrom.github.io/images/gmail_ignoring_newlines_copypaste.png" alt="gmail ignoring newlines"></p>
+<p><img src="/images/gmail_ignoring_newlines_copypaste.png" alt="gmail ignoring newlines"></p>
 
 <p>The ludicrous implementation of <code>\r</code> before <code>\n</code> is just nonsense.</p>
 
