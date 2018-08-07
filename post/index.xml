@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 30 Jul 2018 02:50:35 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 06 Aug 2018 02:49:21 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Directory Permissions Differ on Var Cache Pkgfile</title>
+      <link>https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/</link>
+      <pubDate>Mon, 06 Aug 2018 02:49:21 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/</guid>
+      <description>During the last updates through pacman the following message came up:
+ warning: directory permissions differ on /var/cache/pkgfile/ filesystem: 775 package: 755  But to first understand why this came up in the first place is good to know that pkgfile is a tool for searching files in the official repos. pkgfile - ArchLinux wiki
+It should be noted that the question as to why the pkgfile differs for the file system hierarchy and the package itself has come up before.</description>
+    </item>
     
     <item>
       <title>Linux Market Share Pitfalls: data manipulation and non-existent ranking markers</title>

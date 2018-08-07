@@ -6,8 +6,116 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2018</rights>
-    <updated>2018-07-30 02:50:35 -0500 CDT</updated>
+    <updated>2018-08-06 02:49:21 -0500 CDT</updated>
 
+    
+      
+        <item>
+          <title>Directory Permissions Differ on Var Cache Pkgfile</title>
+          <link>https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/</link>
+          <pubDate>Mon, 06 Aug 2018 02:49:21 CDT</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/</guid>
+          <description>&lt;p&gt;During the last updates through pacman the following message came up:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; warning: directory permissions differ on /var/cache/pkgfile/
+ filesystem: 775  package: 755
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But to first understand why this came up in the first place is good to know that &lt;code&gt;pkgfile&lt;/code&gt; is a tool for searching files in the official repos. &lt;a href=&#34;https://wiki.archlinux.org/index.php/Pkgfile&#34; target=&#34;_blank&#34;&gt;pkgfile - ArchLinux wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It should be noted that the question as to why the &lt;strong&gt;pkgfile&lt;/strong&gt; differs for the file system hierarchy and the package itself has come up before.&lt;/p&gt;
+
+&lt;p&gt;This &lt;a href=&#34;https://github.com/falconindy/pkgfile/issues/25&#34; target=&#34;_blank&#34;&gt;issue&lt;/a&gt; on Github dealt with it.&lt;/p&gt;
+
+&lt;p&gt;In the thread, one of the users reported whether it was necessary for &lt;strong&gt;pkgfile&lt;/strong&gt; to create the directory if it doesn&amp;rsquo;t exist.&lt;/p&gt;
+
+&lt;p&gt;Of course this is not the case here, but upon closer look on the pacman log it could be seen that &lt;strong&gt;pkgconf&lt;/strong&gt; had just been upgraded&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; upgraded pkgconf (1.5.2-1 -&amp;gt; 1.5.3-1)
+ warning: directory permissions differ on /var/cache/pkgfile/
+ filesystem: 775  package: 755
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which suggests that right after the updates it didn&amp;rsquo;t recreate it.&lt;/p&gt;
+
+&lt;p&gt;On the other hand &lt;strong&gt;pkgconf&lt;/strong&gt; is according to the manual pages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; pkgconf is a program which helps to configure compiler and
+ linker flags for development libraries.  This allows build
+ systems to detect other dependencies and use them with the
+ system toolchain.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;see for example what the aforementioned &lt;a href=&#34;Github https://github.com/falconindy/pkgfile/issues/25#issuecomment-227413406&#34; target=&#34;_blank&#34;&gt; issue on Github&lt;/a&gt; said about it.&lt;/p&gt;
+
+&lt;p&gt;And a quick Google search would return among many of the results, the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?pid=317732#p317732&#34;&gt;https://bbs.archlinux.org/viewtopic.php?pid=317732#p317732&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As well as&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=223190&#34; target=&#34;_blank&#34;&gt;this one&lt;/a&gt; which in turn redirected to &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=218133&#34; target=&#34;_blank&#34;&gt;this one&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;With due credit to where credit is due this post from the Manjaro community explicitly said that it was a warning and not an error itself.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;xabbu 2018-06-10 21:39:39 UTC #4
+directory permissions differ on &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;This message is a warning and not an error. This is normally not a problem. It just says that the permissions of a folder in a package differ form the permissions of that folder on your system.&lt;/p&gt;
+
+&lt;p&gt;Normally this will not result in a problem, however you should change the permissions to the package defaults to avoid future problems. This message is shown every time you update this package if the permissions don’t match.&lt;/p&gt;
+
+&lt;p&gt;In your specific case, at the moment only root and members of the group locate have access to the mlocate folder. With the change to 755 everybody can access and read the content of that folder. This don’t necessary mean everybody has also read access to the files in that folder.&lt;/p&gt;
+
+&lt;p&gt;Why the package folder contains different permissions than your system folder can have several reasons. Often it is because the upstream source have changed permissions. Sometimes a developer does this on purpose. But sometimes this happens by mistake and is changed back with the next release. Also the Maintainer can change the permissions of files and folder in the build process.
+And of course the user sometimes changes the permissions of a file or folder and forget about or does it to fix a problem.&lt;/p&gt;
+
+&lt;p&gt;Also please note (@jochen82 @farverio ), if you have a problem with something else start a new thread with your problem to get help with that.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;On another thread on the same Manjaro forums this came up:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;fhdk 2018-05-07 10:34:00 UTC #4
+rrrsssttt:
+directory permissions differ on /var/lib/samba/private/
+filesystem: 755 package: 700
+bill_t:
+It means that the permissions of this directory must be set to 755 (or drwxr-xr-x).&lt;/p&gt;
+
+&lt;p&gt;Actually it means the opposite.&lt;/p&gt;
+
+&lt;p&gt;The filesystem is 755 when the package expects it to be 700.&lt;/p&gt;
+
+&lt;p&gt;So the right thing to do is to set permissions as the package expects it to be.&lt;/p&gt;
+
+&lt;p&gt;sudo chmod 700 /var/lib/samba/private/
+rrrsssttt:
+I want to clarify that I don’t believe I have ever touched that folder (I may have installed apps that have touched it, but I consciously never have)&lt;/p&gt;
+
+&lt;p&gt;You don’t need to. It is probably a fix since the folder mentioned is named private and as such is a folder that samba uses for stuff like certificates, keys, private keys, and so on.&lt;/p&gt;
+
+&lt;p&gt;Such folder is only accessible for the system service running samba and the service will presumably refuse to run if permissions is wrong.&lt;/p&gt;
+
+&lt;p&gt;Try that with your .gnupg folder or the .ssh folder. If permissions is world readable you will get complaints from application and some even refuses to run unless only accessible by owner aka chmod 700 ~/.ssh -R as an example.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;see &lt;a href=&#34;https://forum.manjaro.org/t/i-got-a-warning-after-running-the-latest-round-of-updates-im-confused-what-to-do-next/46651&#34;&gt;I get a warning after running the latest round of updates&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As the user on the Manjaro Forum pointed out when he/she said:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Actually it means the opposite&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Changing the directory permissions of the package in question in the file system with a &lt;code&gt;chmod 755&lt;/code&gt; would be the best course of action for this package permission issue.&lt;/p&gt;
+
+&lt;p&gt;I think that the reason why it occurs in the first place, is due to the fact that the tool &lt;strong&gt;pkgfile&lt;/strong&gt; must have administrative privileges during installation/upgrade in order to continue. That is, writing, reading and executing. But once the update has finished it no longer is necessary to keep the same permissions than before. The package no longer needs to have access to the home of the user in question.&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
