@@ -181,6 +181,8 @@
     
       
     
+      
+    
 
 
   </nav>
@@ -209,6 +211,68 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/">Setup Network Printer Ip Address Port Number</a></h1>
+        <span class="post-date">Aug 10, 2018</span>
+        <p>Setting up a network printer seems not only problematic on Arch based systems, but also on Windows.</p>
+
+<p>The latter also gave me the proverbial run for the money.</p>
+
+<p>Even after I thought that the network printer had be configured correctly, errors such as <code>there was a problem processing document</code> after printing a test page, or simply the error stating that <code>the printer may not be connected</code> assured me that the network printer was not being correctly identified.</p>
+
+<p><strong>C</strong>ommon <strong>U</strong>nix <strong>P</strong>rinting <strong>S</strong>ervices or as its acronym that is better known for: CUPS, is without a doubt, the most reliable method to set up any printer, and especially those that depend upon a network to operate accordingly.</p>
+
+<p>It was not the first time setting up a network printer through CUPS, but
+contrary to the first time around when the printer was successfully configured
+on the system, in which the ip address had to be specified, and the connection
+port number of the socket was automatically picked up by CUPS, this time around
+however, specifying the ip address by itself made no difference with further
+configuration.</p>
+
+<p>The printer was still not recognized.</p>
+
+<p>I scourged Google for any relevant results that would help me troubleshoot the problem, but none of the results seemed to provide a definitive answer.</p>
+
+<p>The Arch Linux Forums was one of the first indicators that this issue was beyond a driver problem and rather a misconfiguration with the network printer.</p>
+
+<p>On the thread entitled <em>Printer setting cant find wireless printer</em>, a <a href="https://bbs.archlinux.org/viewtopic.php?pid=1605184#p1605184" target="_blank">reply provided</a> gave a couple of hints as to where to begin to troubleshot the problem.</p>
+
+<blockquote>
+<p>Your post is much too vague. What does your wireless printer advertise? You should be able to add it using its IP address in the CUPS interface like this: <a href="http://192.168.1.3">http://192.168.1.3</a>. You need to replace 192.168.1.3 by the IP of your printer and http:// could be socket:// lpd:// or something else&hellip; Maybe you also have to specify a port number like this: <a href="http://192.168.1.3:9100">http://192.168.1.3:9100</a>. If you can setup the printer in another OS (for example Windows); you might be able to find these by examining the properties of the printer.</p>
+</blockquote>
+
+<p>The problem with Windows however, is that Windows itself does not provide a simple port configuration method that would have allowed me to see the ip address and the port that was currently in use.</p>
+
+<p>This time around CUPS had already specified the ip address and the connection for the socket. But everything else for even the location had already been noted. Furthermore, I double checked it against the settings for the wireless configuration of the printer. Not solely relying on whatever configuration the display showed but also by printing out right from the printer the specifics of the configuration.</p>
+
+<p>When I ventured out to get a glimpse through a Windows system that would allow me to double check the settings, I encountered though, an unforeseen <code>An error occurred during port configuration. This operation is not supported</code> which prevented me any further from finding out about the ip address and port number configuration.</p>
+
+<p><img src="/images/windows-port-error-configuration.png" alt="" /></p>
+
+<p>This however, was not expected.</p>
+
+<p>On this question that was brought up on the stackexchange network, the user asked <a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed" target="_blank">to list all network printers (including ones not installed)</a> and although it hinted that the program <strong>lpstat</strong> with the flag <code>-a</code> was one that would undertake the task, as the user pointed out, this would not apply to those printers that have not been installed.</p>
+
+<p>On another thread entitled <a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer" target="_blank">linux - how do you get the name of a network printer</a> one of the comments said that:</p>
+
+<blockquote>
+<p>When I run the nmap command it never seems to complete.</p>
+</blockquote>
+
+<p><a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485">https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485</a></p>
+
+<p>which pretty much matches many of the issues that I have encountered with the program.</p>
+
+<p>The only workaround with this pervasive problem of a printer that depends solely on the network, is through some sort of initial setup performed namely through a Windows system that would point it out. Until then, and just like a user on the Arch Forums said:</p>
+
+<blockquote>
+<p>The problem here is that the criteria (&ldquo;Network Printer&rdquo;) is something that only makes sense to humans. Computer programs aren&rsquo;t going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &lsquo;14 at 18:16</p>
+</blockquote>
+
+<p><a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009">https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009</a></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/">Directory Permissions Differ on Var Cache Pkgfile</a></h1>
@@ -716,34 +780,6 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
 <p><a href="https://wiki.archlinux.org/index.php/NTFS-3G" target="_blank">ntfs-3g Arch Linux</a></p>
 
 <p><a href="https://github.com/coldfix/udiskie/wiki/Usage" target="_blank">udiskie on github</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/metadata-irreversible/">Metadata Irreversible</a></h1>
-        <span class="post-date">Dec 22, 2017</span>
-        <p>One of the easiest ways to remove all metadata from a file, is by invoking <a href="https://imfrom.github.io/post/metadata-irreversible/#exiftool"><sup id="refexiftool">1</sup></a></p>
-
-<pre><code> $ exiftool -all= &lt;file&gt;
-</code></pre>
-
-<p>However, this has the inconvenience of providing a security risk by reversing it as well with:</p>
-
-<pre><code> $ exiftool -pdf-update:all= &lt;file&gt; 
-</code></pre>
-
-<p>which pretty much inserts the metadata back into the file:</p>
-
-<p><img src="/images/exiftool-reversible-metadata-warning.png" alt=""></p>
-
-<p>According to the author of <strong>exiftool</strong> this can be circumvented by issuing <code>qpdf --linearize &lt;file.in&gt; &lt;file.out&gt;</code>. For further info about this see:
-<a href="http://owl.phy.queensu.ca/~phil/exiftool/TagNames/PDF.html" target="_blank">PDF tags</a></p>
-
-<p><img src="/images/pdftags-linearized.png" width="700"></p>
-
-<h2 id="references"><strong>References</strong></h2>
-
-<p><a name="exiftool"></a><a href="https://sno.phy.queensu.ca/~phil/exiftool/exiftool_pod.html" target="_blank">exiftool man pages</a> <a href="https://imfrom.github.io/post/metadata-irreversible/#refexiftool">_↩︎</a></p>
 
     </div>
   

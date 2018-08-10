@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 06 Aug 2018 02:49:21 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 01:31:19 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup Network Printer Ip Address Port Number</title>
+      <link>https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/</link>
+      <pubDate>Fri, 10 Aug 2018 01:31:19 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/</guid>
+      <description>Setting up a network printer seems not only problematic on Arch based systems, but also on Windows.
+The latter also gave me the proverbial run for the money.
+Even after I thought that the network printer had be configured correctly, errors such as there was a problem processing document after printing a test page, or simply the error stating that the printer may not be connected assured me that the network printer was not being correctly identified.</description>
+    </item>
     
     <item>
       <title>Directory Permissions Differ on Var Cache Pkgfile</title>
