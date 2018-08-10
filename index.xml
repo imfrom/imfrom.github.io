@@ -55,6 +55,8 @@ configuration.&lt;/p&gt;
 
 &lt;p&gt;On this question that was brought up on the stackexchange network, the user asked &lt;a href=&#34;https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed&#34; target=&#34;_blank&#34;&gt;to list all network printers (including ones not installed)&lt;/a&gt; and although it hinted that the program &lt;strong&gt;lpstat&lt;/strong&gt; with the flag &lt;code&gt;-a&lt;/code&gt; was one that would undertake the task, as the user pointed out, this would not apply to those printers that have not been installed.&lt;/p&gt;
 
+&lt;p&gt;Another command that would certainly come handy is &lt;code&gt;lpinfo -v&lt;/code&gt; but more than what it provided was therefore needed.&lt;/p&gt;
+
 &lt;p&gt;On another thread entitled &lt;a href=&#34;https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer&#34; target=&#34;_blank&#34;&gt;linux - how do you get the name of a network printer&lt;/a&gt; one of the comments said that:&lt;/p&gt;
 
 &lt;blockquote&gt;
