@@ -171,7 +171,7 @@ I want to clarify that I don’t believe I have ever touched that folder (I may 
 &lt;p&gt;Try that with your .gnupg folder or the .ssh folder. If permissions is world readable you will get complaints from application and some even refuses to run unless only accessible by owner aka chmod 700 ~/.ssh -R as an example.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;see &lt;a href=&#34;https://forum.manjaro.org/t/i-got-a-warning-after-running-the-latest-round-of-updates-im-confused-what-to-do-next/46651&#34;&gt;I get a warning after running the latest round of updates&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;see &lt;a href=&#34;https://forum.manjaro.org/t/i-got-a-warning-after-running-the-latest-round-of-updates-im-confused-what-to-do-next/46651&#34; taregt=&#34;_blank&#34;&gt;I get a warning after running the latest round of updates&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;As the user on the Manjaro Forum pointed out when he/she said:&lt;/p&gt;
 
