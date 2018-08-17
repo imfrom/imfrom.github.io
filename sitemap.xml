@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://imfrom.github.io/post/hunspell-resolve-conflicts/</loc>
+    <lastmod>2018-08-16T22:57:41-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/</loc>
     <lastmod>2018-08-10T01:31:19-05:00</lastmod>
   </url>
@@ -251,7 +256,7 @@
   
   <url>
     <loc>https://imfrom.github.io/</loc>
-    <lastmod>2018-08-10T01:31:19-05:00</lastmod>
+    <lastmod>2018-08-16T22:57:41-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -304,7 +309,7 @@
   
   <url>
     <loc>https://imfrom.github.io/post/</loc>
-    <lastmod>2018-08-10T01:31:19-05:00</lastmod>
+    <lastmod>2018-08-16T22:57:41-05:00</lastmod>
     <priority>0</priority>
   </url>
   
