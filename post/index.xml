@@ -7,17 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 16 Aug 2018 22:57:41 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 16 Aug 2018 23:56:45 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hunspell Resolve Conflicts</title>
-      <link>https://imfrom.github.io/post/hunspell-resolve-conflicts/</link>
-      <pubDate>Thu, 16 Aug 2018 22:57:41 -0500</pubDate>
+      <title>Hunspell-en in Conflict With Hunspell en_US</title>
+      <link>https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/</link>
+      <pubDate>Thu, 16 Aug 2018 23:56:45 -0500</pubDate>
       
-      <guid>https://imfrom.github.io/post/hunspell-resolve-conflicts/</guid>
+      <guid>https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/</guid>
       <description>On a different machine running the latest updates from Arch, pacman would give the error (and rightly so) that hunspell-en and hunspell-en_US are in conflict and could not satisfy dependencies followed by removing hunspell-en breaks dependency hunspell-en required by **antergos-common-meta**.
 This was of course never a problem on the other machine in which antergos-common-meta was removed a while back. For the simple reason that the update related to anything hunspell was in this particular case only for hunspell-en_US as well as hunspell-es_any but not for, and this is important to note: hunspell-en.</description>
     </item>

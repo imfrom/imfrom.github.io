@@ -6,16 +6,16 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2018</rights>
-    <updated>2018-08-16 22:57:41 -0500 CDT</updated>
+    <updated>2018-08-16 23:56:45 -0500 CDT</updated>
 
     
       
         <item>
-          <title>Hunspell Resolve Conflicts</title>
-          <link>https://imfrom.github.io/post/hunspell-resolve-conflicts/</link>
-          <pubDate>Thu, 16 Aug 2018 22:57:41 CDT</pubDate>
+          <title>Hunspell-en in Conflict With Hunspell en_US</title>
+          <link>https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/</link>
+          <pubDate>Thu, 16 Aug 2018 23:56:45 CDT</pubDate>
           <author></author>
-          <guid>https://imfrom.github.io/post/hunspell-resolve-conflicts/</guid>
+          <guid>https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/</guid>
           <description>&lt;p&gt;On a different machine running the latest updates from Arch, pacman would give the error (and rightly so) that &lt;code&gt;hunspell-en and hunspell-en_US are in conflict&lt;/code&gt; and &lt;code&gt;could not satisfy dependencies&lt;/code&gt; followed by &lt;code&gt;removing hunspell-en breaks dependency hunspell-en required by **antergos-common-meta**&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;This was of course never a problem on the other machine in which &lt;strong&gt;antergos-common-meta&lt;/strong&gt; was removed a while back. For the simple reason that the update related to anything &lt;strong&gt;hunspell&lt;/strong&gt; was in this particular case only for &lt;strong&gt;hunspell-en_US&lt;/strong&gt; as well as &lt;strong&gt;hunspell-es_any&lt;/strong&gt; but not for, and this is important to note: &lt;strong&gt;hunspell-en&lt;/strong&gt;. The latter includes all English dictionaries for US, UK, etc.&lt;/p&gt;
