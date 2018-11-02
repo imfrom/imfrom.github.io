@@ -10,7 +10,7 @@
 
   <title>
     
-      Screen Locker Broken Manjaro Kde &middot; Blog atrasado
+      Sddm Wayland Timezone Differs From Locale &middot; Blog atrasado
     
   </title>
 
@@ -213,23 +213,39 @@
 
 
 <div class="post">
-  <h1 class="post-title">Screen Locker Broken Manjaro Kde</h1>
-  <span class="post-date">Dec 9, 2017</span>
-  <p>While updating a fresh installation of Manjaro KDE, the screen locked.
-Apparently the default settings for the system, enabled this behavior without
-further ado.</p>
+  <h1 class="post-title">Sddm Wayland Timezone Differs From Locale</h1>
+  <span class="post-date">Nov 2, 2018</span>
+  <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enable it on an older system. This time around though my expectations fell short.</p>
 
-<p>As a result of this problem, the surprising part came afterward when the updates that were being downloaded, suddenly crashed the system. This led to the nonetheless bothersome problem of <code>modules.devname not found</code> error followed by the no more troublesome error <code>you are now being dropped into an emergency shell</code> and <code>sh can't access tty; job control turned off</code>.</p>
+<p>After installing <a href="https://wiki.archlinux.org/index.php/SDDM#Configuration_GUI" target="_blank">SDDM</a>, I called out systemd to disable <a href="https://wiki.archlinux.org/index.php/LightDM" target="_blank">LightDM</a> with</p>
 
-<p>I didn’t have at the time a live media to access the system. Although I knew the that the sudden crashing during the download of updates , was one of the problems underlying the <code>modules.devname not found</code> error.</p>
+<pre><code> sytemctl disable lightdm.service 
+</code></pre>
 
-<p>A quick google searched returned  <a href="https://unix.stackexchange.com/questions/355689/manjaro-fails-to-boot-modules-devname-not-found-then-unknown-disk-uuid-error" target="_blank">Manjaro fails to boot, modules.devname not found</a> a result which provided an answer that pointed to access the system with Manjaro’s own <code>mhwd-chroot</code> command to access the emergency shell. See <a href="https://wiki.manjaro.org/index.php/Restore_the_GRUB_Bootloader#Chroot_into_your_existing_Manjaro_Installation" target="_blank">Chroot into your existing Manjaro Installation</a></p>
+<p>followed by the enabling the newly installed display manager with</p>
 
-<p><img src="/images/mhwd-chroot-steps.png" alt=""></p>
+<pre><code> systemctl enable sddm.service
+</code></pre>
 
-<p>And as the already mentioned answer on the unix.stackexchange.com site suggested, it was necessary to reload the image again.</p>
+<p>But it wasn&rsquo;t after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
 
-<p><img src="/images/chroot-answer-mkinitcpio.png" alt=""></p>
+<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
+
+<pre><code> datetimectl status
+</code></pre>
+
+<p>matched SDDM clock settings. The timezone had been incorrectly set at one point.</p>
+
+<p>Modifying the timezone accordingly seemed to have resolved the issue with:</p>
+
+<pre><code>timedatectl set-timezone Zone/SubZone
+</code></pre>
+
+<p>All in all, some of the <a href="https://bbs.archlinux.org/viewtopic.php?id=207550" target="_blank">posts from Arch Forums</a> that were queried via Google, were slightly off topic. Some of these <a href="https://bbs.archlinux.org/viewtopic.php?id=112137" target="_blank">posts</a> for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.</p>
+
+<p><strong>References</strong></p>
+
+<p><a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blnak">System Time Arch Wiki</a></p>
 
 </div>
 

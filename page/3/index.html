@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.47" />
+	<meta name="generator" content="Hugo 0.48" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -185,6 +185,10 @@
     
       
     
+      
+    
+      
+    
 
 
   </nav>
@@ -213,6 +217,99 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/mounting-a-windows-hard-drive-on-arch-linux/">Mounting a Windows Hard Drive on Arch Linux</a></h1>
+        <span class="post-date">Nov 24, 2017</span>
+        <p>After following some of the advice on <a href="https://wiki.archlinux.org/index.php/NTFS-3G">ntfs-3g arch linux</a> entry which described the procedure to mount a windows system:</p>
+
+<p>A <code>lsblk -f</code> call on the filesystem returned:</p>
+
+<pre><code> sdb                                                         
+ ├─sdb1 vfat   SYSTEM   
+ ├─sdb2 ntfs   Recovery 
+ ├─sdb3                 
+ ├─sdb4 ntfs   OS       
+ └─sdb5 ntfs   Restore  
+</code></pre>
+
+<p>I was after <strong>sdb4</strong> in this case. So I invoked on the command line:</p>
+
+<pre><code> $ ntfs-3g /dev/sdb4 /mnt/fat/
+</code></pre>
+
+<p>Which returned the message:</p>
+
+<pre><code> Unprivileged user can not mount NTFS block devices using the external FUSE
+ library. Either mount the volume as root, or rebuild NTFS-3G with integrated
+ FUSE support and make it setuid root. Please see more information at
+ http://tuxera.com/community/ntfs-3g-faq/#unprivileged
+</code></pre>
+
+<p>So with sudo privileges I invoked it again, but this time around the more precise error message that <em>Input/output error NTFS is inconsistent</em> was returned on the terminal. The entire message was as follows:</p>
+
+<pre><code> ntfs_attr_pread_i: ntfs_pread failed: Input/output error
+ Failed to read of MFT, mft=391080 count=1 br=-1: Input/output error
+ Falling back to read-only mount because the NTFS partition is in an
+ unsafe state. Please resume and shutdown Windows fully (no hibernation
+ or fast restarting.)
+ ntfs_attr_pread_i: ntfs_pread failed: Input/output error
+ Failed to read NTFS $Bitmap: Input/output error
+ NTFS is either inconsistent, or there is a hardware fault, or it's a
+ SoftRAID/FakeRAID hardware. In the first case run chkdsk /f on Windows
+ then reboot into Windows twice. The usage of the /f parameter is very
+ important! If the device is a SoftRAID/FakeRAID then first activate
+ it
+</code></pre>
+
+<p>If I were to invoke it with <code>mount</code> instead of <code>ntfs-3g</code>, then it would have mounted it without a setback</p>
+
+<pre><code> $ sudo mount -t ntfs-3g /dev/sdb4 /mnt/fat
+</code></pre>
+
+<p>successfully mounted it and I was able to access the files on that hard drive.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/git-committing-by-user-name-config/">Git Committing by User Name Config</a></h1>
+        <span class="post-date">Nov 16, 2017</span>
+        <p>I recently had to set up again the local branches through git.</p>
+
+<p>An error that was not uncommon came up on the screen:</p>
+
+<pre><code> *** Please tell me who you are.
+
+ Run
+
+   git config --global user.email "you@example.com"
+   git config --global user.name "Your Name"
+
+ to set your account's default identity.
+ Omit --global to set the identity only in this repository.
+</code></pre>
+
+<p>This time around it was done through configuring a <code>user.name</code> and a <code>user.email</code> on git itself.</p>
+
+<p>It came to memory that the last time I was setting it up on a different system by pulling the sources from the remote branch, this configuration was never used.</p>
+
+<p>An answer on stackoverflow reminded me that this was indeed the case the last time I had done it. See <a href="https://stackoverflow.com/a/17713604" target="_blank"> instead of doing a git pull you can do a git fetch</a></p>
+
+<pre><code> git fetch
+ git reset --hard origin/master
+</code></pre>
+
+<p>Even if the error from <code>git</code> with the <strong>please tell me who you are</strong> comes up after an ssh key is granted, as it was posted on this other thread entitled <em>Git-please tell me who you are error when using ssh key</em>, the best alternative is to specify the <code>--global</code> option from <code>git</code> as it posted at <a href="https://stackoverflow.com/a/42335651" target="_blank"> run git config –global user.email - git config –global user.name</a></p>
+
+<p>Of course, if the option to have a <code>--global</code> configuration is not desirable, then the removal of this <code>.gitconfig</code> file may be accomplished through <strong>git</strong> again by issuing <code>git config --global --unset-all user.name</code> and <code>git config --global --unset-all user.email</code> from the terminal.</p>
+
+<p>On the website that aims at answering questions about the ubuntu distributiion, there are more examples with this purpose. See for example <a href="https://askubuntu.com/questions/206449/" target="_blank"> git config global file - remove settings</a></p>
+
+<p>The most important part about it lies on the command <strong>–unset-all</strong>, even though the <a href="https://stackoverflow.com//a/282550" target="_blank">  answer</a> which pointed at it was not the accepted solution in this case.</p>
+
+<p>For more details about the config-file for <strong>git</strong> it is recommended to read the manual <strong>man git-config</strong> for more details.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/npm-warn-saveerror-enonent-during-uninstall/">Npm Warn Saveerror Enonent During Uninstall</a></h1>
@@ -587,78 +684,6 @@ $ setxkbmap -layout carpalx -variant qwkrfy    # to select other variants</p></l
 <p>En el caso de <strong>shadow-</strong> no hay que hacer ninguna modificación. Es decir, el fichero <strong>shadow-</strong> que es seguido de un diptongo, es un archivo de copia del original.</p>
 
 <p>Para más detalles acerca de esto vea la página en <a href="https://forum.manjaro.org/t/manjaro-installers-password-weakness/26322" target="_blank">Manjaro installers - password weakness</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/gcc-multilib-in-conflict-with-gcc-during-manjaro-upgrade/">Gcc Multilib in Conflict With Gcc During Manjaro Upgrade</a></h1>
-        <span class="post-date">Jun 8, 2017</span>
-        <p>During the latest Manjaro upgrade, a conflict of packages already installed on the system, was preventing to proceed with the upgrade.</p>
-
-<p>A quick search on Google returned among the results, a post which had recently been opened on the archlinux forum with the title <a href="https://bbs.archlinux.org/viewtopic.php?id=226723" target="_blank">conflict with gcc-libs and gcc-libs-multilib</a></p>
-
-<p>Even though the conflict of packages on my system, was not the same conflict than the ones reported on the archlinux forum such as with the package gcc-fortran, it was clear as a user suggested:</p>
-
-<blockquote>
-<p>gcc-*-multilib is all or nothing.</p>
-</blockquote>
-
-<p>On my system, querying the database for <code>gcc</code> with <code>pacman -Qs gcc</code> returned:</p>
-
-<p><img src="/images/2017-06-08-gcc-gcc-multilib-conflict.png" alt=""></p>
-
-<p>I was missing <strong>gcc-libs</strong>, while <strong>gcc-libs-multilib</strong> was installed instead.</p>
-
-<p>A quick <code>pacman -Ss gcc</code> query - see <a href="https://wiki.archlinux.org/index.php/pacman#Querying_package_databases" target="_blank">archlinux wiki - Querying package databases</a> would show the <strong>gcc-multilib</strong> and its accompanying files for the package <strong>gcc-libs-multilib</strong>:</p>
-
-<p><img src="/images/2017-06-08-gcc-multilib-gcc-libs-multilib.png" alt=""></p>
-
-<p>What I ended up doing to avoid the conflict and proceed with the upgrade as scheduled, was to remove the old version of <strong>gcc</strong> - 6.8 if I’m not mistaken now, although I can always check the revision history for the exact number of the package I had at the time - and reinstall <strong>gcc</strong>. I figured to do that, since for one, I had to install the newest version for the compiler anyways, and once done with the system upgrade, then the package <strong>gcc</strong> would be reinstalled.</p>
-
-<p>A final <code>pacman -Qs gcc</code> would return:</p>
-
-<p><img src="/images/2017-06-08-pacman-qs-gcc.png" alt=""></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/gigabyte-computer-sleep-suspend-under-manjaro/">Gigabyte Computer Sleep Suspend Under Manjaro</a></h1>
-        <span class="post-date">May 22, 2017</span>
-        <p>I had configured Manjaro under an old system and was never pressed with the issue of suspend on that old hardware.</p>
-
-<p>When the Gigabyte computer was finally up and running, I noticed that the system was unable to suspend or sleep.</p>
-
-<p>After failing to find a quick solution to the problem on the archlinux forums, I came across this post from the Manjaro site: <a href="https://forum.manjaro.org/t/manjaro-not-waking-from-suspend-or-sleep/492" target="_blank">Manjaro not waking from suspend or sleep</a> and I almost knew  - not right away - that the discussion was the underlying cause of the problems I was experiencing.</p>
-
-<p>One of the users, by the handle of <em>artoo</em> offered to downgrade the kernel:</p>
-
-<p><img src="/images/2017-05-22-artoo-downgrade-suggestion.png" alt=""></p>
-
-<p>The kernel number and the year of the post were no longer relevant.</p>
-
-<p>But instead of the solution offered by the user <strong>artoo</strong> in downgrading, I chose to upgrade instead, especially after the reply by another user who said that:</p>
-
-<blockquote>
-<p>Its likeley the problem with hooks in mkinitcpio.conf and users having to
-manually mkinitcpio -p linux. Its a weekeley problem on irc and this fixes most
-oftenly.</p>
-</blockquote>
-
-<p>And</p>
-
-<blockquote>
-<p>Its very likely I assumed the initramfs get rebuild one way or another.</p>
-</blockquote>
-
-<p><img src="/images/2017-05-22-ivan-reply-mkinitcpiio.png" alt=""></p>
-
-<p>And the anecdote example almost a month later by another user in which he said that</p>
-
-<blockquote>
-<p>This time execution of mkinitcpio -p linux46 turns out to be sufficient</p>
-</blockquote>
-
-<p><img src="./Gigabyte computer sleep suspend under Manjaro · blog del tecnólogo_files/2017-05-22-fordprefect-suggestion-mkinitcpio.png" alt=""></p>
 
     </div>
   

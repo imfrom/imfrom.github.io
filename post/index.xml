@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 16 Aug 2018 23:56:45 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 02 Nov 2018 02:16:00 -0400</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sddm Wayland Timezone Differs From Locale</title>
+      <link>https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/</link>
+      <pubDate>Fri, 02 Nov 2018 02:16:00 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/</guid>
+      <description>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enable it on an older system. This time around though my expectations fell short.</description>
+    </item>
+    
+    <item>
+      <title>Clamav Freshclam Update Definitions</title>
+      <link>https://imfrom.github.io/post/clamav-freshclam-update-definitions/</link>
+      <pubDate>Tue, 28 Aug 2018 01:29:48 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/clamav-freshclam-update-definitions/</guid>
+      <description>as the ClamAV arch linux wiki states, ClamAV is:
+ Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&amp;rsquo;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
+ In order to update the definitions correctly is important to run first</description>
+    </item>
     
     <item>
       <title>Hunspell-en in Conflict With Hunspell en_US</title>

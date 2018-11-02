@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/</loc>
+    <lastmod>2018-11-02T02:16:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imfrom.github.io/post/clamav-freshclam-update-definitions/</loc>
+    <lastmod>2018-08-28T01:29:48-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/</loc>
     <lastmod>2018-08-16T23:56:45-05:00</lastmod>
   </url>
@@ -256,7 +266,7 @@
   
   <url>
     <loc>https://imfrom.github.io/</loc>
-    <lastmod>2018-08-16T23:56:45-05:00</lastmod>
+    <lastmod>2018-11-02T02:16:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -309,7 +319,7 @@
   
   <url>
     <loc>https://imfrom.github.io/post/</loc>
-    <lastmod>2018-08-16T23:56:45-05:00</lastmod>
+    <lastmod>2018-11-02T02:16:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   

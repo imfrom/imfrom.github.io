@@ -6,14 +6,133 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2018</rights>
-    <updated>2018-08-16 23:56:45 -0500 CDT</updated>
+    <updated>2018-11-02 02:16:00 -0400 EDT</updated>
 
+    
+      
+        <item>
+          <title>Sddm Wayland Timezone Differs From Locale</title>
+          <link>https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/</link>
+          <pubDate>Fri, 02 Nov 2018 02:16:00 EDT</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/</guid>
+          <description>&lt;p&gt;A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enable it on an older system. This time around though my expectations fell short.&lt;/p&gt;
+
+&lt;p&gt;After installing &lt;a href=&#34;https://wiki.archlinux.org/index.php/SDDM#Configuration_GUI&#34; target=&#34;_blank&#34;&gt;SDDM&lt;/a&gt;, I called out systemd to disable &lt;a href=&#34;https://wiki.archlinux.org/index.php/LightDM&#34; target=&#34;_blank&#34;&gt;LightDM&lt;/a&gt; with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; sytemctl disable lightdm.service 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;followed by the enabling the newly installed display manager with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; systemctl enable sddm.service
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But it wasn&amp;rsquo;t after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.&lt;/p&gt;
+
+&lt;p&gt;Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &amp;lsquo;timedatectl&amp;rsquo; were the same. The reasoning behind this assumption is that by calling &lt;code&gt;timedatectl status&lt;/code&gt; as the &lt;a href=&#34;https://wiki.archlinux.org/index.php/System_time#Time_zone&#34; target=&#34;_blank&#34;&gt;Arch Wiki suggested&lt;/a&gt;, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; datetimectl status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;matched SDDM clock settings. The timezone had been incorrectly set at one point.&lt;/p&gt;
+
+&lt;p&gt;Modifying the timezone accordingly seemed to have resolved the issue with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;timedatectl set-timezone Zone/SubZone
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All in all, some of the &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=207550&#34; target=&#34;_blank&#34;&gt;posts from Arch Forums&lt;/a&gt; that were queried via Google, were slightly off topic. Some of these &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=112137&#34; target=&#34;_blank&#34;&gt;posts&lt;/a&gt; for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://wiki.archlinux.org/index.php/System_time#Time_zone&#34; target=&#34;_blnak&#34;&gt;System Time Arch Wiki&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Clamav Freshclam Update Definitions</title>
+          <link>https://imfrom.github.io/post/clamav-freshclam-update-definitions/</link>
+          <pubDate>Tue, 28 Aug 2018 01:29:48 -0500</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/clamav-freshclam-update-definitions/</guid>
+          <description>&lt;p&gt;as the &lt;a href=&#34;https://wiki.archlinux.org/index.php/ClamAV&#34; target=&#34;_blank&#34;&gt;ClamAV arch linux wiki&lt;/a&gt; states, &lt;strong&gt;ClamAV&lt;/strong&gt; is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&amp;rsquo;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In order to update the definitions correctly is important to run first&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; freshclam
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;which should then start the update&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; ClamAV update process started at Tue Aug 28 01:16:43 2018
+ Downloading main.cvd [100%]
+ main.cvd updated (version: 58, sigs: 4566249, f-level: 60, builder: sigmgr)
+ Downloading daily.cvd [100%]
+ daily.cvd updated (version: 24880, sigs: 2066436, f-level: 63, builder: neo)
+ Downloading bytecode.cvd [100%]
+ bytecode.cvd updated (version: 327, sigs: 91, f-level: 63, builder: neo)
+ Database updated (6632776 signatures) from database.clamav.net (IP: )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But then an error came up saying that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; WARNING: Clamd was NOT notified: Can&#39;t connect to clamd through /run/clamav/clamd.ctl: No such file or directory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;which left me unsure what could have the issue.&lt;/p&gt;
+
+&lt;p&gt;Googling about it returned among many of the results, some as in &lt;a href=&#34;https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/&#34; target=&#34;_blank&#34;&gt;Can&amp;rsquo;t connect to Unix socket /var/run//clamav/clamd.ctl&lt;/a&gt;, which dealt with the issue.&lt;/p&gt;
+
+&lt;p&gt;The error here in which it deal with &lt;strong&gt;clamd.ctl&lt;/strong&gt; and not with &lt;strong&gt;clamd.sock connect ()&lt;/strong&gt; as it was posted on the entry entitled &lt;a href=&#34;https://wiki.archlinux.org/index.php/ClamAV#Error:_Clamd_was_NOT_notified&#34; target=&#34;_blank&#34;&gt;Error Clamd was not notified&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But after running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  freshclam
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I had already forgotten to start/enable &lt;code&gt;clamav-freshclam.service&lt;/code&gt; as outlined on the Wiki &lt;a href=&#34;https://wiki.archlinux.org/index.php/ClamAV#Updating_database&#34; target=&#34;_blank&#34;&gt;ClamAV updating database&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;so&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; systemctl start clamav-freshclam.service
+ systemctl enable clamav-freshclam.service
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which returned:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Created symlink /etc/systemd/system/multi-user.target.wants/clamav-freshclam.service → /usr/lib/systemd/system/clamav-freshclam.service.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Later on calling the status of that service with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; systemctl status clamav-freshclam.service
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;returned&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; Aug 28 01:23:43  systemd[1]: Started ClamAV virus database upda&amp;gt;
+ Aug 28 01:23:43  freshclam[]: ClamAV update process started&amp;gt;
+ Aug 28 01:23:43  freshclam[]: main.cvd is up to date (versi&amp;gt;
+ Aug 28 01:23:43  freshclam[]: daily.cvd is up to date (vers&amp;gt;
+ Aug 28 01:23:43  freshclam[]: bytecode.cvd is up to date
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;whether it wouyld be necessary to enable it every time it restarts, it&amp;rsquo;s something that I will deal with later on. I only needed it to check on mainly some files and that was the purpose of running it in the first place.&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
           <title>Hunspell-en in Conflict With Hunspell en_US</title>
           <link>https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/</link>
-          <pubDate>Thu, 16 Aug 2018 23:56:45 CDT</pubDate>
+          <pubDate>Thu, 16 Aug 2018 23:56:45 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/</guid>
           <description>&lt;p&gt;On a different machine running the latest updates from Arch, pacman would give the error (and rightly so) that &lt;code&gt;hunspell-en and hunspell-en_US are in conflict&lt;/code&gt; and &lt;code&gt;could not satisfy dependencies&lt;/code&gt; followed by &lt;code&gt;removing hunspell-en breaks dependency hunspell-en required by **antergos-common-meta**&lt;/code&gt;.&lt;/p&gt;
@@ -47,7 +166,7 @@ method.&lt;/p&gt;
         <item>
           <title>Setup Network Printer Ip Address Port Number</title>
           <link>https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/</link>
-          <pubDate>Fri, 10 Aug 2018 01:31:19 CDT</pubDate>
+          <pubDate>Fri, 10 Aug 2018 01:31:19 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/</guid>
           <description>&lt;p&gt;Setting up a network printer seems not only problematic on Arch based systems, but also on Windows.&lt;/p&gt;
@@ -118,7 +237,7 @@ configuration.&lt;/p&gt;
         <item>
           <title>Directory Permissions Differ on Var Cache Pkgfile</title>
           <link>https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/</link>
-          <pubDate>Mon, 06 Aug 2018 02:49:21 CDT</pubDate>
+          <pubDate>Mon, 06 Aug 2018 02:49:21 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/</guid>
           <description>&lt;p&gt;During the last updates through pacman the following message came up:&lt;/p&gt;
@@ -226,7 +345,7 @@ I want to clarify that I don’t believe I have ever touched that folder (I may 
         <item>
           <title>Linux Market Share Pitfalls: data manipulation and non-existent ranking markers</title>
           <link>https://imfrom.github.io/post/linux-market-share-pitfalls/</link>
-          <pubDate>Mon, 30 Jul 2018 02:50:35 CDT</pubDate>
+          <pubDate>Mon, 30 Jul 2018 02:50:35 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/linux-market-share-pitfalls/</guid>
           <description>
@@ -404,7 +523,7 @@ target=&#34;_blan&#34;&gt;lwn.net/Distributions&lt;/a&gt;&lt;a href=&#34;#lwnref
         <item>
           <title>Gscan2pdf Sane Start Invalid Argument</title>
           <link>https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/</link>
-          <pubDate>Tue, 24 Jul 2018 23:48:49 CDT</pubDate>
+          <pubDate>Tue, 24 Jul 2018 23:48:49 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/</guid>
           <description>&lt;p&gt;Antergos wins here. Manjaro could have done better but it
@@ -447,7 +566,7 @@ reason alone I recommend this distribution over Manjaro.&lt;/p&gt;
         <item>
           <title>Pamac Runs Post Install Hooks but Fails to Install New Updates</title>
           <link>https://imfrom.github.io/post/pamac-runs-post-install-hooks-but-fails-to-install-new-updates/</link>
-          <pubDate>Wed, 18 Jul 2018 21:31:56 CDT</pubDate>
+          <pubDate>Wed, 18 Jul 2018 21:31:56 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/pamac-runs-post-install-hooks-but-fails-to-install-new-updates/</guid>
           <description>&lt;p&gt;The GUI version of &lt;strong&gt;pacman&lt;/strong&gt; which runs under Antergos
@@ -479,7 +598,7 @@ based distribution.&lt;/p&gt;
         <item>
           <title>Could Not Satisfy Dependencies Hunspell Antergos Common Meta</title>
           <link>https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/</link>
-          <pubDate>Wed, 18 Jul 2018 00:12:54 CDT</pubDate>
+          <pubDate>Wed, 18 Jul 2018 00:12:54 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/</guid>
           <description>&lt;p&gt;It seems as if &lt;strong&gt;antergos-common-meta&lt;/strong&gt; has been removed
@@ -522,7 +641,7 @@ end-users on their own.&lt;/p&gt;
         <item>
           <title>Installing Pacman Breaks Dependency</title>
           <link>https://imfrom.github.io/post/installing-pacman-breaks-dependency/</link>
-          <pubDate>Tue, 29 May 2018 06:34:49 -0400</pubDate>
+          <pubDate>Tue, 29 May 2018 06:34:49 EDT</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/installing-pacman-breaks-dependency/</guid>
           <description>&lt;p&gt;Running one of the usual updates from the pamac gui package, returned&lt;/p&gt;
@@ -558,7 +677,7 @@ place:&lt;/p&gt;
         <item>
           <title>Antergos Keyboard Selection During Installation</title>
           <link>https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/</link>
-          <pubDate>Sat, 27 Jan 2018 08:49:17 -0500</pubDate>
+          <pubDate>Sat, 27 Jan 2018 08:49:17 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/</guid>
           <description>&lt;p&gt;One of the drawbacks during the installation of &lt;a href=&#34;https://antergos.com&#34; target=&#34;_blank&#34;&gt;Antergos Linux&lt;/a&gt; was in identifying the keyboard layout option that was previously selected during the media installation.&lt;/p&gt;
@@ -600,7 +719,7 @@ place:&lt;/p&gt;
         <item>
           <title>Antergos Grub Selection</title>
           <link>https://imfrom.github.io/post/antergos-grub-selection/</link>
-          <pubDate>Sat, 20 Jan 2018 08:38:47 -0500</pubDate>
+          <pubDate>Sat, 20 Jan 2018 08:38:47 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/antergos-grub-selection/</guid>
           <description>&lt;p&gt;During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.&lt;/p&gt;
@@ -646,7 +765,7 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
         <item>
           <title>Udisks2 Udiskie Fares Better Than Ntfs 3g</title>
           <link>https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/</link>
-          <pubDate>Tue, 16 Jan 2018 08:45:02 -0500</pubDate>
+          <pubDate>Tue, 16 Jan 2018 08:45:02 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/</guid>
           <description>
@@ -674,7 +793,7 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
         <item>
           <title>Metadata Irreversible</title>
           <link>https://imfrom.github.io/post/metadata-irreversible/</link>
-          <pubDate>Fri, 22 Dec 2017 04:13:37 -0500</pubDate>
+          <pubDate>Fri, 22 Dec 2017 04:13:37 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/metadata-irreversible/</guid>
           <description>&lt;p&gt;One of the easiest ways to remove all metadata from a file, is by invoking &lt;a href=&#34;https://imfrom.github.io/post/metadata-irreversible/#exiftool&#34;&gt;&lt;sup id=&#34;refexiftool&#34;&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
@@ -707,7 +826,7 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
         <item>
           <title>Manjaro Kde Plasma Dolphin Mtp Cant Open File</title>
           <link>https://imfrom.github.io/post/manjaro-kde-plasma-dolphin-mtp-cant-open-file/</link>
-          <pubDate>Sat, 16 Dec 2017 13:26:25 -0500</pubDate>
+          <pubDate>Sat, 16 Dec 2017 13:26:25 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/manjaro-kde-plasma-dolphin-mtp-cant-open-file/</guid>
           <description>&lt;p&gt;&lt;strong&gt;MTP&lt;/strong&gt; implementation runs on most desktop environments without a problem. Except on KDE where it has had several problems in identifying and initializing a simple file from any of the devices that have been connected to the system, mainly through the USB port.&lt;/p&gt;
@@ -741,7 +860,7 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
         <item>
           <title>Manjaro Kde Plasma Error Unknown Application Folder</title>
           <link>https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/</link>
-          <pubDate>Thu, 14 Dec 2017 13:28:52 -0500</pubDate>
+          <pubDate>Thu, 14 Dec 2017 13:28:52 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/</guid>
           <description>&lt;p&gt;It’s apparently a foolish idea to login as root from a file manager on Plasma KDE.&lt;/p&gt;
@@ -800,7 +919,7 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
         <item>
           <title>Errors During Hugo Git</title>
           <link>https://imfrom.github.io/post/errors-during-hugo-git/</link>
-          <pubDate>Wed, 13 Dec 2017 15:56:07 -0500</pubDate>
+          <pubDate>Wed, 13 Dec 2017 15:56:07 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/errors-during-hugo-git/</guid>
           <description>&lt;p&gt;During the last setup of &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;, I was faced again with the sometimes difficult handling of submodules. This was of course after the corresponding configuration for the &lt;code&gt;user.name&lt;/code&gt; and &lt;code&gt;user.email&lt;/code&gt; had already been set accordingly.&lt;/p&gt;
@@ -914,7 +1033,7 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
         <item>
           <title>Screen Locker Broken Manjaro Kde</title>
           <link>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</link>
-          <pubDate>Sat, 09 Dec 2017 13:58:20 -0500</pubDate>
+          <pubDate>Sat, 09 Dec 2017 13:58:20 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</guid>
           <description>&lt;p&gt;While updating a fresh installation of Manjaro KDE, the screen locked.
@@ -940,7 +1059,7 @@ further ado.&lt;/p&gt;
         <item>
           <title>Configuring Kakoune Kakrc</title>
           <link>https://imfrom.github.io/post/configuring-kakoune-kakrc/</link>
-          <pubDate>Wed, 06 Dec 2017 12:50:38 -0500</pubDate>
+          <pubDate>Wed, 06 Dec 2017 12:50:38 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/configuring-kakoune-kakrc/</guid>
           <description>&lt;p&gt;Configuring the &lt;a href=&#34;https://github.com/mawww/kakoune&#34; target=&#34;_blank&#34;&gt;kakoune text editor&lt;/a&gt; initialization file has been nothing short of a chore, as it requires the path environment to be correctly set, before any changes on the &lt;code&gt;kakrc&lt;/code&gt; take ahold of the settings.&lt;/p&gt;
@@ -1049,7 +1168,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Network Has Been Disconnected Manjaro Kde Xfce</title>
           <link>https://imfrom.github.io/post/network-has-been-disconnected-manjaro-kde-xfce/</link>
-          <pubDate>Fri, 01 Dec 2017 13:41:54 -0500</pubDate>
+          <pubDate>Fri, 01 Dec 2017 13:41:54 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/network-has-been-disconnected-manjaro-kde-xfce/</guid>
           <description>&lt;p&gt;For some unknown reason, I was getting the message &lt;code&gt;network has been disconnected&lt;/code&gt; even on connections that have been previously used.&lt;/p&gt;
@@ -1074,7 +1193,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Mounting a Windows Hard Drive on Arch Linux</title>
           <link>https://imfrom.github.io/post/mounting-a-windows-hard-drive-on-arch-linux/</link>
-          <pubDate>Fri, 24 Nov 2017 13:40:27 -0500</pubDate>
+          <pubDate>Fri, 24 Nov 2017 13:40:27 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/mounting-a-windows-hard-drive-on-arch-linux/</guid>
           <description>&lt;p&gt;After following some of the advice on &lt;a href=&#34;https://wiki.archlinux.org/index.php/NTFS-3G&#34;&gt;ntfs-3g arch linux&lt;/a&gt; entry which described the procedure to mount a windows system:&lt;/p&gt;
@@ -1132,7 +1251,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Git Committing by User Name Config</title>
           <link>https://imfrom.github.io/post/git-committing-by-user-name-config/</link>
-          <pubDate>Thu, 16 Nov 2017 13:01:35 -0500</pubDate>
+          <pubDate>Thu, 16 Nov 2017 13:01:35 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/git-committing-by-user-name-config/</guid>
           <description>&lt;p&gt;I recently had to set up again the local branches through git.&lt;/p&gt;
@@ -1177,7 +1296,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Npm Warn Saveerror Enonent During Uninstall</title>
           <link>https://imfrom.github.io/post/npm-warn-saveerror-enonent-during-uninstall/</link>
-          <pubDate>Wed, 08 Nov 2017 13:44:21 -0500</pubDate>
+          <pubDate>Wed, 08 Nov 2017 13:44:21 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/npm-warn-saveerror-enonent-during-uninstall/</guid>
           <description>&lt;p&gt;I recently tried a few utility programs through &lt;strong&gt;npm&lt;/strong&gt; javascript manager. For further info see &lt;a href=&#34;https://en.wikipedia.org/wiki/Npm_(software)&#34; target=&#34;_blank&#34;&gt;Npm package manager&lt;/a&gt; on Wikipedia.&lt;/p&gt;
@@ -1210,7 +1329,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Manjaro Xfce Qpdfview Problem With Qt5ct Unable to Load Plugin in First Attempt</title>
           <link>https://imfrom.github.io/post/manjaro-xfce-qpdfview-problem-with-qt5ct-unable-to-load-plugin-in-first-attempt/</link>
-          <pubDate>Thu, 19 Oct 2017 03:52:43 CDT</pubDate>
+          <pubDate>Thu, 19 Oct 2017 03:52:43 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/manjaro-xfce-qpdfview-problem-with-qt5ct-unable-to-load-plugin-in-first-attempt/</guid>
           <description>&lt;p&gt;I currently have two (2) identical - or that’s what it seemed like - &lt;strong&gt;xfce&lt;/strong&gt; environments on two (2) different hardware systems.&lt;/p&gt;
@@ -1301,7 +1420,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Manjaro Xfce Bluetooth Problem</title>
           <link>https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/</link>
-          <pubDate>Fri, 29 Sep 2017 13:32:01 CDT</pubDate>
+          <pubDate>Fri, 29 Sep 2017 13:32:01 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/</guid>
           <description>&lt;p&gt;Bluetooth recognition - at least on Manjaro Xfce - has been erratic and inconsistent.&lt;/p&gt;
@@ -1343,7 +1462,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Urxvt Copy Paste Tweaking</title>
           <link>https://imfrom.github.io/post/urxvt-copy-paste-tweaking/</link>
-          <pubDate>Fri, 18 Aug 2017 14:07:29 CDT</pubDate>
+          <pubDate>Fri, 18 Aug 2017 14:07:29 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/urxvt-copy-paste-tweaking/</guid>
           <description>&lt;p&gt;I haven’t read the &lt;code&gt;man&lt;/code&gt; pages enough to figure out some of the parameters that play an important behavior for the full functionality of the mighty &lt;strong&gt;urxvt&lt;/strong&gt;, and it was not until I read a post - which was more of a comment on the thread entitled &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=221108&#34; target=&#34;_blank&#34;&gt;right click paste in urxvt terminal&lt;/a&gt; on the archlinux.org forum - when I realized that by the combination of &lt;strong&gt;ctrl&lt;/strong&gt; and right mouse click would copy and paste the selected text on the X window system.&lt;/p&gt;
@@ -1359,7 +1478,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Urxvt Background Tweaking</title>
           <link>https://imfrom.github.io/post/urxvt-background-tweaking/</link>
-          <pubDate>Fri, 18 Aug 2017 14:05:19 CDT</pubDate>
+          <pubDate>Fri, 18 Aug 2017 14:05:19 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/urxvt-background-tweaking/</guid>
           <description>&lt;p&gt;I’ve never bothered with &lt;a href=&#34;https://wiki.archlinux.org/index.php/rxvt-unicode&#34; target=&#34;_blank&#34;&gt;urxvt&lt;/a&gt; in the past. Perhaps was the way that dealt with the default glyph, which discouraged me from using it.&lt;/p&gt;
@@ -1385,7 +1504,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Setup Remote and Master Branches Before Updating Hugo</title>
           <link>https://imfrom.github.io/post/setup-remote-and-master-branches-before-updating-hugo/</link>
-          <pubDate>Fri, 18 Aug 2017 14:00:51 CDT</pubDate>
+          <pubDate>Fri, 18 Aug 2017 14:00:51 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/setup-remote-and-master-branches-before-updating-hugo/</guid>
           <description>&lt;p&gt;A while ago, I had to set remote and master branches on a different machine.&lt;/p&gt;
@@ -1415,7 +1534,7 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
         <item>
           <title>Xfce Carpalx Layout</title>
           <link>https://imfrom.github.io/post/xfce-carpalx-layout/</link>
-          <pubDate>Sun, 09 Jul 2017 12:09:38 CDT</pubDate>
+          <pubDate>Sun, 09 Jul 2017 12:09:38 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/xfce-carpalx-layout/</guid>
           <description>&lt;p&gt;There are many ways to add the &lt;a href=&#34;http://mkweb.bcgsc.ca/carpalx/&#34; target=&#34;_blank&#34;&gt;carpalx&lt;/a&gt; layout to X window system on GNU/Linux.&lt;/p&gt;
@@ -1506,7 +1625,7 @@ $ setxkbmap -layout carpalx -variant qwkrfy    # to select other variants&lt;/p&
         <item>
           <title>Manjaro Announces Password Weakness en Los Instaladores De Dvd/usb</title>
           <link>https://imfrom.github.io/post/manjaro-announces-password-weakness-en-los-instaladores-de-dvd_usb/</link>
-          <pubDate>Tue, 27 Jun 2017 13:20:54 CDT</pubDate>
+          <pubDate>Tue, 27 Jun 2017 13:20:54 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/manjaro-announces-password-weakness-en-los-instaladores-de-dvd_usb/</guid>
           <description>&lt;p&gt;Recientemente en &lt;a href=&#34;http://distrowatch.com/&#34; target=&#34;_blank&#34;&gt;DistroWatch&lt;/a&gt; se publicó el anuncio del lanzamiento de la última versión de &lt;a href=&#34;https://manjaro.org/&#34; target=&#34;_blank&#34;&gt;Manjaro&lt;/a&gt; que incluye importantes actualizaciones.&lt;/p&gt;
@@ -1593,7 +1712,7 @@ $ setxkbmap -layout carpalx -variant qwkrfy    # to select other variants&lt;/p&
         <item>
           <title>Gcc Multilib in Conflict With Gcc During Manjaro Upgrade</title>
           <link>https://imfrom.github.io/post/gcc-multilib-in-conflict-with-gcc-during-manjaro-upgrade/</link>
-          <pubDate>Thu, 08 Jun 2017 04:04:38 CDT</pubDate>
+          <pubDate>Thu, 08 Jun 2017 04:04:38 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/gcc-multilib-in-conflict-with-gcc-during-manjaro-upgrade/</guid>
           <description>&lt;p&gt;During the latest Manjaro upgrade, a conflict of packages already installed on the system, was preventing to proceed with the upgrade.&lt;/p&gt;
@@ -1629,7 +1748,7 @@ $ setxkbmap -layout carpalx -variant qwkrfy    # to select other variants&lt;/p&
         <item>
           <title>Gigabyte Computer Sleep Suspend Under Manjaro</title>
           <link>https://imfrom.github.io/post/gigabyte-computer-sleep-suspend-under-manjaro/</link>
-          <pubDate>Mon, 22 May 2017 12:08:23 CDT</pubDate>
+          <pubDate>Mon, 22 May 2017 12:08:23 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/gigabyte-computer-sleep-suspend-under-manjaro/</guid>
           <description>&lt;p&gt;I had configured Manjaro under an old system and was never pressed with the issue of suspend on that old hardware.&lt;/p&gt;
@@ -1675,7 +1794,7 @@ oftenly.&lt;/p&gt;
         <item>
           <title>Firefox Problem With Xclip</title>
           <link>https://imfrom.github.io/post/firefox-problem-with-xclip/</link>
-          <pubDate>Sat, 20 May 2017 13:58:18 CDT</pubDate>
+          <pubDate>Sat, 20 May 2017 13:58:18 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/firefox-problem-with-xclip/</guid>
           <description>&lt;p&gt;I’ve used both vim and neovim editors. The latter is just the newest implementation with out of the box pre-configurations.&lt;/p&gt;
@@ -1754,7 +1873,7 @@ On vim: pasting worked under the Gmail’s interface, whereas with neovim the pr
         <item>
           <title>Libreoffice Implementación Del Guión en La Separación Silábica</title>
           <link>https://imfrom.github.io/post/libreoffice-implementaci%C3%B3n-del-gui%C3%B3n-en-la-separaci%C3%B3n-sil%C3%A1bica/</link>
-          <pubDate>Fri, 21 Apr 2017 02:29:35 CDT</pubDate>
+          <pubDate>Fri, 21 Apr 2017 02:29:35 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/libreoffice-implementaci%C3%B3n-del-gui%C3%B3n-en-la-separaci%C3%B3n-sil%C3%A1bica/</guid>
           <description>&lt;p&gt;Para implementar la separación silábica en cualquier documento en Libreoffice, es necesario bajar los correspondientes archivos de extensiones para este programa: &lt;a href=&#34;https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6&#34;&gt;https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6&lt;/a&gt;&lt;/p&gt;
@@ -1810,7 +1929,7 @@ On vim: pasting worked under the Gmail’s interface, whereas with neovim the pr
         <item>
           <title>Gigabyte Motherboard Fails to Load Live Cd but Succeeds With Flash Drive</title>
           <link>https://imfrom.github.io/post/gigabyte-motherboard-fails-to-load-live-cd-but-succeeds-with-flash-drive/</link>
-          <pubDate>Sat, 08 Apr 2017 13:10:35 CDT</pubDate>
+          <pubDate>Sat, 08 Apr 2017 13:10:35 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/gigabyte-motherboard-fails-to-load-live-cd-but-succeeds-with-flash-drive/</guid>
           <description>&lt;p&gt;I can’t say whether some of the systems that NUC Intel produces, face the same problems while loading a LiveCD/LiveDVD iso image via an external drive, as the manufacturer Gigabyte currently does. The latter manufacturer gave me the proverbial run for the money when I wanted to install an image that was burned on a DVD and had been successfully installed on an old system.&lt;/p&gt;
@@ -1875,7 +1994,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <item>
           <title>Manjaro Desplaza a Ubuntu</title>
           <link>https://imfrom.github.io/post/manjaro-desplaza-a-ubuntu/</link>
-          <pubDate>Tue, 14 Mar 2017 13:23:51 CDT</pubDate>
+          <pubDate>Tue, 14 Mar 2017 13:23:51 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/manjaro-desplaza-a-ubuntu/</guid>
           <description>&lt;p&gt;Hace más o menos un mes que escribí acerca de la configuración del &lt;a href=&#34;https://imfrom.github.io/post/manjaro-splash-screen-in-ssd/&#34;&gt;tema splash de la pantalla&lt;/a&gt; y el cual se podía anular en la susodicha configuración a través de las &lt;strong&gt;preferencias&lt;/strong&gt;,  seguido del &lt;strong&gt;tema del escritorio&lt;/strong&gt; cuando se utiliza un disco de estado sólido o un SSD (solid state drive).&lt;/p&gt;
@@ -1909,7 +2028,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <item>
           <title>Configurar El Idioma en Manjaro Kde</title>
           <link>https://imfrom.github.io/post/configurar-el-idioma-en-manjaro-kde/</link>
-          <pubDate>Sun, 26 Feb 2017 12:44:42 -0500</pubDate>
+          <pubDate>Sun, 26 Feb 2017 12:44:42 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/configurar-el-idioma-en-manjaro-kde/</guid>
           <description>&lt;p&gt;Para modificar el idioma que los elementos del menú muestren, al igual que el idioma con el que aparecería la hora, la fecha, y otros valores como los de la representación monetaria, se puede ir hasta las &lt;strong&gt;preferencias del sistema&lt;/strong&gt; y después dándole a clic a &lt;strong&gt;Configuración regional&lt;/strong&gt;.&lt;/p&gt;
@@ -1958,7 +2077,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <item>
           <title>Pantalla en Reposo Con Manjaro KDE</title>
           <link>https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/</link>
-          <pubDate>Fri, 24 Feb 2017 13:45:58 -0500</pubDate>
+          <pubDate>Fri, 24 Feb 2017 13:45:58 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/</guid>
           <description>&lt;p&gt;Cada vez que se trabaja con algún entorno gráfico en los sistemas GNU/Linux, como GNOME, xfce, MATE, al igual que en KDE, uno se pone al amparo de los desarrolladores de estos sistemas.&lt;/p&gt;
@@ -1998,7 +2117,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <item>
           <title>Turn Off Manjaro Kde Splash Screen if on Ssd</title>
           <link>https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/</link>
-          <pubDate>Wed, 15 Feb 2017 04:02:19 -0500</pubDate>
+          <pubDate>Wed, 15 Feb 2017 04:02:19 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/</guid>
           <description>&lt;p&gt;Posicionado desde hace meses en el quinto escalafón de la lista de las distribuciones basadas en &lt;a href=&#34;http://distrowatch.com/&#34; target=&#34;_blank&#34;&gt;Linux&lt;/a&gt;, la distribución &lt;a href=&#34;https://manjaro.org/&#34; target=&#34;_blank&#34;&gt;Manjaro &lt;/a&gt;, basada en la impresionante distribución &lt;a href=&#34;http://archlinux.org/&#34; target=&#34;_blank&#34;&gt;Arch Linux&lt;/a&gt;, y que hace uso del magnífico sistema de administración de paquetes &lt;strong&gt;Pacman&lt;/strong&gt; de este último, emplea los últimos e innovadores temas de interfaz gráficos en muchas de las ediciones, tanto de la comunidad, como aquellas que son aprobadas oficialmente. &lt;a href=&#34;#man&#34;&gt;&lt;sup id=&#34;manref&#34;&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2052,7 +2171,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <item>
           <title>Reemplazo De Minúsculas Con Mayúsculas Con Emacs</title>
           <link>https://imfrom.github.io/post/reemplazo-de-min%C3%BAsculas-con-may%C3%BAsculas-con-emacs/</link>
-          <pubDate>Thu, 09 Feb 2017 02:31:55 -0500</pubDate>
+          <pubDate>Thu, 09 Feb 2017 02:31:55 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/reemplazo-de-min%C3%BAsculas-con-may%C3%BAsculas-con-emacs/</guid>
           <description>&lt;p&gt;Para un simple reemplazo de caracteres al principio de una oración, es decir, de minúsculas por mayúsculas, se puede emplear un simple y eficiente método de expresión regular también en Emacs.&lt;/p&gt;
@@ -2101,7 +2220,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <item>
           <title>Reemplazar Con Vim. Reemplazos de minúsculas con mayúsculas</title>
           <link>https://imfrom.github.io/post/reemplazar-con-vim/</link>
-          <pubDate>Wed, 08 Feb 2017 13:48:53 -0500</pubDate>
+          <pubDate>Wed, 08 Feb 2017 13:48:53 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/reemplazar-con-vim/</guid>
           <description>&lt;p&gt;O como se dice en Inglés: &lt;em&gt;capitalization&lt;/em&gt;, se puede lograr fácilmente en &lt;a href=&#34;http://www.vim.org/&#34; target=&#34;_blank&#34;&gt;vim &lt;/a&gt; mediante el empleo de mayúsculas al comienzo de oraciones a través del uso de una expresión regular o regex, sin la necesidad de utilizar algún que otro script (que puede causar efectos secundarios en el funcionamiento), para lograr el reemplazo de las minúsculas.&lt;/p&gt;
@@ -2161,7 +2280,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <item>
           <title>Modificar Mapa Del Teclado Con Emacs Y Vim</title>
           <link>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</link>
-          <pubDate>Mon, 21 Nov 2016 14:40:45 -0500</pubDate>
+          <pubDate>Mon, 21 Nov 2016 14:40:45 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</guid>
           <description>&lt;p&gt;Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs &lt;a href=&#34;#emacs&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; y Vim &lt;a href=&#34;#vim&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;, para cambiar el mapa del teclado.&lt;/p&gt;
@@ -2225,7 +2344,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <item>
           <title>Reemplazos en Vim</title>
           <link>https://imfrom.github.io/post/reemplazos-en-vim/</link>
-          <pubDate>Mon, 07 Nov 2016 14:42:55 -0500</pubDate>
+          <pubDate>Mon, 07 Nov 2016 14:42:55 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/reemplazos-en-vim/</guid>
           <description>&lt;p&gt;Estos son algunos de los reemplazos que se pudieran realizar en vim:&lt;/p&gt;
@@ -2319,7 +2438,7 @@ prueba&lt;/p&gt;
         <item>
           <title>Hugo No Sincroniza Directorio Estatico en Github</title>
           <link>https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/</link>
-          <pubDate>Sat, 10 Sep 2016 10:09:44 CDT</pubDate>
+          <pubDate>Sat, 10 Sep 2016 10:09:44 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/</guid>
           <description>&lt;p&gt;Después de realizar varias pruebas donde traté de evaluar algún que otro theme en Hugo, me di cuenta que el problema era más serio que lo pensaba.&lt;/p&gt;
@@ -2375,7 +2494,7 @@ Fetching https://golang.org/x/sys/unix?go-get=1
         <item>
           <title>Flechas en Gimp</title>
           <link>https://imfrom.github.io/post/flechas-en-gimp/</link>
-          <pubDate>Wed, 10 Aug 2016 14:16:59 CDT</pubDate>
+          <pubDate>Wed, 10 Aug 2016 14:16:59 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/flechas-en-gimp/</guid>
           <description>&lt;p&gt;Una de las maneras más fáciles en crear &lt;strong&gt;flechas&lt;/strong&gt; en Gimp, sería con la adición de un plugin al directorio &lt;code&gt;scripts&lt;/code&gt; de Gimp.&lt;/p&gt;
@@ -2423,7 +2542,7 @@ Fetching https://golang.org/x/sys/unix?go-get=1
         <item>
           <title>Git in Six Hundred Words by Mary Rose Cook</title>
           <link>https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/</link>
-          <pubDate>Wed, 03 Aug 2016 14:45:04 CDT</pubDate>
+          <pubDate>Wed, 03 Aug 2016 14:45:04 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/</guid>
           <description>&lt;p&gt;Imagine you have a directory called &lt;code&gt;alpha&lt;/code&gt;. It contains a file called &lt;code&gt;number.txt&lt;/code&gt; that contains the text &lt;code&gt;first&lt;/code&gt;.&lt;/p&gt;
@@ -2472,7 +2591,7 @@ Fetching https://golang.org/x/sys/unix?go-get=1
         <item>
           <title>Círculos en Gimp</title>
           <link>https://imfrom.github.io/post/circulos-en-gimp/</link>
-          <pubDate>Wed, 03 Aug 2016 14:13:46 CDT</pubDate>
+          <pubDate>Wed, 03 Aug 2016 14:13:46 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/circulos-en-gimp/</guid>
           <description>&lt;p&gt;Esto es solamente un recordatorio para realizar varias modificaciones a cualquier imagen en &lt;a href=&#34;https://www.gimp.org/&#34;&gt;GNU  Gimp&lt;/a&gt;.&lt;/p&gt;
@@ -2520,7 +2639,7 @@ Fetching https://golang.org/x/sys/unix?go-get=1
         <item>
           <title>Cambia Tu Contraseña en Gmail Y Google</title>
           <link>https://imfrom.github.io/post/cambia-tu-contrase%C3%B1a-en-gmail-y-google/</link>
-          <pubDate>Tue, 02 Aug 2016 14:48:19 CDT</pubDate>
+          <pubDate>Tue, 02 Aug 2016 14:48:19 -0500</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/cambia-tu-contrase%C3%B1a-en-gmail-y-google/</guid>
           <description>&lt;p&gt;Toda la ayuda que se necesite acerca de GMail, y cualquier otro producto de Google, se puede obtener a través de la página de estos en &lt;a href=&#34;https://support.google.com/&#34;&gt;https://support.google.com/&lt;/a&gt; pero no obstante a ello, enumeraré algunos que otros pasos para recuperar la contraseña o clave, en caso que se haya extraviado o por cualquier otro motivo.&lt;/p&gt;
