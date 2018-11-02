@@ -44,6 +44,14 @@
 
 &lt;p&gt;All in all, some of the &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=207550&#34; target=&#34;_blank&#34;&gt;posts from Arch Forums&lt;/a&gt; that were queried via Google, were slightly off topic. Some of these &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=112137&#34; target=&#34;_blank&#34;&gt;posts&lt;/a&gt; for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.&lt;/p&gt;
 
+&lt;p&gt;Further posts that came up for XFCE were also from the long-standing threads at &lt;strong&gt;linuxquestions.org&lt;/strong&gt;, a site that has been around perhaps longer than any other out there related to GNU/Linux in general. This time around the &lt;a href=&#34;https://www.linuxquestions.org/questions/linux-software-2/adjusting-the-clock-in-xfce-4175528816/&#34; target=&#34;_blank&#34;&gt;user was running AntiX&lt;/a&gt;  and not systemd. The &lt;code&gt;timedatectl&lt;/code&gt; is part of the latter in this case, so the suggestions aimed at &lt;code&gt;hwclock&lt;/code&gt; or setting it also through &lt;code&gt;date&lt;/code&gt; instead.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example &lt;a href=&#34;https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux&#34; target=&#34;_blank&#34;&gt;I messed up my system clock in Arch Linux&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the &lt;code&gt;timedatectl&lt;/code&gt; command. Like for example the following question that was also on &lt;strong&gt;stackexchange&lt;/strong&gt; &lt;a href=&#34;https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce&#34; target=&#34;_blank&#34;&gt;How can I easily change my time-zone in Arch/Xfce&lt;/a&gt; that I came across only later after resolving it first in my end.&lt;/p&gt;
+
+&lt;p&gt;And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the &lt;strong&gt;Arch Wiki&lt;/strong&gt; for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading &lt;code&gt;man&lt;/code&gt; pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close!&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://wiki.archlinux.org/index.php/System_time#Time_zone&#34; target=&#34;_blnak&#34;&gt;System Time Arch Wiki&lt;/a&gt;&lt;/p&gt;
