@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Antergos on Blog del tecnólogo</title>
+    <link>https://imfrom.github.io/tags/antergos/</link>
+    <description>Recent content in Antergos on Blog del tecnólogo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 27 Jan 2018 08:49:17 -0500</lastBuildDate>
+    
+	<atom:link href="https://imfrom.github.io/tags/antergos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Antergos Keyboard Selection During Installation</title>
+      <link>https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/</link>
+      <pubDate>Sat, 27 Jan 2018 08:49:17 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/</guid>
+      <description>One of the drawbacks during the installation of Antergos Linux was in identifying the keyboard layout option that was previously selected during the media installation.
+As a result only the default variant was being used after installing the system.
+I was able to identify the problem by going to the X window system xorg configuration file /etc/X11/xorg.d/00-keyboard.conf and noticing that the XkbLayout variant was not being properly identified as originally intended.</description>
+    </item>
+    
+    <item>
+      <title>Antergos Grub Selection</title>
+      <link>https://imfrom.github.io/post/antergos-grub-selection/</link>
+      <pubDate>Sat, 20 Jan 2018 08:38:47 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/antergos-grub-selection/</guid>
+      <description>During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.
+Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.
+this is even after running the usual mkinitcpio -p that loads the modules and other dependencies accordingly.
+It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on Blog del tecnólogo</title>
+    <link>https://imfrom.github.io/tags/vim/</link>
+    <description>Recent content in Vim on Blog del tecnólogo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 08 Feb 2017 13:48:53 -0500</lastBuildDate>
+    
+	<atom:link href="https://imfrom.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reemplazar Con Vim. Reemplazos de minúsculas con mayúsculas</title>
+      <link>https://imfrom.github.io/post/reemplazar-con-vim/</link>
+      <pubDate>Wed, 08 Feb 2017 13:48:53 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/reemplazar-con-vim/</guid>
+      <description>O como se dice en Inglés: capitalization, se puede lograr fácilmente en vim  mediante el empleo de mayúsculas al comienzo de oraciones a través del uso de una expresión regular o regex, sin la necesidad de utilizar algún que otro script (que puede causar efectos secundarios en el funcionamiento), para lograr el reemplazo de las minúsculas.
+En el website de programadores de superuser.com, superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim se hace esta misma pregunta para lograr el reemplazo automático de minúsculas por mayúsculas al principio de cada oración.</description>
+    </item>
+    
+    <item>
+      <title>Modificar Mapa Del Teclado Con Emacs Y Vim</title>
+      <link>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</link>
+      <pubDate>Mon, 21 Nov 2016 14:40:45 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</guid>
+      <description>Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs 1 y Vim 2, para cambiar el mapa del teclado.
+Emacs El altamente configurable y extensible editor de texto Emacs también nos puede ayudar con modificaciones del teclado, o cambiar la localización de las teclas, sin la necesidad de cambiar todo el diseño, y sin la necesidad de tener que utilizar algún teclado en específico.</description>
+    </item>
+    
+    <item>
+      <title>Reemplazos en Vim</title>
+      <link>https://imfrom.github.io/post/reemplazos-en-vim/</link>
+      <pubDate>Mon, 07 Nov 2016 14:42:55 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/reemplazos-en-vim/</guid>
+      <description>Estos son algunos de los reemplazos que se pudieran realizar en vim:
+:s/\zs/\r/g  will have this string of characters: abcdefghi
+tendrá esta cadena de caracteres: abcdefghi
+result:
+a
+b
+c
+d
+e
+f
+g
+h
+i
+Por otra parte la siguiente ejecución:
+:s/\s/\r/g  will have
+esto es una prueba
+result:
+esto
+es
+una
+prueba
+and :s/\n//g
+will have something like
+a
+b
+c
+d
+results:
+abcde
+:s/\n/ /g  will have something like</description>
+    </item>
+    
+  </channel>
+</rss>

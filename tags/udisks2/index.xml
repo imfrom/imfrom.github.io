@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Udisks2 on Blog del tecnólogo</title>
+    <link>https://imfrom.github.io/tags/udisks2/</link>
+    <description>Recent content in Udisks2 on Blog del tecnólogo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 16 Jan 2018 08:45:02 -0500</lastBuildDate>
+    
+	<atom:link href="https://imfrom.github.io/tags/udisks2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Udisks2 Udiskie Fares Better Than Ntfs 3g</title>
+      <link>https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/</link>
+      <pubDate>Tue, 16 Jan 2018 08:45:02 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/</guid>
+      <description>It is my opinion, based mostly not on what I’ve read, but instead on what I’ve encountered during the handling of a failed hard disk, that the disk volume mounting utility udisks2 fares better than say, ntfs-3g.
+Quite possibly there could be many improvements with this software, and there is no doubt about it, but considering wear-and-tear conditions of the disk, among other considerations, and, as long as udisks2 is run without an interruption, no other mounting options utility that is currently available may be able to improve its overall performance.</description>
+    </item>
+    
+  </channel>
+</rss>
