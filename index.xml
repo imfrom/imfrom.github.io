@@ -94,7 +94,7 @@
 &lt;pre&gt;&lt;code&gt; WARNING: Clamd was NOT notified: Can&#39;t connect to clamd through /run/clamav/clamd.ctl: No such file or directory
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;which left me unsure what could have the issue.&lt;/p&gt;
+&lt;p&gt;which left me unsure what could have been the issue.&lt;/p&gt;
 
 &lt;p&gt;Googling about it returned among many of the results, some as in &lt;a href=&#34;https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/&#34; target=&#34;_blank&#34;&gt;Can&amp;rsquo;t connect to Unix socket /var/run//clamav/clamd.ctl&lt;/a&gt;, which dealt with the issue.&lt;/p&gt;
 
@@ -117,7 +117,7 @@
 
 &lt;p&gt;&lt;code&gt;Created symlink /etc/systemd/system/multi-user.target.wants/clamav-freshclam.service → /usr/lib/systemd/system/clamav-freshclam.service.&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Later on calling the status of that service with&lt;/p&gt;
+&lt;p&gt;Later on by calling the status of that service with&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; systemctl status clamav-freshclam.service
 &lt;/code&gt;&lt;/pre&gt;
@@ -131,7 +131,7 @@
  Aug 28 01:23:43  freshclam[]: bytecode.cvd is up to date
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;whether it wouyld be necessary to enable it every time it restarts, it&amp;rsquo;s something that I will deal with later on. I only needed it to check on mainly some files and that was the purpose of running it in the first place.&lt;/p&gt;
+&lt;p&gt;But whether it would be necessary to enable it every time it restarts, it&amp;rsquo;s something that I will deal with later on. I only needed it this time around to check some files, and that was the purpose of running it in the first place.&lt;/p&gt;
 </description>
         </item>
       

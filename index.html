@@ -290,7 +290,7 @@
 <pre><code> WARNING: Clamd was NOT notified: Can't connect to clamd through /run/clamav/clamd.ctl: No such file or directory
 </code></pre>
 
-<p>which left me unsure what could have the issue.</p>
+<p>which left me unsure what could have been the issue.</p>
 
 <p>Googling about it returned among many of the results, some as in <a href="https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/" target="_blank">Can&rsquo;t connect to Unix socket /var/run//clamav/clamd.ctl</a>, which dealt with the issue.</p>
 
@@ -313,7 +313,7 @@
 
 <p><code>Created symlink /etc/systemd/system/multi-user.target.wants/clamav-freshclam.service → /usr/lib/systemd/system/clamav-freshclam.service.</code></p>
 
-<p>Later on calling the status of that service with</p>
+<p>Later on by calling the status of that service with</p>
 
 <pre><code> systemctl status clamav-freshclam.service
 </code></pre>
@@ -327,7 +327,7 @@
  Aug 28 01:23:43  freshclam[]: bytecode.cvd is up to date
 </code></pre>
 
-<p>whether it wouyld be necessary to enable it every time it restarts, it&rsquo;s something that I will deal with later on. I only needed it to check on mainly some files and that was the purpose of running it in the first place.</p>
+<p>But whether it would be necessary to enable it every time it restarts, it&rsquo;s something that I will deal with later on. I only needed it this time around to check some files, and that was the purpose of running it in the first place.</p>
 
     </div>
   
