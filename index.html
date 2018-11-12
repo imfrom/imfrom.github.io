@@ -183,6 +183,8 @@
     
       
     
+      
+    
 
     <a class="sidebar-nav-item" href="/archive/.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>
@@ -213,6 +215,12 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/another-test/">Another Test</a></h1>
+        <span class="post-date">Nov 12, 2018</span>
+        
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/">Sddm Wayland Timezone Differs From Locale</a></h1>
@@ -802,33 +810,6 @@ the main OS in their systems.</p>
 <p>Until then some of these errors and dependency satisfaction
 from the packages would have to be resolved manually by the
 end-users on their own.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/installing-pacman-breaks-dependency/">Installing Pacman Breaks Dependency</a></h1>
-        <span class="post-date">May 29, 2018</span>
-        <p>Running one of the usual updates from the pamac gui package, returned</p>
-
-<pre><code> pamac: installing pacman (5.1.0-1) breaks dependency ‘pacman&lt;5.1
-</code></pre>
-
-<p>I noticed that any package on the list with a dependency must be
-unchecked before continuing.</p>
-
-<p>Later I checked the antergos forum to see if there was any solution.</p>
-
-<p><img src="/images/pacman-cant-install-breaks-dependency.png" alt="" /></p>
-
-<p>The suggested workaround was to run</p>
-
-<pre><code> pacman -Syyu -d  --nodeps
-</code></pre>
-
-<p>The following commit apparently introduced the issue in the first
-place:</p>
-
-<p><a href="https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f">https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f</a></p>
 
     </div>
   
