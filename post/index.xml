@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 12 Nov 2018 02:58:47 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 02 Nov 2018 02:16:00 -0400</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Another Test</title>
-      <link>https://imfrom.github.io/post/another-test/</link>
-      <pubDate>Mon, 12 Nov 2018 02:58:47 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/post/another-test/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Sddm Wayland Timezone Differs From Locale</title>
