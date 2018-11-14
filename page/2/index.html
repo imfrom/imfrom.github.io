@@ -183,8 +183,6 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="/archive/.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>
@@ -215,33 +213,6 @@
 
 
 <div class="posts">
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/installing-pacman-breaks-dependency/">Installing Pacman Breaks Dependency</a></h1>
-        <span class="post-date">May 29, 2018</span>
-        <p>Running one of the usual updates from the pamac gui package, returned</p>
-
-<pre><code> pamac: installing pacman (5.1.0-1) breaks dependency ‘pacman&lt;5.1
-</code></pre>
-
-<p>I noticed that any package on the list with a dependency must be
-unchecked before continuing.</p>
-
-<p>Later I checked the antergos forum to see if there was any solution.</p>
-
-<p><img src="/images/pacman-cant-install-breaks-dependency.png" alt="" /></p>
-
-<p>The suggested workaround was to run</p>
-
-<pre><code> pacman -Syyu -d  --nodeps
-</code></pre>
-
-<p>The following commit apparently introduced the issue in the first
-place:</p>
-
-<p><a href="https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f">https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f</a></p>
-
-    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/">Antergos Keyboard Selection During Installation</a></h1>
@@ -686,6 +657,26 @@ target="_blank">clang completion #1102</a></p>
 
 <pre><code> map buffer insert %{;} %{\} 
 </code></pre>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/network-has-been-disconnected-manjaro-kde-xfce/">Network Has Been Disconnected Manjaro Kde Xfce</a></h1>
+        <span class="post-date">Dec 1, 2017</span>
+        <p>For some unknown reason, I was getting the message <code>network has been disconnected</code> even on connections that have been previously used.</p>
+
+<p>Contrary to the post entitled <strong>NetworkManager doesn’t automatically ask for a password for new network</strong>, see <a href="https://bbs.archlinux.org/viewtopic.php?id=142066" target="_blank">see this post on bbs.archlinux.org</a> in my case the connection was used many times before.</p>
+
+<p>The dependency problem that has plagued this bug seemed to make a comeback on a most of Manjaro desktop environments.</p>
+
+<p>Installing, or better put, reinstalling it with</p>
+
+<pre><code> yaourt -S gnome-keyring
+</code></pre>
+
+<p>seemed to resolve the issue.</p>
+
+<p>The same problem hasn’t been experienced on Antergos distribution.</p>
 
     </div>
   
