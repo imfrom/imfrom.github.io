@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 02 Nov 2018 02:16:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 26 Nov 2018 01:25:37 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Error While Reinstalling All Previously Deployed Packages of Context User</title>
+      <link>https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/</link>
+      <pubDate>Mon, 26 Nov 2018 01:25:37 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/</guid>
+      <description>I still don&amp;rsquo;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error Error while reinstalling all previously deployed packages of context user.
+Looking up Google didn&amp;rsquo;t help in finding some sort of recent info about this issue.
+I also had a warning: failed to load path from javadlx which was obviously only a warning but nonetheless troublesome and problematic considering that this was just a fresh installation of Libreoffice.</description>
+    </item>
     
     <item>
       <title>Sddm Wayland Timezone Differs From Locale</title>

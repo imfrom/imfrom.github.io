@@ -6,8 +6,52 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2018</rights>
-    <updated>2018-11-02 02:16:00 -0400 EDT</updated>
+    <updated>2018-11-26 01:25:37 -0500 EST</updated>
 
+    
+      
+        <item>
+          <title>Error While Reinstalling All Previously Deployed Packages of Context User</title>
+          <link>https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/</link>
+          <pubDate>Mon, 26 Nov 2018 01:25:37 EST</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/</guid>
+          <description>&lt;p&gt;I still don&amp;rsquo;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error &lt;code&gt;Error while reinstalling all previously deployed packages of context user&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Looking up Google didn&amp;rsquo;t help in finding some sort of recent info about this issue.&lt;/p&gt;
+
+&lt;p&gt;I also had a &lt;code&gt;warning: failed to load path from javadlx&lt;/code&gt; which was obviously only a warning but nonetheless troublesome and problematic considering that this was just a fresh installation of Libreoffice.&lt;/p&gt;
+
+&lt;p&gt;Further looking up this issue through Google led me to the forum of Arch in which a user mentioned the possibility of permission problems with the installation. The user also queried Google to find more about this issue:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Googling about the error showed some chances of being a permission problem with ~/.openoffice.org2. But I don&amp;rsquo;t have that directory in my system, but ~/.config/.libreoffice. I would suggest you check the permissions on this directory. Mine are 766. &lt;a href=&#34;#javadlx&#34;&gt;&lt;sup id=&#34;javadlxref&#34;&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;but there was nothing out of the norm with the permissions set on the directory. But from his post it reminded me that usually the path that is set by xdg is under the &lt;strong&gt;xdg&lt;/strong&gt; directory. Then again, the environment variable for it had been set correctly.&lt;/p&gt;
+
+&lt;p&gt;I decided to go ahead and backup the &lt;code&gt;.config/libreoffice/4&lt;/code&gt; directory where some of the other files for libreoffice laid at.&lt;/p&gt;
+
+&lt;p&gt;Then I moved that directory with all the files to another location, following by calling out &lt;code&gt;libreoffice&lt;/code&gt; which seemed to resolve the issue.&lt;/p&gt;
+
+&lt;p&gt;One of the first hits provided by Google after my first inquiry, were from the forums at the libreoffice website itself, in which one of the threads that also dealt with this issue had mentioned the same workaround that I had just used.&lt;a href=&#34;https://forum.openoffice.org/en/forum/viewtopic.php?f=101&amp;t=83995&#34; target=&#34;_blank&#34;&gt;LO5.0 Fatal Error cannot be started&lt;/a&gt;.&lt;a href=&#34;#oocontextuser&#34;&gt;&lt;sup id=&#34;oocontextuserref&#34;&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Further queries that would shed more light about this problem, took me to a previous probable bug that was reported to the &lt;a href=&#34;https://bugs.documentfoundation.org/show_bug.cgi?id=64606&#34; target=&#34;_blank&#34;&gt;documentfoundation.org&lt;/a&gt; website. This report was opened on 2013 and closed after right around 2014. &lt;a href=&#34;#docfoundation&#34;&gt;&lt;sup id=&#34;docfoundationref&#34;&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Why that bug report at the documentfoundation.org website was shortly after marked as closed, is simply beyond me.&lt;/p&gt;
+
+&lt;p&gt;The report occurred under version 5 whereas in my case, it was under version 6. And the problem is still there.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1- &lt;a name=&#34;javadlx&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?pid=1003045#p1003045&#34; target=&#34;_blank&#34;&gt;Permission problem with Libreoffice - Arch linux forums&lt;/a&gt;&lt;a href=&#34;#javadlxref&#34;&gt;&amp;crarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2- &lt;a name=&#34;oocontextuser&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://forum.openoffice.org/en/forum/viewtopic.php?f=101&amp;t=83995&#34; target=&#34;_blank&#34;&gt;LO5.0 Fatal error cannot be started&lt;/a&gt; &lt;a href=&#34;#oocontextuserref&#34;&gt;&amp;crarr;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3- &lt;a name=&#34;docfoundation&#34;&gt;&lt;/a&gt; &lt;a href=&#34;https://bugs.documentfoundation.org/show_bug.cgi?id=64606&#34; target=&#34;_blank&#34;&gt;bug filed with documentfoundation.org&lt;/a&gt;&lt;a href=&#34;#docfoundationref&#34;&gt;&amp;crarr;&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
