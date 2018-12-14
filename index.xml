@@ -2561,6 +2561,10 @@ Fetching https://golang.org/x/sys/unix?go-get=1
 &lt;pre&gt;&lt;code&gt; $wget http://registry.gimp.org/files/arrow.scm
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;or the archived version &lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt; $wget https://web.archive.org/web/20180218220954/http://registry.gimp.org:80/node/20269 &lt;/code&gt;&lt;/pre&gt;
+
+
 &lt;p&gt;Y recomienza el programa Gimp.&lt;/p&gt;
 
 &lt;p&gt;Digamos por ejemplo, que seleccionas un nuevo documento. En la caja de herramientas de Gimp (recuerda que si no está visible, siempre puedes activarla a través de la combinación en el teclado de &lt;code&gt;Ctrl&lt;/code&gt; y &lt;code&gt;b&lt;/code&gt;), podrás ver la nueva inclusión de la ventana de herramienta.&lt;/p&gt;
