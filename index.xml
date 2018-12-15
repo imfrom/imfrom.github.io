@@ -2564,6 +2564,11 @@ Fetching https://golang.org/x/sys/unix?go-get=1
 &lt;p&gt;or the archived version &lt;/p&gt; 
 &lt;pre&gt;&lt;code&gt; $wget https://web.archive.org/web/20180218220954/http://registry.gimp.org:80/node/20269 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;También pudieras hacer uso de una versión modificada del anterior script pero con flechas curvadas.&lt;/p&gt;
+
+&lt;p&gt;puedes obtenerlo mediante&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $wget https://web.archive.org/web/20180208191139/http://registry.gimp.org:80/node/28566&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Y recomienza el programa Gimp.&lt;/p&gt;
 
