@@ -6,8 +6,42 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2018</rights>
-    <updated>2018-11-26 01:25:37 -0500 EST</updated>
+    <updated>2018-12-17 00:43:33 -0500 EST</updated>
 
+    
+      
+        <item>
+          <title>Closetag Vim on Markdown Filetype</title>
+          <link>https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/</link>
+          <pubDate>Mon, 17 Dec 2018 00:43:33 EST</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/</guid>
+          <description>&lt;p&gt;I coudln&amp;rsquo;t help but noticing that the closetag plugin script for vim wasn&amp;rsquo;t working on any of the markdown files that had been previously edited.&lt;/p&gt;
+
+&lt;p&gt;The markdown files in question were of the abbreviated form &lt;code&gt;md&lt;/code&gt; and not &lt;code&gt;markbown&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It did work without a problem on any newly-created file and whether these files were had the extension &lt;code&gt;md&lt;/code&gt; or &lt;code&gt;markdown&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The README file of &lt;strong&gt;closetag&lt;/strong&gt; specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; let g:closetag_filetypes = &amp;quot;*.html, *.xhtml, *.phtml&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;etcetera.&lt;/p&gt;
+
+&lt;p&gt;At one given point I recall having &lt;code&gt;*.md&lt;/code&gt;, which was more than enough for the &lt;strong&gt;closetag&lt;/strong&gt; plugin to work without a problem, even with previously edited files.&lt;/p&gt;
+
+&lt;p&gt;This time around however, only having &lt;code&gt;*.md&lt;/code&gt; did not remedy the problem.&lt;/p&gt;
+
+&lt;p&gt;Having &lt;code&gt;*.markdown&lt;/code&gt; on the vim initialization file was necessary for the
+&lt;strong&gt;closetag&lt;/strong&gt; plugin to work with previously edited markdown files that held a
+suffix &lt;code&gt;.md&lt;/code&gt; extension&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; let g:closetag_filetypes = &amp;quot;*.md, *.mardown&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
     
       
         <item>

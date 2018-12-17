@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 26 Nov 2018 01:25:37 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 17 Dec 2018 00:43:33 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Closetag Vim on Markdown Filetype</title>
+      <link>https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/</link>
+      <pubDate>Mon, 17 Dec 2018 00:43:33 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/</guid>
+      <description>I coudln&amp;rsquo;t help but noticing that the closetag plugin script for vim wasn&amp;rsquo;t working on any of the markdown files that had been previously edited.
+The markdown files in question were of the abbreviated form md and not markbown.
+It did work without a problem on any newly-created file and whether these files were had the extension md or markdown.
+The README file of closetag specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:</description>
+    </item>
     
     <item>
       <title>Error While Reinstalling All Previously Deployed Packages of Context User</title>
