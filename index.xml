@@ -18,16 +18,16 @@
           <guid>https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/</guid>
           <description>&lt;p&gt;I coudln&amp;rsquo;t help but noticing that the closetag plugin script for vim wasn&amp;rsquo;t working on any of the markdown files that had been previously edited.&lt;/p&gt;
 
-&lt;p&gt;The markdown files in question were of the abbreviated form &lt;code&gt;md&lt;/code&gt; and not &lt;code&gt;markbown&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The markdown files in question were of the abbreviated form &lt;code&gt;md&lt;/code&gt; and not &lt;code&gt;markdown&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;It did work without a problem on any newly-created file and whether these files were had the extension &lt;code&gt;md&lt;/code&gt; or &lt;code&gt;markdown&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It did work without a problem on any newly-created file and whether these files were of the form or had the extension &lt;code&gt;md&lt;/code&gt; or &lt;code&gt;markdown&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;The README file of &lt;strong&gt;closetag&lt;/strong&gt; specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; let g:closetag_filetypes = &amp;quot;*.html, *.xhtml, *.phtml&amp;quot;
+&lt;pre&gt;&lt;code&gt; let g:closetag_filenames = &amp;quot;*.html, *.xhtml, *.phtml&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;etcetera.&lt;/p&gt;
+&lt;p&gt;etcetera. &lt;a href=&#34;#closetagreadme&#34;&gt;&lt;sup id=&#34;closetagreadmeref&#34;&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;At one given point I recall having &lt;code&gt;*.md&lt;/code&gt;, which was more than enough for the &lt;strong&gt;closetag&lt;/strong&gt; plugin to work without a problem, even with previously edited files.&lt;/p&gt;
 
@@ -37,8 +37,12 @@
 &lt;strong&gt;closetag&lt;/strong&gt; plugin to work with previously edited markdown files that held a
 suffix &lt;code&gt;.md&lt;/code&gt; extension&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; let g:closetag_filetypes = &amp;quot;*.md, *.mardown&amp;quot;
+&lt;pre&gt;&lt;code&gt; let g:closetag_filenames = &amp;quot;*.md, *.mardown&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&#34;closetagreadme&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://github.com/alvan/vim-closetag/blob/master/README.md#options&#34; target=&#34;blank&#34;&gt;README file for closetag&lt;/a&gt;&lt;a href=&#34;#closetagreadmeref&#34;&gt;&amp;crarr; &lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
       

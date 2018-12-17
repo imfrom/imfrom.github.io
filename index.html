@@ -220,16 +220,16 @@
         <span class="post-date">Dec 17, 2018</span>
         <p>I coudln&rsquo;t help but noticing that the closetag plugin script for vim wasn&rsquo;t working on any of the markdown files that had been previously edited.</p>
 
-<p>The markdown files in question were of the abbreviated form <code>md</code> and not <code>markbown</code>.</p>
+<p>The markdown files in question were of the abbreviated form <code>md</code> and not <code>markdown</code>.</p>
 
-<p>It did work without a problem on any newly-created file and whether these files were had the extension <code>md</code> or <code>markdown</code>.</p>
+<p>It did work without a problem on any newly-created file and whether these files were of the form or had the extension <code>md</code> or <code>markdown</code>.</p>
 
 <p>The README file of <strong>closetag</strong> specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:</p>
 
-<pre><code> let g:closetag_filetypes = &quot;*.html, *.xhtml, *.phtml&quot;
+<pre><code> let g:closetag_filenames = &quot;*.html, *.xhtml, *.phtml&quot;
 </code></pre>
 
-<p>etcetera.</p>
+<p>etcetera. <a href="#closetagreadme"><sup id="closetagreadmeref">1</sup></a></p>
 
 <p>At one given point I recall having <code>*.md</code>, which was more than enough for the <strong>closetag</strong> plugin to work without a problem, even with previously edited files.</p>
 
@@ -239,8 +239,12 @@
 <strong>closetag</strong> plugin to work with previously edited markdown files that held a
 suffix <code>.md</code> extension</p>
 
-<pre><code> let g:closetag_filetypes = &quot;*.md, *.mardown&quot;
+<pre><code> let g:closetag_filenames = &quot;*.md, *.mardown&quot;
 </code></pre>
+
+<p><strong>References</strong></p>
+
+<p><a name="closetagreadme"></a><a href="https://github.com/alvan/vim-closetag/blob/master/README.md#options" target="blank">README file for closetag</a><a href="#closetagreadmeref">&crarr; </a></p>
 
     </div>
   
