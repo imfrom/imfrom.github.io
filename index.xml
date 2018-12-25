@@ -1541,6 +1541,15 @@ target=&#34;_blank&#34;&gt;clang completion #1102&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Whether &lt;strong&gt;xfce&lt;/strong&gt; will be a daily desktop environment driver running the main programs on which my workflow depends upon, it’s a question of time and how well it will handle them without a major setback.&lt;/p&gt;
 
+&lt;p&gt;Further oversights around Bluetooth vulnerabilities include technical papers such as &lt;a href=&#34;http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.7253&amp;rep=rep1&amp;type=pdf&#34; target=&#34;_blank&#34;&gt;Security Risks in Bluetooth Devices&lt;/a&gt;, &lt;a href=&#34;https://pdfs.semanticscholar.org/8872/521819c79505ac20e5da8dd14f8c41eb3f07.pdf&#34; target=&#34;_blank&#34;&gt;Bluetooth security threats and solutions&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Even recent articles from &lt;a href=&#34;https://mobile.slashdot.org/story/17/09/12/2030213/blueborne-vulnerabilities-impact-over-5-billion-bluetooth-enabled-devices&#34; target=&#34;_blank&#34;&gt;Slashdot - BlueBorne Vulnerabilities Impact Over 5 Billion Bluetooth-Enabled Devices&lt;/a&gt; have gone on at length about it. The
+following paper - although unreliable since it looks more than a pamphlet from
+a company that advertises its products under the pretension of providing
+unparalleled protection - serves to confirm that regardless of its merit [this
+paper itsel] is worth considering the possible risks that result from the
+operations of bluetooth devices.&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://forum.manjaro.org/t/bluetooth-adapters-app-not-opening-bluetooth-manager-bluez-failed/4367/19&#34; target=&#34;_blank&#34;&gt;bluetooth adapters not opening bluetooth-manager-bluez-failed&lt;/a&gt;&lt;a href=&#34;#blueref&#34;&gt;_↩︎&lt;/a&gt;&lt;/p&gt;
