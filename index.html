@@ -187,11 +187,13 @@
     
       
     
+      
+    
 
     
 
   <div class="sidebar-item">
-    <p>&copy; 2018. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -214,6 +216,47 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/">Reply to Email With Mutt on Xfce</a></h1>
+        <span class="post-date">Feb 1, 2019</span>
+        <p>After looking at various ways to reply to an email address through mutt along with the terminal of choice, the <a href="https://docs.xfce.org/xfce/exo/preferred-applications" target="_blank">xfce docs website</a> did not provide me with all the needed details in this case.</p>
+
+<p>I knew that by going to <strong>Preferred Applications</strong> one would have to further specify the corresponding commands under the <strong>Mail Reader</strong> application. But although it did pointed this out by running</p>
+
+<pre><code>$ exo-open --launch TerminalEmulator mutt
+</code></pre>
+
+<p>on the terminal, this, however, does not work. The terminal of choice will not open accordingly.</p>
+
+<p>Further queries about this problem led me to a post from the Northern Virginia Linux Users Group.</p>
+
+<p>On this <a href="http://www.firemountain.net/pipermail/novalug/2013-January/033997.html" target="_blank">post</a>, one of the users pointed out that by launching, say, <strong>xterm</strong> with the <strong>-e</strong> option, this would be more than enough to open the file in question.</p>
+
+<pre><code> exo-open --launch 'xterm -e'
+</code></pre>
+
+<p>But this is wrong, since <strong>TerminalEmulator</strong> needs to be specified.</p>
+
+<p>On another <a href="http://www.firemountain.net/pipermail/novalug/2013-January/034003.html" target="_blank">post</a> closely related under the same thread, another user specified that the <strong>&ndash;launch</strong> option needed a &ldquo;category.&rdquo; It wouldn&rsquo;t be difficult to find out what the category he was referring to, may be. In this case, even the already mentioned link from <a href="http://www.firemountain.net/pipermail/novalug/2013-January/033997.html" target="_blank">xfce docs</a> had already pointed out.</p>
+
+<p>The man page for <a href="https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1" target="_blank">xterm</a> says about the <strong>-e</strong> option that it will</p>
+
+<pre><code> -e program [ arguments ... ]
+ This option specifies the program (and its command line arguments) to be run in the xterm window. It also sets the window title and icon name to be the basename of the program being executed if neither -T nor -n are given on the command line.
+</code></pre>
+
+<p>To wrap it all up, quotes are indeed needed to call out the preferred terminal - which in my case is xterm - and finally bring out the mail reader. The option <strong>-e</strong> is needed as well, along with the path to the mutt configuration file.</p>
+
+<pre><code> exo-open --launch TerminalEmulator 'xterm mutt -f /path/to/configuration/file &quot;%s&quot;'
+</code></pre>
+
+<p>or if one is using neomutt, change the <strong>-f</strong> option accordingly to <strong>-F</strong>.</p>
+
+<pre><code> exo-open --launch TerminalEmulator 'xterm neomutt -F /path/to/configuration/file &quot;%s&quot;'
+</code></pre>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/">Closetag Vim on Markdown Filetype</a></h1>
@@ -810,33 +853,6 @@ problem continued in identifying the correct device.</p>
 
 <p>With Antergos it worked without a major issue and for that
 reason alone I recommend this distribution over Manjaro.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/pamac-runs-post-install-hooks-but-fails-to-install-new-updates/">Pamac Runs Post Install Hooks but Fails to Install New Updates</a></h1>
-        <span class="post-date">Jul 18, 2018</span>
-        <p>The GUI version of <strong>pacman</strong> which runs under Antergos
-installed the scheduled updates as expected.</p>
-
-<p>But as soon as new updates were found it just failed to
-install them.</p>
-
-<p>In this case, after running the post installation hooks, it
-found a new update for one of the programs. But this time
-however, it failed to even initialized the transaction.</p>
-
-<p>Although it could have been relatively simple to circumvent
-the problem by seeing through <strong>pacman</strong> itself what the error
-was, but just closing the <strong>pamac</strong> application, seemed all
-that was needed to have the problem fixed.</p>
-
-<p>Soon after, the GUI version <strong>pamac</strong> had no further issues
-to install the updates accordingly.</p>
-
-<p>Perhaps this is is just a reminder not to fully rely on
-<strong>pamac</strong> and used the main package manager for any Arch
-based distribution.</p>
 
     </div>
   

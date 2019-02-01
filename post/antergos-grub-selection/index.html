@@ -186,11 +186,13 @@
     
       
     
+      
+    
 
     
 
   <div class="sidebar-item">
-    <p>&copy; 2018. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -216,7 +218,7 @@
 
 <p>Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.</p>
 
-<p>this is even after running the usual mkinitcpio -p <linux kernel> that loads the modules and other dependencies accordingly.</p>
+<p>this is even after running the usual <code>mkinitcpio -p &lt;linux kernel&gt;</code> that loads the modules and other dependencies accordingly.</p>
 
 <p>It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</p>
 
@@ -224,9 +226,9 @@
 
 <p>Therein, and lying at the bottom of the configuration file, one can find the:</p>
 
-<pre><code>  # Uncomment to make GRUB remember the last selection. This requires to
-  # set 'GRUB_DEFAULT=saved' above.
-  #GRUB_SAVEDEFAULT=&quot;true&quot;
+<pre><code> # Uncomment to make GRUB remember the last selection. This requires to
+ # set 'GRUB_DEFAULT=saved' above.
+ #GRUB_SAVEDEFAULT=&quot;true&quot;
 </code></pre>
 
 <p>One could uncomment the GRUB_SAVEDEFAULT=&ldquo;true&rdquo; so the grub configuration file ‘remembers’ the selection.</p>

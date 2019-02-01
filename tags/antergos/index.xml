@@ -31,7 +31,7 @@ I was able to identify the problem by going to the X window system xorg configur
       <guid>https://imfrom.github.io/post/antergos-grub-selection/</guid>
       <description>During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.
 Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.
-this is even after running the usual mkinitcpio -p that loads the modules and other dependencies accordingly.
+this is even after running the usual mkinitcpio -p &amp;lt;linux kernel&amp;gt; that loads the modules and other dependencies accordingly.
 It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</description>
     </item>
     

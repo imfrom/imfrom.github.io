@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 17 Dec 2018 00:43:33 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 01 Feb 2019 01:35:59 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reply to Email With Mutt on Xfce</title>
+      <link>https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/</link>
+      <pubDate>Fri, 01 Feb 2019 01:35:59 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/</guid>
+      <description>After looking at various ways to reply to an email address through mutt along with the terminal of choice, the xfce docs website did not provide me with all the needed details in this case.
+I knew that by going to Preferred Applications one would have to further specify the corresponding commands under the Mail Reader application. But although it did pointed this out by running
+$ exo-open --launch TerminalEmulator mutt  on the terminal, this, however, does not work.</description>
+    </item>
     
     <item>
       <title>Closetag Vim on Markdown Filetype</title>
@@ -163,7 +174,7 @@ I was able to identify the problem by going to the X window system xorg configur
       <guid>https://imfrom.github.io/post/antergos-grub-selection/</guid>
       <description>During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.
 Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.
-this is even after running the usual mkinitcpio -p that loads the modules and other dependencies accordingly.
+this is even after running the usual mkinitcpio -p &amp;lt;linux kernel&amp;gt; that loads the modules and other dependencies accordingly.
 It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</description>
     </item>
     

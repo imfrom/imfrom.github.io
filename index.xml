@@ -5,9 +5,55 @@
     <link>https://imfrom.github.io/</link>
     <language>en-us</language>
     <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2018-12-17 00:43:33 -0500 EST</updated>
+    <rights>(C) 2019</rights>
+    <updated>2019-02-01 01:35:59 -0500 EST</updated>
 
+    
+      
+        <item>
+          <title>Reply to Email With Mutt on Xfce</title>
+          <link>https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/</link>
+          <pubDate>Fri, 01 Feb 2019 01:35:59 EST</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/</guid>
+          <description>&lt;p&gt;After looking at various ways to reply to an email address through mutt along with the terminal of choice, the &lt;a href=&#34;https://docs.xfce.org/xfce/exo/preferred-applications&#34; target=&#34;_blank&#34;&gt;xfce docs website&lt;/a&gt; did not provide me with all the needed details in this case.&lt;/p&gt;
+
+&lt;p&gt;I knew that by going to &lt;strong&gt;Preferred Applications&lt;/strong&gt; one would have to further specify the corresponding commands under the &lt;strong&gt;Mail Reader&lt;/strong&gt; application. But although it did pointed this out by running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ exo-open --launch TerminalEmulator mutt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;on the terminal, this, however, does not work. The terminal of choice will not open accordingly.&lt;/p&gt;
+
+&lt;p&gt;Further queries about this problem led me to a post from the Northern Virginia Linux Users Group.&lt;/p&gt;
+
+&lt;p&gt;On this &lt;a href=&#34;http://www.firemountain.net/pipermail/novalug/2013-January/033997.html&#34; target=&#34;_blank&#34;&gt;post&lt;/a&gt;, one of the users pointed out that by launching, say, &lt;strong&gt;xterm&lt;/strong&gt; with the &lt;strong&gt;-e&lt;/strong&gt; option, this would be more than enough to open the file in question.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; exo-open --launch &#39;xterm -e&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But this is wrong, since &lt;strong&gt;TerminalEmulator&lt;/strong&gt; needs to be specified.&lt;/p&gt;
+
+&lt;p&gt;On another &lt;a href=&#34;http://www.firemountain.net/pipermail/novalug/2013-January/034003.html&#34; target=&#34;_blank&#34;&gt;post&lt;/a&gt; closely related under the same thread, another user specified that the &lt;strong&gt;&amp;ndash;launch&lt;/strong&gt; option needed a &amp;ldquo;category.&amp;rdquo; It wouldn&amp;rsquo;t be difficult to find out what the category he was referring to, may be. In this case, even the already mentioned link from &lt;a href=&#34;http://www.firemountain.net/pipermail/novalug/2013-January/033997.html&#34; target=&#34;_blank&#34;&gt;xfce docs&lt;/a&gt; had already pointed out.&lt;/p&gt;
+
+&lt;p&gt;The man page for &lt;a href=&#34;https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1&#34; target=&#34;_blank&#34;&gt;xterm&lt;/a&gt; says about the &lt;strong&gt;-e&lt;/strong&gt; option that it will&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; -e program [ arguments ... ]
+ This option specifies the program (and its command line arguments) to be run in the xterm window. It also sets the window title and icon name to be the basename of the program being executed if neither -T nor -n are given on the command line.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To wrap it all up, quotes are indeed needed to call out the preferred terminal - which in my case is xterm - and finally bring out the mail reader. The option &lt;strong&gt;-e&lt;/strong&gt; is needed as well, along with the path to the mutt configuration file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; exo-open --launch TerminalEmulator &#39;xterm mutt -f /path/to/configuration/file &amp;quot;%s&amp;quot;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or if one is using neomutt, change the &lt;strong&gt;-f&lt;/strong&gt; option accordingly to &lt;strong&gt;-F&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; exo-open --launch TerminalEmulator &#39;xterm neomutt -F /path/to/configuration/file &amp;quot;%s&amp;quot;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
     
       
         <item>
@@ -816,7 +862,7 @@ place:&lt;/p&gt;
 
 &lt;p&gt;Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.&lt;/p&gt;
 
-&lt;p&gt;this is even after running the usual mkinitcpio -p &lt;linux kernel&gt; that loads the modules and other dependencies accordingly.&lt;/p&gt;
+&lt;p&gt;this is even after running the usual &lt;code&gt;mkinitcpio -p &amp;lt;linux kernel&amp;gt;&lt;/code&gt; that loads the modules and other dependencies accordingly.&lt;/p&gt;
 
 &lt;p&gt;It’s good to remember that Grub configuration file though, resides on the /boot/default directory.&lt;/p&gt;
 
@@ -824,9 +870,9 @@ place:&lt;/p&gt;
 
 &lt;p&gt;Therein, and lying at the bottom of the configuration file, one can find the:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  # Uncomment to make GRUB remember the last selection. This requires to
-  # set &#39;GRUB_DEFAULT=saved&#39; above.
-  #GRUB_SAVEDEFAULT=&amp;quot;true&amp;quot;
+&lt;pre&gt;&lt;code&gt; # Uncomment to make GRUB remember the last selection. This requires to
+ # set &#39;GRUB_DEFAULT=saved&#39; above.
+ #GRUB_SAVEDEFAULT=&amp;quot;true&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;One could uncomment the GRUB_SAVEDEFAULT=&amp;ldquo;true&amp;rdquo; so the grub configuration file ‘remembers’ the selection.&lt;/p&gt;
