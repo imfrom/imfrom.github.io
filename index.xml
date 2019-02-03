@@ -6,8 +6,56 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2019</rights>
-    <updated>2019-02-02 04:26:31 -0500 EST</updated>
+    <updated>2019-02-03 12:44:11 -0500 EST</updated>
 
+    
+      
+        <item>
+          <title>Kakoune Paste With Xclip</title>
+          <link>https://imfrom.github.io/post/kakoune-paste-with-xclip/</link>
+          <pubDate>Sun, 03 Feb 2019 12:44:11 EST</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/kakoune-paste-with-xclip/</guid>
+          <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard&#34;
+target=&#34;_blank&#34;&gt;kakoune wiki on github&lt;/a&gt;
+goes at length on some of the steps to
+to follow in order to paste with the system clipboard&lt;/p&gt;
+
+&lt;p&gt;It says to in order to paste before with
+&lt;strong&gt;xsel&lt;/strong&gt; to&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; map global user p &#39;&amp;lt;a-!&amp;gt;xsel --output --clipboard&amp;lt;ret&amp;gt;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But in the case of  &lt;strong&gt;xclip&lt;/strong&gt; for example,
+and by reading the man pages of &lt;strong&gt;xclip&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; -selection
+          specify which X selection to use, options are &amp;quot;primary&amp;quot; to
+          use XA_PRIMARY (default), &amp;quot;secondary&amp;quot; for XA_SECONDARY  or
+          &amp;quot;clipboard&amp;quot; for XA_CLIPBOARD
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; -o, -out
+          print the selection to standard out (generally for  piping
+          to a file or program)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So in order to paste with the system
+clipboard by using &lt;strong&gt;xclip&lt;/strong&gt; instead,
+&lt;code&gt;clipboard&lt;/code&gt; from &lt;strong&gt;xsel&lt;/strong&gt; would have to
+be replaced with &lt;code&gt;selection&lt;/code&gt; from
+&lt;strong&gt;xclip&lt;/strong&gt;, so something in the lines of&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  map global user p &#39;&amp;lt;a-!&amp;gt;xclip -o -s &amp;lt;ret&amp;gt;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;would suffice.&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>

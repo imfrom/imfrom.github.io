@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 02 Feb 2019 04:26:31 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 03 Feb 2019 12:44:11 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kakoune Paste With Xclip</title>
+      <link>https://imfrom.github.io/post/kakoune-paste-with-xclip/</link>
+      <pubDate>Sun, 03 Feb 2019 12:44:11 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/kakoune-paste-with-xclip/</guid>
+      <description>The kakoune wiki on github goes at length on some of the steps to to follow in order to paste with the system clipboard
+It says to in order to paste before with xsel to
+ map global user p &#39;&amp;lt;a-!&amp;gt;xsel --output --clipboard&amp;lt;ret&amp;gt;&#39;  But in the case of xclip for example, and by reading the man pages of xclip
+ -selection specify which X selection to use, options are &amp;quot;primary&amp;quot; to use XA_PRIMARY (default), &amp;quot;secondary&amp;quot; for XA_SECONDARY or &amp;quot;clipboard&amp;quot; for XA_CLIPBOARD  and</description>
+    </item>
     
     <item>
       <title>Kakoune Map Keys to Invoke Shell Command</title>

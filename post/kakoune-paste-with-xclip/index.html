@@ -10,7 +10,7 @@
 
   <title>
     
-      404 Page not found &middot; Blog atrasado
+      Kakoune Paste With Xclip &middot; Blog atrasado
     
   </title>
 
@@ -215,9 +215,47 @@
       <div class="container content">
 
 
-<div class="page">
-  <h1 class="page-title">404</h1>
-  <p>Sorry, we&rsquo;ve misplaced that URL or it&rsquo;s pointing to something that doesn&rsquo;t exist. <a href="/">Head back home</a> to try finding it again.</p>
+<div class="post">
+  <h1 class="post-title">Kakoune Paste With Xclip</h1>
+  <span class="post-date">Feb 3, 2019</span>
+  <p>The <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard"
+target="_blank">kakoune wiki on github</a>
+goes at length on some of the steps to
+to follow in order to paste with the system clipboard</p>
+
+<p>It says to in order to paste before with
+<strong>xsel</strong> to</p>
+
+<pre><code> map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'
+</code></pre>
+
+<p>But in the case of  <strong>xclip</strong> for example,
+and by reading the man pages of <strong>xclip</strong></p>
+
+<pre><code> -selection
+          specify which X selection to use, options are &quot;primary&quot; to
+          use XA_PRIMARY (default), &quot;secondary&quot; for XA_SECONDARY  or
+          &quot;clipboard&quot; for XA_CLIPBOARD
+</code></pre>
+
+<p>and</p>
+
+<pre><code> -o, -out
+          print the selection to standard out (generally for  piping
+          to a file or program)
+</code></pre>
+
+<p>So in order to paste with the system
+clipboard by using <strong>xclip</strong> instead,
+<code>clipboard</code> from <strong>xsel</strong> would have to
+be replaced with <code>selection</code> from
+<strong>xclip</strong>, so something in the lines of</p>
+
+<pre><code>  map global user p '&lt;a-!&gt;xclip -o -s &lt;ret&gt;'
+</code></pre>
+
+<p>would suffice.</p>
+
 </div>
 
       </div>
