@@ -49,7 +49,7 @@ clipboard by using &lt;strong&gt;xclip&lt;/strong&gt; instead,
 be replaced with &lt;code&gt;selection&lt;/code&gt; from
 &lt;strong&gt;xclip&lt;/strong&gt;, so something in the lines of&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  map global user p &#39;&amp;lt;a-!&amp;gt;xclip -o -s &amp;lt;ret&amp;gt;&#39;
+&lt;pre&gt;&lt;code&gt;  map global normal p &#39;&amp;lt;a-!&amp;gt;xclip -o -s &amp;lt;ret&amp;gt;&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;would suffice.&lt;/p&gt;
