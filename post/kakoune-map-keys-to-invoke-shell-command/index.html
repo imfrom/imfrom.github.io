@@ -10,7 +10,7 @@
 
   <title>
     
-      Network Has Been Disconnected Manjaro Kde Xfce &middot; Blog atrasado
+      Kakoune Map Keys to Invoke Shell Command &middot; Blog atrasado
     
   </title>
 
@@ -214,22 +214,71 @@
 
 
 <div class="post">
-  <h1 class="post-title">Network Has Been Disconnected Manjaro Kde Xfce</h1>
-  <span class="post-date">Dec 1, 2017</span>
-  <p>For some unknown reason, I was getting the message <code>network has been disconnected</code> even on connections that have been previously used.</p>
+  <h1 class="post-title">Kakoune Map Keys to Invoke Shell Command</h1>
+  <span class="post-date">Feb 2, 2019</span>
+  <p>I seldom use the text editor
+kakoune. Many of the features that I
+have found with vim or neovim for that
+matter in the past, have finally been
+implemented on this editor.</p>
 
-<p>Contrary to the post entitled <strong>NetworkManager doesn’t automatically ask for a password for new network</strong>, see <a href="https://bbs.archlinux.org/viewtopic.php?id=142066" target="_blank">see this post on bbs.archlinux.org</a> in my case the connection was used many times before.</p>
+<p>It is, however, one of the best modal
+editors currently in development and I
+encourage anyone who may be interested on
+the modularity of these sort of editors,
+to try it out.</p>
 
-<p>The dependency problem that has plagued this bug seemed to make a comeback on a most of Manjaro desktop environments.</p>
+<p>I wanted to see how well this editor
+handled key mappings to invoke a command
+from within the shell.</p>
 
-<p>Installing, or better put, reinstalling it with</p>
+<p>The map keys doc which can be found at <a
+href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
+target="_blank">mapping.ascii</a>
+specifies that <code>map [switches] &lt;scope&gt;
+&lt;mode&gt; &lt;key&gt; &lt;keys&gt;</code> would be the recomme
+nded way to map a key to the desired
+parameter.</p>
 
-<pre><code> yaourt -S gnome-keyring
+<p>Further googling about this issue, led me
+to a post at <a
+href="https://discuss.kakoune.com/t/how-to-execute-shell-commands-with-the-current-file-name/"
+target="_blank">how
+to execute shell commands with the current
+filename</a> in which a user asked for a
+similar configuration on the kakrc
+initialization file to invoke a command
+within the shell for the current buffer.</p>
+
+<p>But unfortunately the suggested
+recommendation for a latex file in this
+case, would not work.</p>
+
+<p>At the very least, the WinSetOption
+variable must have a normal mode to which
+the key is mapped to.</p>
+
+<p>So the correct way to  map the key would be</p>
+
+<pre><code> map global normal &lt;c-x&gt; 'w&lt;ret&gt; $ latex $kak_buffile'
 </code></pre>
 
-<p>seemed to resolve the issue.</p>
+<p>In that case, <strong>ctrl</strong> and <strong>x</strong> are bound
+to save the file and invoke the shell
+command.</p>
 
-<p>The same problem hasn’t been experienced on Antergos distribution.</p>
+<p>If other options are needed then specify
+it accordingly</p>
+
+<p><strong>References</strong></p>
+
+<p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
+target="_blank">kakoune mapping</a></p>
+
+<p><a
+href="https://github.com/mawww/kakoune/wiki/Normal-mode-commands"
+target="_blank">Kakoune normal mode
+commands</a></p>
 
 </div>
 

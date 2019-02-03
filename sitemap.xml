@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://imfrom.github.io/post/kakoune-map-keys-to-invoke-shell-command/</loc>
+    <lastmod>2019-02-02T04:26:31-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/</loc>
     <lastmod>2019-02-01T01:35:59-05:00</lastmod>
   </url>
@@ -281,7 +286,7 @@
   
   <url>
     <loc>https://imfrom.github.io/</loc>
-    <lastmod>2019-02-01T01:35:59-05:00</lastmod>
+    <lastmod>2019-02-02T04:26:31-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -334,7 +339,7 @@
   
   <url>
     <loc>https://imfrom.github.io/post/</loc>
-    <lastmod>2019-02-01T01:35:59-05:00</lastmod>
+    <lastmod>2019-02-02T04:26:31-05:00</lastmod>
     <priority>0</priority>
   </url>
   

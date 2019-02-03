@@ -189,6 +189,8 @@
     
       
     
+      
+    
 
     
 
@@ -216,6 +218,44 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/">Gscan2pdf Sane Start Invalid Argument</a></h1>
+        <span class="post-date">Jul 24, 2018</span>
+        <p>Antergos wins here. Manjaro could have done better but it
+didn&rsquo;t.</p>
+
+<p>Anyone who would want to avoid having to go through the
+hassle of reinstalling and testing sane drivers under Arch
+Linux should look no further. The comparison wasn&rsquo;t done
+between all the Arch Linux based distributions, but Antergos
+is the clear winner here.</p>
+
+<p>No Desktop Environment under Manjaro worked to have this
+driver functioning as it should have been functioning. And
+this is after trying Manjaro KDE, Manjaro XFCE, the most
+popular of the bunch. Didn&rsquo;t try it with GNOME and I wasn&rsquo;t
+going to waste my time with it.</p>
+
+<p>Perhaps later versions would fared better, but this time
+around it didn&rsquo;t deliver what it was expected from this
+distribution. The main issue had to with the <code>invalid
+argument</code> error message from programs such as <strong>gscan2pdf</strong>
+and also from <strong>xsane</strong> and in identifying and picking up
+the right device other than the infamous <code>Noname integrated
+camera</code> that it would only identify from the list.</p>
+
+<p><img src="/images/Screenshot_2018-07-24_23-45-03.png" alt="" /></p>
+
+<p>After reinstalling both Manjaro KDE and the XFCE version the
+problem continued in identifying the correct device.</p>
+
+<p><img src="/images/Screenshot_2018-07-25_00-17-57.png" alt="" /></p>
+
+<p>With Antergos it worked without a major issue and for that
+reason alone I recommend this distribution over Manjaro.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/pamac-runs-post-install-hooks-but-fails-to-install-new-updates/">Pamac Runs Post Install Hooks but Fails to Install New Updates</a></h1>
@@ -518,115 +558,6 @@ To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is t
 <p>On the same post that for example was highlighted earlier, there is useful information as why running as root as KDE is altogether discouraged:</p>
 
 <p><img src="/images/dont-run-as-root-on-kde.png" alt=""></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/errors-during-hugo-git/">Errors During Hugo Git</a></h1>
-        <span class="post-date">Dec 13, 2017</span>
-        <p>During the last setup of <a href="https://gohugo.io/" target="_blank">Hugo</a>, I was faced again with the sometimes difficult handling of submodules. This was of course after the corresponding configuration for the <code>user.name</code> and <code>user.email</code> had already been set accordingly.</p>
-
-<p>The next error which dealt with the git submodule was that it already existed in the index. Which made me look it up on Google.</p>
-
-<p>Among the first results that came up after my query, was the following from the stackoverflow site at the StackExchange Network, entitled <a href="https://stackoverflow.com/questions/12898278/" target="_blank">Issue with adding common code as git submodule: “already exists in the index”</a></p>
-
-<p>The answer that has been widely accepted included as a solution having to invoke the <code>git rm --cached projectfolder</code> on the tree of the folder.</p>
-
-<p>After issuing it:</p>
-
-<pre><code> $ git rm --cached .git/public 
- fatal: pathspec '.git/public' did not match any files
-</code></pre>
-
-<p>Which clearly led me nowhere, I noticed that further implementing correctly the command would require a few more steps.</p>
-
-<p>The command <code>git push origin master</code> indicated that origin did not appear to be a git repository.</p>
-
-<pre><code> $ git push origin master
- fatal: 'origin' does not appear to be a git repository
- fatal: Could not read from remote repository.
-</code></pre>
-
-<p>It was only after I invoked the <code>git rm -rf public</code> which seemed to fix the problem:</p>
-
-<pre><code> $ git rm -rf public/
- Migrating git directory of 'public' from
- '/public/.git' to
- '/.git/modules/public'
- rm 'public'
-</code></pre>
-
-<p>This seemed to at least tell me that the <code>public</code> folder had been removed. So apparently the <code>--cached</code> flag did nothing in this regard.</p>
-
-<p>Next, by using the <code>&lt;tab&gt;</code> key for autocompletion, right after the directories, I invoked <code>git rm -rf .git/modules</code>, which showed the number of possibilities as shown below:</p>
-
-<pre><code> $ git rm -rf .git/modules/
- about                        index.html
- config.toml                  index.xml
- config.yaml                  js
- content                      page
- "content                     post
- css                          "post
- deploy.sh                    sitemap.xml
- .gitmodules                  static
- google4417fd3500b3c667.html  "static
- images                       tags
- "images                      themes
- img                          topics
-</code></pre>
-
-<p>Then again, I completed the <code>git rm -rf</code> with the corresponding <code>public</code> folder:</p>
-
-<pre><code> $ git rm -rf .git/modules/public/
- fatal: pathspec '.git/modules/public/' did not match any files
-</code></pre>
-
-<p>Which unfortunately again, came back with the <strong>fatal: pathspec</strong> error from before.</p>
-
-<p>What worked, was to have the option <code>--cached</code>, to be implemented right after <code>git rm</code> only recursively with the <strong>.gitmodules</strong>.</p>
-
-<p>So that was</p>
-
-<pre><code> $ git rm --cached .git
- .git/        .gitmodules  
-</code></pre>
-
-<p>Which finally after tab completion:</p>
-
-<pre><code> $ git rm --cached .gitmodules 
- rm '.gitmodules'
-</code></pre>
-
-<p>So it seems the <code>git rm --cached</code> worked with the <strong>.gitmodules</strong>, but it did not succeed with the <strong>.git/modules/public</strong> directory.</p>
-
-<p>It was only after I invoked the Unix command <code>rm -rf</code> under the <strong>.git</strong> directory, that the problem was finally resolved.</p>
-
-<pre><code> $ rm -rf .git/modules/public/
-</code></pre>
-
-<p>After it, the submodule was added again with the</p>
-
-<pre><code> git submodule add -b master &lt;name of static repository&gt; public
-</code></pre>
-
-<p>As shown below:</p>
-
-<pre><code> $ git submodule add -b master https://github.com/&lt;username&gt;/&lt;static repository&gt; public
- Cloning into '/public'...
- remote: Counting objects: 2075, done.
- remote: Compressing objects: 100% (91/91), done.
- remote: Total 2075 (delta 74), reused 114 (delta 31), pack-reused 1907
- Receiving objects: 100% (2075/2075), 4.06 MiB | 2.17 MiB/s, done.
- Resolving deltas: 100% (1247/1247), done.
-
- $ 
-</code></pre>
-
-<p>The step-by-step instructions by simply issuing <code>rm -rf public</code> as the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank">tutorial to have Hugo running on Github</a> suggested, did not work in this case, for the simple reason that the <strong>git repository</strong> was cloned during the initial setup.</p>
-
-<p>The <strong>.git/modules/public</strong> already existed as a result. So it had to be removed by issuing <strong>rm -rf .git/modules/public</strong> before setting up again the submodule remote repository.</p>
-
-<p><img src="/images/hugo-step-by-step-instructions.png" alt=""></p>
 
     </div>
   

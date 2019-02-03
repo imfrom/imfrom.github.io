@@ -189,6 +189,8 @@
     
       
     
+      
+    
 
     
 
@@ -216,6 +218,75 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-map-keys-to-invoke-shell-command/">Kakoune Map Keys to Invoke Shell Command</a></h1>
+        <span class="post-date">Feb 2, 2019</span>
+        <p>I seldom use the text editor
+kakoune. Many of the features that I
+have found with vim or neovim for that
+matter in the past, have finally been
+implemented on this editor.</p>
+
+<p>It is, however, one of the best modal
+editors currently in development and I
+encourage anyone who may be interested on
+the modularity of these sort of editors,
+to try it out.</p>
+
+<p>I wanted to see how well this editor
+handled key mappings to invoke a command
+from within the shell.</p>
+
+<p>The map keys doc which can be found at <a
+href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
+target="_blank">mapping.ascii</a>
+specifies that <code>map [switches] &lt;scope&gt;
+&lt;mode&gt; &lt;key&gt; &lt;keys&gt;</code> would be the recomme
+nded way to map a key to the desired
+parameter.</p>
+
+<p>Further googling about this issue, led me
+to a post at <a
+href="https://discuss.kakoune.com/t/how-to-execute-shell-commands-with-the-current-file-name/"
+target="_blank">how
+to execute shell commands with the current
+filename</a> in which a user asked for a
+similar configuration on the kakrc
+initialization file to invoke a command
+within the shell for the current buffer.</p>
+
+<p>But unfortunately the suggested
+recommendation for a latex file in this
+case, would not work.</p>
+
+<p>At the very least, the WinSetOption
+variable must have a normal mode to which
+the key is mapped to.</p>
+
+<p>So the correct way to  map the key would be</p>
+
+<pre><code> map global normal &lt;c-x&gt; 'w&lt;ret&gt; $ latex $kak_buffile'
+</code></pre>
+
+<p>In that case, <strong>ctrl</strong> and <strong>x</strong> are bound
+to save the file and invoke the shell
+command.</p>
+
+<p>If other options are needed then specify
+it accordingly</p>
+
+<p><strong>References</strong></p>
+
+<p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
+target="_blank">kakoune mapping</a></p>
+
+<p><a
+href="https://github.com/mawww/kakoune/wiki/Normal-mode-commands"
+target="_blank">Kakoune normal mode
+commands</a></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/">Reply to Email With Mutt on Xfce</a></h1>
@@ -815,44 +886,6 @@ target="_blank">Stack Frames: A Look From Inside</a><a href="#stackref">&crarr;<
 
 <p><strong>4</strong>-<a name="lwn"></a><a href="https://lwn.net/Distributions"
 target="_blan">lwn.net/Distributions</a><a href="#lwnref">&crarr;</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/">Gscan2pdf Sane Start Invalid Argument</a></h1>
-        <span class="post-date">Jul 24, 2018</span>
-        <p>Antergos wins here. Manjaro could have done better but it
-didn&rsquo;t.</p>
-
-<p>Anyone who would want to avoid having to go through the
-hassle of reinstalling and testing sane drivers under Arch
-Linux should look no further. The comparison wasn&rsquo;t done
-between all the Arch Linux based distributions, but Antergos
-is the clear winner here.</p>
-
-<p>No Desktop Environment under Manjaro worked to have this
-driver functioning as it should have been functioning. And
-this is after trying Manjaro KDE, Manjaro XFCE, the most
-popular of the bunch. Didn&rsquo;t try it with GNOME and I wasn&rsquo;t
-going to waste my time with it.</p>
-
-<p>Perhaps later versions would fared better, but this time
-around it didn&rsquo;t deliver what it was expected from this
-distribution. The main issue had to with the <code>invalid
-argument</code> error message from programs such as <strong>gscan2pdf</strong>
-and also from <strong>xsane</strong> and in identifying and picking up
-the right device other than the infamous <code>Noname integrated
-camera</code> that it would only identify from the list.</p>
-
-<p><img src="/images/Screenshot_2018-07-24_23-45-03.png" alt="" /></p>
-
-<p>After reinstalling both Manjaro KDE and the XFCE version the
-problem continued in identifying the correct device.</p>
-
-<p><img src="/images/Screenshot_2018-07-25_00-17-57.png" alt="" /></p>
-
-<p>With Antergos it worked without a major issue and for that
-reason alone I recommend this distribution over Manjaro.</p>
 
     </div>
   
