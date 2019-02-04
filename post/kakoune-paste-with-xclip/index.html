@@ -251,7 +251,13 @@ clipboard by using <strong>xclip</strong> instead,
 be replaced with <code>selection</code> from
 <strong>xclip</strong>, so something in the lines of</p>
 
-<pre><code>  map global normal p '&lt;a-!&gt;xclip -o -s &lt;ret&gt;'
+<p><del>map global normal p &lsquo;<a-!>xclip -o -s<ret>&lsquo;</del></p>
+
+<p>But rather something like</p>
+
+<pre><code>   map global user p '&lt;a-!&gt;xclip -o -s &lt;ret&gt;'
+
+   map global user P '!xclip -o -s &lt;ret&gt;'
 </code></pre>
 
 <p>would suffice.</p>
