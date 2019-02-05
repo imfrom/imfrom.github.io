@@ -114,7 +114,7 @@ the key is mapped to.&lt;/p&gt;
 
 &lt;p&gt;So the correct way to  map the key would be&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; map global normal &amp;lt;c-x&amp;gt; &#39;w&amp;lt;ret&amp;gt; $ latex $kak_buffile&#39;
+&lt;pre&gt;&lt;code&gt; map global normal &amp;lt;c-x&amp;gt; &#39;:w&amp;lt;ret&amp;gt; $ latex $kak_buffile&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;In that case, &lt;strong&gt;ctrl&lt;/strong&gt; and &lt;strong&gt;x&lt;/strong&gt; are bound
