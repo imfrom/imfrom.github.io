@@ -6,16 +6,16 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2019</rights>
-    <updated>2019-02-05 02:11:02 -0500 EST</updated>
+    <updated>2019-02-05 02:19:58 -0500 EST</updated>
 
     
       
         <item>
-          <title>Kakoune Mapping Keys to Invoke Shell Command on Buffer</title>
-          <link>https://imfrom.github.io/post/kakoune-mapping-keys-to-invoke-shell-command-on-buffer/</link>
-          <pubDate>Tue, 05 Feb 2019 02:11:02 EST</pubDate>
+          <title>Kakoune Invoke Shell Program on Buffer</title>
+          <link>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</link>
+          <pubDate>Tue, 05 Feb 2019 02:19:58 EST</pubDate>
           <author></author>
-          <guid>https://imfrom.github.io/post/kakoune-mapping-keys-to-invoke-shell-command-on-buffer/</guid>
+          <guid>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</guid>
           <description>&lt;p&gt;I seldom use the text editor
 kakoune. Many of the features that I
 have found with vim or neovim for that
