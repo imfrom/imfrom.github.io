@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 03 Feb 2019 12:44:11 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 05 Feb 2019 02:11:02 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kakoune Mapping Keys to Invoke Shell Command on Buffer</title>
+      <link>https://imfrom.github.io/post/kakoune-mapping-keys-to-invoke-shell-command-on-buffer/</link>
+      <pubDate>Tue, 05 Feb 2019 02:11:02 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/kakoune-mapping-keys-to-invoke-shell-command-on-buffer/</guid>
+      <description>I seldom use the text editor kakoune. Many of the features that I have found with vim or neovim for that matter in the past, have finally been implemented on this editor.
+It is, however, one of the best modal editors currently in development and I encourage anyone who may be interested on the modality of these sort of editors, to try it out.
+I wanted to see how well this editor handled key mappings to invoke a command from within the shell.</description>
+    </item>
     
     <item>
       <title>Kakoune Paste With Xclip</title>
@@ -22,17 +33,6 @@
 It says to in order to paste before with xsel to
  map global user p &#39;&amp;lt;a-!&amp;gt;xsel --output --clipboard&amp;lt;ret&amp;gt;&#39;  But in the case of xclip for example, and by reading the man pages of xclip
  -selection specify which X selection to use, options are &amp;quot;primary&amp;quot; to use XA_PRIMARY (default), &amp;quot;secondary&amp;quot; for XA_SECONDARY or &amp;quot;clipboard&amp;quot; for XA_CLIPBOARD  and</description>
-    </item>
-    
-    <item>
-      <title>Kakoune Map Keys to Invoke Shell Command</title>
-      <link>https://imfrom.github.io/post/kakoune-map-keys-to-invoke-shell-command/</link>
-      <pubDate>Sat, 02 Feb 2019 04:26:31 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/post/kakoune-map-keys-to-invoke-shell-command/</guid>
-      <description>I seldom use the text editor kakoune. Many of the features that I have found with vim or neovim for that matter in the past, have finally been implemented on this editor.
-It is, however, one of the best modal editors currently in development and I encourage anyone who may be interested on the modality of these sort of editors, to try it out.
-I wanted to see how well this editor handled key mappings to invoke a command from within the shell.</description>
     </item>
     
     <item>

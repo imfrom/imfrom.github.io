@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Kakoune Mapping Keys to Invoke Shell Command on Buffer &middot; Blog atrasado
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Blog atrasado</a>
+            <small>con gajes del oficio</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Kakoune Mapping Keys to Invoke Shell Command on Buffer</h1>
+  <span class="post-date">Feb 5, 2019</span>
+  <p>I seldom use the text editor
+kakoune. Many of the features that I
+have found with vim or neovim for that
+matter in the past, have finally been
+implemented on this editor.</p>
+
+<p>It is, however, one of the best modal
+editors currently in development and I
+encourage anyone who may be interested on
+the modality of these sort of editors,
+to try it out.</p>
+
+<p>I wanted to see how well this editor
+handled key mappings to invoke a command
+from within the shell.</p>
+
+<p>The map keys doc which can be found at <a
+href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
+target="_blank">mapping.ascii</a>
+specifies that <code>map [switches] &lt;scope&gt;
+&lt;mode&gt; &lt;key&gt; &lt;keys&gt;</code> would be the recomme
+nded way to map a key to the desired
+parameter.</p>
+
+<p>Further googling about this issue, led me
+to a post at <a
+href="https://discuss.kakoune.com/t/how-to-execute-shell-commands-with-the-current-file-name/"
+target="_blank">how
+to execute shell commands with the current
+filename</a> in which a user asked for a
+similar configuration on the kakrc
+initialization file to invoke a command
+within the shell for the current buffer.</p>
+
+<p>But unfortunately the suggested
+recommendation for a latex file in this
+case, would not work.</p>
+
+<p>At the very least, the WinSetOption
+variable must have a normal mode to which
+the key is mapped to.</p>
+
+<p>So the correct way to  map the key would be</p>
+
+<pre><code> map global normal &lt;c-x&gt; ':w&lt;ret&gt; $ latex $kak_buffile'
+</code></pre>
+
+<p>In that case, <strong>ctrl</strong> and <strong>x</strong> are bound
+to save the file and invoke the shell
+command.</p>
+
+<p>If other options are needed then specify
+it accordingly</p>
+
+<p><strong>References</strong></p>
+
+<p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
+target="_blank">kakoune mapping</a></p>
+
+<p><a
+href="https://github.com/mawww/kakoune/wiki/Normal-mode-commands"
+target="_blank">Kakoune normal mode
+commands</a></p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -222,57 +222,8 @@
 <div class="posts">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-paste-with-xclip/">Kakoune Paste With Xclip</a></h1>
-        <span class="post-date">Feb 3, 2019</span>
-        <p>The <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard"
-target="_blank">kakoune wiki on github</a>
-goes at length on some of the steps to
-to follow in order to paste with the system clipboard</p>
-
-<p>It says to in order to paste before with
-<strong>xsel</strong> to</p>
-
-<pre><code> map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'
-</code></pre>
-
-<p>But in the case of  <strong>xclip</strong> for example,
-and by reading the man pages of <strong>xclip</strong></p>
-
-<pre><code> -selection
-          specify which X selection to use, options are &quot;primary&quot; to
-          use XA_PRIMARY (default), &quot;secondary&quot; for XA_SECONDARY  or
-          &quot;clipboard&quot; for XA_CLIPBOARD
-</code></pre>
-
-<p>and</p>
-
-<pre><code> -o, -out
-          print the selection to standard out (generally for  piping
-          to a file or program)
-</code></pre>
-
-<p>So in order to paste with the system
-clipboard by using <strong>xclip</strong> instead,
-<code>clipboard</code> from <strong>xsel</strong> would have to
-be replaced with <code>selection</code> from
-<strong>xclip</strong>, so something in the lines of</p>
-
-<p><del>map global normal p &lsquo;<a-!>xclip -o -s<ret>&lsquo;</del></p>
-
-<p>But rather something like</p>
-
-<pre><code>   map global user p '&lt;a-!&gt;xclip -o -s &lt;ret&gt;'
-
-   map global user P '!xclip -o -s &lt;ret&gt;'
-</code></pre>
-
-<p>would suffice.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-map-keys-to-invoke-shell-command/">Kakoune Map Keys to Invoke Shell Command</a></h1>
-        <span class="post-date">Feb 2, 2019</span>
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-mapping-keys-to-invoke-shell-command-on-buffer/">Kakoune Mapping Keys to Invoke Shell Command on Buffer</a></h1>
+        <span class="post-date">Feb 5, 2019</span>
         <p>I seldom use the text editor
 kakoune. Many of the features that I
 have found with vim or neovim for that
@@ -336,6 +287,55 @@ target="_blank">kakoune mapping</a></p>
 href="https://github.com/mawww/kakoune/wiki/Normal-mode-commands"
 target="_blank">Kakoune normal mode
 commands</a></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-paste-with-xclip/">Kakoune Paste With Xclip</a></h1>
+        <span class="post-date">Feb 3, 2019</span>
+        <p>The <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard"
+target="_blank">kakoune wiki on github</a>
+goes at length on some of the steps to
+to follow in order to paste with the system clipboard</p>
+
+<p>It says to in order to paste before with
+<strong>xsel</strong> to</p>
+
+<pre><code> map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'
+</code></pre>
+
+<p>But in the case of  <strong>xclip</strong> for example,
+and by reading the man pages of <strong>xclip</strong></p>
+
+<pre><code> -selection
+          specify which X selection to use, options are &quot;primary&quot; to
+          use XA_PRIMARY (default), &quot;secondary&quot; for XA_SECONDARY  or
+          &quot;clipboard&quot; for XA_CLIPBOARD
+</code></pre>
+
+<p>and</p>
+
+<pre><code> -o, -out
+          print the selection to standard out (generally for  piping
+          to a file or program)
+</code></pre>
+
+<p>So in order to paste with the system
+clipboard by using <strong>xclip</strong> instead,
+<code>clipboard</code> from <strong>xsel</strong> would have to
+be replaced with <code>selection</code> from
+<strong>xclip</strong>, so something in the lines of</p>
+
+<p><del>map global normal p &lsquo;<a-!>xclip -o -s<ret>&lsquo;</del></p>
+
+<p>But rather something like</p>
+
+<pre><code>   map global user p '&lt;a-!&gt;xclip -o -s &lt;ret&gt;'
+
+   map global user P '!xclip -o -s &lt;ret&gt;'
+</code></pre>
+
+<p>would suffice.</p>
 
     </div>
   
