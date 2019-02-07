@@ -6,8 +6,98 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2019</rights>
-    <updated>2019-02-05 02:19:58 -0500 EST</updated>
+    <updated>2019-02-06 23:43:18 -0500 EST</updated>
 
+    
+      
+        <item>
+          <title>Kakoune Macros Recording and Replay</title>
+          <link>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</link>
+          <pubDate>Wed, 06 Feb 2019 23:43:18 EST</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</guid>
+          <description>&lt;p&gt;One of the features for which I personally would have a
+use for, would be macros recording and playback.&lt;/p&gt;
+
+&lt;p&gt;To read about this on the doc page for &lt;strong&gt;kakoune&lt;/strong&gt;, &lt;code&gt;:doc
+keys macros&lt;/code&gt; might give you an idea that by default &lt;strong&gt;Q&lt;/strong&gt;
+starts or ends macro recording, while &lt;strong&gt;q&lt;/strong&gt; replays it.&lt;/p&gt;
+
+&lt;p&gt;the &lt;code&gt;&amp;lt;esc&amp;gt;&lt;/code&gt; key also ends the macro rexoding.&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros&#34;
+target=&#34;_blank&#34;&gt;Kakoune Macros&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But further description for the macros recording and
+playback, is not provided on the doc page for &lt;strong&gt;Kakoune&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The author advises to consult the &lt;code&gt;:doc registers&lt;/code&gt; for further
+info.&lt;/p&gt;
+
+&lt;p&gt;As the doc states&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Registers are named lists of text -instead of simply text- in order to interact well with multiselection. They are used for various purposes, like storing the last yanked text, or the captured groups associated with the selections.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And about interacting with it:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;c-r&amp;gt;&amp;lt;c&amp;gt;&lt;/code&gt;
+when in insert mode or in a prompt, insert the value stored in the c register (single character)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;quot;&amp;lt;c&amp;gt;&lt;/code&gt;
+in normal mode, select the &lt;c&gt; register (single character)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But unlike &lt;strong&gt;vim&lt;/strong&gt; in which a macro is replayed by preceding
+the register &lt;key&gt; with the macro &lt;strong&gt;@&lt;/strong&gt;, on &lt;strong&gt;kakoune&lt;/strong&gt;, the
+double quote along with register &lt;code&gt;&amp;lt;key&amp;gt;&lt;/code&gt; must precede the macro
+key, which in this case is &lt;code&gt;q&lt;/code&gt; that&amp;rsquo;s bound to the default
+register &lt;strong&gt;@&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignorant of this fact, mixed with the confusion that stemmed
+primarily from the habit of using a workflow from &lt;strong&gt;vim&lt;/strong&gt;,
+disallowed me to fully comprehend that in order to replay
+the macro, the register (whatever this one may be) &lt;strong&gt;&lt;key&gt;&lt;/strong&gt;
+must supersede the double quote &lt;code&gt;&amp;quot;&lt;/code&gt;, followed in the end
+by the default register &lt;code&gt;q&lt;/code&gt; which in turn, fully replays
+the specified macro.&lt;/p&gt;
+
+&lt;p&gt;After going over it, this may simply seem to have been
+just an oversight on my part since such an obvious step to
+record and replay the macro, is evident, but considering
+I&amp;rsquo;ve been used to &lt;strong&gt;vim&lt;/strong&gt;, it was not at all clear at first,
+what the steps would be, mainly in order to replay the macro
+on Normal mode. On &lt;strong&gt;Insert&lt;/strong&gt; and &lt;strong&gt;Promp&lt;/strong&gt; mode, however,
+the documentation provided all the details.&lt;/p&gt;
+
+&lt;p&gt;So to record the macro&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; &amp;quot; &amp;lt;key&amp;gt; Q &amp;lt;esc&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And to replay the macro&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; &amp;quot; &amp;lt;key&amp;gt; q 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros&#34;
+target=&#34;_blank&#34;&gt;Kakoune Macros&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/registers.asciidoc&#34;
+target=&#34;_blank&#34;&gt;Kakoune registers&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Other useful links&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/vim/comments/5icmak/a_vim_users_comparisation_between_kakoune_and_vim/&#34;
+target=&#34;_blank&#34;&gt;A vim user&amp;rsquo;s comparison between vim and
+kakoune&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
