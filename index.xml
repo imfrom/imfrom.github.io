@@ -23,7 +23,7 @@ use for, would be macros recording and playback.&lt;/p&gt;
 keys macros&lt;/code&gt; might give you an idea that by default &lt;strong&gt;Q&lt;/strong&gt;
 starts or ends macro recording, while &lt;strong&gt;q&lt;/strong&gt; replays it.&lt;/p&gt;
 
-&lt;p&gt;the &lt;code&gt;&amp;lt;esc&amp;gt;&lt;/code&gt; key also ends the macro rexoding.&lt;/p&gt;
+&lt;p&gt;the &lt;code&gt;&amp;lt;esc&amp;gt;&lt;/code&gt; key also ends the macro recording.&lt;/p&gt;
 
 &lt;p&gt;See &lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros&#34;
 target=&#34;_blank&#34;&gt;Kakoune Macros&lt;/a&gt;&lt;/p&gt;

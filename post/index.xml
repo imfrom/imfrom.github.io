@@ -20,7 +20,7 @@
       <guid>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</guid>
       <description>One of the features for which I personally would have a use for, would be macros recording and playback.
 To read about this on the doc page for kakoune, :doc keys macros might give you an idea that by default Q starts or ends macro recording, while q replays it.
-the &amp;lt;esc&amp;gt; key also ends the macro rexoding.
+the &amp;lt;esc&amp;gt; key also ends the macro recording.
 See Kakoune Macros
 But further description for the macros recording and playback, is not provided on the doc page for Kakoune.</description>
     </item>
