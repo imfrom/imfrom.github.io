@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.50" />
+	<meta name="generator" content="Hugo 0.54.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -195,6 +195,8 @@
     
       
     
+      
+    
 
     
 
@@ -222,6 +224,57 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/libreoffice-implementaci%C3%B3n-del-gui%C3%B3n-en-la-separaci%C3%B3n-sil%C3%A1bica/">Libreoffice Implementación Del Guión en La Separación Silábica</a></h1>
+        <span class="post-date">Apr 21, 2017</span>
+        <p>Para implementar la separación silábica en cualquier documento en Libreoffice, es necesario bajar los correspondientes archivos de extensiones para este programa: <a href="https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6">https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6</a></p>
+
+<p><img src="/images/libreoffice-download-dictionaries.png" alt="Diccionario en español con separación silábica y corrector ortográfico"></p>
+
+<p>Una vez descargado y guardado este archivo, se utiliza el mismo programa Libreoffice para cargarlo posteriormente.</p>
+
+<p>Después se selecciona bajo el menú de <strong>tools</strong>, y <strong>options</strong> como se muestra:</p>
+
+<p><img src="/images/libreoffice-tools-options-menu.png" alt=""></p>
+
+<p>que por consiguiente inicia la ventana correspondiente que especifica el recién bajado diccionario y como muestra la siguiente figura:</p>
+
+<p><img src="/images/libreoffice-language-settings.png" alt=""></p>
+
+<p>Muy importante en darle clic a <strong>OK</strong> a esta ventana donde el diccionario haya sido seleccionado.</p>
+
+<p>Después de esto, y para que el corrector ortográfico aplique al actual documento, es necesario en asegurarnos que el idioma sea seleccionado desde el menú de <strong>tools</strong> seguido de <strong>language</strong>, y después como opción si el corrector ortográfico se aplicaría a todo el texto del documento, o a solamente un párrafo, y hasta una determinada selección, y como se muestra en la siguiente imagen:</p>
+
+<p><img src="/images/libreoffice-language-selection.png" alt=""></p>
+
+<p>En el caso del guión de separación silábica sería necesario en darle clic nuevamente al menú de <strong>tools</strong> (herramientas) seguido de <strong>language</strong> para que la opción <strong>hyphenation</strong> tome vigencia y aplique al texto del documento:</p>
+
+<p><img src="/images/libreoffice-hyphenation-menu-clic.png" alt=""></p>
+
+<p>Lo que sucede con el paso anterior, que sencillamente no es lo más práctico. Y lo mismo se puede comprobar si en cada modificación o mejor dicho, en cada terminación de línea o párrafo u oración se tuviese que emplear lo antedicho para que el ingreso automático de guión ocurra a través de todo el texto.</p>
+
+<p>Para lograr esto, es decir, en emplear en ese caso un ingreso automático del guión silábico, es necesario en ir al menú de <strong>Styles</strong> seguido de <strong>Styles and Formatting</strong> del documento como tal:</p>
+
+<p><img src="/images/libreoffice-styles-formatting-menu.png" alt=""></p>
+
+<p>O si te es más fácil dándole clic a <strong>Edit Style</strong> del actual documento:</p>
+
+<p><img src="/images/libreoffice-styles-edit-style.png" alt=""></p>
+
+<p>El cual abrirá otra ventana que manipula los valores para la pre-configuración del estilo del documento. Asegúrate que selecciones <strong>Text Flow</strong> el cual especifica si la <strong>hyphenation</strong> o la separación silábica ocurriría automáticamente:</p>
+
+<p><img src="/images/libreoffice-automatic-hyphenation.png" alt=""></p>
+
+<p>Una vez que esta opción sea seleccionada, dale a clic para que los cambios apliquen al documento.</p>
+
+<p>Siempre es aconsejable consultar muchas de las oficiales referencias acerca de este programa en <a href="https://help.libreoffice.org/">https://help.libreoffice.org</a></p>
+
+<p><strong>Referencia</strong></p>
+
+<p><a href="https://help.libreoffice.org/3.5/Writer/Hyphenation" target="_blank">Libreoffice Help - hyphenation</a></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/gigabyte-motherboard-fails-to-load-live-cd-but-succeeds-with-flash-drive/">Gigabyte Motherboard Fails to Load Live Cd but Succeeds With Flash Drive</a></h1>
@@ -684,57 +737,6 @@ prueba</p>
 <p>En el caso de <code>substituir con</code>, es decir, <code>s/&lt;texto para reemplazar&gt;/&lt;substituir con&gt;</code>, o los caracteres que se encuentren después de la segunda barra <code>/</code>:<br>
 <code>\n</code> seria un octeto nulo<br>
 <code>\r</code> en este caso es una <code>newline</code> o un salto de línea.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/">Hugo No Sincroniza Directorio Estatico en Github</a></h1>
-        <span class="post-date">Sep 10, 2016</span>
-        <p>Después de realizar varias pruebas donde traté de evaluar algún que otro theme en Hugo, me di cuenta que el problema era más serio que lo pensaba.</p>
-
-<p>Tenía en mente llevar las pruebas con ciertos temas minimalistas, o como se diría en español: simples, que me permitiesen llevar a cabo flexibles modificaciones locales., y de ahí partir con ello.</p>
-
-<p>La mayoría de los temas en Hugo están constituidos por ciertos paquetes de láminas en estilo de cascadas, o con las siglas en inglés por CSS, y al igual que otros pequeños ficheros en Javascript.</p>
-
-<p>Cabe aclarar que la mayoría, por no decir todos, emplean las últimas tecnologías en gráficos que validen la convención estándar establecida por el consorcio W3C.</p>
-
-<p>Les recomiendo a todos aquellos que estén interesados en generadores estáticos del web, que evalúen a <a href="https://gohugo.io/" title="Hugo" target="_blank">Hugo</a> y de ahí decidir si es o no el motor más eficiente y fiable que hace uso de estas últimas tecnologías. Por supuesto que no sería justo si no se menciona otros como <a href="https://hexo.io/" target="blank">hexo</a>, desarrollado en Javascript por ejemplo, que al igual que el primero, son motores que valen la pena en emplearlos en la producción de sitios web, en la elaboración de blogs, al igual que con cualquier otra documentación.</p>
-
-<p>El motor <a href="https://gohugo.io/" target="blank">Hugo</a>, fue desarrollado en golang - un lenguaje de programación que fue creado en Google - es uno de los más recientes en este campo de generadores estáticos que ha sido recibido con mucho interés por programadores y otros entusiastas en computación. Pero sobre esto hablaré en otro artículo.</p>
-
-<p>Como dije al principio, en esta ocasión me interesaba más la flexible estructuración del blog que más que nada, mediante la evaluación de algunos de los <a href="https://themes.gohugo.io/" target="blank">temas</a> que están disponibles.</p>
-
-<p>Le había hecho algunos que otros cambios a uno de ellos intitulado purehugo y basado mayormente en <a href="https://en.wikipedia.org/wiki/bootstrapCDN" target="blank">bootstrapCDN</a> logré llevar a cabo algunos que otros cambios, me mortificaba la idea que no podía omitir la generación de todos los posts en la raíz del servidor. Por mucho que traté de hacer los cambios, la creación de una página que no sería mostrada en la página principal del servidor, era casi imposible. Tampoco quería emplear más tiempo que el necesario en lograr esto.</p>
-
-<p>Decidí entonces en descargar una plantilla temática que lleva de nombre <a href="https://themes.gohugo.io/shiori/" target="blank">shiori</a>, que fue portado o transferido de la implementación original del tema del mismo nombre por su autor Shusaku Uesugi.</p>
-
-<p>Estaba tratando de implementar en la estructura de la página un tema sencillo y este susodicho tema mostraba llenar los requisitos para ello.</p>
-
-<p>Después de descargarlo en el directorio <code>themes</code></p>
-
-<pre><code>$ git clone https://github.com/chibicode/hugo-theme-shiori shiori
-</code></pre>
-
-<p>decidí en ponerlo en práctica</p>
-
-<pre><code>$ hugo server -t shiori 
-</code></pre>
-
-<p>y el servidor local en el ordenador mostraba sin problemas la paginación correcta, al igual que todos los posts. No intenté en llevar otros cambios de modificación, porque la primera vez que ejecuté <code>hugo new post/test</code> que proseguiría con la creación de un post en el archivo de contenido, un error acerca del fichero <code>archetypes</code> se había generado.</p>
-
-<p>Traté de encontrar más información acerca de ello. Pero la única explicación acerca de esto tenía que ver con la actualización no solo de <code>hugo</code> sino de todas las dependencias de este:</p>
-
-<pre><code>go get -u -v github.com/spf13/hugo
-github.com/spf13/hugo (download)
-github.com/fsnotify/fsnotify (download)
-Fetching https://golang.org/x/sys/unix?go-get=1
-</code></pre>
-
-<p>El servidor local me mostraba las modificaciones.</p>
-
-<p>Una búsqueda más tarde en Google me refirió a <a href="https://github.com/spf13/hugo/issues/1802" target="_blank">iHugo 0.16-DEV (Jan 2016) fails to sync theme’s static directory on Linux</a> el cual trataba este problema.</p>
-
-<p>Aparentemente una de las dependencias tenía que ser actualizada, y por lo tanto la bandera <code>-u</code> tenía que ser especificada apropiadamente para la instalación del motor <a href="https://gohugo.io/" target="blank">Hugo</a>.</p>
 
     </div>
   

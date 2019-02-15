@@ -6,8 +6,73 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2019</rights>
-    <updated>2019-02-06 23:43:18 -0500 EST</updated>
+    <updated>2019-02-15 03:18:37 -0500 EST</updated>
 
+    
+      
+        <item>
+          <title>Kakoune Matching Pairs</title>
+          <link>https://imfrom.github.io/post/kakoune-matching-pairs/</link>
+          <pubDate>Fri, 15 Feb 2019 03:18:37 EST</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/kakoune-matching-pairs/</guid>
+          <description>&lt;p&gt;When I tried to delve further into the issue of highlighters
+that were used on kakoune, I was more interested on the
+options akin to the ones provided and which have been
+implemented on vim or neovim, such as e.g. showmatch,
+matchpairs.&lt;/p&gt;
+
+&lt;p&gt;On vim this is something that could be easily
+obtained by having for example a &lt;code&gt;set showmatch&lt;/code&gt; on the
+initialization file, but on kakoune, and although &lt;a
+href=&#34;https://github.com/mawww/kakoune/issues/1192&#34;&gt;this
+issue on github&lt;/a&gt; seemed to
+point in the right direction, and the &lt;a
+href=&#34;https://github.com/mawww/kakoune/issues/1192#issuecomment-277494934&#34;&gt;accompanying
+comment&lt;/a&gt; further specified that by having it [the function
+show_matching] called out by a hook directly from the configuration
+file, it still wouldn&amp;rsquo;t quite load the &lt;code&gt;add-highlighter&lt;/code&gt; onto the
+buffer.&lt;/p&gt;
+
+&lt;p&gt;Perhaps and one of the feasible explanations is that at the
+time this issue came up, other changes may have been further
+implemented from the developing side, thus preventing from
+having this function working as I would have thought in
+what it seemed to be almost a basic functionality.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  hook global WinCreate .* %{
+    addhl show_matching
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I was able to see from the buffer that the &lt;code&gt;add-highlighter&lt;/code&gt;
+option would come up without a problem, followed by
+&lt;code&gt;path/name&lt;/code&gt; and ending up with &lt;code&gt;type&lt;/code&gt; and &lt;code&gt;type params&lt;/code&gt; to be
+specified accordingly.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, calling out both &lt;code&gt;addhl&lt;/code&gt; with either &lt;code&gt;global&lt;/code&gt; or
+&lt;code&gt;window&lt;/code&gt; or &lt;code&gt;buffer&lt;/code&gt; seemed to work fine for &lt;code&gt;show_matching&lt;/code&gt;
+to highlight the opening and closing delimiters. On the
+buffer that is, but I needed to have the changes applied
+globally and soon after restarting the editor.&lt;/p&gt;
+
+&lt;p&gt;All in all, and after changing the values around to have
+&lt;code&gt;add-highlighter&lt;/code&gt; instead of &lt;code&gt;addhl&lt;/code&gt; (although I couldn&amp;rsquo;t
+think of a valid reason), and further adding to the snippet
+some values such as a &lt;code&gt;buffer&lt;/code&gt; right after &lt;code&gt;addhl&lt;/code&gt; instead,
+I noticed all of it wouldn&amp;rsquo;t add up. The hook already
+specified as such.&lt;/p&gt;
+
+&lt;p&gt;The only thing left was to have &lt;code&gt;addhl&lt;/code&gt; directly on the
+initialization file without invoking a hook.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s exactly what I did&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; addhl global\ show-matching 
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
     
       
         <item>

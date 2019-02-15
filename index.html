@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.50" />
+	<meta name="generator" content="Hugo 0.54.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -195,6 +195,8 @@
     
       
     
+      
+    
 
     
 
@@ -222,6 +224,66 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-matching-pairs/">Kakoune Matching Pairs</a></h1>
+        <span class="post-date">Feb 15, 2019</span>
+        <p>When I tried to delve further into the issue of highlighters
+that were used on kakoune, I was more interested on the
+options akin to the ones provided and which have been
+implemented on vim or neovim, such as e.g. showmatch,
+matchpairs.</p>
+
+<p>On vim this is something that could be easily
+obtained by having for example a <code>set showmatch</code> on the
+initialization file, but on kakoune, and although <a
+href="https://github.com/mawww/kakoune/issues/1192">this
+issue on github</a> seemed to
+point in the right direction, and the <a
+href="https://github.com/mawww/kakoune/issues/1192#issuecomment-277494934">accompanying
+comment</a> further specified that by having it [the function
+show_matching] called out by a hook directly from the configuration
+file, it still wouldn&rsquo;t quite load the <code>add-highlighter</code> onto the
+buffer.</p>
+
+<p>Perhaps and one of the feasible explanations is that at the
+time this issue came up, other changes may have been further
+implemented from the developing side, thus preventing from
+having this function working as I would have thought in
+what it seemed to be almost a basic functionality.</p>
+
+<pre><code>  hook global WinCreate .* %{
+    addhl show_matching
+  }
+</code></pre>
+
+<p>I was able to see from the buffer that the <code>add-highlighter</code>
+option would come up without a problem, followed by
+<code>path/name</code> and ending up with <code>type</code> and <code>type params</code> to be
+specified accordingly.</p>
+
+<p>Furthermore, calling out both <code>addhl</code> with either <code>global</code> or
+<code>window</code> or <code>buffer</code> seemed to work fine for <code>show_matching</code>
+to highlight the opening and closing delimiters. On the
+buffer that is, but I needed to have the changes applied
+globally and soon after restarting the editor.</p>
+
+<p>All in all, and after changing the values around to have
+<code>add-highlighter</code> instead of <code>addhl</code> (although I couldn&rsquo;t
+think of a valid reason), and further adding to the snippet
+some values such as a <code>buffer</code> right after <code>addhl</code> instead,
+I noticed all of it wouldn&rsquo;t add up. The hook already
+specified as such.</p>
+
+<p>The only thing left was to have <code>addhl</code> directly on the
+initialization file without invoking a hook.</p>
+
+<p>And that&rsquo;s exactly what I did</p>
+
+<pre><code> addhl global\ show-matching 
+</code></pre>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-macros-recording-and-replay/">Kakoune Macros Recording and Replay</a></h1>
@@ -682,72 +744,6 @@ method.</p>
 <p>Finally, the next step would be in installing the libraries for <strong>hunspell-en_US</strong>, or <strong>hunspell-en_GB</strong>, or <strong>hunspell-en_AU</strong> or <strong>hunspell-en_CA</strong>.</p>
 
 <p>Apparently, in the latest installation ISO image, this issue with <strong>hunspell</strong> and its dependencies has not been removed from the repositories that the installation media uses for the initial process. Which better explains as to why on the other machine which had the most recent Antergos installation, this problem was still present, whereas with the other machine in which I had removed <strong>antergos-common-meta</strong> which removed <strong>hunspell-en</strong> - the one that bundles all dictionaries for the English language - was never experienced.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/">Setup Network Printer Ip Address Port Number</a></h1>
-        <span class="post-date">Aug 10, 2018</span>
-        <p>Setting up a network printer seems not only problematic on Arch based systems, but also on Windows.</p>
-
-<p>The latter also gave me the proverbial run for the money.</p>
-
-<p>Even after I thought that the network printer had be configured correctly, errors such as <code>there was a problem processing document</code> after printing a test page, or simply the error stating that <code>the printer may not be connected</code> assured me that the network printer was not being correctly identified.</p>
-
-<p><strong>C</strong>ommon <strong>U</strong>nix <strong>P</strong>rinting <strong>S</strong>ervices or as its acronym that is better known for: CUPS, is without a doubt, the most reliable method to set up any printer, and especially those that depend upon a network to operate accordingly.</p>
-
-<p>It was not the first time setting up a network printer through CUPS, but
-contrary to the first time around when the printer was successfully configured
-on the system, in which the ip address had to be specified, and the connection
-port number of the socket was automatically picked up by CUPS, this time around
-however, specifying the ip address by itself made no difference with further
-configuration.</p>
-
-<p>The printer was still not recognized.</p>
-
-<p>I scoured Google for any relevant results that would help me troubleshoot the problem, but none of the results seemed to provide a definitive answer.</p>
-
-<p>The Arch Linux Forums was one of the first indicators that this issue was beyond a driver problem and rather a misconfiguration with the network printer.</p>
-
-<p>On the thread entitled <em>Printer setting cant find wireless printer</em>, a <a href="https://bbs.archlinux.org/viewtopic.php?pid=1605184#p1605184" target="_blank">reply provided</a> gave a couple of hints as to where to begin to troubleshot the problem.</p>
-
-<blockquote>
-<p>Your post is much too vague. What does your wireless printer advertise? You should be able to add it using its IP address in the CUPS interface like this: <a href="http://192.168.1.3">http://192.168.1.3</a>. You need to replace 192.168.1.3 by the IP of your printer and http:// could be socket:// lpd:// or something else&hellip; Maybe you also have to specify a port number like this: <a href="http://192.168.1.3:9100">http://192.168.1.3:9100</a>. If you can setup the printer in another OS (for example Windows); you might be able to find these by examining the properties of the printer.</p>
-</blockquote>
-
-<p>The problem with Windows however, is that Windows itself does not provide a simple port configuration method that would have allowed me to see the ip address and the port that was currently in use.</p>
-
-<p>This time around CUPS had already specified the ip address and the connection for the socket. But everything else for even the location had already been noted. Furthermore, I double checked it against the settings for the wireless configuration of the printer. Not solely relying on whatever configuration the display showed but also by printing out right from the printer the specifics of the configuration.</p>
-
-<p>When I ventured out to get a glimpse through a Windows system that would allow me to double check the settings, I encountered though, an unforeseen <code>An error occurred during port configuration. This operation is not supported</code> which prevented me any further from finding out about the ip address and port number configuration.</p>
-
-<p><img src="/images/windows-port-error-configuration.png" alt="" /></p>
-
-<p>This however, was not expected.</p>
-
-<p>On this question that was brought up on the stackexchange network, the user asked <a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed" target="_blank">to list all network printers (including ones not installed)</a> and although it hinted that the program <strong>lpstat</strong> with the flag <code>-a</code> was one that would undertake the task, as the user pointed out, this would not apply to those printers that have not been installed.</p>
-
-<p>Another command that would certainly come handy is <code>lpinfo -v</code> but more than what it provided was therefore needed.</p>
-
-<p>On another thread entitled <a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer" target="_blank">linux - how do you get the name of a network printer</a> one of the comments said that:</p>
-
-<blockquote>
-<p>When I run the nmap command it never seems to complete.</p>
-</blockquote>
-
-<p><a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485">https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485</a></p>
-
-<p>which pretty much matches many of the issues that I have encountered with the program.</p>
-
-<p>The only workaround with this pervasive problem of a printer that depends solely on the network, is through some sort of initial setup performed namely through a Windows system that would point it out. So by confirming the correct ip address and port numbers of the printer, would be more than enough to specify it as such on the location of the CUPS for the printer in question. Until then, and just like a user on the Arch Forums said:</p>
-
-<blockquote>
-<p>The problem here is that the criteria (&ldquo;Network Printer&rdquo;) is something that only makes sense to humans. Computer programs aren&rsquo;t going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &lsquo;14 at 18:16</p>
-</blockquote>
-
-<p><strong>References</strong></p>
-
-<p><a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009" target="_blank">unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009</a></p>
 
     </div>
   
