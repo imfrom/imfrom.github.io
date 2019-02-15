@@ -251,23 +251,24 @@ what it seemed to be almost a basic functionality.</p>
   }
 </code></pre>
 
-<p>I was able to see from the buffer that the <code>add-highlighter</code>
-option would come up without a problem, followed by
-<code>path/name</code> and ending up with <code>type</code> and <code>type params</code> to be
-specified accordingly.</p>
+<p>Without having the above on the config file, I was able to
+see from the buffer that the <code>add-highlighter</code> option would
+come up without a problem, followed by <code>path/name</code> and ending
+up with <code>type</code> and <code>type params</code> to be specified accordingly.</p>
 
 <p>Furthermore, calling out both <code>addhl</code> with either <code>global</code> or
 <code>window</code> or <code>buffer</code> seemed to work fine for <code>show_matching</code>
 to highlight the opening and closing delimiters. On the
 buffer that is, but I needed to have the changes applied
-globally and soon after restarting the editor.</p>
+globally and soon after restarting the editor. The settings
+needed to be called out directly from the <strong>kakrc</strong> file.</p>
 
 <p>All in all, and after changing the values around to have
 <code>add-highlighter</code> instead of <code>addhl</code> (although I couldn&rsquo;t
 think of a valid reason), and further adding to the snippet
 some values such as a <code>buffer</code> right after <code>addhl</code> instead,
-I noticed all of it wouldn&rsquo;t add up. The hook already
-specified as such.</p>
+I noticed all of it wouldn&rsquo;t add up. The hook had already
+specified it as such.</p>
 
 <p>The only thing left was to have <code>addhl</code> directly on the
 initialization file without invoking a hook.</p>
@@ -276,6 +277,8 @@ initialization file without invoking a hook.</p>
 
 <pre><code> addhl global\ show-matching 
 </code></pre>
+
+<p>The opening and closing pairs would highlight accordingly.</p>
 
 </div>
 
