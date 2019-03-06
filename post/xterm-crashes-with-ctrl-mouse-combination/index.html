@@ -10,7 +10,7 @@
 
   <title>
     
-      Udisks2 Udiskie Fares Better Than Ntfs 3g &middot; Blog atrasado
+      Xterm Crashes With Ctrl Mouse Combination &middot; Blog atrasado
     
   </title>
 
@@ -222,25 +222,15 @@
 
 
 <div class="post">
-  <h1 class="post-title">Udisks2 Udiskie Fares Better Than Ntfs 3g</h1>
-  <span class="post-date">Jan 16, 2018</span>
-  
+  <h1 class="post-title">Xterm Crashes With Ctrl Mouse Combination</h1>
+  <span class="post-date">Mar 5, 2019</span>
+  <p>It seemed as if there&rsquo;s some sort of conflict by bringing up the menu on the xterm terminal.</p>
 
-<p>It is my opinion, based mostly not on what I’ve read, but instead on what I’ve encountered during the handling of a failed hard disk, that the disk volume mounting utility udisks2 fares better than say, ntfs-3g.</p>
+<p><kbd>ctrl-rightmouse</kbd> is usually the way that one would bring the menu, but every time this was done, <strong>xterm</strong> was crashing.</p>
 
-<p>Quite possibly there could be many improvements with this software, and there is no doubt about it, but considering wear-and-tear conditions of the disk, among other considerations, and, as long as udisks2 is run without an interruption, no other mounting options utility that is currently available may be able to improve its overall performance.</p>
+<p>After going over some of the <strong>xorg-fonts-</strong>* packages, I noticed that some of them were not installed for the X system. Among them,  <strong>xorg-fonts-misc</strong> was not installed. I proceeded to install it and the menu was brought up successfully by the <kbd>ctrl-rightmouse</kbd> combination.</p>
 
-<p>If time is not a constraint, and the program is allowed to run on its own, udisks2 fares relatively better on previously loaded Windows OS partitions than any other. Of this I can attest without a doubt. The utility has been able to eventually access corrupted filesystems that would have been rendered unrecoverable otherwise</p>
-
-<h2 id="for-futher-info-and-configuration-visit-the-wiki">For futher info and configuration, visit the wiki:</h2>
-
-<p><a href="https://wiki.archlinux.org/index.php/Udisks#Mount_to_.2Fmedia_.28udisks2.29" target="_blank">Mount to /media (udisks2)</a></p>
-
-<p><a href="https://wiki.archlinux.org/index.php/Udisks" target="_blank">Udisks</a></p>
-
-<p><a href="https://wiki.archlinux.org/index.php/NTFS-3G" target="_blank">ntfs-3g Arch Linux</a></p>
-
-<p><a href="https://github.com/coldfix/udiskie/wiki/Usage" target="_blank">udiskie on github</a></p>
+<p>A bug report was properly sent to address this issue. I don&rsquo;t recall from having this issue before, and when it even appeared.</p>
 
 </div>
 

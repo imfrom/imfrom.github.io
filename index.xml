@@ -6,8 +6,26 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2019</rights>
-    <updated>2019-02-15 03:18:37 -0500 EST</updated>
+    <updated>2019-03-05 23:33:24 -0500 EST</updated>
 
+    
+      
+        <item>
+          <title>Xterm Crashes With Ctrl Mouse Combination</title>
+          <link>https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/</link>
+          <pubDate>Tue, 05 Mar 2019 23:33:24 EST</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/</guid>
+          <description>&lt;p&gt;It seemed as if there&amp;rsquo;s some sort of conflict by bringing up the menu on the xterm terminal.&lt;/p&gt;
+
+&lt;p&gt;&lt;kbd&gt;ctrl-rightmouse&lt;/kbd&gt; is usually the way that one would bring the menu, but every time this was done, &lt;strong&gt;xterm&lt;/strong&gt; was crashing.&lt;/p&gt;
+
+&lt;p&gt;After going over some of the &lt;strong&gt;xorg-fonts-&lt;/strong&gt;* packages, I noticed that some of them were not installed for the X system. Among them,  &lt;strong&gt;xorg-fonts-misc&lt;/strong&gt; was not installed. I proceeded to install it and the menu was brought up successfully by the &lt;kbd&gt;ctrl-rightmouse&lt;/kbd&gt; combination.&lt;/p&gt;
+
+&lt;p&gt;A bug report was properly sent to address this issue. I don&amp;rsquo;t recall from having this issue before, and when it even appeared.&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
