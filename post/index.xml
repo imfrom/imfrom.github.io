@@ -19,8 +19,8 @@
       
       <guid>https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/</guid>
       <description>It seemed as if there&amp;rsquo;s some sort of conflict by bringing up the menu on the xterm terminal.
-ctrl-rightmouse is usually the way that one would bring the menu, but every time this was done, xterm was crashing.
-After going over some of the xorg-fonts-* packages, I noticed that some of them were not installed for the X system. Among them, xorg-fonts-misc was not installed. I proceeded to install it and the menu was brought up successfully by the ctrl-rightmouse combination.</description>
+Ctrl+ 🖱 (rightmouse) is usually the way that one would bring the menu, but every time this was done, xterm was crashing.
+After going over some of the xorg-fonts-* packages, I noticed that some of them were not installed for the X system. Among them, xorg-fonts-misc was not installed. I proceeded to install it and the menu was brought up successfully by the ctrlrightmouse 🖱combination.</description>
     </item>
     
     <item>

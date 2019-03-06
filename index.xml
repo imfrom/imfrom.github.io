@@ -18,9 +18,9 @@
           <guid>https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/</guid>
           <description>&lt;p&gt;It seemed as if there&amp;rsquo;s some sort of conflict by bringing up the menu on the xterm terminal.&lt;/p&gt;
 
-&lt;p&gt;&lt;kbd&gt;ctrl-rightmouse&lt;/kbd&gt; is usually the way that one would bring the menu, but every time this was done, &lt;strong&gt;xterm&lt;/strong&gt; was crashing.&lt;/p&gt;
+&lt;p&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+ 🖱 (rightmouse) is usually the way that one would bring the menu, but every time this was done, &lt;strong&gt;xterm&lt;/strong&gt; was crashing.&lt;/p&gt;
 
-&lt;p&gt;After going over some of the &lt;strong&gt;xorg-fonts-&lt;/strong&gt;* packages, I noticed that some of them were not installed for the X system. Among them,  &lt;strong&gt;xorg-fonts-misc&lt;/strong&gt; was not installed. I proceeded to install it and the menu was brought up successfully by the &lt;kbd&gt;ctrl-rightmouse&lt;/kbd&gt; combination.&lt;/p&gt;
+&lt;p&gt;After going over some of the &lt;strong&gt;xorg-fonts-&lt;/strong&gt;* packages, I noticed that some of them were not installed for the X system. Among them,  &lt;strong&gt;xorg-fonts-misc&lt;/strong&gt; was not installed. I proceeded to install it and the menu was brought up successfully by the &lt;kbd&gt;ctrl&lt;/kbd&gt;&lt;kbd&gt;rightmouse&lt;/kbd&gt; 🖱combination.&lt;/p&gt;
 
 &lt;p&gt;A bug report was properly sent to address this issue. I don&amp;rsquo;t recall from having this issue before, and when it even appeared.&lt;/p&gt;
 </description>
