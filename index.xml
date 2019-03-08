@@ -2668,6 +2668,10 @@ One user pointed out that by disconnecting and connecting the external DVD right
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Reemplaza el original foo bar. foo bar. foo bar. A Foo bar. Foo bar. Foo bar.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Notas&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reemplazó (0) eventos, quizás pudiese tuvieses que palanquear (toggle) &lt;code&gt;case-replace&lt;/code&gt; a nulo (nil). Vea esta &lt;a href=&#34;https://stackoverflow.com/a/25231464&#34; target=&#34;_blank&#34;&gt;respuesta en Stackoverflow&lt;/a&gt;.&lt;/p&gt;
 </description>
         </item>
       
