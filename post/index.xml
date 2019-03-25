@@ -19,8 +19,8 @@
       
       <guid>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</guid>
       <description>One of pressing issues with Kakoune is the implementation of xclip to use the clipboard selections.
-As the Kakoune Registers &amp;ndash; Clipboard Wiki states it:
-Notice that xclip will not work using this example.
+As the Kakoune Registers &amp;ndash; Clipboard Wiki
+Notice that xclip will not work using this example
 And this was exactly the reason why I wanted to delve further into this issue.
 Anyhow, copying from the Kakoune Registers - Clipboard Wiki
 Using the System Clipboard You can use kakoune with system clipboard tools like xsel, xclip or pbcopy/pbpaste</description>

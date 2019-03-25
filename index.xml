@@ -21,9 +21,9 @@
 &lt;p&gt;One of pressing issues with Kakoune is the implementation
 of &lt;code&gt;xclip&lt;/code&gt; to use the clipboard selections.&lt;/p&gt;
 
-&lt;p&gt;As the &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard/&#34;&gt;Kakoune Registers &amp;ndash; Clipboard Wiki&lt;/a&gt; states it:&lt;/p&gt;
+&lt;p&gt;As the &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard/&#34; target=&#34;_blank&#34;&gt;Kakoune Registers &amp;ndash; Clipboard Wiki&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Notice that &lt;a href=&#34;https://github.com/mawww/kakoune/issues/2325&#34;&gt;xclip will not work using this example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Notice that &lt;a href=&#34;https://github.com/mawww/kakoune/issues/2325&#34; target=&#34;_blank&#34;&gt;xclip will not work using this example&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;And this was exactly the reason why I wanted to delve
 further into this issue.&lt;/p&gt;
