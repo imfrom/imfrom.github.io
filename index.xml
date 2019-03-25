@@ -78,7 +78,7 @@ currently possible by using Xclip under Kakoune, except of course mapping
 a key to Normal mode and then calling out &lt;code&gt;xclip&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;As the &lt;a href=&#34;https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt&#34;&gt;freedesktop.org&lt;/a&gt;  website states it, this is not a task
-that can be easily done as long as different clients&lt;/p&gt;
+that can be easily done as long as different clients have different methods that make use of these &lt;code&gt;clipboard&lt;/code&gt; features.&lt;/p&gt;
 
 &lt;p&gt;quoting from the &lt;a href=&#34;https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt&#34;&gt;clipboards specifications freedesktop&lt;/a&gt;&lt;/p&gt;
 
