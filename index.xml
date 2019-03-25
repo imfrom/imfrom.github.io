@@ -21,14 +21,17 @@
 &lt;p&gt;One of pressing issues with Kakoune is the implementation
 of &lt;code&gt;xclip&lt;/code&gt; to use the clipboard selections.&lt;/p&gt;
 
-&lt;p&gt;As the &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard/&#34; target=&#34;_blank&#34;&gt;Kakoune Registers &amp;ndash; Clipboard Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As the &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard/&#34; target=&#34;_blank&#34;&gt;Kakoune Registers &amp;ndash; Clipboard Wiki&lt;/a&gt; states it:&lt;/p&gt;
 
+&lt;blockquote&gt;
 &lt;p&gt;Notice that &lt;a href=&#34;https://github.com/mawww/kakoune/issues/2325&#34; target=&#34;_blank&#34;&gt;xclip will not work using this example&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;And this was exactly the reason why I wanted to delve
-further into this issue.&lt;/p&gt;
+&lt;p&gt;This was one of the reasons why I wanted to delve further into this issue.&lt;/p&gt;
 
-&lt;p&gt;Anyhow, copying from the &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard/&#34; target=&#34;_blank&#34;&gt;Kakoune Registers - Clipboard Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Anyhow, I&amp;rsquo;ll copy-paste the various sections from the &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard/&#34; target=&#34;_blank&#34;&gt;Kakoune Registers - Clipboard Wiki&lt;/a&gt; that show a better overview of the steps to follow by adding the snippets into the initialization file, while using &lt;code&gt;xsel&lt;/code&gt;. Then I will tweak around with the &lt;code&gt;xclip&lt;/code&gt; features by using the three clipboards that &lt;code&gt;xclip&lt;/code&gt; uses, namely, &lt;code&gt;p&lt;/code&gt; (primary), &lt;code&gt;sec&lt;/code&gt; (secondary), and finally &lt;code&gt;clip&lt;/code&gt; for the clipboard.&lt;/p&gt;
+
+&lt;p&gt;Those are the options available by the use of &lt;code&gt;xclip&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;using-the-system-clipboard&#34;&gt;Using the System Clipboard&lt;/h3&gt;
 
@@ -71,10 +74,10 @@ further into this issue.&lt;/p&gt;
 &lt;li&gt;&amp;lt;,P&amp;gt; - paste before from system clipboard (, is default for user mode)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;how-to-make-it-work-with-xclip&#34;&gt;How to make it work with Xclip.&lt;/h2&gt;
+&lt;h2 id=&#34;how-to-make-it-work-with-xclip-instead&#34;&gt;How to make it work with Xclip instead.&lt;/h2&gt;
 
 &lt;p&gt;As I&amp;rsquo;ve found out, and as the issue clearly showed, this is not
-currently possible by using Xclip under Kakoune, except of course mapping
+currently possible by using Xclip under Kakoune, except of course by mapping
 a key to Normal mode and then calling out &lt;code&gt;xclip&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;As the &lt;a href=&#34;https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt&#34;&gt;freedesktop.org&lt;/a&gt;  website states it, this is not a task
@@ -164,6 +167,12 @@ the &lt;code&gt;clipboards&lt;/code&gt; options that &lt;code&gt;xclip&lt;/code&
 noticing that the register &lt;code&gt;y&lt;/code&gt; that is used for normal
 yanking operations under Kakoune, wouldn&amp;rsquo;t work as expected.
 And neither by pastting that same register &lt;code&gt;&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Other references&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/22494/copy-file-to-xclip-and-paste-to-firefox&#34; target=&#34;_blanK&#34;&gt;unix stackexchange &amp;ndash; copy file to xclip and paste on firefox&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
       

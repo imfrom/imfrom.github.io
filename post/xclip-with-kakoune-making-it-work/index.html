@@ -233,14 +233,17 @@
 <p>One of pressing issues with Kakoune is the implementation
 of <code>xclip</code> to use the clipboard selections.</p>
 
-<p>As the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers &ndash; Clipboard Wiki</a></p>
+<p>As the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers &ndash; Clipboard Wiki</a> states it:</p>
 
+<blockquote>
 <p>Notice that <a href="https://github.com/mawww/kakoune/issues/2325" target="_blank">xclip will not work using this example</a></p>
+</blockquote>
 
-<p>And this was exactly the reason why I wanted to delve
-further into this issue.</p>
+<p>This was one of the reasons why I wanted to delve further into this issue.</p>
 
-<p>Anyhow, copying from the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers - Clipboard Wiki</a></p>
+<p>Anyhow, I&rsquo;ll copy-paste the various sections from the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers - Clipboard Wiki</a> that show a better overview of the steps to follow by adding the snippets into the initialization file, while using <code>xsel</code>. Then I will tweak around with the <code>xclip</code> features by using the three clipboards that <code>xclip</code> uses, namely, <code>p</code> (primary), <code>sec</code> (secondary), and finally <code>clip</code> for the clipboard.</p>
+
+<p>Those are the options available by the use of <code>xclip</code>.</p>
 
 <h3 id="using-the-system-clipboard">Using the System Clipboard</h3>
 
@@ -283,10 +286,10 @@ further into this issue.</p>
 <li>&lt;,P&gt; - paste before from system clipboard (, is default for user mode)</li>
 </ul>
 
-<h2 id="how-to-make-it-work-with-xclip">How to make it work with Xclip.</h2>
+<h2 id="how-to-make-it-work-with-xclip-instead">How to make it work with Xclip instead.</h2>
 
 <p>As I&rsquo;ve found out, and as the issue clearly showed, this is not
-currently possible by using Xclip under Kakoune, except of course mapping
+currently possible by using Xclip under Kakoune, except of course by mapping
 a key to Normal mode and then calling out <code>xclip</code>.</p>
 
 <p>As the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">freedesktop.org</a>  website states it, this is not a task
@@ -376,6 +379,12 @@ the <code>clipboards</code> options that <code>xclip</code> uses, without furthe
 noticing that the register <code>y</code> that is used for normal
 yanking operations under Kakoune, wouldn&rsquo;t work as expected.
 And neither by pastting that same register <code>&quot;</code>.</p>
+
+<p>&hellip;</p>
+
+<p><strong>Other references</strong></p>
+
+<p><a href="https://unix.stackexchange.com/questions/22494/copy-file-to-xclip-and-paste-to-firefox" target="_blanK">unix stackexchange &ndash; copy file to xclip and paste on firefox</a></p>
 
 </div>
 
