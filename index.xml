@@ -449,7 +449,9 @@ commands&lt;/a&gt;&lt;/p&gt;
           <pubDate>Sun, 03 Feb 2019 12:44:11 EST</pubDate>
           <author></author>
           <guid>https://imfrom.github.io/post/kakoune-paste-with-xclip/</guid>
-          <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard&#34;
+          <description>
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard&#34;
 target=&#34;_blank&#34;&gt;kakoune wiki on github&lt;/a&gt;
 goes at length on some of the steps to
 to follow in order to paste with the system clipboard&lt;/p&gt;
@@ -492,6 +494,21 @@ be replaced with &lt;code&gt;selection&lt;/code&gt; from
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;would suffice.&lt;/p&gt;
+
+&lt;h2 id=&#34;updates&#34;&gt;Updates&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ve since stopped using the above since the way that
+&lt;code&gt;xclip&lt;/code&gt; uses many of the
+&lt;code&gt;clipboards&lt;/code&gt; do not seem to behave as expected under
+Kakoune.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;xclip&lt;/code&gt; works without a setback under &lt;a
+href=&#34;https://www.vim.org&#34; target=&#34;_blank&#34;&gt;vim&lt;/a&gt; or even &lt;a
+href=&#34;https://neovim.io&#34; target=&#34;_blank&#34;&gt;neovim&lt;/a&gt;, and it
+was this that led me to make &lt;code&gt;xclip&lt;/code&gt; work under Kakoune.&lt;/p&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;../xclip-with-kakoune-making-it-work&#34;&gt;xclip with kakoune &amp;ndash; making it
+work&lt;/a&gt; for further info.&lt;/p&gt;
 </description>
         </item>
       
