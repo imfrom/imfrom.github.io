@@ -7,10 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 05 Mar 2019 23:33:24 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2019 00:01:13 -0400</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Xclip With Kakoune Making It Work</title>
+      <link>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</link>
+      <pubDate>Mon, 25 Mar 2019 00:01:13 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</guid>
+      <description>One of pressing issues with Kakoune is the implementation of xclip to use the clipboard selections.
+As the Kakoune Registers &amp;ndash; Clipboard Wiki states it:
+Notice that xclip will not work using this example.
+And this was exactly the reason why I wanted to delve further into this issue.
+Anyhow, copying from the Kakoune Registers - Clipboard Wiki
+Using the System Clipboard You can use kakoune with system clipboard tools like xsel, xclip or pbcopy/pbpaste</description>
+    </item>
+    
+    <item>
+      <title>Forwarding Email With Attachments Mutt Neomutt</title>
+      <link>https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/</link>
+      <pubDate>Thu, 14 Mar 2019 03:45:24 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/</guid>
+      <description>Forwarding an email is a function usually bound to the f key, but if there are any Attachments that were included on the email, high chances are, that the attachments will not be selected.
+One could go directly to the attachments in question and selectively open each one of them. This in turn, will select the attachments, save the body of the email that had been sent on the original email.</description>
+    </item>
     
     <item>
       <title>Xterm Crashes With Ctrl Mouse Combination</title>

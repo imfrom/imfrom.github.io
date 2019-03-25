@@ -199,6 +199,10 @@
     
       
     
+      
+    
+      
+    
 
     
 
@@ -226,6 +230,123 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/">Sddm Wayland Timezone Differs From Locale</a></h1>
+        <span class="post-date">Nov 2, 2018</span>
+        <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enable it on an older system. This time around though my expectations fell short.</p>
+
+<p>After installing <a href="https://wiki.archlinux.org/index.php/SDDM#Configuration_GUI" target="_blank">SDDM</a>, I called out systemd to disable <a href="https://wiki.archlinux.org/index.php/LightDM" target="_blank">LightDM</a> with</p>
+
+<pre><code> sytemctl disable lightdm.service 
+</code></pre>
+
+<p>followed by the enabling the newly installed display manager with</p>
+
+<pre><code> systemctl enable sddm.service
+</code></pre>
+
+<p>But it wasn&rsquo;t after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
+
+<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
+
+<pre><code> datetimectl status
+</code></pre>
+
+<p>matched SDDM clock settings. The timezone had been incorrectly set at one point.</p>
+
+<p>Modifying the timezone accordingly seemed to have resolved the issue with:</p>
+
+<pre><code>timedatectl set-timezone Zone/SubZone
+</code></pre>
+
+<p>All in all, some of the <a href="https://bbs.archlinux.org/viewtopic.php?id=207550" target="_blank">posts from Arch Forums</a> that were queried via Google, were slightly off topic. Some of these <a href="https://bbs.archlinux.org/viewtopic.php?id=112137" target="_blank">posts</a> for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.</p>
+
+<p>Further posts that came up for XFCE were also from the long-standing threads at <strong>linuxquestions.org</strong>, a site that has been around perhaps longer than any other out there related to GNU/Linux in general. This time around the <a href="https://www.linuxquestions.org/questions/linux-software-2/adjusting-the-clock-in-xfce-4175528816/" target="_blank">user was running AntiX</a>  and not systemd. The <code>timedatectl</code> is part of the latter in this case, so the suggestions aimed at <code>hwclock</code> or setting it also through <code>date</code> instead.</p>
+
+<p>I&rsquo;ve found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example <a href="https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux" target="_blank">I messed up my system clock in Arch Linux</a>.</p>
+
+<p>Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the <code>timedatectl</code> command. Like for example the following question that was also on <strong>stackexchange</strong> <a href="https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce" target="_blank">How can I easily change my time-zone in Arch/Xfce</a> that I came across only later after resolving it first in my end.</p>
+
+<p>And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the <strong>Arch Wiki</strong> for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading <code>man</code> pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close!</p>
+
+<p><strong>References</strong></p>
+
+<p><a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blnak">System Time Arch Wiki</a></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/clamav-freshclam-update-definitions/">Clamav Freshclam Update Definitions</a></h1>
+        <span class="post-date">Aug 28, 2018</span>
+        <p>as the <a href="https://wiki.archlinux.org/index.php/ClamAV" target="_blank">ClamAV arch linux wiki</a> states, <strong>ClamAV</strong> is:</p>
+
+<blockquote>
+<p>Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&rsquo;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.</p>
+</blockquote>
+
+<p>In order to update the definitions correctly is important to run first</p>
+
+<pre><code> freshclam
+</code></pre>
+
+<p>which should then start the update</p>
+
+<pre><code> ClamAV update process started at Tue Aug 28 01:16:43 2018
+ Downloading main.cvd [100%]
+ main.cvd updated (version: 58, sigs: 4566249, f-level: 60, builder: sigmgr)
+ Downloading daily.cvd [100%]
+ daily.cvd updated (version: 24880, sigs: 2066436, f-level: 63, builder: neo)
+ Downloading bytecode.cvd [100%]
+ bytecode.cvd updated (version: 327, sigs: 91, f-level: 63, builder: neo)
+ Database updated (6632776 signatures) from database.clamav.net (IP: )
+</code></pre>
+
+<p>But then an error came up saying that:</p>
+
+<pre><code> WARNING: Clamd was NOT notified: Can't connect to clamd through /run/clamav/clamd.ctl: No such file or directory
+</code></pre>
+
+<p>which left me unsure what could have been the issue.</p>
+
+<p>Googling about it returned among many of the results, some as in <a href="https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/" target="_blank">Can&rsquo;t connect to Unix socket /var/run//clamav/clamd.ctl</a>, which dealt with the issue.</p>
+
+<p>The error here in which it deal with <strong>clamd.ctl</strong> and not with <strong>clamd.sock connect ()</strong> as it was posted on the entry entitled <a href="https://wiki.archlinux.org/index.php/ClamAV#Error:_Clamd_was_NOT_notified" target="_blank">Error Clamd was not notified</a>.</p>
+
+<p>But after running</p>
+
+<pre><code>  freshclam
+</code></pre>
+
+<p>I had already forgotten to start/enable <code>clamav-freshclam.service</code> as outlined on the Wiki <a href="https://wiki.archlinux.org/index.php/ClamAV#Updating_database" target="_blank">ClamAV updating database</a></p>
+
+<p>so</p>
+
+<pre><code> systemctl start clamav-freshclam.service
+ systemctl enable clamav-freshclam.service
+</code></pre>
+
+<p>Which returned:</p>
+
+<p><code>Created symlink /etc/systemd/system/multi-user.target.wants/clamav-freshclam.service → /usr/lib/systemd/system/clamav-freshclam.service.</code></p>
+
+<p>Later on by calling the status of that service with</p>
+
+<pre><code> systemctl status clamav-freshclam.service
+</code></pre>
+
+<p>returned</p>
+
+<pre><code> Aug 28 01:23:43  systemd[1]: Started ClamAV virus database upda&gt;
+ Aug 28 01:23:43  freshclam[]: ClamAV update process started&gt;
+ Aug 28 01:23:43  freshclam[]: main.cvd is up to date (versi&gt;
+ Aug 28 01:23:43  freshclam[]: daily.cvd is up to date (vers&gt;
+ Aug 28 01:23:43  freshclam[]: bytecode.cvd is up to date
+</code></pre>
+
+<p>But whether it would be necessary to enable it every time it restarts, it&rsquo;s something that I will deal with later on. I only needed it this time around to check some files, and that was the purpose of running it in the first place.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/">Hunspell-en in Conflict With Hunspell en_US</a></h1>
@@ -725,84 +846,6 @@ unchecked before continuing.</p>
 place:</p>
 
 <p><a href="https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f">https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/">Antergos Keyboard Selection During Installation</a></h1>
-        <span class="post-date">Jan 27, 2018</span>
-        <p>One of the drawbacks during the installation of <a href="https://antergos.com" target="_blank">Antergos Linux</a> was in identifying the keyboard layout option that was previously selected during the media installation.</p>
-
-<p>As a result only the default variant was being used after installing the system.</p>
-
-<p>I was able to identify the problem by going to the X window system xorg configuration file <code>/etc/X11/xorg.d/00-keyboard.conf</code> and noticing that the <strong>XkbLayout</strong> variant was not being properly identified as originally intended.</p>
-
-<p>In my case, only one of the options had been specified correctly on the <code>00-keyboard.conf</code> file.</p>
-
-<p>What I found odd, is that on another system, which is by the way, running the same xfce environment from Antergos, the same problem was not encountered. On the other system, only one (1) variant was used, and it had correctly identified the layout twice, but on the system which after installing the Antergos media, loaded the incorrect values, two (2) variants were set accordingly, but only one (1) layout option was identified. In my case <strong>us</strong> had been been identified once, whereas with the former no issues pertaining to this problem occurred in the first place.</p>
-
-<p>As the wiki <a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files" target="_blank">Using X configuration files wiki</a> recommends, not to modify any of the settings manually, but let instead <strong>localectl</strong> handle it. <a href="#sample"><sup id="sampleref">1</sup></a></p>
-
-<p><img src="https://imfrom.github.io/images/localectl-usage.png" alt="" /></p>
-
-<p>Of course, it comes handy when there is even an example that illustrates the process by using the correct parameters. For something like:</p>
-
-<p><img src="https://imfrom.github.io/images/00-keyboard-sample.png" alt="" /></p>
-
-<p>Then something like the following <a href="#localectl"><sup id="localectlref">2</sup></a>, based on the previous example, suffices:</p>
-
-<p><img src="https://imfrom.github.io/images/localectl-sample-usage.png" alt="" /></p>
-
-<p>Set the values as deemed applicable to the desired customization.</p>
-
-<h2 id="references">References</h2>
-
-<ol>
-<li><p><a name="sample"><a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files" target="_blank">Using X Configuration files 00-keyboard.conf</a></a><a href="#sampleref"> &#x21A9;&#xFE0E;</a></p></li>
-
-<li><p><a name="localectl"><a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_localectl" target="_blank">Using localectl</a></a><a href="#localectlref"> &#x21A9;&#xFE0E;</a></p></li>
-</ol>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/antergos-grub-selection/">Antergos Grub Selection</a></h1>
-        <span class="post-date">Jan 20, 2018</span>
-        <p>During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.</p>
-
-<p>Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.</p>
-
-<p>this is even after running the usual <code>mkinitcpio -p &lt;linux kernel&gt;</code> that loads the modules and other dependencies accordingly.</p>
-
-<p>It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</p>
-
-<p>With sudo privileges, access the file at /boot/default/grub first.</p>
-
-<p>Therein, and lying at the bottom of the configuration file, one can find the:</p>
-
-<pre><code> # Uncomment to make GRUB remember the last selection. This requires to
- # set 'GRUB_DEFAULT=saved' above.
- #GRUB_SAVEDEFAULT=&quot;true&quot;
-</code></pre>
-
-<p>One could uncomment the GRUB_SAVEDEFAULT=&ldquo;true&rdquo; so the grub configuration file ‘remembers’ the selection.</p>
-
-<p>Furthermore, and right on the top of the file the default chosen selection can be specified by modifying the value of 0:</p>
-
-<p># GRUB boot loader configuration</p>
-
-<p>GRUB_DEFAULT=0
-To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is to be loaded instead, matched the kernel itself and the fallback for it.</p>
-
-<p>By going this route, it no longer is necessary in specifying during the system startup, the desired kernel that one chooses to be loaded.</p>
-
-<p>Remember after making any changes to grub, to update the configuration file by running:</p>
-
-<p>grub-mkconfig -o /boot/grub/grub.cfg</p>
-
-<p>For more info about this, visit the wiki:</p>
-
-<p><a href="https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks" target="_blank">GRUB/Tips and tricks</a></p>
 
     </div>
   

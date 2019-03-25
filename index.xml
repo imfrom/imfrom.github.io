@@ -6,8 +6,187 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2019</rights>
-    <updated>2019-03-05 23:33:24 -0500 EST</updated>
+    <updated>2019-03-25 00:01:13 -0400 EDT</updated>
 
+    
+      
+        <item>
+          <title>Xclip With Kakoune Making It Work</title>
+          <link>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</link>
+          <pubDate>Mon, 25 Mar 2019 00:01:13 EDT</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</guid>
+          <description>
+
+&lt;p&gt;One of pressing issues with Kakoune is the implementation
+of &lt;code&gt;xclip&lt;/code&gt; to use the clipboard selections.&lt;/p&gt;
+
+&lt;p&gt;As the &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard/&#34;&gt;Kakoune Registers &amp;ndash; Clipboard Wiki&lt;/a&gt; states it:&lt;/p&gt;
+
+&lt;p&gt;Notice that &lt;a href=&#34;https://github.com/mawww/kakoune/issues/2325&#34;&gt;xclip will not work using this example&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;And this was exactly the reason why I wanted to delve
+further into this issue.&lt;/p&gt;
+
+&lt;p&gt;Anyhow, copying from the &lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Registers---Clipboard/&#34; target=&#34;_blank&#34;&gt;Kakoune Registers - Clipboard Wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;using-the-system-clipboard&#34;&gt;Using the System Clipboard&lt;/h3&gt;
+
+&lt;p&gt;You can use kakoune with &lt;a href=&#34;https://wiki.archlinux.org/index.php/Clipboard&#34;&gt;system clipboard tools&lt;/a&gt; like &lt;code&gt;xsel&lt;/code&gt;, &lt;code&gt;xclip&lt;/code&gt; or &lt;code&gt;pbcopy&lt;/code&gt;/&lt;code&gt;pbpaste&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;to-yank-copy&#34;&gt;To yank (copy)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a-|&amp;gt; xsel --input --clipboard &amp;lt;ret&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a-|&amp;gt;&lt;/code&gt; pipes each selection through the given external filter program and ignore its output.&lt;/p&gt;
+
+&lt;p&gt;You may want to use the following hook to automate the dialog with the system clipboard, on each &lt;code&gt;y&lt;/code&gt;, &lt;code&gt;d&lt;/code&gt; or &lt;code&gt;c&lt;/code&gt; operations:
+```
+      hook global NormalKey y|d|c %{ nop %sh{
+              printf %s &amp;ldquo;$kak_main_reg_dquote&amp;rdquo; | xsel &amp;ndash;input &amp;ndash;clipboard
+      }}&lt;/p&gt;
+
+&lt;h3 id=&#34;to-paste&#34;&gt;To paste&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;! xsel --output --clipboard &amp;lt;ret&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;!&lt;/code&gt; inserts program output before selection while &lt;code&gt;&amp;lt;a-!&amp;gt;&lt;/code&gt; inserts program output after selection.&lt;/p&gt;
+
+&lt;p&gt;Therefore you can add the following mappings:&lt;/p&gt;
+
+&lt;h3 id=&#34;paste-before&#34;&gt;Paste before&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;map global user P &#39;!xsel --output --clipboard&amp;lt;ret&amp;gt;&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;paste-after&#34;&gt;Paste after&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;map global user p &#39;&amp;lt;a-!&amp;gt;xsel --output --clipboard&amp;lt;ret&amp;gt;&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;how-to-use-it-now&#34;&gt;How to use it now&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;y/d - yank/delete using internal clipboard AND system clipboard at once&lt;/li&gt;
+&lt;li&gt;p   - paste from internal clipboard&lt;/li&gt;
+&lt;li&gt;&amp;lt;,p&amp;gt; - paste after from system clipboard (, is default for user mode)&lt;/li&gt;
+&lt;li&gt;&amp;lt;,P&amp;gt; - paste before from system clipboard (, is default for user mode)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-to-make-it-work-with-xclip&#34;&gt;How to make it work with Xclip.&lt;/h2&gt;
+
+&lt;p&gt;As I&amp;rsquo;ve found out, and as the issue clearly showed, this is not
+currently possible by using Xclip under Kakoune, except of course mapping
+a key to Normal mode and then calling out &lt;code&gt;xclip&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;As the &lt;a href=&#34;https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt&#34;&gt;freedesktop.org&lt;/a&gt;  website states it, this is not a task
+that can be easily done as long as different clients&lt;/p&gt;
+
+&lt;p&gt;quoting from the &lt;a href=&#34;https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt&#34;&gt;clipboards specifications freedesktop&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There are two historical interpretations of the ICCCM:&lt;/p&gt;
+
+&lt;p&gt;a) use PRIMARY for mouse selection, middle mouse button paste, and
+   explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)&lt;/p&gt;
+
+&lt;p&gt;b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+   use PRIMARY for the currently-selected text, even if it isn&amp;rsquo;t
+   explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+   XEmacs, some GTK+ apps)&lt;/p&gt;
+
+&lt;p&gt;No one ever does anything interesting with SECONDARY as far as I can
+tell.&lt;/p&gt;
+
+&lt;p&gt;The current consensus is that interpretation b) is correct. Qt 3 and
+GNU Emacs 21 will use interpretation b), changing the behavior of
+previous versions.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And it follows with:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In addition, the ICCCM has a thing called &amp;ldquo;cut buffers&amp;rdquo; which most
+clients no longer support.&lt;/p&gt;
+
+&lt;p&gt;There are two historical interpretations of the ICCCM:&lt;/p&gt;
+
+&lt;p&gt;a) use PRIMARY for mouse selection, middle mouse button paste, and
+   explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)&lt;/p&gt;
+
+&lt;p&gt;b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+   use PRIMARY for the currently-selected text, even if it isn&amp;rsquo;t
+   explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+   XEmacs, some GTK+ apps)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And it summarizes it among many points with the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The correct behavior can be summarized as follows: CLIPBOARD works
+just like the clipboard on Mac or Windows; it only changes on explicit
+cut/copy. PRIMARY is an &amp;ldquo;easter egg&amp;rdquo; for expert users, regular users
+can just ignore it; it&amp;rsquo;s normally pastable only via
+middle-mouse-click.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So the best course of action, since &lt;code&gt;xclip&lt;/code&gt; is known to be
+working fine under &lt;a href=&#34;https://vim.org&#34;&gt;vim&lt;/a&gt; or
+&lt;a href=&#34;https://neovim.org&#34;&gt;neovim&lt;/a&gt;, would be to map say in this
+case, the &lt;code&gt;Y&lt;/code&gt; key for yanking out operations, and the &lt;code&gt;P&lt;/code&gt; key
+for pasting the selection.&lt;/p&gt;
+
+&lt;p&gt;Of course, if other operations such as &lt;code&gt;delete&lt;/code&gt; or &lt;code&gt;change&lt;/code&gt;
+as Kakoune currently employs, I believe that these can also
+be mapped.&lt;/p&gt;
+
+&lt;p&gt;We normally use the &lt;code&gt;clipboard&lt;/code&gt; rather than the &lt;code&gt;primary&lt;/code&gt; or
+&lt;code&gt;secondary&lt;/code&gt; selections:&lt;/p&gt;
+
+&lt;h2 id=&#34;to-yank-with-xclip&#34;&gt;To yank with Xclip&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt; map global normal &amp;lt;Y&amp;gt; &#39; $ xclip -select clip &#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;to-paste-with-xclip&#34;&gt;To paste with Xclip&lt;/h2&gt;
+
+&lt;p&gt;And to paste&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; map global normal P &#39;&amp;lt;!&amp;gt; xclip -select clip -o&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;freeing-register-to-kakoune-yanking-with-p&#34;&gt;Freeing register &lt;code&gt;&amp;quot;&lt;/code&gt; to Kakoune yanking with p&lt;/h2&gt;
+
+&lt;p&gt;The above mapping of both the &lt;code&gt;Y&lt;/code&gt; and &lt;code&gt;P&lt;/code&gt; key registers,
+does not restrain the operations that &lt;code&gt;y&lt;/code&gt; which records the
+operation to register &lt;code&gt;&amp;quot;&lt;/code&gt;  or &lt;code&gt;p&lt;/code&gt; that pastes it.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s no possible way to do it with the otherwise rest of
+the &lt;code&gt;clipboards&lt;/code&gt; options that &lt;code&gt;xclip&lt;/code&gt; uses, without further
+noticing that the register &lt;code&gt;y&lt;/code&gt; that is used for normal
+yanking operations under Kakoune, wouldn&amp;rsquo;t work as expected.
+And neither by pastting that same register &lt;code&gt;&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Forwarding Email With Attachments Mutt Neomutt</title>
+          <link>https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/</link>
+          <pubDate>Thu, 14 Mar 2019 03:45:24 EDT</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/</guid>
+          <description>&lt;p&gt;Forwarding an email is a function usually  bound to the &lt;code&gt;f&lt;/code&gt; key, but if there are any Attachments that were included on the email, high chances are,  that the attachments will not be selected.&lt;/p&gt;
+
+&lt;p&gt;One could go directly to the attachments in question and selectively open each one of them. This in turn, will select the attachments, save the body of the email that had been sent on the original email. To do this, one would have to further select the remainder from the list.&lt;/p&gt;
+
+&lt;p&gt;if various attachments are part of the email this seemingly simple task, may be inconvenient&lt;/p&gt;
+
+&lt;p&gt;One of the workarounds is to have &lt;code&gt;Esc-e&lt;/code&gt; that uses the
+current message as a template for a new one. More
+information about this may be found at &lt;a href=&#34;http://shallowsky.com/blog/tags/forward/&#34;&gt;forwarding a message with attachments in Mutt&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>

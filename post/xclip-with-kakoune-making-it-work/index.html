@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Xclip With Kakoune Making It Work &middot; Blog atrasado
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Blog atrasado</a>
+            <small>con gajes del oficio</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Xclip With Kakoune Making It Work</h1>
+  <span class="post-date">Mar 25, 2019</span>
+  
+
+<p>One of pressing issues with Kakoune is the implementation
+of <code>xclip</code> to use the clipboard selections.</p>
+
+<p>As the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/">Kakoune Registers &ndash; Clipboard Wiki</a> states it:</p>
+
+<p>Notice that <a href="https://github.com/mawww/kakoune/issues/2325">xclip will not work using this example</a>.</p>
+
+<p>And this was exactly the reason why I wanted to delve
+further into this issue.</p>
+
+<p>Anyhow, copying from the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers - Clipboard Wiki</a></p>
+
+<h3 id="using-the-system-clipboard">Using the System Clipboard</h3>
+
+<p>You can use kakoune with <a href="https://wiki.archlinux.org/index.php/Clipboard">system clipboard tools</a> like <code>xsel</code>, <code>xclip</code> or <code>pbcopy</code>/<code>pbpaste</code></p>
+
+<h3 id="to-yank-copy">To yank (copy)</h3>
+
+<p><code>&lt;a-|&gt; xsel --input --clipboard &lt;ret&gt;</code></p>
+
+<p><code>&lt;a-|&gt;</code> pipes each selection through the given external filter program and ignore its output.</p>
+
+<p>You may want to use the following hook to automate the dialog with the system clipboard, on each <code>y</code>, <code>d</code> or <code>c</code> operations:
+```
+      hook global NormalKey y|d|c %{ nop %sh{
+              printf %s &ldquo;$kak_main_reg_dquote&rdquo; | xsel &ndash;input &ndash;clipboard
+      }}</p>
+
+<h3 id="to-paste">To paste</h3>
+
+<p><code>! xsel --output --clipboard &lt;ret&gt;</code></p>
+
+<p><code>!</code> inserts program output before selection while <code>&lt;a-!&gt;</code> inserts program output after selection.</p>
+
+<p>Therefore you can add the following mappings:</p>
+
+<h3 id="paste-before">Paste before</h3>
+
+<p><code>map global user P '!xsel --output --clipboard&lt;ret&gt;'</code></p>
+
+<h3 id="paste-after">Paste after</h3>
+
+<p><code>map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'</code></p>
+
+<h3 id="how-to-use-it-now">How to use it now</h3>
+
+<ul>
+<li>y/d - yank/delete using internal clipboard AND system clipboard at once</li>
+<li>p   - paste from internal clipboard</li>
+<li>&lt;,p&gt; - paste after from system clipboard (, is default for user mode)</li>
+<li>&lt;,P&gt; - paste before from system clipboard (, is default for user mode)</li>
+</ul>
+
+<h2 id="how-to-make-it-work-with-xclip">How to make it work with Xclip.</h2>
+
+<p>As I&rsquo;ve found out, and as the issue clearly showed, this is not
+currently possible by using Xclip under Kakoune, except of course mapping
+a key to Normal mode and then calling out <code>xclip</code>.</p>
+
+<p>As the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">freedesktop.org</a>  website states it, this is not a task
+that can be easily done as long as different clients</p>
+
+<p>quoting from the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">clipboards specifications freedesktop</a></p>
+
+<blockquote>
+<p>There are two historical interpretations of the ICCCM:</p>
+
+<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
+   explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
+
+<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+   use PRIMARY for the currently-selected text, even if it isn&rsquo;t
+   explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+   XEmacs, some GTK+ apps)</p>
+
+<p>No one ever does anything interesting with SECONDARY as far as I can
+tell.</p>
+
+<p>The current consensus is that interpretation b) is correct. Qt 3 and
+GNU Emacs 21 will use interpretation b), changing the behavior of
+previous versions.</p>
+</blockquote>
+
+<p>And it follows with:</p>
+
+<blockquote>
+<p>In addition, the ICCCM has a thing called &ldquo;cut buffers&rdquo; which most
+clients no longer support.</p>
+
+<p>There are two historical interpretations of the ICCCM:</p>
+
+<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
+   explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
+
+<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+   use PRIMARY for the currently-selected text, even if it isn&rsquo;t
+   explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+   XEmacs, some GTK+ apps)</p>
+</blockquote>
+
+<p>And it summarizes it among many points with the following:</p>
+
+<blockquote>
+<p>The correct behavior can be summarized as follows: CLIPBOARD works
+just like the clipboard on Mac or Windows; it only changes on explicit
+cut/copy. PRIMARY is an &ldquo;easter egg&rdquo; for expert users, regular users
+can just ignore it; it&rsquo;s normally pastable only via
+middle-mouse-click.</p>
+</blockquote>
+
+<p>So the best course of action, since <code>xclip</code> is known to be
+working fine under <a href="https://vim.org">vim</a> or
+<a href="https://neovim.org">neovim</a>, would be to map say in this
+case, the <code>Y</code> key for yanking out operations, and the <code>P</code> key
+for pasting the selection.</p>
+
+<p>Of course, if other operations such as <code>delete</code> or <code>change</code>
+as Kakoune currently employs, I believe that these can also
+be mapped.</p>
+
+<p>We normally use the <code>clipboard</code> rather than the <code>primary</code> or
+<code>secondary</code> selections:</p>
+
+<h2 id="to-yank-with-xclip">To yank with Xclip</h2>
+
+<pre><code> map global normal &lt;Y&gt; ' $ xclip -select clip '
+</code></pre>
+
+<h2 id="to-paste-with-xclip">To paste with Xclip</h2>
+
+<p>And to paste</p>
+
+<pre><code> map global normal P '&lt;!&gt; xclip -select clip -o'
+</code></pre>
+
+<h2 id="freeing-register-to-kakoune-yanking-with-p">Freeing register <code>&quot;</code> to Kakoune yanking with p</h2>
+
+<p>The above mapping of both the <code>Y</code> and <code>P</code> key registers,
+does not restrain the operations that <code>y</code> which records the
+operation to register <code>&quot;</code>  or <code>p</code> that pastes it.</p>
+
+<p>There&rsquo;s no possible way to do it with the otherwise rest of
+the <code>clipboards</code> options that <code>xclip</code> uses, without further
+noticing that the register <code>y</code> that is used for normal
+yanking operations under Kakoune, wouldn&rsquo;t work as expected.
+And neither by pastting that same register <code>&quot;</code>.</p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

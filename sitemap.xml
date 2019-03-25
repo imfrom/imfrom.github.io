@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</loc>
+    <lastmod>2019-03-25T00:01:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/</loc>
+    <lastmod>2019-03-14T03:45:24-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/</loc>
     <lastmod>2019-03-05T23:33:24-05:00</lastmod>
   </url>
@@ -306,7 +316,7 @@
   
   <url>
     <loc>https://imfrom.github.io/</loc>
-    <lastmod>2019-03-05T23:33:24-05:00</lastmod>
+    <lastmod>2019-03-25T00:01:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -359,7 +369,7 @@
   
   <url>
     <loc>https://imfrom.github.io/post/</loc>
-    <lastmod>2019-03-05T23:33:24-05:00</lastmod>
+    <lastmod>2019-03-25T00:01:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
