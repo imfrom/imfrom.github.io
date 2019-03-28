@@ -191,8 +191,11 @@ And neither by pastting that same register &lt;code&gt;&amp;quot;&lt;/code&gt;.&
 &lt;p&gt;if various attachments are part of the email this seemingly simple task, may be inconvenient&lt;/p&gt;
 
 &lt;p&gt;One of the workarounds is to have &lt;code&gt;Esc-e&lt;/code&gt; that uses the
-current message as a template for a new one. More
-information about this may be found at &lt;a href=&#34;http://shallowsky.com/blog/tags/forward/&#34;&gt;forwarding a message with attachments in Mutt&lt;/a&gt;&lt;/p&gt;
+current message as a template for a new one.&lt;/p&gt;
+
+&lt;p&gt;More information about this may be found at &lt;a href=&#34;http://shallowsky.com/blog/tags/forward/&#34;&gt;forwarding a
+message with attachments in
+Mutt&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
       
