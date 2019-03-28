@@ -254,8 +254,8 @@ buffer.&lt;/p&gt;
 &lt;p&gt;Perhaps and one of the feasible explanations is that at the
 time this issue came up, other changes may have been further
 implemented from the developing side, thus preventing from
-having this function working as I would have thought in
-what it seemed to be almost a basic functionality.&lt;/p&gt;
+having this function working as I would have thought, and in
+what seemed to be almost a basic functionality.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;  hook global WinCreate .* %{
     addhl show_matching
