@@ -210,11 +210,14 @@ information about this may be found at &lt;a href=&#34;http://shallowsky.com/blo
 menu, but every time this was done, &lt;strong&gt;xterm&lt;/strong&gt; was crashing.&lt;/p&gt;
 
 &lt;p&gt;After going over some of the &lt;strong&gt;xorg-fonts-&lt;/strong&gt;* packages, I noticed that some of
-them were not installed for the X system. Among them,  &lt;strong&gt;xorg-fonts-misc&lt;/strong&gt; was
-not installed. I proceeded to install it and the menu was brought up
-successfully again by the &lt;kbd&gt;ctrl&lt;/kbd&gt; rightmouse 🖱combination.&lt;/p&gt;
+them were not installed for the X system.&lt;/p&gt;
 
-&lt;p&gt;A bug report was properly sent to address this issue. I don&amp;rsquo;t recall from having this issue before, and when it even appeared.&lt;/p&gt;
+&lt;p&gt;Among them,  &lt;strong&gt;xorg-fonts-misc&lt;/strong&gt; was not installed. I
+proceeded to install it and the menu was brought up
+successfully again by the &lt;kbd&gt;ctrl&lt;/kbd&gt; rightmouse
+🖱combination.&lt;/p&gt;
+
+&lt;p&gt;A bug report was properly sent out to address this issue. I don&amp;rsquo;t recall from having this issue before, and/or when it even first appeared.&lt;/p&gt;
 </description>
         </item>
       
