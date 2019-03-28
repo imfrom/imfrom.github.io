@@ -142,7 +142,7 @@ as Kakoune currently employs, need to be mapped, I believe
 that the keys can be assigned their own combinations.&lt;/p&gt;
 
 &lt;p&gt;We normally use the &lt;code&gt;clipboard&lt;/code&gt; rather than the &lt;code&gt;primary&lt;/code&gt; or
-&lt;code&gt;secondary&lt;/code&gt; selections:&lt;/p&gt;
+&lt;code&gt;secondary&lt;/code&gt; X selections:&lt;/p&gt;
 
 &lt;h2 id=&#34;to-yank-with-xclip&#34;&gt;To yank with Xclip&lt;/h2&gt;
 
