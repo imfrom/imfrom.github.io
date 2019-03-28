@@ -156,7 +156,7 @@ be mapped.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt; map global normal P &#39;&amp;lt;!&amp;gt; xclip -select clip -o&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;freeing-register-to-kakoune-yanking-with-p&#34;&gt;Freeing register &lt;code&gt;&amp;quot;&lt;/code&gt; to Kakoune yanking with p&lt;/h2&gt;
+&lt;h2 id=&#34;freeing-register-on-kakoune-and-yanking-with-p&#34;&gt;Freeing register &lt;code&gt;&amp;quot;&lt;/code&gt; on Kakoune and yanking with p&lt;/h2&gt;
 
 &lt;p&gt;The above mapping of both the &lt;code&gt;Y&lt;/code&gt; and &lt;code&gt;P&lt;/code&gt; key registers,
 does not restrain the operations that &lt;code&gt;y&lt;/code&gt; which records the
