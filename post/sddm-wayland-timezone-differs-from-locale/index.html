@@ -228,21 +228,21 @@
 <div class="post">
   <h1 class="post-title">Sddm Wayland Timezone Differs From Locale</h1>
   <span class="post-date">Nov 2, 2018</span>
-  <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enable it on an older system. This time around though my expectations fell short.</p>
+  <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enabled it on an older system. This time around though, my expectations fell short.</p>
 
 <p>After installing <a href="https://wiki.archlinux.org/index.php/SDDM#Configuration_GUI" target="_blank">SDDM</a>, I called out systemd to disable <a href="https://wiki.archlinux.org/index.php/LightDM" target="_blank">LightDM</a> with</p>
 
 <pre><code> sytemctl disable lightdm.service 
 </code></pre>
 
-<p>followed by the enabling the newly installed display manager with</p>
+<p>followed by the enabling of the newly installed display manager with</p>
 
 <pre><code> systemctl enable sddm.service
 </code></pre>
 
-<p>But it wasn&rsquo;t after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
+<p>But it wasn&rsquo;t clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
 
-<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
+<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling out the <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
 
 <pre><code> datetimectl status
 </code></pre>
@@ -260,9 +260,9 @@
 
 <p>I&rsquo;ve found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example <a href="https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux" target="_blank">I messed up my system clock in Arch Linux</a>.</p>
 
-<p>Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the <code>timedatectl</code> command. Like for example the following question that was also on <strong>stackexchange</strong> <a href="https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce" target="_blank">How can I easily change my time-zone in Arch/Xfce</a> that I came across only later after resolving it first in my end.</p>
+<p>Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the <code>timedatectl</code> command. Like for example the following question that was also on <strong>stackexchange</strong> <a href="https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce" target="_blank">How can I easily change my time-zone in Arch/Xfce</a> that I came across only later and after resolving it first in my end.</p>
 
-<p>And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the <strong>Arch Wiki</strong> for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading <code>man</code> pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close!</p>
+<p>And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the <strong>Arch Wiki</strong> for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading <code>man</code> pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close as the latter!</p>
 
 <p><strong>References</strong></p>
 
