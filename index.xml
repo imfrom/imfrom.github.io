@@ -138,8 +138,8 @@ case, the &lt;code&gt;Y&lt;/code&gt; key for yanking out operations, and the &lt
 for pasting the selection.&lt;/p&gt;
 
 &lt;p&gt;Of course, if other operations such as &lt;code&gt;delete&lt;/code&gt; or &lt;code&gt;change&lt;/code&gt;
-as Kakoune currently employs, I believe that these can also
-be mapped.&lt;/p&gt;
+as Kakoune currently employs, need to be mapped, I believe
+that the keys can be assigned their own combinations.&lt;/p&gt;
 
 &lt;p&gt;We normally use the &lt;code&gt;clipboard&lt;/code&gt; rather than the &lt;code&gt;primary&lt;/code&gt; or
 &lt;code&gt;secondary&lt;/code&gt; selections:&lt;/p&gt;
