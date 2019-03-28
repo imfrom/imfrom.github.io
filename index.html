@@ -745,7 +745,7 @@ work</a> for further info.</p>
  This option specifies the program (and its command line arguments) to be run in the xterm window. It also sets the window title and icon name to be the basename of the program being executed if neither -T nor -n are given on the command line.
 </code></pre>
 
-<p>To wrap it all up, quotes are indeed needed to call out the preferred terminal - which in my case is xterm - and finally bring out the mail reader. The option <strong>-e</strong> is needed as well, along with the path to the mutt configuration file.</p>
+<p>To wrap it all up, quotes <code>'</code> are indeed needed to call out the preferred terminal - which in my case is xterm - and finally bring out the mail reader. The option <strong>-e</strong> is needed as well, along with the path to the mutt configuration file.</p>
 
 <pre><code> exo-open --launch TerminalEmulator 'xterm mutt -f /path/to/configuration/file &quot;%s&quot;'
 </code></pre>

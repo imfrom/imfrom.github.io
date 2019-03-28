@@ -562,7 +562,7 @@ work&lt;/a&gt; for further info.&lt;/p&gt;
  This option specifies the program (and its command line arguments) to be run in the xterm window. It also sets the window title and icon name to be the basename of the program being executed if neither -T nor -n are given on the command line.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;To wrap it all up, quotes are indeed needed to call out the preferred terminal - which in my case is xterm - and finally bring out the mail reader. The option &lt;strong&gt;-e&lt;/strong&gt; is needed as well, along with the path to the mutt configuration file.&lt;/p&gt;
+&lt;p&gt;To wrap it all up, quotes &lt;code&gt;&#39;&lt;/code&gt; are indeed needed to call out the preferred terminal - which in my case is xterm - and finally bring out the mail reader. The option &lt;strong&gt;-e&lt;/strong&gt; is needed as well, along with the path to the mutt configuration file.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; exo-open --launch TerminalEmulator &#39;xterm mutt -f /path/to/configuration/file &amp;quot;%s&amp;quot;&#39;
 &lt;/code&gt;&lt;/pre&gt;
