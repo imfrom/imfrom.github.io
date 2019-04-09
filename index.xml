@@ -353,7 +353,7 @@ the specified macro.&lt;/p&gt;
 just an oversight on my part since such an obvious step to
 record and replay the macro, is evident, but considering
 I&amp;rsquo;ve been used to &lt;strong&gt;vim&lt;/strong&gt;, it was not at all clear at first,
-what the steps would be, mainly in order to replay the macro
+what the steps may have been, mainly in order to replay the macro
 on Normal mode. On &lt;strong&gt;Insert&lt;/strong&gt; and &lt;strong&gt;Prompt&lt;/strong&gt; mode, however,
 the documentation provided all the details.&lt;/p&gt;
 
