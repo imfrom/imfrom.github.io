@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Antergos</title>
+      <title>antergos</title>
       <link>https://imfrom.github.io/tags/antergos/</link>
       <pubDate>Sat, 27 Jan 2018 08:49:17 -0500</pubDate>
       
@@ -22,43 +22,7 @@
     </item>
     
     <item>
-      <title>Arch</title>
-      <link>https://imfrom.github.io/tags/arch/</link>
-      <pubDate>Fri, 24 Feb 2017 13:45:58 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/tags/arch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Emacs</title>
-      <link>https://imfrom.github.io/tags/emacs/</link>
-      <pubDate>Mon, 21 Nov 2016 14:40:45 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/tags/emacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gimp</title>
-      <link>https://imfrom.github.io/tags/gimp/</link>
-      <pubDate>Wed, 10 Aug 2016 14:16:59 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/tags/gimp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://imfrom.github.io/tags/git/</link>
-      <pubDate>Sat, 10 Sep 2016 10:09:44 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Grub</title>
+      <title>grub</title>
       <link>https://imfrom.github.io/tags/grub/</link>
       <pubDate>Sat, 20 Jan 2018 08:38:47 -0500</pubDate>
       
@@ -67,25 +31,7 @@
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>https://imfrom.github.io/tags/hugo/</link>
-      <pubDate>Sat, 10 Sep 2016 10:09:44 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Manjaro</title>
-      <link>https://imfrom.github.io/tags/manjaro/</link>
-      <pubDate>Tue, 14 Mar 2017 13:23:51 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/tags/manjaro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ntfs 3g</title>
+      <title>ntfs-3g</title>
       <link>https://imfrom.github.io/tags/ntfs-3g/</link>
       <pubDate>Tue, 16 Jan 2018 08:45:02 -0500</pubDate>
       
@@ -94,25 +40,7 @@
     </item>
     
     <item>
-      <title>Rxvt</title>
-      <link>https://imfrom.github.io/tags/rxvt/</link>
-      <pubDate>Fri, 18 Aug 2017 14:07:29 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/tags/rxvt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssd</title>
-      <link>https://imfrom.github.io/tags/ssd/</link>
-      <pubDate>Wed, 15 Feb 2017 04:02:19 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/tags/ssd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Udisks2</title>
+      <title>udisks2</title>
       <link>https://imfrom.github.io/tags/udisks2/</link>
       <pubDate>Tue, 16 Jan 2018 08:45:02 -0500</pubDate>
       
@@ -121,7 +49,16 @@
     </item>
     
     <item>
-      <title>Urxvt</title>
+      <title>rxvt</title>
+      <link>https://imfrom.github.io/tags/rxvt/</link>
+      <pubDate>Fri, 18 Aug 2017 14:07:29 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/tags/rxvt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>urxvt</title>
       <link>https://imfrom.github.io/tags/urxvt/</link>
       <pubDate>Fri, 18 Aug 2017 14:07:29 -0500</pubDate>
       
@@ -130,11 +67,74 @@
     </item>
     
     <item>
-      <title>Vim</title>
+      <title>manjaro</title>
+      <link>https://imfrom.github.io/tags/manjaro/</link>
+      <pubDate>Tue, 14 Mar 2017 13:23:51 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/tags/manjaro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arch</title>
+      <link>https://imfrom.github.io/tags/arch/</link>
+      <pubDate>Fri, 24 Feb 2017 13:45:58 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/tags/arch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssd</title>
+      <link>https://imfrom.github.io/tags/ssd/</link>
+      <pubDate>Wed, 15 Feb 2017 04:02:19 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/tags/ssd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
       <link>https://imfrom.github.io/tags/vim/</link>
       <pubDate>Wed, 08 Feb 2017 13:48:53 -0500</pubDate>
       
       <guid>https://imfrom.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>https://imfrom.github.io/tags/emacs/</link>
+      <pubDate>Mon, 21 Nov 2016 14:40:45 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://imfrom.github.io/tags/git/</link>
+      <pubDate>Sat, 10 Sep 2016 10:09:44 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://imfrom.github.io/tags/hugo/</link>
+      <pubDate>Sat, 10 Sep 2016 10:09:44 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gimp</title>
+      <link>https://imfrom.github.io/tags/gimp/</link>
+      <pubDate>Wed, 10 Aug 2016 14:16:59 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/tags/gimp/</guid>
       <description></description>
     </item>
     
