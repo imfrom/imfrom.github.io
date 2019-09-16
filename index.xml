@@ -5,8 +5,33 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2019</rights>
-    <updated>2019-03-25 00:01:13 -0400 EDT</updated>
+    <updated>2019-09-15 23:35:41 -0400 EDT</updated>
 
+    
+      
+        <item>
+          <title>Pacman Unable to Lock Database</title>
+          <link>https://imfrom.github.io/post/pacman-unable-to-lock-database/</link>
+          <pubDate>Sun, 15 Sep 2019 23:35:41 EDT</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/pacman-unable-to-lock-database/</guid>
+          <description>&lt;p&gt;On a recent pacman upgrade, I encountered the error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:: Synchronizing package databases...
+error: failed to update core (unable to lock database)
+error: failed to update extra (unable to lock database)
+error: failed to update community (unable to lock database)
+error: failed to synchronize all databases
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;the solution everytime is to remove the &lt;code&gt;db.lck&lt;/code&gt; from the &lt;code&gt;/var/lib/&lt;/code&gt; directory and restart pacman.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm /var/lib/db.lck
+pacman -Syyu
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
     
       
         <item>
