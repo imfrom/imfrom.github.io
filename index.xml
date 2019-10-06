@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog del tecnólogo </title>
@@ -662,11 +663,11 @@ suffix &lt;code&gt;.md&lt;/code&gt; extension&lt;/p&gt;
 
 &lt;p&gt;Then I moved that directory with all the files to another location, following by calling out &lt;code&gt;libreoffice&lt;/code&gt; which seemed to resolve the issue.&lt;/p&gt;
 
-&lt;p&gt;One of the first hits provided by Google after my first inquiry, were from the forums at the libreoffice website itself, in which one of the threads that also dealt with this issue had mentioned the same workaround that I had just used.&lt;a href=&#34;https://forum.openoffice.org/en/forum/viewtopic.php?f=101&amp;t=83995&#34; target=&#34;_blank&#34;&gt;LO5.0 Fatal Error cannot be started&lt;/a&gt;.&lt;a href=&#34;#oocontextuser&#34;&gt;&lt;sup id=&#34;oocontextuserref&#34;&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;One of the first hits provided by Google after my first inquiry, were from the forums at the libreoffice website itself, in which one of the threads that also dealt with this issue had mentioned the same workaround that I had just used. See more at &lt;a href=&#34;https://forum.openoffice.org/en/forum/viewtopic.php?f=101&amp;t=83995&#34; target=&#34;_blank&#34;&gt;LO5.0 Fatal Error cannot be started&lt;/a&gt;.&lt;a href=&#34;#oocontextuser&#34;&gt;&lt;sup id=&#34;oocontextuserref&#34;&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Further queries that would shed more light about this problem, took me to a previous probable bug that was reported to the &lt;a href=&#34;https://bugs.documentfoundation.org/show_bug.cgi?id=64606&#34; target=&#34;_blank&#34;&gt;documentfoundation.org&lt;/a&gt; website. This report was opened on 2013 and closed after right around 2014. &lt;a href=&#34;#docfoundation&#34;&gt;&lt;sup id=&#34;docfoundationref&#34;&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Further queries that would shed more light about this problem, took me to a previous probable bug that was reported to the &lt;a href=&#34;https://bugs.documentfoundation.org/show_bug.cgi?id=64606&#34; target=&#34;_blank&#34;&gt;documentfoundation.org&lt;/a&gt; website. This report was opened on 2013 and closed right after around 2014. &lt;a href=&#34;#docfoundation&#34;&gt;&lt;sup id=&#34;docfoundationref&#34;&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Why that bug report at the documentfoundation.org website was shortly after marked as closed, is simply beyond me.&lt;/p&gt;
+&lt;p&gt;Why that bug report at the documentfoundation.org website was marked as closed shortly after it was reported, is simply beyond me.&lt;/p&gt;
 
 &lt;p&gt;The report occurred under version 5 whereas in my case, it was under version 6. And the problem is still there.&lt;/p&gt;
 
