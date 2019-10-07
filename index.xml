@@ -213,11 +213,15 @@ And neither by pastting that same register &lt;code&gt;&amp;quot;&lt;/code&gt;.&
 
 &lt;p&gt;One could go directly to the attachments in question and selectively open each one of them. This in turn, will select the attachments, save the body of the email that had been sent on the original email. To do this, one would have to further select the remainder from the list.&lt;/p&gt;
 
-&lt;p&gt;If various attachments are part of the email this seemingly
+&lt;p&gt;If various attachments are part of the email though, this otherwise seemingly
 simple task, may be somewhat inconvenient.&lt;/p&gt;
 
 &lt;p&gt;One of the workarounds is to have &lt;code&gt;Esc-e&lt;/code&gt; that uses the
 current message as a template for a new one.&lt;/p&gt;
+
+&lt;p&gt;More information about this may be found at &lt;a href=&#34;http://shallowsky.com/blog/tags/forward/&#34;&gt;forwarding a
+message with attachments in
+Mutt&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;More information about this may be found at &lt;a href=&#34;http://shallowsky.com/blog/tags/forward/&#34;&gt;forwarding a
 message with attachments in
@@ -1109,7 +1113,7 @@ distributions, updated on the basis of different criteria,
 &lt;p&gt;And this is important because the disparity on numbers when
 all the distributions are compared across LinuxCounter
 &lt;a href=&#34;#linuxcounter&#34;&gt;&lt;sup id=&#34;linuxcounterref&#34;&gt;3&lt;/sup&gt;&lt;/a&gt;
-and LWN &lt;a href=&#34;#lwn&#34;&gt;&lt;sup id=&#34;lwnref&#34;&gt;4&lt;/sup&gt;&lt;/a&gt;,
+and LWN,  &lt;a href=&#34;#lwn&#34;&gt;&lt;sup id=&#34;lwnref&#34;&gt;4&lt;/sup&gt;&lt;/a&gt;
 greatly differ from the ranking on Distrowatch. The differences would
 be much more profound if other websites would try to gather
 these numbers as long as the list is not heavily edited or
@@ -1148,8 +1152,8 @@ where I have noticed that trend&lt;/p&gt;
 
 &lt;p&gt;But what it&amp;rsquo;s unfortunate is that such misleading bits of information occur
 nowadays, especially within the culture of the GNU/Linux Operating system which
-even includes its kernel without which the vast GNU software is comprised of,
-accomplishes nothing.  But most importantly listing the so called &amp;lsquo;popular&amp;rsquo;
+even includes its kernel without which the vast GNU software which is comprised
+of, accomplishes nothing.  But most importantly, listing it as so called &amp;lsquo;popular&amp;rsquo;
 when most of the &amp;lsquo;popular&amp;rsquo; distributions do not even adhere to the Free
 Software Foundation standards guidelines of Free Software.&lt;/p&gt;
 
@@ -1159,7 +1163,7 @@ the bias is there regardless whether is more commercially oriented by
 which the distribution in question implements free software or not. It
 is the case that community driven distros do not necessarily implement the
 licenses any better than commercially based distros. But it makes no
-difference in the case of this website. . The users responsible to
+difference in the case of this website. The users responsible to
 update the counter list for the distros or in this case the distro
 that should appear on the top are undoubtedly misinforming real/accurate market
 share data without further repercussions. And by the looks of it, what
