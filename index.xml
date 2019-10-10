@@ -34,7 +34,7 @@
 
 &lt;p&gt;Upon going ahead and after opening the &lt;code&gt;javaws&lt;/code&gt; executable, I noticed that the path had been incorrectly set indeed by either some of the libraries during the initialization&amp;hellip;. It was pointing out to a different location &lt;strong&gt;rather&lt;/strong&gt; than where the files for the java environment were located instead.&lt;/p&gt;
 
-&lt;p&gt;Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus &lt;code&gt;java=/usr/bin/java&lt;/code&gt; worked without a problem.&lt;/p&gt;
+&lt;p&gt;Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus &lt;code&gt;java=/location/of/java/default/&lt;/code&gt; worked without a problem.&lt;/p&gt;
 </description>
         </item>
       
