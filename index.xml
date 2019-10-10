@@ -693,7 +693,7 @@ suffix &lt;code&gt;.md&lt;/code&gt; extension&lt;/p&gt;
 
 &lt;p&gt;but there was nothing out of the norm with the permissions set on the directory. But from his post it reminded me that usually the path that is set by xdg is under the &lt;strong&gt;xdg&lt;/strong&gt; directory. Then again, the environment variable for it had been set correctly.&lt;/p&gt;
 
-&lt;p&gt;I decided to go ahead and backup the &lt;code&gt;.config/libreoffice/4&lt;/code&gt; directory where some of the other files for libreoffice laid at.&lt;/p&gt;
+&lt;p&gt;I decided to go ahead and back up the &lt;code&gt;.config/libreoffice/4&lt;/code&gt; directory where some of the other files for libreoffice laid at.&lt;/p&gt;
 
 &lt;p&gt;Then I moved that directory with all the files to another location, following by calling out &lt;code&gt;libreoffice&lt;/code&gt; which seemed to resolve the issue.&lt;/p&gt;
 
