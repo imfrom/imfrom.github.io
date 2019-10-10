@@ -805,7 +805,7 @@ suffix &lt;code&gt;.md&lt;/code&gt; extension&lt;/p&gt;
 
 &lt;p&gt;Googling about it returned among many of the results, some as in &lt;a href=&#34;https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/&#34; target=&#34;_blank&#34;&gt;Can&amp;rsquo;t connect to Unix socket /var/run//clamav/clamd.ctl&lt;/a&gt;, which dealt with the issue.&lt;/p&gt;
 
-&lt;p&gt;The error here in which it deal with &lt;strong&gt;clamd.ctl&lt;/strong&gt; and not with &lt;strong&gt;clamd.sock connect ()&lt;/strong&gt; as it was posted on the entry entitled &lt;a href=&#34;https://wiki.archlinux.org/index.php/ClamAV#Error:_Clamd_was_NOT_notified&#34; target=&#34;_blank&#34;&gt;Error Clamd was not notified&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The error here in which it dealt with &lt;strong&gt;clamd.ctl&lt;/strong&gt; and not with &lt;strong&gt;clamd.sock connect ()&lt;/strong&gt; as it was posted on the entry entitled &lt;a href=&#34;https://wiki.archlinux.org/index.php/ClamAV#Error:_Clamd_was_NOT_notified&#34; target=&#34;_blank&#34;&gt;Error Clamd was not notified&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;But after running&lt;/p&gt;
 
