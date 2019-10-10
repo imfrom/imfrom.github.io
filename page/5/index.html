@@ -205,6 +205,8 @@
     
       
     
+      
+    
 
     
 
@@ -232,6 +234,92 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/xfce-carpalx-layout/">Xfce Carpalx Layout</a></h1>
+        <span class="post-date">Jul 9, 2017</span>
+        <p>There are many ways to add the <a href="http://mkweb.bcgsc.ca/carpalx/" target="_blank">carpalx</a> layout to X window system on GNU/Linux.</p>
+
+<p>The desktop environment Plasma KDE does not have that problem. One could easily add it from the <strong>Input Devices</strong> from the <strong>settings</strong> of the system.</p>
+
+<p>If however, one is running <strong>Xfce</strong>, things are not as straightforward as one would like them to be.</p>
+
+<p>At the bottom of this post, one can find the zip archive where the <em>carpax.xkb</em> file resides.</p>
+
+<p>Unzip the contents and open up the README.txt to have an idea of what to copy. But there are two (2) things/caveats to remember.</p>
+
+<p><strong>One shouldn’t modify the <em>symbols/us</em> file as it was suggested by the author</strong></p>
+
+<p>and</p>
+
+<p><strong>No need to follow Step 3 by loading the layout with setxkbmap carpalx. For one thing it will not load the default variant of the layout.</strong></p>
+
+<p>I’m just posting the following as it currently appears on the README.txt file provided by the author.</p>
+
+<h1 id="installation-instructions">INSTALLATION INSTRUCTIONS</h1>
+
+<ol>
+<li><p>Copy carpalx.xkb to your XKB symbols directory (path my differ slightly)</p>
+
+<p>$ cp carpalx.xkb /usr/share/X11/xkb/symbols/carpalx</p></li>
+
+<li><p>Add the following lines to /usr/share/X11/xkb/symbols.dir</p>
+
+<p>-dp—– a——- carpalx(qgmlwb)
+–p—– a——- carpalx(qgmlwy)
+–p—– a——- carpalx(qfmlwy)
+–p—– a——- carpalx(qwkrfy)
+–p—– a——- carpalx(qwyrfm)
+–p—– a——- carpalx(tnwmlc)</p></li>
+
+<li><p>Now it should be possible to load the layouts with, e.g.</p>
+
+<p>$ setxkbmap carpalx                            # defaults to QGMLWB
+$ setxkbmap -layout carpalx -variant qwkrfy    # to select other variants</p></li>
+
+<li><p>The following files should also be updated:</p>
+
+<p>/usr/share/X11/xkb/rules/xorg.lst
+/usr/share/X11/xkb/rules/xorg.xml</p></li>
+</ol>
+
+<h1 id="one-better-way-to-accomplish-it">One better way to accomplish it:</h1>
+
+<h1 id="instructions-to-follow">Instructions to follow</h1>
+
+<ol>
+<li><p>Copy indeed carpalx.xkb to the XKB symbols directory with sudo privileges</p>
+
+<p>$ cp carpalx.xkb /usr/share/X11/xkb/symbols/carpalx</p></li>
+
+<li><p>Go to <strong>/usr/share/X11/xkb/rules</strong></p>
+
+<p>$ cd /usr/share/X11/xkb/rules</p></li>
+
+<li><p>Once there and with sudo privileges again open <strong>evdev.lst</strong>. Add it.</p></li>
+</ol>
+
+<p><img src="/images/edit-evdevlst.png" alt=""></p>
+
+<ol>
+<li>Edit the file <strong>edev.xml</strong> and add the variant to the list.</li>
+</ol>
+
+<p><img src="/images/edit-evdevxml.png" alt=""></p>
+
+<ol>
+<li>Go to <strong>Keyboard Settings</strong> of the <strong>xfce</strong> graphical environment and add it. It will show on the list as shown in the following image:</li>
+</ol>
+
+<p><img src="/images/xfce carpalx layout · blog del tecnólogo_files/add-carpalx.png" alt=""></p>
+
+<ul>
+<li>Downloadable zip files:</li>
+</ul>
+
+<p><a href="http://mkweb.bcgsc.ca/carpalx/distribution/carpalx-x11.zip">http://mkweb.bcgsc.ca/carpalx/distribution/carpalx-x11.zip</a></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-announces-password-weakness-en-los-instaladores-de-dvd_usb/">Manjaro Announces Password Weakness en Los Instaladores De Dvd/usb</a></h1>
@@ -677,55 +765,6 @@ One user pointed out that by disconnecting and connecting the external DVD right
 <p>El valor pre-configurado son de unos 5 minutos. Se puede especificar el tiempo que uno estime apropiado.</p>
 
 <p><img src="/images/bloqueo-de-pantalla-screen-locking-manjaro.png" alt="bloqueo-de-pantalla-en-manjaro"></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/">Turn Off Manjaro Kde Splash Screen if on Ssd</a></h1>
-        <span class="post-date">Feb 15, 2017</span>
-        <p>Posicionado desde hace meses en el quinto escalafón de la lista de las distribuciones basadas en <a href="http://distrowatch.com/" target="_blank">Linux</a>, la distribución <a href="https://manjaro.org/" target="_blank">Manjaro </a>, basada en la impresionante distribución <a href="http://archlinux.org/" target="_blank">Arch Linux</a>, y que hace uso del magnífico sistema de administración de paquetes <strong>Pacman</strong> de este último, emplea los últimos e innovadores temas de interfaz gráficos en muchas de las ediciones, tanto de la comunidad, como aquellas que son aprobadas oficialmente. <a href="#man"><sup id="manref">1</sup></a></p>
-
-<p>No tuve problema alguno con la instalación del sistema operativo. Todo parecía funcionar sin problemas. La tarjeta gráfica del ordenador se había identificado apropiadamente durante el proceso de instalación, al igual que la tarjeta inalámbrica que permite el acceso al Internet para la continuación de cualquier actualización que se necesitaría llevar a cabo más tarde.</p>
-
-<p>El mayor problema recaía en el tiempo que tomaba antes que el escritorio gráfico de este sistema operativo estuviera disponible.</p>
-
-<p>Después de reinicializar las sesiones en varias ocasiones, me di cuenta que este lapso que estaba experimentando, no era algo necesariamente deseable, y peor aún, porque muchas veces fallaba por completo en cargar el entorno gráfico KDE, mientras que el resto del sistema estaba simplemente congelado. Esto imposibilitaba por ende, el acceso a la línea de intérprete de comandos, al igual que a cualquier operación de revisión de errores. Bajo estas condiciones, el sistema entero se paralizaba y por consiguiente era algo inaceptable.</p>
-
-<p>Aunque el origen de este problema no era tan sencillo de rastrear, me di cuenta que ‘startx’ podía ser el causante. Una búsqueda rápida en Google dio como resultados en su primer hit de búsqueda a una pregunta similar titulada: <em>Plasma desktop 5 boots very slowly</em> que había sido hecha en el boletín de Arch Linux.</p>
-
-<p>La pregunta del op era la siguiente:</p>
-
-<blockquote>
-<p>is there any way to debug Plasma-desktop 5 loading process to figure out why it is slow?</p>
-</blockquote>
-
-<p>a lo que una respuesta continuaba después que decía:</p>
-
-<blockquote>
-<blockquote>
-<p>if on ssd, it’s better to turn off splash screen. <a href="#ssd"><sup id="ssdref">2</sup></a></p>
-</blockquote>
-</blockquote>
-
-<p>Y eso era exactamente lo que estaba ocurriendo, o por lo menos en mi caso.</p>
-
-<p>Después de ello y una vez en el menú gráfico del sistema, se selecciona las configuraciones del sistema o <em>settings</em> . Una vez allí y bajo el tabulador <em>Appearance</em> se selecciona <em>Workspace Theme</em>.</p>
-
-<p><img src="/images/manjaro-workspace.png" alt="manjaro-workspace">
-<img src="/images/tema-del-espacio-de-trabajo.png" alt="manjaro-espacio-de-trabajo"></p>
-
-<p>Una vez que se seleccione el <em>Tema</em> y como se mostrará en la siguiente figura, se debe especificar que <em>None</em> o <em>ninguno</em>.</p>
-
-<p><img src="/images/manjaro-splash.png" alt="manjaro-splash">
-<img src="/images/no-splash-en-manjaro-kde.png" alt="manjaro-no-splash"></p>
-
-<p><strong>Footnotes</strong></p>
-
-<ol>
-<li><p><a name="man"></a><a href="https://manjaro.org/get-manjaro/" target="_blank">Lanzamientos oficiales de Manjaro</a><a href="#manref">&crarr;</a></p></li>
-
-<li><p><a name="ssd"></a>Sugerencia de un usuario en ajustar el valor pre-configurado del espacio de trabajo. Para más información acerca de ello visite el siguiente sitio que ofrece más detalles acerca de la conversación <a href="https://bbs.archlinux.org/viewtopic.php?pid=1557789#p1557789" target="_blank" title="turn off splash if on ssd">turn off splash if on ssd</a> <a href="#ssdref"> ↩︎</a></p></li>
-</ol>
 
     </div>
   

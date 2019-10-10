@@ -205,6 +205,8 @@
     
       
     
+      
+    
 
     
 
@@ -232,6 +234,39 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/">Closetag Vim on Markdown Filetype</a></h1>
+        <span class="post-date">Dec 17, 2018</span>
+        <p>I coudln&rsquo;t help but noticing that the closetag plugin script for vim wasn&rsquo;t working on any of the markdown files that had been previously edited.</p>
+
+<p>The markdown files in question were of the abbreviated form <code>md</code> and not <code>markdown</code>.</p>
+
+<p>It did work without a problem on any newly-created file and whether these files were of the form or had the extension <code>md</code> or <code>markdown</code>.</p>
+
+<p>The README file of <strong>closetag</strong> specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:</p>
+
+<pre><code> let g:closetag_filenames = &quot;*.html, *.xhtml, *.phtml&quot;
+</code></pre>
+
+<p>etcetera. <a href="#closetagreadme"><sup id="closetagreadmeref">1</sup></a></p>
+
+<p>At one given point I recall having <code>*.md</code>, which was more than enough for the <strong>closetag</strong> plugin to work without a problem, even with previously edited files.</p>
+
+<p>This time around however, only having <code>*.md</code> did not remedy the problem.</p>
+
+<p>Having <code>*.markdown</code> on the vim initialization file was necessary for the
+<strong>closetag</strong> plugin to work with previously edited markdown files that held a
+suffix <code>.md</code> extension</p>
+
+<pre><code> let g:closetag_filenames = &quot;*.md, *.mardown&quot;
+</code></pre>
+
+<p><strong>References</strong></p>
+
+<p><a name="closetagreadme"></a><a href="https://github.com/alvan/vim-closetag/blob/master/README.md#options" target="blank">README file for closetag</a><a href="#closetagreadmeref">&crarr; </a></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/">Error While Reinstalling All Previously Deployed Packages of Context User</a></h1>
@@ -821,44 +856,6 @@ to install the updates accordingly.</p>
 <p>Perhaps this is is just a reminder not to fully rely on
 <strong>pamac</strong> and used the main package manager for any Arch
 based distribution.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/">Could Not Satisfy Dependencies Hunspell Antergos Common Meta</a></h1>
-        <span class="post-date">Jul 18, 2018</span>
-        <p>It seems as if <strong>antergos-common-meta</strong> has been removed
-from some of the repositories.</p>
-
-<p>In the latest updates by using pamac or even pacman returned
-the <em>could not satisfy dependency</em> error that was required
-in this case for the hunspell Spanish dictionary <strong>hunspell-es</strong>.</p>
-
-<p><img src="/images/Screenshot_2018-07-17_23-51-16.png" alt="" /></p>
-
-<p>Thus by removing <strong>antergos-common-meta</strong> or whatever was left
-of it, resolved the problem, it seems that the Antergos
-community haven&rsquo;t been able to resolve some of these issues
-that keep coming up every now and then with the
-distribution.</p>
-
-<p>A Google search about this problem returned, among the
-results some posts like <a
-href="https://forum.antergos.com/topic/10303/cant-solve-dependencies-hunspell"
-target="_blank">can&rsquo;t solve dependencies hunspell</a> which
-summarised the same error message.</p>
-
-<p>Unlike other occasions, I didn&rsquo;t read about this particular issue this time, The reason for not following up on it is due to the fact that a few days ago a dependency problem had appeared about a <code>..libso.2</code> (I can&rsquo;t remember the name of the file, this time around), but it was a file that needed to be removed before successfully continuing with the updates.</p>
-
-<p>Hopefully the Antergos developers will be able to correct some
-of these inconsistencies in an otherwise great distribution
-that is based on Arch, before a greater share of users who are
-fond of Arch, not only migrate to it, but fully adopt it as
-the main OS in their systems.</p>
-
-<p>Until then some of these errors and dependency satisfaction
-from the packages would have to be resolved manually by the
-end-users on their own.</p>
 
     </div>
   
