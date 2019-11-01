@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Pamac Error While Loading Shared Libraries Libalpm &middot; Blog atrasado
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+
+  <div class="sidebar-item">
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Blog atrasado</a>
+            <small>con gajes del oficio</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Pamac Error While Loading Shared Libraries Libalpm</h1>
+  <span class="post-date">Nov 1, 2019</span>
+  <p><a href="https://www.archlinux.org/pacman/libalpm.3.html">Libalpm</a> is the library for package management of Arch.</p>
+
+<p>I found it funny that in case of any bugs the team says</p>
+
+<blockquote>
+<p>Bugs? You must be kidding; there are no bugs in this software. But if we happen to be wrong, submit a bug report.</p>
+</blockquote>
+
+<p>But they&rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary  coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments. This is not to illegitimize whatever accomplishments have been put together by these teams, but it&rsquo;s still disparately sub-par compared to what Arch has offered.</p>
+
+<p>During the last kernel update there was a problem with  pamac though</p>
+
+<p>Firing it up from the terminal was simply returning an</p>
+
+<pre><code>error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
+</code></pre>
+
+<p>Which considering how lazy I&rsquo;ve become over the years, and even more so after reading articles a few years ago such as <a href="https://en.wikipedia.org/wiki/Is_Google_Making_Us_Stupid%3F">Is Google making us stupid</a> by Atlantic technology writer Nicholas Carr, I couldn&rsquo;t wait to gobble it up or try to leave it up to Google to offer the best match to this undesired behavior I was getting.</p>
+
+<p>The first query by the algorithms of Google returned an issue over at <a href="https://github.com/Jguer/yay/issues/1087" target="_blank">yay: error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory </a></p>
+
+<p>But thinking about it again, the issue pertained mostly to <a href="https://aur.archlinux.org/packages/yay/" target="_blank"> aur.archlinux.org/packages/yay/</a> which I&rsquo;ve never installed. Perhaps I had done it years earlier on another different system, but not on the current machines I&rsquo;ve been running.</p>
+
+<p>The second queried result though, took me to <a href="https://rtfm.co.ua/en/arch-linux-package-query-error-while-loading-shared-libraries-libalpm-so-11-2/" target="_blank"> Arch Linux: package-query: error while loading shared libraries: libalpm.so.11</a>, but as soon as I read about making a symbolic link, which the author of article rightfully pointed out that although it could be done,  is not recommended aand just plain wrong to go that route..</p>
+
+<p>The other solution from the same article, involved reinstalling <a href="https://aur.archlinux.org/package-query/" target="_blank"> aur package query</a>, but then again, I didn&rsquo;t even have package-query on that particular system&hellip;. and unfortunaetly reinstalling pamac didn&rsquo;t resolve the issue as he had stated it.</p>
+
+<p>Downloading the newest version and configurring it later on did the trick&hellip;</p>
+
+<p>Somehow it seemed that during the latest upgrade, the installation of  pamac, which occured during the same kereel upgrade and which it was done  by the interface itself did not go as planned&hellip;.</p>
+
+<p>This had to be done again not only with <code>makepkg</code> but with a newer version, in order to have it running again.</p>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

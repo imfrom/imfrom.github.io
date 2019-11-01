@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog del tecnólogo </title>
@@ -6,8 +5,51 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2019</rights>
-    <updated>2019-10-10 00:58:13 -0400 EDT</updated>
+    <updated>2019-11-01 02:37:53 -0400 EDT</updated>
 
+    
+      
+        <item>
+          <title>Pamac Error While Loading Shared Libraries Libalpm</title>
+          <link>https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/</link>
+          <pubDate>Fri, 01 Nov 2019 02:37:53 EDT</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/</guid>
+          <description>&lt;p&gt;&lt;a href=&#34;https://www.archlinux.org/pacman/libalpm.3.html&#34;&gt;Libalpm&lt;/a&gt; is the library for package management of Arch.&lt;/p&gt;
+
+&lt;p&gt;I found it funny that in case of any bugs the team says&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Bugs? You must be kidding; there are no bugs in this software. But if we happen to be wrong, submit a bug report.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But they&amp;rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary  coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments. This is not to illegitimize whatever accomplishments have been put together by these teams, but it&amp;rsquo;s still disparately sub-par compared to what Arch has offered.&lt;/p&gt;
+
+&lt;p&gt;During the last kernel update there was a problem with  pamac though&lt;/p&gt;
+
+&lt;p&gt;Firing it up from the terminal was simply returning an&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which considering how lazy I&amp;rsquo;ve become over the years, and even more so after reading articles a few years ago such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Is_Google_Making_Us_Stupid%3F&#34;&gt;Is Google making us stupid&lt;/a&gt; by Atlantic technology writer Nicholas Carr, I couldn&amp;rsquo;t wait to gobble it up or try to leave it up to Google to offer the best match to this undesired behavior I was getting.&lt;/p&gt;
+
+&lt;p&gt;The first query by the algorithms of Google returned an issue over at &lt;a href=&#34;https://github.com/Jguer/yay/issues/1087&#34; target=&#34;_blank&#34;&gt;yay: error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But thinking about it again, the issue pertained mostly to &lt;a href=&#34;https://aur.archlinux.org/packages/yay/&#34; target=&#34;_blank&#34;&gt; aur.archlinux.org/packages/yay/&lt;/a&gt; which I&amp;rsquo;ve never installed. Perhaps I had done it years earlier on another different system, but not on the current machines I&amp;rsquo;ve been running.&lt;/p&gt;
+
+&lt;p&gt;The second queried result though, took me to &lt;a href=&#34;https://rtfm.co.ua/en/arch-linux-package-query-error-while-loading-shared-libraries-libalpm-so-11-2/&#34; target=&#34;_blank&#34;&gt; Arch Linux: package-query: error while loading shared libraries: libalpm.so.11&lt;/a&gt;, but as soon as I read about making a symbolic link, which the author of article rightfully pointed out that although it could be done,  is not recommended aand just plain wrong to go that route..&lt;/p&gt;
+
+&lt;p&gt;The other solution from the same article, involved reinstalling &lt;a href=&#34;https://aur.archlinux.org/package-query/&#34; target=&#34;_blank&#34;&gt; aur package query&lt;/a&gt;, but then again, I didn&amp;rsquo;t even have package-query on that particular system&amp;hellip;. and unfortunaetly reinstalling pamac didn&amp;rsquo;t resolve the issue as he had stated it.&lt;/p&gt;
+
+&lt;p&gt;Downloading the newest version and configurring it later on did the trick&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Somehow it seemed that during the latest upgrade, the installation of  pamac, which occured during the same kereel upgrade and which it was done  by the interface itself did not go as planned&amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;This had to be done again not only with &lt;code&gt;makepkg&lt;/code&gt; but with a newer version, in order to have it running again.&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>

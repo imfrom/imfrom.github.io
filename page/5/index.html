@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.52" />
+	<meta name="generator" content="Hugo 0.55.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -207,6 +207,8 @@
     
       
     
+      
+    
 
     
 
@@ -234,6 +236,31 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/setup-remote-and-master-branches-before-updating-hugo/">Setup Remote and Master Branches Before Updating Hugo</a></h1>
+        <span class="post-date">Aug 18, 2017</span>
+        <p>A while ago, I had to set remote and master branches on a different machine.</p>
+
+<p>The methods included setting it up through the <code>git pull</code> command. By going tis route, both the master and remote branches were consequently set and configured without a major inconvenience.</p>
+
+<p>Recently, although I tried to replicate the same method above, I faced problems that included among many other errors, the infamous <code>error: src refspec master does not match any. error: failed to push some refs to 'origin</code></p>
+
+<p>I wasn’t going to go through the poor method of setting up a new site and copy-paste among other files, the <code>posts</code> folder, the <code>theme</code>, the <code>config</code> files, and any other modification I had previously committed.</p>
+
+<p>The site was being generated without a mishap, so I knew it had to do with the no less complicated <code>git</code>, since some of the errors, like the above, were clearly describing that <code>origin</code> did not match the one from the remote.</p>
+
+<p>the necessary steps are as follow:</p>
+
+<p>1-Remove with <code>git</code> all leftovers from the <code>public</code> folder with <code>git rm -rf public</code></p>
+
+<p>2-Remove the <code>public</code> folder itself with <code>rm -rf.</code></p>
+
+<p>3-Add the static site as a submodule to the master with <code>git submodule add -b master &lt;git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public&gt;.</code></p>
+
+<p>And that should be more than enough to have it working in no time. Push your changes and update it accordingly.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/xfce-carpalx-layout/">Xfce Carpalx Layout</a></h1>
@@ -730,41 +757,6 @@ One user pointed out that by disconnecting and connecting the external DVD right
 <p><strong>Referencias</strong></p>
 
 <p><a href="https://wiki.archlinux.org/">wiki.archlinux.org</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/">Pantalla en Reposo Con Manjaro KDE</a></h1>
-        <span class="post-date">Feb 24, 2017</span>
-        <p><p>Cada vez que se trabaja con algún entorno gráfico en los sistemas GNU/Linux, como GNOME, xfce, MATE, al igual que en KDE, uno se pone al amparo de los desarrolladores de estos sistemas.</p></p>
-
-<p>Digo al amparo, porque uno tiene que estar a esperas de lo que estos programadores decidan sobre las configuraciones idóneas del sistema. Y muchas veces, como es de esperar y se ha comprobado a través del tiempo, no han sido las más eficientes decisiones, desde el punto de vista del usuario.</p>
-
-<p>Si se le pregunta al usuario cuáles serían las mejores maneras para tener acceso a estos servicios gráficos, muchos quizás darían diferentes opiniones. Unos dirían que el lugar en el menú para especificas estas opciones, se encontraría en las <strong>preferencias del sistema</strong> por ejemplo, mientras que otros posiblemente opinarían que aunque estarían de acuerdo en ello, lo conveniente es resumirlo dentro de la <strong>gestión de energía</strong> (administración del consumo de energía).</p>
-
-<p>En mi caso, fue la última de estas opciones en las que pensé que cualquier cambio de las configuraciones tomarían lugar.</p>
-
-<p>Pero lo mismo da, en estos casos, porque cuando se han implementado ciertas funciones, la opinión de los usuarios, a no ser aquellas que en esos casos donde por petición popular de la mayoría, logren en acordar y convencer a los desarrolladores en implementarlas, casi siempre no suscitan el interés que otras funciones conllevan. Y por lo tanto estas otras opciones gráficas dejan de ser modificadas.</p>
-
-<p>También hay que tener en cuenta que muchos otros usuarios hispano-parlantes, (o debería decir la gran mayoría), se adaptan a estas condiciones, incluso en aquellos casos donde estas funciones interceden en el uso diario.</p>
-
-<p>Este es el caso de algo tan sencillo como el <em>reposo automático de la pantalla</em> que se experimenta en Manjaro.</p>
-
-<p>Por norma, el tiempo que transcurre antes que el sistema cierra la sesión, o por lo menos en Manjaro KDE, es de unos cinco minutos.</p>
-
-<p>Pensé en realizar el cambio desde un principio a través de la ya mencionada <strong>administración del consumo de energía</strong> o la <strong>gestión de energía</strong>, pero esta función del sistema no tiene nada que ver con ello.</p>
-
-<p>Este reposo de la pantalla, se controla desde <strong>Bloqueo de pantalla</strong> o <strong>Screen locking</strong>.</p>
-
-<p>Primero antes que todo, y desde la ventana principal de las <strong>Preferencias del sistema</strong>, se le da clic al ya mencionado <strong>Comportamiento del escritorio</strong> (que aparece bajo <strong>Espacio de trabajo</strong>).</p>
-
-<p><img src="/images/comportamiento-del-escritorio-manjaro.png" alt="comportamiento-del-escritorio"></p>
-
-<p>Acto seguido a ello y a mano izquierda, se le da clic a <strong>Bloqueo de pantalla</strong>, que una vez abre a mano derecha las opciones de configuración bajo el título de <strong>Tiempos de espera del bloqueo de pantalla</strong> y como se muestra en la siguiente imagen que muestra el tabulador de activación, el período de tiempo en minutos que se necesita modificar.</p>
-
-<p>El valor pre-configurado son de unos 5 minutos. Se puede especificar el tiempo que uno estime apropiado.</p>
-
-<p><img src="/images/bloqueo-de-pantalla-screen-locking-manjaro.png" alt="bloqueo-de-pantalla-en-manjaro"></p>
 
     </div>
   

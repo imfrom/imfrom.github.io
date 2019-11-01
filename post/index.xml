@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 10 Oct 2019 00:58:13 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 01 Nov 2019 02:37:53 -0400</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pamac Error While Loading Shared Libraries Libalpm</title>
+      <link>https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/</link>
+      <pubDate>Fri, 01 Nov 2019 02:37:53 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/</guid>
+      <description>Libalpm is the library for package management of Arch.
+I found it funny that in case of any bugs the team says
+ Bugs? You must be kidding; there are no bugs in this software. But if we happen to be wrong, submit a bug report.
+ But they&amp;rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments.</description>
+    </item>
     
     <item>
       <title>Arch Linux Javaws No Such File or Directory</title>
