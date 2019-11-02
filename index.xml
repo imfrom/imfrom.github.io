@@ -40,7 +40,7 @@
 
 &lt;p&gt;The second queried result though, took me to &lt;a href=&#34;https://rtfm.co.ua/en/arch-linux-package-query-error-while-loading-shared-libraries-libalpm-so-11-2/&#34; target=&#34;_blank&#34;&gt; Arch Linux: package-query: error while loading shared libraries: libalpm.so.11&lt;/a&gt;, but as soon as I read about making a symbolic link, which the author of article rightfully pointed out that although it could be done,  is not recommended aand just plain wrong to go that route..&lt;/p&gt;
 
-&lt;p&gt;The other solution from the same article, involved reinstalling &lt;a href=&#34;https://aur.archlinux.org/package-query/&#34; target=&#34;_blank&#34;&gt; aur package query&lt;/a&gt;, but then again, I didn&amp;rsquo;t even have package-query on that particular system&amp;hellip;. and unfortunaetly reinstalling pamac didn&amp;rsquo;t resolve the issue as he had stated it.&lt;/p&gt;
+&lt;p&gt;The other solution from the same article, involved reinstalling &lt;a href=&#34;https://aur.archlinux.org/packages/package-query/&#34; target=&#34;_blank&#34;&gt; aur package query&lt;/a&gt;, but then again, I didn&amp;rsquo;t even have package-query on that particular system&amp;hellip;. and unfortunaetly reinstalling pamac didn&amp;rsquo;t resolve the issue as he had stated it.&lt;/p&gt;
 
 &lt;p&gt;Downloading the newest version and configurring it later on did the trick&amp;hellip;&lt;/p&gt;
 
