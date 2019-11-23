@@ -209,6 +209,8 @@
     
       
     
+      
+    
 
     
 
@@ -236,6 +238,39 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/pacman-gtk-doc-file-exists-in-filesystem/">Pacman Gtk Doc File Exists in Filesystem</a></h1>
+        <span class="post-date">Nov 23, 2019</span>
+        <p>It was odd that seemingly identical pamac updates were somehow behaving differently on a great many occassions.</p>
+
+<p>Both pamac versions had been downloaded and configured and compiled apparently via the same procedure. Both systems also had been configured not much that different from one another. But on one of the systems, pamac would eventually return an error during the same updates.</p>
+
+<p>Pamac would simply hang, egregiously stuck at either:</p>
+
+<pre><code>  checking inter-dependecies
+</code></pre>
+
+<p>or during</p>
+
+<pre><code>  checking inter-conflicts
+</code></pre>
+
+<p>Of course, I could have just  dismissed all these errors and be happily content to just get rid of this nonsense by removing pamac altogether and start afresh from the official package manager, but I would have never been happy by either settling through such trivialities, as long as another system, on which the very same package was installed, was not showing the same behavior.</p>
+
+<p>Had it given me a workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the <a href=https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error"" target="_blank">Arch Wiki suggests</a>. But I always liked the idea behind this package with its updates&rsquo; notifications that I would otherwise not check from the official package manager.</p>
+
+<p>But as it&rsquo;s usually the case, pacman was downright correct in identifying the culprit in that the system itself held <code>files already in filesystem</code>. This was clearly the case, and somehow this conflict had to be resolved.</p>
+
+<p>But what I don&rsquo;t know, and it&rsquo;s my mistake since I didn&rsquo;t venture out either at the time when it first occurred, and much less now, was wildly-guessing why would this be the case, when two systems, even the same version were behaving disparagingly different.</p>
+
+<p>I was not able to remove it by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then to keep working errors&rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.</p>
+
+<p>I did however, tried to stay as far as possible from manually  removineg each of the files installed by the package, but unfortunately after many attempts to install another pamac version, this predictable painstaking process seemed to be the only inevitable method to circumvent this problem.</p>
+
+<p>After gging thorugh each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&hellip; but it gives me pause and comfort in knowing that <code>checking inter-dependencies</code> or <code>checking file-conflcts</code> rolling hangs haven&rsquo;t returned.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/">Pamac Error While Loading Shared Libraries Libalpm</a></h1>
@@ -740,72 +775,6 @@ target="_blank">kakoune mapping</a></p>
 href="https://github.com/mawww/kakoune/wiki/Normal-mode-commands"
 target="_blank">Kakoune normal mode
 commands</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-paste-with-xclip/">Kakoune Paste With Xclip</a></h1>
-        <span class="post-date">Feb 3, 2019</span>
-        
-
-<p>The <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard"
-target="_blank">kakoune wiki on github</a>
-goes at length on some of the steps to
-to follow in order to paste with the system clipboard</p>
-
-<p>It says to in order to paste before with
-<strong>xsel</strong> to</p>
-
-<pre><code> map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'
-</code></pre>
-
-<p>But in the case of  <strong>xclip</strong> for example,
-and by reading the man pages of <strong>xclip</strong></p>
-
-<pre><code> -selection
-          specify which X selection to use, options are &quot;primary&quot; to
-          use XA_PRIMARY (default), &quot;secondary&quot; for XA_SECONDARY  or
-          &quot;clipboard&quot; for XA_CLIPBOARD
-</code></pre>
-
-<p>and</p>
-
-<pre><code> -o, -out
-          print the selection to standard out (generally for  piping
-          to a file or program)
-</code></pre>
-
-<p>So in order to paste with the system
-clipboard by using <strong>xclip</strong> instead,
-<code>clipboard</code> from <strong>xsel</strong> would have to
-be replaced with <code>selection</code> from
-<strong>xclip</strong>, so something in the lines of</p>
-
-<p><del>map global normal p &lsquo;<a-!>xclip -o -s<ret>&lsquo;</del></p>
-
-<p>But rather something like</p>
-
-<pre><code>   map global user p '&lt;a-!&gt;xclip -o -s &lt;ret&gt;'
-
-   map global user P '!xclip -o -s &lt;ret&gt;'
-</code></pre>
-
-<p>would suffice.</p>
-
-<h2 id="updates">Updates</h2>
-
-<p>I&rsquo;ve since stopped using the above since the way that
-<code>xclip</code> uses many of the
-<code>clipboards</code> do not seem to behave as expected under
-Kakoune.</p>
-
-<p><code>xclip</code> works without a setback under <a
-href="https://www.vim.org" target="_blank">vim</a> or even <a
-href="https://neovim.io" target="_blank">neovim</a>, and it
-was this that led me to make <code>xclip</code> work under Kakoune.</p>
-
-<p>See the <a href="../xclip-with-kakoune-making-it-work/">xclip with kakoune &ndash; making it
-work</a> for further info.</p>
 
     </div>
   
