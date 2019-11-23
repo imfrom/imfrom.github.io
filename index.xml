@@ -21,7 +21,7 @@
 
 &lt;p&gt;Pamac would simply hang, egregiously stuck at either:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  checking inter-dependecies
+&lt;pre&gt;&lt;code&gt;  checking inter-dependencies
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;or during&lt;/p&gt;
@@ -37,11 +37,11 @@
 
 &lt;p&gt;But what I don&amp;rsquo;t know, and it&amp;rsquo;s my mistake since I didn&amp;rsquo;t venture out - either at the time when it first occurred -, and much less now, because it&amp;rsquo;d be a wildly-guessing why would this be the case, that even when two systems alike which in return held the same package revisions  were behaving disparagingly different.&lt;/p&gt;
 
-&lt;p&gt;I was not able to remove it [gtk-doc[, by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then to keep working errors&amp;rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.&lt;/p&gt;
+&lt;p&gt;I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then to keep working errors&amp;rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.&lt;/p&gt;
 
-&lt;p&gt;I did however, tried to stay as far as possible from manually  removing  each of the files installed by the package, but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process seemed to be the only inevitable method to circumvent this problem.&lt;/p&gt;
+&lt;p&gt;I did however, tried to stay as far as possible from manually  removing  each of the files installed by the package, but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process, that of having to go and remove each file owned by the package,  seemed to be the only inevitable method to circumvent this problem.&lt;/p&gt;
 
-&lt;p&gt;After gging thorugh each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&amp;hellip; but it gives me pause and comfort in knowing that &lt;code&gt;checking inter-dependencies&lt;/code&gt; or &lt;code&gt;checking file-conflcts&lt;/code&gt; rolling hangs haven&amp;rsquo;t returned to this annoyingly halting process.&lt;/p&gt;
+&lt;p&gt;After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&amp;hellip; but it gives me pause and comfort in knowing that &lt;code&gt;checking inter-dependencies&lt;/code&gt; or &lt;code&gt;checking file-conflcts&lt;/code&gt; rolling hangs haven&amp;rsquo;t returned to this annoyingly halting process.&lt;/p&gt;
 </description>
         </item>
       
