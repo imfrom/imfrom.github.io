@@ -18,10 +18,9 @@
       <pubDate>Sat, 23 Nov 2019 01:10:01 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/pacman-gtk-doc-file-exists-in-filesystem/</guid>
-      <description>It was odd that seemingly identical pamac updates were somehow behaving differently on a great many occassions.
+      <description>It was odd that seemingly identical pamac installations loaded onto very similarly configured machines, were somehow behaving differently on a great many occasions.
 Both pamac versions had been downloaded and configured and compiled apparently via the same procedure. Both systems also had been configured not much that different from one another. But on one of the systems, pamac would eventually return an error during the same updates.
-Pamac would simply hang, egregiously stuck at either:
- checking inter-dependecies  or during</description>
+Pamac would simply hang, egregiously stuck at either:</description>
     </item>
     
     <item>
