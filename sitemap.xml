@@ -5,7 +5,6 @@
   <url>
     <loc>https://imfrom.github.io/</loc>
     <lastmod>2019-11-23T01:10:01-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -16,7 +15,6 @@
   <url>
     <loc>https://imfrom.github.io/post/</loc>
     <lastmod>2019-11-23T01:10:01-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -135,13 +133,8 @@
   </url>
   
   <url>
-    <loc>https://imfrom.github.io/contact/</loc>
-    <lastmod>2018-02-05T01:52:58-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/about/</loc>
-    <lastmod>2018-02-05T01:51:17-06:00</lastmod>
+    <loc>https://imfrom.github.io/tags/antergos/</loc>
+    <lastmod>2018-01-27T08:49:17-05:00</lastmod>
   </url>
   
   <url>
@@ -152,13 +145,6 @@
   <url>
     <loc>https://imfrom.github.io/tags/</loc>
     <lastmod>2018-01-27T08:49:17-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/tags/antergos/</loc>
-    <lastmod>2018-01-27T08:49:17-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -169,24 +155,21 @@
   <url>
     <loc>https://imfrom.github.io/tags/grub/</loc>
     <lastmod>2018-01-20T08:38:47-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/</loc>
-    <lastmod>2018-01-16T08:45:02-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://imfrom.github.io/tags/ntfs-3g/</loc>
     <lastmod>2018-01-16T08:45:02-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://imfrom.github.io/tags/udisks2/</loc>
     <lastmod>2018-01-16T08:45:02-05:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/</loc>
+    <lastmod>2018-01-16T08:45:02-05:00</lastmod>
   </url>
   
   <url>
@@ -250,20 +233,18 @@
   </url>
   
   <url>
-    <loc>https://imfrom.github.io/post/urxvt-copy-paste-tweaking/</loc>
-    <lastmod>2017-08-18T14:07:29-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://imfrom.github.io/tags/rxvt/</loc>
     <lastmod>2017-08-18T14:07:29-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://imfrom.github.io/tags/urxvt/</loc>
     <lastmod>2017-08-18T14:07:29-05:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imfrom.github.io/post/urxvt-copy-paste-tweaking/</loc>
+    <lastmod>2017-08-18T14:07:29-05:00</lastmod>
   </url>
   
   <url>
@@ -312,14 +293,13 @@
   </url>
   
   <url>
-    <loc>https://imfrom.github.io/post/manjaro-desplaza-a-ubuntu/</loc>
+    <loc>https://imfrom.github.io/tags/manjaro/</loc>
     <lastmod>2017-03-14T13:23:51-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imfrom.github.io/tags/manjaro/</loc>
+    <loc>https://imfrom.github.io/post/manjaro-desplaza-a-ubuntu/</loc>
     <lastmod>2017-03-14T13:23:51-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -328,25 +308,23 @@
   </url>
   
   <url>
+    <loc>https://imfrom.github.io/tags/arch/</loc>
+    <lastmod>2017-02-24T13:45:58-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/</loc>
     <lastmod>2017-02-24T13:45:58-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imfrom.github.io/tags/arch/</loc>
-    <lastmod>2017-02-24T13:45:58-05:00</lastmod>
-    <priority>0</priority>
+    <loc>https://imfrom.github.io/tags/ssd/</loc>
+    <lastmod>2017-02-15T04:02:19-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/</loc>
     <lastmod>2017-02-15T04:02:19-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/tags/ssd/</loc>
-    <lastmod>2017-02-15T04:02:19-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -362,7 +340,11 @@
   <url>
     <loc>https://imfrom.github.io/tags/vim/</loc>
     <lastmod>2017-02-08T13:48:53-05:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imfrom.github.io/tags/emacs/</loc>
+    <lastmod>2016-11-21T14:40:45-05:00</lastmod>
   </url>
   
   <url>
@@ -371,31 +353,23 @@
   </url>
   
   <url>
-    <loc>https://imfrom.github.io/tags/emacs/</loc>
-    <lastmod>2016-11-21T14:40:45-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://imfrom.github.io/post/reemplazos-en-vim/</loc>
     <lastmod>2016-11-07T14:42:55-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/</loc>
-    <lastmod>2016-09-10T10:09:44-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://imfrom.github.io/tags/git/</loc>
     <lastmod>2016-09-10T10:09:44-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://imfrom.github.io/tags/hugo/</loc>
     <lastmod>2016-09-10T10:09:44-05:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/</loc>
+    <lastmod>2016-09-10T10:09:44-05:00</lastmod>
   </url>
   
   <url>
@@ -406,7 +380,6 @@
   <url>
     <loc>https://imfrom.github.io/tags/gimp/</loc>
     <lastmod>2016-08-10T14:16:59-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -426,7 +399,6 @@
   
   <url>
     <loc>https://imfrom.github.io/categories/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
