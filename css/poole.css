@@ -61,7 +61,8 @@ html {
 body {
   color: #515151;
   background-color: #fff;
-  font-size: 75%; 
+  font-size: 85%; 
+  font-family: "Signika"; 
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
