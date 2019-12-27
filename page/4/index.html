@@ -207,6 +207,10 @@
     
       
     
+      
+    
+      
+    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
@@ -236,6 +240,91 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-kde-plasma-dolphin-mtp-cant-open-file/">Manjaro Kde Plasma Dolphin Mtp Cant Open File</a></h1>
+        <span class="post-date">Dec 16, 2017</span>
+        <p><strong>MTP</strong> implementation runs on most desktop environments without a problem. Except on KDE where it has had several problems in identifying and initializing a simple file from any of the devices that have been connected to the system, mainly through the USB port.</p>
+
+<p>It’s really a shame that although Plasma KDE fairly supports Bluetooth protocol better than the rest of other desktop environments, it largely fails with both gwenview and its default Dolphin manager to open up files directly.</p>
+
+<p>I have tried in a great many occasions to slither out many of these KDE errors by falsely attributing it to my lack of knowledge on its usage. But I can’t deny any longer that the system either works or it doesn’t. And one should no longer have to wait who-knows-how-long-and-when, before updates smother out its deficiencies.</p>
+
+<p>Yes, I have tried to look up for the issue elsewhere such as as in <a href="https://bbs.archlinux.org/viewtopic.php?id=177028" target="_blank">mtp mount issues in KDE/Dolphin</a>, but many of the suggestions have not worked so far.</p>
+
+<p>Whereas with KDE, to my amazement - because at this point of its developmental phase, one would think that it should perform better and not worse - the problems all range from mild to critical, while <strong>xfce</strong> on the other hand, these unexpected malfunctions and sudden out-of-the-blue crashes do occur but at a lesser degree, and when one of these errors undermines the stability, the errors do not necessarily affect the overall functionality.</p>
+
+<p>I experienced and spoke at somewhat length about a <a href="https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/">manjaro kde error unknown application</a> post.</p>
+
+<p>In the wake of recent Bluetooth vulnerabilities that have happened,<a href="#blue"><sup id="blueref">1</sup></a>  and the history behind it in which several authors have researched the issue,<a href="#tech"><sup id="techref">2</sup></a> it makes no sense to have a whole interface that handles this protocol better than most environments and yet fails when the to-be-expected approach to handle it differently or by using the right terminology, handling it without bluetooth at all in light of everything that has happened with it, by going directly through the use of the mtp protocol that is supposed to take care of it. Notice that mtp is supported without a major flaw in <strong>xfce</strong>, <strong>Gnome</strong>, and others.</p>
+
+<p>For further reading about <strong>MTP</strong>, is advisable to visit the formidable wiki from Arch Linux at <a href="https://wiki.archlinux.org/index.php/MTP" target="_blank">MTP</a></p>
+
+<p>It turns out that kio-extras is a dependency of Kde’s dolphin file manager, which apparently is partly responsible for the <code>failed to initlialize</code> error, but whichever is to be blamed in this regard, matters for as long as the user finds the KDE environment worthy to be used. In my case perhaps, the same opinion that for so long I’ve had of the software, has notably changed amid these recent problems: first with the <a href="https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/">manjaro kde error unknown application instance as highlighted earlier</a>, and now with the bluetooth problem.</p>
+
+<p>Perhaps is worthy to revisit this desktop environment, but for now, it is in my opinion that there are better options out there from which to choose from, before having to put up with the inconsistencies and failures that have rendered the systems I have been running lately, useless in more than one occasion.</p>
+
+<p><strong>References</strong></p>
+
+<p><a href="https://mobile.slashdot.org/story/17/09/12/2030213/blueborne-vulnerabilities-impact-over-5-billion-bluetooth-enabled-devices" target="_blank">Blueborne vulnerabilities impact devices</a><a name="blue"></a><a href="#blueref">_↩︎</a></p>
+
+<p> Technical papers that include Bluetooth vulnerabilities are as follow <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.7253&rep=rep1&type=pdf" target="_blank">Security Risks in Bluetooth Devices</a>, and <a href="https://pdfs.semanticscholar.org/8872/521819c79505ac20e5da8dd14f8c41eb3f07.pdf" target="_blank">Bluetooth security threats and solutions</a><a name="tech"></a><a href="#techref"> &#8617;</a></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/">Manjaro Kde Plasma Error Unknown Application Folder</a></h1>
+        <span class="post-date">Dec 14, 2017</span>
+        <p>It’s apparently a foolish idea to login as root from a file manager on Plasma KDE.</p>
+
+<p>This was exactly what caused a number of problems, and among them, most notably, that I could not get past the login screen.</p>
+
+<p>Of course, little did it matter that I installed any of the other display managers available and removed the current in use from the command line. I was still unable to get past the login screen.</p>
+
+<p>In other words, it wasn’t just the usual <code>login failed</code> which indicates the wrong username and/or password. This was exactly the opposite, as after inputting the password for the system, since <code>login automatically</code> was disabled, the screen would fall back as if it loading the kernel again, and then without further ado, back into the login screen.</p>
+
+<p>This feedback loop process was endless. I couldn’t but scourge on Google for some sort of information regarding the issue.</p>
+
+<p>One of the first queries to Google was with the terms <strong>plasma kde fails to startx</strong>, although I knew that the last element of the query was not the most accurate. For one, because the <strong>X server</strong> was somehow running, or else how could I have a login screen in the first place. But almost unsurprisingly, the first result from Google was from the Arch Linux forum entitled <a href="https://bbs.archlinux.org/viewtopic.php?id=193286" target="_blank">Cannot start plasma 5</a>.</p>
+
+<p>I tried to follow one of the recommendations and modify the last line to</p>
+
+<pre><code> exec startkde
+</code></pre>
+
+<p><img src="/images/change-xinitrc-for-kde-plasma-login.png" alt=""></p>
+
+<p>but it made no difference.</p>
+
+<p>Perhaps on other desktop environments the change on <strong>.xinitrc</strong> was a success, but at least on Manjaro Plasma KDE, all of it was failing and I was not able to get past the login screen.</p>
+
+<p>For example, the suggestion to modify the <strong>.xinitrc</strong> on the <strong>xfce</strong> desktop environment have proven to succeed without any major problem.</p>
+
+<p>See for example <a href="https://bbs.archlinux.org/viewtopic.php?id=147721" target="_blank">Can’t get past the login screen</a>, where modifying the <code>.xinitrc</code> was more than enough to get it started.</p>
+
+<p><img src="/images/change-xinitrc-for-xfce-login.png" alt=""></p>
+
+<p>At this point it was futile to modify any further the <strong>.xinitrc</strong> initialization file when moments before I had restarted the system, an error related to Plasma KDE had popped up on the screen:</p>
+
+<p><img src="/images/plasma-error-window.png" width="500"></p>
+
+<p>A couple more errors from the main file manager Dolphin showed for example the following:</p>
+
+<p><img src="/images/user-xbel-kde-plasma.png" width="500"></p>
+
+<p>And also</p>
+
+<p><img src="/images/kio_applicationsrc-error.png" width="500"></p>
+
+<p>At this point, after the infamous error with the <strong>kio_applicationsrc</strong>, I very well knew that the culprit of it all occurred when trying to login as root to Plasma from the Dolphin file manager.</p>
+
+<p>Later on, after giving up the have Manjaro KDE running on the system, I found a few posts that spoke about logging in as root on the Plasma environment.</p>
+
+<p>On the same post that for example was highlighted earlier, there is useful information as why running as root as KDE is altogether discouraged:</p>
+
+<p><img src="/images/dont-run-as-root-on-kde.png" alt=""></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/errors-during-hugo-git/">Errors During Hugo Git</a></h1>
@@ -695,66 +784,6 @@ target="_blank">clang completion #1102</a></p>
 <p>Right after making the changes - not even a logout was required - <strong>qpdfview</strong> dialog box dimensions were working and definitely manageable. The only glitch - if it may be rightfully called as such - was an apparent back-to-back unwanted behavior in which the whole window for the settings, was not clearly visible, but one quick maximizing drag-around-movement maneuver, fixed the annoyance once and for all.</p>
 
 <p><img src="/images/qpdfview-correct-settings-dialog-box-1.png" width="680" height="450"></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/">Manjaro Xfce Bluetooth Problem</a></h1>
-        <span class="post-date">Sep 29, 2017</span>
-        <p><p>Bluetooth recognition - at least on Manjaro Xfce - has been erratic and inconsistent.</p></p>
-
-<p>For no clear reason the LTS kernel and even a newer kernel have identified the hardware, while it has failed to do so in a great many occasions.</p>
-
-<p>Many of the tweaks included reinstalling <code>bluez</code>, <code>bluez-firmware</code>, <code>bluez-libs</code>, <code>bluez-tools</code>, and <code>bluez-utils</code>.</p>
-
-<p>Back to the drawing room and back again.</p>
-
-<p>The bluetooth adapters were not being recognized however. And after logging out and back into the session, and even after <code>sudo /sbin/shutdown -r now</code>, nothing seemed to work.</p>
-
-<p>The following day - to my surprise - I booted the system and it picked the bluetooth adapters without a problem.</p>
-
-<p>It reminded me of a comment on the manjaro forum thread entitled <a href="https://forum.manjaro.org/t/bluetooth-adapters-app-not-opening-bluetooth-manager-bluez-failed/4367/19" target="_blank">Bluetooth adapters app not opening Bluetooth Manager</a> in which one of the participants said:</p>
-
-<blockquote>
-<p>Bluetooth support in Linux is always troublesome, even in Windows, smartphone, etc. So yeah, I think staying away from bluetooth related hardwares if you want a trouble free experience. Wireless hardwares nowadays are going towards a dedicated receiver way to handle wireless connection and that’s a better approach. Just my two cents <a href="https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/#blueref"><sup id="blueref">1</sup></a></p>
-</blockquote>
-
-<p>I have to agree with him on that regard.</p>
-
-<p>On the other hand, the desktop environment <strong>KDE</strong> hasn’t - I ran it for a short while and perhaps my feedback is worthless of consideration on that regard - given me the same problems than the current configuration under <strong>xfce</strong>.</p>
-
-<p>But I never thought that the problems would persist even after the installation of a newer kernel. That is perhaps the main reason which has been drifting me away from <strong>xfce</strong> until further notice.</p>
-
-<p>And while <strong>KDE</strong>-fanboys have come up with the slogan that <em>it grows on you</em>, <strong>xfce</strong> is perhaps a more GNU/Linux-centric configurable environment than the former. I still enjoy tweaking with its features even though its less polished than Plasma <strong>KDE</strong>. There is no question about this. <strong>KDE</strong> aims at the latest hardware, while <strong>xfce</strong> focuses on the rest. I’ve never tried to benchmark its memory and CPU consumption, but I’m almost certain it fairs much better than <strong>KDE</strong>.</p>
-
-<p>Whether <strong>xfce</strong> will be a daily desktop environment driver running the main programs on which my workflow depends upon, it’s a question of time and how well it will handle them without a major setback.</p>
-
-<p>Further oversights around Bluetooth vulnerabilities include technical papers such as <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.7253&rep=rep1&type=pdf" target="_blank">Security Risks in Bluetooth Devices</a>, <a href="https://pdfs.semanticscholar.org/8872/521819c79505ac20e5da8dd14f8c41eb3f07.pdf" target="_blank">Bluetooth security threats and solutions</a></p>
-
-<p>Even recent articles from <a
-href="https://mobile.slashdot.org/story/17/09/12/2030213/blueborne-vulnerabilities-impact-over-5-billion-bluetooth-enabled-devices"
-target="_blank">Slashdot - BlueBorne Vulnerabilities Impact Over 5 Billion
-Bluetooth-Enabled Devices</a> have gone on at length about it. The following
-paper - although unreliable since it looks more than a pamphlet from a company
-that advertises its products under the pretension of providing unparalleled
-protection - serves to confirm that regardless of its merit [this paper itsel]
-is worth considering the possible risks could arise as a result from the
-operations of bluetooth devices.</p>
-
-<p><strong>References</strong></p>
-
-<p><a href="https://forum.manjaro.org/t/bluetooth-adapters-app-not-opening-bluetooth-manager-bluez-failed/4367/19" target="_blank">bluetooth adapters not opening bluetooth-manager-bluez-failed</a><a href="#blueref">_↩︎</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/urxvt-copy-paste-tweaking/">Urxvt Copy Paste Tweaking</a></h1>
-        <span class="post-date">Aug 18, 2017</span>
-        <p><p>I haven’t read the <code>man</code> pages enough to figure out some of the parameters that play an important behavior for the full functionality of the mighty <strong>urxvt</strong>, and it was not until I read a post - which was more of a comment on the thread entitled <a href="https://bbs.archlinux.org/viewtopic.php?id=221108" target="_blank">right click paste in urxvt terminal</a> on the archlinux.org forum - when I realized that by the combination of <strong>ctrl</strong> and right mouse click would copy and paste the selected text on the X window system.</p></p>
-
-<p><img src="/images/2017-08-18-ctrl-right-click-urxvt.png" alt=""></p>
-
-<p>I found the above to work without a problem under <strong>xclip</strong> so far.</p>
 
     </div>
   

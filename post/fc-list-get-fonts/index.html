@@ -10,7 +10,7 @@
 
   <title>
     
-      Xterm Crashes With Ctrl Mouse Combination &middot; Blog atrasado
+      Fc-List Get Fonts &middot; Blog atrasado
     
   </title>
 
@@ -236,22 +236,56 @@
 
 
 <div class="post">
-  <h1 class="post-title">Xterm Crashes With Ctrl Mouse Combination</h1>
-  <span class="post-date">Mar 5, 2019</span>
-  <p>It seemed as if there&rsquo;s some sort of conflict by bringing up the menu on the xterm terminal.</p>
+  <h1 class="post-title">Fc-List Get Fonts</h1>
+  <span class="post-date">Dec 23, 2019</span>
+  <p>It&rsquo;s always nice to have a &lsquo;cheat sheet&rsquo; summary of all sorts Unix to remember certain programs</p>
 
-<p><kbd>Ctrl</kbd>+ 🖱 (rightmouse) is usually the way that one would bring the
-menu, but every time this was done, <strong>xterm</strong> was crashing.</p>
+<p>I usually have <code>Lua</code> looking this up for me through <code>otf</code> and <code>ttf</code> fonts, but it&rsquo;s been a while since I went this route.</p>
 
-<p>After going over some of the <strong>xorg-fonts-</strong>* packages, I noticed that some of
-them were not installed for the X system.</p>
+<p><code>fontconfig</code>takes care of all font-related</p>
 
-<p>Among them,  <strong>xorg-fonts-misc</strong> was not installed. I
-proceeded to install it and the menu was brought up
-successfully again by the <kbd>ctrl</kbd> rightmouse
-🖱combination.</p>
+<p><a href="https://www.freedesktop.org/wiki/Software/fontconfig/" target="_blank">fontconfig</a> takes care &ndash; as the freedesktop.org website states to</p>
 
-<p>A bug report was properly sent out to address this issue. I don&rsquo;t recall from having this issue before, and/or when it even first appeared.</p>
+<ul>
+<li><p>discover new fonts when installed automatically, removing a common source of configuration problems.</p></li>
+
+<li><p>perform font name substitution, so that appropriate alternative fonts can be selected if fonts are missing.
+identify the set of fonts required to completely cover a set of languages.</p></li>
+
+<li><p>have GUI configuration tools built as it uses an XML-based configuration file (though with autodiscovery, we believe this need is minimized).
+efficiently and quickly find the fonts you need among the set of fonts you have installed, even if you have installed thousands of fonts, while minimzing memory usage.</p></li>
+
+<li><p>be used in concert with the X Render Extension and FreeType to implement high quality, anti-aliased and subpixel rendered text on a display.</p></li>
+</ul>
+
+<p>But it does not provide any searching mechanism to look up a particular font on the system. Or at the very least not one that I&rsquo;m aware of anyway..</p>
+
+<p>On the other hand, <code>fc-list</code> does list the fonts available on the system&hellip;</p>
+
+<p>The only caveat is that if I were to try to get the family name of the glyph in question, <code>fc-list</code> does provide it, ibut I would need to further <code>grep</code> it to not get a bunch of results.</p>
+
+<p><code>fc-list</code> is simply put:</p>
+
+<pre><code>FC-LIST(1)                                                     FC-LIST(1)
+
+NAME
+       fc-list - list available fonts
+
+SYNOPSIS
+       fc-list  [  -vVh ] [ --verbose ] [ -f format | --format format ] [
+       -q | --quiet ] [ --version ] [ --help ]
+           [ pattern  [ element ... ]  ]
+
+DESCRIPTION
+       fc-list lists fonts and styles available on the system for  appli‐
+       cations  using  fontconfig.   If  any elements are specified, only
+       those are printed.  Otherwise family and style are printed, unless
+       verbose output is requested.
+</code></pre>
+
+<p>a printing mechanism to list the fonts on the system.</p>
+
+<p><code>grep</code> [ing] the font itself through the program filters out the family name of the font - whether otf or ttf.</p>
 
 </div>
 

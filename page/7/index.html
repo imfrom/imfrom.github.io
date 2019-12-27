@@ -207,6 +207,10 @@
     
       
     
+      
+    
+      
+    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
@@ -236,6 +240,102 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/flechas-en-gimp/">Flechas en Gimp</a></h1>
+        <span class="post-date">Aug 10, 2016</span>
+        <p>Una de las maneras más fáciles en crear <strong>flechas</strong> en Gimp, sería con la adición de un plugin al directorio <code>scripts</code> de Gimp.</p>
+
+<p>En el sitio de <a href="https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp">https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp</a> se puede encontrar más información en cuanto a esto. Solamente mostraré los pasos visuales para lograrlo.</p>
+
+<pre><code> $cd /directorio-de-gimp/scripts/
+</code></pre>
+
+<p>Seguido de</p>
+
+<pre><code> $wget http://registry.gimp.org/files/arrow.scm
+</code></pre>
+
+<p>or the archived version </p> 
+<pre><code> $wget https://web.archive.org/web/20180218220954/http://registry.gimp.org:80/node/20269 </code></pre>
+
+<p>También pudieras hacer uso de una versión modificada del anterior script pero con flechas curvadas.</p>
+
+<p>puedes obtenerlo mediante</p>
+
+<pre><code> $wget https://web.archive.org/web/20180208191139/http://registry.gimp.org:80/node/28566</code></pre>
+
+<p>Y recomienza el programa Gimp.</p>
+
+<p>Digamos por ejemplo, que seleccionas un nuevo documento. En la caja de herramientas de Gimp (recuerda que si no está visible, siempre puedes activarla a través de la combinación en el teclado de <code>Ctrl</code> y <code>b</code>), podrás ver la nueva inclusión de la ventana de herramienta.</p>
+
+<p>Veamos como funciona con la selección de esta misma caja de herramientas.</p>
+
+<p><img src="/images/selecciona-toolbox.png" alt="caja de herramientas toolbox"></p>
+
+<p>El próximo paso sería seleccionar el icono con el que se marcan los dos puntos de la flecha.</p>
+
+<p><img src="/images/click-twice.png" alt="clic dos vecs"></p>
+
+<p>Asegúrate que el color como se muestra en la figura anterior, esté seleccionado apropiadamente en la caja de herramientas (toolbox).</p>
+
+<p>Una vez que los dos puntos hayan sido marcados, selecciona la barra del menú principal de <code>Herramientas/tools</code>, descendiendo hasta el final y dándole clic a <code>Arrows</code>.</p>
+
+<p>Una vez que le des a <code>Arrows</code> del menú principal de la barra, una ventana que es similar a la que se muestra a continuación te permitirá especificar ciertos valores.</p>
+
+<p><img src="/images/select-tools-arrow.png" alt="selecciona el menú principal de arrows"></p>
+
+<p>Una vez que tengas la ventana abierta, ajusta los valores de porcentajes según el grosor, o el ancho que los ángulos de la flecha debiesen tener cuando se le aplique el color configurado. También puedes especificar otros valores como en rellenar a todo color la punta de la flecha.</p>
+
+<p>Clic <code>ok</code> una vez que los valores sean los acordados.</p>
+
+<p><img src="/images/arrow-done.png" alt="flecha finalizadai"></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/">Git in Six Hundred Words by Mary Rose Cook</a></h1>
+        <span class="post-date">Aug 3, 2016</span>
+        <p>Imagine you have a directory called <code>alpha</code>. It contains a file called <code>number.txt</code> that contains the text <code>first</code>.</p>
+
+<p>You run <code>git init</code> to set up <code>alpha</code> as a Git repository.</p>
+
+<p>You run <code>git add number.txt</code> to add <code>number.txt</code> to the index. The index is a list of all the files that Git is keeping track of. It maps filenames to the content of the files. It now has the mapping <code>number.txt -&gt; first</code>. Running the add command has also added a blob object containing <code>first</code> to the Git object database.</p>
+
+<p><div class="main __reader_view_article_wrap_4270907014602854__">
+      <p>(This essay is a companion piece to <a href="http://gitlet.maryrosecook.com/">Gitlet</a>, my implementation of Git in JavaScript.)</p></p>
+
+<p>Imagine you have a directory called <code>alpha</code>. It contains a file called <code>number.txt</code> that contains the text <code>first</code>.</p>
+
+<p>You run <code>git init</code> to set up <code>alpha</code> as a Git repository.</p>
+
+<p>You run <code>git add number.txt</code> to add <code>number.txt</code> to the index. The index is a list of all the files that Git is keeping track of. It maps filenames to the content of the files. It now has the mapping <code>number.txt -&gt; first</code>. Running the add command has also added a blob object containing <code>first</code> to the Git object database.</p>
+
+<p>You run <code>git commit -m first</code>. This does three things. First, it creates a tree object in the objects database. This object represents the list of items in the top level of the alpha directory. This object has a pointer to the <code>first</code> blob object that was created when you ran <code>git add</code>. Second, it creates a commit object that represents the version of the repository that you have just committed. This includes a pointer to the tree object. Third, it points the master branch at the new commit object.</p>
+
+<p>You run <code>git clone . ../beta</code>. This creates a new directory called <code>beta</code>. It initializes it as a Git repository. It copies the objects in the alpha objects database to the beta objects database. It points the master branch on beta at the commit object that the master branch points at on the alpha repository. It sets the index on beta to mirror the content of the first commit. It updates your files - <code>number.txt</code> - to mirror the index.</p>
+
+<p>You move to the beta repository. You change the content of <code>number.txt</code> to <code>second</code>. You run <code>git add number.txt</code> and <code>git commit -m second</code>. The commit object that is created has a pointer to its parent, the first commit. The commit command points the master branch at the second commit.</p>
+
+<p>You move back to the alpha repository. You run <code>git remote add beta ../beta</code>. This sets the beta repository as a remote repository.</p>
+
+<p>You run <code>git pull beta master</code>.</p>
+
+<p>Under the covers, this runs <code>git fetch beta master</code>. This finds the objects for the second commit and copies them from the beta repository to the alpha repository. It points alpha’s record of beta’s master at the second commit object. It updates <code>FETCH_HEAD</code> to show that the master branch was fetched from the beta repository.</p>
+
+<p>Under the covers, the pull command runs <code>git merge FETCH_HEAD</code>. This reads <code>FETCH_HEAD</code>, which shows that the master branch on the beta repository was the most recently fetched branch. It gets the commit object that alpha’s record of beta’s master is pointing at. This is the second commit. The master branch on alpha is pointing at the first commit, which is the ancestor of the second commit. This means that, to complete the merge, the merge command can just point the master branch at the second commit. The merge command updates the index to mirror the contents of the second commit. It updates the working copy to mirror the index.</p>
+
+<p>You run <code>git branch red</code>. This creates a branch called <code>red</code> that points at the second commit object.</p>
+
+<p>You run <code>git checkout red</code>. Before the checkout, <code>HEAD</code> pointed at the master branch. It now points at the red branch. This makes the red branch the current branch.</p>
+
+<p>You set the content of <code>number.txt</code> to <code>third</code>, run <code>git add numbers.txt</code> and run <code>git commit -m third</code>.</p>
+
+<p>You run <code>git push beta red</code>. This finds the objects for the third commit and copies them from the alpha repository to the beta repository. It points the red branch on the beta repository at the third commit object, and that’s it.</p>
+
+<p>(If you would like to learn about the internals of Git in detail, you can read my essay, <a href="https://maryrosecook.com/blog/post/git-from-the-inside-out">Git from the inside out</a>.)</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/circulos-en-gimp/">Círculos en Gimp</a></h1>
