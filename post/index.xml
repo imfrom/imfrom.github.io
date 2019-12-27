@@ -19,9 +19,8 @@
       
       <guid>https://imfrom.github.io/post/sed-and-awk-to-print-ranges/</guid>
       <description>sed and awk are very powerful tools that would yield results unlike anything else in *Nix.
-Althought one could cerainly create constructs within say a bash script that would give it further fuel, it comes handy to have it handy for other menial tasks.
-Printing a given range of lines would undoubtedly come practical during those times when simply displaying them is not the most straightforward method.
-So for this purpose both sed and awk serve me well.</description>
+Althought one could cerainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it&amp;rsquo;s always the case: available, for even other menial tasks.
+Printing a given range of lines would undoubtedly come practical during those times when simply displaying them is not the most straightforward method.</description>
     </item>
     
     <item>
