@@ -318,7 +318,7 @@
 
 <p>So</p>
 
-<pre><code>man XParseGeometry | ack 'NR==20,NR==40' 
+<pre><code>man XParseGeometry | awk 'NR==20,NR==40' 
 </code></pre>
 
 <p>would hence return:</p>
@@ -433,7 +433,7 @@ efficiently and quickly find the fonts you need among the set of fonts you have 
 
 <p>On the other hand, <code>fc-list</code> does list the fonts available on the system&hellip;</p>
 
-<p>The only caveat is that if I were to try to get the family name of the glyph in question, <code>fc-list</code> does provide it, ibut I would need to further <code>grep</code> it to not get a bunch of results.</p>
+<p>The only caveat is that if I were to try to get the family name of the glyph in question, <code>fc-list</code> does provide it, but I would need to further <code>grep</code> it to not get a bunch of results.</p>
 
 <p><code>fc-list</code> is simply put:</p>
 
@@ -456,7 +456,7 @@ DESCRIPTION
 
 <p>a printing mechanism to list the fonts on the system.</p>
 
-<p><code>grep</code> [ing] the font itself through the program filters out the family name of the font - whether otf or ttf.</p>
+<p><code>grep</code> [ing] the font itself through the program filters out the family name of the font as well - and hether these are otf or ttf.</p>
 
     </div>
   
