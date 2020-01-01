@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 27 Dec 2019 00:47:09 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 22:51:32 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wps Office Spanish Dictionary</title>
+      <link>https://imfrom.github.io/post/wps-office-spanish-dictionary/</link>
+      <pubDate>Mon, 30 Dec 2019 22:51:32 -0500</pubDate>
+      
+      <guid>https://imfrom.github.io/post/wps-office-spanish-dictionary/</guid>
+      <description>I&amp;rsquo;ve installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&amp;hellip;
+Although many users prefer the advantages provided by a cloud stored-word processing program such as the one provided by Google, I tend to steer away from it mainly because of response time within the application.
+But I&amp;rsquo;m not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation - has failed to develop such a feature.</description>
+    </item>
     
     <item>
       <title>Sed and Awk to Print Ranges</title>
