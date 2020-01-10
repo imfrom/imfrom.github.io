@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Blog del tecnólogo</title>
@@ -18,7 +18,9 @@
       <pubDate>Sat, 10 Sep 2016 10:09:44 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/</guid>
-      <description></description>
+      <description>Después de realizar varias pruebas donde traté de evaluar algún que otro theme en Hugo, me di cuenta que el problema era más serio que lo pensaba.
+Tenía en mente llevar las pruebas con ciertos temas minimalistas, o como se diría en español: simples, que me permitiesen llevar a cabo flexibles modificaciones locales., y de ahí partir con ello.
+La mayoría de los temas en Hugo están constituidos por ciertos paquetes de láminas en estilo de cascadas, o con las siglas en inglés por CSS, y al igual que otros pequeños ficheros en Javascript.</description>
     </item>
     
   </channel>

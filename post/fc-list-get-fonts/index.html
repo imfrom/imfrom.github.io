@@ -212,15 +212,13 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -242,30 +240,34 @@
 <div class="post">
   <h1 class="post-title">Fc-List Get Fonts</h1>
   <span class="post-date">Dec 23, 2019</span>
-  <p>It's always nice to have a &lsquo;cheat sheet&rsquo; summary of all sorts Unix to remember certain programs</p>
-<p>I usually have <code>Lua</code> looking this up for me through <code>otf</code> and <code>ttf</code> fonts, but it's been a while since I went this route.</p>
-<p><code>fontconfig </code>takes care of all font-related</p>
-<p><!-- raw HTML omitted -->fontconfig<!-- raw HTML omitted --> takes care &ndash; as the freedesktop.org website states to</p>
+  <p>It&rsquo;s always nice to have a &lsquo;cheat sheet&rsquo; summary of all sorts Unix to remember certain programs</p>
+
+<p>I usually have <code>Lua</code> looking this up for me through <code>otf</code> and <code>ttf</code> fonts, but it&rsquo;s been a while since I went this route.</p>
+
+<p><code>fontconfig</code>takes care of all font-related</p>
+
+<p><a href="https://www.freedesktop.org/wiki/Software/fontconfig/" target="_blank">fontconfig</a> takes care &ndash; as the freedesktop.org website states to</p>
+
 <ul>
-<li>
-<p>discover new fonts when installed automatically, removing a common source of configuration problems.</p>
-</li>
-<li>
-<p>perform font name substitution, so that appropriate alternative fonts can be selected if fonts are missing.
-identify the set of fonts required to completely cover a set of languages.</p>
-</li>
-<li>
-<p>have GUI configuration tools built as it uses an XML-based configuration file (though with autodiscovery, we believe this need is minimized).
-efficiently and quickly find the fonts you need among the set of fonts you have installed, even if you have installed thousands of fonts, while minimzing memory usage.</p>
-</li>
-<li>
-<p>be used in concert with the X Render Extension and FreeType to implement high quality, anti-aliased and subpixel rendered text on a display.</p>
-</li>
+<li><p>discover new fonts when installed automatically, removing a common source of configuration problems.</p></li>
+
+<li><p>perform font name substitution, so that appropriate alternative fonts can be selected if fonts are missing.
+identify the set of fonts required to completely cover a set of languages.</p></li>
+
+<li><p>have GUI configuration tools built as it uses an XML-based configuration file (though with autodiscovery, we believe this need is minimized).
+efficiently and quickly find the fonts you need among the set of fonts you have installed, even if you have installed thousands of fonts, while minimzing memory usage.</p></li>
+
+<li><p>be used in concert with the X Render Extension and FreeType to implement high quality, anti-aliased and subpixel rendered text on a display.</p></li>
 </ul>
-<p>But it does not provide any searching mechanism to look up a particular font on the system. Or at the very least not one that I'm aware of anyway..</p>
+
+<p>But it does not provide any searching mechanism to look up a particular font on the system. Or at the very least not one that I&rsquo;m aware of anyway..</p>
+
 <p>On the other hand, <code>fc-list</code> does list the fonts available on the system&hellip;</p>
+
 <p>The only caveat is that if I were to try to get the family name of the glyph in question, <code>fc-list</code> does provide it, but I would need to further <code>grep</code> it to not get a bunch of results.</p>
+
 <p><code>fc-list</code> is simply put:</p>
+
 <pre><code>FC-LIST(1)                                                     FC-LIST(1)
 
 NAME
@@ -281,7 +283,10 @@ DESCRIPTION
        cations  using  fontconfig.   If  any elements are specified, only
        those are printed.  Otherwise family and style are printed, unless
        verbose output is requested.
-</code></pre><p>a printing mechanism to list the fonts on the system.</p>
+</code></pre>
+
+<p>a printing mechanism to list the fonts on the system.</p>
+
 <p><code>grep</code> [ing] the font itself through the program filters out the family name of the font as well - and hether these are otf or ttf.</p>
 
 </div>

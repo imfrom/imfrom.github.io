@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.58.3" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -213,15 +213,13 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -246,277 +244,521 @@
 <div class="posts">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/firefox-problem-with-xclip/">Firefox Problem With Xclip</a></h1>
-        <span class="post-date">May 20, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-    </div>
-  
-    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/libreoffice-implementaci%C3%B3n-del-gui%C3%B3n-en-la-separaci%C3%B3n-sil%C3%A1bica/">Libreoffice Implementación Del Guión en La Separación Silábica</a></h1>
         <span class="post-date">Apr 21, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Para implementar la separación silábica en cualquier documento en Libreoffice, es necesario bajar los correspondientes archivos de extensiones para este programa: <a href="https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6">https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6</a></p>
+
+<p><img src="/images/libreoffice-download-dictionaries.png" alt="Diccionario en español con separación silábica y corrector ortográfico"></p>
+
+<p>Una vez descargado y guardado este archivo, se utiliza el mismo programa Libreoffice para cargarlo posteriormente.</p>
+
+<p>Después se selecciona bajo el menú de <strong>tools</strong>, y <strong>options</strong> como se muestra:</p>
+
+<p><img src="/images/libreoffice-tools-options-menu.png" alt=""></p>
+
+<p>que por consiguiente inicia la ventana correspondiente que especifica el recién bajado diccionario y como muestra la siguiente figura:</p>
+
+<p><img src="/images/libreoffice-language-settings.png" alt=""></p>
+
+<p>Muy importante en darle clic a <strong>OK</strong> a esta ventana donde el diccionario haya sido seleccionado.</p>
+
+<p>Después de esto, y para que el corrector ortográfico aplique al actual documento, es necesario en asegurarnos que el idioma sea seleccionado desde el menú de <strong>tools</strong> seguido de <strong>language</strong>, y después como opción si el corrector ortográfico se aplicaría a todo el texto del documento, o a solamente un párrafo, y hasta una determinada selección, y como se muestra en la siguiente imagen:</p>
+
+<p><img src="/images/libreoffice-language-selection.png" alt=""></p>
+
+<p>En el caso del guión de separación silábica sería necesario en darle clic nuevamente al menú de <strong>tools</strong> (herramientas) seguido de <strong>language</strong> para que la opción <strong>hyphenation</strong> tome vigencia y aplique al texto del documento:</p>
+
+<p><img src="/images/libreoffice-hyphenation-menu-clic.png" alt=""></p>
+
+<p>Lo que sucede con el paso anterior, que sencillamente no es lo más práctico. Y lo mismo se puede comprobar si en cada modificación o mejor dicho, en cada terminación de línea o párrafo u oración se tuviese que emplear lo antedicho para que el ingreso automático de guión ocurra a través de todo el texto.</p>
+
+<p>Para lograr esto, es decir, en emplear en ese caso un ingreso automático del guión silábico, es necesario en ir al menú de <strong>Styles</strong> seguido de <strong>Styles and Formatting</strong> del documento como tal:</p>
+
+<p><img src="/images/libreoffice-styles-formatting-menu.png" alt=""></p>
+
+<p>O si te es más fácil dándole clic a <strong>Edit Style</strong> del actual documento:</p>
+
+<p><img src="/images/libreoffice-styles-edit-style.png" alt=""></p>
+
+<p>El cual abrirá otra ventana que manipula los valores para la pre-configuración del estilo del documento. Asegúrate que selecciones <strong>Text Flow</strong> el cual especifica si la <strong>hyphenation</strong> o la separación silábica ocurriría automáticamente:</p>
+
+<p><img src="/images/libreoffice-automatic-hyphenation.png" alt=""></p>
+
+<p>Una vez que esta opción sea seleccionada, dale a clic para que los cambios apliquen al documento.</p>
+
+<p>Siempre es aconsejable consultar muchas de las oficiales referencias acerca de este programa en <a href="https://help.libreoffice.org/">https://help.libreoffice.org</a></p>
+
+<p><strong>Referencia</strong></p>
+
+<p><a href="https://help.libreoffice.org/3.5/Writer/Hyphenation" target="_blank">Libreoffice Help - hyphenation</a></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/gigabyte-motherboard-fails-to-load-live-cd-but-succeeds-with-flash-drive/">Gigabyte Motherboard Fails to Load Live Cd but Succeeds With Flash Drive</a></h1>
         <span class="post-date">Apr 8, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>I can’t say whether some of the systems that NUC Intel produces, face the same problems while loading a LiveCD/LiveDVD iso image via an external drive, as the manufacturer Gigabyte currently does. The latter manufacturer gave me the proverbial run for the money when I wanted to install an image that was burned on a DVD and had been successfully installed on an old system.</p>
+
+<p>Not only I tried to load two (2) different images that proved to have been installed without issues and worked correctly on two (2) separate old Dell systems, but it seemed that even after specifying the external DVD/Writer on the first prioritized boot order of the BIOS, the motherboard was simply unable to identify it.</p>
+
+<p>I can’t attest whether the BIOS for that particular model is used across similar boards, although is unlikely, but what I can guarantee is that after several attempts, including and not limited to one instance, in which the board seemed to boot in the desired order, in the end was a total disaster: even a warning came up - something that had to do with a missing file from the installation burned DVD image- which appeared on the screen, and would not let me continue.<br>
+I wondered at that point whether the motherboard BIOS was clearly identifying the external DVD writer.</p>
+
+<p>A quick search on Google confirmed it. The motherboard would identify the external DVD only sparingly and inconsistently.</p>
+
+<p>I had an HDD preloaded with an operating system. And had no problems whatsoever to load it directly. But connecting an HDD with a preloaded OS would miss the point altogether. How about if the HDD had no OS preconfigured on it. Then it would become a problem.</p>
+
+<p>Another Google search returned different scenarios which were not applicable to my situation.
+One user pointed out that by disconnecting and connecting the external DVD right after powering on the motherboard resolved his issue.</p>
+
+<p>Someone on the Anandtech forums - I remember this website from years before, it published some if not the best reviews about SDDs on the marked - briefly spoke about it. This time around someone on the forum, a subdomain of Anandtech, responded that one reason he/she likes to read the posts is too help him/her determine what motherboard <em>not</em> to buy. Another user rightfully expressed his dissatisfaction with this particular brand’s issue on modern times.</p>
+
+<p>A post on a blog from blogspot pointed out that the solution in his/her case was to tweak with the USB connection. Other responses that followed had to do with the failure on the users’ part, in properly identifying the boot order for the device. But this was not the problem I was having. If anything, I noticed - like I wrote earlier - the inconsistency of the board’s BIOS in simply recognizing the connection. Whereas sometimes it would show right after powering the system, other times it would not show up at all. <a href="#blogspot"><sup id="blogref">1</sup></a></p>
+
+<p>Disabling <strong>AHCI</strong> mode in favor of <strong>Legacy</strong> or <strong>IDE</strong> like a user pointed out on Anandtech did not resolve it either. And much less by changing the preloaded configuration for <strong>CSM</strong>. At one point, the system could not even access the BIOS at all, and it became unresponsive. Only after unplugging the cable from the external DVD writer, the BIOS utility would actually show up. This last inconsistent behavior I noticed it by messing with different settings like the ones I mentioned earlier, in which I was faced with the same problem. The only way to access the BIOS was by unplugging the cable. <a href="#anand"><sup id="anandref">2</sup></a></p>
+
+<p>Up to that point I stopped looking and reading for viable solutions altogether. Nothing I tried seemed to work, even though I could plug in an HDD with a preloaded OS. The GB-BXBT run fine or without major problems on a preloaded OS, and yet I was unable to load a live CD/DVD and install it from there.</p>
+
+<p>I noticed that the problem with the USB for the BIOS settings for example, was supposedly patched years ago. And the latest updates for the BIOS on that particular system occurred a year or two before the manufacturer shipped the system to resellers.</p>
+
+<p>How the external DVD writer would appear and disappear at times while turning on the motherboard was simply beyond me. I was unable to confirm nonetheless the same findings than the user at blogspot.</p>
+
+<p>At that moment I realized I could no longer waste any more time in trying to install the Live CD/DVD from the DVD writer onto the HDD. Luckily I had an old USB drive lying around that I could use for testing purposes.</p>
+
+<p>For years I had installed from Live CD/DVDs onto the majority of the systems. It seemed, this was no longer possible.</p>
+
+<p>I tried to use the simplest method to have a portable OS on a flash drive that could - hopefully install onto the HDD.</p>
+
+<p>According to the Arch Wiki <a href="#dd"><sup id="ddref">3</sup></a> the command line could come handy for this purpose:</p>
+
+<p>On the terminal</p>
+
+<pre><code>$ dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress &amp;&amp; sync
+</code></pre>
+
+<p>It took a few minutes for the process to finish but in the end I could no longer complain.</p>
+
+<p>Had to press the <code>DEL</code> key one more time to access the BIOS. Then just like before, went to specify the boot order that the board should recognize first. The boot sequence showed the HDD on the first spot, followed by the flash drive I had recently copied the image to. Rebooted the system and finally the Manjaro installer loaded without an issue.</p>
+
+<p>The installation finished without problems. Later I removed the flash drive. Rebooted the system without having to go into the BIOS again., and successfully the fresh installation of Manjaro with the XFCE environment was running updates as usual.</p>
+
+<p><strong>References</strong></p>
+
+<p><a name="blogspot"></a><a href="http://chromasoft.blogspot.com/2010/10/solving-dreaded-gigabyte-wont-boot-from.html" target="_blank">solving <em>gigabyte wont boot from USB</em></a><a href="#blogref">&crarr;</a></p>
+
+<p><a name="anand"></a><a href="https://forums.anandtech.com/threads/dreaded-wont-boot-from-cd-problem-gigabyte-mb-stumped-and-in-need-of-help.2400256" target="_blank">Anandtech - Won’t boot from CD Gigabyte at Anandtech</a>  <a href="#anandref">&crarr;</a></p>
+
+<p><a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media#Using_dd" target="_blank">USB Flash installation media at Arch Wiki</a></p>
+
+<p><a name="dd"></a><a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media#In_GNU.2FLinux" target="_blank">USB Installation in GNU/Linux</a><a href="#ddref"> ↩︎</a></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-desplaza-a-ubuntu/">Manjaro Desplaza a Ubuntu</a></h1>
         <span class="post-date">Mar 14, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Hace más o menos un mes que escribí acerca de la configuración del <a href="https://imfrom.github.io/post/manjaro-splash-screen-in-ssd/">tema splash de la pantalla</a> y el cual se podía anular en la susodicha configuración a través de las <strong>preferencias</strong>,  seguido del <strong>tema del escritorio</strong> cuando se utiliza un disco de estado sólido o un SSD (solid state drive).</p>
+
+<p>En el momento de escribir acerca de ello, y de acuerdo a las estadísticas que se mostraban en <a href="http://distrowatch.com/" target="_blank">distrowatch.com</a>, los datos que se habían recopilado no reflejaban aún los últimos seis meses.</p>
+
+<p>No obstante a ello, es sorprendente que por primera vez en la historia de los sistemas GNU/Linux, una distribución basada en <a href="https://archlinux.org/" target="_blank">Arch Linux</a>  haya dejado rezagadas a distribuciones tales como Opensuse, y más sorprendente aún a Ubuntu.</p>
+
+<p><img src="/images/gnulinux_ranking_2017.png" alt="Ranking in the last 6 months"></p>
+
+<p>¿Cuáles han sido (entre varias causas) los más significantes problemas que sistemas tales como Ubuntu han experimentado?</p>
+
+<p>He leído desde hace tiempo la insatisfacción de los usuarios cuando se refiere a la decisión que tomó Canonical en implementar Amazon en el entorno de escritorio Unity. A punto tal que si no hubiese sido por la presión ejercida por muchos de sus usuarios y hasta un artículo de Stallman quien profundizó más acerca de esto en un artículo titulado <a href="https://www.gnu.org/philosophy/ubuntu-spyware.en.html" target="_blank">Ubuntu Spyware: What to do?</a> donde criticó a este proyecto, el código que Canonical empleó desde el entorno gráfico del gestor de archivos, se continuaría lanzando en cada versión futura.</p>
+
+<p>Aparentemente, en la versión 16.04 de LTS (Long Term Support) de Ubuntu, esta función no estaría activada.</p>
+
+<p>Pero no creo tampoco que estos han sido los problemas más fundamentales que esta distribución experimentó. Los problemas más agudos han sido las propias experimentaciones que los desarrolladores han llevado a cabo con las actualizaciones, las que han causado graves interrupciones que como consecuencia han resultado en sistemas operativos GNU/Linux inservibles e inoperables en muchos de los casos.</p>
+
+<p>Fui uno de los usuarios, que por ejemplo, experimentó que de buenas a primeras el network-manager crashed. Cuando quise averiguar más tarde, si alguien más estaba atravesando por ello, una búsqueda rápida en Google me redirigió a <a href="https://askubuntu.com/questions/727127/last-upgrade-crashes-network-manager-no-internet-connection-no-applet" target="_blank"> Last upgrade crashes network manager (no internet connection, no applet</a></p>
+
+<p>Este suceso ejemplifica la descentralización de una distribución cuando toma decisiones reprochables e injustificables. También ejemplifica la irremediable desvinculación de los programadores con una de las distribuciones más user-friendly de todos los tiempos.</p>
+
+<p>Recuerdo haber leído a Eric Raymond cuando habla sobre este fenómeno en la edificación de una catedral en comparación con un bazar. Considero que fue el primero de estos que el limitado grupo de programadores en Canonical llevó a cabo, en vez de tener en cuenta al usuario, o las acciones que perjudicarían a estos, como medio para el fin y no como un fin por sí solo o para simplemente satisfacer un objetivo sin evaluar profundamente las consecuencias resultantes.</p>
+
+<p>Si aprenden o no la lección eso pasa a la historia.</p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/configurar-el-idioma-en-manjaro-kde/">Configurar El Idioma en Manjaro Kde</a></h1>
         <span class="post-date">Feb 26, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Para modificar el idioma que los elementos del menú muestren, al igual que el idioma con el que aparecería la hora, la fecha, y otros valores como los de la representación monetaria, se puede ir hasta las <strong>preferencias del sistema</strong> y después dándole a clic a <strong>Configuración regional</strong>.</p>
+
+<p><img src="/images/modify-regional-language-spanish-manjaro-kde.png" alt="regional-language-spanish"></p>
+
+<p>La ventana siguiente que lleva de título <strong>añadir y configurar la configuración regional</strong>, muestra las configuraciones regionales del sistema que  te permite (a mano derecha) añadir el otro idioma que deseas, a la pre-configurada lista de las regiones en el sistema. Debes notar también que una vez que esto sea especificado, el sistema requiere recomenzar para que los cambios se carguen adecuadamente en el sistema.</p>
+
+<p><img src="/images/modify-regional-language-spanish-manjaro-kde-add.png" alt="regional-language-manjaro-add"></p>
+
+<p>Por supuesto que es posible lograr esto mediante el intérprete de comandos a través de <code>localect</code></p>
+
+<p>según se muestra reflejado en <a href="https://wiki.archlinux.org/index.php/locale" target="_blank">wiki.archlinux.org</a></p>
+
+<p>Es decir,</p>
+
+<pre><code> localectl set-locale LANG=es_US.UTF 
+</code></pre>
+
+<p>Para ver la lista de los locales en tu sistema, puedes emplear en este caso el siguiente comando:</p>
+
+<pre><code> localectl list-locales 
+</code></pre>
+
+<p>y de ahí seleccionaer el idioma regional que quisieras utilizar:</p>
+
+<p>una vez logrado este paso, es necesario ingresar:</p>
+
+<pre><code>localectl set-locale LANG=es_US.UTF-8 
+</code></pre>
+
+<p>o el idioma de tu preferencia. Pongo ese solamente como un ejemplo donde se vea ente procedimiento.</p>
+
+<p>Es bueno recalcar y como lo explica el sitio en <a href="https://wiki.archlinux.org/index.php/locale#Setting_the_system_locale" target="_blank">wiki.archlinux.org</a> que el fichero <code>/etc/locale.gen</code> muestra aquellas variables que se encuentran señaladas y que posteriormente serían cargadas en el fichero del sistema <code>/etc/locale.conf</code>.</p>
+
+<p>Para más información acerca de esto vea la sección <strong>Setting the system locale</strong> en la wiki.</p>
+
+<p><strong>Referencias</strong></p>
+
+<p><a href="https://wiki.archlinux.org/">wiki.archlinux.org</a></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/">Pantalla en Reposo Con Manjaro KDE</a></h1>
         <span class="post-date">Feb 24, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p><p>Cada vez que se trabaja con algún entorno gráfico en los sistemas GNU/Linux, como GNOME, xfce, MATE, al igual que en KDE, uno se pone al amparo de los desarrolladores de estos sistemas.</p></p>
+
+<p>Digo al amparo, porque uno tiene que estar a esperas de lo que estos programadores decidan sobre las configuraciones idóneas del sistema. Y muchas veces, como es de esperar y se ha comprobado a través del tiempo, no han sido las más eficientes decisiones, desde el punto de vista del usuario.</p>
+
+<p>Si se le pregunta al usuario cuáles serían las mejores maneras para tener acceso a estos servicios gráficos, muchos quizás darían diferentes opiniones. Unos dirían que el lugar en el menú para especificas estas opciones, se encontraría en las <strong>preferencias del sistema</strong> por ejemplo, mientras que otros posiblemente opinarían que aunque estarían de acuerdo en ello, lo conveniente es resumirlo dentro de la <strong>gestión de energía</strong> (administración del consumo de energía).</p>
+
+<p>En mi caso, fue la última de estas opciones en las que pensé que cualquier cambio de las configuraciones tomarían lugar.</p>
+
+<p>Pero lo mismo da, en estos casos, porque cuando se han implementado ciertas funciones, la opinión de los usuarios, a no ser aquellas que en esos casos donde por petición popular de la mayoría, logren en acordar y convencer a los desarrolladores en implementarlas, casi siempre no suscitan el interés que otras funciones conllevan. Y por lo tanto estas otras opciones gráficas dejan de ser modificadas.</p>
+
+<p>También hay que tener en cuenta que muchos otros usuarios hispano-parlantes, (o debería decir la gran mayoría), se adaptan a estas condiciones, incluso en aquellos casos donde estas funciones interceden en el uso diario.</p>
+
+<p>Este es el caso de algo tan sencillo como el <em>reposo automático de la pantalla</em> que se experimenta en Manjaro.</p>
+
+<p>Por norma, el tiempo que transcurre antes que el sistema cierra la sesión, o por lo menos en Manjaro KDE, es de unos cinco minutos.</p>
+
+<p>Pensé en realizar el cambio desde un principio a través de la ya mencionada <strong>administración del consumo de energía</strong> o la <strong>gestión de energía</strong>, pero esta función del sistema no tiene nada que ver con ello.</p>
+
+<p>Este reposo de la pantalla, se controla desde <strong>Bloqueo de pantalla</strong> o <strong>Screen locking</strong>.</p>
+
+<p>Primero antes que todo, y desde la ventana principal de las <strong>Preferencias del sistema</strong>, se le da clic al ya mencionado <strong>Comportamiento del escritorio</strong> (que aparece bajo <strong>Espacio de trabajo</strong>).</p>
+
+<p><img src="/images/comportamiento-del-escritorio-manjaro.png" alt="comportamiento-del-escritorio"></p>
+
+<p>Acto seguido a ello y a mano izquierda, se le da clic a <strong>Bloqueo de pantalla</strong>, que una vez abre a mano derecha las opciones de configuración bajo el título de <strong>Tiempos de espera del bloqueo de pantalla</strong> y como se muestra en la siguiente imagen que muestra el tabulador de activación, el período de tiempo en minutos que se necesita modificar.</p>
+
+<p>El valor pre-configurado son de unos 5 minutos. Se puede especificar el tiempo que uno estime apropiado.</p>
+
+<p><img src="/images/bloqueo-de-pantalla-screen-locking-manjaro.png" alt="bloqueo-de-pantalla-en-manjaro"></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/">Turn Off Manjaro Kde Splash Screen if on Ssd</a></h1>
         <span class="post-date">Feb 15, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Posicionado desde hace meses en el quinto escalafón de la lista de las distribuciones basadas en <a href="http://distrowatch.com/" target="_blank">Linux</a>, la distribución <a href="https://manjaro.org/" target="_blank">Manjaro </a>, basada en la impresionante distribución <a href="http://archlinux.org/" target="_blank">Arch Linux</a>, y que hace uso del magnífico sistema de administración de paquetes <strong>Pacman</strong> de este último, emplea los últimos e innovadores temas de interfaz gráficos en muchas de las ediciones, tanto de la comunidad, como aquellas que son aprobadas oficialmente. <a href="#man"><sup id="manref">1</sup></a></p>
+
+<p>No tuve problema alguno con la instalación del sistema operativo. Todo parecía funcionar sin problemas. La tarjeta gráfica del ordenador se había identificado apropiadamente durante el proceso de instalación, al igual que la tarjeta inalámbrica que permite el acceso al Internet para la continuación de cualquier actualización que se necesitaría llevar a cabo más tarde.</p>
+
+<p>El mayor problema recaía en el tiempo que tomaba antes que el escritorio gráfico de este sistema operativo estuviera disponible.</p>
+
+<p>Después de reinicializar las sesiones en varias ocasiones, me di cuenta que este lapso que estaba experimentando, no era algo necesariamente deseable, y peor aún, porque muchas veces fallaba por completo en cargar el entorno gráfico KDE, mientras que el resto del sistema estaba simplemente congelado. Esto imposibilitaba por ende, el acceso a la línea de intérprete de comandos, al igual que a cualquier operación de revisión de errores. Bajo estas condiciones, el sistema entero se paralizaba y por consiguiente era algo inaceptable.</p>
+
+<p>Aunque el origen de este problema no era tan sencillo de rastrear, me di cuenta que ‘startx’ podía ser el causante. Una búsqueda rápida en Google dio como resultados en su primer hit de búsqueda a una pregunta similar titulada: <em>Plasma desktop 5 boots very slowly</em> que había sido hecha en el boletín de Arch Linux.</p>
+
+<p>La pregunta del op era la siguiente:</p>
+
+<blockquote>
+<p>is there any way to debug Plasma-desktop 5 loading process to figure out why it is slow?</p>
+</blockquote>
+
+<p>a lo que una respuesta continuaba después que decía:</p>
+
+<blockquote>
+<blockquote>
+<p>if on ssd, it’s better to turn off splash screen. <a href="#ssd"><sup id="ssdref">2</sup></a></p>
+</blockquote>
+</blockquote>
+
+<p>Y eso era exactamente lo que estaba ocurriendo, o por lo menos en mi caso.</p>
+
+<p>Después de ello y una vez en el menú gráfico del sistema, se selecciona las configuraciones del sistema o <em>settings</em> . Una vez allí y bajo el tabulador <em>Appearance</em> se selecciona <em>Workspace Theme</em>.</p>
+
+<p><img src="/images/manjaro-workspace.png" alt="manjaro-workspace">
+<img src="/images/tema-del-espacio-de-trabajo.png" alt="manjaro-espacio-de-trabajo"></p>
+
+<p>Una vez que se seleccione el <em>Tema</em> y como se mostrará en la siguiente figura, se debe especificar que <em>None</em> o <em>ninguno</em>.</p>
+
+<p><img src="/images/manjaro-splash.png" alt="manjaro-splash">
+<img src="/images/no-splash-en-manjaro-kde.png" alt="manjaro-no-splash"></p>
+
+<p><strong>Footnotes</strong></p>
+
+<ol>
+<li><p><a name="man"></a><a href="https://manjaro.org/get-manjaro/" target="_blank">Lanzamientos oficiales de Manjaro</a><a href="#manref">&crarr;</a></p></li>
+
+<li><p><a name="ssd"></a>Sugerencia de un usuario en ajustar el valor pre-configurado del espacio de trabajo. Para más información acerca de ello visite el siguiente sitio que ofrece más detalles acerca de la conversación <a href="https://bbs.archlinux.org/viewtopic.php?pid=1557789#p1557789" target="_blank" title="turn off splash if on ssd">turn off splash if on ssd</a> <a href="#ssdref"> ↩︎</a></p></li>
+</ol>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/reemplazo-de-min%C3%BAsculas-con-may%C3%BAsculas-con-emacs/">Reemplazo De Minúsculas Con Mayúsculas Con Emacs</a></h1>
         <span class="post-date">Feb 9, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Para un simple reemplazo de caracteres al principio de una oración, es decir, de minúsculas por mayúsculas, se puede emplear un simple y eficiente método de expresión regular también en Emacs.</p>
+
+<p>Ya existe un modo de <em>capitalization</em> que logra este reemplazo de una cadena de caracteres o cadena de texto como se dice en inglés: string, y aunque tiene un inigualable mérito para este propósito, de igual manera retrasa el ingreso de caracteres., como es de esperar, el retraso o el lapso que esto conlleva, es una desventaja para una óptima funcionalidad.</p>
+
+<p>Digamos por ejemplo que:</p>
+
+<p>foo bar. foo bar. foo bar.</p>
+
+<p>Para modificar la minúscula por una mayúscula:</p>
+
+<pre><code> M-x replace-regex
+ \(\. \w\)
+ \,(capitalize \1)
+</code></pre>
+
+<p>que nos da como resultado:</p>
+
+<p>foo bar. Foo bar. Foo bar.</p>
+
+<p>pero el comienzo de la oración o de la línea no se ha modificado, entonces:</p>
+
+<pre><code> M-x replace-regex
+ \(^\w\)
+ \,(capitalize \1)
+</code></pre>
+
+<p>logra hacer la modificación restante a:</p>
+
+<p>Foo bar. Foo bar. Foo bar</p>
+
+<p>Si deseas hacer la modificación de una vez y por todas, y abreviando por consiguiente las dos expresiones regulares anteriores, utilizarías en este caso el delimitador <code>|</code> antes de la barra oblicua <code>\</code>. Es decir:</p>
+
+<pre><code> M-x replace-regex
+ \(^\w\|\. \w\)
+ \,(capitalize \1) 
+</code></pre>
+
+<p>Reemplaza el original foo bar. foo bar. foo bar. A Foo bar. Foo bar. Foo bar.</p>
+
 <p><strong>Notas</strong></p>
-<p>Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reemplazó (0) eventos, quizás pudiese tuvieses que palanquear (toggle) <code>case-replace</code> a nulo (nil). Vea esta <!-- raw HTML omitted -->respuesta en Stackoverflow<!-- raw HTML omitted -->.</p>
+
+<p>Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reemplazó (0) eventos, quizás pudiese tuvieses que palanquear (toggle) <code>case-replace</code> a nulo (nil). Vea esta <a href="https://stackoverflow.com/a/25231464" target="_blank">respuesta en Stackoverflow</a>.</p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/reemplazar-con-vim/">Reemplazar Con Vim. Reemplazos de minúsculas con mayúsculas</a></h1>
         <span class="post-date">Feb 8, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>O como se dice en Inglés: <em>capitalization</em>, se puede lograr fácilmente en <a href="http://www.vim.org/" target="_blank">vim </a> mediante el empleo de mayúsculas al comienzo de oraciones a través del uso de una expresión regular o regex, sin la necesidad de utilizar algún que otro script (que puede causar efectos secundarios en el funcionamiento), para lograr el reemplazo de las minúsculas.</p>
+
+<p>En el website de programadores de superuser.com, <a href="http://superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim" target="_blank">superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim</a> se hace esta misma pregunta para lograr el reemplazo automático de minúsculas por mayúsculas al principio de cada oración.</p>
+
+<p>Una de las repuestas <a href="https://imfrom.github.io/post/reemplazo-de-minusculas-por-mayuscula-en-oracion/#script"><sup id="fnref">1</sup></a> hace énfasis de esto mediante la adición de un unas líneas de script o programa de ejecución.</p>
+
+<p>El problema que esto conlleva, y como uno de los usuarios comentó,</p>
+
+<blockquote>
+<p>The only problem is this script seems to add a noticeable lag when typing</p>
+</blockquote>
+
+<p>Es que mientras más extenso sea el documento, más se experimenta el lag o el retraso en el ingreso de caracteres. Es decir, la óptima funcionalidad se pierde parcialmente. Solo es necesario en tener un documento que comprenda un número de ciento y algo líneas, (y esto es sin contar que haya encima de ello algunas que otras líneas de código), para notar la diferencia.</p>
+
+<p>Considero que sin tanta complicación que más tarde nos puede afectar, la mínima utilización de un reemplazo de caracteres mediante una expresión regular, tuviese mejores resultados.</p>
+
+<p>Para cambiar la minúscula por mayúscula sería necesario entonces algo como:</p>
+
+<pre><code> $ :%s/\.[a-z]/\U&amp;/g
+</code></pre>
+
+<p>e. g.,  si el espacio después de la puntuación fue ingresado, no se te olvide cambiar el código encima con el espacio sobrante correspondiente, tal como</p>
+
+<pre><code> $ :%s/\. [a-z]/\U&amp;/g
+</code></pre>
+
+<p>y para lograr el intercambio al comienzo de cada línea, entonces</p>
+
+<pre><code> $ :%s/^[a-z]/\U&amp;/g
+</code></pre>
+
+<p>reemplaza la minúscula desde el comienzo.</p>
+
+<p>Para reemplazar múltiples patrones de búsqueda, se debe emplear el sufijo <code>e</code> después de la expresión regular con la que se modificaría la búsqueda,  separado de una barra vertical <code>|</code> que separe los dos grupos, es decir:</p>
+
+<pre><code> $ :%s/^[a-z]/\U&amp;/ge | %s/\. [a-z]/\U&amp;/ge
+</code></pre>
+
+<p>Otras de las maneras de emplear esta <em>expresión regular</em> es mediante la substitución de <code>[a-z]</code> por <code>\w</code>. una búsqueda rápida en <code>:help</code> nos indica que <code>\w</code> equivale a <code>[0-9A-Za-z]</code></p>
+
+<p>por lo tanto se pudiese emplear algo tal como</p>
+
+<pre><code> $ :%s/^\w/\U&amp;/ge | %s/\. \w/\U&amp;/ge 
+</code></pre>
+
+<p><strong>Footnotes</strong></p>
+
+<p><a href="https://imfrom.github.io/post/reemplazo-de-minusculas-por-mayuscula-en-oracion/#fnref"> ↩︎</a>
+   <a name="script"> </a>Respuesta de usuario de vim para el empleo de un script que reemplace minúscula por mayúscula pero que causa lag en documentos <a href="http://superuser.com/a/737155">http://superuser.com/a/737155</a></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/">Modificar Mapa Del Teclado Con Emacs Y Vim</a></h1>
         <span class="post-date">Nov 21, 2016</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs <a href="#emacs"><sup>1</sup></a> y Vim <a href="#vim"><sup>2</sup></a>, para cambiar el mapa del teclado.</p>
+
+<h2 id="emacs">Emacs</h2>
+
+<p>El altamente configurable y extensible editor de texto Emacs también nos puede ayudar con modificaciones del teclado, o cambiar la localización de las teclas, sin la necesidad de cambiar todo el diseño, y sin la necesidad de tener que utilizar algún teclado en específico.</p>
+
+<p>Primero se crea una función que se le asigna un nombre determinado. En este caso utilizamos el nombre de “backslash”. Posteriormente a esto, se le atribuye el comando <code>insert</code> seguido de <code>kbd</code> y el mapa del registro del teclado que se desea modificar.</p>
+
+<p>En mi caso, encontré conveniente intercambiar las teclas <code>\</code> por <code>;</code> y viceversa. Por ejemplo:</p>
+
+<pre><code>(defun backslash ()
+  (interactive)
+  (insert (kbd "\\")))
+
+(global-set-key (kbd "; " ) 'backslash)
+</code></pre>
+
+<p>al igual que:</p>
+
+<pre><code>(defun semicolon ()
+  (interactive)
+  (insert (kbd ";" )))
+
+(global-set-key (kbd "\\" ) 'semicolon)
+</code></pre>
+
+<p>Como se puede ver en los ejemplos anteriores, después de esto se le asigna <code>global-set-key</code> a la recién nombrada función. Es decir, en el primer caso, la función se le asignó el nombre <code>backslash</code>, y la cual fue directamente entrelazada con el ya mencionado comando <code>global-set-key</code> seguido de la tecla <code>;</code>.</p>
+
+<p>De esta manera se logra el objetivo deseado. Esto es, que el ingreso de una tecla dada en el mapa del teclado del registro de entrada del sistema operativo, sea interpretado  posteriormente, - mediante la nueva asignación que proveyó la función - con el registro del mapa de otra tecla que haya sido predeterminada, dando lugar con ello a que ese ingreso del mapa del teclado, se registre apropiadamente con los resultados de la salida.</p>
+
+<p>En el primer ejemplo, cada vez que la tecla <code>;</code>sea presionada, la tecla <code>\</code> tomará precedencia. Y viceversa.</p>
+
+<h2 id="vim">Vim</h2>
+
+<p>en el caso de Vim, el editor de texto más utilizado en Unix, y el cual está disponible de fábrica, o en la mayoría de las variaciones de Unix, el modificar el mapa del teclado se obtiene de varias maneras.</p>
+
+<p>Solamente mostraré el comando que lograría esto de la manera más simple y durante el modo de insertar: <code>inoremap</code>, el cual es seguido de la tecla que se desea modificar, con la que tomaría la nueva posición.</p>
+
+<p>Es decir:</p>
+
+<pre><code> inoremap ; \
+</code></pre>
+
+<p>lograría lo que en este caso se quisiera. Cada vez que la tecla <code>;</code> se presione, la <code>\</code> tomará su lugar.</p>
+
+<p>De la misma manera, cuando se especifica el anterior comando en el fichero de inicialización, conlleva a especificar el mismo comando, es decir <code>inoremap</code> pero en esta ocasión con los símbolos de manera inversa. De otra manera, ambas teclas tendrán asignadas el mismo mapa en el registro del teclado.</p>
+
+<p>Por lo tanto</p>
+
+<pre><code>inoremap \ ; 
+</code></pre>
+
+<p>sería imprescindible para finalizar la modificación de estas teclas.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/reemplazos-en-vim/">Reemplazos en Vim</a></h1>
+        <span class="post-date">Nov 7, 2016</span>
+        <p>Estos son algunos de los reemplazos que se pudieran realizar en vim:</p>
+
+<pre><code>:s/\zs/\r/g
+</code></pre>
+
+<p>will have this string of characters: abcdefghi</p>
+
+<p>tendrá esta cadena de caracteres: abcdefghi</p>
+
+<p><strong>result</strong>:</p>
+
+<p>a<br>
+b<br>
+c<br>
+d<br>
+e<br>
+f<br>
+g<br>
+h<br>
+i</p>
+
+<p>Por otra parte la siguiente ejecución:</p>
+
+<pre><code>:s/\s/\r/g 
+</code></pre>
+
+<p>will have</p>
+
+<p>esto es una prueba</p>
+
+<p><strong>result</strong>:</p>
+
+<p>esto<br>
+es<br>
+una<br>
+prueba</p>
+
+<p>and <code>:s/\n//g</code></p>
+
+<p>will have something like</p>
+
+<p>a<br>
+b<br>
+c<br>
+d</p>
+
+<p><strong>results</strong>:</p>
+
+<p>abcde</p>
+
+<pre><code>:s/\n/ /g
+</code></pre>
+
+<p>will have something like</p>
+
+<p>esto<br>
+es<br>
+una<br>
+prueba</p>
+
+<p><strong>result</strong>: esto es una prueba</p>
+
+<p>por supuesto, se puede ver que en algunos casos se utiliza <code>\n</code>, mientras que en otros se utiliza <code>\r</code>, es necesario recordar que en cada reemplazo y substitución en vim, se logra mediante <code>:s/texto para reemplazar/substituir con</code>.</p>
+
+<p>Primero antes que todo el delimitador de barra oblicua <code>/</code> es la separación de lo que se quiere modificar con lo que se modificaría.</p>
+
+<p>Es decir, por ejemplo, donde <code>texto para reemplazar</code> es la expresión regular que se desea cambiar, o los caracteres del texto que se desean modificar, mientras que <code>substituir con</code> es el nuevo ingreso que tomará lugar.</p>
+
+<p>En este caso, para entender este procedimiento, no hay mejor ayuda en vim, que ir directo a la documentación con <code>:help \n</code> o mediante <code>:h \n</code> para abreviar, y también entender el por qué difiere de <code>:help \r</code></p>
+
+<p>Creo que una de las mejores respuestas sobre esto, se encuentra en <a href="http://stackoverflow.com/a/18961239">http://stackoverflow.com/a/18961239</a> que especifica que “in the syntax <code>s/foo/bar</code>, <code>\r</code> and <code>\n</code> have different meanings depending on context.</p>
+
+<p>En nuestro caso sería <code>s/texto para reemplazar/substituir con</code>.</p>
+
+<p>Por lo tanto esto equivaldría a:</p>
+
+<p>En el caso de <code>texto para reemplazar</code>, es decir, <code>s/&lt;texto para reemplazar&gt;</code> antes del segundo delimitador <code>/</code>:<br>
+<code>\n</code> sería una newline  o un salto de línea.<br>
+<code>\r</code> en este caso sería CR que es la tecla <code>Enter</code>, tecla de retorno o de regreso.</p>
+
+<p>En el caso de <code>substituir con</code>, es decir, <code>s/&lt;texto para reemplazar&gt;/&lt;substituir con&gt;</code>, o los caracteres que se encuentren después de la segunda barra <code>/</code>:<br>
+<code>\n</code> seria un octeto nulo<br>
+<code>\r</code> en este caso es una <code>newline</code> o un salto de línea.</p>
 
     </div>
   

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Blog del tecnólogo</title>
@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 10 Jan 2020 03:12:05 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 22:51:32 -0500</lastBuildDate>
     
 	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Libreoffice vs Wps Office</title>
-      <link>https://imfrom.github.io/post/libreoffice-vs-wps-office/</link>
-      <pubDate>Fri, 10 Jan 2020 03:12:05 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/post/libreoffice-vs-wps-office/</guid>
-      <description>some of the final thoughts on both systems.</description>
-    </item>
     
     <item>
       <title>Wps Office Spanish Dictionary</title>
@@ -27,9 +18,9 @@
       <pubDate>Mon, 30 Dec 2019 22:51:32 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/wps-office-spanish-dictionary/</guid>
-      <description>I&#39;ve installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&amp;hellip;
+      <description>I&amp;rsquo;ve installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&amp;hellip;
 Although many users prefer the advantages provided by a cloud stored-word processing program such as the one provided by Google, I tend to steer away from it mainly because of response time within the application.
-But I&#39;m not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation - has failed to develop such a feature.</description>
+But I&amp;rsquo;m not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation - has failed to develop such a feature.</description>
     </item>
     
     <item>
@@ -39,7 +30,7 @@ But I&#39;m not oblivious either to the fact that the versioning control system 
       
       <guid>https://imfrom.github.io/post/sed-and-awk-to-print-ranges/</guid>
       <description>sed and awk are very powerful tools that would yield results unlike anything else in *Nix.
-Although one could certainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it&#39;s always the case: available, for even other menial tasks.
+Although one could certainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it&amp;rsquo;s always the case: available, for even other menial tasks.
 Printing a given range of lines would undoubtedly come practical during those times when simply displaying them directly by invoking the manual is proven not to be the most straightforward method.</description>
     </item>
     
@@ -49,11 +40,11 @@ Printing a given range of lines would undoubtedly come practical during those ti
       <pubDate>Mon, 23 Dec 2019 22:53:32 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/fc-list-get-fonts/</guid>
-      <description>It&#39;s always nice to have a &amp;lsquo;cheat sheet&amp;rsquo; summary of all sorts Unix to remember certain programs
-I usually have Lua looking this up for me through otf and ttf fonts, but it&#39;s been a while since I went this route.
-fontconfig takes care of all font-related
-fontconfigtakes care &amp;ndash; as the freedesktop.org website states to
-  discover new fonts when installed automatically, removing a common source of configuration problems.</description>
+      <description>It&amp;rsquo;s always nice to have a &amp;lsquo;cheat sheet&amp;rsquo; summary of all sorts Unix to remember certain programs
+I usually have Lua looking this up for me through otf and ttf fonts, but it&amp;rsquo;s been a while since I went this route.
+fontconfigtakes care of all font-related
+fontconfig takes care &amp;ndash; as the freedesktop.org website states to
+ discover new fonts when installed automatically, removing a common source of configuration problems.</description>
     </item>
     
     <item>
@@ -76,7 +67,7 @@ Pamac would simply hang, egregiously stuck at either:</description>
       <description>Libalpm is the library for package management of Arch.
 I found it funny that in case of any bugs the team says
  Bugs? You must be kidding; there are no bugs in this software. But if we happen to be wrong, submit a bug report.
- But they&#39;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments.</description>
+ But they&amp;rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments.</description>
     </item>
     
     <item>
@@ -86,7 +77,7 @@ I found it funny that in case of any bugs the team says
       
       <guid>https://imfrom.github.io/post/arch-linux-javaws-no-such-file-or-directory/</guid>
       <description>Trying to get javaws to work without a glitch on one of the systems it was tested under, proved to be a chore.
-The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that&#39;d normally take care of it.
+The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that&amp;rsquo;d normally take care of it.
 All the libraries for which javaws depended upon and for which it was being tested even under a different system seemed to have been installed.</description>
     </item>
     
@@ -97,8 +88,8 @@ All the libraries for which javaws depended upon and for which it was being test
       
       <guid>https://imfrom.github.io/post/pacman-unable-to-lock-database/</guid>
       <description>On a recent pacman upgrade, I encountered the error:
-:: Synchronizing package databases... error: failed to update core (unable to lock database) error: failed to update extra (unable to lock database) error: failed to update community (unable to lock database) error: failed to synchronize all databases the solution everytime is to remove the db.lck from the /var/lib/ directory and restart pacman.
-rm /var/lib/db.lck pacman -Syyu </description>
+:: Synchronizing package databases... error: failed to update core (unable to lock database) error: failed to update extra (unable to lock database) error: failed to update community (unable to lock database) error: failed to synchronize all databases  the solution everytime is to remove the db.lck from the /var/lib/ directory and restart pacman.
+rm /var/lib/db.lck pacman -Syyu  </description>
     </item>
     
     <item>
@@ -108,9 +99,10 @@ rm /var/lib/db.lck pacman -Syyu </description>
       
       <guid>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</guid>
       <description>One of the pressing issues with Kakoune is the implementation of xclip to use the clipboard selections.
-As the Kakoune Registers &amp;ndash; Clipboard Wikistates it:
- Notice that xclip will not work using this example This was one of the reasons why I wanted to delve further into this issue.
-Anyhow, I&#39;ll copy-paste the various sections from the Kakoune Registers - Clipboard Wikithat show a better overview of the steps to follow by adding the snippets into the initialization file, while using xsel.</description>
+As the Kakoune Registers &amp;ndash; Clipboard Wiki states it:
+ Notice that xclip will not work using this example
+ This was one of the reasons why I wanted to delve further into this issue.
+Anyhow, I&amp;rsquo;ll copy-paste the various sections from the Kakoune Registers - Clipboard Wiki that show a better overview of the steps to follow by adding the snippets into the initialization file, while using xsel.</description>
     </item>
     
     <item>
@@ -129,10 +121,10 @@ One could go directly to the attachments in question and selectively open each o
       <pubDate>Tue, 05 Mar 2019 23:33:24 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/</guid>
-      <description>It seemed as if there&#39;s some sort of conflict by bringing up the menu on the xterm terminal.
+      <description>It seemed as if there&amp;rsquo;s some sort of conflict by bringing up the menu on the xterm terminal.
 Ctrl+ 🖱 (rightmouse) is usually the way that one would bring the menu, but every time this was done, xterm was crashing.
 After going over some of the xorg-fonts-* packages, I noticed that some of them were not installed for the X system.
-Among them, xorg-fonts-misc was not installed. I proceeded to install it and the menu was brought up successfully again by the ctrlrightmouse 🖱combination.</description>
+Among them, xorg-fonts-misc was not installed. I proceeded to install it and the menu was brought up successfully again by the ctrl rightmouse 🖱combination.</description>
     </item>
     
     <item>
@@ -142,7 +134,7 @@ Among them, xorg-fonts-misc was not installed. I proceeded to install it and the
       
       <guid>https://imfrom.github.io/post/kakoune-matching-pairs/</guid>
       <description>When I tried to delve further into the issue of highlighters that were used on kakoune, I was more interested on the options akin to the ones provided and which have been implemented on vim or neovim, such as e.g. showmatch, matchpairs.
-On vim this is something that could be easily obtained by having for example a set showmatch on the initialization file, but on kakoune, and although this issue on githubseemed to point in the right direction, and the accompanying commentfurther specified that by having it [the function show_matching] called out by a hook directly from the configuration file, it still wouldn&#39;t quite load the add-highlighter onto the buffer.</description>
+On vim this is something that could be easily obtained by having for example a set showmatch on the initialization file, but on kakoune, and although this issue on github seemed to point in the right direction, and the accompanying comment further specified that by having it [the function show_matching] called out by a hook directly from the configuration file, it still wouldn&amp;rsquo;t quite load the add-highlighter onto the buffer.</description>
     </item>
     
     <item>
@@ -154,7 +146,8 @@ On vim this is something that could be easily obtained by having for example a s
       <description>One of the features for which I personally would have a use for, would be macros recording and playback.
 To read about this on the doc page for kakoune, :doc keys macros might give you an idea that by default Q starts or ends macro recording, while q replays it.
 the &amp;lt;esc&amp;gt; key also ends the macro recording.
-See Kakoune MacrosBut further description for the macros recording and playback, is not provided on the doc page for Kakoune.</description>
+See Kakoune Macros
+But further description for the macros recording and playback, is not provided on the doc page for Kakoune.</description>
     </item>
     
     <item>
@@ -174,7 +167,7 @@ I wanted to see how well this editor handled key mappings to invoke a command fr
       <pubDate>Sun, 03 Feb 2019 12:44:11 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/kakoune-paste-with-xclip/</guid>
-      <description>The kakoune wiki on githubgoes at length on some of the steps to to follow in order to paste with the system clipboard
+      <description>The kakoune wiki on github goes at length on some of the steps to to follow in order to paste with the system clipboard
 It says to in order to paste before with xsel to
  map global user p &#39;&amp;lt;a-!&amp;gt;xsel --output --clipboard&amp;lt;ret&amp;gt;&#39;  But in the case of xclip for example, and by reading the man pages of xclip
  -selection specify which X selection to use, options are &amp;quot;primary&amp;quot; to use XA_PRIMARY (default), &amp;quot;secondary&amp;quot; for XA_SECONDARY or &amp;quot;clipboard&amp;quot; for XA_CLIPBOARD  and</description>
@@ -186,7 +179,7 @@ It says to in order to paste before with xsel to
       <pubDate>Fri, 01 Feb 2019 01:35:59 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/</guid>
-      <description>After looking at various ways to reply to an email address through mutt along with the terminal of choice, the xfce docs websitedid not provide me with all the needed details in this case.
+      <description>After looking at various ways to reply to an email address through mutt along with the terminal of choice, the xfce docs website did not provide me with all the needed details in this case.
 I knew that by going to Preferred Applications one would have to further specify the corresponding commands under the Mail Reader application. But although it did pointed this out by running
 $ exo-open --launch TerminalEmulator mutt  on the terminal, this, however, does not work.</description>
     </item>
@@ -197,7 +190,7 @@ $ exo-open --launch TerminalEmulator mutt  on the terminal, this, however, does 
       <pubDate>Mon, 17 Dec 2018 00:43:33 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/</guid>
-      <description>I coudln&#39;t help but noticing that the closetag plugin script for vim wasn&#39;t working on any of the markdown files that had been previously edited.
+      <description>I coudln&amp;rsquo;t help but noticing that the closetag plugin script for vim wasn&amp;rsquo;t working on any of the markdown files that had been previously edited.
 The markdown files in question were of the abbreviated form md and not markdown.
 It did work without a problem on any newly-created file and whether these files were of the form or had the extension md or markdown.
 The README file of closetag specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:</description>
@@ -209,8 +202,8 @@ The README file of closetag specifies that in order for the plugin to work, it s
       <pubDate>Mon, 26 Nov 2018 01:25:37 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/</guid>
-      <description>I still don&#39;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error Error while reinstalling all previously deployed packages of context user.
-Looking up Google didn&#39;t help in finding some sort of recent info about this issue.
+      <description>I still don&amp;rsquo;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error Error while reinstalling all previously deployed packages of context user.
+Looking up Google didn&amp;rsquo;t help in finding some sort of recent info about this issue.
 I also had a warning: failed to load path from javadlx which was obviously only a warning but nonetheless troublesome and problematic considering that this was just a fresh installation of Libreoffice.</description>
     </item>
     
@@ -229,8 +222,8 @@ I also had a warning: failed to load path from javadlx which was obviously only 
       <pubDate>Tue, 28 Aug 2018 01:29:48 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/clamav-freshclam-update-definitions/</guid>
-      <description>as the ClamAV arch linux wikistates, ClamAV is:
- Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&#39;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
+      <description>as the ClamAV arch linux wiki states, ClamAV is:
+ Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&amp;rsquo;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
  In order to update the definitions correctly is important to run first</description>
     </item>
     
@@ -262,7 +255,8 @@ Even after I thought that the network printer had be configured correctly, error
       
       <guid>https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/</guid>
       <description>During the last updates through pacman the following message came up:
- warning: directory permissions differ on /var/cache/pkgfile/ filesystem: 775 package: 755  But to first understand why this came up in the first place is good to know that pkgfile is a tool for searching files in the official repos. pkgfile - ArchLinux wikiIt should be noted that the question as to why the pkgfile differs for the file system hierarchy and the package itself has come up before.</description>
+ warning: directory permissions differ on /var/cache/pkgfile/ filesystem: 775 package: 755  But to first understand why this came up in the first place is good to know that pkgfile is a tool for searching files in the official repos. pkgfile - ArchLinux wiki
+It should be noted that the question as to why the pkgfile differs for the file system hierarchy and the package itself has come up before.</description>
     </item>
     
     <item>
@@ -281,8 +275,8 @@ I said that he/she stated it without further proof because all distributions con
       <pubDate>Tue, 24 Jul 2018 23:48:49 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/</guid>
-      <description>Antergos wins here. Manjaro could have done better but it didn&#39;t.
-Anyone who would want to avoid having to go through the hassle of reinstalling and testing sane drivers under Arch Linux should look no further. The comparison wasn&#39;t done between all the Arch Linux based distributions, but Antergos is the clear winner here.
+      <description>Antergos wins here. Manjaro could have done better but it didn&amp;rsquo;t.
+Anyone who would want to avoid having to go through the hassle of reinstalling and testing sane drivers under Arch Linux should look no further. The comparison wasn&amp;rsquo;t done between all the Arch Linux based distributions, but Antergos is the clear winner here.
 No Desktop Environment under Manjaro worked to have this driver functioning as it should have been functioning.</description>
     </item>
     
@@ -306,7 +300,7 @@ Although it could have been relatively simple to circumvent the problem by seein
       <guid>https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/</guid>
       <description>It seems as if antergos-common-meta has been removed from some of the repositories.
 In the latest updates by using pamac or even pacman returned the could not satisfy dependency error that was required in this case for the hunspell Spanish dictionary hunspell-es.
-Thus by removing antergos-common-meta or whatever was left of it, resolved the problem, it seems that the Antergos community haven&#39;t been able to resolve some of these issues that keep coming up every now and then with the distribution.</description>
+Thus by removing antergos-common-meta or whatever was left of it, resolved the problem, it seems that the Antergos community haven&amp;rsquo;t been able to resolve some of these issues that keep coming up every now and then with the distribution.</description>
     </item>
     
     <item>
@@ -328,7 +322,9 @@ The suggested workaround was to run
       <pubDate>Sat, 27 Jan 2018 08:49:17 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/</guid>
-      <description></description>
+      <description>One of the drawbacks during the installation of Antergos Linux was in identifying the keyboard layout option that was previously selected during the media installation.
+As a result only the default variant was being used after installing the system.
+I was able to identify the problem by going to the X window system xorg configuration file /etc/X11/xorg.d/00-keyboard.conf and noticing that the XkbLayout variant was not being properly identified as originally intended.</description>
     </item>
     
     <item>
@@ -359,7 +355,10 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 22 Dec 2017 04:13:37 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/metadata-irreversible/</guid>
-      <description></description>
+      <description>One of the easiest ways to remove all metadata from a file, is by invoking 1
+ $ exiftool -all= &amp;lt;file&amp;gt;  However, this has the inconvenience of providing a security risk by reversing it as well with:
+ $ exiftool -pdf-update:all= &amp;lt;file&amp;gt;  which pretty much inserts the metadata back into the file:
+According to the author of exiftool this can be circumvented by issuing qpdf --linearize &amp;lt;file.in&amp;gt; &amp;lt;file.out&amp;gt;. For further info about this see: PDF tags</description>
     </item>
     
     <item>
@@ -368,7 +367,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Sat, 16 Dec 2017 13:26:25 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/manjaro-kde-plasma-dolphin-mtp-cant-open-file/</guid>
-      <description>Yes, I have tried to look up for the issue elsewhere such as as in mtp mount issues in KDE/Dolphin, but many of the suggestions have not worked so far.</description>
+      <description>MTP implementation runs on most desktop environments without a problem. Except on KDE where it has had several problems in identifying and initializing a simple file from any of the devices that have been connected to the system, mainly through the USB port.
+It’s really a shame that although Plasma KDE fairly supports Bluetooth protocol better than the rest of other desktop environments, it largely fails with both gwenview and its default Dolphin manager to open up files directly.</description>
     </item>
     
     <item>
@@ -377,7 +377,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Thu, 14 Dec 2017 13:28:52 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/</guid>
-      <description></description>
+      <description>It’s apparently a foolish idea to login as root from a file manager on Plasma KDE.
+This was exactly what caused a number of problems, and among them, most notably, that I could not get past the login screen.
+Of course, little did it matter that I installed any of the other display managers available and removed the current in use from the command line. I was still unable to get past the login screen.</description>
     </item>
     
     <item>
@@ -386,7 +388,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Wed, 13 Dec 2017 15:56:07 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/errors-during-hugo-git/</guid>
-      <description></description>
+      <description>During the last setup of Hugo, I was faced again with the sometimes difficult handling of submodules. This was of course after the corresponding configuration for the user.name and user.email had already been set accordingly.
+The next error which dealt with the git submodule was that it already existed in the index. Which made me look it up on Google.
+Among the first results that came up after my query, was the following from the stackoverflow site at the StackExchange Network, entitled Issue with adding common code as git submodule: “already exists in the index”</description>
     </item>
     
     <item>
@@ -395,7 +399,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Sat, 09 Dec 2017 13:58:20 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</guid>
-      <description></description>
+      <description>While updating a fresh installation of Manjaro KDE, the screen locked. Apparently the default settings for the system, enabled this behavior without further ado.
+As a result of this problem, the surprising part came afterward when the updates that were being downloaded, suddenly crashed the system. This led to the nonetheless bothersome problem of modules.devname not found error followed by the no more troublesome error you are now being dropped into an emergency shell and sh can&#39;t access tty; job control turned off.</description>
     </item>
     
     <item>
@@ -404,7 +409,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Wed, 06 Dec 2017 12:50:38 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/configuring-kakoune-kakrc/</guid>
-      <description>See clang completion #1102</description>
+      <description>Configuring the kakoune text editor initialization file has been nothing short of a chore, as it requires the path environment to be correctly set, before any changes on the kakrc take ahold of the settings.
+As the tutorial suggests, see Configuration and autoloading, if it is launched with the -n switch, kakoune will source the ../share/kak/kakrc, but on a unrelated issue but nonetheless relevant about the correct location for the initialization file, the developer clearly stated that:</description>
     </item>
     
     <item>
@@ -413,7 +419,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 01 Dec 2017 13:41:54 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/network-has-been-disconnected-manjaro-kde-xfce/</guid>
-      <description></description>
+      <description>For some unknown reason, I was getting the message network has been disconnected even on connections that have been previously used.
+Contrary to the post entitled NetworkManager doesn’t automatically ask for a password for new network, see see this post on bbs.archlinux.org in my case the connection was used many times before.
+The dependency problem that has plagued this bug seemed to make a comeback on a most of Manjaro desktop environments.</description>
     </item>
     
     <item>
@@ -422,7 +430,11 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 24 Nov 2017 13:40:27 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/mounting-a-windows-hard-drive-on-arch-linux/</guid>
-      <description></description>
+      <description>After following some of the advice on ntfs-3g arch linux entry which described the procedure to mount a windows system:
+A lsblk -f call on the filesystem returned:
+ sdb ├─sdb1 vfat SYSTEM ├─sdb2 ntfs Recovery ├─sdb3 ├─sdb4 ntfs OS └─sdb5 ntfs Restore  I was after sdb4 in this case. So I invoked on the command line:
+ $ ntfs-3g /dev/sdb4 /mnt/fat/  Which returned the message:
+ Unprivileged user can not mount NTFS block devices using the external FUSE library.</description>
     </item>
     
     <item>
@@ -431,7 +443,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Thu, 16 Nov 2017 13:01:35 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/git-committing-by-user-name-config/</guid>
-      <description></description>
+      <description>I recently had to set up again the local branches through git.
+An error that was not uncommon came up on the screen:
+ *** Please tell me who you are. Run git config --global user.email &#34;you@example.com&#34; git config --global user.name &#34;Your Name&#34; to set your account&#39;s default identity. Omit --global to set the identity only in this repository.  This time around it was done through configuring a user.name and a user.</description>
     </item>
     
     <item>
@@ -440,7 +454,10 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Wed, 08 Nov 2017 13:44:21 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/npm-warn-saveerror-enonent-during-uninstall/</guid>
-      <description></description>
+      <description>I recently tried a few utility programs through npm javascript manager. For further info see Npm package manager on Wikipedia.
+But after trying them, I noticed that the output compilation was not what I had expected.
+Usually, or so it seems, that by default the programs end up on /usr/lib/node_modules.
+I kept one of the programs which I found it handy and very convenient. But I just wanted to remove the rest from the system.</description>
     </item>
     
     <item>
@@ -449,7 +466,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Thu, 19 Oct 2017 03:52:43 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/manjaro-xfce-qpdfview-problem-with-qt5ct-unable-to-load-plugin-in-first-attempt/</guid>
-      <description></description>
+      <description>I currently have two (2) identical - or that’s what it seemed like - xfce environments on two (2) different hardware systems.
+I always keep at hand a list of viewers and if there is any problem removing those to be found unnecessarily large or extremely light to the point of rendering them useless, I tend to check the Arch Wiki at List of Applications for a refresher on what’s available at the moment.</description>
     </item>
     
     <item>
@@ -458,7 +476,11 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 29 Sep 2017 13:32:01 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/</guid>
-      <description>Further oversights around Bluetooth vulnerabilities include technical papers such as Security Risks in Bluetooth Devices, Bluetooth security threats and solutionsEven recent articles from Slashdot - BlueBorne Vulnerabilities Impact Over 5 Billion Bluetooth-Enabled Deviceshave gone on at length about it. The following paper - although unreliable since it looks more than a pamphlet from a company that advertises its products under the pretension of providing unparalleled protection - serves to confirm that regardless of its merit [this paper itsel] is worth considering the possible risks could arise as a result from the operations of bluetooth devices.</description>
+      <description>Bluetooth recognition - at least on Manjaro Xfce - has been erratic and inconsistent.
+For no clear reason the LTS kernel and even a newer kernel have identified the hardware, while it has failed to do so in a great many occasions.
+Many of the tweaks included reinstalling bluez, bluez-firmware, bluez-libs, bluez-tools, and bluez-utils.
+Back to the drawing room and back again.
+The bluetooth adapters were not being recognized however. And after logging out and back into the session, and even after sudo /sbin/shutdown -r now, nothing seemed to work.</description>
     </item>
     
     <item>
@@ -467,7 +489,7 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 18 Aug 2017 14:07:29 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/urxvt-copy-paste-tweaking/</guid>
-      <description></description>
+      <description>I haven’t read the man pages enough to figure out some of the parameters that play an important behavior for the full functionality of the mighty urxvt, and it was not until I read a post - which was more of a comment on the thread entitled right click paste in urxvt terminal on the archlinux.org forum - when I realized that by the combination of ctrl and right mouse click would copy and paste the selected text on the X window system.</description>
     </item>
     
     <item>
@@ -476,7 +498,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 18 Aug 2017 14:05:19 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/urxvt-background-tweaking/</guid>
-      <description></description>
+      <description>I’ve never bothered with urxvt in the past. Perhaps was the way that dealt with the default glyph, which discouraged me from using it.
+Later I found that the above was easily answered here at how can I get better looking fonts in my terminal (urxvt)
+Nonetheless, the simple fact that I had to modify it directly on .Xresources, stopped me from doing all the necessary modifications to accomplish it.</description>
     </item>
     
     <item>
@@ -485,7 +509,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 18 Aug 2017 14:00:51 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/setup-remote-and-master-branches-before-updating-hugo/</guid>
-      <description></description>
+      <description>A while ago, I had to set remote and master branches on a different machine.
+The methods included setting it up through the git pull command. By going tis route, both the master and remote branches were consequently set and configured without a major inconvenience.
+Recently, although I tried to replicate the same method above, I faced problems that included among many other errors, the infamous error: src refspec master does not match any.</description>
     </item>
     
     <item>
@@ -494,7 +520,10 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Sun, 09 Jul 2017 12:09:38 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/xfce-carpalx-layout/</guid>
-      <description></description>
+      <description>There are many ways to add the carpalx layout to X window system on GNU/Linux.
+The desktop environment Plasma KDE does not have that problem. One could easily add it from the Input Devices from the settings of the system.
+If however, one is running Xfce, things are not as straightforward as one would like them to be.
+At the bottom of this post, one can find the zip archive where the carpax.</description>
     </item>
     
     <item>
@@ -503,7 +532,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Tue, 27 Jun 2017 13:20:54 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/manjaro-announces-password-weakness-en-los-instaladores-de-dvd_usb/</guid>
-      <description></description>
+      <description>Recientemente en DistroWatch se publicó el anuncio del lanzamiento de la última versión de Manjaro que incluye importantes actualizaciones.
+Entre estas actualizaciones se encuentran las nuevas versiones de los instaladores gráficos tanto como thus al igual que calamares.
+También se anuncia la fragilidad en la generación de la contraseña o la clave que tanto el programa thus como calamares emplean durante el proceso de instalación a través tanto del ya mencionado thus o de calamares que en hashtag con modo predecible se utiliza durante la creación de estas contraseñas.</description>
     </item>
     
     <item>
@@ -512,7 +543,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Thu, 08 Jun 2017 04:04:38 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/gcc-multilib-in-conflict-with-gcc-during-manjaro-upgrade/</guid>
-      <description></description>
+      <description>During the latest Manjaro upgrade, a conflict of packages already installed on the system, was preventing to proceed with the upgrade.
+A quick search on Google returned among the results, a post which had recently been opened on the archlinux forum with the title conflict with gcc-libs and gcc-libs-multilib
+Even though the conflict of packages on my system, was not the same conflict than the ones reported on the archlinux forum such as with the package gcc-fortran, it was clear as a user suggested:</description>
     </item>
     
     <item>
@@ -521,7 +554,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Mon, 22 May 2017 12:08:23 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/gigabyte-computer-sleep-suspend-under-manjaro/</guid>
-      <description></description>
+      <description>I had configured Manjaro under an old system and was never pressed with the issue of suspend on that old hardware.
+When the Gigabyte computer was finally up and running, I noticed that the system was unable to suspend or sleep.
+After failing to find a quick solution to the problem on the archlinux forums, I came across this post from the Manjaro site: Manjaro not waking from suspend or sleep and I almost knew - not right away - that the discussion was the underlying cause of the problems I was experiencing.</description>
     </item>
     
     <item>
@@ -530,7 +565,9 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Sat, 20 May 2017 13:58:18 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/firefox-problem-with-xclip/</guid>
-      <description></description>
+      <description>I’ve used both vim and neovim editors. The latter is just the newest implementation with out of the box pre-configurations.
+As expected, whenever I was trying to use the copy paste command tool such as xclip, both vim and neovim produced the newlines on the X window system across different applications.
+But when I set out to write an email on Gmail from Alphabet Inc., using a copy paste command tool such as xclip, the process was to no avail: newlines were not being displayed on Gmail’s interface.</description>
     </item>
     
     <item>
@@ -539,7 +576,10 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 21 Apr 2017 02:29:35 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/libreoffice-implementaci%C3%B3n-del-gui%C3%B3n-en-la-separaci%C3%B3n-sil%C3%A1bica/</guid>
-      <description></description>
+      <description>Para implementar la separación silábica en cualquier documento en Libreoffice, es necesario bajar los correspondientes archivos de extensiones para este programa: https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6
+Una vez descargado y guardado este archivo, se utiliza el mismo programa Libreoffice para cargarlo posteriormente.
+Después se selecciona bajo el menú de tools, y options como se muestra:
+que por consiguiente inicia la ventana correspondiente que especifica el recién bajado diccionario y como muestra la siguiente figura:</description>
     </item>
     
     <item>
@@ -548,7 +588,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Sat, 08 Apr 2017 13:10:35 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/gigabyte-motherboard-fails-to-load-live-cd-but-succeeds-with-flash-drive/</guid>
-      <description></description>
+      <description>I can’t say whether some of the systems that NUC Intel produces, face the same problems while loading a LiveCD/LiveDVD iso image via an external drive, as the manufacturer Gigabyte currently does. The latter manufacturer gave me the proverbial run for the money when I wanted to install an image that was burned on a DVD and had been successfully installed on an old system.
+Not only I tried to load two (2) different images that proved to have been installed without issues and worked correctly on two (2) separate old Dell systems, but it seemed that even after specifying the external DVD/Writer on the first prioritized boot order of the BIOS, the motherboard was simply unable to identify it.</description>
     </item>
     
     <item>
@@ -557,7 +598,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Tue, 14 Mar 2017 13:23:51 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/manjaro-desplaza-a-ubuntu/</guid>
-      <description></description>
+      <description>Hace más o menos un mes que escribí acerca de la configuración del tema splash de la pantalla y el cual se podía anular en la susodicha configuración a través de las preferencias, seguido del tema del escritorio cuando se utiliza un disco de estado sólido o un SSD (solid state drive).
+En el momento de escribir acerca de ello, y de acuerdo a las estadísticas que se mostraban en distrowatch.</description>
     </item>
     
     <item>
@@ -566,7 +608,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Sun, 26 Feb 2017 12:44:42 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/configurar-el-idioma-en-manjaro-kde/</guid>
-      <description></description>
+      <description>Para modificar el idioma que los elementos del menú muestren, al igual que el idioma con el que aparecería la hora, la fecha, y otros valores como los de la representación monetaria, se puede ir hasta las preferencias del sistema y después dándole a clic a Configuración regional.
+La ventana siguiente que lleva de título añadir y configurar la configuración regional, muestra las configuraciones regionales del sistema que te permite (a mano derecha) añadir el otro idioma que deseas, a la pre-configurada lista de las regiones en el sistema.</description>
     </item>
     
     <item>
@@ -575,7 +618,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Fri, 24 Feb 2017 13:45:58 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/pantalla-en-reposo-con-manjaro-kde/</guid>
-      <description></description>
+      <description>Cada vez que se trabaja con algún entorno gráfico en los sistemas GNU/Linux, como GNOME, xfce, MATE, al igual que en KDE, uno se pone al amparo de los desarrolladores de estos sistemas.
+Digo al amparo, porque uno tiene que estar a esperas de lo que estos programadores decidan sobre las configuraciones idóneas del sistema. Y muchas veces, como es de esperar y se ha comprobado a través del tiempo, no han sido las más eficientes decisiones, desde el punto de vista del usuario.</description>
     </item>
     
     <item>
@@ -584,7 +628,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Wed, 15 Feb 2017 04:02:19 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/turn-off-manjaro-kde-splash-screen-if-on-ssd/</guid>
-      <description></description>
+      <description>Posicionado desde hace meses en el quinto escalafón de la lista de las distribuciones basadas en Linux, la distribución Manjaro , basada en la impresionante distribución Arch Linux, y que hace uso del magnífico sistema de administración de paquetes Pacman de este último, emplea los últimos e innovadores temas de interfaz gráficos en muchas de las ediciones, tanto de la comunidad, como aquellas que son aprobadas oficialmente. 1
+No tuve problema alguno con la instalación del sistema operativo.</description>
     </item>
     
     <item>
@@ -593,8 +638,8 @@ Quite possibly there could be many improvements with this software, and there is
       <pubDate>Thu, 09 Feb 2017 02:31:55 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/reemplazo-de-min%C3%BAsculas-con-may%C3%BAsculas-con-emacs/</guid>
-      <description>Notas
-Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reemplazó (0) eventos, quizás pudiese tuvieses que palanquear (toggle) case-replace a nulo (nil). Vea esta respuesta en Stackoverflow.</description>
+      <description>Para un simple reemplazo de caracteres al principio de una oración, es decir, de minúsculas por mayúsculas, se puede emplear un simple y eficiente método de expresión regular también en Emacs.
+Ya existe un modo de capitalization que logra este reemplazo de una cadena de caracteres o cadena de texto como se dice en inglés: string, y aunque tiene un inigualable mérito para este propósito, de igual manera retrasa el ingreso de caracteres.</description>
     </item>
     
     <item>
@@ -603,7 +648,8 @@ Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reem
       <pubDate>Wed, 08 Feb 2017 13:48:53 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/reemplazar-con-vim/</guid>
-      <description></description>
+      <description>O como se dice en Inglés: capitalization, se puede lograr fácilmente en vim  mediante el empleo de mayúsculas al comienzo de oraciones a través del uso de una expresión regular o regex, sin la necesidad de utilizar algún que otro script (que puede causar efectos secundarios en el funcionamiento), para lograr el reemplazo de las minúsculas.
+En el website de programadores de superuser.com, superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim se hace esta misma pregunta para lograr el reemplazo automático de minúsculas por mayúsculas al principio de cada oración.</description>
     </item>
     
     <item>
@@ -612,7 +658,8 @@ Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reem
       <pubDate>Mon, 21 Nov 2016 14:40:45 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</guid>
-      <description></description>
+      <description>Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs 1 y Vim 2, para cambiar el mapa del teclado.
+Emacs El altamente configurable y extensible editor de texto Emacs también nos puede ayudar con modificaciones del teclado, o cambiar la localización de las teclas, sin la necesidad de cambiar todo el diseño, y sin la necesidad de tener que utilizar algún teclado en específico.</description>
     </item>
     
     <item>
@@ -621,7 +668,36 @@ Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reem
       <pubDate>Mon, 07 Nov 2016 14:42:55 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/reemplazos-en-vim/</guid>
-      <description></description>
+      <description>Estos son algunos de los reemplazos que se pudieran realizar en vim:
+:s/\zs/\r/g  will have this string of characters: abcdefghi
+tendrá esta cadena de caracteres: abcdefghi
+result:
+a
+b
+c
+d
+e
+f
+g
+h
+i
+Por otra parte la siguiente ejecución:
+:s/\s/\r/g  will have
+esto es una prueba
+result:
+esto
+es
+una
+prueba
+and :s/\n//g
+will have something like
+a
+b
+c
+d
+results:
+abcde
+:s/\n/ /g  will have something like</description>
     </item>
     
     <item>
@@ -630,7 +706,9 @@ Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reem
       <pubDate>Sat, 10 Sep 2016 10:09:44 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/</guid>
-      <description></description>
+      <description>Después de realizar varias pruebas donde traté de evaluar algún que otro theme en Hugo, me di cuenta que el problema era más serio que lo pensaba.
+Tenía en mente llevar las pruebas con ciertos temas minimalistas, o como se diría en español: simples, que me permitiesen llevar a cabo flexibles modificaciones locales., y de ahí partir con ello.
+La mayoría de los temas en Hugo están constituidos por ciertos paquetes de láminas en estilo de cascadas, o con las siglas en inglés por CSS, y al igual que otros pequeños ficheros en Javascript.</description>
     </item>
     
     <item>
@@ -639,7 +717,10 @@ Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reem
       <pubDate>Wed, 10 Aug 2016 14:16:59 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/flechas-en-gimp/</guid>
-      <description></description>
+      <description>Una de las maneras más fáciles en crear flechas en Gimp, sería con la adición de un plugin al directorio scripts de Gimp.
+En el sitio de https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp se puede encontrar más información en cuanto a esto. Solamente mostraré los pasos visuales para lograrlo.
+ $cd /directorio-de-gimp/scripts/  Seguido de
+ $wget http://registry.gimp.org/files/arrow.scm  or the archived version  $wget https://web.archive.org/web/20180218220954/http://registry.gimp.org:80/node/20269  También pudieras hacer uso de una versión modificada del anterior script pero con flechas curvadas.</description>
     </item>
     
     <item>
@@ -648,7 +729,9 @@ Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reem
       <pubDate>Wed, 03 Aug 2016 14:45:04 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/</guid>
-      <description></description>
+      <description>Imagine you have a directory called alpha. It contains a file called number.txt that contains the text first.
+You run git init to set up alpha as a Git repository.
+You run git add number.txt to add number.txt to the index. The index is a list of all the files that Git is keeping track of. It maps filenames to the content of the files. It now has the mapping number.</description>
     </item>
     
     <item>
@@ -657,7 +740,10 @@ Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reem
       <pubDate>Wed, 03 Aug 2016 14:13:46 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/circulos-en-gimp/</guid>
-      <description></description>
+      <description>Esto es solamente un recordatorio para realizar varias modificaciones a cualquier imagen en GNU Gimp.
+No soy un usuario de este programa, pero reconozco que como manipulador de gráficos e imágenes, es incomparable.
+Hace un tiempo, recuerdo haber leído algo acerca de esto a través del blog de Alvin Alexander que toca sobre la creación de círculos, elipses y demás.
+Algunos de los pasos los omitiré, porque algunos son innecesarios.</description>
     </item>
     
     <item>
@@ -666,7 +752,8 @@ Si por aluna casualidad, Emacs no reconoce y te devuelve como resultado que reem
       <pubDate>Tue, 02 Aug 2016 14:48:19 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/cambia-tu-contrase%C3%B1a-en-gmail-y-google/</guid>
-      <description></description>
+      <description>Toda la ayuda que se necesite acerca de GMail, y cualquier otro producto de Google, se puede obtener a través de la página de estos en https://support.google.com/ pero no obstante a ello, enumeraré algunos que otros pasos para recuperar la contraseña o clave, en caso que se haya extraviado o por cualquier otro motivo.
+Estas son algunas imágenes que se mostrarán, si tienes el idioma seleccionado como Español, o castellano, en tu navegador.</description>
     </item>
     
   </channel>

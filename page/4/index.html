@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.58.3" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -213,15 +213,13 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -246,260 +244,490 @@
 <div class="posts">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/">Udisks2 Udiskie Fares Better Than Ntfs 3g</a></h1>
-        <span class="post-date">Jan 16, 2018</span>
-        <p>It is my opinion, based mostly not on what I’ve read, but instead on what I’ve encountered during the handling of a failed hard disk, that the disk volume mounting utility udisks2 fares better than say, ntfs-3g.</p>
-<p>Quite possibly there could be many improvements with this software, and there is no doubt about it, but considering wear-and-tear conditions of the disk, among other considerations, and, as long as udisks2 is run without an interruption, no other mounting options utility that is currently available may be able to improve its overall performance.</p>
-<p>If time is not a constraint, and the program is allowed to run on its own, udisks2 fares relatively better on previously loaded Windows OS partitions than any other. Of this I can attest without a doubt. The utility has been able to eventually access corrupted filesystems that would have been rendered unrecoverable otherwise</p>
-<h2 id="for-futher-info-and-configuration-visit-the-wiki">For futher info and configuration, visit the wiki:</h2>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-    </div>
-  
-    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/metadata-irreversible/">Metadata Irreversible</a></h1>
         <span class="post-date">Dec 22, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>One of the easiest ways to remove all metadata from a file, is by invoking <a href="https://imfrom.github.io/post/metadata-irreversible/#exiftool"><sup id="refexiftool">1</sup></a></p>
+
+<pre><code> $ exiftool -all= &lt;file&gt;
+</code></pre>
+
+<p>However, this has the inconvenience of providing a security risk by reversing it as well with:</p>
+
+<pre><code> $ exiftool -pdf-update:all= &lt;file&gt; 
+</code></pre>
+
+<p>which pretty much inserts the metadata back into the file:</p>
+
+<p><img src="/images/exiftool-reversible-metadata-warning.png" alt=""></p>
+
+<p>According to the author of <strong>exiftool</strong> this can be circumvented by issuing <code>qpdf --linearize &lt;file.in&gt; &lt;file.out&gt;</code>. For further info about this see:
+<a href="http://owl.phy.queensu.ca/~phil/exiftool/TagNames/PDF.html" target="_blank">PDF tags</a></p>
+
+<p><img src="/images/pdftags-linearized.png" width="700"></p>
+
+<h2 id="references"><strong>References</strong></h2>
+
+<p><a name="exiftool"></a><a href="https://sno.phy.queensu.ca/~phil/exiftool/exiftool_pod.html" target="_blank">exiftool man pages</a> <a href="https://imfrom.github.io/post/metadata-irreversible/#refexiftool">_↩︎</a></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-kde-plasma-dolphin-mtp-cant-open-file/">Manjaro Kde Plasma Dolphin Mtp Cant Open File</a></h1>
         <span class="post-date">Dec 16, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Yes, I have tried to look up for the issue elsewhere such as as in <!-- raw HTML omitted -->mtp mount issues in KDE/Dolphin<!-- raw HTML omitted -->, but many of the suggestions have not worked so far.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p><strong>MTP</strong> implementation runs on most desktop environments without a problem. Except on KDE where it has had several problems in identifying and initializing a simple file from any of the devices that have been connected to the system, mainly through the USB port.</p>
+
+<p>It’s really a shame that although Plasma KDE fairly supports Bluetooth protocol better than the rest of other desktop environments, it largely fails with both gwenview and its default Dolphin manager to open up files directly.</p>
+
+<p>I have tried in a great many occasions to slither out many of these KDE errors by falsely attributing it to my lack of knowledge on its usage. But I can’t deny any longer that the system either works or it doesn’t. And one should no longer have to wait who-knows-how-long-and-when, before updates smother out its deficiencies.</p>
+
+<p>Yes, I have tried to look up for the issue elsewhere such as as in <a href="https://bbs.archlinux.org/viewtopic.php?id=177028" target="_blank">mtp mount issues in KDE/Dolphin</a>, but many of the suggestions have not worked so far.</p>
+
+<p>Whereas with KDE, to my amazement - because at this point of its developmental phase, one would think that it should perform better and not worse - the problems all range from mild to critical, while <strong>xfce</strong> on the other hand, these unexpected malfunctions and sudden out-of-the-blue crashes do occur but at a lesser degree, and when one of these errors undermines the stability, the errors do not necessarily affect the overall functionality.</p>
+
+<p>I experienced and spoke at somewhat length about a <a href="https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/">manjaro kde error unknown application</a> post.</p>
+
+<p>In the wake of recent Bluetooth vulnerabilities that have happened,<a href="#blue"><sup id="blueref">1</sup></a>  and the history behind it in which several authors have researched the issue,<a href="#tech"><sup id="techref">2</sup></a> it makes no sense to have a whole interface that handles this protocol better than most environments and yet fails when the to-be-expected approach to handle it differently or by using the right terminology, handling it without bluetooth at all in light of everything that has happened with it, by going directly through the use of the mtp protocol that is supposed to take care of it. Notice that mtp is supported without a major flaw in <strong>xfce</strong>, <strong>Gnome</strong>, and others.</p>
+
+<p>For further reading about <strong>MTP</strong>, is advisable to visit the formidable wiki from Arch Linux at <a href="https://wiki.archlinux.org/index.php/MTP" target="_blank">MTP</a></p>
+
+<p>It turns out that kio-extras is a dependency of Kde’s dolphin file manager, which apparently is partly responsible for the <code>failed to initlialize</code> error, but whichever is to be blamed in this regard, matters for as long as the user finds the KDE environment worthy to be used. In my case perhaps, the same opinion that for so long I’ve had of the software, has notably changed amid these recent problems: first with the <a href="https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/">manjaro kde error unknown application instance as highlighted earlier</a>, and now with the bluetooth problem.</p>
+
+<p>Perhaps is worthy to revisit this desktop environment, but for now, it is in my opinion that there are better options out there from which to choose from, before having to put up with the inconsistencies and failures that have rendered the systems I have been running lately, useless in more than one occasion.</p>
+
+<p><strong>References</strong></p>
+
+<p><a href="https://mobile.slashdot.org/story/17/09/12/2030213/blueborne-vulnerabilities-impact-over-5-billion-bluetooth-enabled-devices" target="_blank">Blueborne vulnerabilities impact devices</a><a name="blue"></a><a href="#blueref">_↩︎</a></p>
+
+<p> Technical papers that include Bluetooth vulnerabilities are as follow <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.7253&rep=rep1&type=pdf" target="_blank">Security Risks in Bluetooth Devices</a>, and <a href="https://pdfs.semanticscholar.org/8872/521819c79505ac20e5da8dd14f8c41eb3f07.pdf" target="_blank">Bluetooth security threats and solutions</a><a name="tech"></a><a href="#techref"> &#8617;</a></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-kde-plasma-error-unknown-application-folder/">Manjaro Kde Plasma Error Unknown Application Folder</a></h1>
         <span class="post-date">Dec 14, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>It’s apparently a foolish idea to login as root from a file manager on Plasma KDE.</p>
+
+<p>This was exactly what caused a number of problems, and among them, most notably, that I could not get past the login screen.</p>
+
+<p>Of course, little did it matter that I installed any of the other display managers available and removed the current in use from the command line. I was still unable to get past the login screen.</p>
+
+<p>In other words, it wasn’t just the usual <code>login failed</code> which indicates the wrong username and/or password. This was exactly the opposite, as after inputting the password for the system, since <code>login automatically</code> was disabled, the screen would fall back as if it loading the kernel again, and then without further ado, back into the login screen.</p>
+
+<p>This feedback loop process was endless. I couldn’t but scourge on Google for some sort of information regarding the issue.</p>
+
+<p>One of the first queries to Google was with the terms <strong>plasma kde fails to startx</strong>, although I knew that the last element of the query was not the most accurate. For one, because the <strong>X server</strong> was somehow running, or else how could I have a login screen in the first place. But almost unsurprisingly, the first result from Google was from the Arch Linux forum entitled <a href="https://bbs.archlinux.org/viewtopic.php?id=193286" target="_blank">Cannot start plasma 5</a>.</p>
+
+<p>I tried to follow one of the recommendations and modify the last line to</p>
+
+<pre><code> exec startkde
+</code></pre>
+
+<p><img src="/images/change-xinitrc-for-kde-plasma-login.png" alt=""></p>
+
+<p>but it made no difference.</p>
+
+<p>Perhaps on other desktop environments the change on <strong>.xinitrc</strong> was a success, but at least on Manjaro Plasma KDE, all of it was failing and I was not able to get past the login screen.</p>
+
+<p>For example, the suggestion to modify the <strong>.xinitrc</strong> on the <strong>xfce</strong> desktop environment have proven to succeed without any major problem.</p>
+
+<p>See for example <a href="https://bbs.archlinux.org/viewtopic.php?id=147721" target="_blank">Can’t get past the login screen</a>, where modifying the <code>.xinitrc</code> was more than enough to get it started.</p>
+
+<p><img src="/images/change-xinitrc-for-xfce-login.png" alt=""></p>
+
+<p>At this point it was futile to modify any further the <strong>.xinitrc</strong> initialization file when moments before I had restarted the system, an error related to Plasma KDE had popped up on the screen:</p>
+
+<p><img src="/images/plasma-error-window.png" width="500"></p>
+
+<p>A couple more errors from the main file manager Dolphin showed for example the following:</p>
+
+<p><img src="/images/user-xbel-kde-plasma.png" width="500"></p>
+
+<p>And also</p>
+
+<p><img src="/images/kio_applicationsrc-error.png" width="500"></p>
+
+<p>At this point, after the infamous error with the <strong>kio_applicationsrc</strong>, I very well knew that the culprit of it all occurred when trying to login as root to Plasma from the Dolphin file manager.</p>
+
+<p>Later on, after giving up the have Manjaro KDE running on the system, I found a few posts that spoke about logging in as root on the Plasma environment.</p>
+
+<p>On the same post that for example was highlighted earlier, there is useful information as why running as root as KDE is altogether discouraged:</p>
+
+<p><img src="/images/dont-run-as-root-on-kde.png" alt=""></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/errors-during-hugo-git/">Errors During Hugo Git</a></h1>
         <span class="post-date">Dec 13, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>During the last setup of <a href="https://gohugo.io/" target="_blank">Hugo</a>, I was faced again with the sometimes difficult handling of submodules. This was of course after the corresponding configuration for the <code>user.name</code> and <code>user.email</code> had already been set accordingly.</p>
+
+<p>The next error which dealt with the git submodule was that it already existed in the index. Which made me look it up on Google.</p>
+
+<p>Among the first results that came up after my query, was the following from the stackoverflow site at the StackExchange Network, entitled <a href="https://stackoverflow.com/questions/12898278/" target="_blank">Issue with adding common code as git submodule: “already exists in the index”</a></p>
+
+<p>The answer that has been widely accepted included as a solution having to invoke the <code>git rm --cached projectfolder</code> on the tree of the folder.</p>
+
+<p>After issuing it:</p>
+
+<pre><code> $ git rm --cached .git/public 
+ fatal: pathspec '.git/public' did not match any files
+</code></pre>
+
+<p>Which clearly led me nowhere, I noticed that further implementing correctly the command would require a few more steps.</p>
+
+<p>The command <code>git push origin master</code> indicated that origin did not appear to be a git repository.</p>
+
+<pre><code> $ git push origin master
+ fatal: 'origin' does not appear to be a git repository
+ fatal: Could not read from remote repository.
+</code></pre>
+
+<p>It was only after I invoked the <code>git rm -rf public</code> which seemed to fix the problem:</p>
+
+<pre><code> $ git rm -rf public/
+ Migrating git directory of 'public' from
+ '/public/.git' to
+ '/.git/modules/public'
+ rm 'public'
+</code></pre>
+
+<p>This seemed to at least tell me that the <code>public</code> folder had been removed. So apparently the <code>--cached</code> flag did nothing in this regard.</p>
+
+<p>Next, by using the <code>&lt;tab&gt;</code> key for autocompletion, right after the directories, I invoked <code>git rm -rf .git/modules</code>, which showed the number of possibilities as shown below:</p>
+
+<pre><code> $ git rm -rf .git/modules/
+ about                        index.html
+ config.toml                  index.xml
+ config.yaml                  js
+ content                      page
+ "content                     post
+ css                          "post
+ deploy.sh                    sitemap.xml
+ .gitmodules                  static
+ google4417fd3500b3c667.html  "static
+ images                       tags
+ "images                      themes
+ img                          topics
+</code></pre>
+
+<p>Then again, I completed the <code>git rm -rf</code> with the corresponding <code>public</code> folder:</p>
+
+<pre><code> $ git rm -rf .git/modules/public/
+ fatal: pathspec '.git/modules/public/' did not match any files
+</code></pre>
+
+<p>Which unfortunately again, came back with the <strong>fatal: pathspec</strong> error from before.</p>
+
+<p>What worked, was to have the option <code>--cached</code>, to be implemented right after <code>git rm</code> only recursively with the <strong>.gitmodules</strong>.</p>
+
+<p>So that was</p>
+
+<pre><code> $ git rm --cached .git
+ .git/        .gitmodules  
+</code></pre>
+
+<p>Which finally after tab completion:</p>
+
+<pre><code> $ git rm --cached .gitmodules 
+ rm '.gitmodules'
+</code></pre>
+
+<p>So it seems the <code>git rm --cached</code> worked with the <strong>.gitmodules</strong>, but it did not succeed with the <strong>.git/modules/public</strong> directory.</p>
+
+<p>It was only after I invoked the Unix command <code>rm -rf</code> under the <strong>.git</strong> directory, that the problem was finally resolved.</p>
+
+<pre><code> $ rm -rf .git/modules/public/
+</code></pre>
+
+<p>After it, the submodule was added again with the</p>
+
+<pre><code> git submodule add -b master &lt;name of static repository&gt; public
+</code></pre>
+
+<p>As shown below:</p>
+
+<pre><code> $ git submodule add -b master https://github.com/&lt;username&gt;/&lt;static repository&gt; public
+ Cloning into '/public'...
+ remote: Counting objects: 2075, done.
+ remote: Compressing objects: 100% (91/91), done.
+ remote: Total 2075 (delta 74), reused 114 (delta 31), pack-reused 1907
+ Receiving objects: 100% (2075/2075), 4.06 MiB | 2.17 MiB/s, done.
+ Resolving deltas: 100% (1247/1247), done.
+
+ $ 
+</code></pre>
+
+<p>The step-by-step instructions by simply issuing <code>rm -rf public</code> as the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank">tutorial to have Hugo running on Github</a> suggested, did not work in this case, for the simple reason that the <strong>git repository</strong> was cloned during the initial setup.</p>
+
+<p>The <strong>.git/modules/public</strong> already existed as a result. So it had to be removed by issuing <strong>rm -rf .git/modules/public</strong> before setting up again the submodule remote repository.</p>
+
+<p><img src="/images/hugo-step-by-step-instructions.png" alt=""></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/">Screen Locker Broken Manjaro Kde</a></h1>
         <span class="post-date">Dec 9, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>While updating a fresh installation of Manjaro KDE, the screen locked.
+Apparently the default settings for the system, enabled this behavior without
+further ado.</p>
+
+<p>As a result of this problem, the surprising part came afterward when the updates that were being downloaded, suddenly crashed the system. This led to the nonetheless bothersome problem of <code>modules.devname not found</code> error followed by the no more troublesome error <code>you are now being dropped into an emergency shell</code> and <code>sh can't access tty; job control turned off</code>.</p>
+
+<p>I didn’t have at the time a live media to access the system. Although I knew the that the sudden crashing during the download of updates , was one of the problems underlying the <code>modules.devname not found</code> error.</p>
+
+<p>A quick google searched returned  <a href="https://unix.stackexchange.com/questions/355689/manjaro-fails-to-boot-modules-devname-not-found-then-unknown-disk-uuid-error" target="_blank">Manjaro fails to boot, modules.devname not found</a> a result which provided an answer that pointed to access the system with Manjaro’s own <code>mhwd-chroot</code> command to access the emergency shell. See <a href="https://wiki.manjaro.org/index.php/Restore_the_GRUB_Bootloader#Chroot_into_your_existing_Manjaro_Installation" target="_blank">Chroot into your existing Manjaro Installation</a></p>
+
+<p><img src="/images/mhwd-chroot-steps.png" alt=""></p>
+
+<p>And as the already mentioned answer on the unix.stackexchange.com site suggested, it was necessary to reload the image again.</p>
+
+<p><img src="/images/chroot-answer-mkinitcpio.png" alt=""></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/configuring-kakoune-kakrc/">Configuring Kakoune Kakrc</a></h1>
         <span class="post-date">Dec 6, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>See <!-- raw HTML omitted -->clang completion #1102<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Configuring the <a href="https://github.com/mawww/kakoune" target="_blank">kakoune text editor</a> initialization file has been nothing short of a chore, as it requires the path environment to be correctly set, before any changes on the <code>kakrc</code> take ahold of the settings.</p>
+
+<p>As the tutorial suggests, see <a href="https://github.com/mawww/kakoune#configuration-autoloading" target="_blank">Configuration and autoloading</a>, if it is launched with the <code>-n</code> switch, kakoune will source the <code>../share/kak/kakrc</code>, but on a unrelated issue but nonetheless relevant about the correct location for the initialization file, the developer clearly stated that:</p>
+
+<blockquote>
+<p>The kakrc file in share is Kakounes init script, it is not intended to be user edited. It is actually that script that will load your user configuration in ~/.config/kak/kakrc.</p>
+</blockquote>
+
+<p><img src="/images/dont-use-share-kakrc.png" alt=""></p>
+
+<p>See <a href="https://github.com/mawww/kakoune/issues/1102"
+target="_blank">clang completion #1102</a></p>
+
+<p>Thus, it is necessary to set the environment first on any Unix system. The command <code>setenv</code> is used for the <strong>csh</strong> shell, whereas in <strong>bash</strong>, this is accomplished through the <code>export</code> command.</p>
+
+<p>To find out whether for example, <code>XDG_CONFIG_HOME</code> was set, is necessary to invoke on the terminal:</p>
+
+<pre><code> printenv XDG_CONFIG_HOME
+</code></pre>
+
+<p>which if it does not return a value, the environment has not been set yet.</p>
+
+<p>To set the environment across sessions, note it accordingly on your <code>bashrc</code> file with the <code>export</code> command:</p>
+
+<pre><code> export XDG_CONFIG_HOME=$HOME/.config
+</code></pre>
+
+<p>create a directory <strong>kak</strong> under that environment, and further create your init file <strong>kakrc</strong></p>
+
+<p>Most of the available settings will be available without further modifications. That is, some of the commands that are loaded by not using a <code>kakrc</code> file, will not have to be further tweaked with.</p>
+
+<pre><code> colorscheme &lt;tab completion&gt; &lt;name of theme&gt;
+</code></pre>
+
+<p>can be identified without a problem.</p>
+
+<p>There are, however, a handful of those that would have to be further tweaked with, in order to load the <strong>kakrc</strong> init file correctly.</p>
+
+<p>Take for example, <code>autowrap-enable</code>, which normally applies soft wrap manipulation to the lines.</p>
+
+<p>According to the developer,</p>
+
+<blockquote>
+<p>autowrapping is provided by the autowrap.kak script (which should be loaded by default), enable it for a buffer with the autowrap-enable command, that you probably want to put in a hook (for example if you want to always enable autowrap, add hook global WinCreate .* %{ autowrap-enable } in your kakrc. the autowrap_column option controls the column on which to autowrap.</p>
+</blockquote>
+
+<p>See <a href="https://github.com/mawww/kakoune/issues/419" target="_blank">Noob questions</a></p>
+
+<p><img src="/images/autowrap-kakrc.png" alt=""></p>
+
+<p>Further customizations to map certain keys are also necessary.</p>
+
+<p>For example, to map the <code>\</code> backslash key to say the <code>;</code> semicolon., it’s imperative to precede the *<em>*</em> key with the <code>%</code> percent sign and further enclose the <code>\</code> backslash key within curly brackets <code>{}</code>, so the final code would be something like:</p>
+
+<pre><code> map buffer insert %{\} ';' 
+</code></pre>
+
+<p>of course, if the settings are desirable to be loaded globally, then</p>
+
+<pre><code> map global insert %{\} ';'
+</code></pre>
+
+<p>needs to be specified accordingly on the initialization file.</p>
+
+<p>See for example this issue: <a href="https://github.com/mawww/kakoune/issues/419" target="_blank">can’t map to backslash</a>, which touched upon the problem, and further linked <a href="https://github.com/mawww/kakoune/issues/1049">https://github.com/mawww/kakoune/issues/1049</a> and <a href="https://github.com/mawww/kakoune/issues/1221">https://github.com/mawww/kakoune/issues/1221</a></p>
+
+<p>It’s certainly two-fold that by specifying:</p>
+
+<pre><code> map buffer insert ';' \ 
+</code></pre>
+
+<p>the behavior to have the <code>\</code> inserted, is easily accomplished, as shown on the example above, but the same is not true, by having the same characters inversed within the strings, that would yield the correct results.</p>
+
+<p>for example whereas</p>
+
+<pre><code> map buffer insert ';' \ 
+</code></pre>
+
+<p>is correct, a simple <code>map buffer insert '\' ;</code></p>
+
+<p>throws an error with the message <code>parse error: unterminated string '...'</code></p>
+
+<p>It’s therefore necessary to have:</p>
+
+<pre><code> map buffer insert %{;} \
+</code></pre>
+
+<p>the same is true if one were to <code>map buffer insert '\' %{;}</code></p>
+
+<p>one of the methods that would work across buffers, is to have such characters enclosed within curly brackets and further preceded by the <code>%</code> sign</p>
+
+<pre><code> map buffer insert %{\} %{;} 
+</code></pre>
+
+<p>and</p>
+
+<pre><code> map buffer insert %{;} %{\} 
+</code></pre>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/network-has-been-disconnected-manjaro-kde-xfce/">Network Has Been Disconnected Manjaro Kde Xfce</a></h1>
         <span class="post-date">Dec 1, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>For some unknown reason, I was getting the message <code>network has been disconnected</code> even on connections that have been previously used.</p>
+
+<p>Contrary to the post entitled <strong>NetworkManager doesn’t automatically ask for a password for new network</strong>, see <a href="https://bbs.archlinux.org/viewtopic.php?id=142066" target="_blank">see this post on bbs.archlinux.org</a> in my case the connection was used many times before.</p>
+
+<p>The dependency problem that has plagued this bug seemed to make a comeback on a most of Manjaro desktop environments.</p>
+
+<p>Installing, or better put, reinstalling it with</p>
+
+<pre><code> yaourt -S gnome-keyring
+</code></pre>
+
+<p>seemed to resolve the issue.</p>
+
+<p>The same problem hasn’t been experienced on Antergos distribution.</p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/mounting-a-windows-hard-drive-on-arch-linux/">Mounting a Windows Hard Drive on Arch Linux</a></h1>
         <span class="post-date">Nov 24, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>After following some of the advice on <a href="https://wiki.archlinux.org/index.php/NTFS-3G">ntfs-3g arch linux</a> entry which described the procedure to mount a windows system:</p>
+
+<p>A <code>lsblk -f</code> call on the filesystem returned:</p>
+
+<pre><code> sdb                                                         
+ ├─sdb1 vfat   SYSTEM   
+ ├─sdb2 ntfs   Recovery 
+ ├─sdb3                 
+ ├─sdb4 ntfs   OS       
+ └─sdb5 ntfs   Restore  
+</code></pre>
+
+<p>I was after <strong>sdb4</strong> in this case. So I invoked on the command line:</p>
+
+<pre><code> $ ntfs-3g /dev/sdb4 /mnt/fat/
+</code></pre>
+
+<p>Which returned the message:</p>
+
+<pre><code> Unprivileged user can not mount NTFS block devices using the external FUSE
+ library. Either mount the volume as root, or rebuild NTFS-3G with integrated
+ FUSE support and make it setuid root. Please see more information at
+ http://tuxera.com/community/ntfs-3g-faq/#unprivileged
+</code></pre>
+
+<p>So with sudo privileges I invoked it again, but this time around the more precise error message that <em>Input/output error NTFS is inconsistent</em> was returned on the terminal. The entire message was as follows:</p>
+
+<pre><code> ntfs_attr_pread_i: ntfs_pread failed: Input/output error
+ Failed to read of MFT, mft=391080 count=1 br=-1: Input/output error
+ Falling back to read-only mount because the NTFS partition is in an
+ unsafe state. Please resume and shutdown Windows fully (no hibernation
+ or fast restarting.)
+ ntfs_attr_pread_i: ntfs_pread failed: Input/output error
+ Failed to read NTFS $Bitmap: Input/output error
+ NTFS is either inconsistent, or there is a hardware fault, or it's a
+ SoftRAID/FakeRAID hardware. In the first case run chkdsk /f on Windows
+ then reboot into Windows twice. The usage of the /f parameter is very
+ important! If the device is a SoftRAID/FakeRAID then first activate
+ it
+</code></pre>
+
+<p>If I were to invoke it with <code>mount</code> instead of <code>ntfs-3g</code>, then it would have mounted it without a setback</p>
+
+<pre><code> $ sudo mount -t ntfs-3g /dev/sdb4 /mnt/fat
+</code></pre>
+
+<p>successfully mounted it and I was able to access the files on that hard drive.</p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/git-committing-by-user-name-config/">Git Committing by User Name Config</a></h1>
         <span class="post-date">Nov 16, 2017</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>I recently had to set up again the local branches through git.</p>
+
+<p>An error that was not uncommon came up on the screen:</p>
+
+<pre><code> *** Please tell me who you are.
+
+ Run
+
+   git config --global user.email "you@example.com"
+   git config --global user.name "Your Name"
+
+ to set your account's default identity.
+ Omit --global to set the identity only in this repository.
+</code></pre>
+
+<p>This time around it was done through configuring a <code>user.name</code> and a <code>user.email</code> on git itself.</p>
+
+<p>It came to memory that the last time I was setting it up on a different system by pulling the sources from the remote branch, this configuration was never used.</p>
+
+<p>An answer on stackoverflow reminded me that this was indeed the case the last time I had done it. See <a href="https://stackoverflow.com/a/17713604" target="_blank"> instead of doing a git pull you can do a git fetch</a></p>
+
+<pre><code> git fetch
+ git reset --hard origin/master
+</code></pre>
+
+<p>Even if the error from <code>git</code> with the <strong>please tell me who you are</strong> comes up after an ssh key is granted, as it was posted on this other thread entitled <em>Git-please tell me who you are error when using ssh key</em>, the best alternative is to specify the <code>--global</code> option from <code>git</code> as it posted at <a href="https://stackoverflow.com/a/42335651" target="_blank"> run git config –global user.email - git config –global user.name</a></p>
+
+<p>Of course, if the option to have a <code>--global</code> configuration is not desirable, then the removal of this <code>.gitconfig</code> file may be accomplished through <strong>git</strong> again by issuing <code>git config --global --unset-all user.name</code> and <code>git config --global --unset-all user.email</code> from the terminal.</p>
+
+<p>On the website that aims at answering questions about the ubuntu distributiion, there are more examples with this purpose. See for example <a href="https://askubuntu.com/questions/206449/" target="_blank"> git config global file - remove settings</a></p>
+
+<p>The most important part about it lies on the command <strong>–unset-all</strong>, even though the <a href="https://stackoverflow.com//a/282550" target="_blank">  answer</a> which pointed at it was not the accepted solution in this case.</p>
+
+<p>For more details about the config-file for <strong>git</strong> it is recommended to read the manual <strong>man git-config</strong> for more details.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/npm-warn-saveerror-enonent-during-uninstall/">Npm Warn Saveerror Enonent During Uninstall</a></h1>
+        <span class="post-date">Nov 8, 2017</span>
+        <p><p>I recently tried a few utility programs through <strong>npm</strong> javascript manager. For further info see <a href="https://en.wikipedia.org/wiki/Npm_(software)" target="_blank">Npm package manager</a> on Wikipedia.</p></p>
+
+<p>But after trying them, I noticed that the output compilation was not what I had expected.</p>
+
+<p>Usually, or so it seems, that by default the programs end up on <code>/usr/lib/node_modules</code>.</p>
+
+<p>I kept one of the programs which I found it handy and very convenient. But I just wanted to remove the rest from the system.</p>
+
+<p>But lo and behold. The removal outcome for the programs was not what I had expected either.</p>
+
+<p><strong>npm</strong> threw errors even with sudo privileges.</p>
+
+<pre><code> npm WARN enoent ENOENT: no such file or directory, open 'package.json'
+ npm WARN c No description
+ npm WARN c No repository field.
+ npm WARN c No README data
+ npm WARN c No license field.
+</code></pre>
+
+<p>The problem was easily resolved by issuing the flag <code>-g</code> (get) for a successful uninstall. So that was <code>npm uninstall &lt;name&gt; -g</code>.</p>
+
+<p>Later I checked on <code>/usr/lib/node_modules</code>, to make sure the program was no longer on the system.</p>
 
     </div>
   

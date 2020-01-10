@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.58.3" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -213,15 +213,13 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -246,169 +244,231 @@
 <div class="posts">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/reemplazos-en-vim/">Reemplazos en Vim</a></h1>
-        <span class="post-date">Nov 7, 2016</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-    </div>
-  
-    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/">Hugo No Sincroniza Directorio Estatico en Github</a></h1>
         <span class="post-date">Sep 10, 2016</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Después de realizar varias pruebas donde traté de evaluar algún que otro theme en Hugo, me di cuenta que el problema era más serio que lo pensaba.</p>
+
+<p>Tenía en mente llevar las pruebas con ciertos temas minimalistas, o como se diría en español: simples, que me permitiesen llevar a cabo flexibles modificaciones locales., y de ahí partir con ello.</p>
+
+<p>La mayoría de los temas en Hugo están constituidos por ciertos paquetes de láminas en estilo de cascadas, o con las siglas en inglés por CSS, y al igual que otros pequeños ficheros en Javascript.</p>
+
+<p>Cabe aclarar que la mayoría, por no decir todos, emplean las últimas tecnologías en gráficos que validen la convención estándar establecida por el consorcio W3C.</p>
+
+<p>Les recomiendo a todos aquellos que estén interesados en generadores estáticos del web, que evalúen a <a href="https://gohugo.io/" title="Hugo" target="_blank">Hugo</a> y de ahí decidir si es o no el motor más eficiente y fiable que hace uso de estas últimas tecnologías. Por supuesto que no sería justo si no se menciona otros como <a href="https://hexo.io/" target="blank">hexo</a>, desarrollado en Javascript por ejemplo, que al igual que el primero, son motores que valen la pena en emplearlos en la producción de sitios web, en la elaboración de blogs, al igual que con cualquier otra documentación.</p>
+
+<p>El motor <a href="https://gohugo.io/" target="blank">Hugo</a>, fue desarrollado en golang - un lenguaje de programación que fue creado en Google - es uno de los más recientes en este campo de generadores estáticos que ha sido recibido con mucho interés por programadores y otros entusiastas en computación. Pero sobre esto hablaré en otro artículo.</p>
+
+<p>Como dije al principio, en esta ocasión me interesaba más la flexible estructuración del blog que más que nada, mediante la evaluación de algunos de los <a href="https://themes.gohugo.io/" target="blank">temas</a> que están disponibles.</p>
+
+<p>Le había hecho algunos que otros cambios a uno de ellos intitulado purehugo y basado mayormente en <a href="https://en.wikipedia.org/wiki/bootstrapCDN" target="blank">bootstrapCDN</a> logré llevar a cabo algunos que otros cambios, me mortificaba la idea que no podía omitir la generación de todos los posts en la raíz del servidor. Por mucho que traté de hacer los cambios, la creación de una página que no sería mostrada en la página principal del servidor, era casi imposible. Tampoco quería emplear más tiempo que el necesario en lograr esto.</p>
+
+<p>Decidí entonces en descargar una plantilla temática que lleva de nombre <a href="https://themes.gohugo.io/shiori/" target="blank">shiori</a>, que fue portado o transferido de la implementación original del tema del mismo nombre por su autor Shusaku Uesugi.</p>
+
+<p>Estaba tratando de implementar en la estructura de la página un tema sencillo y este susodicho tema mostraba llenar los requisitos para ello.</p>
+
+<p>Después de descargarlo en el directorio <code>themes</code></p>
+
+<pre><code>$ git clone https://github.com/chibicode/hugo-theme-shiori shiori
+</code></pre>
+
+<p>decidí en ponerlo en práctica</p>
+
+<pre><code>$ hugo server -t shiori 
+</code></pre>
+
+<p>y el servidor local en el ordenador mostraba sin problemas la paginación correcta, al igual que todos los posts. No intenté en llevar otros cambios de modificación, porque la primera vez que ejecuté <code>hugo new post/test</code> que proseguiría con la creación de un post en el archivo de contenido, un error acerca del fichero <code>archetypes</code> se había generado.</p>
+
+<p>Traté de encontrar más información acerca de ello. Pero la única explicación acerca de esto tenía que ver con la actualización no solo de <code>hugo</code> sino de todas las dependencias de este:</p>
+
+<pre><code>go get -u -v github.com/spf13/hugo
+github.com/spf13/hugo (download)
+github.com/fsnotify/fsnotify (download)
+Fetching https://golang.org/x/sys/unix?go-get=1
+</code></pre>
+
+<p>El servidor local me mostraba las modificaciones.</p>
+
+<p>Una búsqueda más tarde en Google me refirió a <a href="https://github.com/spf13/hugo/issues/1802" target="_blank">iHugo 0.16-DEV (Jan 2016) fails to sync theme’s static directory on Linux</a> el cual trataba este problema.</p>
+
+<p>Aparentemente una de las dependencias tenía que ser actualizada, y por lo tanto la bandera <code>-u</code> tenía que ser especificada apropiadamente para la instalación del motor <a href="https://gohugo.io/" target="blank">Hugo</a>.</p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/flechas-en-gimp/">Flechas en Gimp</a></h1>
         <span class="post-date">Aug 10, 2016</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Una de las maneras más fáciles en crear <strong>flechas</strong> en Gimp, sería con la adición de un plugin al directorio <code>scripts</code> de Gimp.</p>
+
+<p>En el sitio de <a href="https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp">https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp</a> se puede encontrar más información en cuanto a esto. Solamente mostraré los pasos visuales para lograrlo.</p>
+
+<pre><code> $cd /directorio-de-gimp/scripts/
+</code></pre>
+
+<p>Seguido de</p>
+
+<pre><code> $wget http://registry.gimp.org/files/arrow.scm
+</code></pre>
+
+<p>or the archived version </p> 
+<pre><code> $wget https://web.archive.org/web/20180218220954/http://registry.gimp.org:80/node/20269 </code></pre>
+
+<p>También pudieras hacer uso de una versión modificada del anterior script pero con flechas curvadas.</p>
+
+<p>puedes obtenerlo mediante</p>
+
+<pre><code> $wget https://web.archive.org/web/20180208191139/http://registry.gimp.org:80/node/28566</code></pre>
+
+<p>Y recomienza el programa Gimp.</p>
+
+<p>Digamos por ejemplo, que seleccionas un nuevo documento. En la caja de herramientas de Gimp (recuerda que si no está visible, siempre puedes activarla a través de la combinación en el teclado de <code>Ctrl</code> y <code>b</code>), podrás ver la nueva inclusión de la ventana de herramienta.</p>
+
+<p>Veamos como funciona con la selección de esta misma caja de herramientas.</p>
+
+<p><img src="/images/selecciona-toolbox.png" alt="caja de herramientas toolbox"></p>
+
+<p>El próximo paso sería seleccionar el icono con el que se marcan los dos puntos de la flecha.</p>
+
+<p><img src="/images/click-twice.png" alt="clic dos vecs"></p>
+
+<p>Asegúrate que el color como se muestra en la figura anterior, esté seleccionado apropiadamente en la caja de herramientas (toolbox).</p>
+
+<p>Una vez que los dos puntos hayan sido marcados, selecciona la barra del menú principal de <code>Herramientas/tools</code>, descendiendo hasta el final y dándole clic a <code>Arrows</code>.</p>
+
+<p>Una vez que le des a <code>Arrows</code> del menú principal de la barra, una ventana que es similar a la que se muestra a continuación te permitirá especificar ciertos valores.</p>
+
+<p><img src="/images/select-tools-arrow.png" alt="selecciona el menú principal de arrows"></p>
+
+<p>Una vez que tengas la ventana abierta, ajusta los valores de porcentajes según el grosor, o el ancho que los ángulos de la flecha debiesen tener cuando se le aplique el color configurado. También puedes especificar otros valores como en rellenar a todo color la punta de la flecha.</p>
+
+<p>Clic <code>ok</code> una vez que los valores sean los acordados.</p>
+
+<p><img src="/images/arrow-done.png" alt="flecha finalizadai"></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/">Git in Six Hundred Words by Mary Rose Cook</a></h1>
         <span class="post-date">Aug 3, 2016</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Imagine you have a directory called <code>alpha</code>. It contains a file called <code>number.txt</code> that contains the text <code>first</code>.</p>
+
+<p>You run <code>git init</code> to set up <code>alpha</code> as a Git repository.</p>
+
+<p>You run <code>git add number.txt</code> to add <code>number.txt</code> to the index. The index is a list of all the files that Git is keeping track of. It maps filenames to the content of the files. It now has the mapping <code>number.txt -&gt; first</code>. Running the add command has also added a blob object containing <code>first</code> to the Git object database.</p>
+
+<p><div class="main __reader_view_article_wrap_4270907014602854__">
+      <p>(This essay is a companion piece to <a href="http://gitlet.maryrosecook.com/">Gitlet</a>, my implementation of Git in JavaScript.)</p></p>
+
+<p>Imagine you have a directory called <code>alpha</code>. It contains a file called <code>number.txt</code> that contains the text <code>first</code>.</p>
+
+<p>You run <code>git init</code> to set up <code>alpha</code> as a Git repository.</p>
+
+<p>You run <code>git add number.txt</code> to add <code>number.txt</code> to the index. The index is a list of all the files that Git is keeping track of. It maps filenames to the content of the files. It now has the mapping <code>number.txt -&gt; first</code>. Running the add command has also added a blob object containing <code>first</code> to the Git object database.</p>
+
+<p>You run <code>git commit -m first</code>. This does three things. First, it creates a tree object in the objects database. This object represents the list of items in the top level of the alpha directory. This object has a pointer to the <code>first</code> blob object that was created when you ran <code>git add</code>. Second, it creates a commit object that represents the version of the repository that you have just committed. This includes a pointer to the tree object. Third, it points the master branch at the new commit object.</p>
+
+<p>You run <code>git clone . ../beta</code>. This creates a new directory called <code>beta</code>. It initializes it as a Git repository. It copies the objects in the alpha objects database to the beta objects database. It points the master branch on beta at the commit object that the master branch points at on the alpha repository. It sets the index on beta to mirror the content of the first commit. It updates your files - <code>number.txt</code> - to mirror the index.</p>
+
+<p>You move to the beta repository. You change the content of <code>number.txt</code> to <code>second</code>. You run <code>git add number.txt</code> and <code>git commit -m second</code>. The commit object that is created has a pointer to its parent, the first commit. The commit command points the master branch at the second commit.</p>
+
+<p>You move back to the alpha repository. You run <code>git remote add beta ../beta</code>. This sets the beta repository as a remote repository.</p>
+
+<p>You run <code>git pull beta master</code>.</p>
+
+<p>Under the covers, this runs <code>git fetch beta master</code>. This finds the objects for the second commit and copies them from the beta repository to the alpha repository. It points alpha’s record of beta’s master at the second commit object. It updates <code>FETCH_HEAD</code> to show that the master branch was fetched from the beta repository.</p>
+
+<p>Under the covers, the pull command runs <code>git merge FETCH_HEAD</code>. This reads <code>FETCH_HEAD</code>, which shows that the master branch on the beta repository was the most recently fetched branch. It gets the commit object that alpha’s record of beta’s master is pointing at. This is the second commit. The master branch on alpha is pointing at the first commit, which is the ancestor of the second commit. This means that, to complete the merge, the merge command can just point the master branch at the second commit. The merge command updates the index to mirror the contents of the second commit. It updates the working copy to mirror the index.</p>
+
+<p>You run <code>git branch red</code>. This creates a branch called <code>red</code> that points at the second commit object.</p>
+
+<p>You run <code>git checkout red</code>. Before the checkout, <code>HEAD</code> pointed at the master branch. It now points at the red branch. This makes the red branch the current branch.</p>
+
+<p>You set the content of <code>number.txt</code> to <code>third</code>, run <code>git add numbers.txt</code> and run <code>git commit -m third</code>.</p>
+
+<p>You run <code>git push beta red</code>. This finds the objects for the third commit and copies them from the alpha repository to the beta repository. It points the red branch on the beta repository at the third commit object, and that’s it.</p>
+
+<p>(If you would like to learn about the internals of Git in detail, you can read my essay, <a href="https://maryrosecook.com/blog/post/git-from-the-inside-out">Git from the inside out</a>.)</p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/circulos-en-gimp/">Círculos en Gimp</a></h1>
         <span class="post-date">Aug 3, 2016</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Esto es solamente un recordatorio para realizar varias modificaciones a cualquier imagen en <a href="https://www.gimp.org/">GNU  Gimp</a>.</p>
+
+<p>No soy un usuario de este programa, pero reconozco que como manipulador de gráficos e imágenes, es incomparable.</p>
+
+<p>Hace un tiempo, recuerdo haber leído algo acerca de esto a través del blog de <a href="http://alvinalexander.com/gimp/gimp-how-to-create-draw-circle-in-gimp-tutorial/">Alvin Alexander</a> que toca sobre la creación de círculos, elipses y demás.</p>
+
+<p>Algunos de los pasos los omitiré, porque algunos son innecesarios.</p>
+
+<ul>
+<li><p>Primero crea una imagen, un nuevo documento, aunque por supuesto, que puedes abrir cualquier otra imagen <code>png</code>, <code>jpeg</code>, <code>jpg</code>, etc.</p></li>
+
+<li><p>Después en la caja de herramienta, selecciona el elipsis que te servirá para demarcar el trazo.</p></li>
+</ul>
+
+<p><img src="/images/selectelilipse.png" alt="Selecciona elipse"></p>
+
+<ul>
+<li>Dibuja el trazo del círculo</li>
+</ul>
+
+<p><img src="/images/dibujaimagen.png" alt="dibuja imagen"></p>
+
+<ul>
+<li><p>Una vez realizado este círculo, dale a clic al menú de <code>Select</code>, y desciende hasta que te encuentres con el <code>Border</code> (borde).</p></li>
+
+<li><p>En la nueva ventana que aparece donde te especifica en seleccionar en pixels la dimensión de este borde, incrementa o disminuye estos pixels.</p></li>
+</ul>
+
+<p><img src="/images/selectmenuborder.png" alt="Selecciona el borde del Menú"></p>
+
+<ul>
+<li><p>Asegúrate que el color que tienes seleccionado en la caja de herramientas sea el correcto.</p></li>
+
+<li><p>Clic en el menú de <code>Edit</code> desde la ventana principal de Gimp y selecciona <code>Fill with FG Color</code></p></li>
+</ul>
+
+<p><img src="/images/círculocolor.png" alt="Círculo después de fill with color"></p>
 
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/cambia-tu-contrase%C3%B1a-en-gmail-y-google/">Cambia Tu Contraseña en Gmail Y Google</a></h1>
         <span class="post-date">Aug 2, 2016</span>
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Toda la ayuda que se necesite acerca de GMail, y cualquier otro producto de Google, se puede obtener a través de la página de estos en <a href="https://support.google.com/">https://support.google.com/</a> pero no obstante a ello, enumeraré algunos que otros pasos para recuperar la contraseña o clave, en caso que se haya extraviado o por cualquier otro motivo.</p>
+
+<p>Estas son algunas imágenes que se mostrarán, si tienes el idioma seleccionado como Español, o castellano,  en tu navegador.</p>
+
+<p><img src="/images/111.jpg" alt="Example image"></p>
+
+<p>Que como se explica en <a href="https://support.google.com/mail/answer/41078?hl=es">https://support.google.com/mail/answer/41078?hl=es</a> puedes reiniciar tu sesión para restablecer otra.</p>
+
+<p><img src="/images/7.png" alt="inicia sesión"></p>
+
+<p>Una vez que le des clic te dirigirá hacia un enlace que te preguntará con tres (3) opciones:</p>
+
+<p><img src="/images/555.jpg" alt="inicio de sesión"></p>
+
+<p>Acto seguido a ello, seleccionas una de ellas.</p>
+
+<p>Por ejemplo, si seleccionas la primera de estas, porque simplemente se te ha olvidado, te da la opción de ingresar el correo electrónico que normalmente utilizas para el inicio de la sesión.</p>
+
+<p><img src="/images/8.png" alt="correo de inicio para gmail"></p>
+
+<p>El próximo enlace te preguntará por la última clave que recuerdas.</p>
+
+<p>Le das clic a <strong>No lo sé</strong></p>
+
+<p><img src="/images/444.jpg" alt="escribe lo que te recuerdas"></p>
+
+<p>Después que ingreses tu correo electrónico, o cualquier otro método de verificación secundario: así sea mediante otro correo electrónico, o mediante SMS de mensaje de texto, que empleaste durante el registro de la cuenta, Google te enviará un enlace, un link, que te permitirá restablecer otra contraseña.</p>
+
+<p>Recuerda en clic <strong>Continuar</strong> para que el proceso comience, o de lo contrario la recuperación de la contraseña no será posible, según las actuales configuraciones que Google emplea para este proceso,  que requiere que se sigan los pasos como se muestra antes que Google te reenvíe otro email que te permita ingresar otra contraseña.</p>
+
+<p><img src="/images/99.png" alt="clic continuar"></p>
+
+<p>Si no tienes acceso al método de recuperación que especificaste, aún así, Google te permite verificar tu identidad mediante otras preguntas con respuestas que se utilizaron durante el registro de la cuenta.</p>
 
     </div>
   

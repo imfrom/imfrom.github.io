@@ -212,15 +212,13 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -242,14 +240,19 @@
 <div class="post">
   <h1 class="post-title">Clamav Freshclam Update Definitions</h1>
   <span class="post-date">Aug 28, 2018</span>
-  <p>as the <!-- raw HTML omitted -->ClamAV arch linux wiki<!-- raw HTML omitted --> states, <strong>ClamAV</strong> is:</p>
+  <p>as the <a href="https://wiki.archlinux.org/index.php/ClamAV" target="_blank">ClamAV arch linux wiki</a> states, <strong>ClamAV</strong> is:</p>
+
 <blockquote>
-<p>Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV's main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.</p>
+<p>Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&rsquo;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.</p>
 </blockquote>
+
 <p>In order to update the definitions correctly is important to run first</p>
+
 <pre><code> freshclam
 </code></pre>
+
 <p>which should then start the update</p>
+
 <pre><code> ClamAV update process started at Tue Aug 28 01:16:43 2018
  Downloading main.cvd [100%]
  main.cvd updated (version: 58, sigs: 4566249, f-level: 60, builder: sigmgr)
@@ -259,33 +262,50 @@
  bytecode.cvd updated (version: 327, sigs: 91, f-level: 63, builder: neo)
  Database updated (6632776 signatures) from database.clamav.net (IP: )
 </code></pre>
+
 <p>But then an error came up saying that:</p>
+
 <pre><code> WARNING: Clamd was NOT notified: Can't connect to clamd through /run/clamav/clamd.ctl: No such file or directory
 </code></pre>
+
 <p>which left me unsure what could have been the issue.</p>
-<p>Googling about it returned among many of the results, some as in <!-- raw HTML omitted -->Can't connect to Unix socket /var/run//clamav/clamd.ctl<!-- raw HTML omitted -->, which dealt with the issue.</p>
-<p>The error here in which it dealt with <strong>clamd.ctl</strong> and not with <strong>clamd.sock connect ()</strong> as it was posted on the entry entitled <!-- raw HTML omitted -->Error Clamd was not notified<!-- raw HTML omitted -->.</p>
+
+<p>Googling about it returned among many of the results, some as in <a href="https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/" target="_blank">Can&rsquo;t connect to Unix socket /var/run//clamav/clamd.ctl</a>, which dealt with the issue.</p>
+
+<p>The error here in which it dealt with <strong>clamd.ctl</strong> and not with <strong>clamd.sock connect ()</strong> as it was posted on the entry entitled <a href="https://wiki.archlinux.org/index.php/ClamAV#Error:_Clamd_was_NOT_notified" target="_blank">Error Clamd was not notified</a>.</p>
+
 <p>But after running</p>
+
 <pre><code>  freshclam
 </code></pre>
-<p>I had already forgotten to start/enable <code>clamav-freshclam.service</code> as outlined on the Wiki <!-- raw HTML omitted -->ClamAV updating database<!-- raw HTML omitted --></p>
+
+<p>I had already forgotten to start/enable <code>clamav-freshclam.service</code> as outlined on the Wiki <a href="https://wiki.archlinux.org/index.php/ClamAV#Updating_database" target="_blank">ClamAV updating database</a></p>
+
 <p>so</p>
+
 <pre><code> systemctl start clamav-freshclam.service
  systemctl enable clamav-freshclam.service
 </code></pre>
+
 <p>Which returned:</p>
+
 <p><code>Created symlink /etc/systemd/system/multi-user.target.wants/clamav-freshclam.service → /usr/lib/systemd/system/clamav-freshclam.service.</code></p>
+
 <p>Later on by calling the status of that service with</p>
+
 <pre><code> systemctl status clamav-freshclam.service
 </code></pre>
+
 <p>returned</p>
+
 <pre><code> Aug 28 01:23:43  systemd[1]: Started ClamAV virus database upda&gt;
  Aug 28 01:23:43  freshclam[]: ClamAV update process started&gt;
  Aug 28 01:23:43  freshclam[]: main.cvd is up to date (versi&gt;
  Aug 28 01:23:43  freshclam[]: daily.cvd is up to date (vers&gt;
  Aug 28 01:23:43  freshclam[]: bytecode.cvd is up to date
 </code></pre>
-<p>But whether it would be necessary to enable it every time it restarts, it's something that I will deal with later on. I only needed it this time around to check some files, and that was the purpose of running it in the first place.</p>
+
+<p>But whether it would be necessary to enable it every time it restarts, it&rsquo;s something that I will deal with later on. I only needed it this time around to check some files, and that was the purpose of running it in the first place.</p>
 
 </div>
 

@@ -212,15 +212,13 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -247,45 +245,57 @@ that were used on kakoune, I was more interested on the
 options akin to the ones provided and which have been
 implemented on vim or neovim, such as e.g. showmatch,
 matchpairs.</p>
+
 <p>On vim this is something that could be easily
 obtained by having for example a <code>set showmatch</code> on the
-initialization file, but on kakoune, and although <!-- raw HTML omitted -->this
-issue on github<!-- raw HTML omitted --> seemed to
-point in the right direction, and the <!-- raw HTML omitted -->accompanying
-comment<!-- raw HTML omitted --> further specified that by having it [the function
+initialization file, but on kakoune, and although <a
+href="https://github.com/mawww/kakoune/issues/1192">this
+issue on github</a> seemed to
+point in the right direction, and the <a
+href="https://github.com/mawww/kakoune/issues/1192#issuecomment-277494934">accompanying
+comment</a> further specified that by having it [the function
 show_matching] called out by a hook directly from the configuration
-file, it still wouldn't quite load the <code>add-highlighter</code> onto the
+file, it still wouldn&rsquo;t quite load the <code>add-highlighter</code> onto the
 buffer.</p>
+
 <p>Perhaps and one of the feasible explanations is that at the
 time this issue came up, other changes may have been further
 implemented from the developing side, thus preventing from
 having this function working as I would have thought, and in
 what seemed to be almost a basic functionality.</p>
+
 <pre><code>  hook global WinCreate .* %{
     addhl show_matching
   }
 </code></pre>
+
 <p>Without having the above on the config file, I was able to
 see from the buffer that the <code>add-highlighter</code> option would
 come up without a problem, followed by <code>path/name</code> and ending
 up with <code>type</code> and <code>type params</code> to be specified accordingly.</p>
+
 <p>Furthermore, calling out both <code>addhl</code> with either <code>global</code> or
 <code>window</code> or <code>buffer</code> seemed to work fine for <code>show_matching</code>
 to highlight the opening and closing delimiters. On the
 buffer that is, but I needed to have the changes applied
 globally and soon after restarting the editor. The settings
 needed to be called out directly from the <strong>kakrc</strong> file.</p>
+
 <p>All in all, and after changing the values around to have
-<code>add-highlighter</code> instead of <code>addhl</code> (although I couldn't
+<code>add-highlighter</code> instead of <code>addhl</code> (although I couldn&rsquo;t
 think of a valid reason), and further adding to the snippet
 some values such as a <code>buffer</code> right after <code>addhl</code> instead,
-I noticed all of it wouldn't add up. The hook had already
+I noticed all of it wouldn&rsquo;t add up. The hook had already
 specified it as such.</p>
+
 <p>The only thing left was to have <code>addhl</code> directly on the
 initialization file without invoking a hook.</p>
-<p>And that's exactly what I did</p>
+
+<p>And that&rsquo;s exactly what I did</p>
+
 <pre><code> addhl global\ show-matching 
 </code></pre>
+
 <p>The opening and closing pairs would highlight accordingly.</p>
 
 </div>

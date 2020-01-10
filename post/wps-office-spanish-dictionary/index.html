@@ -212,15 +212,13 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -242,35 +240,57 @@
 <div class="post">
   <h1 class="post-title">Wps Office Spanish Dictionary</h1>
   <span class="post-date">Dec 30, 2019</span>
-  <p>I've installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&hellip;</p>
+  <p>I&rsquo;ve installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&hellip;</p>
+
 <p>Although many users prefer the advantages provided by a cloud stored-word processing program such as the one provided by Google, I tend to steer away from it mainly because of response time within the application.</p>
-<p>But I'm not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation  - has failed to develop such a feature.</p>
+
+<p>But I&rsquo;m not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation  - has failed to develop such a feature.</p>
+
 <p>For this simple implementation alone I consider it an advantage over any desktop solution.</p>
-<p>But when it comes to locally installed programs,  I've tried to consider the pros and cons and one way or another I've always tried to install - as I said earlier - the one with the overall best response time&hellip;</p>
+
+<p>But when it comes to locally installed programs,  I&rsquo;ve tried to consider the pros and cons and one way or another I&rsquo;ve always tried to install - as I said earlier - the one with the overall best response time&hellip;</p>
+
 <p>For this reason alone - notwithstanding the license under which the program is developed and which its devs and maintainers have put it in use, and which I always encourage to go over some its terms to clarify any ambiguity,  and also without disregarding either the proprietary background of the company Kingsoft Office, which is the one that came up with the product,  <a href="https://www.wps.com/linux">wps office for linux</a> provides almost exactly,  what a vendor such as Microsoft has been abled to successfully come up with over the years: a whole suite of spreadsheet, word processor, and presentation programs.</p>
-<p>As it's usually the case whenever I'm using this program, I've always toggled back and forth between languages and the dictionaries in use, and even though is no less true that one could easily go directly to whatever pre-compiled version the distribution has put together for the user, to have it installed on the machine nonetheless &ndash; along with the language pack for it &ndash; , the devs have modified or for a better usage of the word - have diverged over the years  as to where the destination directories for these dictionaries are to be placed under.</p>
+
+<p>As it&rsquo;s usually the case whenever I&rsquo;m using this program, I&rsquo;ve always toggled back and forth between languages and the dictionaries in use, and even though is no less true that one could easily go directly to whatever pre-compiled version the distribution has put together for the user, to have it installed on the machine nonetheless &ndash; along with the language pack for it &ndash; , the devs have modified or for a better usage of the word - have diverged over the years  as to where the destination directories for these dictionaries are to be placed under.</p>
+
 <p>At one point the download link for the language of choice was available by going directly to the website, but for one reason or another the link was no longer accessible.</p>
-<p>As I've said before, the distro most likely would have it available.</p>
-<p>But I personally didn't want to go this route this time around and wanted instead to install the language pack so the program would identify it.</p>
+
+<p>As I&rsquo;ve said before, the distro most likely would have it available.</p>
+
+<p>But I personally didn&rsquo;t want to go this route this time around and wanted instead to install the language pack so the program would identify it.</p>
+
 <p>The destination for the dictionaries is not under <code>.local</code> but rather over at</p>
+
 <pre><code>/usr/lib/office6/
-</code></pre><p>therein another subdirectory under <code>dicts</code> entitled <code>spellcheck/</code> which further shows the default language directory - which is normally <strong>en_US</strong>.</p>
+</code></pre>
+
+<p>therein another subdirectory under <code>dicts</code> entitled <code>spellcheck/</code> which further shows the default language directory - which is normally <strong>en_US</strong>.</p>
+
 <p>The language pack dictionary for wps-office namely provides three (3) files with the suffixes:</p>
+
 <ul>
 <li>*.dic</li>
 <li>*.aff</li>
 <li>*.conf</li>
 </ul>
+
 <p>All of these files must be copied over to a newly created directory under the same subdirectory <code>dicts/spellcheck</code> as it was outlined earlier.</p>
-<p>Make sure the directory for which these other language files are to be put, is   either copied in its entirety - the whole directory with all the aforementioned files - or that the directory in question is indeed created from scratch&hellip; There's no other way around this issue, as long as wps-office identiffies and recognizes multiple dictionaries to be loaded up as soon as the program starts.</p>
+
+<p>Make sure the directory for which these other language files are to be put, is   either copied in its entirety - the whole directory with all the aforementioned files - or that the directory in question is indeed created from scratch&hellip; There&rsquo;s no other way around this issue, as long as wps-office identiffies and recognizes multiple dictionaries to be loaded up as soon as the program starts.</p>
+
 <p>The filenames for all the dictionaries - whether these are from the packaged <strong>en_US</strong>, or <strong>en_GB</strong>, or <strong>es_ES</strong>, or <strong>es_MX</strong> etc all have identical names, thus:</p>
+
 <ul>
 <li>main.dic</li>
 <li>main.aff</li>
 <li>dict.conf</li>
 </ul>
+
 <p>comprise the <del>file</del> directory list&hellip;.</p>
-<p>That's why I - without trying to sound pedantic - brought up the reason as by which one must be careful,  not to simply copy over just the additional files for the other language to be used, as this could potentially <strong>overwrite</strong> the rest.</p>
+
+<p>That&rsquo;s why I - without trying to sound pedantic - brought up the reason as by which one must be careful,  not to simply copy over just the additional files for the other language to be used, as this could potentially <strong>overwrite</strong> the rest.</p>
+
 <p>The other option would be by trying to <strong>rename</strong> the files &ndash; from say a hunspell installation &ndash; to <code>main.aff</code>, <code>main.dic</code>, and modifiy the contents of the file <code>dict.conf</code> respectively to the preferred  language in question.</p>
 
 </div>

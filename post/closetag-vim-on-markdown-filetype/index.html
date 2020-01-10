@@ -212,15 +212,13 @@
     
       
     
-      
-    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2019. All rights reserved.</p>
   </div>
 </div>
 
@@ -242,22 +240,33 @@
 <div class="post">
   <h1 class="post-title">Closetag Vim on Markdown Filetype</h1>
   <span class="post-date">Dec 17, 2018</span>
-  <p>I coudln't help but noticing that the closetag plugin script for vim wasn't working on any of the markdown files that had been previously edited.</p>
+  <p>I coudln&rsquo;t help but noticing that the closetag plugin script for vim wasn&rsquo;t working on any of the markdown files that had been previously edited.</p>
+
 <p>The markdown files in question were of the abbreviated form <code>md</code> and not <code>markdown</code>.</p>
+
 <p>It did work without a problem on any newly-created file and whether these files were of the form or had the extension <code>md</code> or <code>markdown</code>.</p>
+
 <p>The README file of <strong>closetag</strong> specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:</p>
+
 <pre><code> let g:closetag_filenames = &quot;*.html, *.xhtml, *.phtml&quot;
 </code></pre>
-<p>etcetera. <!-- raw HTML omitted --><!-- raw HTML omitted -->1<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+<p>etcetera. <a href="#closetagreadme"><sup id="closetagreadmeref">1</sup></a></p>
+
 <p>At one given point I recall having <code>*.md</code>, which was more than enough for the <strong>closetag</strong> plugin to work without a problem, even with previously edited files.</p>
+
 <p>This time around however, only having <code>*.md</code> did not remedy the problem.</p>
+
 <p>Having <code>*.markdown</code> on the vim initialization file was necessary for the
 <strong>closetag</strong> plugin to work with previously edited markdown files that held a
 suffix <code>.md</code> extension</p>
+
 <pre><code> let g:closetag_filenames = &quot;*.md, *.mardown&quot;
 </code></pre>
+
 <p><strong>References</strong></p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->README file for closetag<!-- raw HTML omitted --><!-- raw HTML omitted -->↵ <!-- raw HTML omitted --></p>
+
+<p><a name="closetagreadme"></a><a href="https://github.com/alvan/vim-closetag/blob/master/README.md#options" target="blank">README file for closetag</a><a href="#closetagreadmeref">&crarr; </a></p>
 
 </div>
 
