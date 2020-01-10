@@ -245,25 +245,20 @@ kakoune. Many of the features that I
 have found with vim or neovim for that
 matter in the past, have finally been
 implemented on this editor.</p>
-
 <p>It is, however, one of the best modal
 editors currently in development and I
 encourage anyone who may be interested on
 the modality of these sort of editors,
 to try it out.</p>
-
 <p>I wanted to see how well this editor
 handled key mappings to invoke a command
 from within the shell.</p>
-
 <p>The map keys doc which can be found at <a
 href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
 target="_blank">mapping.ascii</a>
-specifies that <code>map [switches] &lt;scope&gt;
-&lt;mode&gt; &lt;key&gt; &lt;keys&gt;</code> would be the recomme
+specifies that <code>map [switches] &lt;scope&gt; &lt;mode&gt; &lt;key&gt; &lt;keys&gt;</code> would be the recomme
 nded way to map a key to the desired
 parameter.</p>
-
 <p>Further googling about this issue, led me
 to a post at <a
 href="https://discuss.kakoune.com/t/how-to-execute-shell-commands-with-the-current-file-name/"
@@ -273,32 +268,23 @@ filename</a> in which a user asked for a
 similar configuration on the kakrc
 initialization file to invoke a command
 within the shell for the current buffer.</p>
-
 <p>But unfortunately the suggested
 recommendation for a latex file in this
 case, would not work.</p>
-
 <p>At the very least, the WinSetOption
 variable must have a normal mode to which
 the key is mapped to.</p>
-
 <p>So the correct way to  map the key would be</p>
-
 <pre><code> map global normal &lt;c-x&gt; ':w&lt;ret&gt; $ latex $kak_buffile'
 </code></pre>
-
 <p>In that case, <strong>ctrl</strong> and <strong>x</strong> are bound
 to save the file and invoke the shell
 command.</p>
-
 <p>If other options are needed then specify
 it accordingly</p>
-
 <p><strong>References</strong></p>
-
 <p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
 target="_blank">kakoune mapping</a></p>
-
 <p><a
 href="https://github.com/mawww/kakoune/wiki/Normal-mode-commands"
 target="_blank">Kakoune normal mode

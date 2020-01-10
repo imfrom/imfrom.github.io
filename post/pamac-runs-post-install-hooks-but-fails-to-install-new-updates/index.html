@@ -242,22 +242,17 @@
   <span class="post-date">Jul 18, 2018</span>
   <p>The GUI version of <strong>pacman</strong> which runs under Antergos
 installed the scheduled updates as expected.</p>
-
 <p>But as soon as new updates were found it just failed to
 install them.</p>
-
 <p>In this case, after running the post installation hooks, it
 found a new update for one of the programs. But this time
 however, it failed to even initialized the transaction.</p>
-
 <p>Although it could have been relatively simple to circumvent
 the problem by seeing through <strong>pacman</strong> itself what the error
 was, but just closing the <strong>pamac</strong> application, seemed all
 that was needed to have the problem fixed.</p>
-
 <p>Soon after, the GUI version <strong>pamac</strong> had no further issues
 to install the updates accordingly.</p>
-
 <p>Perhaps this is is just a reminder not to fully rely on
 <strong>pamac</strong> and used the main package manager for any Arch
 based distribution.</p>

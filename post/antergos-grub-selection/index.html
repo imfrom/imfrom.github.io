@@ -241,39 +241,24 @@
   <h1 class="post-title">Antergos Grub Selection</h1>
   <span class="post-date">Jan 20, 2018</span>
   <p>During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.</p>
-
 <p>Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.</p>
-
 <p>this is even after running the usual <code>mkinitcpio -p &lt;linux kernel&gt;</code> that loads the modules and other dependencies accordingly.</p>
-
 <p>It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</p>
-
 <p>With sudo privileges, access the file at /boot/default/grub first.</p>
-
 <p>Therein, and lying at the bottom of the configuration file, one can find the:</p>
-
 <pre><code> # Uncomment to make GRUB remember the last selection. This requires to
  # set 'GRUB_DEFAULT=saved' above.
  #GRUB_SAVEDEFAULT=&quot;true&quot;
 </code></pre>
-
-<p>One could uncomment the GRUB_SAVEDEFAULT=&ldquo;true&rdquo; so the grub configuration file ‘remembers’ the selection.</p>
-
+<p>One could uncomment the GRUB_SAVEDEFAULT=&quot;true&rdquo; so the grub configuration file ‘remembers’ the selection.</p>
 <p>Furthermore, and right on the top of the file the default chosen selection can be specified by modifying the value of 0:</p>
-
-<p># GRUB boot loader configuration</p>
-
+<h1 id="grub-boot-loader-configuration">GRUB boot loader configuration</h1>
 <p>GRUB_DEFAULT=0
 To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is to be loaded instead, matched the kernel itself and the fallback for it.</p>
-
 <p>By going this route, it no longer is necessary in specifying during the system startup, the desired kernel that one chooses to be loaded.</p>
-
 <p>Remember after making any changes to grub, to update the configuration file by running:</p>
-
 <p>grub-mkconfig -o /boot/grub/grub.cfg</p>
-
 <p>For more info about this, visit the wiki:</p>
-
 <p><a href="https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks" target="_blank">GRUB/Tips and tricks</a></p>
 
 </div>

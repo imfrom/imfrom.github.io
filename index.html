@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.58.3" />
+	<meta name="generator" content="Hugo 0.60.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -246,57 +246,35 @@
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/wps-office-spanish-dictionary/">Wps Office Spanish Dictionary</a></h1>
         <span class="post-date">Dec 30, 2019</span>
-        <p>I&rsquo;ve installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&hellip;</p>
-
+        <p>I've installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&hellip;</p>
 <p>Although many users prefer the advantages provided by a cloud stored-word processing program such as the one provided by Google, I tend to steer away from it mainly because of response time within the application.</p>
-
-<p>But I&rsquo;m not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation  - has failed to develop such a feature.</p>
-
+<p>But I'm not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation  - has failed to develop such a feature.</p>
 <p>For this simple implementation alone I consider it an advantage over any desktop solution.</p>
-
-<p>But when it comes to locally installed programs,  I&rsquo;ve tried to consider the pros and cons and one way or another I&rsquo;ve always tried to install - as I said earlier - the one with the overall best response time&hellip;</p>
-
+<p>But when it comes to locally installed programs,  I've tried to consider the pros and cons and one way or another I've always tried to install - as I said earlier - the one with the overall best response time&hellip;</p>
 <p>For this reason alone - notwithstanding the license under which the program is developed and which its devs and maintainers have put it in use, and which I always encourage to go over some its terms to clarify any ambiguity,  and also without disregarding either the proprietary background of the company Kingsoft Office, which is the one that came up with the product,  <a href="https://www.wps.com/linux">wps office for linux</a> provides almost exactly,  what a vendor such as Microsoft has been abled to successfully come up with over the years: a whole suite of spreadsheet, word processor, and presentation programs.</p>
-
-<p>As it&rsquo;s usually the case whenever I&rsquo;m using this program, I&rsquo;ve always toggled back and forth between languages and the dictionaries in use, and even though is no less true that one could easily go directly to whatever pre-compiled version the distribution has put together for the user, to have it installed on the machine nonetheless &ndash; along with the language pack for it &ndash; , the devs have modified or for a better usage of the word - have diverged over the years  as to where the destination directories for these dictionaries are to be placed under.</p>
-
+<p>As it's usually the case whenever I'm using this program, I've always toggled back and forth between languages and the dictionaries in use, and even though is no less true that one could easily go directly to whatever pre-compiled version the distribution has put together for the user, to have it installed on the machine nonetheless &ndash; along with the language pack for it &ndash; , the devs have modified or for a better usage of the word - have diverged over the years  as to where the destination directories for these dictionaries are to be placed under.</p>
 <p>At one point the download link for the language of choice was available by going directly to the website, but for one reason or another the link was no longer accessible.</p>
-
-<p>As I&rsquo;ve said before, the distro most likely would have it available.</p>
-
-<p>But I personally didn&rsquo;t want to go this route this time around and wanted instead to install the language pack so the program would identify it.</p>
-
+<p>As I've said before, the distro most likely would have it available.</p>
+<p>But I personally didn't want to go this route this time around and wanted instead to install the language pack so the program would identify it.</p>
 <p>The destination for the dictionaries is not under <code>.local</code> but rather over at</p>
-
 <pre><code>/usr/lib/office6/
-</code></pre>
-
-<p>therein another subdirectory under <code>dicts</code> entitled <code>spellcheck/</code> which further shows the default language directory - which is normally <strong>en_US</strong>.</p>
-
+</code></pre><p>therein another subdirectory under <code>dicts</code> entitled <code>spellcheck/</code> which further shows the default language directory - which is normally <strong>en_US</strong>.</p>
 <p>The language pack dictionary for wps-office namely provides three (3) files with the suffixes:</p>
-
 <ul>
 <li>*.dic</li>
 <li>*.aff</li>
 <li>*.conf</li>
 </ul>
-
 <p>All of these files must be copied over to a newly created directory under the same subdirectory <code>dicts/spellcheck</code> as it was outlined earlier.</p>
-
-<p>Make sure the directory for which these other language files are to be put, is   either copied in its entirety - the whole directory with all the aforementioned files - or that the directory in question is indeed created from scratch&hellip; There&rsquo;s no other way around this issue, as long as wps-office identiffies and recognizes multiple dictionaries to be loaded up as soon as the program starts.</p>
-
+<p>Make sure the directory for which these other language files are to be put, is   either copied in its entirety - the whole directory with all the aforementioned files - or that the directory in question is indeed created from scratch&hellip; There's no other way around this issue, as long as wps-office identiffies and recognizes multiple dictionaries to be loaded up as soon as the program starts.</p>
 <p>The filenames for all the dictionaries - whether these are from the packaged <strong>en_US</strong>, or <strong>en_GB</strong>, or <strong>es_ES</strong>, or <strong>es_MX</strong> etc all have identical names, thus:</p>
-
 <ul>
 <li>main.dic</li>
 <li>main.aff</li>
 <li>dict.conf</li>
 </ul>
-
 <p>comprise the <del>file</del> directory list&hellip;.</p>
-
-<p>That&rsquo;s why I - without trying to sound pedantic - brought up the reason as by which one must be careful,  not to simply copy over just the additional files for the other language to be used, as this could potentially <strong>overwrite</strong> the rest.</p>
-
+<p>That's why I - without trying to sound pedantic - brought up the reason as by which one must be careful,  not to simply copy over just the additional files for the other language to be used, as this could potentially <strong>overwrite</strong> the rest.</p>
 <p>The other option would be by trying to <strong>rename</strong> the files &ndash; from say a hunspell installation &ndash; to <code>main.aff</code>, <code>main.dic</code>, and modifiy the contents of the file <code>dict.conf</code> respectively to the preferred  language in question.</p>
 
     </div>
@@ -305,24 +283,14 @@
         <h1 class="post-title"><a href="https://imfrom.github.io/post/sed-and-awk-to-print-ranges/">Sed and Awk to Print Ranges</a></h1>
         <span class="post-date">Dec 27, 2019</span>
         <p><code>sed</code> and <code>awk</code> are very powerful tools that would yield results unlike anything else in *Nix.</p>
-
-<p>Although one could certainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it&rsquo;s always the case: available,  for even other menial tasks.</p>
-
+<p>Although one could certainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it's always the case: available,  for even other menial tasks.</p>
 <p>Printing a given range of lines would undoubtedly come practical during those times when simply displaying them directly by invoking the manual is proven not to be the most straightforward method.</p>
-
 <p>So for this purpose both <code>sed</code> and <code>awk</code> serve me well.</p>
-
 <p>If I were to invoke with <code>sed</code> a certain range of lines to print say from the XParseGeometry manual or from any other file on the system, filtering it out gives - as the proverbial saying goes - power for the money.</p>
-
-<p>Yes, it helps to have the entire <code>man</code> pages on the terminal, but it wouldn&rsquo;t filter out the results as I have wanted it to. One may try by using <code>grep</code> but I wasn&rsquo;t interested this time around to use it.</p>
-
+<p>Yes, it helps to have the entire <code>man</code> pages on the terminal, but it wouldn't filter out the results as I have wanted it to. One may try by using <code>grep</code> but I wasn't interested this time around to use it.</p>
 <p>So</p>
-
 <pre><code>man XParseGeometry | awk 'NR==20,NR==40' 
-</code></pre>
-
-<p>would hence return:</p>
-
+</code></pre><p>would hence return:</p>
 <pre><code>
        display   Specifies the connection to the X server.
 
@@ -344,19 +312,11 @@
                  dow.
 
        x_return
-</code></pre>
-
-<p>returned what I was after..</p>
-
+</code></pre><p>returned what I was after..</p>
 <p>With <code>sed</code> things are perhps easier, and a great many users recommend to go this route for simple tasks such as the one I usually encounter.</p>
-
 <p>on the terminal</p>
-
 <pre><code>man XParseGeometry | sed -n '20,40'p
-</code></pre>
-
-<p>would rightly return:</p>
-
+</code></pre><p>would rightly return:</p>
 <pre><code>
        display   Specifies the connection to the X server.
 
@@ -378,30 +338,16 @@
                  dow.
 
        x_return
-</code></pre>
-
-<p>which gives me exactly what I was after&hellip;.</p>
-
-<p>Of course, the magic of Unix doesn&rsquo;t stop there. One could further delve into even more  commands to give both <code>sed</code> and <code>awk</code> an unimaginable power for pattern searching without having to entirely <code>grep</code> it&hellip;</p>
-
+</code></pre><p>which gives me exactly what I was after&hellip;.</p>
+<p>Of course, the magic of Unix doesn't stop there. One could further delve into even more  commands to give both <code>sed</code> and <code>awk</code> an unimaginable power for pattern searching without having to entirely <code>grep</code> it&hellip;</p>
 <p>Having other simple tasks such as looking up particular pattern on a given file, is much more easier which could print out the results satisfactorily&hellip;.</p>
-
 <p>for a given file <code>x</code></p>
-
 <pre><code>sed -n '2,4'p &lt;filename&gt;
-</code></pre>
-
-<p>and through <code>awk</code> a simple</p>
-
+</code></pre><p>and through <code>awk</code> a simple</p>
 <pre><code>awk 'NR==&lt;range&gt;,NR==&lt;range&gt;' &lt;filename&gt;
-</code></pre>
-
-<p>should suffice.</p>
-
+</code></pre><p>should suffice.</p>
 <p><strong>Further reading</strong></p>
-
 <p><a href="https://www.grymoire.com/Unix/Sed.html">https://www.grymoire.com/Unix/Sed.html</a></p>
-
 <p><a href="https://www.grymoire.com/Unix/Awk.html">https://www.grymoire.com/Unix/Awk.html</a></p>
 
     </div>
@@ -409,34 +355,30 @@
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/fc-list-get-fonts/">Fc-List Get Fonts</a></h1>
         <span class="post-date">Dec 23, 2019</span>
-        <p>It&rsquo;s always nice to have a &lsquo;cheat sheet&rsquo; summary of all sorts Unix to remember certain programs</p>
-
-<p>I usually have <code>Lua</code> looking this up for me through <code>otf</code> and <code>ttf</code> fonts, but it&rsquo;s been a while since I went this route.</p>
-
-<p><code>fontconfig</code>takes care of all font-related</p>
-
+        <p>It's always nice to have a &lsquo;cheat sheet&rsquo; summary of all sorts Unix to remember certain programs</p>
+<p>I usually have <code>Lua</code> looking this up for me through <code>otf</code> and <code>ttf</code> fonts, but it's been a while since I went this route.</p>
+<p><code>fontconfig </code>takes care of all font-related</p>
 <p><a href="https://www.freedesktop.org/wiki/Software/fontconfig/" target="_blank">fontconfig</a> takes care &ndash; as the freedesktop.org website states to</p>
-
 <ul>
-<li><p>discover new fonts when installed automatically, removing a common source of configuration problems.</p></li>
-
-<li><p>perform font name substitution, so that appropriate alternative fonts can be selected if fonts are missing.
-identify the set of fonts required to completely cover a set of languages.</p></li>
-
-<li><p>have GUI configuration tools built as it uses an XML-based configuration file (though with autodiscovery, we believe this need is minimized).
-efficiently and quickly find the fonts you need among the set of fonts you have installed, even if you have installed thousands of fonts, while minimzing memory usage.</p></li>
-
-<li><p>be used in concert with the X Render Extension and FreeType to implement high quality, anti-aliased and subpixel rendered text on a display.</p></li>
+<li>
+<p>discover new fonts when installed automatically, removing a common source of configuration problems.</p>
+</li>
+<li>
+<p>perform font name substitution, so that appropriate alternative fonts can be selected if fonts are missing.
+identify the set of fonts required to completely cover a set of languages.</p>
+</li>
+<li>
+<p>have GUI configuration tools built as it uses an XML-based configuration file (though with autodiscovery, we believe this need is minimized).
+efficiently and quickly find the fonts you need among the set of fonts you have installed, even if you have installed thousands of fonts, while minimzing memory usage.</p>
+</li>
+<li>
+<p>be used in concert with the X Render Extension and FreeType to implement high quality, anti-aliased and subpixel rendered text on a display.</p>
+</li>
 </ul>
-
-<p>But it does not provide any searching mechanism to look up a particular font on the system. Or at the very least not one that I&rsquo;m aware of anyway..</p>
-
+<p>But it does not provide any searching mechanism to look up a particular font on the system. Or at the very least not one that I'm aware of anyway..</p>
 <p>On the other hand, <code>fc-list</code> does list the fonts available on the system&hellip;</p>
-
 <p>The only caveat is that if I were to try to get the family name of the glyph in question, <code>fc-list</code> does provide it, but I would need to further <code>grep</code> it to not get a bunch of results.</p>
-
 <p><code>fc-list</code> is simply put:</p>
-
 <pre><code>FC-LIST(1)                                                     FC-LIST(1)
 
 NAME
@@ -452,10 +394,7 @@ DESCRIPTION
        cations  using  fontconfig.   If  any elements are specified, only
        those are printed.  Otherwise family and style are printed, unless
        verbose output is requested.
-</code></pre>
-
-<p>a printing mechanism to list the fonts on the system.</p>
-
+</code></pre><p>a printing mechanism to list the fonts on the system.</p>
 <p><code>grep</code> [ing] the font itself through the program filters out the family name of the font as well - and hether these are otf or ttf.</p>
 
     </div>
@@ -464,32 +403,20 @@ DESCRIPTION
         <h1 class="post-title"><a href="https://imfrom.github.io/post/pacman-gtk-doc-file-exists-in-filesystem/">Pacman Gtk Doc File Exists in Filesystem</a></h1>
         <span class="post-date">Nov 23, 2019</span>
         <p>It was odd that seemingly identical pamac installations loaded onto very similarly configured machines,  were somehow behaving differently on a great many occasions.</p>
-
 <p>Both pamac versions had been downloaded and configured and compiled apparently via the same procedure. Both systems also had been configured not much that different from one another. But on one of the systems, pamac would eventually return an error during the same updates.</p>
-
 <p>Pamac would simply hang, egregiously stuck at either:</p>
-
 <pre><code>  checking inter-dependencies
 </code></pre>
-
 <p>or during</p>
-
 <pre><code>  checking inter-conflicts
 </code></pre>
-
 <p>Of course, I could have just  dismissed all these errors and be happily content to just get rid of this nonsense by removing pamac altogether and start afresh from the official package manager, but I would have never been happy by either settling these problems through such trivialities, as long as another system, on which the very same package was installed, was not showing the same behavior.</p>
-
-<p>Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the <a href="https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error" target="_blank">Arch Wiki suggests</a>. But I always liked the design idea behind this graphical interfaced package provided with its updates&rsquo; notifications, which unlike pacman that would have required to manually tweak checking for these updates.</p>
-
-<p>But as it&rsquo;s usually the case, pacman was downright correct by identifying as closely as possible the culprit by which the system itself held <code>files already in filesystem</code>. This was clearly the case with the package <strong>gtk-doc</strong>, and somehow this conflict had to be resolved.</p>
-
-<p>But what I don&rsquo;t know, and it&rsquo;s my mistake since I didn&rsquo;t venture out - either at the time when it first occurred -, and much less now, because it&rsquo;d be a wildly-guessing why would this be the case, that even when two systems configured alike which in turn held the same package revisions,  were somehow behaving disparagingly different.</p>
-
-<p>I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors&rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.</p>
-
+<p>Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn't have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the <a href="https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error" target="_blank">Arch Wiki suggests</a>. But I always liked the design idea behind this graphical interfaced package provided with its updates&rsquo; notifications, which unlike pacman that would have required to manually tweak checking for these updates.</p>
+<p>But as it's usually the case, pacman was downright correct by identifying as closely as possible the culprit by which the system itself held <code>files already in filesystem</code>. This was clearly the case with the package <strong>gtk-doc</strong>, and somehow this conflict had to be resolved.</p>
+<p>But what I don't know, and it's my mistake since I didn't venture out - either at the time when it first occurred -, and much less now, because it'd be a wildly-guessing why would this be the case, that even when two systems configured alike which in turn held the same package revisions,  were somehow behaving disparagingly different.</p>
+<p>I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I'm perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors&rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.</p>
 <p>I did however, tried to stay as far away as possible from manually  removing  each of the files installed by the package [gtk-doc], but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process, that of having to go and remove each file owned by the package,  seemed to be the only inevitable method to circumvent this problem.</p>
-
-<p>After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&hellip; but it gives me pause and comfort in knowing that <code>checking inter-dependencies</code> or <code>checking file-conflcts</code> rolling hangs haven&rsquo;t returned to this annoyingly halting process.</p>
+<p>After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&hellip; but it gives me pause and comfort in knowing that <code>checking inter-dependencies</code> or <code>checking file-conflcts</code> rolling hangs haven't returned to this annoyingly halting process.</p>
 
     </div>
   
@@ -497,36 +424,21 @@ DESCRIPTION
         <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/">Pamac Error While Loading Shared Libraries Libalpm</a></h1>
         <span class="post-date">Nov 1, 2019</span>
         <p><a href="https://www.archlinux.org/pacman/libalpm.3.html">Libalpm</a> is the library for package management of Arch.</p>
-
 <p>I found it funny that in case of any bugs the team says</p>
-
 <blockquote>
 <p>Bugs? You must be kidding; there are no bugs in this software. But if we happen to be wrong, submit a bug report.</p>
 </blockquote>
-
-<p>But they&rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary  coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments. This is not to illegitimize whatever accomplishments have been put together by these teams, but it&rsquo;s still disparately sub-par compared to what Arch has offered.</p>
-
+<p>But they're right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary  coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments. This is not to illegitimize whatever accomplishments have been put together by these teams, but it's still disparately sub-par compared to what Arch has offered.</p>
 <p>During the last kernel update there was a problem with  pamac though</p>
-
 <p>Firing it up from the terminal was simply returning an</p>
-
 <pre><code>error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
-</code></pre>
-
-<p>Which considering how lazy I&rsquo;ve become over the years, and even more so after reading articles a few years ago such as <a href="https://en.wikipedia.org/wiki/Is_Google_Making_Us_Stupid%3F">Is Google making us stupid</a> by Atlantic technology writer Nicholas Carr, I couldn&rsquo;t wait to gobble it up or try to leave it up to Google to offer the best match to this undesired behavior I was getting.</p>
-
+</code></pre><p>Which considering how lazy I've become over the years, and even more so after reading articles a few years ago such as <a href="https://en.wikipedia.org/wiki/Is_Google_Making_Us_Stupid%3F">Is Google making us stupid</a> by Atlantic technology writer Nicholas Carr, I couldn't wait to gobble it up or try to leave it up to Google to offer the best match to this undesired behavior I was getting.</p>
 <p>The first query by the algorithms of Google returned an issue over at <a href="https://github.com/Jguer/yay/issues/1087" target="_blank">yay: error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory </a></p>
-
-<p>But thinking about it again, the issue pertained mostly to <a href="https://aur.archlinux.org/packages/yay/" target="_blank"> aur.archlinux.org/packages/yay/</a> which I&rsquo;ve never installed. Perhaps I had done it years earlier on another different system, but not on the current machines I&rsquo;ve been running.</p>
-
+<p>But thinking about it again, the issue pertained mostly to <a href="https://aur.archlinux.org/packages/yay/" target="_blank"> aur.archlinux.org/packages/yay/</a> which I've never installed. Perhaps I had done it years earlier on another different system, but not on the current machines I've been running.</p>
 <p>The second queried result though, took me to <a href="https://rtfm.co.ua/en/arch-linux-package-query-error-while-loading-shared-libraries-libalpm-so-11-2/" target="_blank"> Arch Linux: package-query: error while loading shared libraries: libalpm.so.11</a>, but as soon as I read about making a symbolic link, which the author of article rightfully pointed out that although it could be done,  is not recommended and just plain wrong to go that route..</p>
-
-<p>The other solution from the same article, involved reinstalling <a href="https://aur.archlinux.org/packages/package-query/" target="_blank"> aur package query</a>, but then again, I didn&rsquo;t even have package-query on that particular system&hellip;. and unfortunaetly reinstalling pamac didn&rsquo;t resolve the issue as he had stated it.</p>
-
+<p>The other solution from the same article, involved reinstalling <a href="https://aur.archlinux.org/packages/package-query/" target="_blank"> aur package query</a>, but then again, I didn't even have package-query on that particular system&hellip;. and unfortunaetly reinstalling pamac didn't resolve the issue as he had stated it.</p>
 <p>Downloading the newest version and configuring it later on did the trick&hellip;</p>
-
 <p>Somehow it seemed that during the latest upgrade, the installation of  pamac, which occured during the same kernel upgrade and which it was done  by the interface itself did not go as planned&hellip;.</p>
-
 <p>This had to be done again not only with <code>makepkg</code> but with a newer version, in order to have it running again.</p>
 
     </div>
@@ -535,23 +447,14 @@ DESCRIPTION
         <h1 class="post-title"><a href="https://imfrom.github.io/post/arch-linux-javaws-no-such-file-or-directory/">Arch Linux Javaws No Such File or Directory</a></h1>
         <span class="post-date">Oct 10, 2019</span>
         <p>Trying to get <code>javaws</code> to work without a glitch on one of the systems it was tested under, proved to be a chore.</p>
-
-<p>The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that&rsquo;d normally take care of it.</p>
-
+<p>The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that'd normally take care of it.</p>
 <p>All the libraries for which <code>javaws</code> depended upon and for which it was being tested even under a different system seemed to have been installed. This included, <strong>jdk8-openjdk..</strong> and its counterparts.</p>
-
 <p>Apparently, during the installation, the path that had been set for <code>javaws</code> had been incorrectly identified.</p>
-
 <p>The error read as follows:</p>
-
 <pre><code>/usr/bin/javaws line 197: no such file or directory.
 
-</code></pre>
-
-<p>Upon further inspection of the line in question, is hard to pinpoint whether therein lied the problem or not&hellip;</p>
-
+</code></pre><p>Upon further inspection of the line in question, is hard to pinpoint whether therein lied the problem or not&hellip;</p>
 <p>Upon going ahead and after opening the <code>javaws</code> executable, I noticed that the path had been incorrectly set indeed by either some of the libraries during the initialization&hellip;. It was pointing out to a different location <strong>rather</strong> than where the files for the java environment were located instead.</p>
-
 <p>Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus <code>java=/location/of/java/default/</code> worked without a problem.</p>
 
     </div>
@@ -560,202 +463,167 @@ DESCRIPTION
         <h1 class="post-title"><a href="https://imfrom.github.io/post/pacman-unable-to-lock-database/">Pacman Unable to Lock Database</a></h1>
         <span class="post-date">Sep 15, 2019</span>
         <p>On a recent pacman upgrade, I encountered the error:</p>
-
 <pre><code>:: Synchronizing package databases...
 error: failed to update core (unable to lock database)
 error: failed to update extra (unable to lock database)
 error: failed to update community (unable to lock database)
 error: failed to synchronize all databases
-</code></pre>
-
-<p>the solution everytime is to remove the <code>db.lck</code> from the <code>/var/lib/</code> directory and restart pacman.</p>
-
+</code></pre><p>the solution everytime is to remove the <code>db.lck</code> from the <code>/var/lib/</code> directory and restart pacman.</p>
 <pre><code>rm /var/lib/db.lck
 pacman -Syyu
 </code></pre>
-
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/">Xclip With Kakoune Making It Work</a></h1>
         <span class="post-date">Mar 25, 2019</span>
-        
-
-<p>One of the pressing issues with Kakoune is the implementation
+        <p>One of the pressing issues with Kakoune is the implementation
 of <code>xclip</code> to use the clipboard selections.</p>
-
 <p>As the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers &ndash; Clipboard Wiki</a> states it:</p>
-
 <blockquote>
 <p>Notice that <a href="https://github.com/mawww/kakoune/issues/2325" target="_blank">xclip will not work using this example</a></p>
 </blockquote>
-
 <p>This was one of the reasons why I wanted to delve further into this issue.</p>
-
-<p>Anyhow, I&rsquo;ll copy-paste the various sections from the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers - Clipboard Wiki</a> that show a better overview of the steps to follow by adding the snippets into the initialization file, while using <code>xsel</code>. Then I will tweak around with the <code>xclip</code> features by using the three clipboards that <code>xclip</code> uses, namely, <code>p</code> (primary), <code>sec</code> (secondary), and finally <code>clip</code> for the clipboard.</p>
-
+<p>Anyhow, I'll copy-paste the various sections from the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers - Clipboard Wiki</a> that show a better overview of the steps to follow by adding the snippets into the initialization file, while using <code>xsel</code>. Then I will tweak around with the <code>xclip</code> features by using the three clipboards that <code>xclip</code> uses, namely, <code>p</code> (primary), <code>sec</code> (secondary), and finally <code>clip</code> for the clipboard.</p>
 <p>Those are the options available by the use of <code>xclip</code>.</p>
-
 <h3 id="using-the-system-clipboard">Using the System Clipboard</h3>
-
-<p>You can use kakoune with <a href="https://wiki.archlinux.org/index.php/Clipboard">system clipboard tools</a> like <code>xsel</code>, <code>xclip</code> or <code>pbcopy</code>/<code>pbpaste</code></p>
-
+<p>You can use kakoune with <a href="https://wiki.archlinux.org/index.php/Clipboard">system clipboard tools</a> like <code>xsel</code>, <code>xclip</code> or <code>pbcopy`/</code>pbpaste`</p>
 <h3 id="to-yank-copy">To yank (copy)</h3>
-
 <p><code>&lt;a-|&gt; xsel --input --clipboard &lt;ret&gt;</code></p>
-
 <p><code>&lt;a-|&gt;</code> pipes each selection through the given external filter program and ignore its output.</p>
+<p>You may want to use the following hook to automate the dialog with the system clipboard, on each <code>y</code>, <code>d</code> or <code>c</code> operations:</p>
+<pre><code>      hook global NormalKey y|d|c %{ nop %sh{
+              printf %s &quot;$kak_main_reg_dquote&quot; | xsel --input --clipboard
+      }}
 
-<p>You may want to use the following hook to automate the dialog with the system clipboard, on each <code>y</code>, <code>d</code> or <code>c</code> operations:
-```
-      hook global NormalKey y|d|c %{ nop %sh{
-              printf %s &ldquo;$kak_main_reg_dquote&rdquo; | xsel &ndash;input &ndash;clipboard
-      }}</p>
+### To paste
 
-<h3 id="to-paste">To paste</h3>
+`! xsel --output --clipboard &lt;ret&gt;`
 
-<p><code>! xsel --output --clipboard &lt;ret&gt;</code></p>
+`!` inserts program output before selection while `&lt;a-!&gt;` inserts program output after selection.
 
-<p><code>!</code> inserts program output before selection while <code>&lt;a-!&gt;</code> inserts program output after selection.</p>
+Therefore you can add the following mappings:
 
-<p>Therefore you can add the following mappings:</p>
+### Paste before
+`map global user P '!xsel --output --clipboard&lt;ret&gt;'`
 
-<h3 id="paste-before">Paste before</h3>
+### Paste after
+`map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'`
 
-<p><code>map global user P '!xsel --output --clipboard&lt;ret&gt;'</code></p>
+### How to use it now
+* y/d - yank/delete using internal clipboard AND system clipboard at once
+* p   - paste from internal clipboard
+* &lt;,p&gt; - paste after from system clipboard (, is default for user mode)
+* &lt;,P&gt; - paste before from system clipboard (, is default for user mode)
 
-<h3 id="paste-after">Paste after</h3>
+## How to make it work with Xclip instead.
 
-<p><code>map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'</code></p>
-
-<h3 id="how-to-use-it-now">How to use it now</h3>
-
-<ul>
-<li>y/d - yank/delete using internal clipboard AND system clipboard at once</li>
-<li>p   - paste from internal clipboard</li>
-<li>&lt;,p&gt; - paste after from system clipboard (, is default for user mode)</li>
-<li>&lt;,P&gt; - paste before from system clipboard (, is default for user mode)</li>
-</ul>
-
-<h2 id="how-to-make-it-work-with-xclip-instead">How to make it work with Xclip instead.</h2>
-
-<p>As I&rsquo;ve found out, and as the issue clearly showed, this is not
+As I've found out, and as the issue clearly showed, this is not
 currently possible by using Xclip under Kakoune, except of course by mapping
-a key to Normal mode and then calling out <code>xclip</code>.</p>
+a key to Normal mode and then calling out `xclip`.
 
-<p>As the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">freedesktop.org</a>  website states it, this is not a task
-that can be easily done as long as different clients have different methods that make use of these <code>clipboard</code> features.</p>
+As the [freedesktop.org](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)  website states it, this is not a task
+that can be easily done as long as different clients have different methods that make use of these `clipboard` features. 
 
-<p>quoting from the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">clipboards specifications freedesktop</a></p>
+quoting from the [clipboards specifications freedesktop](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)
 
-<blockquote>
-<p>There are two historical interpretations of the ICCCM:</p>
+&gt;There are two historical interpretations of the ICCCM:
 
-<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
-   explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
+&gt; a) use PRIMARY for mouse selection, middle mouse button paste, and
+&gt;    explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)
+&gt;
+&gt; b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+&gt;    use PRIMARY for the currently-selected text, even if it isn't
+&gt;    explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+&gt;    XEmacs, some GTK+ apps)
 
-<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
-   use PRIMARY for the currently-selected text, even if it isn&rsquo;t
-   explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
-   XEmacs, some GTK+ apps)</p>
+&gt;No one ever does anything interesting with SECONDARY as far as I can
+&gt;tell.
 
-<p>No one ever does anything interesting with SECONDARY as far as I can
-tell.</p>
+&gt;The current consensus is that interpretation b) is correct. Qt 3 and
+&gt;GNU Emacs 21 will use interpretation b), changing the behavior of
+&gt;previous versions.
 
-<p>The current consensus is that interpretation b) is correct. Qt 3 and
-GNU Emacs 21 will use interpretation b), changing the behavior of
-previous versions.</p>
-</blockquote>
+And it follows with:
 
-<p>And it follows with:</p>
+&gt;In addition, the ICCCM has a thing called &quot;cut buffers&quot; which most
+&gt;clients no longer support.
+&gt;
+&gt;There are two historical interpretations of the ICCCM:
+&gt;
+&gt; a) use PRIMARY for mouse selection, middle mouse button paste, and
+&gt;    explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)
+&gt;
+&gt; b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+&gt;    use PRIMARY for the currently-selected text, even if it isn't
+&gt;    explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+&gt;    XEmacs, some GTK+ apps)
 
-<blockquote>
-<p>In addition, the ICCCM has a thing called &ldquo;cut buffers&rdquo; which most
-clients no longer support.</p>
+And it summarizes it among many points with the following:
 
-<p>There are two historical interpretations of the ICCCM:</p>
 
-<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
-   explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
+&gt;The correct behavior can be summarized as follows: CLIPBOARD works
+&gt;just like the clipboard on Mac or Windows; it only changes on explicit
+&gt;cut/copy. PRIMARY is an &quot;easter egg&quot; for expert users, regular users
+&gt;can just ignore it; it's normally pastable only via
+&gt;middle-mouse-click.
 
-<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
-   use PRIMARY for the currently-selected text, even if it isn&rsquo;t
-   explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
-   XEmacs, some GTK+ apps)</p>
-</blockquote>
+So the best course of action, since `xclip` is known to be
+working fine under [vim](https://vim.org) or
+[neovim](https://neovim.org), would be to map say in this
+case, the `Y` key for yanking out operations, and the `P` key
+for pasting the selection.
 
-<p>And it summarizes it among many points with the following:</p>
-
-<blockquote>
-<p>The correct behavior can be summarized as follows: CLIPBOARD works
-just like the clipboard on Mac or Windows; it only changes on explicit
-cut/copy. PRIMARY is an &ldquo;easter egg&rdquo; for expert users, regular users
-can just ignore it; it&rsquo;s normally pastable only via
-middle-mouse-click.</p>
-</blockquote>
-
-<p>So the best course of action, since <code>xclip</code> is known to be
-working fine under <a href="https://vim.org">vim</a> or
-<a href="https://neovim.org">neovim</a>, would be to map say in this
-case, the <code>Y</code> key for yanking out operations, and the <code>P</code> key
-for pasting the selection.</p>
-
-<p>Of course, if other operations such as <code>delete</code> or <code>change</code>
+Of course, if other operations such as `delete` or `change`
 as Kakoune currently employs, need to be mapped, I believe
-that the keys can be assigned their own combinations.</p>
+that the keys can be assigned their own combinations.
 
-<p>We normally use the <code>clipboard</code> rather than the <code>primary</code> or
-<code>secondary</code> X selections:</p>
+We normally use the `clipboard` rather than the `primary` or
+`secondary` X selections:
 
-<h2 id="to-yank-with-xclip">To yank with Xclip</h2>
+## To yank with Xclip
 
-<pre><code> map global normal &lt;Y&gt; ' $ xclip -select clip '
+     map global normal &lt;Y&gt; ' $ xclip -select clip '
+
+## To paste with Xclip
+
+And to paste
+
+     map global normal P '&lt;!&gt; xclip -select clip -o'
+
+
+## Freeing register `&quot;` on Kakoune and yanking with p
+
+The above mapping of both the `Y` or `P` key registers,
+do not restrain the operations by which `y` that records the
+operation to register `&quot;`  or `p` that pastes it.
+
+There's no possible way to do it with the otherwise rest of
+the `clipboards` options that `xclip` uses, without further
+noticing that the register `y` that is used for normal
+yanking operations under Kakoune, wouldn't work as expected.
+And neither by pastting that same register `&quot;`.
+
+...
+
+**Other references**
+
+&lt;a href=&quot;https://unix.stackexchange.com/questions/22494/copy-file-to-xclip-and-paste-to-firefox&quot; target=&quot;_blanK&quot;&gt;unix stackexchange -- copy file to xclip and paste on firefox&lt;/a&gt;
 </code></pre>
-
-<h2 id="to-paste-with-xclip">To paste with Xclip</h2>
-
-<p>And to paste</p>
-
-<pre><code> map global normal P '&lt;!&gt; xclip -select clip -o'
-</code></pre>
-
-<h2 id="freeing-register-on-kakoune-and-yanking-with-p">Freeing register <code>&quot;</code> on Kakoune and yanking with p</h2>
-
-<p>The above mapping of both the <code>Y</code> or <code>P</code> key registers,
-do not restrain the operations by which <code>y</code> that records the
-operation to register <code>&quot;</code>  or <code>p</code> that pastes it.</p>
-
-<p>There&rsquo;s no possible way to do it with the otherwise rest of
-the <code>clipboards</code> options that <code>xclip</code> uses, without further
-noticing that the register <code>y</code> that is used for normal
-yanking operations under Kakoune, wouldn&rsquo;t work as expected.
-And neither by pastting that same register <code>&quot;</code>.</p>
-
-<p>&hellip;</p>
-
-<p><strong>Other references</strong></p>
-
-<p><a href="https://unix.stackexchange.com/questions/22494/copy-file-to-xclip-and-paste-to-firefox" target="_blanK">unix stackexchange &ndash; copy file to xclip and paste on firefox</a></p>
-
     </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/">Forwarding Email With Attachments Mutt Neomutt</a></h1>
         <span class="post-date">Mar 14, 2019</span>
         <p>Forwarding an email is a function usually  bound to the <code>f</code> key, but if there are any Attachments that were included on the email, high chances are,  that the attachments will not be selected.</p>
-
 <p>One could go directly to the attachments in question and selectively open each one of them. This in turn, will select the attachments, save the body of the email that had been sent on the original email. To do this, one would have to further select the remainder from the list.</p>
-
 <p>If various attachments are part of the email though, this otherwise seemingly
 simple task, may be somewhat inconvenient.</p>
-
 <p>One of the workarounds is to have <code>Esc-e</code> that uses the
 current message as a template for a new one.</p>
-
 <p>More information about this may be found at <a href="http://shallowsky.com/blog/tags/forward/">forwarding a
 message with attachments in
 Mutt</a></p>
-
 <p>More information about this may be found at <a href="http://shallowsky.com/blog/tags/forward/">forwarding a
 message with attachments in
 Mutt</a></p>
@@ -765,20 +633,16 @@ Mutt</a></p>
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/">Xterm Crashes With Ctrl Mouse Combination</a></h1>
         <span class="post-date">Mar 5, 2019</span>
-        <p>It seemed as if there&rsquo;s some sort of conflict by bringing up the menu on the xterm terminal.</p>
-
+        <p>It seemed as if there's some sort of conflict by bringing up the menu on the xterm terminal.</p>
 <p><kbd>Ctrl</kbd>+ 🖱 (rightmouse) is usually the way that one would bring the
 menu, but every time this was done, <strong>xterm</strong> was crashing.</p>
-
 <p>After going over some of the <strong>xorg-fonts-</strong>* packages, I noticed that some of
 them were not installed for the X system.</p>
-
 <p>Among them,  <strong>xorg-fonts-misc</strong> was not installed. I
 proceeded to install it and the menu was brought up
 successfully again by the <kbd>ctrl</kbd> rightmouse
 🖱combination.</p>
-
-<p>A bug report was properly sent out to address this issue. I don&rsquo;t recall from having this issue before, and/or when it even first appeared.</p>
+<p>A bug report was properly sent out to address this issue. I don't recall from having this issue before, and/or when it even first appeared.</p>
 
     </div>
   

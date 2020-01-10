@@ -240,64 +240,47 @@
 <div class="post">
   <h1 class="post-title">Kakoune Paste With Xclip</h1>
   <span class="post-date">Feb 3, 2019</span>
-  
-
-<p>The <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard"
+  <p>The <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard"
 target="_blank">kakoune wiki on github</a>
 goes at length on some of the steps to
 to follow in order to paste with the system clipboard</p>
-
 <p>It says to in order to paste before with
 <strong>xsel</strong> to</p>
-
 <pre><code> map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'
 </code></pre>
-
 <p>But in the case of  <strong>xclip</strong> for example,
 and by reading the man pages of <strong>xclip</strong></p>
-
 <pre><code> -selection
           specify which X selection to use, options are &quot;primary&quot; to
           use XA_PRIMARY (default), &quot;secondary&quot; for XA_SECONDARY  or
           &quot;clipboard&quot; for XA_CLIPBOARD
 </code></pre>
-
 <p>and</p>
-
 <pre><code> -o, -out
           print the selection to standard out (generally for  piping
           to a file or program)
 </code></pre>
-
 <p>So in order to paste with the system
 clipboard by using <strong>xclip</strong> instead,
 <code>clipboard</code> from <strong>xsel</strong> would have to
 be replaced with <code>selection</code> from
 <strong>xclip</strong>, so something in the lines of</p>
-
-<p><del>map global normal p &lsquo;<a-!>xclip -o -s<ret>&lsquo;</del></p>
-
+<p><del>map global normal p &lsquo;&lt;a-!&gt;xclip -o -s<ret>'</del></p>
 <p>But rather something like</p>
-
 <pre><code>   map global user p '&lt;a-!&gt;xclip -o -s &lt;ret&gt;'
-
+   
    map global user P '!xclip -o -s &lt;ret&gt;'
 </code></pre>
-
 <p>would suffice.</p>
-
 <h2 id="updates">Updates</h2>
-
-<p>I&rsquo;ve since stopped using the above since the way that
+<p>I've since stopped using the above since the way that
 <code>xclip</code> uses many of the
 <code>clipboards</code> do not seem to behave as expected under
 Kakoune.</p>
-
 <p><code>xclip</code> works without a setback under <a
 href="https://www.vim.org" target="_blank">vim</a> or even <a
 href="https://neovim.io" target="_blank">neovim</a>, and it
 was this that led me to make <code>xclip</code> work under Kakoune.</p>
-
 <p>See the <a href="../xclip-with-kakoune-making-it-work/">xclip with kakoune &ndash; making it
 work</a> for further info.</p>
 

@@ -241,24 +241,14 @@
   <h1 class="post-title">Sed and Awk to Print Ranges</h1>
   <span class="post-date">Dec 27, 2019</span>
   <p><code>sed</code> and <code>awk</code> are very powerful tools that would yield results unlike anything else in *Nix.</p>
-
-<p>Although one could certainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it&rsquo;s always the case: available,  for even other menial tasks.</p>
-
+<p>Although one could certainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it's always the case: available,  for even other menial tasks.</p>
 <p>Printing a given range of lines would undoubtedly come practical during those times when simply displaying them directly by invoking the manual is proven not to be the most straightforward method.</p>
-
 <p>So for this purpose both <code>sed</code> and <code>awk</code> serve me well.</p>
-
 <p>If I were to invoke with <code>sed</code> a certain range of lines to print say from the XParseGeometry manual or from any other file on the system, filtering it out gives - as the proverbial saying goes - power for the money.</p>
-
-<p>Yes, it helps to have the entire <code>man</code> pages on the terminal, but it wouldn&rsquo;t filter out the results as I have wanted it to. One may try by using <code>grep</code> but I wasn&rsquo;t interested this time around to use it.</p>
-
+<p>Yes, it helps to have the entire <code>man</code> pages on the terminal, but it wouldn't filter out the results as I have wanted it to. One may try by using <code>grep</code> but I wasn't interested this time around to use it.</p>
 <p>So</p>
-
 <pre><code>man XParseGeometry | awk 'NR==20,NR==40' 
-</code></pre>
-
-<p>would hence return:</p>
-
+</code></pre><p>would hence return:</p>
 <pre><code>
        display   Specifies the connection to the X server.
 
@@ -280,19 +270,11 @@
                  dow.
 
        x_return
-</code></pre>
-
-<p>returned what I was after..</p>
-
+</code></pre><p>returned what I was after..</p>
 <p>With <code>sed</code> things are perhps easier, and a great many users recommend to go this route for simple tasks such as the one I usually encounter.</p>
-
 <p>on the terminal</p>
-
 <pre><code>man XParseGeometry | sed -n '20,40'p
-</code></pre>
-
-<p>would rightly return:</p>
-
+</code></pre><p>would rightly return:</p>
 <pre><code>
        display   Specifies the connection to the X server.
 
@@ -314,30 +296,16 @@
                  dow.
 
        x_return
-</code></pre>
-
-<p>which gives me exactly what I was after&hellip;.</p>
-
-<p>Of course, the magic of Unix doesn&rsquo;t stop there. One could further delve into even more  commands to give both <code>sed</code> and <code>awk</code> an unimaginable power for pattern searching without having to entirely <code>grep</code> it&hellip;</p>
-
+</code></pre><p>which gives me exactly what I was after&hellip;.</p>
+<p>Of course, the magic of Unix doesn't stop there. One could further delve into even more  commands to give both <code>sed</code> and <code>awk</code> an unimaginable power for pattern searching without having to entirely <code>grep</code> it&hellip;</p>
 <p>Having other simple tasks such as looking up particular pattern on a given file, is much more easier which could print out the results satisfactorily&hellip;.</p>
-
 <p>for a given file <code>x</code></p>
-
 <pre><code>sed -n '2,4'p &lt;filename&gt;
-</code></pre>
-
-<p>and through <code>awk</code> a simple</p>
-
+</code></pre><p>and through <code>awk</code> a simple</p>
 <pre><code>awk 'NR==&lt;range&gt;,NR==&lt;range&gt;' &lt;filename&gt;
-</code></pre>
-
-<p>should suffice.</p>
-
+</code></pre><p>should suffice.</p>
 <p><strong>Further reading</strong></p>
-
 <p><a href="https://www.grymoire.com/Unix/Sed.html">https://www.grymoire.com/Unix/Sed.html</a></p>
-
 <p><a href="https://www.grymoire.com/Unix/Awk.html">https://www.grymoire.com/Unix/Awk.html</a></p>
 
 </div>
