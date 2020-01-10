@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>antergos on Blog del tecnólogo</title>
@@ -18,9 +18,7 @@
       <pubDate>Sat, 27 Jan 2018 08:49:17 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/</guid>
-      <description>One of the drawbacks during the installation of Antergos Linux was in identifying the keyboard layout option that was previously selected during the media installation.
-As a result only the default variant was being used after installing the system.
-I was able to identify the problem by going to the X window system xorg configuration file /etc/X11/xorg.d/00-keyboard.conf and noticing that the XkbLayout variant was not being properly identified as originally intended.</description>
+      <description></description>
     </item>
     
     <item>

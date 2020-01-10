@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.58.3" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -213,13 +213,15 @@
     
       
     
+      
+    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2019. All rights reserved.</p>
+    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 
@@ -244,68 +246,65 @@
 <div class="posts">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/">Hunspell-en in Conflict With Hunspell en_US</a></h1>
+        <span class="post-date">Aug 16, 2018</span>
+        <p>On a different machine running the latest updates from Arch, pacman would give the error (and rightly so) that <code>hunspell-en and hunspell-en_US are in conflict</code> and <code>could not satisfy dependencies</code> followed by <code>removing hunspell-en breaks dependency hunspell-en required by **antergos-common-meta**</code>.</p>
+<p>This was of course never a problem on the other machine in which <strong>antergos-common-meta</strong> was removed a while back. For the simple reason that the update related to anything <strong>hunspell</strong> was in this particular case only for <strong>hunspell-en_US</strong> as well as <strong>hunspell-es_any</strong> but not for, and this is important to note: <strong>hunspell-en</strong>. The latter includes all English dictionaries for US, UK, etc.</p>
+<p>So the question is how to resolve this impeding conflict during the updates? Simply by skipping the package on pacman during the updates, or simply by deselecting the packages that belong to **hunspell-en_** on pamac (the gui version for pacman) for which the conflict exists in the first place.</p>
+<pre><code> pacman -Su IgnorePkg=hunspell-en_US
+</code></pre>
+<p>See <!-- raw HTML omitted -->Skip package from being upgraded<!-- raw HTML omitted --> on the Arch Wiki.</p>
+<p>By removing <strong>antergos-common-meta</strong> the first time around on this particular
+as I had done a few weeks ago on the other machine, made no difference. And
+that's the reason as to why the above is recommended. That is, by skipping the
+packages in question that belong to <strong>hunspell-en_US</strong> for example first, and
+then by proceeding with the updates normally seems to be the most reasonable
+method.</p>
+<p>Once this is done, the next step would be to remove <strong>hunspell-en</strong> which would also remove <strong>antergos-common-meta</strong> by which the latter package relies on.</p>
+<p>Finally, the next step would be in installing the libraries for <strong>hunspell-en_US</strong>, or <strong>hunspell-en_GB</strong>, or <strong>hunspell-en_AU</strong> or <strong>hunspell-en_CA</strong>.</p>
+<p>Apparently, in the latest installation ISO image, this issue with <strong>hunspell</strong> and its dependencies has not been removed from the repositories that the installation media uses for the initial process. Which better explains as to why on the other machine which had the most recent Antergos installation, this problem was still present, whereas with the other machine in which I had removed <strong>antergos-common-meta</strong> which removed <strong>hunspell-en</strong> - the one that bundles all dictionaries for the English language - was never experienced.</p>
+
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/">Setup Network Printer Ip Address Port Number</a></h1>
         <span class="post-date">Aug 10, 2018</span>
         <p>Setting up a network printer seems not only problematic on Arch based systems, but also on Windows.</p>
-
 <p>The latter also gave me the proverbial run for the money.</p>
-
 <p>Even after I thought that the network printer had be configured correctly, errors such as <code>there was a problem processing document</code> after printing a test page, or simply the error stating that <code>the printer may not be connected</code> assured me that the network printer was not being correctly identified.</p>
-
 <p><strong>C</strong>ommon <strong>U</strong>nix <strong>P</strong>rinting <strong>S</strong>ervices or as its acronym that is better known for: CUPS, is without a doubt, the most reliable method to set up any printer, and especially those that depend upon a network to operate accordingly.</p>
-
 <p>It was not the first time setting up a network printer through CUPS, but
 contrary to the first time around when the printer was successfully configured
 on the system, in which the ip address had to be specified, and the connection
 port number of the socket was automatically picked up by CUPS, this time around
 however, specifying the ip address by itself made no difference with further
 configuration.</p>
-
 <p>The printer was still not recognized.</p>
-
 <p>I scoured Google for any relevant results that would help me troubleshoot the problem, but none of the results seemed to provide a definitive answer.</p>
-
 <p>The Arch Linux Forums was one of the first indicators that this issue was beyond a driver problem and rather a misconfiguration with the network printer.</p>
-
-<p>On the thread entitled <em>Printer setting cant find wireless printer</em>, a <a href="https://bbs.archlinux.org/viewtopic.php?pid=1605184#p1605184" target="_blank">reply provided</a> gave a couple of hints as to where to begin to troubleshot the problem.</p>
-
+<p>On the thread entitled <em>Printer setting cant find wireless printer</em>, a <!-- raw HTML omitted -->reply provided<!-- raw HTML omitted --> gave a couple of hints as to where to begin to troubleshot the problem.</p>
 <blockquote>
-<p>Your post is much too vague. What does your wireless printer advertise? You should be able to add it using its IP address in the CUPS interface like this: <a href="http://192.168.1.3">http://192.168.1.3</a>. You need to replace 192.168.1.3 by the IP of your printer and http:// could be socket:// lpd:// or something else&hellip; Maybe you also have to specify a port number like this: <a href="http://192.168.1.3:9100">http://192.168.1.3:9100</a>. If you can setup the printer in another OS (for example Windows); you might be able to find these by examining the properties of the printer.</p>
+<p>Your post is much too vague. What does your wireless printer advertise? You should be able to add it using its IP address in the CUPS interface like this: http://192.168.1.3. You need to replace 192.168.1.3 by the IP of your printer and http:// could be socket:// lpd:// or something else&hellip; Maybe you also have to specify a port number like this: http://192.168.1.3:9100. If you can setup the printer in another OS (for example Windows); you might be able to find these by examining the properties of the printer.</p>
 </blockquote>
-
 <p>The problem with Windows however, is that Windows itself does not provide a simple port configuration method that would have allowed me to see the ip address and the port that was currently in use.</p>
-
 <p>This time around CUPS had already specified the ip address and the connection for the socket. But everything else for even the location had already been noted. Furthermore, I double checked it against the settings for the wireless configuration of the printer. Not solely relying on whatever configuration the display showed but also by printing out right from the printer the specifics of the configuration.</p>
-
 <p>When I ventured out to get a glimpse through a Windows system that would allow me to double check the settings, I encountered though, an unforeseen <code>An error occurred during port configuration. This operation is not supported</code> which prevented me any further from finding out about the ip address and port number configuration.</p>
-
-<p><img src="/images/windows-port-error-configuration.png" alt="" /></p>
-
+<p><img src="/images/windows-port-error-configuration.png" alt=""></p>
 <p>This however, was not expected.</p>
-
-<p>On this question that was brought up on the stackexchange network, the user asked <a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed" target="_blank">to list all network printers (including ones not installed)</a> and although it hinted that the program <strong>lpstat</strong> with the flag <code>-a</code> was one that would undertake the task, as the user pointed out, this would not apply to those printers that have not been installed.</p>
-
+<p>On this question that was brought up on the stackexchange network, the user asked <!-- raw HTML omitted -->to list all network printers (including ones not installed)<!-- raw HTML omitted --> and although it hinted that the program <strong>lpstat</strong> with the flag <code>-a</code> was one that would undertake the task, as the user pointed out, this would not apply to those printers that have not been installed.</p>
 <p>Another command that would certainly come handy is <code>lpinfo -v</code> but more than what it provided was therefore needed.</p>
-
-<p>On another thread entitled <a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer" target="_blank">linux - how do you get the name of a network printer</a> one of the comments said that:</p>
-
+<p>On another thread entitled <!-- raw HTML omitted -->linux - how do you get the name of a network printer<!-- raw HTML omitted --> one of the comments said that:</p>
 <blockquote>
 <p>When I run the nmap command it never seems to complete.</p>
 </blockquote>
-
 <p><a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485">https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485</a></p>
-
 <p>which pretty much matches many of the issues that I have encountered with the program.</p>
-
 <p>The only workaround with this pervasive problem of a printer that depends solely on the network, is through some sort of initial setup performed namely through a Windows system that would point it out. So by confirming the correct ip address and port numbers of the printer, would be more than enough to specify it as such on the location of the CUPS for the printer in question. Until then, and just like a user on the Arch Forums said:</p>
-
 <blockquote>
-<p>The problem here is that the criteria (&ldquo;Network Printer&rdquo;) is something that only makes sense to humans. Computer programs aren&rsquo;t going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &lsquo;14 at 18:16</p>
+<p>The problem here is that the criteria (&ldquo;Network Printer&rdquo;) is something that only makes sense to humans. Computer programs aren't going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &lsquo;14 at 18:16</p>
 </blockquote>
-
 <p><strong>References</strong></p>
-
-<p><a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009" target="_blank">unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009</a></p>
+<p><!-- raw HTML omitted -->unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009<!-- raw HTML omitted --></p>
 
     </div>
   
@@ -313,66 +312,42 @@ configuration.</p>
         <h1 class="post-title"><a href="https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/">Directory Permissions Differ on Var Cache Pkgfile</a></h1>
         <span class="post-date">Aug 6, 2018</span>
         <p>During the last updates through pacman the following message came up:</p>
-
 <pre><code> warning: directory permissions differ on /var/cache/pkgfile/
  filesystem: 775  package: 755
 </code></pre>
-
-<p>But to first understand why this came up in the first place is good to know that <code>pkgfile</code> is a tool for searching files in the official repos. <a href="https://wiki.archlinux.org/index.php/Pkgfile" target="_blank">pkgfile - ArchLinux wiki</a></p>
-
+<p>But to first understand why this came up in the first place is good to know that <code>pkgfile</code> is a tool for searching files in the official repos. <!-- raw HTML omitted -->pkgfile - ArchLinux wiki<!-- raw HTML omitted --></p>
 <p>It should be noted that the question as to why the <strong>pkgfile</strong> differs for the file system hierarchy and the package itself has come up before.</p>
-
-<p>This <a href="https://github.com/falconindy/pkgfile/issues/25" target="_blank">issue</a> on Github dealt with it.</p>
-
-<p>In the thread, one of the users reported whether it was necessary for <strong>pkgfile</strong> to create the directory if it doesn&rsquo;t exist.</p>
-
+<p>This <!-- raw HTML omitted -->issue<!-- raw HTML omitted --> on Github dealt with it.</p>
+<p>In the thread, one of the users reported whether it was necessary for <strong>pkgfile</strong> to create the directory if it doesn't exist.</p>
 <p>Of course this is not the case here, but upon closer look on the pacman log it could be seen that <strong>pkgconf</strong> had just been upgraded</p>
-
 <pre><code> upgraded pkgconf (1.5.2-1 -&gt; 1.5.3-1)
  warning: directory permissions differ on /var/cache/pkgfile/
  filesystem: 775  package: 755
 </code></pre>
-
-<p>Which suggests that right after the updates it didn&rsquo;t recreate it.</p>
-
+<p>Which suggests that right after the updates it didn't recreate it.</p>
 <p>On the other hand <strong>pkgconf</strong> is according to the manual pages:</p>
-
 <pre><code> pkgconf is a program which helps to configure compiler and
  linker flags for development libraries.  This allows build
  systems to detect other dependencies and use them with the
  system toolchain.
 </code></pre>
-
-<p>see for example what the aforementioned <a href="Github https://github.com/falconindy/pkgfile/issues/25#issuecomment-227413406" target="_blank"> issue on Github</a> said about it.</p>
-
+<p>see for example what the aforementioned <!-- raw HTML omitted --> issue on Github<!-- raw HTML omitted --> said about it.</p>
 <p>And a quick Google search would return among many of the results, the following:</p>
-
 <p><a href="https://bbs.archlinux.org/viewtopic.php?pid=317732#p317732">https://bbs.archlinux.org/viewtopic.php?pid=317732#p317732</a></p>
-
 <p>As well as</p>
-
-<p><a href="https://bbs.archlinux.org/viewtopic.php?id=223190" target="_blank">this one</a> which in turn redirected to <a href="https://bbs.archlinux.org/viewtopic.php?id=218133" target="_blank">this one</a></p>
-
+<p><!-- raw HTML omitted -->this one<!-- raw HTML omitted --> which in turn redirected to <!-- raw HTML omitted -->this one<!-- raw HTML omitted --></p>
 <p>With due credit to where credit is due, the following post from the Manjaro community explicitly said that it was a warning and not an error itself.</p>
-
 <blockquote>
 <p>xabbu 2018-06-10 21:39:39 UTC #4
 directory permissions differ on &hellip;</p>
-
 <p>This message is a warning and not an error. This is normally not a problem. It just says that the permissions of a folder in a package differ form the permissions of that folder on your system.</p>
-
 <p>Normally this will not result in a problem, however you should change the permissions to the package defaults to avoid future problems. This message is shown every time you update this package if the permissions don’t match.</p>
-
 <p>In your specific case, at the moment only root and members of the group locate have access to the mlocate folder. With the change to 755 everybody can access and read the content of that folder. This don’t necessary mean everybody has also read access to the files in that folder.</p>
-
 <p>Why the package folder contains different permissions than your system folder can have several reasons. Often it is because the upstream source have changed permissions. Sometimes a developer does this on purpose. But sometimes this happens by mistake and is changed back with the next release. Also the Maintainer can change the permissions of files and folder in the build process.
 And of course the user sometimes changes the permissions of a file or folder and forget about or does it to fix a problem.</p>
-
 <p>Also please note (@jochen82 @farverio ), if you have a problem with something else start a new thread with your problem to get help with that.</p>
 </blockquote>
-
 <p>On another thread on the same Manjaro forums this came up:</p>
-
 <blockquote>
 <p>fhdk 2018-05-07 10:34:00 UTC #4
 rrrsssttt:
@@ -380,34 +355,22 @@ directory permissions differ on /var/lib/samba/private/
 filesystem: 755 package: 700
 bill_t:
 It means that the permissions of this directory must be set to 755 (or drwxr-xr-x).</p>
-
 <p>Actually it means the opposite.</p>
-
 <p>The filesystem is 755 when the package expects it to be 700.</p>
-
 <p>So the right thing to do is to set permissions as the package expects it to be.</p>
-
 <p>sudo chmod 700 /var/lib/samba/private/
 rrrsssttt:
 I want to clarify that I don’t believe I have ever touched that folder (I may have installed apps that have touched it, but I consciously never have)</p>
-
 <p>You don’t need to. It is probably a fix since the folder mentioned is named private and as such is a folder that samba uses for stuff like certificates, keys, private keys, and so on.</p>
-
 <p>Such folder is only accessible for the system service running samba and the service will presumably refuse to run if permissions is wrong.</p>
-
 <p>Try that with your .gnupg folder or the .ssh folder. If permissions is world readable you will get complaints from application and some even refuses to run unless only accessible by owner aka chmod 700 ~/.ssh -R as an example.</p>
 </blockquote>
-
-<p>see <a href="https://forum.manjaro.org/t/i-got-a-warning-after-running-the-latest-round-of-updates-im-confused-what-to-do-next/46651" target="_blank">I get a warning after running the latest round of updates</a></p>
-
+<p>see <!-- raw HTML omitted -->I get a warning after running the latest round of updates<!-- raw HTML omitted --></p>
 <p>As the user on the Manjaro Forum pointed out when he/she said:</p>
-
 <blockquote>
 <p>Actually it means the opposite</p>
 </blockquote>
-
 <p>Changing the directory permissions of the package in question in the file system with a <code>chmod 755</code> would be the best course of action for this package permission issue.</p>
-
 <p>I think that the reason why it occurs in the first place, is due to the fact that the tool <strong>pkgfile</strong> must have administrative privileges during installation/upgrade in order to continue. That is, writing, reading and executing. But once the update has finished it no longer is necessary to keep the same permissions than before. The package no longer needs to have access to the home of the user in question.</p>
 
     </div>
@@ -415,14 +378,11 @@ I want to clarify that I don’t believe I have ever touched that folder (I may 
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/linux-market-share-pitfalls/">Linux Market Share Pitfalls: data manipulation and non-existent ranking markers</a></h1>
         <span class="post-date">Jul 30, 2018</span>
-        
-
-<p>A while ago someone whom I came across on a technical forum
+        <p>A while ago someone whom I came across on a technical forum
 was vouching so much for one of the most used/popular Linux
 Distributions that he/she almost gave the impression of
 fully endorsing the distro in question, without further
 proof.</p>
-
 <p>I said that he/she stated it without further proof because
 all distributions consist of several software which make up
 the whole system. So it would be gullible to think that one
@@ -431,14 +391,12 @@ stating that the rest of the license by which the distro
 developers go aheaad and implement it, is - as a result - within the
 framework of say for example, what the Free Software
 Foundation accepts.</p>
-
 <p>This is not the case. Most Linux distros, and even more
 those that are amongst the most popular, are not very clear
 in their terms with the programs that the distro&rsquo; s
 developers include and consequently employ within it, for further mass
 use. No distribution out there but only a handful of them do
 this.</p>
-
 <p>The problem that the above presents to the adoption of the Free
 Software license is that many of these distributions do not uphold
 licenses as they should or simply because its developers have included
@@ -446,25 +404,21 @@ other elements such as firmware nonfree blobs, or have provided
 ambiguously writing in the documentation, and have offered other
 methods that have provided download venues which in turn officially
 endorse nonfree programs. More information about this can be seen on
-the article entitled <em>Explaining Why We Don&rsquo;t Endorse Other Systems</em>
-<a href="#nonfree"><sup id="nonfreeref">1</sup></a> posted on the Free
+the article entitled <em>Explaining Why We Don't Endorse Other Systems</em>
+<!-- raw HTML omitted --><!-- raw HTML omitted -->1<!-- raw HTML omitted --><!-- raw HTML omitted --> posted on the Free
 Software Foundation website.</p>
-
 <p>So the poor statements that this user was trying to make about one of
 the most popular Linux distributions at the time, could no longer hold
 valid together under the license for which the Free Software
 Foundation stands upon.</p>
-
 <p>For further info about this, one could visit the Free
 Software Foundation to get a glimpse at what this is about.</p>
-
 <p>But to make matters even worse, the user who was trying to
 make his silly point, brought up one if not the most
 inaccurate and misleading source of Linux Market Share
 measure rankings&rsquo; markers out there, a website named
 <strong>Distrowatch</strong> that lists the most popular GNU/Linux
 distributions.</p>
-
 <p>Which takes me to the second rant about why the above cannot be taken as an
 statistical absolute. For <strong>Distrowatch</strong> is just a community driven, heavily
 edited, bureaucratically biased reviewed epicenter which sits on the web  with
@@ -472,36 +426,33 @@ layers of html markup with a domain registration.  Let me emphasize once again
 about its biased one sided view about the certain distros&rsquo; Linux Market Share.
 It is important to do so because it is almost and will always be imprecise to
 measure the use of GNU/Linux distributions across the spectrum and compare
-these - whether community or commercially based
-- with many of the most heard- Operating systems without reliable methods
-  and just by a simple likes/preferences which in the end, is nothing more than
-  a preconceived notion of what distro should and should not be on the top.</p>
-
+these - whether community or commercially based</p>
+<ul>
+<li>with many of the most heard- Operating systems without reliable methods
+and just by a simple likes/preferences which in the end, is nothing more than
+a preconceived notion of what distro should and should not be on the top.</li>
+</ul>
 <p>Because of this, Distrowatch statement is vague to say the least.</p>
-
 <p>According to <em>Stack Frames: A Look From Inside</em>, its author
 said that:</p>
-
 <blockquote>
 <p>Each website has its own list of the most popular
 distributions, updated on the basis of different criteria,
-    hence with different results. To give one example,
-    Linux Mint was the most popular distribution in
-    2013 and in the first half of 2014 according to
-    Distrowatch, but is ranked twelfth on the
-    LinuxCounter and LWN.  <a href="#stack"><sup id="stackref">2</sup></a></p>
+hence with different results. To give one example,
+Linux Mint was the most popular distribution in
+2013 and in the first half of 2014 according to
+Distrowatch, but is ranked twelfth on the
+LinuxCounter and LWN.  <!-- raw HTML omitted --><!-- raw HTML omitted -->2<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 </blockquote>
-
 <p>And this is important because the disparity on numbers when
 all the distributions are compared across LinuxCounter
-<a href="#linuxcounter"><sup id="linuxcounterref">3</sup></a>
-and LWN,  <a href="#lwn"><sup id="lwnref">4</sup></a>
+<!-- raw HTML omitted --><!-- raw HTML omitted -->3<!-- raw HTML omitted --><!-- raw HTML omitted -->
+and LWN,  <!-- raw HTML omitted --><!-- raw HTML omitted -->4<!-- raw HTML omitted --><!-- raw HTML omitted -->
 greatly differ from the ranking on Distrowatch. The differences would
 be much more profound if other websites would try to gather
 these numbers as long as the list is not heavily edited or
 maintained by users who manipulate this data like in the case of
 Distrowatch.</p>
-
 <p>In the case of the LWN site, the author of <em>Stack Frames: A
 Look From Inside</em>, was also on the err side and may have
 made some subtle mistakes with the rankings of the distros.
@@ -514,16 +465,16 @@ alphabetically and it does not necessarily offers numbers
 that could be used as a better counter/measurement
 tool/indicator/predictor in this case. It does show,
 however, the mainstream distributions or the ones that have
-been around the longest
-- commercial and community based - in the computing world.</p>
-
+been around the longest</p>
+<ul>
+<li>commercial and community based - in the computing world.</li>
+</ul>
 <p>Reading about this pervasive problem with the market share
 of GNU/Linux programs, and the distributions that include
 these programs in addition to the share of these
 distributions along with the biases that are taking place in
 community sites such as Distrowatch, the author of a blog on
 the Medium blogging service platform said that:</p>
-
 <blockquote>
 <p>I notice when they have an axe to grind against a
 particular distribution bad reviews are allowed to flourish
@@ -531,14 +482,12 @@ but if I or others submit positive reviews they tend to get
 ignored and there are more than a handful of distributions
 where I have noticed that trend</p>
 </blockquote>
-
-<p>But what it&rsquo;s unfortunate is that such misleading bits of information occur
+<p>But what it's unfortunate is that such misleading bits of information occur
 nowadays, especially within the culture of the GNU/Linux Operating system which
 even includes its kernel without which the vast GNU software which is comprised
 of, accomplishes nothing.  But most importantly, listing it as so called &lsquo;popular&rsquo;
 when most of the &lsquo;popular&rsquo; distributions do not even adhere to the Free
 Software Foundation standards guidelines of Free Software.</p>
-
 <p>The author in that blog stated that Distrowatch is biased towards
 free-as-in-beer distributions, but I would disagree because I do think
 the bias is there regardless whether is more commercially oriented by
@@ -551,36 +500,25 @@ that should appear on the top are undoubtedly misinforming real/accurate market
 share data without further repercussions. And by the looks of it, what
 matters is the ad-driven commercially source of income that derives
 from this data manipulation to the owner of Distrowatch.</p>
-
 <p>I have no idea whether this GNU/Linux user that commented about how
 that Linux distro fared in comparison with the rest, was aware of
 these facts, but Distrowatch in general has been around for a while
 and I wonder whether they have affected the objective and the goal
-overall of the Free Software Foundation Guidelines.<br />
-No doubt that the reviews need further revision but they&rsquo;re
+overall of the Free Software Foundation Guidelines.<br>
+No doubt that the reviews need further revision but they're
 doing so while promoting their own, without regard for the
 particular distro and whether this is community-driven or not.</p>
-
 <p>The Linux Distribution Timeline offers in turn the progress
 of the Linux Distributions and although is a great project
 on its own right, it does not undertake where all the sites
 have fallen short to accomplish this difficult task of having a
 better Market Share Model that tackles the Linux world.</p>
-
-<p>The website for this project is located at <a
-href="http://futurist.se/gldt/" target="_blank">futurist.se</a></p>
-
+<p>The website for this project is located at <!-- raw HTML omitted -->futurist.se<!-- raw HTML omitted --></p>
 <h2 id="sources"><strong>Sources</strong></h2>
-
-<p><strong>1</strong>- <a name="nonfree"></a><a href="https://www.gnu.org/distros/common-distros.en.html" target="_blank">Explaining Why We Don&rsquo;t Endorse Other Systems</a><a href="#nonfreeref">&crarr;</a></p>
-
-<p><strong>2</strong>-<a name="stack"></a><a href="https://books.google.com/books?id=YZIoDQAAQBAJ"
-target="_blank">Stack Frames: A Look From Inside</a><a href="#stackref">&crarr;</a></p>
-
-<p><strong>3</strong>-<a name="linuxcounter"></a><a href="https://www.linuxcounter.net/statistics/distributions" target="_blank">www.linuxcounter.net/statistics/distributions</a><a href="#linuxcounterref">&crarr;</a></p>
-
-<p><strong>4</strong>-<a name="lwn"></a><a href="https://lwn.net/Distributions"
-target="_blan">lwn.net/Distributions</a><a href="#lwnref">&crarr;</a></p>
+<p><strong>1</strong>- <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Explaining Why We Don't Endorse Other Systems<!-- raw HTML omitted --><!-- raw HTML omitted -->↵<!-- raw HTML omitted --></p>
+<p><strong>2</strong>-<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Stack Frames: A Look From Inside<!-- raw HTML omitted --><!-- raw HTML omitted -->↵<!-- raw HTML omitted --></p>
+<p><strong>3</strong>-<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="http://www.linuxcounter.net/statistics/distributions">www.linuxcounter.net/statistics/distributions</a><!-- raw HTML omitted --><!-- raw HTML omitted -->↵<!-- raw HTML omitted --></p>
+<p><strong>4</strong>-<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->lwn.net/Distributions<!-- raw HTML omitted --><!-- raw HTML omitted -->↵<!-- raw HTML omitted --></p>
 
     </div>
   
@@ -588,35 +526,26 @@ target="_blan">lwn.net/Distributions</a><a href="#lwnref">&crarr;</a></p>
         <h1 class="post-title"><a href="https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/">Gscan2pdf Sane Start Invalid Argument</a></h1>
         <span class="post-date">Jul 24, 2018</span>
         <p>Antergos wins here. Manjaro could have done better but it
-didn&rsquo;t.</p>
-
+didn't.</p>
 <p>Anyone who would want to avoid having to go through the
 hassle of reinstalling and testing sane drivers under Arch
-Linux should look no further. The comparison wasn&rsquo;t done
+Linux should look no further. The comparison wasn't done
 between all the Arch Linux based distributions, but Antergos
 is the clear winner here.</p>
-
 <p>No Desktop Environment under Manjaro worked to have this
 driver functioning as it should have been functioning. And
 this is after trying Manjaro KDE, Manjaro XFCE, the most
-popular of the bunch. Didn&rsquo;t try it with GNOME and I wasn&rsquo;t
+popular of the bunch. Didn't try it with GNOME and I wasn't
 going to waste my time with it.</p>
-
 <p>Perhaps later versions would fare better, but this time
-around it didn&rsquo;t deliver what it was expected from this
-distribution. The main issue had to do with the <code>invalid
-argument</code> error message from programs such as <strong>gscan2pdf</strong>
+around it didn't deliver what it was expected from this
+distribution. The main issue had to do with the <code>invalid argument</code> error message from programs such as <strong>gscan2pdf</strong>
 and also from <strong>xsane</strong> and in identifying and picking up
-the right device other than the infamous <code>Noname integrated
-camera</code> that it would only identify from the list.</p>
-
-<p><img src="/images/Screenshot_2018-07-24_23-45-03.png" alt="" /></p>
-
+the right device other than the infamous <code>Noname integrated camera</code> that it would only identify from the list.</p>
+<p><img src="/images/Screenshot_2018-07-24_23-45-03.png" alt=""></p>
 <p>After reinstalling both Manjaro KDE and the XFCE version the
 problem continued in identifying the correct device.</p>
-
-<p><img src="/images/Screenshot_2018-07-25_00-17-57.png" alt="" /></p>
-
+<p><img src="/images/Screenshot_2018-07-25_00-17-57.png" alt=""></p>
 <p>With Antergos it worked without a major issue and for that
 reason alone I recommend this distribution over Manjaro.</p>
 
@@ -627,22 +556,17 @@ reason alone I recommend this distribution over Manjaro.</p>
         <span class="post-date">Jul 18, 2018</span>
         <p>The GUI version of <strong>pacman</strong> which runs under Antergos
 installed the scheduled updates as expected.</p>
-
 <p>But as soon as new updates were found it just failed to
 install them.</p>
-
 <p>In this case, after running the post installation hooks, it
 found a new update for one of the programs. But this time
 however, it failed to even initialized the transaction.</p>
-
 <p>Although it could have been relatively simple to circumvent
 the problem by seeing through <strong>pacman</strong> itself what the error
 was, but just closing the <strong>pamac</strong> application, seemed all
 that was needed to have the problem fixed.</p>
-
 <p>Soon after, the GUI version <strong>pamac</strong> had no further issues
 to install the updates accordingly.</p>
-
 <p>Perhaps this is is just a reminder not to fully rely on
 <strong>pamac</strong> and used the main package manager for any Arch
 based distribution.</p>
@@ -654,33 +578,24 @@ based distribution.</p>
         <span class="post-date">Jul 18, 2018</span>
         <p>It seems as if <strong>antergos-common-meta</strong> has been removed
 from some of the repositories.</p>
-
 <p>In the latest updates by using pamac or even pacman returned
 the <em>could not satisfy dependency</em> error that was required
 in this case for the hunspell Spanish dictionary <strong>hunspell-es</strong>.</p>
-
-<p><img src="/images/Screenshot_2018-07-17_23-51-16.png" alt="" /></p>
-
+<p><img src="/images/Screenshot_2018-07-17_23-51-16.png" alt=""></p>
 <p>Thus by removing <strong>antergos-common-meta</strong> or whatever was left
 of it, resolved the problem, it seems that the Antergos
-community haven&rsquo;t been able to resolve some of these issues
+community haven't been able to resolve some of these issues
 that keep coming up every now and then with the
 distribution.</p>
-
 <p>A Google search about this problem returned, among the
-results some posts like <a
-href="https://forum.antergos.com/topic/10303/cant-solve-dependencies-hunspell"
-target="_blank">can&rsquo;t solve dependencies hunspell</a> which
+results some posts like <!-- raw HTML omitted -->can't solve dependencies hunspell<!-- raw HTML omitted --> which
 summarised the same error message.</p>
-
-<p>Unlike other occasions, I didn&rsquo;t read about this particular issue this time, The reason for not following up on it is due to the fact that a few days ago a dependency problem had appeared about a <code>..libso.2</code> (I can&rsquo;t remember the name of the file, this time around), but it was a file that needed to be removed before successfully continuing with the updates.</p>
-
+<p>Unlike other occasions, I didn't read about this particular issue this time, The reason for not following up on it is due to the fact that a few days ago a dependency problem had appeared about a <code>..libso.2</code> (I can't remember the name of the file, this time around), but it was a file that needed to be removed before successfully continuing with the updates.</p>
 <p>Hopefully the Antergos developers will be able to correct some
 of these inconsistencies in an otherwise great distribution
 that is based on Arch, before a greater share of users who are
 fond of Arch, not only migrate to it, but fully adopt it as
 the main OS in their systems.</p>
-
 <p>Until then some of these errors and dependency satisfaction
 from the packages would have to be resolved manually by the
 end-users on their own.</p>
@@ -691,25 +606,17 @@ end-users on their own.</p>
         <h1 class="post-title"><a href="https://imfrom.github.io/post/installing-pacman-breaks-dependency/">Installing Pacman Breaks Dependency</a></h1>
         <span class="post-date">May 29, 2018</span>
         <p>Running one of the usual updates from the pamac gui package, returned</p>
-
 <pre><code> pamac: installing pacman (5.1.0-1) breaks dependency ‘pacman&lt;5.1
 </code></pre>
-
 <p>I noticed that any package on the list with a dependency must be
 unchecked before continuing.</p>
-
 <p>Later I checked the antergos forum to see if there was any solution.</p>
-
-<p><img src="/images/pacman-cant-install-breaks-dependency.png" alt="" /></p>
-
+<p><img src="/images/pacman-cant-install-breaks-dependency.png" alt=""></p>
 <p>The suggested workaround was to run</p>
-
 <pre><code> pacman -Syyu -d  --nodeps
 </code></pre>
-
 <p>The following commit apparently introduced the issue in the first
 place:</p>
-
 <p><a href="https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f">https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f</a></p>
 
     </div>
@@ -717,37 +624,21 @@ place:</p>
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/">Antergos Keyboard Selection During Installation</a></h1>
         <span class="post-date">Jan 27, 2018</span>
-        <p>One of the drawbacks during the installation of <a href="https://antergos.com" target="_blank">Antergos Linux</a> was in identifying the keyboard layout option that was previously selected during the media installation.</p>
-
-<p>As a result only the default variant was being used after installing the system.</p>
-
-<p>I was able to identify the problem by going to the X window system xorg configuration file <code>/etc/X11/xorg.d/00-keyboard.conf</code> and noticing that the <strong>XkbLayout</strong> variant was not being properly identified as originally intended.</p>
-
-<p>In my case, only one of the options had been specified correctly on the <code>00-keyboard.conf</code> file.</p>
-
-<p>What I found odd, is that on another system, which is by the way, running the same xfce environment from Antergos, the same problem was not encountered. On the other system, only one (1) variant was used, and it had correctly identified the layout twice, but on the system which after installing the Antergos media, loaded the incorrect values, two (2) variants were set accordingly, but only one (1) layout option was identified. In my case <strong>us</strong> had been been identified once, whereas with the former no issues pertaining to this problem occurred in the first place.</p>
-
-<p>As the wiki <a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files" target="_blank">Using X configuration files wiki</a> recommends, not to modify any of the settings manually, but let instead <strong>localectl</strong> handle it. <a href="#sample"><sup id="sampleref">1</sup></a></p>
-
-<p><img src="https://imfrom.github.io/images/localectl-usage.png" alt="" /></p>
-
-<p>Of course, it comes handy when there is even an example that illustrates the process by using the correct parameters. For something like:</p>
-
-<p><img src="https://imfrom.github.io/images/00-keyboard-sample.png" alt="" /></p>
-
-<p>Then something like the following <a href="#localectl"><sup id="localectlref">2</sup></a>, based on the previous example, suffices:</p>
-
-<p><img src="https://imfrom.github.io/images/localectl-sample-usage.png" alt="" /></p>
-
-<p>Set the values as deemed applicable to the desired customization.</p>
-
-<h2 id="references">References</h2>
-
-<ol>
-<li><p><a name="sample"><a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files" target="_blank">Using X Configuration files 00-keyboard.conf</a></a><a href="#sampleref"> &#x21A9;&#xFE0E;</a></p></li>
-
-<li><p><a name="localectl"><a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_localectl" target="_blank">Using localectl</a></a><a href="#localectlref"> &#x21A9;&#xFE0E;</a></p></li>
-</ol>
+        <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
     </div>
   
@@ -755,63 +646,25 @@ place:</p>
         <h1 class="post-title"><a href="https://imfrom.github.io/post/antergos-grub-selection/">Antergos Grub Selection</a></h1>
         <span class="post-date">Jan 20, 2018</span>
         <p>During the installation of Antergos, there was an option to install the Linux LTS kernel along with the default latest stable version.</p>
-
 <p>Even though it was installed appropriately, the option to select the other kernel, could not be seen from the Grub selection window.</p>
-
 <p>this is even after running the usual <code>mkinitcpio -p &lt;linux kernel&gt;</code> that loads the modules and other dependencies accordingly.</p>
-
 <p>It’s good to remember that Grub configuration file though, resides on the /boot/default directory.</p>
-
 <p>With sudo privileges, access the file at /boot/default/grub first.</p>
-
 <p>Therein, and lying at the bottom of the configuration file, one can find the:</p>
-
 <pre><code> # Uncomment to make GRUB remember the last selection. This requires to
  # set 'GRUB_DEFAULT=saved' above.
  #GRUB_SAVEDEFAULT=&quot;true&quot;
 </code></pre>
-
-<p>One could uncomment the GRUB_SAVEDEFAULT=&ldquo;true&rdquo; so the grub configuration file ‘remembers’ the selection.</p>
-
+<p>One could uncomment the GRUB_SAVEDEFAULT=&quot;true&rdquo; so the grub configuration file ‘remembers’ the selection.</p>
 <p>Furthermore, and right on the top of the file the default chosen selection can be specified by modifying the value of 0:</p>
-
-<p># GRUB boot loader configuration</p>
-
+<h1 id="grub-boot-loader-configuration">GRUB boot loader configuration</h1>
 <p>GRUB_DEFAULT=0
 To a 2 or 3 for the desired kernel. Which in my case, and if the LTS kernel is to be loaded instead, matched the kernel itself and the fallback for it.</p>
-
 <p>By going this route, it no longer is necessary in specifying during the system startup, the desired kernel that one chooses to be loaded.</p>
-
 <p>Remember after making any changes to grub, to update the configuration file by running:</p>
-
 <p>grub-mkconfig -o /boot/grub/grub.cfg</p>
-
 <p>For more info about this, visit the wiki:</p>
-
-<p><a href="https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks" target="_blank">GRUB/Tips and tricks</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/">Udisks2 Udiskie Fares Better Than Ntfs 3g</a></h1>
-        <span class="post-date">Jan 16, 2018</span>
-        
-
-<p>It is my opinion, based mostly not on what I’ve read, but instead on what I’ve encountered during the handling of a failed hard disk, that the disk volume mounting utility udisks2 fares better than say, ntfs-3g.</p>
-
-<p>Quite possibly there could be many improvements with this software, and there is no doubt about it, but considering wear-and-tear conditions of the disk, among other considerations, and, as long as udisks2 is run without an interruption, no other mounting options utility that is currently available may be able to improve its overall performance.</p>
-
-<p>If time is not a constraint, and the program is allowed to run on its own, udisks2 fares relatively better on previously loaded Windows OS partitions than any other. Of this I can attest without a doubt. The utility has been able to eventually access corrupted filesystems that would have been rendered unrecoverable otherwise</p>
-
-<h2 id="for-futher-info-and-configuration-visit-the-wiki">For futher info and configuration, visit the wiki:</h2>
-
-<p><a href="https://wiki.archlinux.org/index.php/Udisks#Mount_to_.2Fmedia_.28udisks2.29" target="_blank">Mount to /media (udisks2)</a></p>
-
-<p><a href="https://wiki.archlinux.org/index.php/Udisks" target="_blank">Udisks</a></p>
-
-<p><a href="https://wiki.archlinux.org/index.php/NTFS-3G" target="_blank">ntfs-3g Arch Linux</a></p>
-
-<p><a href="https://github.com/coldfix/udiskie/wiki/Usage" target="_blank">udiskie on github</a></p>
+<!-- raw HTML omitted -->
 
     </div>
   

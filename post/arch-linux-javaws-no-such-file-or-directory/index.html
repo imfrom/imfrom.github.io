@@ -212,13 +212,15 @@
     
       
     
+      
+    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2019. All rights reserved.</p>
+    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 
@@ -241,23 +243,14 @@
   <h1 class="post-title">Arch Linux Javaws No Such File or Directory</h1>
   <span class="post-date">Oct 10, 2019</span>
   <p>Trying to get <code>javaws</code> to work without a glitch on one of the systems it was tested under, proved to be a chore.</p>
-
-<p>The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that&rsquo;d normally take care of it.</p>
-
+<p>The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that'd normally take care of it.</p>
 <p>All the libraries for which <code>javaws</code> depended upon and for which it was being tested even under a different system seemed to have been installed. This included, <strong>jdk8-openjdk..</strong> and its counterparts.</p>
-
 <p>Apparently, during the installation, the path that had been set for <code>javaws</code> had been incorrectly identified.</p>
-
 <p>The error read as follows:</p>
-
 <pre><code>/usr/bin/javaws line 197: no such file or directory.
 
-</code></pre>
-
-<p>Upon further inspection of the line in question, is hard to pinpoint whether therein lied the problem or not&hellip;</p>
-
+</code></pre><p>Upon further inspection of the line in question, is hard to pinpoint whether therein lied the problem or not&hellip;</p>
 <p>Upon going ahead and after opening the <code>javaws</code> executable, I noticed that the path had been incorrectly set indeed by either some of the libraries during the initialization&hellip;. It was pointing out to a different location <strong>rather</strong> than where the files for the java environment were located instead.</p>
-
 <p>Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus <code>java=/location/of/java/default/</code> worked without a problem.</p>
 
 </div>

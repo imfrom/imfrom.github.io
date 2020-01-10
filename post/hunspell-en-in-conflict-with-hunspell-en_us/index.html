@@ -212,13 +212,15 @@
     
       
     
+      
+    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2019. All rights reserved.</p>
+    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 
@@ -241,27 +243,19 @@
   <h1 class="post-title">Hunspell-en in Conflict With Hunspell en_US</h1>
   <span class="post-date">Aug 16, 2018</span>
   <p>On a different machine running the latest updates from Arch, pacman would give the error (and rightly so) that <code>hunspell-en and hunspell-en_US are in conflict</code> and <code>could not satisfy dependencies</code> followed by <code>removing hunspell-en breaks dependency hunspell-en required by **antergos-common-meta**</code>.</p>
-
 <p>This was of course never a problem on the other machine in which <strong>antergos-common-meta</strong> was removed a while back. For the simple reason that the update related to anything <strong>hunspell</strong> was in this particular case only for <strong>hunspell-en_US</strong> as well as <strong>hunspell-es_any</strong> but not for, and this is important to note: <strong>hunspell-en</strong>. The latter includes all English dictionaries for US, UK, etc.</p>
-
-<p>So the question is how to resolve this impeding conflict during the updates? Simply by skipping the package on pacman during the updates, or simply by deselecting the packages that belong to <strong>hunspell-en_</strong> on pamac (the gui version for pacman) for which the conflict exists in the first place.</p>
-
+<p>So the question is how to resolve this impeding conflict during the updates? Simply by skipping the package on pacman during the updates, or simply by deselecting the packages that belong to **hunspell-en_** on pamac (the gui version for pacman) for which the conflict exists in the first place.</p>
 <pre><code> pacman -Su IgnorePkg=hunspell-en_US
 </code></pre>
-
-<p>See <a href="https://wiki.archlinux.org/index.php/Pacman#Skip_package_from_being_upgraded" target="_blank">Skip package from being upgraded</a> on the Arch Wiki.</p>
-
+<p>See <!-- raw HTML omitted -->Skip package from being upgraded<!-- raw HTML omitted --> on the Arch Wiki.</p>
 <p>By removing <strong>antergos-common-meta</strong> the first time around on this particular
 as I had done a few weeks ago on the other machine, made no difference. And
-that&rsquo;s the reason as to why the above is recommended. That is, by skipping the
+that's the reason as to why the above is recommended. That is, by skipping the
 packages in question that belong to <strong>hunspell-en_US</strong> for example first, and
 then by proceeding with the updates normally seems to be the most reasonable
 method.</p>
-
 <p>Once this is done, the next step would be to remove <strong>hunspell-en</strong> which would also remove <strong>antergos-common-meta</strong> by which the latter package relies on.</p>
-
 <p>Finally, the next step would be in installing the libraries for <strong>hunspell-en_US</strong>, or <strong>hunspell-en_GB</strong>, or <strong>hunspell-en_AU</strong> or <strong>hunspell-en_CA</strong>.</p>
-
 <p>Apparently, in the latest installation ISO image, this issue with <strong>hunspell</strong> and its dependencies has not been removed from the repositories that the installation media uses for the initial process. Which better explains as to why on the other machine which had the most recent Antergos installation, this problem was still present, whereas with the other machine in which I had removed <strong>antergos-common-meta</strong> which removed <strong>hunspell-en</strong> - the one that bundles all dictionaries for the English language - was never experienced.</p>
 
 </div>

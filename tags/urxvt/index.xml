@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>urxvt on Blog del tecnólogo</title>
@@ -18,7 +18,7 @@
       <pubDate>Fri, 18 Aug 2017 14:07:29 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/urxvt-copy-paste-tweaking/</guid>
-      <description>I haven’t read the man pages enough to figure out some of the parameters that play an important behavior for the full functionality of the mighty urxvt, and it was not until I read a post - which was more of a comment on the thread entitled right click paste in urxvt terminal on the archlinux.org forum - when I realized that by the combination of ctrl and right mouse click would copy and paste the selected text on the X window system.</description>
+      <description></description>
     </item>
     
     <item>
@@ -27,9 +27,7 @@
       <pubDate>Fri, 18 Aug 2017 14:05:19 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/urxvt-background-tweaking/</guid>
-      <description>I’ve never bothered with urxvt in the past. Perhaps was the way that dealt with the default glyph, which discouraged me from using it.
-Later I found that the above was easily answered here at how can I get better looking fonts in my terminal (urxvt)
-Nonetheless, the simple fact that I had to modify it directly on .Xresources, stopped me from doing all the necessary modifications to accomplish it.</description>
+      <description></description>
     </item>
     
   </channel>

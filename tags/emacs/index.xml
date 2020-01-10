@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>emacs on Blog del tecnólogo</title>
@@ -18,8 +18,7 @@
       <pubDate>Mon, 21 Nov 2016 14:40:45 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/</guid>
-      <description>Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs 1 y Vim 2, para cambiar el mapa del teclado.
-Emacs El altamente configurable y extensible editor de texto Emacs también nos puede ayudar con modificaciones del teclado, o cambiar la localización de las teclas, sin la necesidad de cambiar todo el diseño, y sin la necesidad de tener que utilizar algún teclado en específico.</description>
+      <description></description>
     </item>
     
   </channel>
