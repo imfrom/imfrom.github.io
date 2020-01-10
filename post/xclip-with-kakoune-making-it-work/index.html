@@ -258,121 +258,99 @@ of <code>xclip</code> to use the clipboard selections.</p>
 <pre><code>      hook global NormalKey y|d|c %{ nop %sh{
               printf %s &quot;$kak_main_reg_dquote&quot; | xsel --input --clipboard
       }}
-
-### To paste
-
-`! xsel --output --clipboard &lt;ret&gt;`
-
-`!` inserts program output before selection while `&lt;a-!&gt;` inserts program output after selection.
-
-Therefore you can add the following mappings:
-
-### Paste before
-`map global user P '!xsel --output --clipboard&lt;ret&gt;'`
-
-### Paste after
-`map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'`
-
-### How to use it now
-* y/d - yank/delete using internal clipboard AND system clipboard at once
-* p   - paste from internal clipboard
-* &lt;,p&gt; - paste after from system clipboard (, is default for user mode)
-* &lt;,P&gt; - paste before from system clipboard (, is default for user mode)
-
-## How to make it work with Xclip instead.
-
-As I've found out, and as the issue clearly showed, this is not
+      
+</code></pre><h3 id="to-paste">To paste</h3>
+<p><code>! xsel --output --clipboard &lt;ret&gt;</code></p>
+<p><code>!</code> inserts program output before selection while <code>&lt;a-!&gt;</code> inserts program output after selection.</p>
+<p>Therefore you can add the following mappings:</p>
+<h3 id="paste-before">Paste before</h3>
+<p><code>map global user P '!xsel --output --clipboard&lt;ret&gt;'</code></p>
+<h3 id="paste-after">Paste after</h3>
+<p><code>map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'</code></p>
+<h3 id="how-to-use-it-now">How to use it now</h3>
+<ul>
+<li>y/d - yank/delete using internal clipboard AND system clipboard at once</li>
+<li>p   - paste from internal clipboard</li>
+<li>&lt;,p&gt; - paste after from system clipboard (, is default for user mode)</li>
+<li>&lt;,P&gt; - paste before from system clipboard (, is default for user mode)</li>
+</ul>
+<h2 id="how-to-make-it-work-with-xclip-instead">How to make it work with Xclip instead.</h2>
+<p>As I've found out, and as the issue clearly showed, this is not
 currently possible by using Xclip under Kakoune, except of course by mapping
-a key to Normal mode and then calling out `xclip`.
-
-As the [freedesktop.org](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)  website states it, this is not a task
-that can be easily done as long as different clients have different methods that make use of these `clipboard` features. 
-
-quoting from the [clipboards specifications freedesktop](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)
-
-&gt;There are two historical interpretations of the ICCCM:
-
-&gt; a) use PRIMARY for mouse selection, middle mouse button paste, and
-&gt;    explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)
-&gt;
-&gt; b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
-&gt;    use PRIMARY for the currently-selected text, even if it isn't
-&gt;    explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
-&gt;    XEmacs, some GTK+ apps)
-
-&gt;No one ever does anything interesting with SECONDARY as far as I can
-&gt;tell.
-
-&gt;The current consensus is that interpretation b) is correct. Qt 3 and
-&gt;GNU Emacs 21 will use interpretation b), changing the behavior of
-&gt;previous versions.
-
-And it follows with:
-
-&gt;In addition, the ICCCM has a thing called &quot;cut buffers&quot; which most
-&gt;clients no longer support.
-&gt;
-&gt;There are two historical interpretations of the ICCCM:
-&gt;
-&gt; a) use PRIMARY for mouse selection, middle mouse button paste, and
-&gt;    explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)
-&gt;
-&gt; b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
-&gt;    use PRIMARY for the currently-selected text, even if it isn't
-&gt;    explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
-&gt;    XEmacs, some GTK+ apps)
-
-And it summarizes it among many points with the following:
-
-
-&gt;The correct behavior can be summarized as follows: CLIPBOARD works
-&gt;just like the clipboard on Mac or Windows; it only changes on explicit
-&gt;cut/copy. PRIMARY is an &quot;easter egg&quot; for expert users, regular users
-&gt;can just ignore it; it's normally pastable only via
-&gt;middle-mouse-click.
-
-So the best course of action, since `xclip` is known to be
-working fine under [vim](https://vim.org) or
-[neovim](https://neovim.org), would be to map say in this
-case, the `Y` key for yanking out operations, and the `P` key
-for pasting the selection.
-
-Of course, if other operations such as `delete` or `change`
+a key to Normal mode and then calling out <code>xclip</code>.</p>
+<p>As the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">freedesktop.org</a>  website states it, this is not a task
+that can be easily done as long as different clients have different methods that make use of these <code>clipboard</code> features.</p>
+<p>quoting from the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">clipboards specifications freedesktop</a></p>
+<blockquote>
+<p>There are two historical interpretations of the ICCCM:</p>
+</blockquote>
+<blockquote>
+<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
+explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
+<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+use PRIMARY for the currently-selected text, even if it isn't
+explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+XEmacs, some GTK+ apps)</p>
+</blockquote>
+<blockquote>
+<p>No one ever does anything interesting with SECONDARY as far as I can
+tell.</p>
+</blockquote>
+<blockquote>
+<p>The current consensus is that interpretation b) is correct. Qt 3 and
+GNU Emacs 21 will use interpretation b), changing the behavior of
+previous versions.</p>
+</blockquote>
+<p>And it follows with:</p>
+<blockquote>
+<p>In addition, the ICCCM has a thing called &ldquo;cut buffers&rdquo; which most
+clients no longer support.</p>
+<p>There are two historical interpretations of the ICCCM:</p>
+<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
+explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
+<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+use PRIMARY for the currently-selected text, even if it isn't
+explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+XEmacs, some GTK+ apps)</p>
+</blockquote>
+<p>And it summarizes it among many points with the following:</p>
+<blockquote>
+<p>The correct behavior can be summarized as follows: CLIPBOARD works
+just like the clipboard on Mac or Windows; it only changes on explicit
+cut/copy. PRIMARY is an &ldquo;easter egg&rdquo; for expert users, regular users
+can just ignore it; it's normally pastable only via
+middle-mouse-click.</p>
+</blockquote>
+<p>So the best course of action, since <code>xclip</code> is known to be
+working fine under <a href="https://vim.org">vim</a> or
+<a href="https://neovim.org">neovim</a>, would be to map say in this
+case, the <code>Y</code> key for yanking out operations, and the <code>P</code> key
+for pasting the selection.</p>
+<p>Of course, if other operations such as <code>delete</code> or <code>change</code>
 as Kakoune currently employs, need to be mapped, I believe
-that the keys can be assigned their own combinations.
-
-We normally use the `clipboard` rather than the `primary` or
-`secondary` X selections:
-
-## To yank with Xclip
-
-     map global normal &lt;Y&gt; ' $ xclip -select clip '
-
-## To paste with Xclip
-
-And to paste
-
-     map global normal P '&lt;!&gt; xclip -select clip -o'
-
-
-## Freeing register `&quot;` on Kakoune and yanking with p
-
-The above mapping of both the `Y` or `P` key registers,
-do not restrain the operations by which `y` that records the
-operation to register `&quot;`  or `p` that pastes it.
-
-There's no possible way to do it with the otherwise rest of
-the `clipboards` options that `xclip` uses, without further
-noticing that the register `y` that is used for normal
-yanking operations under Kakoune, wouldn't work as expected.
-And neither by pastting that same register `&quot;`.
-
-...
-
-**Other references**
-
-&lt;a href=&quot;https://unix.stackexchange.com/questions/22494/copy-file-to-xclip-and-paste-to-firefox&quot; target=&quot;_blanK&quot;&gt;unix stackexchange -- copy file to xclip and paste on firefox&lt;/a&gt;
+that the keys can be assigned their own combinations.</p>
+<p>We normally use the <code>clipboard</code> rather than the <code>primary</code> or
+<code>secondary</code> X selections:</p>
+<h2 id="to-yank-with-xclip">To yank with Xclip</h2>
+<pre><code> map global normal &lt;Y&gt; ' $ xclip -select clip '
 </code></pre>
+<h2 id="to-paste-with-xclip">To paste with Xclip</h2>
+<p>And to paste</p>
+<pre><code> map global normal P '&lt;!&gt; xclip -select clip -o'
+</code></pre>
+<h2 id="freeing-register--on-kakoune-and-yanking-with-p">Freeing register <code>&quot;</code> on Kakoune and yanking with p</h2>
+<p>The above mapping of both the <code>Y</code> or <code>P</code> key registers,
+do not restrain the operations by which <code>y</code> that records the
+operation to register <code>&quot;</code>  or <code>p</code> that pastes it.</p>
+<p>There's no possible way to do it with the otherwise rest of
+the <code>clipboards</code> options that <code>xclip</code> uses, without further
+noticing that the register <code>y</code> that is used for normal
+yanking operations under Kakoune, wouldn't work as expected.
+And neither by pastting that same register <code>&quot;</code>.</p>
+<p>&hellip;</p>
+<p><strong>Other references</strong></p>
+<p><a href="https://unix.stackexchange.com/questions/22494/copy-file-to-xclip-and-paste-to-firefox" target="_blanK">unix stackexchange &ndash; copy file to xclip and paste on firefox</a></p>
+
 </div>
 
       </div>
