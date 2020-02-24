@@ -247,13 +247,13 @@
 <p>But to first understand why this came up in the first place is good to know that <code>pkgfile</code> is a tool for searching files in the official repos. <a href="https://wiki.archlinux.org/index.php/Pkgfile" target="_blank">pkgfile - ArchLinux wiki</a></p>
 <p>It should be noted that the question as to why the <strong>pkgfile</strong> differs for the file system hierarchy and the package itself has come up before.</p>
 <p>This <a href="https://github.com/falconindy/pkgfile/issues/25" target="_blank">issue</a> on Github dealt with it.</p>
-<p>In the thread, one of the users reported whether it was necessary for <strong>pkgfile</strong> to create the directory if it doesn&rsquo;t exist.</p>
+<p>In the thread, one of the users reported whether it was necessary for <strong>pkgfile</strong> to create the directory if it doesn't exist.</p>
 <p>Of course this is not the case here, but upon closer look on the pacman log it could be seen that <strong>pkgconf</strong> had just been upgraded</p>
 <pre><code> upgraded pkgconf (1.5.2-1 -&gt; 1.5.3-1)
  warning: directory permissions differ on /var/cache/pkgfile/
  filesystem: 775  package: 755
 </code></pre>
-<p>Which suggests that right after the updates it didn&rsquo;t recreate it.</p>
+<p>Which suggests that right after the updates it didn't recreate it.</p>
 <p>On the other hand <strong>pkgconf</strong> is according to the manual pages:</p>
 <pre><code> pkgconf is a program which helps to configure compiler and
  linker flags for development libraries.  This allows build

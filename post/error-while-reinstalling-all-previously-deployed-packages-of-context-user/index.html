@@ -240,12 +240,12 @@
 <div class="post">
   <h1 class="post-title">Error While Reinstalling All Previously Deployed Packages of Context User</h1>
   <span class="post-date">Nov 26, 2018</span>
-  <p>I still don&rsquo;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error <code>Error while reinstalling all previously deployed packages of context user</code>.</p>
-<p>Looking up Google didn&rsquo;t help in finding some sort of recent info about this issue.</p>
+  <p>I still don't know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error <code>Error while reinstalling all previously deployed packages of context user</code>.</p>
+<p>Looking up Google didn't help in finding some sort of recent info about this issue.</p>
 <p>I also had a <code>warning: failed to load path from javadlx</code> which was obviously only a warning but nonetheless troublesome and problematic considering that this was just a fresh installation of Libreoffice.</p>
 <p>Further looking up this issue through Google led me to the forum of Arch in which a user mentioned the possibility of permission problems with the installation. The user also queried Google to find more about this issue:</p>
 <blockquote>
-<p>Googling about the error showed some chances of being a permission problem with ~/.openoffice.org2. But I don&rsquo;t have that directory in my system, but ~/.config/.libreoffice. I would suggest you check the permissions on this directory. Mine are 766. <a href="#javadlx"><sup id="javadlxref">1</sup></a></p>
+<p>Googling about the error showed some chances of being a permission problem with ~/.openoffice.org2. But I don't have that directory in my system, but ~/.config/.libreoffice. I would suggest you check the permissions on this directory. Mine are 766. <a href="#javadlx"><sup id="javadlxref">1</sup></a></p>
 </blockquote>
 <p>but there was nothing out of the norm with the permissions set on the directory. But from his post it reminded me that usually the path that is set by xdg is under the <strong>xdg</strong> directory. Then again, the environment variable for it had been set correctly.</p>
 <p>I decided to go ahead and back up the <code>.config/libreoffice/4</code> directory where some of the other files for libreoffice laid at.</p>

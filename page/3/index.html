@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.64.1" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -278,7 +278,7 @@ configuration.</p>
 <p>which pretty much matches many of the issues that I have encountered with the program.</p>
 <p>The only workaround with this pervasive problem of a printer that depends solely on the network, is through some sort of initial setup performed namely through a Windows system that would point it out. So by confirming the correct ip address and port numbers of the printer, would be more than enough to specify it as such on the location of the CUPS for the printer in question. Until then, and just like a user on the Arch Forums said:</p>
 <blockquote>
-<p>The problem here is that the criteria (&ldquo;Network Printer&rdquo;) is something that only makes sense to humans. Computer programs aren&rsquo;t going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &lsquo;14 at 18:16</p>
+<p>The problem here is that the criteria (&ldquo;Network Printer&rdquo;) is something that only makes sense to humans. Computer programs aren't going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &lsquo;14 at 18:16</p>
 </blockquote>
 <p><strong>References</strong></p>
 <p><a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009" target="_blank">unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009</a></p>
@@ -295,13 +295,13 @@ configuration.</p>
 <p>But to first understand why this came up in the first place is good to know that <code>pkgfile</code> is a tool for searching files in the official repos. <a href="https://wiki.archlinux.org/index.php/Pkgfile" target="_blank">pkgfile - ArchLinux wiki</a></p>
 <p>It should be noted that the question as to why the <strong>pkgfile</strong> differs for the file system hierarchy and the package itself has come up before.</p>
 <p>This <a href="https://github.com/falconindy/pkgfile/issues/25" target="_blank">issue</a> on Github dealt with it.</p>
-<p>In the thread, one of the users reported whether it was necessary for <strong>pkgfile</strong> to create the directory if it doesn&rsquo;t exist.</p>
+<p>In the thread, one of the users reported whether it was necessary for <strong>pkgfile</strong> to create the directory if it doesn't exist.</p>
 <p>Of course this is not the case here, but upon closer look on the pacman log it could be seen that <strong>pkgconf</strong> had just been upgraded</p>
 <pre><code> upgraded pkgconf (1.5.2-1 -&gt; 1.5.3-1)
  warning: directory permissions differ on /var/cache/pkgfile/
  filesystem: 775  package: 755
 </code></pre>
-<p>Which suggests that right after the updates it didn&rsquo;t recreate it.</p>
+<p>Which suggests that right after the updates it didn't recreate it.</p>
 <p>On the other hand <strong>pkgconf</strong> is according to the manual pages:</p>
 <pre><code> pkgconf is a program which helps to configure compiler and
  linker flags for development libraries.  This allows build
@@ -381,7 +381,7 @@ other elements such as firmware nonfree blobs, or have provided
 ambiguously writing in the documentation, and have offered other
 methods that have provided download venues which in turn officially
 endorse nonfree programs. More information about this can be seen on
-the article entitled <em>Explaining Why We Don&rsquo;t Endorse Other Systems</em>
+the article entitled <em>Explaining Why We Don't Endorse Other Systems</em>
 <a href="#nonfree"><sup id="nonfreeref">1</sup></a> posted on the Free
 Software Foundation website.</p>
 <p>So the poor statements that this user was trying to make about one of
@@ -459,7 +459,7 @@ but if I or others submit positive reviews they tend to get
 ignored and there are more than a handful of distributions
 where I have noticed that trend</p>
 </blockquote>
-<p>But what it&rsquo;s unfortunate is that such misleading bits of information occur
+<p>But what it's unfortunate is that such misleading bits of information occur
 nowadays, especially within the culture of the GNU/Linux Operating system which
 even includes its kernel without which the vast GNU software which is comprised
 of, accomplishes nothing.  But most importantly, listing it as so called &lsquo;popular&rsquo;
@@ -482,7 +482,7 @@ that Linux distro fared in comparison with the rest, was aware of
 these facts, but Distrowatch in general has been around for a while
 and I wonder whether they have affected the objective and the goal
 overall of the Free Software Foundation Guidelines.<br>
-No doubt that the reviews need further revision but they&rsquo;re
+No doubt that the reviews need further revision but they're
 doing so while promoting their own, without regard for the
 particular distro and whether this is community-driven or not.</p>
 <p>The Linux Distribution Timeline offers in turn the progress
@@ -493,7 +493,7 @@ better Market Share Model that tackles the Linux world.</p>
 <p>The website for this project is located at <a
 href="http://futurist.se/gldt/" target="_blank">futurist.se</a></p>
 <h2 id="sources"><strong>Sources</strong></h2>
-<p><strong>1</strong>- <a name="nonfree"></a><a href="https://www.gnu.org/distros/common-distros.en.html" target="_blank">Explaining Why We Don&rsquo;t Endorse Other Systems</a><a href="#nonfreeref">↵</a></p>
+<p><strong>1</strong>- <a name="nonfree"></a><a href="https://www.gnu.org/distros/common-distros.en.html" target="_blank">Explaining Why We Don't Endorse Other Systems</a><a href="#nonfreeref">↵</a></p>
 <p><strong>2</strong>-<a name="stack"></a><a href="https://books.google.com/books?id=YZIoDQAAQBAJ"
 target="_blank">Stack Frames: A Look From Inside</a><a href="#stackref">↵</a></p>
 <p><strong>3</strong>-<a name="linuxcounter"></a><a href="https://www.linuxcounter.net/statistics/distributions" target="_blank"><a href="http://www.linuxcounter.net/statistics/distributions">www.linuxcounter.net/statistics/distributions</a></a><a href="#linuxcounterref">↵</a></p>
@@ -506,19 +506,19 @@ target="_blan">lwn.net/Distributions</a><a href="#lwnref">↵</a></p>
         <h1 class="post-title"><a href="https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/">Gscan2pdf Sane Start Invalid Argument</a></h1>
         <span class="post-date">Jul 24, 2018</span>
         <p>Antergos wins here. Manjaro could have done better but it
-didn&rsquo;t.</p>
+didn't.</p>
 <p>Anyone who would want to avoid having to go through the
 hassle of reinstalling and testing sane drivers under Arch
-Linux should look no further. The comparison wasn&rsquo;t done
+Linux should look no further. The comparison wasn't done
 between all the Arch Linux based distributions, but Antergos
 is the clear winner here.</p>
 <p>No Desktop Environment under Manjaro worked to have this
 driver functioning as it should have been functioning. And
 this is after trying Manjaro KDE, Manjaro XFCE, the most
-popular of the bunch. Didn&rsquo;t try it with GNOME and I wasn&rsquo;t
+popular of the bunch. Didn't try it with GNOME and I wasn't
 going to waste my time with it.</p>
 <p>Perhaps later versions would fare better, but this time
-around it didn&rsquo;t deliver what it was expected from this
+around it didn't deliver what it was expected from this
 distribution. The main issue had to do with the <code>invalid argument</code> error message from programs such as <strong>gscan2pdf</strong>
 and also from <strong>xsane</strong> and in identifying and picking up
 the right device other than the infamous <code>Noname integrated camera</code> that it would only identify from the list.</p>
@@ -564,15 +564,15 @@ in this case for the hunspell Spanish dictionary <strong>hunspell-es</strong>.</
 <p><img src="/images/Screenshot_2018-07-17_23-51-16.png" alt=""></p>
 <p>Thus by removing <strong>antergos-common-meta</strong> or whatever was left
 of it, resolved the problem, it seems that the Antergos
-community haven&rsquo;t been able to resolve some of these issues
+community haven't been able to resolve some of these issues
 that keep coming up every now and then with the
 distribution.</p>
 <p>A Google search about this problem returned, among the
 results some posts like <a
 href="https://forum.antergos.com/topic/10303/cant-solve-dependencies-hunspell"
-target="_blank">can&rsquo;t solve dependencies hunspell</a> which
+target="_blank">can't solve dependencies hunspell</a> which
 summarised the same error message.</p>
-<p>Unlike other occasions, I didn&rsquo;t read about this particular issue this time, The reason for not following up on it is due to the fact that a few days ago a dependency problem had appeared about a <code>..libso.2</code> (I can&rsquo;t remember the name of the file, this time around), but it was a file that needed to be removed before successfully continuing with the updates.</p>
+<p>Unlike other occasions, I didn't read about this particular issue this time, The reason for not following up on it is due to the fact that a few days ago a dependency problem had appeared about a <code>..libso.2</code> (I can't remember the name of the file, this time around), but it was a file that needed to be removed before successfully continuing with the updates.</p>
 <p>Hopefully the Antergos developers will be able to correct some
 of these inconsistencies in an otherwise great distribution
 that is based on Arch, before a greater share of users who are

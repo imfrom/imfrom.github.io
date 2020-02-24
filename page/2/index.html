@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.64.1" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -260,7 +260,7 @@ point in the right direction, and the <a
 href="https://github.com/mawww/kakoune/issues/1192#issuecomment-277494934">accompanying
 comment</a> further specified that by having it [the function
 show_matching] called out by a hook directly from the configuration
-file, it still wouldn&rsquo;t quite load the <code>add-highlighter</code> onto the
+file, it still wouldn't quite load the <code>add-highlighter</code> onto the
 buffer.</p>
 <p>Perhaps and one of the feasible explanations is that at the
 time this issue came up, other changes may have been further
@@ -282,14 +282,14 @@ buffer that is, but I needed to have the changes applied
 globally and soon after restarting the editor. The settings
 needed to be called out directly from the <strong>kakrc</strong> file.</p>
 <p>All in all, and after changing the values around to have
-<code>add-highlighter</code> instead of <code>addhl</code> (although I couldn&rsquo;t
+<code>add-highlighter</code> instead of <code>addhl</code> (although I couldn't
 think of a valid reason), and further adding to the snippet
 some values such as a <code>buffer</code> right after <code>addhl</code> instead,
-I noticed all of it wouldn&rsquo;t add up. The hook had already
+I noticed all of it wouldn't add up. The hook had already
 specified it as such.</p>
 <p>The only thing left was to have <code>addhl</code> directly on the
 initialization file without invoking a hook.</p>
-<p>And that&rsquo;s exactly what I did</p>
+<p>And that's exactly what I did</p>
 <pre><code> addhl global\ show-matching 
 </code></pre>
 <p>The opening and closing pairs would highlight accordingly.</p>
@@ -326,7 +326,7 @@ in normal mode, select the <c> register (single character)</p>
 <p>But unlike <strong>vim</strong> in which a macro is replayed by preceding
 the register <key> with the macro <strong>@</strong>, on <strong>kakoune</strong>, the
 double quote along with register <code>&lt;key&gt;</code> must precede the macro
-key, which in this case is <code>q</code> that&rsquo;s bound to the default
+key, which in this case is <code>q</code> that's bound to the default
 register <strong>@</strong></p>
 <p>Ignorant of this fact, mixed with the confusion that stemmed
 primarily from the habit of using a workflow from <strong>vim</strong>,
@@ -338,7 +338,7 @@ the specified macro.</p>
 <p>After going over it, this may simply seem to have been
 just an oversight on my part since such an obvious step to
 record and replay the macro, is evident, but considering
-I&rsquo;ve been used to <strong>vim</strong>, it was not at all clear at first,
+I've been used to <strong>vim</strong>, it was not at all clear at first,
 what the steps may have been, mainly in order to replay the macro
 on Normal mode. On <strong>Insert</strong> and <strong>Prompt</strong> mode, however,
 the documentation provided all the details.</p>
@@ -355,7 +355,7 @@ target="_blank">Kakoune Macros</a></p>
 target="_blank">Kakoune registers</a></p>
 <p><strong>Other useful links</strong></p>
 <p><a href="https://www.reddit.com/r/vim/comments/5icmak/a_vim_users_comparisation_between_kakoune_and_vim/"
-target="_blank">A vim user&rsquo;s comparison between vim and
+target="_blank">A vim user's comparison between vim and
 kakoune</a></p>
 
     </div>
@@ -451,7 +451,7 @@ be replaced with <code>selection</code> from
 </code></pre>
 <p>would suffice.</p>
 <h2 id="updates">Updates</h2>
-<p>I&rsquo;ve since stopped using the above since the way that
+<p>I've since stopped using the above since the way that
 <code>xclip</code> uses many of the
 <code>clipboards</code> do not seem to behave as expected under
 Kakoune.</p>
@@ -477,7 +477,7 @@ work</a> for further info.</p>
 <pre><code> exo-open --launch 'xterm -e'
 </code></pre>
 <p>But this is wrong, since <strong>TerminalEmulator</strong> needs to be specified.</p>
-<p>On another <a href="http://www.firemountain.net/pipermail/novalug/2013-January/034003.html" target="_blank">post</a> closely related under the same thread, another user specified that the <strong>&ndash;launch</strong> option needed a &ldquo;category.&rdquo; It wouldn&rsquo;t be difficult to find out what the category he was referring to, may be. In this case, even the already mentioned link from <a href="http://www.firemountain.net/pipermail/novalug/2013-January/033997.html" target="_blank">xfce docs</a> had already pointed out.</p>
+<p>On another <a href="http://www.firemountain.net/pipermail/novalug/2013-January/034003.html" target="_blank">post</a> closely related under the same thread, another user specified that the <strong>&ndash;launch</strong> option needed a &ldquo;category.&rdquo; It wouldn't be difficult to find out what the category he was referring to, may be. In this case, even the already mentioned link from <a href="http://www.firemountain.net/pipermail/novalug/2013-January/033997.html" target="_blank">xfce docs</a> had already pointed out.</p>
 <p>The man page for <a href="https://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1" target="_blank">xterm</a> says about the <strong>-e</strong> option that it will</p>
 <pre><code> -e program [ arguments ... ]
  This option specifies the program (and its command line arguments) to be run in the xterm window. It also sets the window title and icon name to be the basename of the program being executed if neither -T nor -n are given on the command line.
@@ -494,7 +494,7 @@ work</a> for further info.</p>
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/">Closetag Vim on Markdown Filetype</a></h1>
         <span class="post-date">Dec 17, 2018</span>
-        <p>I coudln&rsquo;t help but noticing that the closetag plugin script for vim wasn&rsquo;t working on any of the markdown files that had been previously edited.</p>
+        <p>I coudln't help but noticing that the closetag plugin script for vim wasn't working on any of the markdown files that had been previously edited.</p>
 <p>The markdown files in question were of the abbreviated form <code>md</code> and not <code>markdown</code>.</p>
 <p>It did work without a problem on any newly-created file and whether these files were of the form or had the extension <code>md</code> or <code>markdown</code>.</p>
 <p>The README file of <strong>closetag</strong> specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:</p>
@@ -516,12 +516,12 @@ suffix <code>.md</code> extension</p>
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/">Error While Reinstalling All Previously Deployed Packages of Context User</a></h1>
         <span class="post-date">Nov 26, 2018</span>
-        <p>I still don&rsquo;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error <code>Error while reinstalling all previously deployed packages of context user</code>.</p>
-<p>Looking up Google didn&rsquo;t help in finding some sort of recent info about this issue.</p>
+        <p>I still don't know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error <code>Error while reinstalling all previously deployed packages of context user</code>.</p>
+<p>Looking up Google didn't help in finding some sort of recent info about this issue.</p>
 <p>I also had a <code>warning: failed to load path from javadlx</code> which was obviously only a warning but nonetheless troublesome and problematic considering that this was just a fresh installation of Libreoffice.</p>
 <p>Further looking up this issue through Google led me to the forum of Arch in which a user mentioned the possibility of permission problems with the installation. The user also queried Google to find more about this issue:</p>
 <blockquote>
-<p>Googling about the error showed some chances of being a permission problem with ~/.openoffice.org2. But I don&rsquo;t have that directory in my system, but ~/.config/.libreoffice. I would suggest you check the permissions on this directory. Mine are 766. <a href="#javadlx"><sup id="javadlxref">1</sup></a></p>
+<p>Googling about the error showed some chances of being a permission problem with ~/.openoffice.org2. But I don't have that directory in my system, but ~/.config/.libreoffice. I would suggest you check the permissions on this directory. Mine are 766. <a href="#javadlx"><sup id="javadlxref">1</sup></a></p>
 </blockquote>
 <p>but there was nothing out of the norm with the permissions set on the directory. But from his post it reminded me that usually the path that is set by xdg is under the <strong>xdg</strong> directory. Then again, the environment variable for it had been set correctly.</p>
 <p>I decided to go ahead and back up the <code>.config/libreoffice/4</code> directory where some of the other files for libreoffice laid at.</p>
@@ -547,7 +547,7 @@ suffix <code>.md</code> extension</p>
 <p>followed by the enabling of the newly installed display manager with</p>
 <pre><code> systemctl enable sddm.service
 </code></pre>
-<p>But it wasn&rsquo;t clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
+<p>But it wasn't clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
 <p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling out the <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
 <pre><code> datetimectl status
 </code></pre>
@@ -557,7 +557,7 @@ suffix <code>.md</code> extension</p>
 </code></pre>
 <p>All in all, some of the <a href="https://bbs.archlinux.org/viewtopic.php?id=207550" target="_blank">posts from Arch Forums</a> that were queried via Google, were slightly off topic. Some of these <a href="https://bbs.archlinux.org/viewtopic.php?id=112137" target="_blank">posts</a> for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.</p>
 <p>Further posts that came up for XFCE were also from the long-standing threads at <strong>linuxquestions.org</strong>, a site that has been around perhaps longer than any other out there related to GNU/Linux in general. This time around the <a href="https://www.linuxquestions.org/questions/linux-software-2/adjusting-the-clock-in-xfce-4175528816/" target="_blank">user was running AntiX</a>  and not systemd. The <code>timedatectl</code> is part of the latter in this case, so the suggestions aimed at <code>hwclock</code> or setting it also through <code>date</code> instead.</p>
-<p>I&rsquo;ve found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example <a href="https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux" target="_blank">I messed up my system clock in Arch Linux</a>.</p>
+<p>I've found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example <a href="https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux" target="_blank">I messed up my system clock in Arch Linux</a>.</p>
 <p>Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the <code>timedatectl</code> command. Like for example the following question that was also on <strong>stackexchange</strong> <a href="https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce" target="_blank">How can I easily change my time-zone in Arch/Xfce</a> that I came across only later and after resolving it first in my end.</p>
 <p>And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the <strong>Arch Wiki</strong> for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading <code>man</code> pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close as the latter!</p>
 <p><strong>References</strong></p>
@@ -570,7 +570,7 @@ suffix <code>.md</code> extension</p>
         <span class="post-date">Aug 28, 2018</span>
         <p>as the <a href="https://wiki.archlinux.org/index.php/ClamAV" target="_blank">ClamAV arch linux wiki</a> states, <strong>ClamAV</strong> is:</p>
 <blockquote>
-<p>Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&rsquo;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.</p>
+<p>Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV's main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.</p>
 </blockquote>
 <p>In order to update the definitions correctly is important to run first</p>
 <pre><code> freshclam
@@ -589,7 +589,7 @@ suffix <code>.md</code> extension</p>
 <pre><code> WARNING: Clamd was NOT notified: Can't connect to clamd through /run/clamav/clamd.ctl: No such file or directory
 </code></pre>
 <p>which left me unsure what could have been the issue.</p>
-<p>Googling about it returned among many of the results, some as in <a href="https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/" target="_blank">Can&rsquo;t connect to Unix socket /var/run//clamav/clamd.ctl</a>, which dealt with the issue.</p>
+<p>Googling about it returned among many of the results, some as in <a href="https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/" target="_blank">Can't connect to Unix socket /var/run//clamav/clamd.ctl</a>, which dealt with the issue.</p>
 <p>The error here in which it dealt with <strong>clamd.ctl</strong> and not with <strong>clamd.sock connect ()</strong> as it was posted on the entry entitled <a href="https://wiki.archlinux.org/index.php/ClamAV#Error:_Clamd_was_NOT_notified" target="_blank">Error Clamd was not notified</a>.</p>
 <p>But after running</p>
 <pre><code>  freshclam
@@ -611,7 +611,7 @@ suffix <code>.md</code> extension</p>
  Aug 28 01:23:43  freshclam[]: daily.cvd is up to date (vers&gt;
  Aug 28 01:23:43  freshclam[]: bytecode.cvd is up to date
 </code></pre>
-<p>But whether it would be necessary to enable it every time it restarts, it&rsquo;s something that I will deal with later on. I only needed it this time around to check some files, and that was the purpose of running it in the first place.</p>
+<p>But whether it would be necessary to enable it every time it restarts, it's something that I will deal with later on. I only needed it this time around to check some files, and that was the purpose of running it in the first place.</p>
 
     </div>
   
@@ -620,13 +620,13 @@ suffix <code>.md</code> extension</p>
         <span class="post-date">Aug 16, 2018</span>
         <p>On a different machine running the latest updates from Arch, pacman would give the error (and rightly so) that <code>hunspell-en and hunspell-en_US are in conflict</code> and <code>could not satisfy dependencies</code> followed by <code>removing hunspell-en breaks dependency hunspell-en required by **antergos-common-meta**</code>.</p>
 <p>This was of course never a problem on the other machine in which <strong>antergos-common-meta</strong> was removed a while back. For the simple reason that the update related to anything <strong>hunspell</strong> was in this particular case only for <strong>hunspell-en_US</strong> as well as <strong>hunspell-es_any</strong> but not for, and this is important to note: <strong>hunspell-en</strong>. The latter includes all English dictionaries for US, UK, etc.</p>
-<p>So the question is how to resolve this impeding conflict during the updates? Simply by skipping the package on pacman during the updates, or simply by deselecting the packages that belong to **hunspell-en_** on pamac (the gui version for pacman) for which the conflict exists in the first place.</p>
+<p>So the question is how to resolve this impeding conflict during the updates? Simply by skipping the package on pacman during the updates, or simply by deselecting the packages that belong to <em>hunspell-en</em> on pamac (the gui version for pacman) for which the conflict exists in the first place.</p>
 <pre><code> pacman -Su IgnorePkg=hunspell-en_US
 </code></pre>
 <p>See <a href="https://wiki.archlinux.org/index.php/Pacman#Skip_package_from_being_upgraded" target="_blank">Skip package from being upgraded</a> on the Arch Wiki.</p>
 <p>By removing <strong>antergos-common-meta</strong> the first time around on this particular
 as I had done a few weeks ago on the other machine, made no difference. And
-that&rsquo;s the reason as to why the above is recommended. That is, by skipping the
+that's the reason as to why the above is recommended. That is, by skipping the
 packages in question that belong to <strong>hunspell-en_US</strong> for example first, and
 then by proceeding with the updates normally seems to be the most reasonable
 method.</p>
