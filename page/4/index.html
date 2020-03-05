@@ -213,13 +213,15 @@
     
       
     
+      
+    
 
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2019. All rights reserved.</p>
+    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 
@@ -242,6 +244,20 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/udisks2-udiskie-fares-better-than-ntfs-3g/">Udisks2 Udiskie Fares Better Than Ntfs 3g</a></h1>
+        <span class="post-date">Jan 16, 2018</span>
+        <p>It is my opinion, based mostly not on what I’ve read, but instead on what I’ve encountered during the handling of a failed hard disk, that the disk volume mounting utility udisks2 fares better than say, ntfs-3g.</p>
+<p>Quite possibly there could be many improvements with this software, and there is no doubt about it, but considering wear-and-tear conditions of the disk, among other considerations, and, as long as udisks2 is run without an interruption, no other mounting options utility that is currently available may be able to improve its overall performance.</p>
+<p>If time is not a constraint, and the program is allowed to run on its own, udisks2 fares relatively better on previously loaded Windows OS partitions than any other. Of this I can attest without a doubt. The utility has been able to eventually access corrupted filesystems that would have been rendered unrecoverable otherwise</p>
+<h2 id="for-futher-info-and-configuration-visit-the-wiki">For futher info and configuration, visit the wiki:</h2>
+<p><a href="https://wiki.archlinux.org/index.php/Udisks#Mount_to_.2Fmedia_.28udisks2.29" target="_blank">Mount to /media (udisks2)</a></p>
+<p><a href="https://wiki.archlinux.org/index.php/Udisks" target="_blank">Udisks</a></p>
+<p><a href="https://wiki.archlinux.org/index.php/NTFS-3G" target="_blank">ntfs-3g Arch Linux</a></p>
+<p><a href="https://github.com/coldfix/udiskie/wiki/Usage" target="_blank">udiskie on github</a></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/metadata-irreversible/">Metadata Irreversible</a></h1>
@@ -550,26 +566,6 @@ target="_blank">clang completion #1102</a></p>
 <p>On the website that aims at answering questions about the ubuntu distributiion, there are more examples with this purpose. See for example <a href="https://askubuntu.com/questions/206449/" target="_blank"> git config global file - remove settings</a></p>
 <p>The most important part about it lies on the command <strong>–unset-all</strong>, even though the <a href="https://stackoverflow.com//a/282550" target="_blank">  answer</a> which pointed at it was not the accepted solution in this case.</p>
 <p>For more details about the config-file for <strong>git</strong> it is recommended to read the manual <strong>man git-config</strong> for more details.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/npm-warn-saveerror-enonent-during-uninstall/">Npm Warn Saveerror Enonent During Uninstall</a></h1>
-        <span class="post-date">Nov 8, 2017</span>
-         <p>I recently tried a few utility programs through <strong>npm</strong> javascript manager. For further info see <a href="https://en.wikipedia.org/wiki/Npm_(software)" target="_blank">Npm package manager</a> on Wikipedia.</p>
-<p>But after trying them, I noticed that the output compilation was not what I had expected.</p>
-<p>Usually, or so it seems, that by default the programs end up on <code>/usr/lib/node_modules</code>.</p>
-<p>I kept one of the programs which I found it handy and very convenient. But I just wanted to remove the rest from the system.</p>
-<p>But lo and behold. The removal outcome for the programs was not what I had expected either.</p>
-<p><strong>npm</strong> threw errors even with sudo privileges.</p>
-<pre><code> npm WARN enoent ENOENT: no such file or directory, open 'package.json'
- npm WARN c No description
- npm WARN c No repository field.
- npm WARN c No README data
- npm WARN c No license field.
-</code></pre>
-<p>The problem was easily resolved by issuing the flag <code>-g</code> (get) for a successful uninstall. So that was <code>npm uninstall &lt;name&gt; -g</code>.</p>
-<p>Later I checked on <code>/usr/lib/node_modules</code>, to make sure the program was no longer on the system.</p>
 
     </div>
   
