@@ -17,7 +17,7 @@
       <pubDate>Thu, 05 Mar 2020 00:10:05 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/pamac-gui-wps-office-curl-22/</guid>
-      <description>On a recent WPS upgrade through pamac gui, there was a somewhat inconvenient curl: (22) The requested URL returned error: 416  error which I wasn&#39;t ready for, at the time it happened.
+      <description>On a recent WPS upgrade through pamac gui, there was a somewhat inconvenient curl: (22) The requested URL returned error: 416  error which I wasn&amp;rsquo;t ready for, at the time it happened.
 All the updates had gone through any major problem, but this seemed to go on.
 I had no issues elsewhere and with another system in which the updates went through without any setback there seemed to be no issues either.</description>
     </item>
@@ -28,9 +28,9 @@ I had no issues elsewhere and with another system in which the updates went thro
       <pubDate>Mon, 30 Dec 2019 22:51:32 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/wps-office-spanish-dictionary/</guid>
-      <description>I&#39;ve installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&amp;hellip;
+      <description>I&amp;rsquo;ve installed many text formatting processors over the years, or as they are simply abbreviated with the acronyms WYSIWYG&amp;hellip;
 Although many users prefer the advantages provided by a cloud stored-word processing program such as the one provided by Google, I tend to steer away from it mainly because of response time within the application.
-But I&#39;m not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation - has failed to develop such a feature.</description>
+But I&amp;rsquo;m not oblivious either to the fact that the versioning control system as it was implemented by Google, is surely a breakthrough innovation among these programs, which needless to say, many of these other programs - including the one provided by Microsoft - at least the one provided for local installation - has failed to develop such a feature.</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ But I&#39;m not oblivious either to the fact that the versioning control system 
       
       <guid>https://imfrom.github.io/post/sed-and-awk-to-print-ranges/</guid>
       <description>sed and awk are very powerful tools that would yield results unlike anything else in *Nix.
-Although one could certainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it&#39;s always the case: available, for even other menial tasks.
+Although one could certainly create constructs within say a bash script that would give it further fuel, it comes handy to have it as it&amp;rsquo;s always the case: available, for even other menial tasks.
 Printing a given range of lines would undoubtedly come practical during those times when simply displaying them directly by invoking the manual is proven not to be the most straightforward method.</description>
     </item>
     
@@ -50,8 +50,8 @@ Printing a given range of lines would undoubtedly come practical during those ti
       <pubDate>Mon, 23 Dec 2019 22:53:32 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/fc-list-get-fonts/</guid>
-      <description>It&#39;s always nice to have a &amp;lsquo;cheat sheet&amp;rsquo; summary of all sorts Unix to remember certain programs
-I usually have Lua looking this up for me through otf and ttf fonts, but it&#39;s been a while since I went this route.
+      <description>It&amp;rsquo;s always nice to have a &amp;lsquo;cheat sheet&amp;rsquo; summary of all sorts Unix to remember certain programs
+I usually have Lua looking this up for me through otf and ttf fonts, but it&amp;rsquo;s been a while since I went this route.
 fontconfig takes care of all font-related
 fontconfig takes care &amp;ndash; as the freedesktop.org website states to
   discover new fonts when installed automatically, removing a common source of configuration problems.</description>
@@ -77,7 +77,7 @@ Pamac would simply hang, egregiously stuck at either:</description>
       <description>Libalpm is the library for package management of Arch.
 I found it funny that in case of any bugs the team says
  Bugs? You must be kidding; there are no bugs in this software. But if we happen to be wrong, submit a bug report.
- But they&#39;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments.</description>
+ But they&amp;rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments.</description>
     </item>
     
     <item>
@@ -87,7 +87,7 @@ I found it funny that in case of any bugs the team says
       
       <guid>https://imfrom.github.io/post/arch-linux-javaws-no-such-file-or-directory/</guid>
       <description>Trying to get javaws to work without a glitch on one of the systems it was tested under, proved to be a chore.
-The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that&#39;d normally take care of it.
+The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that&amp;rsquo;d normally take care of it.
 All the libraries for which javaws depended upon and for which it was being tested even under a different system seemed to have been installed.</description>
     </item>
     
@@ -112,7 +112,7 @@ rm /var/lib/db.lck pacman -Syyu </description>
 As the Kakoune Registers &amp;ndash; Clipboard Wiki states it:
  Notice that xclip will not work using this example
  This was one of the reasons why I wanted to delve further into this issue.
-Anyhow, I&#39;ll copy-paste the various sections from the Kakoune Registers - Clipboard Wiki that show a better overview of the steps to follow by adding the snippets into the initialization file, while using xsel.</description>
+Anyhow, I&amp;rsquo;ll copy-paste the various sections from the Kakoune Registers - Clipboard Wiki that show a better overview of the steps to follow by adding the snippets into the initialization file, while using xsel.</description>
     </item>
     
     <item>
@@ -131,7 +131,7 @@ One could go directly to the attachments in question and selectively open each o
       <pubDate>Tue, 05 Mar 2019 23:33:24 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/</guid>
-      <description>It seemed as if there&#39;s some sort of conflict by bringing up the menu on the xterm terminal.
+      <description>It seemed as if there&amp;rsquo;s some sort of conflict by bringing up the menu on the xterm terminal.
 Ctrl+ 🖱 (rightmouse) is usually the way that one would bring the menu, but every time this was done, xterm was crashing.
 After going over some of the xorg-fonts-* packages, I noticed that some of them were not installed for the X system.
 Among them, xorg-fonts-misc was not installed. I proceeded to install it and the menu was brought up successfully again by the ctrl rightmouse 🖱combination.</description>
@@ -144,7 +144,7 @@ Among them, xorg-fonts-misc was not installed. I proceeded to install it and the
       
       <guid>https://imfrom.github.io/post/kakoune-matching-pairs/</guid>
       <description>When I tried to delve further into the issue of highlighters that were used on kakoune, I was more interested on the options akin to the ones provided and which have been implemented on vim or neovim, such as e.g. showmatch, matchpairs.
-On vim this is something that could be easily obtained by having for example a set showmatch on the initialization file, but on kakoune, and although this issue on github seemed to point in the right direction, and the accompanying comment further specified that by having it [the function show_matching] called out by a hook directly from the configuration file, it still wouldn&#39;t quite load the add-highlighter onto the buffer.</description>
+On vim this is something that could be easily obtained by having for example a set showmatch on the initialization file, but on kakoune, and although this issue on github seemed to point in the right direction, and the accompanying comment further specified that by having it [the function show_matching] called out by a hook directly from the configuration file, it still wouldn&amp;rsquo;t quite load the add-highlighter onto the buffer.</description>
     </item>
     
     <item>
@@ -200,7 +200,7 @@ $ exo-open --launch TerminalEmulator mutt  on the terminal, this, however, does 
       <pubDate>Mon, 17 Dec 2018 00:43:33 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/closetag-vim-on-markdown-filetype/</guid>
-      <description>I coudln&#39;t help but noticing that the closetag plugin script for vim wasn&#39;t working on any of the markdown files that had been previously edited.
+      <description>I coudln&amp;rsquo;t help but noticing that the closetag plugin script for vim wasn&amp;rsquo;t working on any of the markdown files that had been previously edited.
 The markdown files in question were of the abbreviated form md and not markdown.
 It did work without a problem on any newly-created file and whether these files were of the form or had the extension md or markdown.
 The README file of closetag specifies that in order for the plugin to work, it should be further specified as such on the initialization file with something such as:</description>
@@ -212,8 +212,8 @@ The README file of closetag specifies that in order for the plugin to work, it s
       <pubDate>Mon, 26 Nov 2018 01:25:37 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/</guid>
-      <description>I still don&#39;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error Error while reinstalling all previously deployed packages of context user.
-Looking up Google didn&#39;t help in finding some sort of recent info about this issue.
+      <description>I still don&amp;rsquo;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error Error while reinstalling all previously deployed packages of context user.
+Looking up Google didn&amp;rsquo;t help in finding some sort of recent info about this issue.
 I also had a warning: failed to load path from javadlx which was obviously only a warning but nonetheless troublesome and problematic considering that this was just a fresh installation of Libreoffice.</description>
     </item>
     
@@ -233,7 +233,7 @@ I also had a warning: failed to load path from javadlx which was obviously only 
       
       <guid>https://imfrom.github.io/post/clamav-freshclam-update-definitions/</guid>
       <description>as the ClamAV arch linux wiki states, ClamAV is:
- Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&#39;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
+ Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&amp;rsquo;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
  In order to update the definitions correctly is important to run first</description>
     </item>
     
@@ -285,8 +285,8 @@ I said that he/she stated it without further proof because all distributions con
       <pubDate>Tue, 24 Jul 2018 23:48:49 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/gscan2pdf-sane-start-invalid-argument/</guid>
-      <description>Antergos wins here. Manjaro could have done better but it didn&#39;t.
-Anyone who would want to avoid having to go through the hassle of reinstalling and testing sane drivers under Arch Linux should look no further. The comparison wasn&#39;t done between all the Arch Linux based distributions, but Antergos is the clear winner here.
+      <description>Antergos wins here. Manjaro could have done better but it didn&amp;rsquo;t.
+Anyone who would want to avoid having to go through the hassle of reinstalling and testing sane drivers under Arch Linux should look no further. The comparison wasn&amp;rsquo;t done between all the Arch Linux based distributions, but Antergos is the clear winner here.
 No Desktop Environment under Manjaro worked to have this driver functioning as it should have been functioning.</description>
     </item>
     
@@ -310,7 +310,7 @@ Although it could have been relatively simple to circumvent the problem by seein
       <guid>https://imfrom.github.io/post/could-not-satisfy-dependencies-hunspell-antergos-common-meta/</guid>
       <description>It seems as if antergos-common-meta has been removed from some of the repositories.
 In the latest updates by using pamac or even pacman returned the could not satisfy dependency error that was required in this case for the hunspell Spanish dictionary hunspell-es.
-Thus by removing antergos-common-meta or whatever was left of it, resolved the problem, it seems that the Antergos community haven&#39;t been able to resolve some of these issues that keep coming up every now and then with the distribution.</description>
+Thus by removing antergos-common-meta or whatever was left of it, resolved the problem, it seems that the Antergos community haven&amp;rsquo;t been able to resolve some of these issues that keep coming up every now and then with the distribution.</description>
     </item>
     
     <item>

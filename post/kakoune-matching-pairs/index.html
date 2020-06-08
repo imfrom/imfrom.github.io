@@ -215,6 +215,7 @@
       
     
 
+    <a class="sidebar-nav-item" href="/archive/.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>
     <span class="sidebar-nav-item">Currently on </span>
   </nav>
@@ -256,7 +257,7 @@ point in the right direction, and the <a
 href="https://github.com/mawww/kakoune/issues/1192#issuecomment-277494934">accompanying
 comment</a> further specified that by having it [the function
 show_matching] called out by a hook directly from the configuration
-file, it still wouldn't quite load the <code>add-highlighter</code> onto the
+file, it still wouldn&rsquo;t quite load the <code>add-highlighter</code> onto the
 buffer.</p>
 <p>Perhaps and one of the feasible explanations is that at the
 time this issue came up, other changes may have been further
@@ -278,14 +279,14 @@ buffer that is, but I needed to have the changes applied
 globally and soon after restarting the editor. The settings
 needed to be called out directly from the <strong>kakrc</strong> file.</p>
 <p>All in all, and after changing the values around to have
-<code>add-highlighter</code> instead of <code>addhl</code> (although I couldn't
+<code>add-highlighter</code> instead of <code>addhl</code> (although I couldn&rsquo;t
 think of a valid reason), and further adding to the snippet
 some values such as a <code>buffer</code> right after <code>addhl</code> instead,
-I noticed all of it wouldn't add up. The hook had already
+I noticed all of it wouldn&rsquo;t add up. The hook had already
 specified it as such.</p>
 <p>The only thing left was to have <code>addhl</code> directly on the
 initialization file without invoking a hook.</p>
-<p>And that's exactly what I did</p>
+<p>And that&rsquo;s exactly what I did</p>
 <pre><code> addhl global\ show-matching 
 </code></pre>
 <p>The opening and closing pairs would highlight accordingly.</p>
