@@ -246,7 +246,7 @@
   <h1 class="post-title">Hwclock Timedatectl</h1>
   <span class="post-date">Jun 8, 2020</span>
   <p>Setting the time and date by invoking <code>hwclock --systohc</code> or by <code>hwclock --hctosys</code> should always be followed by <code>localtime</code> rather than say by <code>--utc</code> wich is the Universal Corrdinated Time.</p>
-<p>On the other hand, if multiple systems are to be used, it may be useful to better better the hardware clock synchronized in UTC in case that time zone and DST Daylight Savings Time come into effect.</p>
+<p>On the other hand, if multiple systems are to be used, it may be useful to better have the hardware clock synchronized in UTC in case that time zone and DST Daylight Savings Time come into effect.</p>
 <p>Omitting appending something as simple as <code>--localtime</code> would certainly display the UTC on multiple systems under any hardware.</p>
 <p>In case of any trouble setting it up afterwards may resolve the issue</p>
 <pre><code>timedatectl set-timezone 

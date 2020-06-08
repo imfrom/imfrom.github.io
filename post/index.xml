@@ -18,7 +18,7 @@
       
       <guid>https://imfrom.github.io/post/hwclock-timedatectl/</guid>
       <description>Setting the time and date by invoking hwclock --systohc or by hwclock --hctosys should always be followed by localtime rather than say by --utc wich is the Universal Corrdinated Time.
-On the other hand, if multiple systems are to be used, it may be useful to better better the hardware clock synchronized in UTC in case that time zone and DST Daylight Savings Time come into effect.
+On the other hand, if multiple systems are to be used, it may be useful to better have the hardware clock synchronized in UTC in case that time zone and DST Daylight Savings Time come into effect.
 Omitting appending something as simple as --localtime would certainly display the UTC on multiple systems under any hardware.</description>
     </item>
     
