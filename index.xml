@@ -5,9 +5,41 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2020</rights>
-    <updated>2020-03-05 00:10:05 -0500 EST</updated>
+    <updated>2020-06-08 04:08:04 -0400 EDT</updated>
 
     
+      
+    
+      
+        <item>
+          <title>Hwclock Timedatectl</title>
+          <link>https://imfrom.github.io/post/hwclock-timedatectl/</link>
+          <pubDate>Mon, 08 Jun 2020 04:08:04 EDT</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/hwclock-timedatectl/</guid>
+          <description>&lt;p&gt;Setting the time and date by invoking &lt;code&gt;hwclock --systohc&lt;/code&gt; or by &lt;code&gt;hwclock --hctosys&lt;/code&gt; should always be followed by &lt;code&gt;localtime&lt;/code&gt; rather than say by &lt;code&gt;--utc&lt;/code&gt; wich is the Universal Corrdinated Time.&lt;/p&gt;
+&lt;p&gt;On the other hand, if multiple systems are to be used, it may be useful to better better the hardware clock synchronized in UTC in case that time zone and DST Daylight Savings Time come into effect.&lt;/p&gt;
+&lt;p&gt;Omitting appending something as simple as &lt;code&gt;--localtime&lt;/code&gt; would certainly display the UTC on multiple systems under any hardware.&lt;/p&gt;
+&lt;p&gt;In case of any trouble setting it up afterwards may resolve the issue&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;timedatectl set-timezone 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alternatively, one may invoke:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hwclock --set --date &#39;nn MMM YYYY 00:00&#39;
+hwclock --systohc --localtime
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For further resources, Google certainly helps and this article documentation from Red Hat may provide you with more details:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-configuring_the_date_and_time-hwclock&#34;&gt;https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-configuring_the_date_and_time-hwclock&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Posts</title>
+          <link>https://imfrom.github.io/post/</link>
+          <pubDate>Mon, 08 Jun 2020 04:08:04 EDT</pubDate>
+          <author></author>
+          <guid>https://imfrom.github.io/post/</guid>
+          <description></description>
+        </item>
       
     
       
@@ -24,17 +56,6 @@
 &lt;p&gt;A quick google search led me to, among the most relevant results, a post that was entitled &lt;a href=&#34;https://forum.manjaro.org/t/wps-office-failure-while-downloading/112800/3&#34; target=&#34;_blank&#34;&gt; wps-office: failure while downloading &lt;/a&gt;  that was brought up by the manjaro distro users to the devs - the latter group  is after all,  the one behind the &lt;a href=&#34;https://gitlab.manjaro.org/applications/pamac&#34; target=&#34;_blank&#34;&gt; development of the pamac graphical interface program &lt;/a&gt; - in which some folks pointed out the possibility of a network problem. Unlike the op issue, mine had primarily to do with an upgrade of the wps suite, and not an installation or reinstall. And also, just  as another user stated on the same forum, I had made sure that the network paralleled culprit wasn&amp;rsquo;t preventing the upgrade of wps from happening.&lt;/p&gt;
 &lt;p&gt;Since wps office is provided by AUR which is the largest unofficial repository package t Arch Linux, the best course of action was to reset the upgrade through the pamac program itself.&lt;/p&gt;
 </description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Posts</title>
-          <link>https://imfrom.github.io/post/</link>
-          <pubDate>Thu, 05 Mar 2020 00:10:05 EST</pubDate>
-          <author></author>
-          <guid>https://imfrom.github.io/post/</guid>
-          <description></description>
         </item>
       
     

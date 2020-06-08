@@ -215,6 +215,8 @@
     
       
     
+      
+    
 
     <a class="sidebar-nav-item" href="/archive/.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>
@@ -245,6 +247,34 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/">Sddm Wayland Timezone Differs From Locale</a></h1>
+        <span class="post-date">Nov 2, 2018</span>
+        <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enabled it on an older system. This time around though, my expectations fell short.</p>
+<p>After installing <a href="https://wiki.archlinux.org/index.php/SDDM#Configuration_GUI" target="_blank">SDDM</a>, I called out systemd to disable <a href="https://wiki.archlinux.org/index.php/LightDM" target="_blank">LightDM</a> with</p>
+<pre><code> sytemctl disable lightdm.service 
+</code></pre>
+<p>followed by the enabling of the newly installed display manager with</p>
+<pre><code> systemctl enable sddm.service
+</code></pre>
+<p>But it wasn&rsquo;t clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
+<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling out the <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
+<pre><code> datetimectl status
+</code></pre>
+<p>matched SDDM clock settings. The timezone had been incorrectly set at one point.</p>
+<p>Modifying the timezone accordingly seemed to have resolved the issue with:</p>
+<pre><code>timedatectl set-timezone Zone/SubZone
+</code></pre>
+<p>All in all, some of the <a href="https://bbs.archlinux.org/viewtopic.php?id=207550" target="_blank">posts from Arch Forums</a> that were queried via Google, were slightly off topic. Some of these <a href="https://bbs.archlinux.org/viewtopic.php?id=112137" target="_blank">posts</a> for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.</p>
+<p>Further posts that came up for XFCE were also from the long-standing threads at <strong>linuxquestions.org</strong>, a site that has been around perhaps longer than any other out there related to GNU/Linux in general. This time around the <a href="https://www.linuxquestions.org/questions/linux-software-2/adjusting-the-clock-in-xfce-4175528816/" target="_blank">user was running AntiX</a>  and not systemd. The <code>timedatectl</code> is part of the latter in this case, so the suggestions aimed at <code>hwclock</code> or setting it also through <code>date</code> instead.</p>
+<p>I&rsquo;ve found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example <a href="https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux" target="_blank">I messed up my system clock in Arch Linux</a>.</p>
+<p>Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the <code>timedatectl</code> command. Like for example the following question that was also on <strong>stackexchange</strong> <a href="https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce" target="_blank">How can I easily change my time-zone in Arch/Xfce</a> that I came across only later and after resolving it first in my end.</p>
+<p>And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the <strong>Arch Wiki</strong> for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading <code>man</code> pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close as the latter!</p>
+<p><strong>References</strong></p>
+<p><a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blnak">System Time Arch Wiki</a></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/clamav-freshclam-update-definitions/">Clamav Freshclam Update Definitions</a></h1>
@@ -674,29 +704,6 @@ unchecked before continuing.</p>
 <p>The following commit apparently introduced the issue in the first
 place:</p>
 <p><a href="https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f">https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/antergos-keyboard-selection-during-installation/">Antergos Keyboard Selection During Installation</a></h1>
-        <span class="post-date">Jan 27, 2018</span>
-        <p>One of the drawbacks during the installation of <a href="https://antergos.com" target="_blank">Antergos Linux</a> was in identifying the keyboard layout option that was previously selected during the media installation.</p>
-<p>As a result only the default variant was being used after installing the system.</p>
-<p>I was able to identify the problem by going to the X window system xorg configuration file <code>/etc/X11/xorg.d/00-keyboard.conf</code> and noticing that the <strong>XkbLayout</strong> variant was not being properly identified as originally intended.</p>
-<p>In my case, only one of the options had been specified correctly on the <code>00-keyboard.conf</code> file.</p>
-<p>What I found odd, is that on another system, which is by the way, running the same xfce environment from Antergos, the same problem was not encountered. On the other system, only one (1) variant was used, and it had correctly identified the layout twice, but on the system which after installing the Antergos media, loaded the incorrect values, two (2) variants were set accordingly, but only one (1) layout option was identified. In my case <strong>us</strong> had been been identified once, whereas with the former no issues pertaining to this problem occurred in the first place.</p>
-<p>As the wiki <a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files" target="_blank">Using X configuration files wiki</a> recommends, not to modify any of the settings manually, but let instead <strong>localectl</strong> handle it. <a href="#sample"><sup id="sampleref">1</sup></a></p>
-<p><img src="https://imfrom.github.io/images/localectl-usage.png" alt="" /></p>
-<p>Of course, it comes handy when there is even an example that illustrates the process by using the correct parameters. For something like:</p>
-<p><img src="https://imfrom.github.io/images/00-keyboard-sample.png" alt="" /></p>
-<p>Then something like the following <a href="#localectl"><sup id="localectlref">2</sup></a>, based on the previous example, suffices:</p>
-<p><img src="https://imfrom.github.io/images/localectl-sample-usage.png" alt="" /></p>
-<p>Set the values as deemed applicable to the desired customization.</p>
-<h2 id="references">References</h2>
-<ol>
-<li><p><a name="sample"><a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files" target="_blank">Using X Configuration files 00-keyboard.conf</a></a><a href="#sampleref"> &#x21A9;&#xFE0E;</a></p></li>
-<li><p><a name="localectl"><a href="https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Using_localectl" target="_blank">Using localectl</a></a><a href="#localectlref"> &#x21A9;&#xFE0E;</a></p></li>
-</ol>
 
     </div>
   
