@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Error Bash Completion No Such File or Directory &middot; Blog atrasado
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a><a class="sidebar-nav-item" href="/about/" title="">About</a><a class="sidebar-nav-item" href="/contact/" title="">Contact</a>
+    </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2020. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Blog atrasado</a>
+            <small>con gajes del oficio</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Error Bash Completion No Such File or Directory</h1>
+  <span class="post-date">Jun 9, 2020</span>
+  <p>I wouldn&rsquo;t know where to look —- I certainly can browse the <a href="https://packages.debian.org/buster/bash-completion" target="_blank">repo</a> from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as it may,  not everyione uses it.</p>
+<p>A quick glance at the files that comprise this program, one could see that aside from the <code>usr</code> folder, bash completion is also installed under <code>etc</code> and <code>bin</code> accordingly.</p>
+<p>Bash completion allows to fill in the rest of the commands or variables that follow fora gitven executable.</p>
+<p>See <a href="https://wiki.archlinux.org/index.php/Bash#Tab_completion" target="_blank">Bash autocompletion</a> for more details about its chock features&rsquo; versatility.</p>
+<p>In the case of Arch, the installation does not create — unlike on Debian — the folder <code>bash_completion</code> under <code>etc</code>. And I don&rsquo;t think this may have been an oversight from the Arch team, but perhaps due to safety reasons,  this was something that was never considered in the first place.</p>
+<p>Other programs have had no issue by correctly including on the script the means to have it install appropriately. But it&rsquo;s my opinion — and anyone is more than welcome to disagree with me here — that many a great number of programs have not chosen to do so or failed altogether in this regard. Hugo for example is one of them. See for example the <a href="https://github.com/gohugoio/hugo/pull/1088" target="_blank"> destination directory</a> when this feature was added. See the commit <a href="https://github.com/gohugoio/hugo/pull/1088/commits/ccdf544f73dda2ff2dd8bf0407a77e21084c59e8">here.</a></p>
+<p>To resolve this issue, the most viable solution is to manually add the folder, to where this error stems from, or else the message<code>Error: bash_completion.d: hugo.sh no such file or directory</code> will disallow the <code>autocomplete</code> which was added to the binaries of this  program, to come into effect.</p>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+  </body>
+</html>
+

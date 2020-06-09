@@ -71,6 +71,122 @@
 <div class="posts">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/">Xclip With Kakoune Making It Work</a></h1>
+        <span class="post-date">Mar 25, 2019</span>
+        <p>One of the pressing issues with Kakoune is the implementation
+of <code>xclip</code> to use the clipboard selections.</p>
+<p>As the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers &ndash; Clipboard Wiki</a> states it:</p>
+<blockquote>
+<p>Notice that <a href="https://github.com/mawww/kakoune/issues/2325" target="_blank">xclip will not work using this example</a></p>
+</blockquote>
+<p>This was one of the reasons why I wanted to delve further into this issue.</p>
+<p>Anyhow, I&rsquo;ll copy-paste the various sections from the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers - Clipboard Wiki</a> that show a better overview of the steps to follow by adding the snippets into the initialization file, while using <code>xsel</code>. Then I will tweak around with the <code>xclip</code> features by using the three clipboards that <code>xclip</code> uses, namely, <code>p</code> (primary), <code>sec</code> (secondary), and finally <code>clip</code> for the clipboard.</p>
+<p>Those are the options available by the use of <code>xclip</code>.</p>
+<h3 id="using-the-system-clipboard">Using the System Clipboard</h3>
+<p>You can use kakoune with <a href="https://wiki.archlinux.org/index.php/Clipboard">system clipboard tools</a> like <code>xsel</code>, <code>xclip</code> or <code>pbcopy</code>/<code>pbpaste</code></p>
+<h3 id="to-yank-copy">To yank (copy)</h3>
+<p><code>&lt;a-|&gt; xsel --input --clipboard &lt;ret&gt;</code></p>
+<p><code>&lt;a-|&gt;</code> pipes each selection through the given external filter program and ignore its output.</p>
+<p>You may want to use the following hook to automate the dialog with the system clipboard, on each <code>y</code>, <code>d</code> or <code>c</code> operations:</p>
+<pre><code>      hook global NormalKey y|d|c %{ nop %sh{
+              printf %s &quot;$kak_main_reg_dquote&quot; | xsel --input --clipboard
+      }}
+      
+</code></pre><h3 id="to-paste">To paste</h3>
+<p><code>! xsel --output --clipboard &lt;ret&gt;</code></p>
+<p><code>!</code> inserts program output before selection while <code>&lt;a-!&gt;</code> inserts program output after selection.</p>
+<p>Therefore you can add the following mappings:</p>
+<h3 id="paste-before">Paste before</h3>
+<p><code>map global user P '!xsel --output --clipboard&lt;ret&gt;'</code></p>
+<h3 id="paste-after">Paste after</h3>
+<p><code>map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'</code></p>
+<h3 id="how-to-use-it-now">How to use it now</h3>
+<ul>
+<li>y/d - yank/delete using internal clipboard AND system clipboard at once</li>
+<li>p   - paste from internal clipboard</li>
+<li>&lt;,p&gt; - paste after from system clipboard (, is default for user mode)</li>
+<li>&lt;,P&gt; - paste before from system clipboard (, is default for user mode)</li>
+</ul>
+<h2 id="how-to-make-it-work-with-xclip-instead">How to make it work with Xclip instead.</h2>
+<p>As I&rsquo;ve found out, and as the issue clearly showed, this is not
+currently possible by using Xclip under Kakoune, except of course by mapping
+a key to Normal mode and then calling out <code>xclip</code>.</p>
+<p>As the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">freedesktop.org</a>  website states it, this is not a task
+that can be easily done as long as different clients have different methods that make use of these <code>clipboard</code> features.</p>
+<p>quoting from the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">clipboards specifications freedesktop</a></p>
+<blockquote>
+<p>There are two historical interpretations of the ICCCM:</p>
+</blockquote>
+<blockquote>
+<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
+explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
+<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+use PRIMARY for the currently-selected text, even if it isn&rsquo;t
+explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+XEmacs, some GTK+ apps)</p>
+</blockquote>
+<blockquote>
+<p>No one ever does anything interesting with SECONDARY as far as I can
+tell.</p>
+</blockquote>
+<blockquote>
+<p>The current consensus is that interpretation b) is correct. Qt 3 and
+GNU Emacs 21 will use interpretation b), changing the behavior of
+previous versions.</p>
+</blockquote>
+<p>And it follows with:</p>
+<blockquote>
+<p>In addition, the ICCCM has a thing called &ldquo;cut buffers&rdquo; which most
+clients no longer support.</p>
+<p>There are two historical interpretations of the ICCCM:</p>
+<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
+explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
+<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
+use PRIMARY for the currently-selected text, even if it isn&rsquo;t
+explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
+XEmacs, some GTK+ apps)</p>
+</blockquote>
+<p>And it summarizes it among many points with the following:</p>
+<blockquote>
+<p>The correct behavior can be summarized as follows: CLIPBOARD works
+just like the clipboard on Mac or Windows; it only changes on explicit
+cut/copy. PRIMARY is an &ldquo;easter egg&rdquo; for expert users, regular users
+can just ignore it; it&rsquo;s normally pastable only via
+middle-mouse-click.</p>
+</blockquote>
+<p>So the best course of action, since <code>xclip</code> is known to be
+working fine under <a href="https://vim.org">vim</a> or
+<a href="https://neovim.org">neovim</a>, would be to map say in this
+case, the <code>Y</code> key for yanking out operations, and the <code>P</code> key
+for pasting the selection.</p>
+<p>Of course, if other operations such as <code>delete</code> or <code>change</code>
+as Kakoune currently employs, need to be mapped, I believe
+that the keys can be assigned their own combinations.</p>
+<p>We normally use the <code>clipboard</code> rather than the <code>primary</code> or
+<code>secondary</code> X selections:</p>
+<h2 id="to-yank-with-xclip">To yank with Xclip</h2>
+<pre><code> map global normal &lt;Y&gt; ' $ xclip -select clip '
+</code></pre>
+<h2 id="to-paste-with-xclip">To paste with Xclip</h2>
+<p>And to paste</p>
+<pre><code> map global normal P '&lt;!&gt; xclip -select clip -o'
+</code></pre>
+<h2 id="freeing-register--on-kakoune-and-yanking-with-p">Freeing register <code>&quot;</code> on Kakoune and yanking with p</h2>
+<p>The above mapping of both the <code>Y</code> or <code>P</code> key registers,
+do not restrain the operations by which <code>y</code> that records the
+operation to register <code>&quot;</code>  or <code>p</code> that pastes it.</p>
+<p>There&rsquo;s no possible way to do it with the otherwise rest of
+the <code>clipboards</code> options that <code>xclip</code> uses, without further
+noticing that the register <code>y</code> that is used for normal
+yanking operations under Kakoune, wouldn&rsquo;t work as expected.
+And neither by pastting that same register <code>&quot;</code>.</p>
+<p>&hellip;</p>
+<p><strong>Other references</strong></p>
+<p><a href="https://unix.stackexchange.com/questions/22494/copy-file-to-xclip-and-paste-to-firefox" target="_blanK">unix stackexchange &ndash; copy file to xclip and paste on firefox</a></p>
+
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/">Forwarding Email With Attachments Mutt Neomutt</a></h1>
         <span class="post-date">Mar 14, 2019</span>
         <p>Forwarding an email is a function usually  bound to the <code>f</code> key, but if there are any Attachments that were included on the email, high chances are,  that the attachments will not be selected.</p>
@@ -395,34 +511,6 @@ suffix <code>.md</code> extension</p>
 <p>1- <a name="javadlx"></a><a href="https://bbs.archlinux.org/viewtopic.php?pid=1003045#p1003045" target="_blank">Permission problem with Libreoffice - Arch linux forums</a><a href="#javadlxref">↵</a></p>
 <p>2- <a name="oocontextuser"></a> <a href="https://forum.openoffice.org/en/forum/viewtopic.php?f=101&t=83995" target="_blank">LO5.0 Fatal error cannot be started</a> <a href="#oocontextuserref">↵</a></p>
 <p>3- <a name="docfoundation"></a> <a href="https://bugs.documentfoundation.org/show_bug.cgi?id=64606" target="_blank">bug filed with documentfoundation.org</a><a href="#docfoundationref">↵</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/">Sddm Wayland Timezone Differs From Locale</a></h1>
-        <span class="post-date">Nov 2, 2018</span>
-        <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enabled it on an older system. This time around though, my expectations fell short.</p>
-<p>After installing <a href="https://wiki.archlinux.org/index.php/SDDM#Configuration_GUI" target="_blank">SDDM</a>, I called out systemd to disable <a href="https://wiki.archlinux.org/index.php/LightDM" target="_blank">LightDM</a> with</p>
-<pre><code> sytemctl disable lightdm.service 
-</code></pre>
-<p>followed by the enabling of the newly installed display manager with</p>
-<pre><code> systemctl enable sddm.service
-</code></pre>
-<p>But it wasn&rsquo;t clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
-<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling out the <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
-<pre><code> datetimectl status
-</code></pre>
-<p>matched SDDM clock settings. The timezone had been incorrectly set at one point.</p>
-<p>Modifying the timezone accordingly seemed to have resolved the issue with:</p>
-<pre><code>timedatectl set-timezone Zone/SubZone
-</code></pre>
-<p>All in all, some of the <a href="https://bbs.archlinux.org/viewtopic.php?id=207550" target="_blank">posts from Arch Forums</a> that were queried via Google, were slightly off topic. Some of these <a href="https://bbs.archlinux.org/viewtopic.php?id=112137" target="_blank">posts</a> for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.</p>
-<p>Further posts that came up for XFCE were also from the long-standing threads at <strong>linuxquestions.org</strong>, a site that has been around perhaps longer than any other out there related to GNU/Linux in general. This time around the <a href="https://www.linuxquestions.org/questions/linux-software-2/adjusting-the-clock-in-xfce-4175528816/" target="_blank">user was running AntiX</a>  and not systemd. The <code>timedatectl</code> is part of the latter in this case, so the suggestions aimed at <code>hwclock</code> or setting it also through <code>date</code> instead.</p>
-<p>I&rsquo;ve found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example <a href="https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux" target="_blank">I messed up my system clock in Arch Linux</a>.</p>
-<p>Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the <code>timedatectl</code> command. Like for example the following question that was also on <strong>stackexchange</strong> <a href="https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce" target="_blank">How can I easily change my time-zone in Arch/Xfce</a> that I came across only later and after resolving it first in my end.</p>
-<p>And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the <strong>Arch Wiki</strong> for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading <code>man</code> pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close as the latter!</p>
-<p><strong>References</strong></p>
-<p><a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blnak">System Time Arch Wiki</a></p>
 
     </div>
   
