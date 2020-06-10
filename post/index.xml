@@ -17,7 +17,7 @@
       <pubDate>Tue, 09 Jun 2020 02:59:45 -0400</pubDate>
       
       <guid>https://imfrom.github.io/post/error-bash-completion-no-such-file/</guid>
-      <description>I wouldn&amp;rsquo;t know where to look —- I certainly can browse the repo from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&amp;rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as it may, not everyone uses it.
+      <description>I wouldn&amp;rsquo;t know where to look —- I certainly can browse the repo from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&amp;rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as this distro may be, not everyone uses it.
 A quick glance at the files that comprise this program, one could see that aside from the usr folder, bash completion is also installed under etc and bin accordingly.</description>
     </item>
     
