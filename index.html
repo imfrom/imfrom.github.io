@@ -71,6 +71,12 @@
 <div class="posts">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/atest/">Atest</a></h1>
+        <span class="post-date">Jun 15, 2020</span>
+        
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/error-bash-completion-no-such-file/">Error Bash Completion No Such File or Directory</a></h1>
         <span class="post-date">Jun 9, 2020</span>
         <p>I wouldn&rsquo;t know where to look —- I certainly can browse the <a href="https://packages.debian.org/buster/bash-completion" target="_blank">repo</a> from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as this distro may be,  not everyone uses it.</p>
@@ -325,21 +331,6 @@ DESCRIPTION
 <p>Upon going ahead and after opening the <code>javaws</code> executable, I noticed that the path had been incorrectly set indeed by either some of the libraries during the initialization&hellip;. It was pointing out to a different location <strong>rather</strong> than where the files for the java environment were located instead.</p>
 <p>Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus <code>java=/location/of/java/default/</code> worked without a problem.</p>
 
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/pacman-unable-to-lock-database/">Pacman Unable to Lock Database</a></h1>
-        <span class="post-date">Sep 15, 2019</span>
-        <p>On a recent pacman upgrade, I encountered the error:</p>
-<pre><code>:: Synchronizing package databases...
-error: failed to update core (unable to lock database)
-error: failed to update extra (unable to lock database)
-error: failed to update community (unable to lock database)
-error: failed to synchronize all databases
-</code></pre><p>the solution everytime is to remove the <code>db.lck</code> from the <code>/var/lib/</code> directory and restart pacman.</p>
-<pre><code>rm /var/lib/db.lck
-pacman -Syyu
-</code></pre>
     </div>
   
 </div>
