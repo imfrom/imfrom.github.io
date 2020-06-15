@@ -124,19 +124,6 @@ rm /var/lib/db.lck pacman -Syyu </description>
     </item>
     
     <item>
-      <title>Xclip With Kakoune Making It Work</title>
-      <link>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</link>
-      <pubDate>Mon, 25 Mar 2019 00:01:13 -0400</pubDate>
-      
-      <guid>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</guid>
-      <description>One of the pressing issues with Kakoune is the implementation of xclip to use the clipboard selections.
-As the Kakoune Registers &amp;ndash; Clipboard Wiki states it:
- Notice that xclip will not work using this example
- This was one of the reasons why I wanted to delve further into this issue.
-Anyhow, I&amp;rsquo;ll copy-paste the various sections from the Kakoune Registers - Clipboard Wiki that show a better overview of the steps to follow by adding the snippets into the initialization file, while using xsel.</description>
-    </item>
-    
-    <item>
       <title>Forwarding Email With Attachments Mutt Neomutt</title>
       <link>https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/</link>
       <pubDate>Thu, 14 Mar 2019 03:45:24 -0400</pubDate>
@@ -156,52 +143,6 @@ One could go directly to the attachments in question and selectively open each o
 Ctrl+ 🖱 (rightmouse) is usually the way that one would bring the menu, but every time this was done, xterm was crashing.
 After going over some of the xorg-fonts-* packages, I noticed that some of them were not installed for the X system.
 Among them, xorg-fonts-misc was not installed. I proceeded to install it and the menu was brought up successfully again by the ctrl rightmouse 🖱combination.</description>
-    </item>
-    
-    <item>
-      <title>Kakoune Matching Pairs</title>
-      <link>https://imfrom.github.io/post/kakoune-matching-pairs/</link>
-      <pubDate>Fri, 15 Feb 2019 03:18:37 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/post/kakoune-matching-pairs/</guid>
-      <description>When I tried to delve further into the issue of highlighters that were used on kakoune, I was more interested on the options akin to the ones provided and which have been implemented on vim or neovim, such as e.g. showmatch, matchpairs.
-On vim this is something that could be easily obtained by having for example a set showmatch on the initialization file, but on kakoune, and although this issue on github seemed to point in the right direction, and the accompanying comment further specified that by having it [the function show_matching] called out by a hook directly from the configuration file, it still wouldn&amp;rsquo;t quite load the add-highlighter onto the buffer.</description>
-    </item>
-    
-    <item>
-      <title>Kakoune Macros Recording and Replay</title>
-      <link>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</link>
-      <pubDate>Wed, 06 Feb 2019 23:43:18 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</guid>
-      <description>One of the features for which I personally would have a use for, would be macros recording and playback.
-To read about this on the doc page for kakoune, :doc keys macros might give you an idea that by default Q starts or ends macro recording, while q replays it.
-the &amp;lt;esc&amp;gt; key also ends the macro recording.
-See Kakoune Macros
-But further description for the macros recording and playback, is not provided on the doc page for Kakoune.</description>
-    </item>
-    
-    <item>
-      <title>Kakoune Invoke Shell Program on Buffer</title>
-      <link>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</link>
-      <pubDate>Tue, 05 Feb 2019 02:19:58 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</guid>
-      <description>I seldom use the text editor kakoune. Many of the features that I have found with vim or neovim for that matter in the past, have finally been implemented on this editor.
-It is, however, one of the best modal editors currently in development and I encourage anyone who may be interested on the modality of these sort of editors, to try it out.
-I wanted to see how well this editor handled key mappings to invoke a command from within the shell.</description>
-    </item>
-    
-    <item>
-      <title>Kakoune Paste With Xclip</title>
-      <link>https://imfrom.github.io/post/kakoune-paste-with-xclip/</link>
-      <pubDate>Sun, 03 Feb 2019 12:44:11 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/post/kakoune-paste-with-xclip/</guid>
-      <description>The kakoune wiki on github goes at length on some of the steps to to follow in order to paste with the system clipboard
-It says to in order to paste before with xsel to
- map global user p &#39;&amp;lt;a-!&amp;gt;xsel --output --clipboard&amp;lt;ret&amp;gt;&#39;  But in the case of xclip for example, and by reading the man pages of xclip
- -selection specify which X selection to use, options are &amp;quot;primary&amp;quot; to use XA_PRIMARY (default), &amp;quot;secondary&amp;quot; for XA_SECONDARY or &amp;quot;clipboard&amp;quot; for XA_CLIPBOARD  and</description>
     </item>
     
     <item>
@@ -432,16 +373,6 @@ Among the first results that came up after my query, was the following from the 
       <guid>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</guid>
       <description>While updating a fresh installation of Manjaro KDE, the screen locked. Apparently the default settings for the system, enabled this behavior without further ado.
 As a result of this problem, the surprising part came afterward when the updates that were being downloaded, suddenly crashed the system. This led to the nonetheless bothersome problem of modules.devname not found error followed by the no more troublesome error you are now being dropped into an emergency shell and sh can&#39;t access tty; job control turned off.</description>
-    </item>
-    
-    <item>
-      <title>Configuring Kakoune Kakrc</title>
-      <link>https://imfrom.github.io/post/configuring-kakoune-kakrc/</link>
-      <pubDate>Wed, 06 Dec 2017 12:50:38 -0500</pubDate>
-      
-      <guid>https://imfrom.github.io/post/configuring-kakoune-kakrc/</guid>
-      <description>Configuring the kakoune text editor initialization file has been nothing short of a chore, as it requires the path environment to be correctly set, before any changes on the kakrc take ahold of the settings.
-As the tutorial suggests, see Configuration and autoloading, if it is launched with the -n switch, kakoune will source the ../share/kak/kakrc, but on a unrelated issue but nonetheless relevant about the correct location for the initialization file, the developer clearly stated that:</description>
     </item>
     
     <item>

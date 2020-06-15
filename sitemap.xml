@@ -73,11 +73,6 @@
   </url>
   
   <url>
-    <loc>https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/</loc>
-    <lastmod>2019-03-25T00:01:13-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/</loc>
     <lastmod>2019-03-14T03:45:24-04:00</lastmod>
   </url>
@@ -85,26 +80,6 @@
   <url>
     <loc>https://imfrom.github.io/post/xterm-crashes-with-ctrl-mouse-combination/</loc>
     <lastmod>2019-03-05T23:33:24-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/post/kakoune-matching-pairs/</loc>
-    <lastmod>2019-02-15T03:18:37-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</loc>
-    <lastmod>2019-02-06T23:43:18-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</loc>
-    <lastmod>2019-02-05T02:19:58-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/post/kakoune-paste-with-xclip/</loc>
-    <lastmod>2019-02-03T12:44:11-05:00</lastmod>
   </url>
   
   <url>
@@ -235,11 +210,6 @@
   <url>
     <loc>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</loc>
     <lastmod>2017-12-09T13:58:20-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://imfrom.github.io/post/configuring-kakoune-kakrc/</loc>
-    <lastmod>2017-12-06T12:50:38-05:00</lastmod>
   </url>
   
   <url>

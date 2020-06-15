@@ -71,122 +71,6 @@
 <div class="posts">
   
     <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/xclip-with-kakoune-making-it-work/">Xclip With Kakoune Making It Work</a></h1>
-        <span class="post-date">Mar 25, 2019</span>
-        <p>One of the pressing issues with Kakoune is the implementation
-of <code>xclip</code> to use the clipboard selections.</p>
-<p>As the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers &ndash; Clipboard Wiki</a> states it:</p>
-<blockquote>
-<p>Notice that <a href="https://github.com/mawww/kakoune/issues/2325" target="_blank">xclip will not work using this example</a></p>
-</blockquote>
-<p>This was one of the reasons why I wanted to delve further into this issue.</p>
-<p>Anyhow, I&rsquo;ll copy-paste the various sections from the <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard/" target="_blank">Kakoune Registers - Clipboard Wiki</a> that show a better overview of the steps to follow by adding the snippets into the initialization file, while using <code>xsel</code>. Then I will tweak around with the <code>xclip</code> features by using the three clipboards that <code>xclip</code> uses, namely, <code>p</code> (primary), <code>sec</code> (secondary), and finally <code>clip</code> for the clipboard.</p>
-<p>Those are the options available by the use of <code>xclip</code>.</p>
-<h3 id="using-the-system-clipboard">Using the System Clipboard</h3>
-<p>You can use kakoune with <a href="https://wiki.archlinux.org/index.php/Clipboard">system clipboard tools</a> like <code>xsel</code>, <code>xclip</code> or <code>pbcopy</code>/<code>pbpaste</code></p>
-<h3 id="to-yank-copy">To yank (copy)</h3>
-<p><code>&lt;a-|&gt; xsel --input --clipboard &lt;ret&gt;</code></p>
-<p><code>&lt;a-|&gt;</code> pipes each selection through the given external filter program and ignore its output.</p>
-<p>You may want to use the following hook to automate the dialog with the system clipboard, on each <code>y</code>, <code>d</code> or <code>c</code> operations:</p>
-<pre><code>      hook global NormalKey y|d|c %{ nop %sh{
-              printf %s &quot;$kak_main_reg_dquote&quot; | xsel --input --clipboard
-      }}
-      
-</code></pre><h3 id="to-paste">To paste</h3>
-<p><code>! xsel --output --clipboard &lt;ret&gt;</code></p>
-<p><code>!</code> inserts program output before selection while <code>&lt;a-!&gt;</code> inserts program output after selection.</p>
-<p>Therefore you can add the following mappings:</p>
-<h3 id="paste-before">Paste before</h3>
-<p><code>map global user P '!xsel --output --clipboard&lt;ret&gt;'</code></p>
-<h3 id="paste-after">Paste after</h3>
-<p><code>map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'</code></p>
-<h3 id="how-to-use-it-now">How to use it now</h3>
-<ul>
-<li>y/d - yank/delete using internal clipboard AND system clipboard at once</li>
-<li>p   - paste from internal clipboard</li>
-<li>&lt;,p&gt; - paste after from system clipboard (, is default for user mode)</li>
-<li>&lt;,P&gt; - paste before from system clipboard (, is default for user mode)</li>
-</ul>
-<h2 id="how-to-make-it-work-with-xclip-instead">How to make it work with Xclip instead.</h2>
-<p>As I&rsquo;ve found out, and as the issue clearly showed, this is not
-currently possible by using Xclip under Kakoune, except of course by mapping
-a key to Normal mode and then calling out <code>xclip</code>.</p>
-<p>As the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">freedesktop.org</a>  website states it, this is not a task
-that can be easily done as long as different clients have different methods that make use of these <code>clipboard</code> features.</p>
-<p>quoting from the <a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt">clipboards specifications freedesktop</a></p>
-<blockquote>
-<p>There are two historical interpretations of the ICCCM:</p>
-</blockquote>
-<blockquote>
-<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
-explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
-<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
-use PRIMARY for the currently-selected text, even if it isn&rsquo;t
-explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
-XEmacs, some GTK+ apps)</p>
-</blockquote>
-<blockquote>
-<p>No one ever does anything interesting with SECONDARY as far as I can
-tell.</p>
-</blockquote>
-<blockquote>
-<p>The current consensus is that interpretation b) is correct. Qt 3 and
-GNU Emacs 21 will use interpretation b), changing the behavior of
-previous versions.</p>
-</blockquote>
-<p>And it follows with:</p>
-<blockquote>
-<p>In addition, the ICCCM has a thing called &ldquo;cut buffers&rdquo; which most
-clients no longer support.</p>
-<p>There are two historical interpretations of the ICCCM:</p>
-<p>a) use PRIMARY for mouse selection, middle mouse button paste, and
-explicit cut/copy/paste menu items (Qt 2, GNU Emacs 20)</p>
-<p>b) use CLIPBOARD for the Windows-style cut/copy/paste menu items;
-use PRIMARY for the currently-selected text, even if it isn&rsquo;t
-explicitly copied, and for middle-mouse-click (Netscape, Mozilla,
-XEmacs, some GTK+ apps)</p>
-</blockquote>
-<p>And it summarizes it among many points with the following:</p>
-<blockquote>
-<p>The correct behavior can be summarized as follows: CLIPBOARD works
-just like the clipboard on Mac or Windows; it only changes on explicit
-cut/copy. PRIMARY is an &ldquo;easter egg&rdquo; for expert users, regular users
-can just ignore it; it&rsquo;s normally pastable only via
-middle-mouse-click.</p>
-</blockquote>
-<p>So the best course of action, since <code>xclip</code> is known to be
-working fine under <a href="https://vim.org">vim</a> or
-<a href="https://neovim.org">neovim</a>, would be to map say in this
-case, the <code>Y</code> key for yanking out operations, and the <code>P</code> key
-for pasting the selection.</p>
-<p>Of course, if other operations such as <code>delete</code> or <code>change</code>
-as Kakoune currently employs, need to be mapped, I believe
-that the keys can be assigned their own combinations.</p>
-<p>We normally use the <code>clipboard</code> rather than the <code>primary</code> or
-<code>secondary</code> X selections:</p>
-<h2 id="to-yank-with-xclip">To yank with Xclip</h2>
-<pre><code> map global normal &lt;Y&gt; ' $ xclip -select clip '
-</code></pre>
-<h2 id="to-paste-with-xclip">To paste with Xclip</h2>
-<p>And to paste</p>
-<pre><code> map global normal P '&lt;!&gt; xclip -select clip -o'
-</code></pre>
-<h2 id="freeing-register--on-kakoune-and-yanking-with-p">Freeing register <code>&quot;</code> on Kakoune and yanking with p</h2>
-<p>The above mapping of both the <code>Y</code> or <code>P</code> key registers,
-do not restrain the operations by which <code>y</code> that records the
-operation to register <code>&quot;</code>  or <code>p</code> that pastes it.</p>
-<p>There&rsquo;s no possible way to do it with the otherwise rest of
-the <code>clipboards</code> options that <code>xclip</code> uses, without further
-noticing that the register <code>y</code> that is used for normal
-yanking operations under Kakoune, wouldn&rsquo;t work as expected.
-And neither by pastting that same register <code>&quot;</code>.</p>
-<p>&hellip;</p>
-<p><strong>Other references</strong></p>
-<p><a href="https://unix.stackexchange.com/questions/22494/copy-file-to-xclip-and-paste-to-firefox" target="_blanK">unix stackexchange &ndash; copy file to xclip and paste on firefox</a></p>
-
-    </div>
-  
-    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/forwarding-email-with-attachments-mutt-neomutt/">Forwarding Email With Attachments Mutt Neomutt</a></h1>
         <span class="post-date">Mar 14, 2019</span>
         <p>Forwarding an email is a function usually  bound to the <code>f</code> key, but if there are any Attachments that were included on the email, high chances are,  that the attachments will not be selected.</p>
@@ -217,227 +101,6 @@ proceeded to install it and the menu was brought up
 successfully again by the <kbd>ctrl</kbd> rightmouse
 🖱combination.</p>
 <p>A bug report was properly sent out to address this issue. I don&rsquo;t recall from having this issue before, and/or when it even first appeared.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-matching-pairs/">Kakoune Matching Pairs</a></h1>
-        <span class="post-date">Feb 15, 2019</span>
-        <p>When I tried to delve further into the issue of highlighters
-that were used on kakoune, I was more interested on the
-options akin to the ones provided and which have been
-implemented on vim or neovim, such as e.g. showmatch,
-matchpairs.</p>
-<p>On vim this is something that could be easily
-obtained by having for example a <code>set showmatch</code> on the
-initialization file, but on kakoune, and although <a
-href="https://github.com/mawww/kakoune/issues/1192">this
-issue on github</a> seemed to
-point in the right direction, and the <a
-href="https://github.com/mawww/kakoune/issues/1192#issuecomment-277494934">accompanying
-comment</a> further specified that by having it [the function
-show_matching] called out by a hook directly from the configuration
-file, it still wouldn&rsquo;t quite load the <code>add-highlighter</code> onto the
-buffer.</p>
-<p>Perhaps and one of the feasible explanations is that at the
-time this issue came up, other changes may have been further
-implemented from the developing side, thus preventing from
-having this function working as I would have thought, and in
-what seemed to be almost a basic functionality.</p>
-<pre><code>  hook global WinCreate .* %{
-    addhl show_matching
-  }
-</code></pre>
-<p>Without having the above on the config file, I was able to
-see from the buffer that the <code>add-highlighter</code> option would
-come up without a problem, followed by <code>path/name</code> and ending
-up with <code>type</code> and <code>type params</code> to be specified accordingly.</p>
-<p>Furthermore, calling out both <code>addhl</code> with either <code>global</code> or
-<code>window</code> or <code>buffer</code> seemed to work fine for <code>show_matching</code>
-to highlight the opening and closing delimiters. On the
-buffer that is, but I needed to have the changes applied
-globally and soon after restarting the editor. The settings
-needed to be called out directly from the <strong>kakrc</strong> file.</p>
-<p>All in all, and after changing the values around to have
-<code>add-highlighter</code> instead of <code>addhl</code> (although I couldn&rsquo;t
-think of a valid reason), and further adding to the snippet
-some values such as a <code>buffer</code> right after <code>addhl</code> instead,
-I noticed all of it wouldn&rsquo;t add up. The hook had already
-specified it as such.</p>
-<p>The only thing left was to have <code>addhl</code> directly on the
-initialization file without invoking a hook.</p>
-<p>And that&rsquo;s exactly what I did</p>
-<pre><code> addhl global\ show-matching 
-</code></pre>
-<p>The opening and closing pairs would highlight accordingly.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-macros-recording-and-replay/">Kakoune Macros Recording and Replay</a></h1>
-        <span class="post-date">Feb 6, 2019</span>
-        <p>One of the features for which I personally would have a
-use for, would be macros recording and playback.</p>
-<p>To read about this on the doc page for <strong>kakoune</strong>, <code>:doc keys macros</code> might give you an idea that by default <strong>Q</strong>
-starts or ends macro recording, while <strong>q</strong> replays it.</p>
-<p>the <code>&lt;esc&gt;</code> key also ends the macro recording.</p>
-<p>See <a href="https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros"
-target="_blank">Kakoune Macros</a></p>
-<p>But further description for the macros recording and
-playback, is not provided on the doc page for <strong>Kakoune</strong>.</p>
-<p>The author advises to consult the <code>:doc registers</code> for further
-info.</p>
-<p>As the doc states</p>
-<blockquote>
-<p>Registers are named lists of text -instead of simply text- in order to interact well with multiselection. They are used for various purposes, like storing the last yanked text, or the captured groups associated with the selections.</p>
-</blockquote>
-<p>And about interacting with it:</p>
-<blockquote>
-<p><code>&lt;c-r&gt;&lt;c&gt;</code>
-when in insert mode or in a prompt, insert the value stored in the c register (single character)</p>
-</blockquote>
-<blockquote>
-<p><code>&quot;&lt;c&gt;</code>
-in normal mode, select the <c> register (single character)</p>
-</blockquote>
-<p>But unlike <strong>vim</strong> in which a macro is replayed by preceding
-the register <key> with the macro <strong>@</strong>, on <strong>kakoune</strong>, the
-double quote along with register <code>&lt;key&gt;</code> must precede the macro
-key, which in this case is <code>q</code> that&rsquo;s bound to the default
-register <strong>@</strong></p>
-<p>Ignorant of this fact, mixed with the confusion that stemmed
-primarily from the habit of using a workflow from <strong>vim</strong>,
-disallowed me to fully comprehend that in order to replay
-the macro, the register (whatever this one may be) <strong><key></strong>
-must supersede the double quote <code>&quot;</code>, followed in the end
-by the default register <code>q</code> which in turn, fully replays
-the specified macro.</p>
-<p>After going over it, this may simply seem to have been
-just an oversight on my part since such an obvious step to
-record and replay the macro, is evident, but considering
-I&rsquo;ve been used to <strong>vim</strong>, it was not at all clear at first,
-what the steps may have been, mainly in order to replay the macro
-on Normal mode. On <strong>Insert</strong> and <strong>Prompt</strong> mode, however,
-the documentation provided all the details.</p>
-<p>So to record the macro</p>
-<pre><code> &quot; &lt;key&gt; Q &lt;esc&gt; 
-</code></pre>
-<p>And to replay the macro</p>
-<pre><code> &quot; &lt;key&gt; q 
-</code></pre>
-<p><strong>References</strong></p>
-<p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros"
-target="_blank">Kakoune Macros</a></p>
-<p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/registers.asciidoc"
-target="_blank">Kakoune registers</a></p>
-<p><strong>Other useful links</strong></p>
-<p><a href="https://www.reddit.com/r/vim/comments/5icmak/a_vim_users_comparisation_between_kakoune_and_vim/"
-target="_blank">A vim user&rsquo;s comparison between vim and
-kakoune</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/">Kakoune Invoke Shell Program on Buffer</a></h1>
-        <span class="post-date">Feb 5, 2019</span>
-        <p>I seldom use the text editor
-kakoune. Many of the features that I
-have found with vim or neovim for that
-matter in the past, have finally been
-implemented on this editor.</p>
-<p>It is, however, one of the best modal
-editors currently in development and I
-encourage anyone who may be interested on
-the modality of these sort of editors,
-to try it out.</p>
-<p>I wanted to see how well this editor
-handled key mappings to invoke a command
-from within the shell.</p>
-<p>The map keys doc which can be found at <a
-href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
-target="_blank">mapping.ascii</a>
-specifies that <code>map [switches] &lt;scope&gt; &lt;mode&gt; &lt;key&gt; &lt;keys&gt;</code> would be the recomme
-nded way to map a key to the desired
-parameter.</p>
-<p>Further googling about this issue, led me
-to a post at <a
-href="https://discuss.kakoune.com/t/how-to-execute-shell-commands-with-the-current-file-name/"
-target="_blank">how
-to execute shell commands with the current
-filename</a> in which a user asked for a
-similar configuration on the kakrc
-initialization file to invoke a command
-within the shell for the current buffer.</p>
-<p>But unfortunately the suggested
-recommendation for a latex file in this
-case, would not work.</p>
-<p>At the very least, the WinSetOption
-variable must have a normal mode to which
-the key is mapped to.</p>
-<p>So the correct way to  map the key would be</p>
-<pre><code> map global normal &lt;c-x&gt; ':w&lt;ret&gt; $ latex $kak_buffile'
-</code></pre>
-<p>In that case, <strong>ctrl</strong> and <strong>x</strong> are bound
-to save the file and invoke the shell
-command.</p>
-<p>If other options are needed then specify
-it accordingly</p>
-<p><strong>References</strong></p>
-<p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc"
-target="_blank">kakoune mapping</a></p>
-<p><a
-href="https://github.com/mawww/kakoune/wiki/Normal-mode-commands"
-target="_blank">Kakoune normal mode
-commands</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-paste-with-xclip/">Kakoune Paste With Xclip</a></h1>
-        <span class="post-date">Feb 3, 2019</span>
-        <p>The <a href="https://github.com/mawww/kakoune/wiki/Registers---Clipboard"
-target="_blank">kakoune wiki on github</a>
-goes at length on some of the steps to
-to follow in order to paste with the system clipboard</p>
-<p>It says to in order to paste before with
-<strong>xsel</strong> to</p>
-<pre><code> map global user p '&lt;a-!&gt;xsel --output --clipboard&lt;ret&gt;'
-</code></pre>
-<p>But in the case of  <strong>xclip</strong> for example,
-and by reading the man pages of <strong>xclip</strong></p>
-<pre><code> -selection
-          specify which X selection to use, options are &quot;primary&quot; to
-          use XA_PRIMARY (default), &quot;secondary&quot; for XA_SECONDARY  or
-          &quot;clipboard&quot; for XA_CLIPBOARD
-</code></pre>
-<p>and</p>
-<pre><code> -o, -out
-          print the selection to standard out (generally for  piping
-          to a file or program)
-</code></pre>
-<p>So in order to paste with the system
-clipboard by using <strong>xclip</strong> instead,
-<code>clipboard</code> from <strong>xsel</strong> would have to
-be replaced with <code>selection</code> from
-<strong>xclip</strong>, so something in the lines of</p>
-<p><del>map global normal p &lsquo;&lt;a-!&gt;xclip -o -s<ret>'</del></p>
-<p>But rather something like</p>
-<pre><code>   map global user p '&lt;a-!&gt;xclip -o -s &lt;ret&gt;'
-   
-   map global user P '!xclip -o -s &lt;ret&gt;'
-</code></pre>
-<p>would suffice.</p>
-<h2 id="updates">Updates</h2>
-<p>I&rsquo;ve since stopped using the above since the way that
-<code>xclip</code> uses many of the
-<code>clipboards</code> do not seem to behave as expected under
-Kakoune.</p>
-<p><code>xclip</code> works without a setback under <a
-href="https://www.vim.org" target="_blank">vim</a> or even <a
-href="https://neovim.io" target="_blank">neovim</a>, and it
-was this that led me to make <code>xclip</code> work under Kakoune.</p>
-<p>See the <a href="../xclip-with-kakoune-making-it-work/">xclip with kakoune &ndash; making it
-work</a> for further info.</p>
 
     </div>
   
@@ -511,6 +174,214 @@ suffix <code>.md</code> extension</p>
 <p>1- <a name="javadlx"></a><a href="https://bbs.archlinux.org/viewtopic.php?pid=1003045#p1003045" target="_blank">Permission problem with Libreoffice - Arch linux forums</a><a href="#javadlxref">↵</a></p>
 <p>2- <a name="oocontextuser"></a> <a href="https://forum.openoffice.org/en/forum/viewtopic.php?f=101&t=83995" target="_blank">LO5.0 Fatal error cannot be started</a> <a href="#oocontextuserref">↵</a></p>
 <p>3- <a name="docfoundation"></a> <a href="https://bugs.documentfoundation.org/show_bug.cgi?id=64606" target="_blank">bug filed with documentfoundation.org</a><a href="#docfoundationref">↵</a></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/">Sddm Wayland Timezone Differs From Locale</a></h1>
+        <span class="post-date">Nov 2, 2018</span>
+        <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enabled it on an older system. This time around though, my expectations fell short.</p>
+<p>After installing <a href="https://wiki.archlinux.org/index.php/SDDM#Configuration_GUI" target="_blank">SDDM</a>, I called out systemd to disable <a href="https://wiki.archlinux.org/index.php/LightDM" target="_blank">LightDM</a> with</p>
+<pre><code> sytemctl disable lightdm.service 
+</code></pre>
+<p>followed by the enabling of the newly installed display manager with</p>
+<pre><code> systemctl enable sddm.service
+</code></pre>
+<p>But it wasn&rsquo;t clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
+<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling out the <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
+<pre><code> datetimectl status
+</code></pre>
+<p>matched SDDM clock settings. The timezone had been incorrectly set at one point.</p>
+<p>Modifying the timezone accordingly seemed to have resolved the issue with:</p>
+<pre><code>timedatectl set-timezone Zone/SubZone
+</code></pre>
+<p>All in all, some of the <a href="https://bbs.archlinux.org/viewtopic.php?id=207550" target="_blank">posts from Arch Forums</a> that were queried via Google, were slightly off topic. Some of these <a href="https://bbs.archlinux.org/viewtopic.php?id=112137" target="_blank">posts</a> for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.</p>
+<p>Further posts that came up for XFCE were also from the long-standing threads at <strong>linuxquestions.org</strong>, a site that has been around perhaps longer than any other out there related to GNU/Linux in general. This time around the <a href="https://www.linuxquestions.org/questions/linux-software-2/adjusting-the-clock-in-xfce-4175528816/" target="_blank">user was running AntiX</a>  and not systemd. The <code>timedatectl</code> is part of the latter in this case, so the suggestions aimed at <code>hwclock</code> or setting it also through <code>date</code> instead.</p>
+<p>I&rsquo;ve found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example <a href="https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux" target="_blank">I messed up my system clock in Arch Linux</a>.</p>
+<p>Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the <code>timedatectl</code> command. Like for example the following question that was also on <strong>stackexchange</strong> <a href="https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce" target="_blank">How can I easily change my time-zone in Arch/Xfce</a> that I came across only later and after resolving it first in my end.</p>
+<p>And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the <strong>Arch Wiki</strong> for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading <code>man</code> pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close as the latter!</p>
+<p><strong>References</strong></p>
+<p><a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blnak">System Time Arch Wiki</a></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/clamav-freshclam-update-definitions/">Clamav Freshclam Update Definitions</a></h1>
+        <span class="post-date">Aug 28, 2018</span>
+        <p>as the <a href="https://wiki.archlinux.org/index.php/ClamAV" target="_blank">ClamAV arch linux wiki</a> states, <strong>ClamAV</strong> is:</p>
+<blockquote>
+<p>Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV&rsquo;s main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.</p>
+</blockquote>
+<p>In order to update the definitions correctly is important to run first</p>
+<pre><code> freshclam
+</code></pre>
+<p>which should then start the update</p>
+<pre><code> ClamAV update process started at Tue Aug 28 01:16:43 2018
+ Downloading main.cvd [100%]
+ main.cvd updated (version: 58, sigs: 4566249, f-level: 60, builder: sigmgr)
+ Downloading daily.cvd [100%]
+ daily.cvd updated (version: 24880, sigs: 2066436, f-level: 63, builder: neo)
+ Downloading bytecode.cvd [100%]
+ bytecode.cvd updated (version: 327, sigs: 91, f-level: 63, builder: neo)
+ Database updated (6632776 signatures) from database.clamav.net (IP: )
+</code></pre>
+<p>But then an error came up saying that:</p>
+<pre><code> WARNING: Clamd was NOT notified: Can't connect to clamd through /run/clamav/clamd.ctl: No such file or directory
+</code></pre>
+<p>which left me unsure what could have been the issue.</p>
+<p>Googling about it returned among many of the results, some as in <a href="https://www.linuxquestions.org/questions/linux-server-73/can%27t-connect-to-unix-socket-var-run-clamav-clamd-ctl-connection-refused-856847/" target="_blank">Can&rsquo;t connect to Unix socket /var/run//clamav/clamd.ctl</a>, which dealt with the issue.</p>
+<p>The error here in which it dealt with <strong>clamd.ctl</strong> and not with <strong>clamd.sock connect ()</strong> as it was posted on the entry entitled <a href="https://wiki.archlinux.org/index.php/ClamAV#Error:_Clamd_was_NOT_notified" target="_blank">Error Clamd was not notified</a>.</p>
+<p>But after running</p>
+<pre><code>  freshclam
+</code></pre>
+<p>I had already forgotten to start/enable <code>clamav-freshclam.service</code> as outlined on the Wiki <a href="https://wiki.archlinux.org/index.php/ClamAV#Updating_database" target="_blank">ClamAV updating database</a></p>
+<p>so</p>
+<pre><code> systemctl start clamav-freshclam.service
+ systemctl enable clamav-freshclam.service
+</code></pre>
+<p>Which returned:</p>
+<p><code>Created symlink /etc/systemd/system/multi-user.target.wants/clamav-freshclam.service → /usr/lib/systemd/system/clamav-freshclam.service.</code></p>
+<p>Later on by calling the status of that service with</p>
+<pre><code> systemctl status clamav-freshclam.service
+</code></pre>
+<p>returned</p>
+<pre><code> Aug 28 01:23:43  systemd[1]: Started ClamAV virus database upda&gt;
+ Aug 28 01:23:43  freshclam[]: ClamAV update process started&gt;
+ Aug 28 01:23:43  freshclam[]: main.cvd is up to date (versi&gt;
+ Aug 28 01:23:43  freshclam[]: daily.cvd is up to date (vers&gt;
+ Aug 28 01:23:43  freshclam[]: bytecode.cvd is up to date
+</code></pre>
+<p>But whether it would be necessary to enable it every time it restarts, it&rsquo;s something that I will deal with later on. I only needed it this time around to check some files, and that was the purpose of running it in the first place.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/hunspell-en-in-conflict-with-hunspell-en_us/">Hunspell-en in Conflict With Hunspell en_US</a></h1>
+        <span class="post-date">Aug 16, 2018</span>
+        <p>On a different machine running the latest updates from Arch, pacman would give the error (and rightly so) that <code>hunspell-en and hunspell-en_US are in conflict</code> and <code>could not satisfy dependencies</code> followed by <code>removing hunspell-en breaks dependency hunspell-en required by **antergos-common-meta**</code>.</p>
+<p>This was of course never a problem on the other machine in which <strong>antergos-common-meta</strong> was removed a while back. For the simple reason that the update related to anything <strong>hunspell</strong> was in this particular case only for <strong>hunspell-en_US</strong> as well as <strong>hunspell-es_any</strong> but not for, and this is important to note: <strong>hunspell-en</strong>. The latter includes all English dictionaries for US, UK, etc.</p>
+<p>So the question is how to resolve this impeding conflict during the updates? Simply by skipping the package on pacman during the updates, or simply by deselecting the packages that belong to <em>hunspell-en</em> on pamac (the gui version for pacman) for which the conflict exists in the first place.</p>
+<pre><code> pacman -Su IgnorePkg=hunspell-en_US
+</code></pre>
+<p>See <a href="https://wiki.archlinux.org/index.php/Pacman#Skip_package_from_being_upgraded" target="_blank">Skip package from being upgraded</a> on the Arch Wiki.</p>
+<p>By removing <strong>antergos-common-meta</strong> the first time around on this particular
+as I had done a few weeks ago on the other machine, made no difference. And
+that&rsquo;s the reason as to why the above is recommended. That is, by skipping the
+packages in question that belong to <strong>hunspell-en_US</strong> for example first, and
+then by proceeding with the updates normally seems to be the most reasonable
+method.</p>
+<p>Once this is done, the next step would be to remove <strong>hunspell-en</strong> which would also remove <strong>antergos-common-meta</strong> by which the latter package relies on.</p>
+<p>Finally, the next step would be in installing the libraries for <strong>hunspell-en_US</strong>, or <strong>hunspell-en_GB</strong>, or <strong>hunspell-en_AU</strong> or <strong>hunspell-en_CA</strong>.</p>
+<p>Apparently, in the latest installation ISO image, this issue with <strong>hunspell</strong> and its dependencies has not been removed from the repositories that the installation media uses for the initial process. Which better explains as to why on the other machine which had the most recent Antergos installation, this problem was still present, whereas with the other machine in which I had removed <strong>antergos-common-meta</strong> which removed <strong>hunspell-en</strong> - the one that bundles all dictionaries for the English language - was never experienced.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/">Setup Network Printer Ip Address Port Number</a></h1>
+        <span class="post-date">Aug 10, 2018</span>
+        <p>Setting up a network printer seems not only problematic on Arch based systems, but also on Windows.</p>
+<p>The latter also gave me the proverbial run for the money.</p>
+<p>Even after I thought that the network printer had be configured correctly, errors such as <code>there was a problem processing document</code> after printing a test page, or simply the error stating that <code>the printer may not be connected</code> assured me that the network printer was not being correctly identified.</p>
+<p><strong>C</strong>ommon <strong>U</strong>nix <strong>P</strong>rinting <strong>S</strong>ervices or as its acronym that is better known for: CUPS, is without a doubt, the most reliable method to set up any printer, and especially those that depend upon a network to operate accordingly.</p>
+<p>It was not the first time setting up a network printer through CUPS, but
+contrary to the first time around when the printer was successfully configured
+on the system, in which the ip address had to be specified, and the connection
+port number of the socket was automatically picked up by CUPS, this time around
+however, specifying the ip address by itself made no difference with further
+configuration.</p>
+<p>The printer was still not recognized.</p>
+<p>I scoured Google for any relevant results that would help me troubleshoot the problem, but none of the results seemed to provide a definitive answer.</p>
+<p>The Arch Linux Forums was one of the first indicators that this issue was beyond a driver problem and rather a misconfiguration with the network printer.</p>
+<p>On the thread entitled <em>Printer setting cant find wireless printer</em>, a <a href="https://bbs.archlinux.org/viewtopic.php?pid=1605184#p1605184" target="_blank">reply provided</a> gave a couple of hints as to where to begin to troubleshot the problem.</p>
+<blockquote>
+<p>Your post is much too vague. What does your wireless printer advertise? You should be able to add it using its IP address in the CUPS interface like this: http://192.168.1.3. You need to replace 192.168.1.3 by the IP of your printer and http:// could be socket:// lpd:// or something else&hellip; Maybe you also have to specify a port number like this: http://192.168.1.3:9100. If you can setup the printer in another OS (for example Windows); you might be able to find these by examining the properties of the printer.</p>
+</blockquote>
+<p>The problem with Windows however, is that Windows itself does not provide a simple port configuration method that would have allowed me to see the ip address and the port that was currently in use.</p>
+<p>This time around CUPS had already specified the ip address and the connection for the socket. But everything else for even the location had already been noted. Furthermore, I double checked it against the settings for the wireless configuration of the printer. Not solely relying on whatever configuration the display showed but also by printing out right from the printer the specifics of the configuration.</p>
+<p>When I ventured out to get a glimpse through a Windows system that would allow me to double check the settings, I encountered though, an unforeseen <code>An error occurred during port configuration. This operation is not supported</code> which prevented me any further from finding out about the ip address and port number configuration.</p>
+<p><img src="/images/windows-port-error-configuration.png" alt=""></p>
+<p>This however, was not expected.</p>
+<p>On this question that was brought up on the stackexchange network, the user asked <a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed" target="_blank">to list all network printers (including ones not installed)</a> and although it hinted that the program <strong>lpstat</strong> with the flag <code>-a</code> was one that would undertake the task, as the user pointed out, this would not apply to those printers that have not been installed.</p>
+<p>Another command that would certainly come handy is <code>lpinfo -v</code> but more than what it provided was therefore needed.</p>
+<p>On another thread entitled <a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer" target="_blank">linux - how do you get the name of a network printer</a> one of the comments said that:</p>
+<blockquote>
+<p>When I run the nmap command it never seems to complete.</p>
+</blockquote>
+<p><a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485">https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485</a></p>
+<p>which pretty much matches many of the issues that I have encountered with the program.</p>
+<p>The only workaround with this pervasive problem of a printer that depends solely on the network, is through some sort of initial setup performed namely through a Windows system that would point it out. So by confirming the correct ip address and port numbers of the printer, would be more than enough to specify it as such on the location of the CUPS for the printer in question. Until then, and just like a user on the Arch Forums said:</p>
+<blockquote>
+<p>The problem here is that the criteria (&ldquo;Network Printer&rdquo;) is something that only makes sense to humans. Computer programs aren&rsquo;t going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &lsquo;14 at 18:16</p>
+</blockquote>
+<p><strong>References</strong></p>
+<p><a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009" target="_blank">unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009</a></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/directory-permissions-differ-on-var-cache-pkgfile/">Directory Permissions Differ on Var Cache Pkgfile</a></h1>
+        <span class="post-date">Aug 6, 2018</span>
+        <p>During the last updates through pacman the following message came up:</p>
+<pre><code> warning: directory permissions differ on /var/cache/pkgfile/
+ filesystem: 775  package: 755
+</code></pre>
+<p>But to first understand why this came up in the first place is good to know that <code>pkgfile</code> is a tool for searching files in the official repos. <a href="https://wiki.archlinux.org/index.php/Pkgfile" target="_blank">pkgfile - ArchLinux wiki</a></p>
+<p>It should be noted that the question as to why the <strong>pkgfile</strong> differs for the file system hierarchy and the package itself has come up before.</p>
+<p>This <a href="https://github.com/falconindy/pkgfile/issues/25" target="_blank">issue</a> on Github dealt with it.</p>
+<p>In the thread, one of the users reported whether it was necessary for <strong>pkgfile</strong> to create the directory if it doesn&rsquo;t exist.</p>
+<p>Of course this is not the case here, but upon closer look on the pacman log it could be seen that <strong>pkgconf</strong> had just been upgraded</p>
+<pre><code> upgraded pkgconf (1.5.2-1 -&gt; 1.5.3-1)
+ warning: directory permissions differ on /var/cache/pkgfile/
+ filesystem: 775  package: 755
+</code></pre>
+<p>Which suggests that right after the updates it didn&rsquo;t recreate it.</p>
+<p>On the other hand <strong>pkgconf</strong> is according to the manual pages:</p>
+<pre><code> pkgconf is a program which helps to configure compiler and
+ linker flags for development libraries.  This allows build
+ systems to detect other dependencies and use them with the
+ system toolchain.
+</code></pre>
+<p>see for example what the aforementioned <a href="Github https://github.com/falconindy/pkgfile/issues/25#issuecomment-227413406" target="_blank"> issue on Github</a> said about it.</p>
+<p>And a quick Google search would return among many of the results, the following:</p>
+<p><a href="https://bbs.archlinux.org/viewtopic.php?pid=317732#p317732">https://bbs.archlinux.org/viewtopic.php?pid=317732#p317732</a></p>
+<p>As well as</p>
+<p><a href="https://bbs.archlinux.org/viewtopic.php?id=223190" target="_blank">this one</a> which in turn redirected to <a href="https://bbs.archlinux.org/viewtopic.php?id=218133" target="_blank">this one</a></p>
+<p>With due credit to where credit is due, the following post from the Manjaro community explicitly said that it was a warning and not an error itself.</p>
+<blockquote>
+<p>xabbu 2018-06-10 21:39:39 UTC #4
+directory permissions differ on &hellip;</p>
+<p>This message is a warning and not an error. This is normally not a problem. It just says that the permissions of a folder in a package differ form the permissions of that folder on your system.</p>
+<p>Normally this will not result in a problem, however you should change the permissions to the package defaults to avoid future problems. This message is shown every time you update this package if the permissions don’t match.</p>
+<p>In your specific case, at the moment only root and members of the group locate have access to the mlocate folder. With the change to 755 everybody can access and read the content of that folder. This don’t necessary mean everybody has also read access to the files in that folder.</p>
+<p>Why the package folder contains different permissions than your system folder can have several reasons. Often it is because the upstream source have changed permissions. Sometimes a developer does this on purpose. But sometimes this happens by mistake and is changed back with the next release. Also the Maintainer can change the permissions of files and folder in the build process.
+And of course the user sometimes changes the permissions of a file or folder and forget about or does it to fix a problem.</p>
+<p>Also please note (@jochen82 @farverio ), if you have a problem with something else start a new thread with your problem to get help with that.</p>
+</blockquote>
+<p>On another thread on the same Manjaro forums this came up:</p>
+<blockquote>
+<p>fhdk 2018-05-07 10:34:00 UTC #4
+rrrsssttt:
+directory permissions differ on /var/lib/samba/private/
+filesystem: 755 package: 700
+bill_t:
+It means that the permissions of this directory must be set to 755 (or drwxr-xr-x).</p>
+<p>Actually it means the opposite.</p>
+<p>The filesystem is 755 when the package expects it to be 700.</p>
+<p>So the right thing to do is to set permissions as the package expects it to be.</p>
+<p>sudo chmod 700 /var/lib/samba/private/
+rrrsssttt:
+I want to clarify that I don’t believe I have ever touched that folder (I may have installed apps that have touched it, but I consciously never have)</p>
+<p>You don’t need to. It is probably a fix since the folder mentioned is named private and as such is a folder that samba uses for stuff like certificates, keys, private keys, and so on.</p>
+<p>Such folder is only accessible for the system service running samba and the service will presumably refuse to run if permissions is wrong.</p>
+<p>Try that with your .gnupg folder or the .ssh folder. If permissions is world readable you will get complaints from application and some even refuses to run unless only accessible by owner aka chmod 700 ~/.ssh -R as an example.</p>
+</blockquote>
+<p>see <a href="https://forum.manjaro.org/t/i-got-a-warning-after-running-the-latest-round-of-updates-im-confused-what-to-do-next/46651" target="_blank">I get a warning after running the latest round of updates</a></p>
+<p>As the user on the Manjaro Forum pointed out when he/she said:</p>
+<blockquote>
+<p>Actually it means the opposite</p>
+</blockquote>
+<p>Changing the directory permissions of the package in question in the file system with a <code>chmod 755</code> would be the best course of action for this package permission issue.</p>
+<p>I think that the reason why it occurs in the first place, is due to the fact that the tool <strong>pkgfile</strong> must have administrative privileges during installation/upgrade in order to continue. That is, writing, reading and executing. But once the update has finished it no longer is necessary to keep the same permissions than before. The package no longer needs to have access to the home of the user in question.</p>
 
     </div>
   
