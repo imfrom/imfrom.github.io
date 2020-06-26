@@ -5,8 +5,17 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2020</rights>
-    <updated>2020-06-09 02:59:45 -0400 EDT</updated>
+    <updated>2020-06-26 00:39:40 -0400 EDT</updated>
 
+    
+      <item>
+        <title>Atest</title>
+        <link>https://imfrom.github.io/post/atest/</link>
+        <pubDate>Fri, 26 Jun 2020 00:39:40 EDT</pubDate>
+        <author></author>
+        <guid>https://imfrom.github.io/post/atest/</guid>
+        <description></description>
+      </item>
     
       <item>
         <title>Error Bash Completion No Such File or Directory</title>
