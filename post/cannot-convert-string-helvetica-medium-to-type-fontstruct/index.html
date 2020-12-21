@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Cannot Convert String Helvetica Medium to Type Fontstruct &middot; Blog atrasado
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a><a class="sidebar-nav-item" href="/about/" title="">About</a><a class="sidebar-nav-item" href="/contact/" title="">Contact</a>
+    </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2020. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Blog atrasado</a>
+            <small>con gajes del oficio</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Cannot Convert String Helvetica Medium to Type Fontstruct</h1>
+  <span class="post-date">Dec 20, 2020</span>
+  <p>This could very well qualify among one of the most pesky annoyingly error messages that one could ever come across, under the X window system. Of course there are many other errors that are certainly more problematic, but the aformentioned warning is one that requires, as I&rsquo;m doing now, to write a few words about it.</p>
+<p>In the past, by simply installing any of the <code>xorg-fonts-75dpi</code> and/or <code>xorg-fonts-100dpi</code> packages, would have gotten this issue resolved.</p>
+<p>One could further consult similar posts under the Arch forum that inquired about this problem. See <a href="https://bbs.archlinux.org/viewtopic.php?id=21713" target="_blank"> missing helvetica font</a> or also <a href="https://bbs.archlinux.org/viewtopic.php?id=189463" target="_blank">Fonts: cannot convert string… to type Fontstruct</a>, or even albeit unrelated — since this issue at this other site, was concerned under another program perhaps — on the linuxquestions forum entitled <a href="https://www.linuxquestions.org/questions/linux-software-2/error-message-regarding-fonts-in-grace-943919/" target="_blank"> Error message regarding fonts in grace</a></p>
+<p>But this time around, there must have been some sort of update that most likely has breaking up the way that a non error, and consequentially working without a warning of any kind would come up under the X system.</p>
+<p>Invoking <code>xlsfonts | grep helvetica</code> was not returning anything for that matter, and restarting the system a great number of times failed for not showing the error/warning and &lsquo;fixing&rsquo; the underlying issue either.</p>
+<p>The only way to circumvent it this time around, was by installing the <code>adobe-base-14-fonts</code> from the AUR repositories. Something that, as I already said, never had to be include it, to have the error/warning not coming up.</p>
+<p>Further resources about this package may be found at <a href="https://aur.archlinux.org/packages/adobe-base-14-fonts/">https://aur.archlinux.org/packages/adobe-base-14-fonts/</a></p>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+  </body>
+</html>
+

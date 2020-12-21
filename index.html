@@ -71,6 +71,19 @@
 <div class="posts">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/cannot-convert-string-helvetica-medium-to-type-fontstruct/">Cannot Convert String Helvetica Medium to Type Fontstruct</a></h1>
+        <span class="post-date">Dec 20, 2020</span>
+        <p>This could very well qualify among one of the most pesky annoyingly error messages that one could ever come across, under the X window system. Of course there are many other errors that are certainly more problematic, but the aformentioned warning is one that requires, as I&rsquo;m doing now, to write a few words about it.</p>
+<p>In the past, by simply installing any of the <code>xorg-fonts-75dpi</code> and/or <code>xorg-fonts-100dpi</code> packages, would have gotten this issue resolved.</p>
+<p>One could further consult similar posts under the Arch forum that inquired about this problem. See <a href="https://bbs.archlinux.org/viewtopic.php?id=21713" target="_blank"> missing helvetica font</a> or also <a href="https://bbs.archlinux.org/viewtopic.php?id=189463" target="_blank">Fonts: cannot convert string… to type Fontstruct</a>, or even albeit unrelated — since this issue at this other site, was concerned under another program perhaps — on the linuxquestions forum entitled <a href="https://www.linuxquestions.org/questions/linux-software-2/error-message-regarding-fonts-in-grace-943919/" target="_blank"> Error message regarding fonts in grace</a></p>
+<p>But this time around, there must have been some sort of update that most likely has breaking up the way that a non error, and consequentially working without a warning of any kind would come up under the X system.</p>
+<p>Invoking <code>xlsfonts | grep helvetica</code> was not returning anything for that matter, and restarting the system a great number of times failed for not showing the error/warning and &lsquo;fixing&rsquo; the underlying issue either.</p>
+<p>The only way to circumvent it this time around, was by installing the <code>adobe-base-14-fonts</code> from the AUR repositories. Something that, as I already said, never had to be include it, to have the error/warning not coming up.</p>
+<p>Further resources about this package may be found at <a href="https://aur.archlinux.org/packages/adobe-base-14-fonts/">https://aur.archlinux.org/packages/adobe-base-14-fonts/</a></p>
+
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/error-bash-completion-no-such-file/">Error Bash Completion No Such File or Directory</a></h1>
         <span class="post-date">Jun 9, 2020</span>
         <p>I wouldn&rsquo;t know where to look —- I certainly can browse the <a href="https://packages.debian.org/buster/bash-completion" target="_blank">repo</a> from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as this distro may be,  not everyone uses it.</p>
@@ -325,21 +338,6 @@ DESCRIPTION
 <p>Upon going ahead and after opening the <code>javaws</code> executable, I noticed that the path had been incorrectly set indeed by either some of the libraries during the initialization&hellip;. It was pointing out to a different location <strong>rather</strong> than where the files for the java environment were located instead.</p>
 <p>Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus <code>java=/location/of/java/default/</code> worked without a problem.</p>
 
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/pacman-unable-to-lock-database/">Pacman Unable to Lock Database</a></h1>
-        <span class="post-date">Sep 15, 2019</span>
-        <p>On a recent pacman upgrade, I encountered the error:</p>
-<pre><code>:: Synchronizing package databases...
-error: failed to update core (unable to lock database)
-error: failed to update extra (unable to lock database)
-error: failed to update community (unable to lock database)
-error: failed to synchronize all databases
-</code></pre><p>the solution everytime is to remove the <code>db.lck</code> from the <code>/var/lib/</code> directory and restart pacman.</p>
-<pre><code>rm /var/lib/db.lck
-pacman -Syyu
-</code></pre>
     </div>
   
 </div>
