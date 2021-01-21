@@ -16,7 +16,7 @@
         <guid>https://imfrom.github.io/post/cannot-convert-string-helvetica-medium-to-type-fontstruct/</guid>
         <description>&lt;p&gt;This could very well qualify among one of the most pesky annoyingly error messages that one could ever come across, under the X window system. Of course there are many other errors that are certainly more problematic, but the aformentioned warning is one that requires, as I&amp;rsquo;m doing now, to write a few words about it.&lt;/p&gt;
 &lt;p&gt;In the past, by simply installing any of the &lt;code&gt;xorg-fonts-75dpi&lt;/code&gt; and/or &lt;code&gt;xorg-fonts-100dpi&lt;/code&gt; packages, would have gotten this issue resolved.&lt;/p&gt;
-&lt;p&gt;One could further consult similar posts under the Arch forum that inquired about this problem. See &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=21713&#34; target=&#34;_blank&#34;&gt; missing helvetica font&lt;/a&gt; or also &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=189463&#34; target=&#34;_blank&#34;&gt;Fonts: cannot convert string… to type Fontstruct&lt;/a&gt;, or even albeit unrelated — since this issue at this other site, was concerned under another program perhaps — on the linuxquestions forum entitled &lt;a href=&#34;https://www.linuxquestions.org/questions/linux-software-2/error-message-regarding-fonts-in-grace-943919/&#34; target=&#34;_blank&#34;&gt; Error message regarding fonts in grace&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;One could further consult similar posts under the Arch forum that inquired about this problem. See &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=21713&#34; target=_blank&gt;missing helvetica font&lt;/a&gt; or also &lt;a href=&#34;https://bbs.archlinux.org/viewtopic.php?id=189463&#34; target=&#34;_blank&#34;&gt;Fonts: cannot convert string… to type Fontstruct&lt;/a&gt;, or even albeit unrelated — since this issue at this other site, was concerned under another program perhaps — on the linuxquestions forum entitled &lt;a href=&#34;https://www.linuxquestions.org/questions/linux-software-2/error-message-regarding-fonts-in-grace-943919/&#34; target=&#34;_blank&#34;&gt; Error message regarding fonts in grace&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;But this time around, there must have been some sort of update that most likely has breaking up the way that a non error, and consequentially working without a warning of any kind would come up under the X system.&lt;/p&gt;
 &lt;p&gt;Invoking &lt;code&gt;xlsfonts | grep helvetica&lt;/code&gt; was not returning anything for that matter, and restarting the system a great number of times failed for not showing the error/warning and &amp;lsquo;fixing&amp;rsquo; the underlying issue either.&lt;/p&gt;
 &lt;p&gt;The only way to circumvent it this time around, was by installing the &lt;code&gt;adobe-base-14-fonts&lt;/code&gt; from the AUR repositories. Something that, as I already said, never had to be include it, to have the error/warning not coming up.&lt;/p&gt;
@@ -52,11 +52,9 @@
 &lt;p&gt;In case of any trouble setting it up afterwards may resolve the issue&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;timedatectl set-timezone 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alternatively, one may invoke:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hwclock --set --date &#39;nn MMM YYYY 00:00&#39;
-hwclock --systohc --localtime
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For further resources, Google certainly helps and this article documentation from Red Hat may provide you with more details:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-configuring_the_date_and_time-hwclock&#34;&gt;https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-configuring_the_date_and_time-hwclock&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;pre&gt;&lt;code&gt;hwclock --set --date &#39;mm/dd/yyyy 00:00:00&#39;
+hwclock --hctosys --localtime
+&lt;/code&gt;&lt;/pre&gt;</description>
       </item>
     
       <item>
