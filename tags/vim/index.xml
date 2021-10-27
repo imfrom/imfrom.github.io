@@ -6,11 +6,7 @@
     <description>Recent content in vim on Blog del tecnólogo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Feb 2017 13:48:53 -0500</lastBuildDate>
-    
-	<atom:link href="https://imfrom.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 08 Feb 2017 13:48:53 -0500</lastBuildDate><atom:link href="https://imfrom.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reemplazar Con Vim. Reemplazos de minúsculas con mayúsculas</title>
       <link>https://imfrom.github.io/post/reemplazar-con-vim/</link>

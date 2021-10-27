@@ -6,11 +6,7 @@
     <description>Recent content in grub on Blog del tecnólogo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jan 2018 08:38:47 -0500</lastBuildDate>
-    
-	<atom:link href="https://imfrom.github.io/tags/grub/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 20 Jan 2018 08:38:47 -0500</lastBuildDate><atom:link href="https://imfrom.github.io/tags/grub/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Antergos Grub Selection</title>
       <link>https://imfrom.github.io/post/antergos-grub-selection/</link>

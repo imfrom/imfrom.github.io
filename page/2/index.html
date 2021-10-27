@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.72.0" />
+	<meta name="generator" content="Hugo 0.79.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
@@ -37,7 +37,9 @@
 
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+    <p>
+      A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.
+    </p>
   </div>
 
   <nav class="sidebar-nav">
@@ -116,6 +118,71 @@ proceeded to install it and the menu was brought up
 successfully again by the <kbd>ctrl</kbd> rightmouse
 🖱combination.</p>
 <p>A bug report was properly sent out to address this issue. I don&rsquo;t recall from having this issue before, and/or when it even first appeared.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/kakoune-macros-recording-and-replay/">Kakoune Macros Recording and Replay</a></h1>
+        <span class="post-date">Feb 6, 2019</span>
+        <p>One of the features for which I personally would have a use for, would
+be macros recording and playback.</p>
+<p>To read about this on the doc page for <strong>kakoune</strong>, <code>:doc keys macros</code>
+might give you an idea that by default <strong>Q</strong> starts or ends macro
+recording, while <strong>q</strong> replays it.</p>
+<p>the <code>&lt;esc&gt;</code> key also ends the macro recording.</p>
+<p>See <a href="https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros">Kakoune
+Macros</a></p>
+<p>But further description for the macros recording and playback, is not
+provided on the doc page for <strong>Kakoune</strong>.</p>
+<p>The author advises to consult the <code>:doc registers</code> for further info.</p>
+<p>As the doc states</p>
+<blockquote>
+<p>Registers are named lists of text -instead of simply text- in order to
+interact well with multiselection. They are used for various purposes,
+like storing the last yanked text, or the captured groups associated
+with the selections.</p>
+</blockquote>
+<p>And about interacting with it:</p>
+<blockquote>
+<p><code>&lt;c-r&gt;&lt;c&gt;</code> when in insert mode or in a prompt, insert the value stored
+in the c register (single character)</p>
+</blockquote>
+<blockquote>
+<p><code>&quot;&lt;c&gt;</code> in normal mode, select the register (single character)</p>
+</blockquote>
+<p>But unlike <strong>vim</strong> in which a macro is replayed by preceding the
+register with the macro <strong>@</strong>, on <strong>kakoune</strong>, the double quote along
+with register <code>&lt;key&gt;</code> must precede the macro key, which in this case is
+<code>q</code> that's bound to the default register <strong>@</strong></p>
+<p>Ignorant of this fact, mixed with the confusion that stemmed primarily
+from the habit of using a workflow from <strong>vim</strong>, disallowed me to fully
+comprehend that in order to replay the macro, the register (whatever
+this one may be) must supersede the double quote <code>&quot;</code>, followed in the
+end by the default register <code>q</code> which in turn, fully replays the
+specified macro.</p>
+<p>After going over it, this may simply seem to have been just an oversight
+on my part since such an obvious step to record and replay the macro, is
+evident, but considering I've been used to <strong>vim</strong>, it was not at all
+clear at first, what the steps may have been, mainly in order to replay
+the macro on Normal mode. On <strong>Insert</strong> and <strong>Prompt</strong> mode, however,
+the documentation provided all the details.</p>
+<p>So to record the macro</p>
+<pre><code> &quot; &lt;key&gt; Q &lt;esc&gt; 
+</code></pre>
+<p>And to replay the macro</p>
+<pre><code> &quot; &lt;key&gt; q 
+</code></pre>
+<p><strong>References</strong></p>
+<p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros">Kakoune
+Macros</a></p>
+<p><a href="https://github.com/mawww/kakoune/blob/master/doc/pages/registers.asciidoc">Kakoune
+registers</a></p>
+<p><strong>Other useful links</strong></p>
+<p><a href="https://www.reddit.com/r/vim/comments/5icmak/a_vim_users_comparisation_between_kakoune_and_vim/">A vim user's comparison between vim and
+kakoune</a>
+:::
+:::
+:::</p>
 
     </div>
   
@@ -288,48 +355,6 @@ method.</p>
 <p>Once this is done, the next step would be to remove <strong>hunspell-en</strong> which would also remove <strong>antergos-common-meta</strong> by which the latter package relies on.</p>
 <p>Finally, the next step would be in installing the libraries for <strong>hunspell-en_US</strong>, or <strong>hunspell-en_GB</strong>, or <strong>hunspell-en_AU</strong> or <strong>hunspell-en_CA</strong>.</p>
 <p>Apparently, in the latest installation ISO image, this issue with <strong>hunspell</strong> and its dependencies has not been removed from the repositories that the installation media uses for the initial process. Which better explains as to why on the other machine which had the most recent Antergos installation, this problem was still present, whereas with the other machine in which I had removed <strong>antergos-common-meta</strong> which removed <strong>hunspell-en</strong> - the one that bundles all dictionaries for the English language - was never experienced.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/setup-network-printer-ip-address-port-number/">Setup Network Printer Ip Address Port Number</a></h1>
-        <span class="post-date">Aug 10, 2018</span>
-        <p>Setting up a network printer seems not only problematic on Arch based systems, but also on Windows.</p>
-<p>The latter also gave me the proverbial run for the money.</p>
-<p>Even after I thought that the network printer had be configured correctly, errors such as <code>there was a problem processing document</code> after printing a test page, or simply the error stating that <code>the printer may not be connected</code> assured me that the network printer was not being correctly identified.</p>
-<p><strong>C</strong>ommon <strong>U</strong>nix <strong>P</strong>rinting <strong>S</strong>ervices or as its acronym that is better known for: CUPS, is without a doubt, the most reliable method to set up any printer, and especially those that depend upon a network to operate accordingly.</p>
-<p>It was not the first time setting up a network printer through CUPS, but
-contrary to the first time around when the printer was successfully configured
-on the system, in which the ip address had to be specified, and the connection
-port number of the socket was automatically picked up by CUPS, this time around
-however, specifying the ip address by itself made no difference with further
-configuration.</p>
-<p>The printer was still not recognized.</p>
-<p>I scoured Google for any relevant results that would help me troubleshoot the problem, but none of the results seemed to provide a definitive answer.</p>
-<p>The Arch Linux Forums was one of the first indicators that this issue was beyond a driver problem and rather a misconfiguration with the network printer.</p>
-<p>On the thread entitled <em>Printer setting cant find wireless printer</em>, a <a href="https://bbs.archlinux.org/viewtopic.php?pid=1605184#p1605184" target="_blank">reply provided</a> gave a couple of hints as to where to begin to troubleshot the problem.</p>
-<blockquote>
-<p>Your post is much too vague. What does your wireless printer advertise? You should be able to add it using its IP address in the CUPS interface like this: http://192.168.1.3. You need to replace 192.168.1.3 by the IP of your printer and http:// could be socket:// lpd:// or something else&hellip; Maybe you also have to specify a port number like this: http://192.168.1.3:9100. If you can setup the printer in another OS (for example Windows); you might be able to find these by examining the properties of the printer.</p>
-</blockquote>
-<p>The problem with Windows however, is that Windows itself does not provide a simple port configuration method that would have allowed me to see the ip address and the port that was currently in use.</p>
-<p>This time around CUPS had already specified the ip address and the connection for the socket. But everything else for even the location had already been noted. Furthermore, I double checked it against the settings for the wireless configuration of the printer. Not solely relying on whatever configuration the display showed but also by printing out right from the printer the specifics of the configuration.</p>
-<p>When I ventured out to get a glimpse through a Windows system that would allow me to double check the settings, I encountered though, an unforeseen <code>An error occurred during port configuration. This operation is not supported</code> which prevented me any further from finding out about the ip address and port number configuration.</p>
-<p><img src="/images/windows-port-error-configuration.png" alt=""></p>
-<p>This however, was not expected.</p>
-<p>On this question that was brought up on the stackexchange network, the user asked <a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed" target="_blank">to list all network printers (including ones not installed)</a> and although it hinted that the program <strong>lpstat</strong> with the flag <code>-a</code> was one that would undertake the task, as the user pointed out, this would not apply to those printers that have not been installed.</p>
-<p>Another command that would certainly come handy is <code>lpinfo -v</code> but more than what it provided was therefore needed.</p>
-<p>On another thread entitled <a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer" target="_blank">linux - how do you get the name of a network printer</a> one of the comments said that:</p>
-<blockquote>
-<p>When I run the nmap command it never seems to complete.</p>
-</blockquote>
-<p><a href="https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485">https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485</a></p>
-<p>which pretty much matches many of the issues that I have encountered with the program.</p>
-<p>The only workaround with this pervasive problem of a printer that depends solely on the network, is through some sort of initial setup performed namely through a Windows system that would point it out. So by confirming the correct ip address and port numbers of the printer, would be more than enough to specify it as such on the location of the CUPS for the printer in question. Until then, and just like a user on the Arch Forums said:</p>
-<blockquote>
-<p>The problem here is that the criteria (&ldquo;Network Printer&rdquo;) is something that only makes sense to humans. Computer programs aren&rsquo;t going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &lsquo;14 at 18:16</p>
-</blockquote>
-<p><strong>References</strong></p>
-<p><a href="https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009" target="_blank">unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009</a></p>
 
     </div>
   

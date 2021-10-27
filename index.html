@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.72.0" />
+	<meta name="generator" content="Hugo 0.79.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
@@ -37,7 +37,9 @@
 
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+    <p>
+      A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.
+    </p>
   </div>
 
   <nav class="sidebar-nav">
@@ -89,7 +91,7 @@
         <p>I wouldn&rsquo;t know where to look —- I certainly can browse the <a href="https://packages.debian.org/buster/bash-completion" target="_blank">repo</a> from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as this distro may be,  not everyone uses it.</p>
 <p>A quick glance at the files that comprise this program, one could see that aside from the <code>usr</code> folder, bash completion is also installed under <code>etc</code> and <code>bin</code> accordingly.</p>
 <p>Bash completion allows to fill in the rest of the commands or variables that follow for given executable.</p>
-<p>See <a href="https://wiki.archlinux.org/index.php/Bash#Tab_completion" target="_blank">Bash autocompletion</a> for more details about its chock features&rsquo; versatility.</p>
+<p>See <a href="https://wiki.archlinux.org/index.php/Bash#Tab_completion" target="_blank">Bash autocompletion</a> for more details about its chock features' versatility.</p>
 <p>In the case of Arch, the installation does not create — unlike on Debian — the folder <code>bash_completion</code> under <code>etc</code>. And I don&rsquo;t think this may have been an oversight from the Arch team, but presumably and perhaps due to safety reasons,  this was something that was never considered in the first place.</p>
 <p>Other programs have had no issue by correctly including on the script the means to have it install appropriately. But it&rsquo;s my opinion — and anyone is more than welcome to disagree with me here — that many a great number of programs have not chosen to do so or failed altogether in this regard. Hugo for example is one of them. See for example the <a href="https://github.com/gohugoio/hugo/pull/1088" target="_blank"> destination directory</a> when this feature was added. See the commit <a href="https://github.com/gohugoio/hugo/pull/1088/commits/ccdf544f73dda2ff2dd8bf0407a77e21084c59e8" target="_blank">here.</a></p>
 <p>To resolve this issue, the most viable solution is to manually add the folder, from whence this error stems, or else the message<code>Error: bash_completion.d: hugo.sh no such file or directory</code> will disallow the <code>autocomplete</code> which was added to the binaries of this  program, to come into effect.</p>
@@ -290,10 +292,10 @@ DESCRIPTION
 <pre><code>  checking inter-conflicts
 </code></pre>
 <p>Of course, I could have just  dismissed all these errors and be happily content to just get rid of this nonsense by removing pamac altogether and start afresh from the official package manager, but I would have never been happy by either settling these problems through such trivialities, as long as another system, on which the very same package was installed, was not showing the same behavior.</p>
-<p>Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the <a href="https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error" target="_blank">Arch Wiki suggests</a>. But I always liked the design idea behind this graphical interfaced package provided with its updates&rsquo; notifications, which unlike pacman that would have required to manually tweak checking for these updates.</p>
+<p>Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the <a href="https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error" target="_blank">Arch Wiki suggests</a>. But I always liked the design idea behind this graphical interfaced package provided with its updates' notifications, which unlike pacman that would have required to manually tweak checking for these updates.</p>
 <p>But as it&rsquo;s usually the case, pacman was downright correct by identifying as closely as possible the culprit by which the system itself held <code>files already in filesystem</code>. This was clearly the case with the package <strong>gtk-doc</strong>, and somehow this conflict had to be resolved.</p>
 <p>But what I don&rsquo;t know, and it&rsquo;s my mistake since I didn&rsquo;t venture out - either at the time when it first occurred -, and much less now, because it&rsquo;d be a wildly-guessing why would this be the case, that even when two systems configured alike which in turn held the same package revisions,  were somehow behaving disparagingly different.</p>
-<p>I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors&rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.</p>
+<p>I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors' copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.</p>
 <p>I did however, tried to stay as far away as possible from manually  removing  each of the files installed by the package [gtk-doc], but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process, that of having to go and remove each file owned by the package,  seemed to be the only inevitable method to circumvent this problem.</p>
 <p>After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&hellip; but it gives me pause and comfort in knowing that <code>checking inter-dependencies</code> or <code>checking file-conflcts</code> rolling hangs haven&rsquo;t returned to this annoyingly halting process.</p>
 

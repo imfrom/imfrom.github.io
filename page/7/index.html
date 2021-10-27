@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.72.0" />
+	<meta name="generator" content="Hugo 0.79.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
@@ -37,7 +37,9 @@
 
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+    <p>
+      A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.
+    </p>
   </div>
 
   <nav class="sidebar-nav">
@@ -69,6 +71,69 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/">Hugo No Sincroniza Directorio Estatico en Github</a></h1>
+        <span class="post-date">Sep 10, 2016</span>
+        <p>Después de realizar varias pruebas donde traté de evaluar algún que otro theme en Hugo, me di cuenta que el problema era más serio que lo pensaba.</p>
+<p>Tenía en mente llevar las pruebas con ciertos temas minimalistas, o como se diría en español: simples, que me permitiesen llevar a cabo flexibles modificaciones locales., y de ahí partir con ello.</p>
+<p>La mayoría de los temas en Hugo están constituidos por ciertos paquetes de láminas en estilo de cascadas, o con las siglas en inglés por CSS, y al igual que otros pequeños ficheros en Javascript.</p>
+<p>Cabe aclarar que la mayoría, por no decir todos, emplean las últimas tecnologías en gráficos que validen la convención estándar establecida por el consorcio W3C.</p>
+<p>Les recomiendo a todos aquellos que estén interesados en generadores estáticos del web, que evalúen a <a href="https://gohugo.io/" title="Hugo" target="_blank">Hugo</a> y de ahí decidir si es o no el motor más eficiente y fiable que hace uso de estas últimas tecnologías. Por supuesto que no sería justo si no se menciona otros como <a href="https://hexo.io/" target="blank">hexo</a>, desarrollado en Javascript por ejemplo, que al igual que el primero, son motores que valen la pena en emplearlos en la producción de sitios web, en la elaboración de blogs, al igual que con cualquier otra documentación.</p>
+<p>El motor <a href="https://gohugo.io/" target="blank">Hugo</a>, fue desarrollado en golang - un lenguaje de programación que fue creado en Google - es uno de los más recientes en este campo de generadores estáticos que ha sido recibido con mucho interés por programadores y otros entusiastas en computación. Pero sobre esto hablaré en otro artículo.</p>
+<p>Como dije al principio, en esta ocasión me interesaba más la flexible estructuración del blog que más que nada, mediante la evaluación de algunos de los <a href="https://themes.gohugo.io/" target="blank">temas</a> que están disponibles.</p>
+<p>Le había hecho algunos que otros cambios a uno de ellos intitulado purehugo y basado mayormente en <a href="https://en.wikipedia.org/wiki/bootstrapCDN" target="blank">bootstrapCDN</a> logré llevar a cabo algunos que otros cambios, me mortificaba la idea que no podía omitir la generación de todos los posts en la raíz del servidor. Por mucho que traté de hacer los cambios, la creación de una página que no sería mostrada en la página principal del servidor, era casi imposible. Tampoco quería emplear más tiempo que el necesario en lograr esto.</p>
+<p>Decidí entonces en descargar una plantilla temática que lleva de nombre <a href="https://themes.gohugo.io/shiori/" target="blank">shiori</a>, que fue portado o transferido de la implementación original del tema del mismo nombre por su autor Shusaku Uesugi.</p>
+<p>Estaba tratando de implementar en la estructura de la página un tema sencillo y este susodicho tema mostraba llenar los requisitos para ello.</p>
+<p>Después de descargarlo en el directorio <code>themes</code></p>
+<pre><code>$ git clone https://github.com/chibicode/hugo-theme-shiori shiori
+</code></pre>
+<p>decidí en ponerlo en práctica</p>
+<pre><code>$ hugo server -t shiori 
+</code></pre>
+<p>y el servidor local en el ordenador mostraba sin problemas la paginación correcta, al igual que todos los posts. No intenté en llevar otros cambios de modificación, porque la primera vez que ejecuté <code>hugo new post/test</code> que proseguiría con la creación de un post en el archivo de contenido, un error acerca del fichero <code>archetypes</code> se había generado.</p>
+<p>Traté de encontrar más información acerca de ello. Pero la única explicación acerca de esto tenía que ver con la actualización no solo de <code>hugo</code> sino de todas las dependencias de este:</p>
+<pre><code>go get -u -v github.com/spf13/hugo
+github.com/spf13/hugo (download)
+github.com/fsnotify/fsnotify (download)
+Fetching https://golang.org/x/sys/unix?go-get=1
+</code></pre>
+<p>El servidor local me mostraba las modificaciones.</p>
+<p>Una búsqueda más tarde en Google me refirió a <a href="https://github.com/spf13/hugo/issues/1802" target="_blank">iHugo 0.16-DEV (Jan 2016) fails to sync theme’s static directory on Linux</a> el cual trataba este problema.</p>
+<p>Aparentemente una de las dependencias tenía que ser actualizada, y por lo tanto la bandera <code>-u</code> tenía que ser especificada apropiadamente para la instalación del motor <a href="https://gohugo.io/" target="blank">Hugo</a>.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/flechas-en-gimp/">Flechas en Gimp</a></h1>
+        <span class="post-date">Aug 10, 2016</span>
+        <p>Una de las maneras más fáciles en crear <strong>flechas</strong> en Gimp, sería con la adición de un plugin al directorio <code>scripts</code> de Gimp.</p>
+<p>En el sitio de <a href="https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp">https://graphicdesign.stackexchange.com/questions/44797/how-do-i-insert-arrows-into-a-picture-in-gimp</a> se puede encontrar más información en cuanto a esto. Solamente mostraré los pasos visuales para lograrlo.</p>
+<pre><code> $cd /directorio-de-gimp/scripts/
+</code></pre>
+<p>Seguido de</p>
+<pre><code> $wget http://registry.gimp.org/files/arrow.scm
+</code></pre>
+<p>or the archived version </p> 
+<pre><code> $wget https://web.archive.org/web/20180218220954/http://registry.gimp.org:80/node/20269 </code></pre>
+<p>También pudieras hacer uso de una versión modificada del anterior script pero con flechas curvadas.</p>
+<p>puedes obtenerlo mediante</p>
+<pre><code> $wget https://web.archive.org/web/20180208191139/http://registry.gimp.org:80/node/28566</code></pre>
+<p>Y recomienza el programa Gimp.</p>
+<p>Digamos por ejemplo, que seleccionas un nuevo documento. En la caja de herramientas de Gimp (recuerda que si no está visible, siempre puedes activarla a través de la combinación en el teclado de <code>Ctrl</code> y <code>b</code>), podrás ver la nueva inclusión de la ventana de herramienta.</p>
+<p>Veamos como funciona con la selección de esta misma caja de herramientas.</p>
+<p><img src="/images/selecciona-toolbox.png" alt="caja de herramientas toolbox"></p>
+<p>El próximo paso sería seleccionar el icono con el que se marcan los dos puntos de la flecha.</p>
+<p><img src="/images/click-twice.png" alt="clic dos vecs"></p>
+<p>Asegúrate que el color como se muestra en la figura anterior, esté seleccionado apropiadamente en la caja de herramientas (toolbox).</p>
+<p>Una vez que los dos puntos hayan sido marcados, selecciona la barra del menú principal de <code>Herramientas/tools</code>, descendiendo hasta el final y dándole clic a <code>Arrows</code>.</p>
+<p>Una vez que le des a <code>Arrows</code> del menú principal de la barra, una ventana que es similar a la que se muestra a continuación te permitirá especificar ciertos valores.</p>
+<p><img src="/images/select-tools-arrow.png" alt="selecciona el menú principal de arrows"></p>
+<p>Una vez que tengas la ventana abierta, ajusta los valores de porcentajes según el grosor, o el ancho que los ángulos de la flecha debiesen tener cuando se le aplique el color configurado. También puedes especificar otros valores como en rellenar a todo color la punta de la flecha.</p>
+<p>Clic <code>ok</code> una vez que los valores sean los acordados.</p>
+<p><img src="/images/arrow-done.png" alt="flecha finalizadai"></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/git-in-six-hundred-words-by-mary-rose-cook/">Git in Six Hundred Words by Mary Rose Cook</a></h1>

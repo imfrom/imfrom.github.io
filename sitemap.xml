@@ -88,6 +88,11 @@
   </url>
   
   <url>
+    <loc>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</loc>
+    <lastmod>2019-02-06T03:28:11-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://imfrom.github.io/post/reply-to-email-with-mutt-on-xfce/</loc>
     <lastmod>2019-02-01T01:35:59-05:00</lastmod>
   </url>
@@ -215,6 +220,11 @@
   <url>
     <loc>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</loc>
     <lastmod>2017-12-09T13:58:20-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imfrom.github.io/post/configuring-kakoune-kakrc/</loc>
+    <lastmod>2017-12-06T03:22:08-04:00</lastmod>
   </url>
   
   <url>

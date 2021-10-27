@@ -6,11 +6,7 @@
     <description>Recent content in Posts on Blog del tecnólogo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Dec 2020 08:30:13 -0500</lastBuildDate>
-    
-	<atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 20 Dec 2020 08:30:13 -0500</lastBuildDate><atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cannot Convert String Helvetica Medium to Type Fontstruct</title>
       <link>https://imfrom.github.io/post/cannot-convert-string-helvetica-medium-to-type-fontstruct/</link>
@@ -153,6 +149,19 @@ One could go directly to the attachments in question and selectively open each o
 Ctrl+ 🖱 (rightmouse) is usually the way that one would bring the menu, but every time this was done, xterm was crashing.
 After going over some of the xorg-fonts-* packages, I noticed that some of them were not installed for the X system.
 Among them, xorg-fonts-misc was not installed. I proceeded to install it and the menu was brought up successfully again by the ctrl rightmouse 🖱combination.</description>
+    </item>
+    
+    <item>
+      <title>Kakoune Macros Recording and Replay</title>
+      <link>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</link>
+      <pubDate>Wed, 06 Feb 2019 03:28:11 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</guid>
+      <description>One of the features for which I personally would have a use for, would be macros recording and playback.
+To read about this on the doc page for kakoune, :doc keys macros might give you an idea that by default Q starts or ends macro recording, while q replays it.
+the &amp;lt;esc&amp;gt; key also ends the macro recording.
+See Kakoune Macros
+But further description for the macros recording and playback, is not provided on the doc page for Kakoune.</description>
     </item>
     
     <item>
@@ -383,6 +392,16 @@ Among the first results that came up after my query, was the following from the 
       <guid>https://imfrom.github.io/post/screen-locker-broken-manjaro-kde/</guid>
       <description>While updating a fresh installation of Manjaro KDE, the screen locked. Apparently the default settings for the system, enabled this behavior without further ado.
 As a result of this problem, the surprising part came afterward when the updates that were being downloaded, suddenly crashed the system. This led to the nonetheless bothersome problem of modules.devname not found error followed by the no more troublesome error you are now being dropped into an emergency shell and sh can&#39;t access tty; job control turned off.</description>
+    </item>
+    
+    <item>
+      <title>Configuring Kakoune Kakrc</title>
+      <link>https://imfrom.github.io/post/configuring-kakoune-kakrc/</link>
+      <pubDate>Wed, 06 Dec 2017 03:22:08 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/configuring-kakoune-kakrc/</guid>
+      <description>Configuring the kakoune text editor initialization file has been nothing short of a chore, as it requires the path environment to be correctly set, before any changes on the kakrc take ahold of the settings.
+As the tutorial suggests, see Configuration and autoloading, if it is launched with the -n switch, kakoune will source the ../share/kak/kakrc, but on a unrelated issue but nonetheless relevant about the correct location for the initialization file, the developer clearly stated that:</description>
     </item>
     
     <item>

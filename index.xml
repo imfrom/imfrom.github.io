@@ -33,7 +33,7 @@
         <description>&lt;p&gt;I wouldn&amp;rsquo;t know where to look —- I certainly can browse the &lt;a href=&#34;https://packages.debian.org/buster/bash-completion&#34; target=&#34;_blank&#34;&gt;repo&lt;/a&gt; from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&amp;rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as this distro may be,  not everyone uses it.&lt;/p&gt;
 &lt;p&gt;A quick glance at the files that comprise this program, one could see that aside from the &lt;code&gt;usr&lt;/code&gt; folder, bash completion is also installed under &lt;code&gt;etc&lt;/code&gt; and &lt;code&gt;bin&lt;/code&gt; accordingly.&lt;/p&gt;
 &lt;p&gt;Bash completion allows to fill in the rest of the commands or variables that follow for given executable.&lt;/p&gt;
-&lt;p&gt;See &lt;a href=&#34;https://wiki.archlinux.org/index.php/Bash#Tab_completion&#34; target=&#34;_blank&#34;&gt;Bash autocompletion&lt;/a&gt; for more details about its chock features&amp;rsquo; versatility.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://wiki.archlinux.org/index.php/Bash#Tab_completion&#34; target=&#34;_blank&#34;&gt;Bash autocompletion&lt;/a&gt; for more details about its chock features&#39; versatility.&lt;/p&gt;
 &lt;p&gt;In the case of Arch, the installation does not create — unlike on Debian — the folder &lt;code&gt;bash_completion&lt;/code&gt; under &lt;code&gt;etc&lt;/code&gt;. And I don&amp;rsquo;t think this may have been an oversight from the Arch team, but presumably and perhaps due to safety reasons,  this was something that was never considered in the first place.&lt;/p&gt;
 &lt;p&gt;Other programs have had no issue by correctly including on the script the means to have it install appropriately. But it&amp;rsquo;s my opinion — and anyone is more than welcome to disagree with me here — that many a great number of programs have not chosen to do so or failed altogether in this regard. Hugo for example is one of them. See for example the &lt;a href=&#34;https://github.com/gohugoio/hugo/pull/1088&#34; target=&#34;_blank&#34;&gt; destination directory&lt;/a&gt; when this feature was added. See the commit &lt;a href=&#34;https://github.com/gohugoio/hugo/pull/1088/commits/ccdf544f73dda2ff2dd8bf0407a77e21084c59e8&#34; target=&#34;_blank&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;To resolve this issue, the most viable solution is to manually add the folder, from whence this error stems, or else the message&lt;code&gt;Error: bash_completion.d: hugo.sh no such file or directory&lt;/code&gt; will disallow the &lt;code&gt;autocomplete&lt;/code&gt; which was added to the binaries of this  program, to come into effect.&lt;/p&gt;
@@ -252,10 +252,10 @@ DESCRIPTION
 &lt;pre&gt;&lt;code&gt;  checking inter-conflicts
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Of course, I could have just  dismissed all these errors and be happily content to just get rid of this nonsense by removing pamac altogether and start afresh from the official package manager, but I would have never been happy by either settling these problems through such trivialities, as long as another system, on which the very same package was installed, was not showing the same behavior.&lt;/p&gt;
-&lt;p&gt;Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&amp;rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the &lt;a href=&#34;https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error&#34; target=&#34;_blank&#34;&gt;Arch Wiki suggests&lt;/a&gt;. But I always liked the design idea behind this graphical interfaced package provided with its updates&amp;rsquo; notifications, which unlike pacman that would have required to manually tweak checking for these updates.&lt;/p&gt;
+&lt;p&gt;Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&amp;rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the &lt;a href=&#34;https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error&#34; target=&#34;_blank&#34;&gt;Arch Wiki suggests&lt;/a&gt;. But I always liked the design idea behind this graphical interfaced package provided with its updates&#39; notifications, which unlike pacman that would have required to manually tweak checking for these updates.&lt;/p&gt;
 &lt;p&gt;But as it&amp;rsquo;s usually the case, pacman was downright correct by identifying as closely as possible the culprit by which the system itself held &lt;code&gt;files already in filesystem&lt;/code&gt;. This was clearly the case with the package &lt;strong&gt;gtk-doc&lt;/strong&gt;, and somehow this conflict had to be resolved.&lt;/p&gt;
 &lt;p&gt;But what I don&amp;rsquo;t know, and it&amp;rsquo;s my mistake since I didn&amp;rsquo;t venture out - either at the time when it first occurred -, and much less now, because it&amp;rsquo;d be a wildly-guessing why would this be the case, that even when two systems configured alike which in turn held the same package revisions,  were somehow behaving disparagingly different.&lt;/p&gt;
-&lt;p&gt;I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&amp;rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors&amp;rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.&lt;/p&gt;
+&lt;p&gt;I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&amp;rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors&#39; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.&lt;/p&gt;
 &lt;p&gt;I did however, tried to stay as far away as possible from manually  removing  each of the files installed by the package [gtk-doc], but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process, that of having to go and remove each file owned by the package,  seemed to be the only inevitable method to circumvent this problem.&lt;/p&gt;
 &lt;p&gt;After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&amp;hellip; but it gives me pause and comfort in knowing that &lt;code&gt;checking inter-dependencies&lt;/code&gt; or &lt;code&gt;checking file-conflcts&lt;/code&gt; rolling hangs haven&amp;rsquo;t returned to this annoyingly halting process.&lt;/p&gt;
 </description>
@@ -361,6 +361,74 @@ proceeded to install it and the menu was brought up
 successfully again by the &lt;kbd&gt;ctrl&lt;/kbd&gt; rightmouse
 🖱combination.&lt;/p&gt;
 &lt;p&gt;A bug report was properly sent out to address this issue. I don&amp;rsquo;t recall from having this issue before, and/or when it even first appeared.&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>Kakoune Macros Recording and Replay</title>
+        <link>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</link>
+        <pubDate>Wed, 06 Feb 2019 03:28:11 -0400</pubDate>
+        <author></author>
+        <guid>https://imfrom.github.io/post/kakoune-macros-recording-and-replay/</guid>
+        <description>&lt;p&gt;One of the features for which I personally would have a use for, would
+be macros recording and playback.&lt;/p&gt;
+&lt;p&gt;To read about this on the doc page for &lt;strong&gt;kakoune&lt;/strong&gt;, &lt;code&gt;:doc keys macros&lt;/code&gt;
+might give you an idea that by default &lt;strong&gt;Q&lt;/strong&gt; starts or ends macro
+recording, while &lt;strong&gt;q&lt;/strong&gt; replays it.&lt;/p&gt;
+&lt;p&gt;the &lt;code&gt;&amp;lt;esc&amp;gt;&lt;/code&gt; key also ends the macro recording.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros&#34;&gt;Kakoune
+Macros&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But further description for the macros recording and playback, is not
+provided on the doc page for &lt;strong&gt;Kakoune&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The author advises to consult the &lt;code&gt;:doc registers&lt;/code&gt; for further info.&lt;/p&gt;
+&lt;p&gt;As the doc states&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Registers are named lists of text -instead of simply text- in order to
+interact well with multiselection. They are used for various purposes,
+like storing the last yanked text, or the captured groups associated
+with the selections.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And about interacting with it:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;c-r&amp;gt;&amp;lt;c&amp;gt;&lt;/code&gt; when in insert mode or in a prompt, insert the value stored
+in the c register (single character)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;quot;&amp;lt;c&amp;gt;&lt;/code&gt; in normal mode, select the register (single character)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;But unlike &lt;strong&gt;vim&lt;/strong&gt; in which a macro is replayed by preceding the
+register with the macro &lt;strong&gt;@&lt;/strong&gt;, on &lt;strong&gt;kakoune&lt;/strong&gt;, the double quote along
+with register &lt;code&gt;&amp;lt;key&amp;gt;&lt;/code&gt; must precede the macro key, which in this case is
+&lt;code&gt;q&lt;/code&gt; that&#39;s bound to the default register &lt;strong&gt;@&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ignorant of this fact, mixed with the confusion that stemmed primarily
+from the habit of using a workflow from &lt;strong&gt;vim&lt;/strong&gt;, disallowed me to fully
+comprehend that in order to replay the macro, the register (whatever
+this one may be) must supersede the double quote &lt;code&gt;&amp;quot;&lt;/code&gt;, followed in the
+end by the default register &lt;code&gt;q&lt;/code&gt; which in turn, fully replays the
+specified macro.&lt;/p&gt;
+&lt;p&gt;After going over it, this may simply seem to have been just an oversight
+on my part since such an obvious step to record and replay the macro, is
+evident, but considering I&#39;ve been used to &lt;strong&gt;vim&lt;/strong&gt;, it was not at all
+clear at first, what the steps may have been, mainly in order to replay
+the macro on Normal mode. On &lt;strong&gt;Insert&lt;/strong&gt; and &lt;strong&gt;Prompt&lt;/strong&gt; mode, however,
+the documentation provided all the details.&lt;/p&gt;
+&lt;p&gt;So to record the macro&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;quot; &amp;lt;key&amp;gt; Q &amp;lt;esc&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And to replay the macro&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;quot; &amp;lt;key&amp;gt; q 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/keys.asciidoc#macros&#34;&gt;Kakoune
+Macros&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/registers.asciidoc&#34;&gt;Kakoune
+registers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Other useful links&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/vim/comments/5icmak/a_vim_users_comparisation_between_kakoune_and_vim/&#34;&gt;A vim user&#39;s comparison between vim and
+kakoune&lt;/a&gt;
+:::
+:::
+:::&lt;/p&gt;
 </description>
       </item>
     
@@ -690,7 +758,7 @@ framework of say for example, what the Free Software
 Foundation accepts.&lt;/p&gt;
 &lt;p&gt;This is not the case. Most Linux distros, and even more
 those that are amongst the most popular, are not very clear
-in their terms with the programs that the distro&amp;rsquo; s
+in their terms with the programs that the distro&#39; s
 developers include and consequently employ within it, for further mass
 use. No distribution out there but only a handful of them do
 this.&lt;/p&gt;
@@ -713,14 +781,14 @@ Software Foundation to get a glimpse at what this is about.&lt;/p&gt;
 &lt;p&gt;But to make matters even worse, the user who was trying to
 make his silly point, brought up one if not the most
 inaccurate and misleading source of Linux Market Share
-measure rankings&amp;rsquo; markers out there, a website named
+measure rankings&#39; markers out there, a website named
 &lt;strong&gt;Distrowatch&lt;/strong&gt; that lists the most popular GNU/Linux
 distributions.&lt;/p&gt;
 &lt;p&gt;Which takes me to the second rant about why the above cannot be taken as an
 statistical absolute. For &lt;strong&gt;Distrowatch&lt;/strong&gt; is just a community driven, heavily
 edited, bureaucratically biased reviewed epicenter which sits on the web  with
 layers of html markup with a domain registration.  Let me emphasize once again
-about its biased one sided view about the certain distros&amp;rsquo; Linux Market Share.
+about its biased one sided view about the certain distros&#39; Linux Market Share.
 It is important to do so because it is almost and will always be imprecise to
 measure the use of GNU/Linux distributions across the spectrum and compare
 these - whether community or commercially based&lt;/p&gt;
@@ -977,7 +1045,7 @@ place:&lt;/p&gt;
  # set &#39;GRUB_DEFAULT=saved&#39; above.
  #GRUB_SAVEDEFAULT=&amp;quot;true&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;One could uncomment the GRUB_SAVEDEFAULT=&amp;quot;true&amp;rdquo; so the grub configuration file ‘remembers’ the selection.&lt;/p&gt;
+&lt;p&gt;One could uncomment the GRUB_SAVEDEFAULT=&amp;ldquo;true&amp;rdquo; so the grub configuration file ‘remembers’ the selection.&lt;/p&gt;
 &lt;p&gt;Furthermore, and right on the top of the file the default chosen selection can be specified by modifying the value of 0:&lt;/p&gt;
 &lt;h1 id=&#34;grub-boot-loader-configuration&#34;&gt;GRUB boot loader configuration&lt;/h1&gt;
 &lt;p&gt;GRUB_DEFAULT=0
@@ -1181,6 +1249,117 @@ further ado.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/mhwd-chroot-steps.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And as the already mentioned answer on the unix.stackexchange.com site suggested, it was necessary to reload the image again.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/chroot-answer-mkinitcpio.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>Configuring Kakoune Kakrc</title>
+        <link>https://imfrom.github.io/post/configuring-kakoune-kakrc/</link>
+        <pubDate>Wed, 06 Dec 2017 03:22:08 -0400</pubDate>
+        <author></author>
+        <guid>https://imfrom.github.io/post/configuring-kakoune-kakrc/</guid>
+        <description>&lt;!--# Configuring Kakoune Kakrc {#configuring-kakoune-kakrc .post-title}
+
+[Dec 6, 2017]{.post-date}
+--&gt;
+&lt;p&gt;Configuring the &lt;a href=&#34;https://github.com/mawww/kakoune&#34;&gt;kakoune text editor&lt;/a&gt;
+initialization file has been nothing short of a chore, as it requires
+the path environment to be correctly set, before any changes on the
+&lt;code&gt;kakrc&lt;/code&gt; take ahold of the settings.&lt;/p&gt;
+&lt;p&gt;As the tutorial suggests, see &lt;a href=&#34;https://github.com/mawww/kakoune#configuration-autoloading&#34;&gt;Configuration and
+autoloading&lt;/a&gt;,
+if it is launched with the &lt;code&gt;-n&lt;/code&gt; switch, kakoune will source the
+&lt;code&gt;../share/kak/kakrc&lt;/code&gt;, but on a unrelated issue but nonetheless relevant
+about the correct location for the initialization file, the developer
+clearly stated that:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The kakrc file in share is Kakounes init script, it is not intended to
+be user edited. It is actually that script that will load your user
+configuration in ~/.config/kak/kakrc.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/dont-use-share-kakrc.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://github.com/mawww/kakoune/issues/1102&#34;&gt;clang completion
+#1102&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thus, it is necessary to set the environment first on any Unix system.
+The command &lt;code&gt;setenv&lt;/code&gt; is used for the &lt;strong&gt;csh&lt;/strong&gt; shell, whereas in &lt;strong&gt;bash&lt;/strong&gt;,
+this is accomplished through the &lt;code&gt;export&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;To find out whether for example, &lt;code&gt;XDG_CONFIG_HOME&lt;/code&gt; was set, is necessary
+to invoke on the terminal:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; printenv XDG_CONFIG_HOME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which if it does not return a value, the environment has not been set
+yet.&lt;/p&gt;
+&lt;p&gt;To set the environment across sessions, note it accordingly on your
+&lt;code&gt;bashrc&lt;/code&gt; file with the &lt;code&gt;export&lt;/code&gt; command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; export XDG_CONFIG_HOME=$HOME/.config
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;create a directory &lt;strong&gt;kak&lt;/strong&gt; under that environment, and further create
+your init file &lt;strong&gt;kakrc&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Most of the available settings will be available without further
+modifications. That is, some of the commands that are loaded by not
+using a &lt;code&gt;kakrc&lt;/code&gt; file, will not have to be further tweaked with.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; colorscheme &amp;lt;tab completion&amp;gt; &amp;lt;name of theme&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;can be identified without a problem.&lt;/p&gt;
+&lt;p&gt;There are, however, a handful of those that would have to be further
+tweaked with, in order to load the &lt;strong&gt;kakrc&lt;/strong&gt; init file correctly.&lt;/p&gt;
+&lt;p&gt;Take for example, &lt;code&gt;autowrap-enable&lt;/code&gt;, which normally applies soft wrap
+manipulation to the lines.&lt;/p&gt;
+&lt;p&gt;According to the developer,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;autowrapping is provided by the autowrap.kak script (which should be
+loaded by default), enable it for a buffer with the autowrap-enable
+command, that you probably want to put in a hook (for example if you
+want to always enable autowrap, add hook global WinCreate .* %{
+autowrap-enable } in your kakrc. the autowrap_column option controls
+the column on which to autowrap.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;See &lt;a href=&#34;https://github.com/mawww/kakoune/issues/419&#34;&gt;Noob questions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/autowrap-kakrc.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Further customizations to map certain keys are also necessary.&lt;/p&gt;
+&lt;p&gt;For example, to map the &lt;code&gt;\&lt;/code&gt; backslash key to say the &lt;code&gt;;&lt;/code&gt; semicolon.,
+it&amp;rsquo;s imperative to precede the *&lt;em&gt;*&lt;/em&gt; key with the &lt;code&gt;%&lt;/code&gt; percent sign and
+further enclose the &lt;code&gt;\&lt;/code&gt; backslash key within curly brackets &lt;code&gt;{}&lt;/code&gt;, so the
+final code would be something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; map buffer insert %{\} &#39;;&#39; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;of course, if the settings are desirable to be loaded globally, then&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; map global insert %{\} &#39;;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;needs to be specified accordingly on the initialization file.&lt;/p&gt;
+&lt;p&gt;See for example this issue: &lt;a href=&#34;https://github.com/mawww/kakoune/issues/419&#34;&gt;can&amp;rsquo;t map to
+backslash&lt;/a&gt;, which touched
+upon the problem, and further linked
+&lt;a href=&#34;https://github.com/mawww/kakoune/issues/1049&#34;&gt;https://github.com/mawww/kakoune/issues/1049&lt;/a&gt; and
+&lt;a href=&#34;https://github.com/mawww/kakoune/issues/1221&#34;&gt;https://github.com/mawww/kakoune/issues/1221&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s certainly two-fold that by specifying:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; map buffer insert &#39;;&#39; \ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the behavior to have the &lt;code&gt;\&lt;/code&gt; inserted, is easily accomplished, as shown
+on the example above, but the same is not true, by having the same
+characters inversed within the strings, that would yield the correct
+results.&lt;/p&gt;
+&lt;p&gt;for example whereas&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; map buffer insert &#39;;&#39; \ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;is correct, a simple &lt;code&gt;map buffer insert &#39;\&#39; ;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;throws an error with the message
+&lt;code&gt;parse error: unterminated string &#39;...&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s therefore necessary to have:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; map buffer insert %{;} \
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the same is true if one were to &lt;code&gt;map buffer insert &#39;\&#39; %{;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;one of the methods that would work across buffers, is to have such
+characters enclosed within curly brackets and further preceded by the
+&lt;code&gt;%&lt;/code&gt; sign&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; map buffer insert %{\} %{;} 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; map buffer insert %{;} %{\} 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::
+:::
+:::&lt;/p&gt;
 </description>
       </item>
     

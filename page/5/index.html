@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.72.0" />
+	<meta name="generator" content="Hugo 0.79.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
@@ -37,7 +37,9 @@
 
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+    <p>
+      A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.
+    </p>
   </div>
 
   <nav class="sidebar-nav">
@@ -69,6 +71,93 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-xfce-qpdfview-problem-with-qt5ct-unable-to-load-plugin-in-first-attempt/">Manjaro Xfce Qpdfview Problem With Qt5ct Unable to Load Plugin in First Attempt</a></h1>
+        <span class="post-date">Oct 19, 2017</span>
+        <p>I currently have two (2) identical - or that’s what it seemed like - <strong>xfce</strong> environments on two (2) different hardware systems.</p>
+<p>I always keep at hand a list of viewers and if there is any problem removing those to be found unnecessarily large or extremely light to the point of rendering them useless, I tend to check the Arch Wiki at <a href="https://wiki.archlinux.org/index.php/list_of_applications" target="_blank">List of Applications</a> for a refresher on what’s available at the moment.</p>
+<p>I’ve always found useful, more or less two (2), or three (3) of them, among them, with a quick copy-paste from the Arch Wiki:</p>
+<p>gv — Graphical user interface for the Ghostscript interpreter that allows to view and navigate through PostScript and PDF documents.</p>
+<p>ePDFView — Free lightweight PDF document viewer using the Poppler and GTK+ libraries. Development stopped.</p>
+<p>qpdfview — Tabbed document viewer. It uses Poppler for PDF support, libspectre for PS support, DjVuLibre for DjVu support, CUPS for printing support and the Qt toolkit for its interface.</p>
+<p>The latter, strangely enough, was behaving differently on one of the <strong>manjaro xfce</strong> systems.</p>
+<p>A quick google search turned pretty much nothing, related to this issue I was having: namely, the adjustment and consequent resizing for the Settings Window.</p>
+<p><img src="/images/manjaro-xfce-qpdfview-settings-box-wrong.png" width="680px" height="450px;"></p>
+<p>As you can see from the image above, I was unable to get to the bottom of the window whereto I could’ve specified <strong>to cancel</strong> or <strong>apply</strong> the changes to take effect via a GUI. What use is a GUI if one can’t access the main settings of the program?</p>
+<p>This took me to the wrong path in trying to modify the settings upon which the <strong>Dialog box</strong> depended on.</p>
+<p>The settings for <code>qpdfview.conf</code> were found right under the <code>.conf/qpdfview/</code> directory.</p>
+<p>To no avail I tried to change the settings for the</p>
+<pre><code> settingsDialogSize=@Size(488 803)
+</code></pre>
+<p>on the <strong>qpdfview.conf</strong> file, but every single time I did so, even after changing the above size to other feasible settings, the settings window loaded the default and preconfigured values for it, rendering any change I had made earlier such as modifying the values for that <strong>settingsDialogSize</strong> onto the configuration file,  obsolete.</p>
+<p>Then I gave up tweaking around with the <code>qpdfview.conf</code> file. Even after removing this file, removing <strong>qpdfview</strong> along with all poppler libraries from the system, reinstalling the program again, logging out of the system, and restarting, and logging right back in, the problem still persisted.</p>
+<p>The settings window remained, remained useless for the most part - and from a GUI’s perspective.</p>
+<p>Of course I could have just pressed the <strong>carriage</strong> return key on the keyboard to apply the changes, or for that matter the <strong>escape</strong> key to discard any changes, but this was just besides the point, since it defeated the purpose of having GUI applications running. I needed it to be operational.</p>
+<p>I tried another venue.</p>
+<p>I noticed that every single time that the program <strong>qpdfview</strong> was invoked from the command line, several errors appeared, including the most significant of the lot:</p>
+<pre><code> qt5ct: using qt5ct plugin
+ qt5ct: D-Bus global menu: no
+ Could not load plug-in in first attempt: ""
+ "The shared library was not found."
+</code></pre>
+<p>the second of these messages was self-explanatory. The libraries upon which qpdfview relied upon, were not recognizing or finding the plugin.</p>
+<p>A quick search on google later regarding <strong>qt5ct</strong> did not provide a satisfactory explanation behind the <strong>qpdfview</strong> problem.</p>
+<p>I read some of the visual methods in adjusting the settings for <strong>qt</strong> on <a href="https://www.pcsuggest.com/qt5ct-change-qt5-application-style/" target="_blank">Change Qt5 application style with qt5ct</a></p>
+<p>So I started <strong>qt5ct</strong>, and I noticed that the default settings for the window was to have <strong>gtk2</strong> as the style to be loaded.</p>
+<p>Then right after I had changed it to one of the other values, I had high expectations that the changes would improve the dimensions of the dialog box settings for <strong>qpdfview</strong>. But I was wrong. It made everything worse off.</p>
+<p>I finally had to tweak around with the problem directly through the <code>qt5ct.conf</code> file by changing the style field. Only then the problem with <strong>qpdfview</strong> was resolved.</p>
+<pre><code> [Appearance]
+ color_scheme_path=
+ custom_palette=true
+ icon_theme=Vertex-Maia
+ style=gtk2
+</code></pre>
+<p>The style value was modified to <strong>Breeze</strong>, I saved the file and exited.</p>
+<p>The <strong>qt5ct.conf</strong> file should have on the Appearance the following:</p>
+<pre><code> [Appearance]
+ color_scheme_path=
+ custom_palette=true
+ icon_theme=Vertex-Maia
+ style=Breeze
+</code></pre>
+<p>Right after making the changes - not even a logout was required - <strong>qpdfview</strong> dialog box dimensions were working and definitely manageable. The only glitch - if it may be rightfully called as such - was an apparent back-to-back unwanted behavior in which the whole window for the settings, was not clearly visible, but one quick maximizing drag-around-movement maneuver, fixed the annoyance once and for all.</p>
+<p><img src="/images/qpdfview-correct-settings-dialog-box-1.png" width="680" height="450"></p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/">Manjaro Xfce Bluetooth Problem</a></h1>
+        <span class="post-date">Sep 29, 2017</span>
+         <p>Bluetooth recognition - at least on Manjaro Xfce - has been erratic and inconsistent.</p>
+<p>For no clear reason the LTS kernel and even a newer kernel have identified the hardware, while it has failed to do so in a great many occasions.</p>
+<p>Many of the tweaks included reinstalling <code>bluez</code>, <code>bluez-firmware</code>, <code>bluez-libs</code>, <code>bluez-tools</code>, and <code>bluez-utils</code>.</p>
+<p>Back to the drawing room and back again.</p>
+<p>The bluetooth adapters were not being recognized however. And after logging out and back into the session, and even after <code>sudo /sbin/shutdown -r now</code>, nothing seemed to work.</p>
+<p>The following day - to my surprise - I booted the system and it picked the bluetooth adapters without a problem.</p>
+<p>It reminded me of a comment on the manjaro forum thread entitled <a href="https://forum.manjaro.org/t/bluetooth-adapters-app-not-opening-bluetooth-manager-bluez-failed/4367/19" target="_blank">Bluetooth adapters app not opening Bluetooth Manager</a> in which one of the participants said:</p>
+<blockquote>
+<p>Bluetooth support in Linux is always troublesome, even in Windows, smartphone, etc. So yeah, I think staying away from bluetooth related hardwares if you want a trouble free experience. Wireless hardwares nowadays are going towards a dedicated receiver way to handle wireless connection and that’s a better approach. Just my two cents <a href="https://imfrom.github.io/post/manjaro-xfce-bluetooth-problem/#blueref"><sup id="blueref">1</sup></a></p>
+</blockquote>
+<p>I have to agree with him on that regard.</p>
+<p>On the other hand, the desktop environment <strong>KDE</strong> hasn’t - I ran it for a short while and perhaps my feedback is worthless of consideration on that regard - given me the same problems than the current configuration under <strong>xfce</strong>.</p>
+<p>But I never thought that the problems would persist even after the installation of a newer kernel. That is perhaps the main reason which has been drifting me away from <strong>xfce</strong> until further notice.</p>
+<p>And while <strong>KDE</strong>-fanboys have come up with the slogan that <em>it grows on you</em>, <strong>xfce</strong> is perhaps a more GNU/Linux-centric configurable environment than the former. I still enjoy tweaking with its features even though its less polished than Plasma <strong>KDE</strong>. There is no question about this. <strong>KDE</strong> aims at the latest hardware, while <strong>xfce</strong> focuses on the rest. I’ve never tried to benchmark its memory and CPU consumption, but I’m almost certain it fairs much better than <strong>KDE</strong>.</p>
+<p>Whether <strong>xfce</strong> will be a daily desktop environment driver running the main programs on which my workflow depends upon, it’s a question of time and how well it will handle them without a major setback.</p>
+<p>Further oversights around Bluetooth vulnerabilities include technical papers such as <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.7253&rep=rep1&type=pdf" target="_blank">Security Risks in Bluetooth Devices</a>, <a href="https://pdfs.semanticscholar.org/8872/521819c79505ac20e5da8dd14f8c41eb3f07.pdf" target="_blank">Bluetooth security threats and solutions</a></p>
+<p>Even recent articles from <a
+href="https://mobile.slashdot.org/story/17/09/12/2030213/blueborne-vulnerabilities-impact-over-5-billion-bluetooth-enabled-devices"
+target="_blank">Slashdot - BlueBorne Vulnerabilities Impact Over 5 Billion
+Bluetooth-Enabled Devices</a> have gone on at length about it. The following
+paper - although unreliable since it looks more than a pamphlet from a company
+that advertises its products under the pretension of providing unparalleled
+protection - serves to confirm that regardless of its merit [this paper itsel]
+is worth considering the possible risks could arise as a result from the
+operations of bluetooth devices.</p>
+<p><strong>References</strong></p>
+<p><a href="https://forum.manjaro.org/t/bluetooth-adapters-app-not-opening-bluetooth-manager-bluez-failed/4367/19" target="_blank">bluetooth adapters not opening bluetooth-manager-bluez-failed</a><a href="#blueref">_↩︎</a></p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/urxvt-copy-paste-tweaking/">Urxvt Copy Paste Tweaking</a></h1>
@@ -306,70 +395,6 @@ On vim: pasting worked under the Gmail’s interface, whereas with neovim the pr
 <p>Another <a href="https://kb.iu.edu/d/bdkf">bug 116083</a> is still on the database for the Indiana University.</p>
 <p><strong>References</strong></p>
 <p><a href="https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt" target="_blank">Clipboard specifications from freedesktop.org</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/libreoffice-implementaci%C3%B3n-del-gui%C3%B3n-en-la-separaci%C3%B3n-sil%C3%A1bica/">Libreoffice Implementación Del Guión en La Separación Silábica</a></h1>
-        <span class="post-date">Apr 21, 2017</span>
-        <p>Para implementar la separación silábica en cualquier documento en Libreoffice, es necesario bajar los correspondientes archivos de extensiones para este programa: <a href="https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6">https://extensions.libreoffice.org/extensions/spanish-dictionaries/0.6</a></p>
-<p><img src="/images/libreoffice-download-dictionaries.png" alt="Diccionario en español con separación silábica y corrector ortográfico"></p>
-<p>Una vez descargado y guardado este archivo, se utiliza el mismo programa Libreoffice para cargarlo posteriormente.</p>
-<p>Después se selecciona bajo el menú de <strong>tools</strong>, y <strong>options</strong> como se muestra:</p>
-<p><img src="/images/libreoffice-tools-options-menu.png" alt=""></p>
-<p>que por consiguiente inicia la ventana correspondiente que especifica el recién bajado diccionario y como muestra la siguiente figura:</p>
-<p><img src="/images/libreoffice-language-settings.png" alt=""></p>
-<p>Muy importante en darle clic a <strong>OK</strong> a esta ventana donde el diccionario haya sido seleccionado.</p>
-<p>Después de esto, y para que el corrector ortográfico aplique al actual documento, es necesario en asegurarnos que el idioma sea seleccionado desde el menú de <strong>tools</strong> seguido de <strong>language</strong>, y después como opción si el corrector ortográfico se aplicaría a todo el texto del documento, o a solamente un párrafo, y hasta una determinada selección, y como se muestra en la siguiente imagen:</p>
-<p><img src="/images/libreoffice-language-selection.png" alt=""></p>
-<p>En el caso del guión de separación silábica sería necesario en darle clic nuevamente al menú de <strong>tools</strong> (herramientas) seguido de <strong>language</strong> para que la opción <strong>hyphenation</strong> tome vigencia y aplique al texto del documento:</p>
-<p><img src="/images/libreoffice-hyphenation-menu-clic.png" alt=""></p>
-<p>Lo que sucede con el paso anterior, que sencillamente no es lo más práctico. Y lo mismo se puede comprobar si en cada modificación o mejor dicho, en cada terminación de línea o párrafo u oración se tuviese que emplear lo antedicho para que el ingreso automático de guión ocurra a través de todo el texto.</p>
-<p>Para lograr esto, es decir, en emplear en ese caso un ingreso automático del guión silábico, es necesario en ir al menú de <strong>Styles</strong> seguido de <strong>Styles and Formatting</strong> del documento como tal:</p>
-<p><img src="/images/libreoffice-styles-formatting-menu.png" alt=""></p>
-<p>O si te es más fácil dándole clic a <strong>Edit Style</strong> del actual documento:</p>
-<p><img src="/images/libreoffice-styles-edit-style.png" alt=""></p>
-<p>El cual abrirá otra ventana que manipula los valores para la pre-configuración del estilo del documento. Asegúrate que selecciones <strong>Text Flow</strong> el cual especifica si la <strong>hyphenation</strong> o la separación silábica ocurriría automáticamente:</p>
-<p><img src="/images/libreoffice-automatic-hyphenation.png" alt=""></p>
-<p>Una vez que esta opción sea seleccionada, dale a clic para que los cambios apliquen al documento.</p>
-<p>Siempre es aconsejable consultar muchas de las oficiales referencias acerca de este programa en <a href="https://help.libreoffice.org/">https://help.libreoffice.org</a></p>
-<p><strong>Referencia</strong></p>
-<p><a href="https://help.libreoffice.org/3.5/Writer/Hyphenation" target="_blank">Libreoffice Help - hyphenation</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/gigabyte-motherboard-fails-to-load-live-cd-but-succeeds-with-flash-drive/">Gigabyte Motherboard Fails to Load Live Cd but Succeeds With Flash Drive</a></h1>
-        <span class="post-date">Apr 8, 2017</span>
-        <p>I can’t say whether some of the systems that NUC Intel produces, face the same problems while loading a LiveCD/LiveDVD iso image via an external drive, as the manufacturer Gigabyte currently does. The latter manufacturer gave me the proverbial run for the money when I wanted to install an image that was burned on a DVD and had been successfully installed on an old system.</p>
-<p>Not only I tried to load two (2) different images that proved to have been installed without issues and worked correctly on two (2) separate old Dell systems, but it seemed that even after specifying the external DVD/Writer on the first prioritized boot order of the BIOS, the motherboard was simply unable to identify it.</p>
-<p>I can’t attest whether the BIOS for that particular model is used across similar boards, although is unlikely, but what I can guarantee is that after several attempts, including and not limited to one instance, in which the board seemed to boot in the desired order, in the end was a total disaster: even a warning came up - something that had to do with a missing file from the installation burned DVD image- which appeared on the screen, and would not let me continue.<br>
-I wondered at that point whether the motherboard BIOS was clearly identifying the external DVD writer.</p>
-<p>A quick search on Google confirmed it. The motherboard would identify the external DVD only sparingly and inconsistently.</p>
-<p>I had an HDD preloaded with an operating system. And had no problems whatsoever to load it directly. But connecting an HDD with a preloaded OS would miss the point altogether. How about if the HDD had no OS preconfigured on it. Then it would become a problem.</p>
-<p>Another Google search returned different scenarios which were not applicable to my situation.
-One user pointed out that by disconnecting and connecting the external DVD right after powering on the motherboard resolved his issue.</p>
-<p>Someone on the Anandtech forums - I remember this website from years before, it published some if not the best reviews about SDDs on the marked - briefly spoke about it. This time around someone on the forum, a subdomain of Anandtech, responded that one reason he/she likes to read the posts is too help him/her determine what motherboard <em>not</em> to buy. Another user rightfully expressed his dissatisfaction with this particular brand’s issue on modern times.</p>
-<p>A post on a blog from blogspot pointed out that the solution in his/her case was to tweak with the USB connection. Other responses that followed had to do with the failure on the users’ part, in properly identifying the boot order for the device. But this was not the problem I was having. If anything, I noticed - like I wrote earlier - the inconsistency of the board’s BIOS in simply recognizing the connection. Whereas sometimes it would show right after powering the system, other times it would not show up at all. <a href="#blogspot"><sup id="blogref">1</sup></a></p>
-<p>Disabling <strong>AHCI</strong> mode in favor of <strong>Legacy</strong> or <strong>IDE</strong> like a user pointed out on Anandtech did not resolve it either. And much less by changing the preloaded configuration for <strong>CSM</strong>. At one point, the system could not even access the BIOS at all, and it became unresponsive. Only after unplugging the cable from the external DVD writer, the BIOS utility would actually show up. This last inconsistent behavior I noticed it by messing with different settings like the ones I mentioned earlier, in which I was faced with the same problem. The only way to access the BIOS was by unplugging the cable. <a href="#anand"><sup id="anandref">2</sup></a></p>
-<p>Up to that point I stopped looking and reading for viable solutions altogether. Nothing I tried seemed to work, even though I could plug in an HDD with a preloaded OS. The GB-BXBT run fine or without major problems on a preloaded OS, and yet I was unable to load a live CD/DVD and install it from there.</p>
-<p>I noticed that the problem with the USB for the BIOS settings for example, was supposedly patched years ago. And the latest updates for the BIOS on that particular system occurred a year or two before the manufacturer shipped the system to resellers.</p>
-<p>How the external DVD writer would appear and disappear at times while turning on the motherboard was simply beyond me. I was unable to confirm nonetheless the same findings than the user at blogspot.</p>
-<p>At that moment I realized I could no longer waste any more time in trying to install the Live CD/DVD from the DVD writer onto the HDD. Luckily I had an old USB drive lying around that I could use for testing purposes.</p>
-<p>For years I had installed from Live CD/DVDs onto the majority of the systems. It seemed, this was no longer possible.</p>
-<p>I tried to use the simplest method to have a portable OS on a flash drive that could - hopefully install onto the HDD.</p>
-<p>According to the Arch Wiki <a href="#dd"><sup id="ddref">3</sup></a> the command line could come handy for this purpose:</p>
-<p>On the terminal</p>
-<pre><code>$ dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress &amp;&amp; sync
-</code></pre>
-<p>It took a few minutes for the process to finish but in the end I could no longer complain.</p>
-<p>Had to press the <code>DEL</code> key one more time to access the BIOS. Then just like before, went to specify the boot order that the board should recognize first. The boot sequence showed the HDD on the first spot, followed by the flash drive I had recently copied the image to. Rebooted the system and finally the Manjaro installer loaded without an issue.</p>
-<p>The installation finished without problems. Later I removed the flash drive. Rebooted the system without having to go into the BIOS again., and successfully the fresh installation of Manjaro with the XFCE environment was running updates as usual.</p>
-<p><strong>References</strong></p>
-<p><a name="blogspot"></a><a href="http://chromasoft.blogspot.com/2010/10/solving-dreaded-gigabyte-wont-boot-from.html" target="_blank">solving <em>gigabyte wont boot from USB</em></a><a href="#blogref">&crarr;</a></p>
-<p><a name="anand"></a><a href="https://forums.anandtech.com/threads/dreaded-wont-boot-from-cd-problem-gigabyte-mb-stumped-and-in-need-of-help.2400256" target="_blank">Anandtech - Won’t boot from CD Gigabyte at Anandtech</a>  <a href="#anandref">&crarr;</a></p>
-<p><a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media#Using_dd" target="_blank">USB Flash installation media at Arch Wiki</a></p>
-<p><a name="dd"></a><a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media#In_GNU.2FLinux" target="_blank">USB Installation in GNU/Linux</a><a href="#ddref"> ↩︎</a></p>
 
     </div>
   
