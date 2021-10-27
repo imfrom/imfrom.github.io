@@ -48,7 +48,7 @@
     </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2021. All rights reserved.</p>
   </div>
 </div>
 
@@ -71,6 +71,105 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/modificar-mapa-del-teclado-con-emacs-y-vim/">Modificar Mapa Del Teclado Con Emacs Y Vim</a></h1>
+        <span class="post-date">Nov 21, 2016</span>
+        <p>Estos son algunos de los ejemplos que se pueden utilizar a través de los inmensamente populares editores de programación Emacs <a href="#emacs"><sup>1</sup></a> y Vim <a href="#vim"><sup>2</sup></a>, para cambiar el mapa del teclado.</p>
+<h2 id="emacs">Emacs</h2>
+<p>El altamente configurable y extensible editor de texto Emacs también nos puede ayudar con modificaciones del teclado, o cambiar la localización de las teclas, sin la necesidad de cambiar todo el diseño, y sin la necesidad de tener que utilizar algún teclado en específico.</p>
+<p>Primero se crea una función que se le asigna un nombre determinado. En este caso utilizamos el nombre de “backslash”. Posteriormente a esto, se le atribuye el comando <code>insert</code> seguido de <code>kbd</code> y el mapa del registro del teclado que se desea modificar.</p>
+<p>En mi caso, encontré conveniente intercambiar las teclas <code>\</code> por <code>;</code> y viceversa. Por ejemplo:</p>
+<pre><code>(defun backslash ()
+  (interactive)
+  (insert (kbd "\\")))
+
+(global-set-key (kbd "; " ) 'backslash)
+</code></pre>
+<p>al igual que:</p>
+<pre><code>(defun semicolon ()
+  (interactive)
+  (insert (kbd ";" )))
+
+(global-set-key (kbd "\\" ) 'semicolon)
+</code></pre>
+<p>Como se puede ver en los ejemplos anteriores, después de esto se le asigna <code>global-set-key</code> a la recién nombrada función. Es decir, en el primer caso, la función se le asignó el nombre <code>backslash</code>, y la cual fue directamente entrelazada con el ya mencionado comando <code>global-set-key</code> seguido de la tecla <code>;</code>.</p>
+<p>De esta manera se logra el objetivo deseado. Esto es, que el ingreso de una tecla dada en el mapa del teclado del registro de entrada del sistema operativo, sea interpretado  posteriormente, - mediante la nueva asignación que proveyó la función - con el registro del mapa de otra tecla que haya sido predeterminada, dando lugar con ello a que ese ingreso del mapa del teclado, se registre apropiadamente con los resultados de la salida.</p>
+<p>En el primer ejemplo, cada vez que la tecla <code>;</code>sea presionada, la tecla <code>\</code> tomará precedencia. Y viceversa.</p>
+<h2 id="vim">Vim</h2>
+<p>en el caso de Vim, el editor de texto más utilizado en Unix, y el cual está disponible de fábrica, o en la mayoría de las variaciones de Unix, el modificar el mapa del teclado se obtiene de varias maneras.</p>
+<p>Solamente mostraré el comando que lograría esto de la manera más simple y durante el modo de insertar: <code>inoremap</code>, el cual es seguido de la tecla que se desea modificar, con la que tomaría la nueva posición.</p>
+<p>Es decir:</p>
+<pre><code> inoremap ; \
+</code></pre>
+<p>lograría lo que en este caso se quisiera. Cada vez que la tecla <code>;</code> se presione, la <code>\</code> tomará su lugar.</p>
+<p>De la misma manera, cuando se especifica el anterior comando en el fichero de inicialización, conlleva a especificar el mismo comando, es decir <code>inoremap</code> pero en esta ocasión con los símbolos de manera inversa. De otra manera, ambas teclas tendrán asignadas el mismo mapa en el registro del teclado.</p>
+<p>Por lo tanto</p>
+<pre><code>inoremap \ ; 
+</code></pre>
+<p>sería imprescindible para finalizar la modificación de estas teclas.</p>
+
+    </div>
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/reemplazos-en-vim/">Reemplazos en Vim</a></h1>
+        <span class="post-date">Nov 7, 2016</span>
+        <p>Estos son algunos de los reemplazos que se pudieran realizar en vim:</p>
+<pre><code>:s/\zs/\r/g
+</code></pre>
+<p>will have this string of characters: abcdefghi</p>
+<p>tendrá esta cadena de caracteres: abcdefghi</p>
+<p><strong>result</strong>:</p>
+<p>a<br>
+b<br>
+c<br>
+d<br>
+e<br>
+f<br>
+g<br>
+h<br>
+i</p>
+<p>Por otra parte la siguiente ejecución:</p>
+<pre><code>:s/\s/\r/g 
+</code></pre>
+<p>will have</p>
+<p>esto es una prueba</p>
+<p><strong>result</strong>:</p>
+<p>esto<br>
+es<br>
+una<br>
+prueba</p>
+<p>and <code>:s/\n//g</code></p>
+<p>will have something like</p>
+<p>a<br>
+b<br>
+c<br>
+d</p>
+<p><strong>results</strong>:</p>
+<p>abcde</p>
+<pre><code>:s/\n/ /g
+</code></pre>
+<p>will have something like</p>
+<p>esto<br>
+es<br>
+una<br>
+prueba</p>
+<p><strong>result</strong>: esto es una prueba</p>
+<p>por supuesto, se puede ver que en algunos casos se utiliza <code>\n</code>, mientras que en otros se utiliza <code>\r</code>, es necesario recordar que en cada reemplazo y substitución en vim, se logra mediante <code>:s/texto para reemplazar/substituir con</code>.</p>
+<p>Primero antes que todo el delimitador de barra oblicua <code>/</code> es la separación de lo que se quiere modificar con lo que se modificaría.</p>
+<p>Es decir, por ejemplo, donde <code>texto para reemplazar</code> es la expresión regular que se desea cambiar, o los caracteres del texto que se desean modificar, mientras que <code>substituir con</code> es el nuevo ingreso que tomará lugar.</p>
+<p>En este caso, para entender este procedimiento, no hay mejor ayuda en vim, que ir directo a la documentación con <code>:help \n</code> o mediante <code>:h \n</code> para abreviar, y también entender el por qué difiere de <code>:help \r</code></p>
+<p>Creo que una de las mejores respuestas sobre esto, se encuentra en <a href="http://stackoverflow.com/a/18961239">http://stackoverflow.com/a/18961239</a> que especifica que “in the syntax <code>s/foo/bar</code>, <code>\r</code> and <code>\n</code> have different meanings depending on context.</p>
+<p>En nuestro caso sería <code>s/texto para reemplazar/substituir con</code>.</p>
+<p>Por lo tanto esto equivaldría a:</p>
+<p>En el caso de <code>texto para reemplazar</code>, es decir, <code>s/&lt;texto para reemplazar&gt;</code> antes del segundo delimitador <code>/</code>:<br>
+<code>\n</code> sería una newline  o un salto de línea.<br>
+<code>\r</code> en este caso sería CR que es la tecla <code>Enter</code>, tecla de retorno o de regreso.</p>
+<p>En el caso de <code>substituir con</code>, es decir, <code>s/&lt;texto para reemplazar&gt;/&lt;substituir con&gt;</code>, o los caracteres que se encuentren después de la segunda barra <code>/</code>:<br>
+<code>\n</code> seria un octeto nulo<br>
+<code>\r</code> en este caso es una <code>newline</code> o un salto de línea.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/hugo-no-sincroniza-directorio-estatico-en-github/">Hugo No Sincroniza Directorio Estatico en Github</a></h1>

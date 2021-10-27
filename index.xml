@@ -4,9 +4,41 @@
     <link>https://imfrom.github.io/</link>
     <language>en-us</language>
     <author></author>
-    <rights>(C) 2020</rights>
-    <updated>2020-12-20 08:30:13 -0500 EST</updated>
+    <rights>(C) 2021</rights>
+    <updated>2021-10-27 04:08:20 -0400 EDT</updated>
 
+    
+      <item>
+        <title>Guake Module Not Found Pbr</title>
+        <link>https://imfrom.github.io/post/guake-module-not-found-pbr/</link>
+        <pubDate>Wed, 27 Oct 2021 04:08:20 EDT</pubDate>
+        <author></author>
+        <guid>https://imfrom.github.io/post/guake-module-not-found-pbr/</guid>
+        <description>&lt;p&gt;As I decided to run slackware current rather than 14.2, as I had done before, there were perhaps a couple of packages that although were not officially supported, had to be manually configured and compiled again.&lt;/p&gt;
+&lt;p&gt;Among these packages was the drop-down terminal &lt;strong&gt;guake&lt;/strong&gt;. Unlike &lt;strong&gt;yakuake&lt;/strong&gt;, which is normally configured without a major setback, running 14.2 required at one point to have vte3 installed, as well as pbr.&lt;/p&gt;
+&lt;p&gt;the latter one however, proved to be a chore.&lt;/p&gt;
+&lt;p&gt;The error &lt;code&gt;error: invalid command &#39;bdist_wininst&#39;&lt;/code&gt; kept coming up without further info. A quick googling around this problem led me to actually nowhere, since one of the comments mentioned about removing support for &lt;strong&gt;wininst&lt;/strong&gt; but this &lt;a href=&#34;comment&#34;&gt;https://github.com/pypa/setuptools/issues/857#issuecomment-273274212&lt;/a&gt; dated as far back as 2017.&lt;br&gt;
+Another error that showed up — no matter what I did to circumvent it during the installation of guake — was the most infamous of all.&lt;/p&gt;
+&lt;p&gt;guake &lt;code&gt;ModuleNotFoundError: No module named &#39;pbr&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And it made no difference whatsoever whether I had tried to install it to another path as the command &lt;code&gt;pip install --user guake&lt;/code&gt; as the guake project suggested, or even a &lt;code&gt;pip3 install guake&lt;/code&gt; as it had been previously suggested over at &lt;a href=&#34;https://github.com/Guake/guake/issues/1328#&#34;&gt;https://github.com/Guake/guake/issues/1328#&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Resorting to an old fashioned method such as &lt;code&gt;python -m pip install guake&lt;/code&gt; as it was outlined on the documentation &lt;a href=&#34;https://docs.python.org/3/installing/index.html&#34;&gt;https://docs.python.org/3/installing/index.html&lt;/a&gt; had also proved as useless as anything before it. So there was no easily discernible workaround, or so it seemed, to resolve the issue.&lt;/p&gt;
+&lt;p&gt;Normally with &lt;code&gt;pip&lt;/code&gt; the packages are installed under &lt;code&gt;$HOME/.local/bin&lt;/code&gt; and even exporting the path made no difference either.&lt;/p&gt;
+&lt;p&gt;What gives at this point? The only difference with the current slack were a number of a few packages such as python3 and pygobject among many, that had been upgraded accordingly.&lt;/p&gt;
+&lt;p&gt;I even went as far as installing &lt;code&gt;python3-setuptools&lt;/code&gt; on the system, but this, too, resolved nothing.&lt;/p&gt;
+&lt;p&gt;And when I tried to find all traces of guake on the system, it did showed up under both python-2 and python-3 dirs respectively. I still don&amp;rsquo;t know whether this may have been one of the underlying causes for the &lt;code&gt;no module found pbr&lt;/code&gt; message though.&lt;/p&gt;
+&lt;p&gt;I also downloded guake sources directly from github, and compiled it from thnere, to no further avail either.&lt;/p&gt;
+&lt;p&gt;I had decided to almost give up on the issue, but as a last resort there was the possibility — even though the chances were slim or so it seemed to successfully install guake and/or pbr.&lt;/p&gt;
+&lt;p&gt;I went ahead and read on &lt;a href=&#34;https://sbopkg.org/&#34;&gt;https://sbopkg.org/&lt;/a&gt; after going around on an older thread from 2011 &lt;a href=&#34;https://www.linuxquestions.org/questions/slackware-14/how-can-i-search-for-unofficial-packages-in-slackware-%2Apackages-like-guake-terminal%2A-888155/&#34;&gt;https://www.linuxquestions.org/questions/slackware-14/how-can-i-search-for-unofficial-packages-in-slackware-%2Apackages-like-guake-terminal%2A-888155/&lt;/a&gt; that mentioned it.&lt;/p&gt;
+&lt;p&gt;After the initial setup and further reading through &lt;a href=&#34;https://docs.slackware.com/howtos:slackware_admin:building_packages_with_sbopkg,&#34;&gt;https://docs.slackware.com/howtos:slackware_admin:building_packages_with_sbopkg,&lt;/a&gt; the first search directly from the terminal returned a &lt;code&gt;no match found&lt;/code&gt; which took me back to Google again to see what this was about.&lt;/p&gt;
+&lt;p&gt;Therein one of the most relevant links pointed out to &lt;a href=&#34;https://www.linuxquestions.org/questions/slackware-14/sbopkg-and-installed-sbo-git-packages-not-appears-4175632613/&#34;&gt;https://www.linuxquestions.org/questions/slackware-14/sbopkg-and-installed-sbo-git-packages-not-appears-4175632613/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Changed to the suggested directory and everything seemed to check accordingly. I had specified the repo directly from sbopkg and synced it afterwards. The configuration file rightly noted the changes.&lt;/p&gt;
+&lt;p&gt;The first install of guake, however, returned the same error as before. I decided to go ahead and remove &lt;code&gt;removepkg&lt;/code&gt;anything under /tmp/ with sudo privileges for both &lt;code&gt;pbr&lt;/code&gt; and &lt;code&gt;guake&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Surprisingly, it wasn&amp;rsquo;t until I specified the current Sbo-git and searched the packages interface for both &lt;strong&gt;pbr&lt;/strong&gt; and &lt;strong&gt;guake&lt;/strong&gt; later on, that the guake compilation went through without further error messages.&lt;/p&gt;
+&lt;p&gt;Guake returned no errors afterwards. As a matter of fact, I&amp;rsquo;m writing all of this, hoverever relevant it may be, (and acknowledging failure for not providing a back log that would detail all error messages with both &lt;strong&gt;pbr&lt;/strong&gt; and &lt;strong&gt;guake&lt;/strong&gt; during these unfinished compilations) by using this fast drop-down terminal. Yakuake also provides a similar interface, and many users from the slackware community may point out, and rightly so, that it works even better than guake, minus the aggravation with unofficial packages such as guake under slackware.&lt;/p&gt;
+&lt;p&gt;But the bottom line here is: I can&amp;rsquo;t recommend &lt;strong&gt;Sbopkg&lt;/strong&gt; highly enough. Whatever the issue there was, with both &lt;code&gt;pbr&lt;/code&gt; and &lt;code&gt;guake&lt;/code&gt;, seemed to have been finally resolved.&lt;/p&gt;
+&lt;p&gt;I only wished I had tried &lt;strong&gt;sbopkg&lt;/strong&gt; sooner.&lt;/p&gt;
+</description>
+      </item>
     
       <item>
         <title>Cannot Convert String Helvetica Medium to Type Fontstruct</title>
@@ -426,6 +458,55 @@ registers&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Other useful links&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/vim/comments/5icmak/a_vim_users_comparisation_between_kakoune_and_vim/&#34;&gt;A vim user&#39;s comparison between vim and
 kakoune&lt;/a&gt;
+:::
+:::
+:::&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>Kakoune Invoke Shell Program on Buffer</title>
+        <link>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</link>
+        <pubDate>Tue, 05 Feb 2019 03:47:40 -0400</pubDate>
+        <author></author>
+        <guid>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</guid>
+        <description>&lt;!--# Kakoune Invoke Shell Program on Buffer {#kakoune-invoke-shell-program-on-buffer .post-title}
+
+[Feb 5, 2019]{.post-date}
+--&gt;
+&lt;p&gt;I seldom use the text editor kakoune. But many of the features that I have
+found with vim or neovim for that matter in the past, have finally been
+implemented on this editor.&lt;/p&gt;
+&lt;p&gt;It is, however, one of the best modal editors currently in development
+and I encourage anyone who may be interested on the modality of these
+sort of editors, to try it out.&lt;/p&gt;
+&lt;p&gt;I wanted to see how well this editor handled key mappings to invoke a
+command from within the shell.&lt;/p&gt;
+&lt;p&gt;The map keys doc which can be found at
+&lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc&#34;&gt;mapping.ascii&lt;/a&gt;
+specifies that &lt;code&gt;map [switches] &amp;lt;scope&amp;gt; &amp;lt;mode&amp;gt; &amp;lt;key&amp;gt; &amp;lt;keys&amp;gt;&lt;/code&gt; would be the
+recomme nded way to map a key to the desired parameter.&lt;/p&gt;
+&lt;p&gt;Further googling about this issue, led me to a post at &lt;a href=&#34;https://discuss.kakoune.com/t/how-to-execute-shell-commands-with-the-current-file-name/&#34;&gt;how to execute
+shell commands with the current
+filename&lt;/a&gt;
+in which a user asked for a similar configuration on the kakrc
+initialization file to invoke a command within the shell for the current
+buffer.&lt;/p&gt;
+&lt;p&gt;But unfortunately the suggested recommendation for a latex file in this
+case, would not work.&lt;/p&gt;
+&lt;p&gt;At the very least, the WinSetOption variable must have a normal mode to
+which the key is mapped to.&lt;/p&gt;
+&lt;p&gt;So the correct way to map the key would be&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; map global normal &amp;lt;c-x&amp;gt; &#39;:w&amp;lt;ret&amp;gt; $ latex $kak_buffile&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In that case, &lt;strong&gt;ctrl&lt;/strong&gt; and &lt;strong&gt;x&lt;/strong&gt; are bound to save the file and invoke
+the shell command.&lt;/p&gt;
+&lt;p&gt;If other options are needed then specify it accordingly&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mawww/kakoune/blob/master/doc/pages/mapping.asciidoc&#34;&gt;kakoune
+mapping&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mawww/kakoune/wiki/Normal-mode-commands&#34;&gt;Kakoune normal mode
+commands&lt;/a&gt;
 :::
 :::
 :::&lt;/p&gt;

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Guake Module Not Found Pbr &middot; Blog atrasado
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>
+      A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.
+    </p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a><a class="sidebar-nav-item" href="/about/" title="">About</a><a class="sidebar-nav-item" href="/contact/" title="">Contact</a>
+    </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2021. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Blog atrasado</a>
+            <small>con gajes del oficio</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Guake Module Not Found Pbr</h1>
+  <span class="post-date">Oct 27, 2021</span>
+  <p>As I decided to run slackware current rather than 14.2, as I had done before, there were perhaps a couple of packages that although were not officially supported, had to be manually configured and compiled again.</p>
+<p>Among these packages was the drop-down terminal <strong>guake</strong>. Unlike <strong>yakuake</strong>, which is normally configured without a major setback, running 14.2 required at one point to have vte3 installed, as well as pbr.</p>
+<p>the latter one however, proved to be a chore.</p>
+<p>The error <code>error: invalid command 'bdist_wininst'</code> kept coming up without further info. A quick googling around this problem led me to actually nowhere, since one of the comments mentioned about removing support for <strong>wininst</strong> but this <a href="comment">https://github.com/pypa/setuptools/issues/857#issuecomment-273274212</a> dated as far back as 2017.<br>
+Another error that showed up — no matter what I did to circumvent it during the installation of guake — was the most infamous of all.</p>
+<p>guake <code>ModuleNotFoundError: No module named 'pbr'</code></p>
+<p>And it made no difference whatsoever whether I had tried to install it to another path as the command <code>pip install --user guake</code> as the guake project suggested, or even a <code>pip3 install guake</code> as it had been previously suggested over at <a href="https://github.com/Guake/guake/issues/1328#">https://github.com/Guake/guake/issues/1328#</a>.</p>
+<p>Resorting to an old fashioned method such as <code>python -m pip install guake</code> as it was outlined on the documentation <a href="https://docs.python.org/3/installing/index.html">https://docs.python.org/3/installing/index.html</a> had also proved as useless as anything before it. So there was no easily discernible workaround, or so it seemed, to resolve the issue.</p>
+<p>Normally with <code>pip</code> the packages are installed under <code>$HOME/.local/bin</code> and even exporting the path made no difference either.</p>
+<p>What gives at this point? The only difference with the current slack were a number of a few packages such as python3 and pygobject among many, that had been upgraded accordingly.</p>
+<p>I even went as far as installing <code>python3-setuptools</code> on the system, but this, too, resolved nothing.</p>
+<p>And when I tried to find all traces of guake on the system, it did showed up under both python-2 and python-3 dirs respectively. I still don&rsquo;t know whether this may have been one of the underlying causes for the <code>no module found pbr</code> message though.</p>
+<p>I also downloded guake sources directly from github, and compiled it from thnere, to no further avail either.</p>
+<p>I had decided to almost give up on the issue, but as a last resort there was the possibility — even though the chances were slim or so it seemed to successfully install guake and/or pbr.</p>
+<p>I went ahead and read on <a href="https://sbopkg.org/">https://sbopkg.org/</a> after going around on an older thread from 2011 <a href="https://www.linuxquestions.org/questions/slackware-14/how-can-i-search-for-unofficial-packages-in-slackware-%2Apackages-like-guake-terminal%2A-888155/">https://www.linuxquestions.org/questions/slackware-14/how-can-i-search-for-unofficial-packages-in-slackware-%2Apackages-like-guake-terminal%2A-888155/</a> that mentioned it.</p>
+<p>After the initial setup and further reading through <a href="https://docs.slackware.com/howtos:slackware_admin:building_packages_with_sbopkg,">https://docs.slackware.com/howtos:slackware_admin:building_packages_with_sbopkg,</a> the first search directly from the terminal returned a <code>no match found</code> which took me back to Google again to see what this was about.</p>
+<p>Therein one of the most relevant links pointed out to <a href="https://www.linuxquestions.org/questions/slackware-14/sbopkg-and-installed-sbo-git-packages-not-appears-4175632613/">https://www.linuxquestions.org/questions/slackware-14/sbopkg-and-installed-sbo-git-packages-not-appears-4175632613/</a></p>
+<p>Changed to the suggested directory and everything seemed to check accordingly. I had specified the repo directly from sbopkg and synced it afterwards. The configuration file rightly noted the changes.</p>
+<p>The first install of guake, however, returned the same error as before. I decided to go ahead and remove <code>removepkg</code>anything under /tmp/ with sudo privileges for both <code>pbr</code> and <code>guake</code>.</p>
+<p>Surprisingly, it wasn&rsquo;t until I specified the current Sbo-git and searched the packages interface for both <strong>pbr</strong> and <strong>guake</strong> later on, that the guake compilation went through without further error messages.</p>
+<p>Guake returned no errors afterwards. As a matter of fact, I&rsquo;m writing all of this, hoverever relevant it may be, (and acknowledging failure for not providing a back log that would detail all error messages with both <strong>pbr</strong> and <strong>guake</strong> during these unfinished compilations) by using this fast drop-down terminal. Yakuake also provides a similar interface, and many users from the slackware community may point out, and rightly so, that it works even better than guake, minus the aggravation with unofficial packages such as guake under slackware.</p>
+<p>But the bottom line here is: I can&rsquo;t recommend <strong>Sbopkg</strong> highly enough. Whatever the issue there was, with both <code>pbr</code> and <code>guake</code>, seemed to have been finally resolved.</p>
+<p>I only wished I had tried <strong>sbopkg</strong> sooner.</p>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+  </body>
+</html>
+

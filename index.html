@@ -48,7 +48,7 @@
     </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2020. All rights reserved.</p>
+    <p>&copy; 2021. All rights reserved.</p>
   </div>
 </div>
 
@@ -71,6 +71,35 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/guake-module-not-found-pbr/">Guake Module Not Found Pbr</a></h1>
+        <span class="post-date">Oct 27, 2021</span>
+        <p>As I decided to run slackware current rather than 14.2, as I had done before, there were perhaps a couple of packages that although were not officially supported, had to be manually configured and compiled again.</p>
+<p>Among these packages was the drop-down terminal <strong>guake</strong>. Unlike <strong>yakuake</strong>, which is normally configured without a major setback, running 14.2 required at one point to have vte3 installed, as well as pbr.</p>
+<p>the latter one however, proved to be a chore.</p>
+<p>The error <code>error: invalid command 'bdist_wininst'</code> kept coming up without further info. A quick googling around this problem led me to actually nowhere, since one of the comments mentioned about removing support for <strong>wininst</strong> but this <a href="comment">https://github.com/pypa/setuptools/issues/857#issuecomment-273274212</a> dated as far back as 2017.<br>
+Another error that showed up — no matter what I did to circumvent it during the installation of guake — was the most infamous of all.</p>
+<p>guake <code>ModuleNotFoundError: No module named 'pbr'</code></p>
+<p>And it made no difference whatsoever whether I had tried to install it to another path as the command <code>pip install --user guake</code> as the guake project suggested, or even a <code>pip3 install guake</code> as it had been previously suggested over at <a href="https://github.com/Guake/guake/issues/1328#">https://github.com/Guake/guake/issues/1328#</a>.</p>
+<p>Resorting to an old fashioned method such as <code>python -m pip install guake</code> as it was outlined on the documentation <a href="https://docs.python.org/3/installing/index.html">https://docs.python.org/3/installing/index.html</a> had also proved as useless as anything before it. So there was no easily discernible workaround, or so it seemed, to resolve the issue.</p>
+<p>Normally with <code>pip</code> the packages are installed under <code>$HOME/.local/bin</code> and even exporting the path made no difference either.</p>
+<p>What gives at this point? The only difference with the current slack were a number of a few packages such as python3 and pygobject among many, that had been upgraded accordingly.</p>
+<p>I even went as far as installing <code>python3-setuptools</code> on the system, but this, too, resolved nothing.</p>
+<p>And when I tried to find all traces of guake on the system, it did showed up under both python-2 and python-3 dirs respectively. I still don&rsquo;t know whether this may have been one of the underlying causes for the <code>no module found pbr</code> message though.</p>
+<p>I also downloded guake sources directly from github, and compiled it from thnere, to no further avail either.</p>
+<p>I had decided to almost give up on the issue, but as a last resort there was the possibility — even though the chances were slim or so it seemed to successfully install guake and/or pbr.</p>
+<p>I went ahead and read on <a href="https://sbopkg.org/">https://sbopkg.org/</a> after going around on an older thread from 2011 <a href="https://www.linuxquestions.org/questions/slackware-14/how-can-i-search-for-unofficial-packages-in-slackware-%2Apackages-like-guake-terminal%2A-888155/">https://www.linuxquestions.org/questions/slackware-14/how-can-i-search-for-unofficial-packages-in-slackware-%2Apackages-like-guake-terminal%2A-888155/</a> that mentioned it.</p>
+<p>After the initial setup and further reading through <a href="https://docs.slackware.com/howtos:slackware_admin:building_packages_with_sbopkg,">https://docs.slackware.com/howtos:slackware_admin:building_packages_with_sbopkg,</a> the first search directly from the terminal returned a <code>no match found</code> which took me back to Google again to see what this was about.</p>
+<p>Therein one of the most relevant links pointed out to <a href="https://www.linuxquestions.org/questions/slackware-14/sbopkg-and-installed-sbo-git-packages-not-appears-4175632613/">https://www.linuxquestions.org/questions/slackware-14/sbopkg-and-installed-sbo-git-packages-not-appears-4175632613/</a></p>
+<p>Changed to the suggested directory and everything seemed to check accordingly. I had specified the repo directly from sbopkg and synced it afterwards. The configuration file rightly noted the changes.</p>
+<p>The first install of guake, however, returned the same error as before. I decided to go ahead and remove <code>removepkg</code>anything under /tmp/ with sudo privileges for both <code>pbr</code> and <code>guake</code>.</p>
+<p>Surprisingly, it wasn&rsquo;t until I specified the current Sbo-git and searched the packages interface for both <strong>pbr</strong> and <strong>guake</strong> later on, that the guake compilation went through without further error messages.</p>
+<p>Guake returned no errors afterwards. As a matter of fact, I&rsquo;m writing all of this, hoverever relevant it may be, (and acknowledging failure for not providing a back log that would detail all error messages with both <strong>pbr</strong> and <strong>guake</strong> during these unfinished compilations) by using this fast drop-down terminal. Yakuake also provides a similar interface, and many users from the slackware community may point out, and rightly so, that it works even better than guake, minus the aggravation with unofficial packages such as guake under slackware.</p>
+<p>But the bottom line here is: I can&rsquo;t recommend <strong>Sbopkg</strong> highly enough. Whatever the issue there was, with both <code>pbr</code> and <code>guake</code>, seemed to have been finally resolved.</p>
+<p>I only wished I had tried <strong>sbopkg</strong> sooner.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/cannot-convert-string-helvetica-medium-to-type-fontstruct/">Cannot Convert String Helvetica Medium to Type Fontstruct</a></h1>
@@ -321,22 +350,6 @@ DESCRIPTION
 <p>Downloading the newest version and configuring it later on did the trick&hellip;</p>
 <p>Somehow it seemed that during the latest upgrade, the installation of  pamac, which occured during the same kernel upgrade and which it was done  by the interface itself did not go as planned&hellip;.</p>
 <p>This had to be done again not only with <code>makepkg</code> but with a newer version, in order to have it running again.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/arch-linux-javaws-no-such-file-or-directory/">Arch Linux Javaws No Such File or Directory</a></h1>
-        <span class="post-date">Oct 10, 2019</span>
-        <p>Trying to get <code>javaws</code> to work without a glitch on one of the systems it was tested under, proved to be a chore.</p>
-<p>The executable file was not being recognized in this case, which consequently led me to believe, that during the installation of the program, the path somehow had not been set by the libraries that&rsquo;d normally take care of it.</p>
-<p>All the libraries for which <code>javaws</code> depended upon and for which it was being tested even under a different system seemed to have been installed. This included, <strong>jdk8-openjdk..</strong> and its counterparts.</p>
-<p>Apparently, during the installation, the path that had been set for <code>javaws</code> had been incorrectly identified.</p>
-<p>The error read as follows:</p>
-<pre><code>/usr/bin/javaws line 197: no such file or directory.
-
-</code></pre><p>Upon further inspection of the line in question, is hard to pinpoint whether therein lied the problem or not&hellip;</p>
-<p>Upon going ahead and after opening the <code>javaws</code> executable, I noticed that the path had been incorrectly set indeed by either some of the libraries during the initialization&hellip;. It was pointing out to a different location <strong>rather</strong> than where the files for the java environment were located instead.</p>
-<p>Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus <code>java=/location/of/java/default/</code> worked without a problem.</p>
 
     </div>
   

@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Blog del tecnólogo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Dec 2020 08:30:13 -0500</lastBuildDate><atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Oct 2021 04:08:20 -0400</lastBuildDate><atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guake Module Not Found Pbr</title>
+      <link>https://imfrom.github.io/post/guake-module-not-found-pbr/</link>
+      <pubDate>Wed, 27 Oct 2021 04:08:20 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/guake-module-not-found-pbr/</guid>
+      <description>As I decided to run slackware current rather than 14.2, as I had done before, there were perhaps a couple of packages that although were not officially supported, had to be manually configured and compiled again.
+Among these packages was the drop-down terminal guake. Unlike yakuake, which is normally configured without a major setback, running 14.2 required at one point to have vte3 installed, as well as pbr.
+the latter one however, proved to be a chore.</description>
+    </item>
+    
     <item>
       <title>Cannot Convert String Helvetica Medium to Type Fontstruct</title>
       <link>https://imfrom.github.io/post/cannot-convert-string-helvetica-medium-to-type-fontstruct/</link>
@@ -162,6 +173,17 @@ To read about this on the doc page for kakoune, :doc keys macros might give you 
 the &amp;lt;esc&amp;gt; key also ends the macro recording.
 See Kakoune Macros
 But further description for the macros recording and playback, is not provided on the doc page for Kakoune.</description>
+    </item>
+    
+    <item>
+      <title>Kakoune Invoke Shell Program on Buffer</title>
+      <link>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</link>
+      <pubDate>Tue, 05 Feb 2019 03:47:40 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/kakoune-invoke-shell-program-on-buffer/</guid>
+      <description>I seldom use the text editor kakoune. But many of the features that I have found with vim or neovim for that matter in the past, have finally been implemented on this editor.
+It is, however, one of the best modal editors currently in development and I encourage anyone who may be interested on the modality of these sort of editors, to try it out.
+I wanted to see how well this editor handled key mappings to invoke a command from within the shell.</description>
     </item>
     
     <item>
