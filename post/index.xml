@@ -13,10 +13,10 @@
       <pubDate>Tue, 18 Jan 2022 03:07:36 -0500</pubDate>
       
       <guid>https://imfrom.github.io/post/slackware-startx-blank-screen-without-imobiledeviceglue/</guid>
-      <description>Blank screen kde plasma wayland on Slackware.
+      <description>Blank screen kde plasma wayland on Slackware was the issue this time.
 I had tried to run level 3 on slackware current kde plasma by invoking, as I had done before, startx on the system.
 And with the most current slackware as of this writing, and after successfully upgrading the system, I was still unable to do so.
-Some post dating back to 2019 https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/ pointed to do an upgrade. Of which I had done. So this suggestion led nowhere.</description>
+Some post dating back to 2019 https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/ pointed to do an upgrade. Of which I had done.</description>
     </item>
     
     <item>
