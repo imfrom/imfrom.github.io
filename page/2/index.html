@@ -48,7 +48,7 @@
     </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2022. All rights reserved.</p>
   </div>
 </div>
 
@@ -71,6 +71,29 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/">Pamac Error While Loading Shared Libraries Libalpm</a></h1>
+        <span class="post-date">Nov 1, 2019</span>
+        <p><a href="https://www.archlinux.org/pacman/libalpm.3.html">Libalpm</a> is the library for package management of Arch.</p>
+<p>I found it funny that in case of any bugs the team says</p>
+<blockquote>
+<p>Bugs? You must be kidding; there are no bugs in this software. But if we happen to be wrong, submit a bug report.</p>
+</blockquote>
+<p>But they&rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary  coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments. This is not to illegitimize whatever accomplishments have been put together by these teams, but it&rsquo;s still disparately sub-par compared to what Arch has offered.</p>
+<p>During the last kernel update there was a problem with  pamac though</p>
+<p>Firing it up from the terminal was simply returning an</p>
+<pre><code>error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
+</code></pre><p>Which considering how lazy I&rsquo;ve become over the years, and even more so after reading articles a few years ago such as <a href="https://en.wikipedia.org/wiki/Is_Google_Making_Us_Stupid%3F">Is Google making us stupid</a> by Atlantic technology writer Nicholas Carr, I couldn&rsquo;t wait to gobble it up or try to leave it up to Google to offer the best match to this undesired behavior I was getting.</p>
+<p>The first query by the algorithms of Google returned an issue over at <a href="https://github.com/Jguer/yay/issues/1087" target="_blank">yay: error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory </a></p>
+<p>But thinking about it again, the issue pertained mostly to <a href="https://aur.archlinux.org/packages/yay/" target="_blank"> aur.archlinux.org/packages/yay/</a> which I&rsquo;ve never installed. Perhaps I had done it years earlier on another different system, but not on the current machines I&rsquo;ve been running.</p>
+<p>The second queried result though, took me to <a href="https://rtfm.co.ua/en/arch-linux-package-query-error-while-loading-shared-libraries-libalpm-so-11-2/" target="_blank"> Arch Linux: package-query: error while loading shared libraries: libalpm.so.11</a>, but as soon as I read about making a symbolic link, which the author of article rightfully pointed out that although it could be done,  is not recommended and just plain wrong to go that route..</p>
+<p>The other solution from the same article, involved reinstalling <a href="https://aur.archlinux.org/packages/package-query/" target="_blank"> aur package query</a>, but then again, I didn&rsquo;t even have package-query on that particular system&hellip;. and unfortunaetly reinstalling pamac didn&rsquo;t resolve the issue as he had stated it.</p>
+<p>Downloading the newest version and configuring it later on did the trick&hellip;</p>
+<p>Somehow it seemed that during the latest upgrade, the installation of  pamac, which occured during the same kernel upgrade and which it was done  by the interface itself did not go as planned&hellip;.</p>
+<p>This had to be done again not only with <code>makepkg</code> but with a newer version, in order to have it running again.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/arch-linux-javaws-no-such-file-or-directory/">Arch Linux Javaws No Such File or Directory</a></h1>
@@ -318,34 +341,6 @@ suffix <code>.md</code> extension</p>
 <p>1- <a name="javadlx"></a><a href="https://bbs.archlinux.org/viewtopic.php?pid=1003045#p1003045" target="_blank">Permission problem with Libreoffice - Arch linux forums</a><a href="#javadlxref">↵</a></p>
 <p>2- <a name="oocontextuser"></a> <a href="https://forum.openoffice.org/en/forum/viewtopic.php?f=101&t=83995" target="_blank">LO5.0 Fatal error cannot be started</a> <a href="#oocontextuserref">↵</a></p>
 <p>3- <a name="docfoundation"></a> <a href="https://bugs.documentfoundation.org/show_bug.cgi?id=64606" target="_blank">bug filed with documentfoundation.org</a><a href="#docfoundationref">↵</a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/">Sddm Wayland Timezone Differs From Locale</a></h1>
-        <span class="post-date">Nov 2, 2018</span>
-        <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enabled it on an older system. This time around though, my expectations fell short.</p>
-<p>After installing <a href="https://wiki.archlinux.org/index.php/SDDM#Configuration_GUI" target="_blank">SDDM</a>, I called out systemd to disable <a href="https://wiki.archlinux.org/index.php/LightDM" target="_blank">LightDM</a> with</p>
-<pre><code> sytemctl disable lightdm.service 
-</code></pre>
-<p>followed by the enabling of the newly installed display manager with</p>
-<pre><code> systemctl enable sddm.service
-</code></pre>
-<p>But it wasn&rsquo;t clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
-<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling out the <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
-<pre><code> datetimectl status
-</code></pre>
-<p>matched SDDM clock settings. The timezone had been incorrectly set at one point.</p>
-<p>Modifying the timezone accordingly seemed to have resolved the issue with:</p>
-<pre><code>timedatectl set-timezone Zone/SubZone
-</code></pre>
-<p>All in all, some of the <a href="https://bbs.archlinux.org/viewtopic.php?id=207550" target="_blank">posts from Arch Forums</a> that were queried via Google, were slightly off topic. Some of these <a href="https://bbs.archlinux.org/viewtopic.php?id=112137" target="_blank">posts</a> for example dealt primarily with clock twelve and twenty four hour clock settings, whereas in my case it the underlying cause was primarily due with the timezone set incorrectly.</p>
-<p>Further posts that came up for XFCE were also from the long-standing threads at <strong>linuxquestions.org</strong>, a site that has been around perhaps longer than any other out there related to GNU/Linux in general. This time around the <a href="https://www.linuxquestions.org/questions/linux-software-2/adjusting-the-clock-in-xfce-4175528816/" target="_blank">user was running AntiX</a>  and not systemd. The <code>timedatectl</code> is part of the latter in this case, so the suggestions aimed at <code>hwclock</code> or setting it also through <code>date</code> instead.</p>
-<p>I&rsquo;ve found that is relatively easy to mess up the time settings on the system as this question from stackexchange pointed out. See for example <a href="https://unix.stackexchange.com/questions/60772/i-messed-up-my-system-clock-in-arch-linux" target="_blank">I messed up my system clock in Arch Linux</a>.</p>
-<p>Other questions that dealt with XFCE and not necessarily with SDDM, pretty much coincided with the <code>timedatectl</code> command. Like for example the following question that was also on <strong>stackexchange</strong> <a href="https://unix.stackexchange.com/questions/296776/how-can-i-easily-change-my-time-zone-in-arch-xfce" target="_blank">How can I easily change my time-zone in Arch/Xfce</a> that I came across only later and after resolving it first in my end.</p>
-<p>And still, the best way and proven methodology I know of, and one which deals with the time/date issue on an Arch Linux system is by the aforementioned method outlined above. Credit where the credit is due, because all the credit goes to the <strong>Arch Wiki</strong> for making it accessible without having to read through an entire manual to resolve an outstanding problem as simple as a timezone. Although I have to acknowledge that reading <code>man</code> pages is the optimal and thorough alternative to get a deep understanding of an entire system. Nothing comes close as the latter!</p>
-<p><strong>References</strong></p>
-<p><a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blnak">System Time Arch Wiki</a></p>
 
     </div>
   

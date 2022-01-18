@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Slackware Startx Blank Screen Without Imobiledeviceglue &middot; Blog atrasado
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>
+      A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.
+    </p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a><a class="sidebar-nav-item" href="/about/" title="">About</a><a class="sidebar-nav-item" href="/contact/" title="">Contact</a>
+    </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2022. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Blog atrasado</a>
+            <small>con gajes del oficio</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Slackware Startx Blank Screen Without Imobiledeviceglue</h1>
+  <span class="post-date">Jan 18, 2022</span>
+  <p>Blank screen kde plasma wayland on Slackware.</p>
+<p>I had tried to run level 3 on slackware current kde plasma by invoking, as I had done before, <code>startx</code> on the system.</p>
+<p>And with the most current slackware as of this writing, and after successfully upgrading the system, I was still unable to do so.</p>
+<p>Some post dating back to 2019 <a href="https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/">https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/</a>  pointed to do an upgrade. Of which I had done. So this suggestion led nowhere.</p>
+<p>After checking many of the issues as described on linuxquestions which resembled some of the behavior such as loging in through level 4 on sddm as this one pointed out <a href="https://www.linuxquestions.org/questions/slackware-14/blank-screen-on-startx-for-kde-at-kernel-5-10-4-a-4175687833/page2.html">https://www.linuxquestions.org/questions/slackware-14/blank-screen-on-startx-for-kde-at-kernel-5-10-4-a-4175687833/page2.html</a></p>
+<p>I couldn&rsquo;t help but noticed that not only I was unable to log in through sddm but also a message that read the following:</p>
+<pre><code>The current theme can not be loaded due to the errors below, please select another theme:
+
+file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for module &quot;org.kde.plasma.core&quot; cannot load library /usr/lib64/qt5/qml/org/kde/plasma/core&quot; libcorebindingsplugin.so (libimobiledevice-glue-1.0.so.0 cannot open shared object file: No such file or directory)
+</code></pre><p>This of course served no discernible help at all, as Google quickly confirmed, a search for bindingsplugin.so returned unrelated results while recently, as of today, a search on Google for &lt;libcorebindingsplugin.so slackware&gt; pointed out that the solution for the problem would be to <code>slackpkg install-new</code>. But for as long as I have updated the system on Slackware, with the kernel and packages, I have always foregone from invoking, even though is technically correct after a system upgrade, such command as <code>slackpkg install-new</code>.</p>
+<p>By the time I read that suggestion, which was just now as of this writing and  which was posted only a few days ago, I had already found, perhaps not as elegant, a solution to invoke <code>startx</code> successfully.</p>
+<p>Somehow while invoking <strong>kwin_wayland</strong> though <code>startkwayland</code> I noticed, unlike before, that was returning the error: <code>/usr/bin/kwin_wayland: error while loading shared libraries: libimobiledevice-glue-1.0.so.0: cannot open shared object file: No such file or directory</code> which quickly identified the culprit.</p>
+<p>Somehow the file for this shared library  was not installed. Perhaps the file was not using the same repo as the repo that was being used during  the system upgrade.</p>
+<p>After installing it with <code>slackpkg install imobiledevice-glue</code> kde plasma was successfully loaded with <code>startx</code>.</p>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+  </body>
+</html>
+

@@ -48,7 +48,7 @@
     </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2021. All rights reserved.</p>
+    <p>&copy; 2022. All rights reserved.</p>
   </div>
 </div>
 
@@ -71,6 +71,26 @@
 
 
 <div class="posts">
+  
+    <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/slackware-startx-blank-screen-without-imobiledeviceglue/">Slackware Startx Blank Screen Without Imobiledeviceglue</a></h1>
+        <span class="post-date">Jan 18, 2022</span>
+        <p>Blank screen kde plasma wayland on Slackware.</p>
+<p>I had tried to run level 3 on slackware current kde plasma by invoking, as I had done before, <code>startx</code> on the system.</p>
+<p>And with the most current slackware as of this writing, and after successfully upgrading the system, I was still unable to do so.</p>
+<p>Some post dating back to 2019 <a href="https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/">https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/</a>  pointed to do an upgrade. Of which I had done. So this suggestion led nowhere.</p>
+<p>After checking many of the issues as described on linuxquestions which resembled some of the behavior such as loging in through level 4 on sddm as this one pointed out <a href="https://www.linuxquestions.org/questions/slackware-14/blank-screen-on-startx-for-kde-at-kernel-5-10-4-a-4175687833/page2.html">https://www.linuxquestions.org/questions/slackware-14/blank-screen-on-startx-for-kde-at-kernel-5-10-4-a-4175687833/page2.html</a></p>
+<p>I couldn&rsquo;t help but noticed that not only I was unable to log in through sddm but also a message that read the following:</p>
+<pre><code>The current theme can not be loaded due to the errors below, please select another theme:
+
+file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for module &quot;org.kde.plasma.core&quot; cannot load library /usr/lib64/qt5/qml/org/kde/plasma/core&quot; libcorebindingsplugin.so (libimobiledevice-glue-1.0.so.0 cannot open shared object file: No such file or directory)
+</code></pre><p>This of course served no discernible help at all, as Google quickly confirmed, a search for bindingsplugin.so returned unrelated results while recently, as of today, a search on Google for &lt;libcorebindingsplugin.so slackware&gt; pointed out that the solution for the problem would be to <code>slackpkg install-new</code>. But for as long as I have updated the system on Slackware, with the kernel and packages, I have always foregone from invoking, even though is technically correct after a system upgrade, such command as <code>slackpkg install-new</code>.</p>
+<p>By the time I read that suggestion, which was just now as of this writing and  which was posted only a few days ago, I had already found, perhaps not as elegant, a solution to invoke <code>startx</code> successfully.</p>
+<p>Somehow while invoking <strong>kwin_wayland</strong> though <code>startkwayland</code> I noticed, unlike before, that was returning the error: <code>/usr/bin/kwin_wayland: error while loading shared libraries: libimobiledevice-glue-1.0.so.0: cannot open shared object file: No such file or directory</code> which quickly identified the culprit.</p>
+<p>Somehow the file for this shared library  was not installed. Perhaps the file was not using the same repo as the repo that was being used during  the system upgrade.</p>
+<p>After installing it with <code>slackpkg install imobiledevice-glue</code> kde plasma was successfully loaded with <code>startx</code>.</p>
+
+    </div>
   
     <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/guake-module-not-found-pbr/">Guake Module Not Found Pbr — no module named pbr</a></h1>
@@ -327,29 +347,6 @@ DESCRIPTION
 <p>I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors' copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.</p>
 <p>I did however, tried to stay as far away as possible from manually  removing  each of the files installed by the package [gtk-doc], but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process, that of having to go and remove each file owned by the package,  seemed to be the only inevitable method to circumvent this problem.</p>
 <p>After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&hellip; but it gives me pause and comfort in knowing that <code>checking inter-dependencies</code> or <code>checking file-conflcts</code> rolling hangs haven&rsquo;t returned to this annoyingly halting process.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/">Pamac Error While Loading Shared Libraries Libalpm</a></h1>
-        <span class="post-date">Nov 1, 2019</span>
-        <p><a href="https://www.archlinux.org/pacman/libalpm.3.html">Libalpm</a> is the library for package management of Arch.</p>
-<p>I found it funny that in case of any bugs the team says</p>
-<blockquote>
-<p>Bugs? You must be kidding; there are no bugs in this software. But if we happen to be wrong, submit a bug report.</p>
-</blockquote>
-<p>But they&rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary  coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments. This is not to illegitimize whatever accomplishments have been put together by these teams, but it&rsquo;s still disparately sub-par compared to what Arch has offered.</p>
-<p>During the last kernel update there was a problem with  pamac though</p>
-<p>Firing it up from the terminal was simply returning an</p>
-<pre><code>error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
-</code></pre><p>Which considering how lazy I&rsquo;ve become over the years, and even more so after reading articles a few years ago such as <a href="https://en.wikipedia.org/wiki/Is_Google_Making_Us_Stupid%3F">Is Google making us stupid</a> by Atlantic technology writer Nicholas Carr, I couldn&rsquo;t wait to gobble it up or try to leave it up to Google to offer the best match to this undesired behavior I was getting.</p>
-<p>The first query by the algorithms of Google returned an issue over at <a href="https://github.com/Jguer/yay/issues/1087" target="_blank">yay: error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory </a></p>
-<p>But thinking about it again, the issue pertained mostly to <a href="https://aur.archlinux.org/packages/yay/" target="_blank"> aur.archlinux.org/packages/yay/</a> which I&rsquo;ve never installed. Perhaps I had done it years earlier on another different system, but not on the current machines I&rsquo;ve been running.</p>
-<p>The second queried result though, took me to <a href="https://rtfm.co.ua/en/arch-linux-package-query-error-while-loading-shared-libraries-libalpm-so-11-2/" target="_blank"> Arch Linux: package-query: error while loading shared libraries: libalpm.so.11</a>, but as soon as I read about making a symbolic link, which the author of article rightfully pointed out that although it could be done,  is not recommended and just plain wrong to go that route..</p>
-<p>The other solution from the same article, involved reinstalling <a href="https://aur.archlinux.org/packages/package-query/" target="_blank"> aur package query</a>, but then again, I didn&rsquo;t even have package-query on that particular system&hellip;. and unfortunaetly reinstalling pamac didn&rsquo;t resolve the issue as he had stated it.</p>
-<p>Downloading the newest version and configuring it later on did the trick&hellip;</p>
-<p>Somehow it seemed that during the latest upgrade, the installation of  pamac, which occured during the same kernel upgrade and which it was done  by the interface itself did not go as planned&hellip;.</p>
-<p>This had to be done again not only with <code>makepkg</code> but with a newer version, in order to have it running again.</p>
 
     </div>
   
