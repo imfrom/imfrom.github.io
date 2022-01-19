@@ -270,7 +270,7 @@ efficiently and quickly find the fonts you need among the set of fonts you have 
 &lt;/ul&gt;
 &lt;p&gt;But it does not provide any searching mechanism to look up a particular font on the system. Or at the very least not one that I&amp;rsquo;m aware of anyway..&lt;/p&gt;
 &lt;p&gt;On the other hand, &lt;code&gt;fc-list&lt;/code&gt; does list the fonts available on the system&amp;hellip;&lt;/p&gt;
-&lt;p&gt;The only caveat is that if I were to try to get the family name of the glyph in question, &lt;code&gt;fc-list&lt;/code&gt; does provide it, but I would need to further &lt;code&gt;grep&lt;/code&gt; it to not get a bunch of results.&lt;/p&gt;
+&lt;p&gt;The only caveat is that if I were to try to get the family name of the glyph in question, &lt;code&gt;fc-list&lt;/code&gt; does provide it, but I would need to further &lt;code&gt;grep&lt;/code&gt; it in order to not get a bunch of results.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;fc-list&lt;/code&gt; is simply put:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;FC-LIST(1)                                                     FC-LIST(1)
 
@@ -288,7 +288,7 @@ DESCRIPTION
        those are printed.  Otherwise family and style are printed, unless
        verbose output is requested.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;a printing mechanism to list the fonts on the system.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; [ing] the font itself through the program filters out the family name of the font as well - and hether these are otf or ttf.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; [ing] the font itself through the program, filters out the family name of the font as well - and whether these are otf or ttf.&lt;/p&gt;
 </description>
       </item>
     
@@ -762,12 +762,13 @@ configuration.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485&#34;&gt;https://superuser.com/questions/662418/how-do-i-get-the-name-of-a-network-printer#comment836711_662485&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;which pretty much matches many of the issues that I have encountered with the program.&lt;/p&gt;
-&lt;p&gt;The only workaround with this pervasive problem of a printer that depends solely on the network, is through some sort of initial setup performed namely through a Windows system that would point it out. So by confirming the correct ip address and port numbers of the printer, would be more than enough to specify it as such on the location of the CUPS for the printer in question. Until then, and just like a user on the Arch Forums said:&lt;/p&gt;
+&lt;p&gt;The only workaround with this pervasive problem of a printer that depends solely on the network, is through some sort of initial setup performed namely through a Windows system that would point it out. Unlike Linux with its &lt;strong&gt;C&lt;/strong&gt;ommon &lt;strong&gt;U&lt;/strong&gt;nix &lt;strong&gt;P&lt;/strong&gt;rinting &lt;strong&gt;S&lt;/strong&gt;ervices in which by just confirming the correct ip address and port numbers of the printer are under , is more than enough to identify it accordingly.  Until then, and just like a user on the Arch Forums said:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The problem here is that the criteria (&amp;ldquo;Network Printer&amp;rdquo;) is something that only makes sense to humans. Computer programs aren&amp;rsquo;t going to have a clear sense of that idea. You might try doing a network sweep for IP addresses that successfully connect on the JetDirect port (tcp/9100). The list is still likely to be incomplete in the case of non-JetDirect printers such as desktop printers shared over SMB. – Bratchley Jun 30 &amp;lsquo;14 at 18:16&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009&#34; target=&#34;_blank&#34;&gt;unix.stackexchange.com/questions/140009/list-all-network-printers-including-ones-not-installed#comment226003_140009&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;a href=&amp;ldquo;&lt;a href=&#34;https://www.uvm.edu/cosmolab/om/brother/html/nug/chapter2.html%22&#34;&gt;https://www.uvm.edu/cosmolab/om/brother/html/nug/chapter2.html&amp;quot;&lt;/a&gt; target=_blank&amp;rdquo;&amp;gt; 2 Configuring your printer for a networt&lt;/a&gt;&lt;/p&gt;
 </description>
       </item>
     

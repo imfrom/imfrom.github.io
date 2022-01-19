@@ -91,7 +91,7 @@ efficiently and quickly find the fonts you need among the set of fonts you have 
 </ul>
 <p>But it does not provide any searching mechanism to look up a particular font on the system. Or at the very least not one that I&rsquo;m aware of anyway..</p>
 <p>On the other hand, <code>fc-list</code> does list the fonts available on the system&hellip;</p>
-<p>The only caveat is that if I were to try to get the family name of the glyph in question, <code>fc-list</code> does provide it, but I would need to further <code>grep</code> it to not get a bunch of results.</p>
+<p>The only caveat is that if I were to try to get the family name of the glyph in question, <code>fc-list</code> does provide it, but I would need to further <code>grep</code> it in order to not get a bunch of results.</p>
 <p><code>fc-list</code> is simply put:</p>
 <pre><code>FC-LIST(1)                                                     FC-LIST(1)
 
@@ -109,7 +109,7 @@ DESCRIPTION
        those are printed.  Otherwise family and style are printed, unless
        verbose output is requested.
 </code></pre><p>a printing mechanism to list the fonts on the system.</p>
-<p><code>grep</code> [ing] the font itself through the program filters out the family name of the font as well - and hether these are otf or ttf.</p>
+<p><code>grep</code> [ing] the font itself through the program, filters out the family name of the font as well - and whether these are otf or ttf.</p>
 </div>
 
       </div>
