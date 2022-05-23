@@ -129,8 +129,8 @@ pulseaudio, alsa-utils still iam not getting the audio.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I had also done the same, but to no avail.&lt;/p&gt;
 &lt;p&gt;the recommendaton for the op was, as in
-this reply [Re: analog audio not working in
-rpi4](&lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;amp;o&#34;&gt;https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;amp;o&lt;/a&gt;  i it=15470#p670)&lt;/p&gt;
+this reply &lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;amp;t=15470#p67053&#34;&gt;Re: analog audio not working in
+rpi4&lt;/a&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;dtoverlay=upstream-pi4
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This didn&amp;rsquo;t work either.&lt;/p&gt;
 &lt;p&gt;There were also a couple of suggestions or likely solutions to
