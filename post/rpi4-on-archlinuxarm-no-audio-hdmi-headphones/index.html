@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Rpi4 on Arch Linux Arm No Audio Headphones resolved with snd_bcm2835_enable_headphones=1 &middot; Blog atrasado
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>
+      A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.
+    </p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/">Home</a>
+    <a class="sidebar-nav-item " href="/post">Posts</a><a class="sidebar-nav-item" href="/about/" title="">About</a><a class="sidebar-nav-item" href="/contact/" title="">Contact</a>
+    </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2022. All rights reserved.</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Blog atrasado</a>
+            <small>con gajes del oficio</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Rpi4 on Arch Linux Arm No Audio Headphones resolved with snd_bcm2835_enable_headphones=1</h1>
+  <span class="post-date">May 22, 2022</span>
+  <p>According to the recommendations the block of code should be in one
+line:</p>
+<pre tabindex="0"><code>snd_bcm2835.enable_headphones=1
+snd_bcm2835.enable_hdmi=1
+snd_bcm2835.enable_compat_alsa=0
+</code></pre><p>Rpi4 has had trouble for a while now, especially running
+under Arch Linux with the sound output from the headphones
+jack source. I&rsquo;ve usually read a great many threads
+dealing with this issue before. Unfortunately, many of the
+solutions/recommendations/suggestions haven&rsquo;t resolved the problem.</p>
+<p>Other distros have dealt successfully with this issue before. But
+whether it has been casued for some given reason or another,
+in the case of ArchlinuxArm this has been an outstanding issue
+in a great many number of occasions.</p>
+<p>The configuration files and particular model and versions for the
+rpi4 as it has been outlined on many of the threads, are not quite
+that different from mine, and yet the issue was not resolved.</p>
+<p>I&rsquo;ve read about this:</p>
+<p><a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15090&amp;start=0">https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15090&amp;start=0</a></p>
+<p>therein, another specific thread dealing with this issue was opened
+which followed over here:</p>
+<p><a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15128&amp;p=65808#p65816">https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15128&amp;p=65808#p65816</a></p>
+<p>This thread <a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15070">sound on rpi model
+4b</a> was
+for example, specifically opened to collect more information about
+some of the back then outstanding issues with the rpi4 model b.</p>
+<p>The above also links to
+<a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15128&amp;p=65808#p65816">Re: fresh rpi4b install with linux-raspberrypi</a>
+which as one might guessed by going over it, it deals with
+installing another kernel tailored to this particular sound problem.</p>
+<p>Some of the posted code may not apply to the particular model, but
+as the author clearly specified, many of these settings might differ
+considerably from one&rsquo;s setup.</p>
+<pre tabindex="0"><code>arm_64bit=1
+enable_gic=1
+dtparam=i2c_arm=on
+dtoverlay=i2c-rtc,ds3231
+dtparam=audio=on
+dtoverlay=disable-wifi
+dtoverlay=disable-bt
+disable_overscan=0
+</code></pre><p>From there, another thread entitled <a href="https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;t=15056&amp;p=65576&amp;hilit=alsa#p65576">alsa - device not
+found</a>
+was posted</p>
+<p>In it, there were some specific packages that must be installed such
+as (at the time of writing):</p>
+<pre tabindex="0"><code>alsa-firmware 1.2.4-2
+alsa-lib 1.2.4-3
+alsa-plugins 1:1.2.2-2
+alsa-topology-conf 1.2.4-2
+alsa-ucm-conf 1.2.4-2
+alsa-utils 1.2.4-2
+</code></pre><p>In addition to these, the author also linked
+another thread <a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=14734&amp;start=50#p65549">Re:No usb detected on rpi4 with
+aarch64</a>
+which it also suggested to have the package <strong>mpg123</strong> installed
+as well.</p>
+<pre tabindex="0"><code># dtoverlay=vc4-kms-v3d
+dtparam=audio=on
+hdmi_force_hotplug=1
+over_voltage=6
+arm_freq=2000
+</code></pre><p>One must always remember that this may have been the settings for that
+particular setup. <code>dtoverlay=</code> for example was commented out.</p>
+<p>But by now one must realize, that the most widely accepted
+configuration has been  so far <code>dtparam=audio=on</code>. It has been
+brought up for many use cases before.</p>
+<p>Of course. All of the above is assuming that another kernel,
+that of <strong>linux-raspberrypi4</strong> would be installed to take care
+of this issue.</p>
+<p>At Reddit for example, this has been also the accepted suggestion.</p>
+<p><a href="https://www.reddit.com/r/archlinuxarm/comments/obxh8i/need_help_with_sound_on_raspberry_pi_4/"
+target="_blank">Need help with sound on rpi4</a></p>
+<p>as one of the users said: <em>I use the linux-raspberrypi4
+kernel. Installed pulseaudio, ran it and everything worked
+perfectly. Don&rsquo;t remember doing anything else other than selecting
+the correct output device.</em></p>
+<p>Unfortunately, about a year ago or more when I installed arch linux
+arm on this particular model, I tried, albeit unsuccessfully to
+resolve this issue with this aforementioned kernel
+<strong>linux-raspberrypi4</strong>. It didn&rsquo;t work. No sound was ever coming out
+of the headphones.</p>
+<p>Another user who opened a similar topic outlining the
+problematic sound with rpi4 under Arch <a href="https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;t=14641">rpi4b: no audio device
+found</a>
+in his case, the culprit seemed to stem from a permission issue
+with the file in question. Not in mine. I had also checked file
+permissions, but it was not causing the misdetection identifying
+the port.</p>
+<p>Other posts such as this one for example
+at reddit with the title <a href="https://www.reddit.com/r/archlinuxarm/comments/ou1ej4/rpi4_running_armv7_archlinux_audio_does_not_work/">Rpi4 running armv7
+archlinux , audio does not work through the onboard 3.5mm audio
+jack</a>
+barely provided any insight at all.</p>
+<p>Back to archlinuxarm.org there were other threads related with the
+underlying issue.</p>
+<p>This one simply titled <a href="https://archlinuxarm.org/forum/viewtopic.php?f=9&amp;t=12408">Re: No
+sound</a>
+it specified to have</p>
+<pre tabindex="0"><code>dtparam=audio=on
+</code></pre><p>and</p>
+<pre tabindex="0"><code>hdmi_drive=2
+</code></pre><p>one of the users specified that: <em>Without hdmi_drive=2 you should
+get sound from the jack on the rpi.</em> , or by commenting it out.
+This was also specified before.</p>
+<p>Of course. This is not the first time the fellow users over at
+archlinuxarm.org have had to deal with it.</p>
+<p>In this thread with the title
+<a href="https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;t=15470">Analog Audio not working in rpi4</a></p>
+<pre><code>I am not getting audio from 3.5 mm audio jack in my raspberry
+pi 4. I have done a clean install of arch. I have installed
+pulseaudio, alsa-utils still iam not getting the audio.
+</code></pre>
+<p>I had also done the same, but to no avail.</p>
+<p>the recommendaton for the op was, as in
+this reply [Re: analog audio not working in
+rpi4](<a href="https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;o">https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;o</a>  i it=15470#p670)</p>
+<pre tabindex="0"><code>dtoverlay=upstream-pi4
+</code></pre><p>This didn&rsquo;t work either.</p>
+<p>There were also a couple of suggestions or likely solutions to
+this issue with the rpi4, archlinuxarm and sound  that ranged from
+the aforementioned websites dedicated to the arch linux arm wiki,
+as well as in the stackexchange network.</p>
+<p>This one from archlinuxarm.org was titled: <a href="https://archlinuxarm.org/forum/viewtopic.php?f=67&amp;t=15352">Rpi4 No
+Sound</a>
+in which an error was preventing the user from running a script such
+as <code>amixer -q cset numid=3 1</code></p>
+<p>This one for example was also dealing the same issue of sound on
+te rpi4 and arch linux arm, and
+<code>amixer cset numid</code> command  to execute</p>
+<p>The question on the stackexchange network
+with the rpi, was <a href="https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack">No Audio Output on 3.5mm
+Jack</a></p>
+<p>thes user wrote that</p>
+<pre><code>  I have tried turning up the sound in alsamixer as well as
+  running modprobe snd_bcm2835. I have also tried to play
+  the files with aplay rather than ncmpcpp with no luck.
+</code></pre>
+<p>one of the respondents (who also got the accepted answer for this
+sort of problem) said to have</p>
+<pre tabindex="0"><code>amixer cset numid=3 1
+</code></pre><p>He was quoted as saying on the answer that</p>
+<pre><code>   The last number is the audio output with 1 being the 3.5
+   jack, 2 being HDMI and 0 being auto.
+</code></pre>
+<p>one must remember that the latter was, by the looks of it, posted as
+an acceptable answer to this particular problem before the
+question/answer came up from archlinuxarm.org.</p>
+<pre tabindex="0"><code>modprobe snd_bcm2835
+</code></pre><p>as well as <code>aplay -L</code> were implemented accordingly by this user in
+an effort to figure out what the problem might be with the sound and
+the rpi4 model.</p>
+<p><a href="https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack">https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack</a></p>
+<p>But more inquiries and suggestions may be further found with
+Google about this troublesome behavior. It certainly is one of
+the pressing outstanding issues with this awesome distribution
+and the model of the rpi4 in question</p>
+<p>The <strong>Arch Linux Arm wiki</strong>, (which I&rsquo;ll copy and paste) for
+example, states, in regards to the audio:</p>
+<h1 id="raspberry-pi">Raspberry Pi</h1>
+<h2 id="audio">Audio</h2>
+<p>alsa-utils should supply the needed programs to use onboard sound. Default volume can be adjusted using alsamixer.</p>
+<p>A key change with Linux kernel version 4.4.x for ARM related to ALSA and to the needed sound module: in order to use tools such as alsamixer with the current kernel, users must modify /boot/config.txt to contain the following line:</p>
+<pre tabindex="0"><code>dtparam=audio=on
+</code></pre><h3 id="caveats-for-audio">Caveats for Audio</h3>
+<p>To force audio over HDMI, add this to /boot/config.txt:</p>
+<pre tabindex="0"><code>hdmi_drive=2
+</code></pre><p>If you experience distortion using the 3.5mm analogue output:</p>
+<pre tabindex="0"><code>audio_pwm_mode=2
+</code></pre><p><img src="/images/archlinuxarmrpi4wiki.png" alt="wiki"></p>
+<p>Source: <a href="https://archlinuxarm.org/wiki/Raspberry_Pi">https://archlinuxarm.org/wiki/Raspberry_Pi</a></p>
+<p>What worked in my case were a few lines on the configuration file
+that I personally never thought that were going to resolve the sound
+issue.</p>
+<pre tabindex="0"><code>snd_bcm2835.enable_headphones=1
+snd_bcm2835.enable_hdmi=1
+snd_bcm2835.enable_compat_alsa=0
+</code></pre><p><img src="/images/answer-sound-raspberry-pi-forum.png" alt="answer-snd-2835"></p>
+<p>Re: Pi4 - No hdmi audio
+Tue Jan 21, 2020 9:23 am</p>
+<pre><code> HDMI audio should work in both ports, but there may be some config
+ you can do to make it better.
+ 
+ Add this to the end of the line in cmdline.txt file in /boot
+ (all must be on the same line)
+ 
+ snd_bcm2835.enable_headphones=1 snd_bcm2835.enable_hdmi=1
+ snd_bcm2835.enable_compat_alsa=0
+</code></pre>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+  </body>
+</html>
+

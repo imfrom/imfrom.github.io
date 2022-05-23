@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.79.1" />
+	<meta name="generator" content="Hugo 0.99.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
@@ -73,6 +73,201 @@
 <div class="posts">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/rpi4-on-archlinuxarm-no-audio-hdmi-headphones/">Rpi4 on Arch Linux Arm No Audio Headphones resolved with snd_bcm2835_enable_headphones=1</a></h1>
+        <span class="post-date">May 22, 2022</span>
+        <p>According to the recommendations the block of code should be in one
+line:</p>
+<pre tabindex="0"><code>snd_bcm2835.enable_headphones=1
+snd_bcm2835.enable_hdmi=1
+snd_bcm2835.enable_compat_alsa=0
+</code></pre><p>Rpi4 has had trouble for a while now, especially running
+under Arch Linux with the sound output from the headphones
+jack source. I&rsquo;ve usually read a great many threads
+dealing with this issue before. Unfortunately, many of the
+solutions/recommendations/suggestions haven&rsquo;t resolved the problem.</p>
+<p>Other distros have dealt successfully with this issue before. But
+whether it has been casued for some given reason or another,
+in the case of ArchlinuxArm this has been an outstanding issue
+in a great many number of occasions.</p>
+<p>The configuration files and particular model and versions for the
+rpi4 as it has been outlined on many of the threads, are not quite
+that different from mine, and yet the issue was not resolved.</p>
+<p>I&rsquo;ve read about this:</p>
+<p><a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15090&amp;start=0">https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15090&amp;start=0</a></p>
+<p>therein, another specific thread dealing with this issue was opened
+which followed over here:</p>
+<p><a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15128&amp;p=65808#p65816">https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15128&amp;p=65808#p65816</a></p>
+<p>This thread <a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15070">sound on rpi model
+4b</a> was
+for example, specifically opened to collect more information about
+some of the back then outstanding issues with the rpi4 model b.</p>
+<p>The above also links to
+<a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=15128&amp;p=65808#p65816">Re: fresh rpi4b install with linux-raspberrypi</a>
+which as one might guessed by going over it, it deals with
+installing another kernel tailored to this particular sound problem.</p>
+<p>Some of the posted code may not apply to the particular model, but
+as the author clearly specified, many of these settings might differ
+considerably from one&rsquo;s setup.</p>
+<pre tabindex="0"><code>arm_64bit=1
+enable_gic=1
+dtparam=i2c_arm=on
+dtoverlay=i2c-rtc,ds3231
+dtparam=audio=on
+dtoverlay=disable-wifi
+dtoverlay=disable-bt
+disable_overscan=0
+</code></pre><p>From there, another thread entitled <a href="https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;t=15056&amp;p=65576&amp;hilit=alsa#p65576">alsa - device not
+found</a>
+was posted</p>
+<p>In it, there were some specific packages that must be installed such
+as (at the time of writing):</p>
+<pre tabindex="0"><code>alsa-firmware 1.2.4-2
+alsa-lib 1.2.4-3
+alsa-plugins 1:1.2.2-2
+alsa-topology-conf 1.2.4-2
+alsa-ucm-conf 1.2.4-2
+alsa-utils 1.2.4-2
+</code></pre><p>In addition to these, the author also linked
+another thread <a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;t=14734&amp;start=50#p65549">Re:No usb detected on rpi4 with
+aarch64</a>
+which it also suggested to have the package <strong>mpg123</strong> installed
+as well.</p>
+<pre tabindex="0"><code># dtoverlay=vc4-kms-v3d
+dtparam=audio=on
+hdmi_force_hotplug=1
+over_voltage=6
+arm_freq=2000
+</code></pre><p>One must always remember that this may have been the settings for that
+particular setup. <code>dtoverlay=</code> for example was commented out.</p>
+<p>But by now one must realize, that the most widely accepted
+configuration has been  so far <code>dtparam=audio=on</code>. It has been
+brought up for many use cases before.</p>
+<p>Of course. All of the above is assuming that another kernel,
+that of <strong>linux-raspberrypi4</strong> would be installed to take care
+of this issue.</p>
+<p>At Reddit for example, this has been also the accepted suggestion.</p>
+<p><a href="https://www.reddit.com/r/archlinuxarm/comments/obxh8i/need_help_with_sound_on_raspberry_pi_4/"
+target="_blank">Need help with sound on rpi4</a></p>
+<p>as one of the users said: <em>I use the linux-raspberrypi4
+kernel. Installed pulseaudio, ran it and everything worked
+perfectly. Don&rsquo;t remember doing anything else other than selecting
+the correct output device.</em></p>
+<p>Unfortunately, about a year ago or more when I installed arch linux
+arm on this particular model, I tried, albeit unsuccessfully to
+resolve this issue with this aforementioned kernel
+<strong>linux-raspberrypi4</strong>. It didn&rsquo;t work. No sound was ever coming out
+of the headphones.</p>
+<p>Another user who opened a similar topic outlining the
+problematic sound with rpi4 under Arch <a href="https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;t=14641">rpi4b: no audio device
+found</a>
+in his case, the culprit seemed to stem from a permission issue
+with the file in question. Not in mine. I had also checked file
+permissions, but it was not causing the misdetection identifying
+the port.</p>
+<p>Other posts such as this one for example
+at reddit with the title <a href="https://www.reddit.com/r/archlinuxarm/comments/ou1ej4/rpi4_running_armv7_archlinux_audio_does_not_work/">Rpi4 running armv7
+archlinux , audio does not work through the onboard 3.5mm audio
+jack</a>
+barely provided any insight at all.</p>
+<p>Back to archlinuxarm.org there were other threads related with the
+underlying issue.</p>
+<p>This one simply titled <a href="https://archlinuxarm.org/forum/viewtopic.php?f=9&amp;t=12408">Re: No
+sound</a>
+it specified to have</p>
+<pre tabindex="0"><code>dtparam=audio=on
+</code></pre><p>and</p>
+<pre tabindex="0"><code>hdmi_drive=2
+</code></pre><p>one of the users specified that: <em>Without hdmi_drive=2 you should
+get sound from the jack on the rpi.</em> , or by commenting it out.
+This was also specified before.</p>
+<p>Of course. This is not the first time the fellow users over at
+archlinuxarm.org have had to deal with it.</p>
+<p>In this thread with the title
+<a href="https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;t=15470">Analog Audio not working in rpi4</a></p>
+<pre><code>I am not getting audio from 3.5 mm audio jack in my raspberry
+pi 4. I have done a clean install of arch. I have installed
+pulseaudio, alsa-utils still iam not getting the audio.
+</code></pre>
+<p>I had also done the same, but to no avail.</p>
+<p>the recommendaton for the op was, as in
+this reply [Re: analog audio not working in
+rpi4](<a href="https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;o">https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;o</a>  i it=15470#p670)</p>
+<pre tabindex="0"><code>dtoverlay=upstream-pi4
+</code></pre><p>This didn&rsquo;t work either.</p>
+<p>There were also a couple of suggestions or likely solutions to
+this issue with the rpi4, archlinuxarm and sound  that ranged from
+the aforementioned websites dedicated to the arch linux arm wiki,
+as well as in the stackexchange network.</p>
+<p>This one from archlinuxarm.org was titled: <a href="https://archlinuxarm.org/forum/viewtopic.php?f=67&amp;t=15352">Rpi4 No
+Sound</a>
+in which an error was preventing the user from running a script such
+as <code>amixer -q cset numid=3 1</code></p>
+<p>This one for example was also dealing the same issue of sound on
+te rpi4 and arch linux arm, and
+<code>amixer cset numid</code> command  to execute</p>
+<p>The question on the stackexchange network
+with the rpi, was <a href="https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack">No Audio Output on 3.5mm
+Jack</a></p>
+<p>thes user wrote that</p>
+<pre><code>  I have tried turning up the sound in alsamixer as well as
+  running modprobe snd_bcm2835. I have also tried to play
+  the files with aplay rather than ncmpcpp with no luck.
+</code></pre>
+<p>one of the respondents (who also got the accepted answer for this
+sort of problem) said to have</p>
+<pre tabindex="0"><code>amixer cset numid=3 1
+</code></pre><p>He was quoted as saying on the answer that</p>
+<pre><code>   The last number is the audio output with 1 being the 3.5
+   jack, 2 being HDMI and 0 being auto.
+</code></pre>
+<p>one must remember that the latter was, by the looks of it, posted as
+an acceptable answer to this particular problem before the
+question/answer came up from archlinuxarm.org.</p>
+<pre tabindex="0"><code>modprobe snd_bcm2835
+</code></pre><p>as well as <code>aplay -L</code> were implemented accordingly by this user in
+an effort to figure out what the problem might be with the sound and
+the rpi4 model.</p>
+<p><a href="https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack">https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack</a></p>
+<p>But more inquiries and suggestions may be further found with
+Google about this troublesome behavior. It certainly is one of
+the pressing outstanding issues with this awesome distribution
+and the model of the rpi4 in question</p>
+<p>The <strong>Arch Linux Arm wiki</strong>, (which I&rsquo;ll copy and paste) for
+example, states, in regards to the audio:</p>
+<h1 id="raspberry-pi">Raspberry Pi</h1>
+<h2 id="audio">Audio</h2>
+<p>alsa-utils should supply the needed programs to use onboard sound. Default volume can be adjusted using alsamixer.</p>
+<p>A key change with Linux kernel version 4.4.x for ARM related to ALSA and to the needed sound module: in order to use tools such as alsamixer with the current kernel, users must modify /boot/config.txt to contain the following line:</p>
+<pre tabindex="0"><code>dtparam=audio=on
+</code></pre><h3 id="caveats-for-audio">Caveats for Audio</h3>
+<p>To force audio over HDMI, add this to /boot/config.txt:</p>
+<pre tabindex="0"><code>hdmi_drive=2
+</code></pre><p>If you experience distortion using the 3.5mm analogue output:</p>
+<pre tabindex="0"><code>audio_pwm_mode=2
+</code></pre><p><img src="/images/archlinuxarmrpi4wiki.png" alt="wiki"></p>
+<p>Source: <a href="https://archlinuxarm.org/wiki/Raspberry_Pi">https://archlinuxarm.org/wiki/Raspberry_Pi</a></p>
+<p>What worked in my case were a few lines on the configuration file
+that I personally never thought that were going to resolve the sound
+issue.</p>
+<pre tabindex="0"><code>snd_bcm2835.enable_headphones=1
+snd_bcm2835.enable_hdmi=1
+snd_bcm2835.enable_compat_alsa=0
+</code></pre><p><img src="/images/answer-sound-raspberry-pi-forum.png" alt="answer-snd-2835"></p>
+<p>Re: Pi4 - No hdmi audio
+Tue Jan 21, 2020 9:23 am</p>
+<pre><code> HDMI audio should work in both ports, but there may be some config
+ you can do to make it better.
+ 
+ Add this to the end of the line in cmdline.txt file in /boot
+ (all must be on the same line)
+ 
+ snd_bcm2835.enable_headphones=1 snd_bcm2835.enable_hdmi=1
+ snd_bcm2835.enable_compat_alsa=0
+</code></pre>
+
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/slackware-startx-blank-screen-without-imobiledeviceglue/">Slackware Startx Blank Screen Without Imobiledeviceglue</a></h1>
         <span class="post-date">Jan 18, 2022</span>
         <p>Blank screen kde plasma wayland on Slackware was the issue this time.</p>
@@ -81,9 +276,9 @@
 <p>Some post dating back to 2019 <a href="https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/">https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/</a>  pointed to do an upgrade. Of which I had done. So this suggestion led nowhere.</p>
 <p>After checking many of the issues as described on linuxquestions which resembled some of the behavior such as logging in through level 4 on sddm as this one pointed out <a href="https://www.linuxquestions.org/questions/slackware-14/blank-screen-on-startx-for-kde-at-kernel-5-10-4-a-4175687833/page2.html">https://www.linuxquestions.org/questions/slackware-14/blank-screen-on-startx-for-kde-at-kernel-5-10-4-a-4175687833/page2.html</a></p>
 <p>I couldn&rsquo;t help but noticed that not only I was unable to log in through sddm but also a message that read the following:</p>
-<pre><code>The current theme can not be loaded due to the errors below, please select another theme:
+<pre tabindex="0"><code>The current theme can not be loaded due to the errors below, please select another theme:
 
-file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for module &quot;org.kde.plasma.core&quot; cannot load library /usr/lib64/qt5/qml/org/kde/plasma/core&quot; libcorebindingsplugin.so (libimobiledevice-glue-1.0.so.0 cannot open shared object file: No such file or directory)
+file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for module &#34;org.kde.plasma.core&#34; cannot load library /usr/lib64/qt5/qml/org/kde/plasma/core&#34; libcorebindingsplugin.so (libimobiledevice-glue-1.0.so.0 cannot open shared object file: No such file or directory)
 </code></pre><p>This of course served no discernible help at all, as Google quickly confirmed, a search for <code>bindingsplugin.so</code> returned unrelated results while recently, as of today, a search on Google for &lt;libcorebindingsplugin.so slackware&gt; pointed out that the solution for the problem would be to <code>slackpkg install-new</code>. But for as long as I have updated the system on Slackware, with the kernel and packages, I have always foregone from invoking, even though is technically correct after a system upgrade, such command as <code>slackpkg install-new</code>.</p>
 <p>By the time I had read that suggestion, which I noticed just now, as of this writing that it had been posted only a few days ago, I had already found, perhaps not as elegant, a solution on the system to invoke <code>startx</code> successfully.</p>
 <p>Somehow while invoking <strong>kwin_wayland</strong> though <code>startkwayland</code> I noticed, unlike before, that was returning the error: <code>/usr/bin/kwin_wayland: error while loading shared libraries: libimobiledevice-glue-1.0.so.0: cannot open shared object file: No such file or directory</code> which quickly identified the culprit.</p>
@@ -140,7 +335,7 @@ file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for m
         <p>I wouldn&rsquo;t know where to look —- I certainly can browse the <a href="https://packages.debian.org/buster/bash-completion" target="_blank">repo</a> from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as this distro may be,  not everyone uses it.</p>
 <p>A quick glance at the files that comprise this program, one could see that aside from the <code>usr</code> folder, bash completion is also installed under <code>etc</code> and <code>bin</code> accordingly.</p>
 <p>Bash completion allows to fill in the rest of the commands or variables that follow for given executable.</p>
-<p>See <a href="https://wiki.archlinux.org/index.php/Bash#Tab_completion" target="_blank">Bash autocompletion</a> for more details about its chock features' versatility.</p>
+<p>See <a href="https://wiki.archlinux.org/index.php/Bash#Tab_completion" target="_blank">Bash autocompletion</a> for more details about its chock features&rsquo; versatility.</p>
 <p>In the case of Arch, the installation does not create — unlike on Debian — the folder <code>bash_completion</code> under <code>etc</code>. And I don&rsquo;t think this may have been an oversight from the Arch team, but presumably and perhaps due to safety reasons,  this was something that was never considered in the first place.</p>
 <p>Other programs have had no issue by correctly including on the script the means to have it install appropriately. But it&rsquo;s my opinion — and anyone is more than welcome to disagree with me here — that many a great number of programs have not chosen to do so or failed altogether in this regard. Hugo for example is one of them. See for example the <a href="https://github.com/gohugoio/hugo/pull/1088" target="_blank"> destination directory</a> when this feature was added. See the commit <a href="https://github.com/gohugoio/hugo/pull/1088/commits/ccdf544f73dda2ff2dd8bf0407a77e21084c59e8" target="_blank">here.</a></p>
 <p>To resolve this issue, the most viable solution is to manually add the folder, from whence this error stems, or else the message<code>Error: bash_completion.d: hugo.sh no such file or directory</code> will disallow the <code>autocomplete</code> which was added to the binaries of this  program, to come into effect.</p>
@@ -154,9 +349,9 @@ file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for m
 <p>On the other hand, if multiple systems are to be used, it may be useful to better have the hardware clock synchronized in UTC in case that time zone and DST Daylight Savings Time come into effect.</p>
 <p>Omitting appending something as simple as <code>--localtime</code> would certainly display the UTC on multiple systems under any hardware.</p>
 <p>In case of any trouble setting it up afterwards may resolve the issue</p>
-<pre><code>timedatectl set-timezone 
+<pre tabindex="0"><code>timedatectl set-timezone 
 </code></pre><p>Alternatively, one may invoke:</p>
-<pre><code>hwclock --set --date 'mm/dd/yyyy 00:00:00'
+<pre tabindex="0"><code>hwclock --set --date &#39;mm/dd/yyyy 00:00:00&#39;
 hwclock --hctosys --localtime
 </code></pre>
     </div>
@@ -187,7 +382,7 @@ hwclock --hctosys --localtime
 <p>As I&rsquo;ve said before, the distro would most likely have the language pack of choice available for the system.</p>
 <p>But I personally didn&rsquo;t want to go this route this time around neither, and wanted instead,  to install the language pack so the program would identify it.</p>
 <p>The destination for the dictionaries is not under <code>.local</code> but rather over at</p>
-<pre><code>/usr/lib/office6/
+<pre tabindex="0"><code>/usr/lib/office6/
 </code></pre><p>therein another subdirectory under <code>dicts</code> aptly entitled <code>spellcheck/</code> which further shows the default language directory - which is normally <strong>en_US</strong> in this case, is the folder from which the program would first look up any relevant file to be loaded.</p>
 <p>The language pack dictionary for wps-office namely provides three (3) files with the suffixes:</p>
 <ul>
@@ -219,9 +414,9 @@ hwclock --hctosys --localtime
 <p>If I were to invoke with <code>sed</code> a certain range of lines to print say from the XParseGeometry manual or from any other file on the system, filtering it out gives - as the proverbial saying goes - power for the money.</p>
 <p>Yes, it helps to have the entire <code>man</code> pages on the terminal, but it wouldn&rsquo;t filter out the results as I have wanted it to. One may try by using <code>grep</code> but I wasn&rsquo;t interested this time around to use it.</p>
 <p>So</p>
-<pre><code>man XParseGeometry | awk 'NR==20,NR==40' 
+<pre tabindex="0"><code>man XParseGeometry | awk &#39;NR==20,NR==40&#39; 
 </code></pre><p>would hence return:</p>
-<pre><code>
+<pre tabindex="0"><code>
        display   Specifies the connection to the X server.
 
        fheight
@@ -245,9 +440,9 @@ hwclock --hctosys --localtime
 </code></pre><p>returned what I was after..</p>
 <p>With <code>sed</code> things are perhps easier, and a great many users recommend to go this route for simple tasks such as the one I usually encounter.</p>
 <p>on the terminal</p>
-<pre><code>man XParseGeometry | sed -n '20,40'p
+<pre tabindex="0"><code>man XParseGeometry | sed -n &#39;20,40&#39;p
 </code></pre><p>would rightly return:</p>
-<pre><code>
+<pre tabindex="0"><code>
        display   Specifies the connection to the X server.
 
        fheight
@@ -272,9 +467,9 @@ hwclock --hctosys --localtime
 <p>Of course, the magic of Unix doesn&rsquo;t stop there. One could further delve into even more  commands to give both <code>sed</code> and <code>awk</code> an unimaginable power for pattern searching without having to entirely <code>grep</code> it&hellip;</p>
 <p>Having other simple tasks such as looking up particular pattern on a given file, is much more easier which could print out the results satisfactorily&hellip;.</p>
 <p>for a given file <code>x</code></p>
-<pre><code>sed -n '2,4'p &lt;filename&gt;
+<pre tabindex="0"><code>sed -n &#39;2,4&#39;p &lt;filename&gt;
 </code></pre><p>and through <code>awk</code> a simple</p>
-<pre><code>awk 'NR==&lt;range&gt;,NR==&lt;range&gt;' &lt;filename&gt;
+<pre tabindex="0"><code>awk &#39;NR==&lt;range&gt;,NR==&lt;range&gt;&#39; &lt;filename&gt;
 </code></pre><p>should suffice.</p>
 <p><strong>Further reading</strong></p>
 <p><a href="https://www.grymoire.com/Unix/Sed.html">https://www.grymoire.com/Unix/Sed.html</a></p>
@@ -309,7 +504,7 @@ efficiently and quickly find the fonts you need among the set of fonts you have 
 <p>On the other hand, <code>fc-list</code> does list the fonts available on the system&hellip;</p>
 <p>The only caveat is that if I were to try to get the family name of the glyph in question, <code>fc-list</code> does provide it, but I would need to further <code>grep</code> it in order to not get a bunch of results.</p>
 <p><code>fc-list</code> is simply put:</p>
-<pre><code>FC-LIST(1)                                                     FC-LIST(1)
+<pre tabindex="0"><code>FC-LIST(1)                                                     FC-LIST(1)
 
 NAME
        fc-list - list available fonts
@@ -326,27 +521,6 @@ DESCRIPTION
        verbose output is requested.
 </code></pre><p>a printing mechanism to list the fonts on the system.</p>
 <p><code>grep</code> [ing] the font itself through the program, filters out the family name of the font as well - and whether these are otf or ttf.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/pacman-gtk-doc-file-exists-in-filesystem/">Pacman Gtk Doc File Exists in Filesystem</a></h1>
-        <span class="post-date">Nov 23, 2019</span>
-        <p>It was odd that seemingly identical pamac installations loaded onto very similarly configured machines,  were somehow behaving differently on a great many occasions.</p>
-<p>Both pamac versions had been downloaded and configured and compiled apparently via the same procedure. Both systems also had been configured not much that different from one another. But on one of the systems, pamac would eventually return an error during the same updates.</p>
-<p>Pamac would simply hang, egregiously stuck at either:</p>
-<pre><code>  checking inter-dependencies
-</code></pre>
-<p>or during</p>
-<pre><code>  checking inter-conflicts
-</code></pre>
-<p>Of course, I could have just  dismissed all these errors and be happily content to just get rid of this nonsense by removing pamac altogether and start afresh from the official package manager, but I would have never been happy by either settling these problems through such trivialities, as long as another system, on which the very same package was installed, was not showing the same behavior.</p>
-<p>Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the <a href="https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error" target="_blank">Arch Wiki suggests</a>. But I always liked the design idea behind this graphical interfaced package provided with its updates' notifications, which unlike pacman that would have required to manually tweak checking for these updates.</p>
-<p>But as it&rsquo;s usually the case, pacman was downright correct by identifying as closely as possible the culprit by which the system itself held <code>files already in filesystem</code>. This was clearly the case with the package <strong>gtk-doc</strong>, and somehow this conflict had to be resolved.</p>
-<p>But what I don&rsquo;t know, and it&rsquo;s my mistake since I didn&rsquo;t venture out - either at the time when it first occurred -, and much less now, because it&rsquo;d be a wildly-guessing why would this be the case, that even when two systems configured alike which in turn held the same package revisions,  were somehow behaving disparagingly different.</p>
-<p>I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors' copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.</p>
-<p>I did however, tried to stay as far away as possible from manually  removing  each of the files installed by the package [gtk-doc], but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process, that of having to go and remove each file owned by the package,  seemed to be the only inevitable method to circumvent this problem.</p>
-<p>After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&hellip; but it gives me pause and comfort in knowing that <code>checking inter-dependencies</code> or <code>checking file-conflcts</code> rolling hangs haven&rsquo;t returned to this annoyingly halting process.</p>
 
     </div>
   

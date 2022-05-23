@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.79.1" />
+	<meta name="generator" content="Hugo 0.99.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
@@ -73,6 +73,27 @@
 <div class="posts">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/pacman-gtk-doc-file-exists-in-filesystem/">Pacman Gtk Doc File Exists in Filesystem</a></h1>
+        <span class="post-date">Nov 23, 2019</span>
+        <p>It was odd that seemingly identical pamac installations loaded onto very similarly configured machines,  were somehow behaving differently on a great many occasions.</p>
+<p>Both pamac versions had been downloaded and configured and compiled apparently via the same procedure. Both systems also had been configured not much that different from one another. But on one of the systems, pamac would eventually return an error during the same updates.</p>
+<p>Pamac would simply hang, egregiously stuck at either:</p>
+<pre><code>  checking inter-dependencies
+</code></pre>
+<p>or during</p>
+<pre><code>  checking inter-conflicts
+</code></pre>
+<p>Of course, I could have just  dismissed all these errors and be happily content to just get rid of this nonsense by removing pamac altogether and start afresh from the official package manager, but I would have never been happy by either settling these problems through such trivialities, as long as another system, on which the very same package was installed, was not showing the same behavior.</p>
+<p>Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the <a href="https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error" target="_blank">Arch Wiki suggests</a>. But I always liked the design idea behind this graphical interfaced package provided with its updates&rsquo; notifications, which unlike pacman that would have required to manually tweak checking for these updates.</p>
+<p>But as it&rsquo;s usually the case, pacman was downright correct by identifying as closely as possible the culprit by which the system itself held <code>files already in filesystem</code>. This was clearly the case with the package <strong>gtk-doc</strong>, and somehow this conflict had to be resolved.</p>
+<p>But what I don&rsquo;t know, and it&rsquo;s my mistake since I didn&rsquo;t venture out - either at the time when it first occurred -, and much less now, because it&rsquo;d be a wildly-guessing why would this be the case, that even when two systems configured alike which in turn held the same package revisions,  were somehow behaving disparagingly different.</p>
+<p>I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors&rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.</p>
+<p>I did however, tried to stay as far away as possible from manually  removing  each of the files installed by the package [gtk-doc], but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process, that of having to go and remove each file owned by the package,  seemed to be the only inevitable method to circumvent this problem.</p>
+<p>After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&hellip; but it gives me pause and comfort in knowing that <code>checking inter-dependencies</code> or <code>checking file-conflcts</code> rolling hangs haven&rsquo;t returned to this annoyingly halting process.</p>
+
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-loading-shared-libraries-libalpm/">Pamac Error While Loading Shared Libraries Libalpm</a></h1>
         <span class="post-date">Nov 1, 2019</span>
         <p><a href="https://www.archlinux.org/pacman/libalpm.3.html">Libalpm</a> is the library for package management of Arch.</p>
@@ -83,7 +104,7 @@
 <p>But they&rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary  coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments. This is not to illegitimize whatever accomplishments have been put together by these teams, but it&rsquo;s still disparately sub-par compared to what Arch has offered.</p>
 <p>During the last kernel update there was a problem with  pamac though</p>
 <p>Firing it up from the terminal was simply returning an</p>
-<pre><code>error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
+<pre tabindex="0"><code>error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
 </code></pre><p>Which considering how lazy I&rsquo;ve become over the years, and even more so after reading articles a few years ago such as <a href="https://en.wikipedia.org/wiki/Is_Google_Making_Us_Stupid%3F">Is Google making us stupid</a> by Atlantic technology writer Nicholas Carr, I couldn&rsquo;t wait to gobble it up or try to leave it up to Google to offer the best match to this undesired behavior I was getting.</p>
 <p>The first query by the algorithms of Google returned an issue over at <a href="https://github.com/Jguer/yay/issues/1087" target="_blank">yay: error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory </a></p>
 <p>But thinking about it again, the issue pertained mostly to <a href="https://aur.archlinux.org/packages/yay/" target="_blank"> aur.archlinux.org/packages/yay/</a> which I&rsquo;ve never installed. Perhaps I had done it years earlier on another different system, but not on the current machines I&rsquo;ve been running.</p>
@@ -103,8 +124,7 @@
 <p>All the libraries for which <code>javaws</code> depended upon and for which it was being tested even under a different system seemed to have been installed. This included, <strong>jdk8-openjdk..</strong> and its counterparts.</p>
 <p>Apparently, during the installation, the path that had been set for <code>javaws</code> had been incorrectly identified.</p>
 <p>The error read as follows:</p>
-<pre><code>/usr/bin/javaws line 197: no such file or directory.
-
+<pre tabindex="0"><code>/usr/bin/javaws line 197: no such file or directory.
 </code></pre><p>Upon further inspection of the line in question, is hard to pinpoint whether therein lied the problem or not&hellip;</p>
 <p>Upon going ahead and after opening the <code>javaws</code> executable, I noticed that the path had been incorrectly set indeed by either some of the libraries during the initialization&hellip;. It was pointing out to a different location <strong>rather</strong> than where the files for the java environment were located instead.</p>
 <p>Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus <code>java=/location/of/java/default/</code> worked without a problem.</p>
@@ -115,13 +135,13 @@
         <h1 class="post-title"><a href="https://imfrom.github.io/post/pacman-unable-to-lock-database/">Pacman Unable to Lock Database</a></h1>
         <span class="post-date">Sep 15, 2019</span>
         <p>On a recent pacman upgrade, I encountered the error:</p>
-<pre><code>:: Synchronizing package databases...
+<pre tabindex="0"><code>:: Synchronizing package databases...
 error: failed to update core (unable to lock database)
 error: failed to update extra (unable to lock database)
 error: failed to update community (unable to lock database)
 error: failed to synchronize all databases
 </code></pre><p>the solution everytime is to remove the <code>db.lck</code> from the <code>/var/lib/</code> directory and restart pacman.</p>
-<pre><code>rm /var/lib/db.lck
+<pre tabindex="0"><code>rm /var/lib/db.lck
 pacman -Syyu
 </code></pre>
     </div>
@@ -317,30 +337,6 @@ suffix <code>.md</code> extension</p>
 </code></pre>
 <p><strong>References</strong></p>
 <p><a name="closetagreadme"></a><a href="https://github.com/alvan/vim-closetag/blob/master/README.md#options" target="blank">README file for closetag</a><a href="#closetagreadmeref">↵ </a></p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/">Error While Reinstalling All Previously Deployed Packages of Context User</a></h1>
-        <span class="post-date">Nov 26, 2018</span>
-        <p>I still don&rsquo;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error <code>Error while reinstalling all previously deployed packages of context user</code>.</p>
-<p>Looking up Google didn&rsquo;t help in finding some sort of recent info about this issue.</p>
-<p>I also had a <code>warning: failed to load path from javadlx</code> which was obviously only a warning but nonetheless troublesome and problematic considering that this was just a fresh installation of Libreoffice.</p>
-<p>Further looking up this issue through Google led me to the forum of Arch in which a user mentioned the possibility of permission problems with the installation. The user also queried Google to find more about this issue:</p>
-<blockquote>
-<p>Googling about the error showed some chances of being a permission problem with ~/.openoffice.org2. But I don&rsquo;t have that directory in my system, but ~/.config/.libreoffice. I would suggest you check the permissions on this directory. Mine are 766. <a href="#javadlx"><sup id="javadlxref">1</sup></a></p>
-</blockquote>
-<p>but there was nothing out of the norm with the permissions set on the directory. But from his post it reminded me that usually the path that is set by xdg is under the <strong>xdg</strong> directory. Then again, the environment variable for it had been set correctly.</p>
-<p>I decided to go ahead and back up the <code>.config/libreoffice/4</code> directory where some of the other files for libreoffice laid at.</p>
-<p>Then I moved that directory with all the files to another location, following by calling out <code>libreoffice</code> which seemed to resolve the issue.</p>
-<p>One of the first hits provided by Google after my first inquiry, were from the forums at the libreoffice website itself, in which one of the threads that also dealt with this issue had mentioned the same workaround that I had just used. See more at <a href="https://forum.openoffice.org/en/forum/viewtopic.php?f=101&t=83995" target="_blank">LO5.0 Fatal Error cannot be started</a>.<a href="#oocontextuser"><sup id="oocontextuserref">2</sup></a></p>
-<p>Further queries that would shed more light about this problem, took me to a previous probable bug that was reported to the <a href="https://bugs.documentfoundation.org/show_bug.cgi?id=64606" target="_blank">documentfoundation.org</a> website. This report was opened on 2013 and closed right after around 2014. <a href="#docfoundation"><sup id="docfoundationref">3</sup></a></p>
-<p>Why that bug report at the documentfoundation.org website was marked as closed shortly after it was reported, is simply beyond me.</p>
-<p>The report occurred under version 5 whereas in my case, it was under version 6. And the problem is still there.</p>
-<p><strong>References</strong></p>
-<p>1- <a name="javadlx"></a><a href="https://bbs.archlinux.org/viewtopic.php?pid=1003045#p1003045" target="_blank">Permission problem with Libreoffice - Arch linux forums</a><a href="#javadlxref">↵</a></p>
-<p>2- <a name="oocontextuser"></a> <a href="https://forum.openoffice.org/en/forum/viewtopic.php?f=101&t=83995" target="_blank">LO5.0 Fatal error cannot be started</a> <a href="#oocontextuserref">↵</a></p>
-<p>3- <a name="docfoundation"></a> <a href="https://bugs.documentfoundation.org/show_bug.cgi?id=64606" target="_blank">bug filed with documentfoundation.org</a><a href="#docfoundationref">↵</a></p>
 
     </div>
   

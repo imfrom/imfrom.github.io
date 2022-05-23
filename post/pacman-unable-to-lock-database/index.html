@@ -70,13 +70,13 @@
   <h1 class="post-title">Pacman Unable to Lock Database</h1>
   <span class="post-date">Sep 15, 2019</span>
   <p>On a recent pacman upgrade, I encountered the error:</p>
-<pre><code>:: Synchronizing package databases...
+<pre tabindex="0"><code>:: Synchronizing package databases...
 error: failed to update core (unable to lock database)
 error: failed to update extra (unable to lock database)
 error: failed to update community (unable to lock database)
 error: failed to synchronize all databases
 </code></pre><p>the solution everytime is to remove the <code>db.lck</code> from the <code>/var/lib/</code> directory and restart pacman.</p>
-<pre><code>rm /var/lib/db.lck
+<pre tabindex="0"><code>rm /var/lib/db.lck
 pacman -Syyu
 </code></pre></div>
 

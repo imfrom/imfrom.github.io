@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Blog del tecnólogo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jan 2022 03:07:36 -0500</lastBuildDate><atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 May 2022 22:58:21 -0400</lastBuildDate><atom:link href="https://imfrom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rpi4 on Arch Linux Arm No Audio Headphones resolved with snd_bcm2835_enable_headphones=1</title>
+      <link>https://imfrom.github.io/post/rpi4-on-archlinuxarm-no-audio-hdmi-headphones/</link>
+      <pubDate>Sun, 22 May 2022 22:58:21 -0400</pubDate>
+      
+      <guid>https://imfrom.github.io/post/rpi4-on-archlinuxarm-no-audio-hdmi-headphones/</guid>
+      <description>According to the recommendations the block of code should be in one line:
+snd_bcm2835.enable_headphones=1 snd_bcm2835.enable_hdmi=1 snd_bcm2835.enable_compat_alsa=0 Rpi4 has had trouble for a while now, especially running under Arch Linux with the sound output from the headphones jack source. I&amp;rsquo;ve usually read a great many threads dealing with this issue before. Unfortunately, many of the solutions/recommendations/suggestions haven&amp;rsquo;t resolved the problem.
+Other distros have dealt successfully with this issue before. But whether it has been casued for some given reason or another, in the case of ArchlinuxArm this has been an outstanding issue in a great many number of occasions.</description>
+    </item>
+    
     <item>
       <title>Slackware Startx Blank Screen Without Imobiledeviceglue</title>
       <link>https://imfrom.github.io/post/slackware-startx-blank-screen-without-imobiledeviceglue/</link>

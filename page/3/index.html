@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
-	<meta name="generator" content="Hugo 0.79.1" />
+	<meta name="generator" content="Hugo 0.99.1" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
@@ -73,6 +73,30 @@
 <div class="posts">
   
     <div class="post">
+        <h1 class="post-title"><a href="https://imfrom.github.io/post/error-while-reinstalling-all-previously-deployed-packages-of-context-user/">Error While Reinstalling All Previously Deployed Packages of Context User</a></h1>
+        <span class="post-date">Nov 26, 2018</span>
+        <p>I still don&rsquo;t know whether there was an old installation of Libreoffice sitting somewhere on the system. But a new fresh installation not only failed to start up but it also returned the message error <code>Error while reinstalling all previously deployed packages of context user</code>.</p>
+<p>Looking up Google didn&rsquo;t help in finding some sort of recent info about this issue.</p>
+<p>I also had a <code>warning: failed to load path from javadlx</code> which was obviously only a warning but nonetheless troublesome and problematic considering that this was just a fresh installation of Libreoffice.</p>
+<p>Further looking up this issue through Google led me to the forum of Arch in which a user mentioned the possibility of permission problems with the installation. The user also queried Google to find more about this issue:</p>
+<blockquote>
+<p>Googling about the error showed some chances of being a permission problem with ~/.openoffice.org2. But I don&rsquo;t have that directory in my system, but ~/.config/.libreoffice. I would suggest you check the permissions on this directory. Mine are 766. <a href="#javadlx"><sup id="javadlxref">1</sup></a></p>
+</blockquote>
+<p>but there was nothing out of the norm with the permissions set on the directory. But from his post it reminded me that usually the path that is set by xdg is under the <strong>xdg</strong> directory. Then again, the environment variable for it had been set correctly.</p>
+<p>I decided to go ahead and back up the <code>.config/libreoffice/4</code> directory where some of the other files for libreoffice laid at.</p>
+<p>Then I moved that directory with all the files to another location, following by calling out <code>libreoffice</code> which seemed to resolve the issue.</p>
+<p>One of the first hits provided by Google after my first inquiry, were from the forums at the libreoffice website itself, in which one of the threads that also dealt with this issue had mentioned the same workaround that I had just used. See more at <a href="https://forum.openoffice.org/en/forum/viewtopic.php?f=101&t=83995" target="_blank">LO5.0 Fatal Error cannot be started</a>.<a href="#oocontextuser"><sup id="oocontextuserref">2</sup></a></p>
+<p>Further queries that would shed more light about this problem, took me to a previous probable bug that was reported to the <a href="https://bugs.documentfoundation.org/show_bug.cgi?id=64606" target="_blank">documentfoundation.org</a> website. This report was opened on 2013 and closed right after around 2014. <a href="#docfoundation"><sup id="docfoundationref">3</sup></a></p>
+<p>Why that bug report at the documentfoundation.org website was marked as closed shortly after it was reported, is simply beyond me.</p>
+<p>The report occurred under version 5 whereas in my case, it was under version 6. And the problem is still there.</p>
+<p><strong>References</strong></p>
+<p>1- <a name="javadlx"></a><a href="https://bbs.archlinux.org/viewtopic.php?pid=1003045#p1003045" target="_blank">Permission problem with Libreoffice - Arch linux forums</a><a href="#javadlxref">↵</a></p>
+<p>2- <a name="oocontextuser"></a> <a href="https://forum.openoffice.org/en/forum/viewtopic.php?f=101&t=83995" target="_blank">LO5.0 Fatal error cannot be started</a> <a href="#oocontextuserref">↵</a></p>
+<p>3- <a name="docfoundation"></a> <a href="https://bugs.documentfoundation.org/show_bug.cgi?id=64606" target="_blank">bug filed with documentfoundation.org</a><a href="#docfoundationref">↵</a></p>
+
+    </div>
+  
+    <div class="post">
         <h1 class="post-title"><a href="https://imfrom.github.io/post/sddm-wayland-timezone-differs-from-locale/">Sddm Wayland Timezone Differs From Locale</a></h1>
         <span class="post-date">Nov 2, 2018</span>
         <p>A slowdown on my hardware had recently made me to reconsider another display manager that would presumably improve the boot time of my system. But even after installing it, I could not see any discernible difference between these display greeters. Perhaps I had noticed it before a year or so ago when I tried it out and went ahead and enabled it on an older system. This time around though, my expectations fell short.</p>
@@ -83,7 +107,7 @@
 <pre><code> systemctl enable sddm.service
 </code></pre>
 <p>But it wasn&rsquo;t clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.</p>
-<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &lsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling out the <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
+<p>Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &rsquo;timedatectl&rsquo; were the same. The reasoning behind this assumption is that by calling out the <code>timedatectl status</code> as the <a href="https://wiki.archlinux.org/index.php/System_time#Time_zone" target="_blank">Arch Wiki suggested</a>, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.</p>
 <pre><code> datetimectl status
 </code></pre>
 <p>matched SDDM clock settings. The timezone had been incorrectly set at one point.</p>
@@ -299,7 +323,7 @@ framework of say for example, what the Free Software
 Foundation accepts.</p>
 <p>This is not the case. Most Linux distros, and even more
 those that are amongst the most popular, are not very clear
-in their terms with the programs that the distro' s
+in their terms with the programs that the distro&rsquo; s
 developers include and consequently employ within it, for further mass
 use. No distribution out there but only a handful of them do
 this.</p>
@@ -322,14 +346,14 @@ Software Foundation to get a glimpse at what this is about.</p>
 <p>But to make matters even worse, the user who was trying to
 make his silly point, brought up one if not the most
 inaccurate and misleading source of Linux Market Share
-measure rankings' markers out there, a website named
+measure rankings&rsquo; markers out there, a website named
 <strong>Distrowatch</strong> that lists the most popular GNU/Linux
 distributions.</p>
 <p>Which takes me to the second rant about why the above cannot be taken as an
 statistical absolute. For <strong>Distrowatch</strong> is just a community driven, heavily
 edited, bureaucratically biased reviewed epicenter which sits on the web  with
 layers of html markup with a domain registration.  Let me emphasize once again
-about its biased one sided view about the certain distros' Linux Market Share.
+about its biased one sided view about the certain distros&rsquo; Linux Market Share.
 It is important to do so because it is almost and will always be imprecise to
 measure the use of GNU/Linux distributions across the spectrum and compare
 these - whether community or commercially based</p>
@@ -425,7 +449,7 @@ href="http://futurist.se/gldt/" target="_blank">futurist.se</a></p>
 <p><strong>1</strong>- <a name="nonfree"></a><a href="https://www.gnu.org/distros/common-distros.en.html" target="_blank">Explaining Why We Don&rsquo;t Endorse Other Systems</a><a href="#nonfreeref">↵</a></p>
 <p><strong>2</strong>-<a name="stack"></a><a href="https://books.google.com/books?id=YZIoDQAAQBAJ"
 target="_blank">Stack Frames: A Look From Inside</a><a href="#stackref">↵</a></p>
-<p><strong>3</strong>-<a name="linuxcounter"></a><a href="https://www.linuxcounter.net/statistics/distributions" target="_blank"><a href="http://www.linuxcounter.net/statistics/distributions">www.linuxcounter.net/statistics/distributions</a></a><a href="#linuxcounterref">↵</a></p>
+<p><strong>3</strong>-<a name="linuxcounter"></a><a href="https://www.linuxcounter.net/statistics/distributions" target="_blank"><a href="https://www.linuxcounter.net/statistics/distributions">www.linuxcounter.net/statistics/distributions</a></a><a href="#linuxcounterref">↵</a></p>
 <p><strong>4</strong>-<a name="lwn"></a><a href="https://lwn.net/Distributions"
 target="_blan">lwn.net/Distributions</a><a href="#lwnref">↵</a></p>
 
@@ -510,25 +534,6 @@ the main OS in their systems.</p>
 <p>Until then some of these errors and dependency satisfaction
 from the packages would have to be resolved manually by the
 end-users on their own.</p>
-
-    </div>
-  
-    <div class="post">
-        <h1 class="post-title"><a href="https://imfrom.github.io/post/installing-pacman-breaks-dependency/">Installing Pacman Breaks Dependency</a></h1>
-        <span class="post-date">May 29, 2018</span>
-        <p>Running one of the usual updates from the pamac gui package, returned</p>
-<pre><code> pamac: installing pacman (5.1.0-1) breaks dependency ‘pacman&lt;5.1
-</code></pre>
-<p>I noticed that any package on the list with a dependency must be
-unchecked before continuing.</p>
-<p>Later I checked the antergos forum to see if there was any solution.</p>
-<p><img src="/images/pacman-cant-install-breaks-dependency.png" alt=""></p>
-<p>The suggested workaround was to run</p>
-<pre><code> pacman -Syyu -d  --nodeps
-</code></pre>
-<p>The following commit apparently introduced the issue in the first
-place:</p>
-<p><a href="https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f">https://git.archlinux.org/svntogit/packages.git/commit/?id=e9272fcb3289f875b1a14222fb17f9185274107f</a></p>
 
     </div>
   

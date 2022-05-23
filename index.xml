@@ -5,8 +5,206 @@
     <language>en-us</language>
     <author></author>
     <rights>(C) 2022</rights>
-    <updated>2022-01-18 03:07:36 -0500 EST</updated>
+    <updated>2022-05-22 22:58:21 -0400 EDT</updated>
 
+    
+      <item>
+        <title>Rpi4 on Arch Linux Arm No Audio Headphones resolved with snd_bcm2835_enable_headphones=1</title>
+        <link>https://imfrom.github.io/post/rpi4-on-archlinuxarm-no-audio-hdmi-headphones/</link>
+        <pubDate>Sun, 22 May 2022 22:58:21 EDT</pubDate>
+        <author></author>
+        <guid>https://imfrom.github.io/post/rpi4-on-archlinuxarm-no-audio-hdmi-headphones/</guid>
+        <description>&lt;p&gt;According to the recommendations the block of code should be in one
+line:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;snd_bcm2835.enable_headphones=1
+snd_bcm2835.enable_hdmi=1
+snd_bcm2835.enable_compat_alsa=0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Rpi4 has had trouble for a while now, especially running
+under Arch Linux with the sound output from the headphones
+jack source. I&amp;rsquo;ve usually read a great many threads
+dealing with this issue before. Unfortunately, many of the
+solutions/recommendations/suggestions haven&amp;rsquo;t resolved the problem.&lt;/p&gt;
+&lt;p&gt;Other distros have dealt successfully with this issue before. But
+whether it has been casued for some given reason or another,
+in the case of ArchlinuxArm this has been an outstanding issue
+in a great many number of occasions.&lt;/p&gt;
+&lt;p&gt;The configuration files and particular model and versions for the
+rpi4 as it has been outlined on many of the threads, are not quite
+that different from mine, and yet the issue was not resolved.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve read about this:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;amp;t=15090&amp;amp;start=0&#34;&gt;https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;amp;t=15090&amp;amp;start=0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;therein, another specific thread dealing with this issue was opened
+which followed over here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;amp;t=15128&amp;amp;p=65808#p65816&#34;&gt;https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;amp;t=15128&amp;amp;p=65808#p65816&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This thread &lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;amp;t=15070&#34;&gt;sound on rpi model
+4b&lt;/a&gt; was
+for example, specifically opened to collect more information about
+some of the back then outstanding issues with the rpi4 model b.&lt;/p&gt;
+&lt;p&gt;The above also links to
+&lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;amp;t=15128&amp;amp;p=65808#p65816&#34;&gt;Re: fresh rpi4b install with linux-raspberrypi&lt;/a&gt;
+which as one might guessed by going over it, it deals with
+installing another kernel tailored to this particular sound problem.&lt;/p&gt;
+&lt;p&gt;Some of the posted code may not apply to the particular model, but
+as the author clearly specified, many of these settings might differ
+considerably from one&amp;rsquo;s setup.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;arm_64bit=1
+enable_gic=1
+dtparam=i2c_arm=on
+dtoverlay=i2c-rtc,ds3231
+dtparam=audio=on
+dtoverlay=disable-wifi
+dtoverlay=disable-bt
+disable_overscan=0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;From there, another thread entitled &lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;amp;t=15056&amp;amp;p=65576&amp;amp;hilit=alsa#p65576&#34;&gt;alsa - device not
+found&lt;/a&gt;
+was posted&lt;/p&gt;
+&lt;p&gt;In it, there were some specific packages that must be installed such
+as (at the time of writing):&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;alsa-firmware 1.2.4-2
+alsa-lib 1.2.4-3
+alsa-plugins 1:1.2.2-2
+alsa-topology-conf 1.2.4-2
+alsa-ucm-conf 1.2.4-2
+alsa-utils 1.2.4-2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In addition to these, the author also linked
+another thread &lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=65&amp;amp;t=14734&amp;amp;start=50#p65549&#34;&gt;Re:No usb detected on rpi4 with
+aarch64&lt;/a&gt;
+which it also suggested to have the package &lt;strong&gt;mpg123&lt;/strong&gt; installed
+as well.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# dtoverlay=vc4-kms-v3d
+dtparam=audio=on
+hdmi_force_hotplug=1
+over_voltage=6
+arm_freq=2000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;One must always remember that this may have been the settings for that
+particular setup. &lt;code&gt;dtoverlay=&lt;/code&gt; for example was commented out.&lt;/p&gt;
+&lt;p&gt;But by now one must realize, that the most widely accepted
+configuration has been  so far &lt;code&gt;dtparam=audio=on&lt;/code&gt;. It has been
+brought up for many use cases before.&lt;/p&gt;
+&lt;p&gt;Of course. All of the above is assuming that another kernel,
+that of &lt;strong&gt;linux-raspberrypi4&lt;/strong&gt; would be installed to take care
+of this issue.&lt;/p&gt;
+&lt;p&gt;At Reddit for example, this has been also the accepted suggestion.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/archlinuxarm/comments/obxh8i/need_help_with_sound_on_raspberry_pi_4/&#34;
+target=&#34;_blank&#34;&gt;Need help with sound on rpi4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;as one of the users said: &lt;em&gt;I use the linux-raspberrypi4
+kernel. Installed pulseaudio, ran it and everything worked
+perfectly. Don&amp;rsquo;t remember doing anything else other than selecting
+the correct output device.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unfortunately, about a year ago or more when I installed arch linux
+arm on this particular model, I tried, albeit unsuccessfully to
+resolve this issue with this aforementioned kernel
+&lt;strong&gt;linux-raspberrypi4&lt;/strong&gt;. It didn&amp;rsquo;t work. No sound was ever coming out
+of the headphones.&lt;/p&gt;
+&lt;p&gt;Another user who opened a similar topic outlining the
+problematic sound with rpi4 under Arch &lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;amp;t=14641&#34;&gt;rpi4b: no audio device
+found&lt;/a&gt;
+in his case, the culprit seemed to stem from a permission issue
+with the file in question. Not in mine. I had also checked file
+permissions, but it was not causing the misdetection identifying
+the port.&lt;/p&gt;
+&lt;p&gt;Other posts such as this one for example
+at reddit with the title &lt;a href=&#34;https://www.reddit.com/r/archlinuxarm/comments/ou1ej4/rpi4_running_armv7_archlinux_audio_does_not_work/&#34;&gt;Rpi4 running armv7
+archlinux , audio does not work through the onboard 3.5mm audio
+jack&lt;/a&gt;
+barely provided any insight at all.&lt;/p&gt;
+&lt;p&gt;Back to archlinuxarm.org there were other threads related with the
+underlying issue.&lt;/p&gt;
+&lt;p&gt;This one simply titled &lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=9&amp;amp;t=12408&#34;&gt;Re: No
+sound&lt;/a&gt;
+it specified to have&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;dtparam=audio=on
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hdmi_drive=2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;one of the users specified that: &lt;em&gt;Without hdmi_drive=2 you should
+get sound from the jack on the rpi.&lt;/em&gt; , or by commenting it out.
+This was also specified before.&lt;/p&gt;
+&lt;p&gt;Of course. This is not the first time the fellow users over at
+archlinuxarm.org have had to deal with it.&lt;/p&gt;
+&lt;p&gt;In this thread with the title
+&lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;amp;t=15470&#34;&gt;Analog Audio not working in rpi4&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;I am not getting audio from 3.5 mm audio jack in my raspberry
+pi 4. I have done a clean install of arch. I have installed
+pulseaudio, alsa-utils still iam not getting the audio.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I had also done the same, but to no avail.&lt;/p&gt;
+&lt;p&gt;the recommendaton for the op was, as in
+this reply [Re: analog audio not working in
+rpi4](&lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;amp;o&#34;&gt;https://archlinuxarm.org/forum/viewtopic.php?f=60&amp;amp;o&lt;/a&gt;  i it=15470#p670)&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;dtoverlay=upstream-pi4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This didn&amp;rsquo;t work either.&lt;/p&gt;
+&lt;p&gt;There were also a couple of suggestions or likely solutions to
+this issue with the rpi4, archlinuxarm and sound  that ranged from
+the aforementioned websites dedicated to the arch linux arm wiki,
+as well as in the stackexchange network.&lt;/p&gt;
+&lt;p&gt;This one from archlinuxarm.org was titled: &lt;a href=&#34;https://archlinuxarm.org/forum/viewtopic.php?f=67&amp;amp;t=15352&#34;&gt;Rpi4 No
+Sound&lt;/a&gt;
+in which an error was preventing the user from running a script such
+as &lt;code&gt;amixer -q cset numid=3 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This one for example was also dealing the same issue of sound on
+te rpi4 and arch linux arm, and
+&lt;code&gt;amixer cset numid&lt;/code&gt; command  to execute&lt;/p&gt;
+&lt;p&gt;The question on the stackexchange network
+with the rpi, was &lt;a href=&#34;https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack&#34;&gt;No Audio Output on 3.5mm
+Jack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;thes user wrote that&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  I have tried turning up the sound in alsamixer as well as
+  running modprobe snd_bcm2835. I have also tried to play
+  the files with aplay rather than ncmpcpp with no luck.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;one of the respondents (who also got the accepted answer for this
+sort of problem) said to have&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;amixer cset numid=3 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;He was quoted as saying on the answer that&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   The last number is the audio output with 1 being the 3.5
+   jack, 2 being HDMI and 0 being auto.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;one must remember that the latter was, by the looks of it, posted as
+an acceptable answer to this particular problem before the
+question/answer came up from archlinuxarm.org.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;modprobe snd_bcm2835
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;as well as &lt;code&gt;aplay -L&lt;/code&gt; were implemented accordingly by this user in
+an effort to figure out what the problem might be with the sound and
+the rpi4 model.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack&#34;&gt;https://raspberrypi.stackexchange.com/questions/13499/no-audio-output-on-3-5mm-jack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But more inquiries and suggestions may be further found with
+Google about this troublesome behavior. It certainly is one of
+the pressing outstanding issues with this awesome distribution
+and the model of the rpi4 in question&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Arch Linux Arm wiki&lt;/strong&gt;, (which I&amp;rsquo;ll copy and paste) for
+example, states, in regards to the audio:&lt;/p&gt;
+&lt;h1 id=&#34;raspberry-pi&#34;&gt;Raspberry Pi&lt;/h1&gt;
+&lt;h2 id=&#34;audio&#34;&gt;Audio&lt;/h2&gt;
+&lt;p&gt;alsa-utils should supply the needed programs to use onboard sound. Default volume can be adjusted using alsamixer.&lt;/p&gt;
+&lt;p&gt;A key change with Linux kernel version 4.4.x for ARM related to ALSA and to the needed sound module: in order to use tools such as alsamixer with the current kernel, users must modify /boot/config.txt to contain the following line:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;dtparam=audio=on
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;caveats-for-audio&#34;&gt;Caveats for Audio&lt;/h3&gt;
+&lt;p&gt;To force audio over HDMI, add this to /boot/config.txt:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hdmi_drive=2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you experience distortion using the 3.5mm analogue output:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;audio_pwm_mode=2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/archlinuxarmrpi4wiki.png&#34; alt=&#34;wiki&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href=&#34;https://archlinuxarm.org/wiki/Raspberry_Pi&#34;&gt;https://archlinuxarm.org/wiki/Raspberry_Pi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;What worked in my case were a few lines on the configuration file
+that I personally never thought that were going to resolve the sound
+issue.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;snd_bcm2835.enable_headphones=1
+snd_bcm2835.enable_hdmi=1
+snd_bcm2835.enable_compat_alsa=0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/answer-sound-raspberry-pi-forum.png&#34; alt=&#34;answer-snd-2835&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Re: Pi4 - No hdmi audio
+Tue Jan 21, 2020 9:23 am&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; HDMI audio should work in both ports, but there may be some config
+ you can do to make it better.
+ 
+ Add this to the end of the line in cmdline.txt file in /boot
+ (all must be on the same line)
+ 
+ snd_bcm2835.enable_headphones=1 snd_bcm2835.enable_hdmi=1
+ snd_bcm2835.enable_compat_alsa=0
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      </item>
     
       <item>
         <title>Slackware Startx Blank Screen Without Imobiledeviceglue</title>
@@ -20,9 +218,9 @@
 &lt;p&gt;Some post dating back to 2019 &lt;a href=&#34;https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/&#34;&gt;https://www.linuxquestions.org/questions/slackware-14/slackware-current-kde5-startx-failed-4175662813/&lt;/a&gt;  pointed to do an upgrade. Of which I had done. So this suggestion led nowhere.&lt;/p&gt;
 &lt;p&gt;After checking many of the issues as described on linuxquestions which resembled some of the behavior such as logging in through level 4 on sddm as this one pointed out &lt;a href=&#34;https://www.linuxquestions.org/questions/slackware-14/blank-screen-on-startx-for-kde-at-kernel-5-10-4-a-4175687833/page2.html&#34;&gt;https://www.linuxquestions.org/questions/slackware-14/blank-screen-on-startx-for-kde-at-kernel-5-10-4-a-4175687833/page2.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I couldn&amp;rsquo;t help but noticed that not only I was unable to log in through sddm but also a message that read the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;The current theme can not be loaded due to the errors below, please select another theme:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;The current theme can not be loaded due to the errors below, please select another theme:
 
-file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for module &amp;quot;org.kde.plasma.core&amp;quot; cannot load library /usr/lib64/qt5/qml/org/kde/plasma/core&amp;quot; libcorebindingsplugin.so (libimobiledevice-glue-1.0.so.0 cannot open shared object file: No such file or directory)
+file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for module &amp;#34;org.kde.plasma.core&amp;#34; cannot load library /usr/lib64/qt5/qml/org/kde/plasma/core&amp;#34; libcorebindingsplugin.so (libimobiledevice-glue-1.0.so.0 cannot open shared object file: No such file or directory)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This of course served no discernible help at all, as Google quickly confirmed, a search for &lt;code&gt;bindingsplugin.so&lt;/code&gt; returned unrelated results while recently, as of today, a search on Google for &amp;lt;libcorebindingsplugin.so slackware&amp;gt; pointed out that the solution for the problem would be to &lt;code&gt;slackpkg install-new&lt;/code&gt;. But for as long as I have updated the system on Slackware, with the kernel and packages, I have always foregone from invoking, even though is technically correct after a system upgrade, such command as &lt;code&gt;slackpkg install-new&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;By the time I had read that suggestion, which I noticed just now, as of this writing that it had been posted only a few days ago, I had already found, perhaps not as elegant, a solution on the system to invoke &lt;code&gt;startx&lt;/code&gt; successfully.&lt;/p&gt;
 &lt;p&gt;Somehow while invoking &lt;strong&gt;kwin_wayland&lt;/strong&gt; though &lt;code&gt;startkwayland&lt;/code&gt; I noticed, unlike before, that was returning the error: &lt;code&gt;/usr/bin/kwin_wayland: error while loading shared libraries: libimobiledevice-glue-1.0.so.0: cannot open shared object file: No such file or directory&lt;/code&gt; which quickly identified the culprit.&lt;/p&gt;
@@ -88,7 +286,7 @@ file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for m
         <description>&lt;p&gt;I wouldn&amp;rsquo;t know where to look —- I certainly can browse the &lt;a href=&#34;https://packages.debian.org/buster/bash-completion&#34; target=&#34;_blank&#34;&gt;repo&lt;/a&gt; from Debian reposotiry — or where bash completion is usually installed on Debian-based distributions. It&amp;rsquo;s been a while since I have used these kind of systems. But after all, this is irrelevant. Even as popular as this distro may be,  not everyone uses it.&lt;/p&gt;
 &lt;p&gt;A quick glance at the files that comprise this program, one could see that aside from the &lt;code&gt;usr&lt;/code&gt; folder, bash completion is also installed under &lt;code&gt;etc&lt;/code&gt; and &lt;code&gt;bin&lt;/code&gt; accordingly.&lt;/p&gt;
 &lt;p&gt;Bash completion allows to fill in the rest of the commands or variables that follow for given executable.&lt;/p&gt;
-&lt;p&gt;See &lt;a href=&#34;https://wiki.archlinux.org/index.php/Bash#Tab_completion&#34; target=&#34;_blank&#34;&gt;Bash autocompletion&lt;/a&gt; for more details about its chock features&#39; versatility.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://wiki.archlinux.org/index.php/Bash#Tab_completion&#34; target=&#34;_blank&#34;&gt;Bash autocompletion&lt;/a&gt; for more details about its chock features&amp;rsquo; versatility.&lt;/p&gt;
 &lt;p&gt;In the case of Arch, the installation does not create — unlike on Debian — the folder &lt;code&gt;bash_completion&lt;/code&gt; under &lt;code&gt;etc&lt;/code&gt;. And I don&amp;rsquo;t think this may have been an oversight from the Arch team, but presumably and perhaps due to safety reasons,  this was something that was never considered in the first place.&lt;/p&gt;
 &lt;p&gt;Other programs have had no issue by correctly including on the script the means to have it install appropriately. But it&amp;rsquo;s my opinion — and anyone is more than welcome to disagree with me here — that many a great number of programs have not chosen to do so or failed altogether in this regard. Hugo for example is one of them. See for example the &lt;a href=&#34;https://github.com/gohugoio/hugo/pull/1088&#34; target=&#34;_blank&#34;&gt; destination directory&lt;/a&gt; when this feature was added. See the commit &lt;a href=&#34;https://github.com/gohugoio/hugo/pull/1088/commits/ccdf544f73dda2ff2dd8bf0407a77e21084c59e8&#34; target=&#34;_blank&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;To resolve this issue, the most viable solution is to manually add the folder, from whence this error stems, or else the message&lt;code&gt;Error: bash_completion.d: hugo.sh no such file or directory&lt;/code&gt; will disallow the &lt;code&gt;autocomplete&lt;/code&gt; which was added to the binaries of this  program, to come into effect.&lt;/p&gt;
@@ -105,9 +303,9 @@ file:///usr/share/sddm/themes/Breeze/Main.qml:14:1:plugin cannot be loaded for m
 &lt;p&gt;On the other hand, if multiple systems are to be used, it may be useful to better have the hardware clock synchronized in UTC in case that time zone and DST Daylight Savings Time come into effect.&lt;/p&gt;
 &lt;p&gt;Omitting appending something as simple as &lt;code&gt;--localtime&lt;/code&gt; would certainly display the UTC on multiple systems under any hardware.&lt;/p&gt;
 &lt;p&gt;In case of any trouble setting it up afterwards may resolve the issue&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;timedatectl set-timezone 
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;timedatectl set-timezone 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alternatively, one may invoke:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hwclock --set --date &#39;mm/dd/yyyy 00:00:00&#39;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hwclock --set --date &amp;#39;mm/dd/yyyy 00:00:00&amp;#39;
 hwclock --hctosys --localtime
 &lt;/code&gt;&lt;/pre&gt;</description>
       </item>
@@ -144,7 +342,7 @@ hwclock --hctosys --localtime
 &lt;p&gt;As I&amp;rsquo;ve said before, the distro would most likely have the language pack of choice available for the system.&lt;/p&gt;
 &lt;p&gt;But I personally didn&amp;rsquo;t want to go this route this time around neither, and wanted instead,  to install the language pack so the program would identify it.&lt;/p&gt;
 &lt;p&gt;The destination for the dictionaries is not under &lt;code&gt;.local&lt;/code&gt; but rather over at&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/usr/lib/office6/
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/usr/lib/office6/
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;therein another subdirectory under &lt;code&gt;dicts&lt;/code&gt; aptly entitled &lt;code&gt;spellcheck/&lt;/code&gt; which further shows the default language directory - which is normally &lt;strong&gt;en_US&lt;/strong&gt; in this case, is the folder from which the program would first look up any relevant file to be loaded.&lt;/p&gt;
 &lt;p&gt;The language pack dictionary for wps-office namely provides three (3) files with the suffixes:&lt;/p&gt;
 &lt;ul&gt;
@@ -179,9 +377,9 @@ hwclock --hctosys --localtime
 &lt;p&gt;If I were to invoke with &lt;code&gt;sed&lt;/code&gt; a certain range of lines to print say from the XParseGeometry manual or from any other file on the system, filtering it out gives - as the proverbial saying goes - power for the money.&lt;/p&gt;
 &lt;p&gt;Yes, it helps to have the entire &lt;code&gt;man&lt;/code&gt; pages on the terminal, but it wouldn&amp;rsquo;t filter out the results as I have wanted it to. One may try by using &lt;code&gt;grep&lt;/code&gt; but I wasn&amp;rsquo;t interested this time around to use it.&lt;/p&gt;
 &lt;p&gt;So&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;man XParseGeometry | awk &#39;NR==20,NR==40&#39; 
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;man XParseGeometry | awk &amp;#39;NR==20,NR==40&amp;#39; 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;would hence return:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
        display   Specifies the connection to the X server.
 
        fheight
@@ -205,9 +403,9 @@ hwclock --hctosys --localtime
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;returned what I was after..&lt;/p&gt;
 &lt;p&gt;With &lt;code&gt;sed&lt;/code&gt; things are perhps easier, and a great many users recommend to go this route for simple tasks such as the one I usually encounter.&lt;/p&gt;
 &lt;p&gt;on the terminal&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;man XParseGeometry | sed -n &#39;20,40&#39;p
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;man XParseGeometry | sed -n &amp;#39;20,40&amp;#39;p
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;would rightly return:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
        display   Specifies the connection to the X server.
 
        fheight
@@ -232,9 +430,9 @@ hwclock --hctosys --localtime
 &lt;p&gt;Of course, the magic of Unix doesn&amp;rsquo;t stop there. One could further delve into even more  commands to give both &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;awk&lt;/code&gt; an unimaginable power for pattern searching without having to entirely &lt;code&gt;grep&lt;/code&gt; it&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Having other simple tasks such as looking up particular pattern on a given file, is much more easier which could print out the results satisfactorily&amp;hellip;.&lt;/p&gt;
 &lt;p&gt;for a given file &lt;code&gt;x&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sed -n &#39;2,4&#39;p &amp;lt;filename&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sed -n &amp;#39;2,4&amp;#39;p &amp;lt;filename&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and through &lt;code&gt;awk&lt;/code&gt; a simple&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;awk &#39;NR==&amp;lt;range&amp;gt;,NR==&amp;lt;range&amp;gt;&#39; &amp;lt;filename&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;awk &amp;#39;NR==&amp;lt;range&amp;gt;,NR==&amp;lt;range&amp;gt;&amp;#39; &amp;lt;filename&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;should suffice.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Further reading&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.grymoire.com/Unix/Sed.html&#34;&gt;https://www.grymoire.com/Unix/Sed.html&lt;/a&gt;&lt;/p&gt;
@@ -272,7 +470,7 @@ efficiently and quickly find the fonts you need among the set of fonts you have 
 &lt;p&gt;On the other hand, &lt;code&gt;fc-list&lt;/code&gt; does list the fonts available on the system&amp;hellip;&lt;/p&gt;
 &lt;p&gt;The only caveat is that if I were to try to get the family name of the glyph in question, &lt;code&gt;fc-list&lt;/code&gt; does provide it, but I would need to further &lt;code&gt;grep&lt;/code&gt; it in order to not get a bunch of results.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;fc-list&lt;/code&gt; is simply put:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;FC-LIST(1)                                                     FC-LIST(1)
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;FC-LIST(1)                                                     FC-LIST(1)
 
 NAME
        fc-list - list available fonts
@@ -307,10 +505,10 @@ DESCRIPTION
 &lt;pre&gt;&lt;code&gt;  checking inter-conflicts
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Of course, I could have just  dismissed all these errors and be happily content to just get rid of this nonsense by removing pamac altogether and start afresh from the official package manager, but I would have never been happy by either settling these problems through such trivialities, as long as another system, on which the very same package was installed, was not showing the same behavior.&lt;/p&gt;
-&lt;p&gt;Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&amp;rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the &lt;a href=&#34;https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error&#34; target=&#34;_blank&#34;&gt;Arch Wiki suggests&lt;/a&gt;. But I always liked the design idea behind this graphical interfaced package provided with its updates&#39; notifications, which unlike pacman that would have required to manually tweak checking for these updates.&lt;/p&gt;
+&lt;p&gt;Had it given me a problematic workaround at the very least - on the other system that is,  which was working flawlessly nonetheless, -there would have been no doubt that I wouldn&amp;rsquo;t have even considered this extraneous interface to start off with, and would have gone  instead through pacman directly. Or I could have taken further steps and try to at least, file a bug report as the &lt;a href=&#34;https://wiki.archlinux.org/index.php/Pacman#%22Failed_to_commit_transaction_(conflicting_files)%22_error&#34; target=&#34;_blank&#34;&gt;Arch Wiki suggests&lt;/a&gt;. But I always liked the design idea behind this graphical interfaced package provided with its updates&amp;rsquo; notifications, which unlike pacman that would have required to manually tweak checking for these updates.&lt;/p&gt;
 &lt;p&gt;But as it&amp;rsquo;s usually the case, pacman was downright correct by identifying as closely as possible the culprit by which the system itself held &lt;code&gt;files already in filesystem&lt;/code&gt;. This was clearly the case with the package &lt;strong&gt;gtk-doc&lt;/strong&gt;, and somehow this conflict had to be resolved.&lt;/p&gt;
 &lt;p&gt;But what I don&amp;rsquo;t know, and it&amp;rsquo;s my mistake since I didn&amp;rsquo;t venture out - either at the time when it first occurred -, and much less now, because it&amp;rsquo;d be a wildly-guessing why would this be the case, that even when two systems configured alike which in turn held the same package revisions,  were somehow behaving disparagingly different.&lt;/p&gt;
-&lt;p&gt;I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&amp;rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors&#39; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.&lt;/p&gt;
+&lt;p&gt;I was not able to remove it [gtk-doc], by invoking pacman alone - as there was another error that disallowed me to do so. And I was simply sloppy back then, as I&amp;rsquo;m perhaps now to single out and summarize each of the problems that had I encountered during the installation for the new version of pamac, and to to have kept  working errors&amp;rsquo; copies handy, as this would have provided a somewhat more acceptable idea where the problem lied at.&lt;/p&gt;
 &lt;p&gt;I did however, tried to stay as far away as possible from manually  removing  each of the files installed by the package [gtk-doc], but unfortunately after many unsuccessful attempts to install another pamac version, this predictable painstaking process, that of having to go and remove each file owned by the package,  seemed to be the only inevitable method to circumvent this problem.&lt;/p&gt;
 &lt;p&gt;After going through each subsequent step during removal and by successfully reinstalling the same package over again, pamac has been working - so far - without a glitch. If it stays as such, is yet to be determined. I could no longer assure it&amp;hellip; but it gives me pause and comfort in knowing that &lt;code&gt;checking inter-dependencies&lt;/code&gt; or &lt;code&gt;checking file-conflcts&lt;/code&gt; rolling hangs haven&amp;rsquo;t returned to this annoyingly halting process.&lt;/p&gt;
 </description>
@@ -330,7 +528,7 @@ DESCRIPTION
 &lt;p&gt;But they&amp;rsquo;re right. When it comes to package management handling, Arch offers unlike any other one out there, the quirks and perks that not even a propietary  coding scheme such as Homebrew, Fink, Macports from OSX Cocoa could even think to come close during its best moments. This is not to illegitimize whatever accomplishments have been put together by these teams, but it&amp;rsquo;s still disparately sub-par compared to what Arch has offered.&lt;/p&gt;
 &lt;p&gt;During the last kernel update there was a problem with  pamac though&lt;/p&gt;
 &lt;p&gt;Firing it up from the terminal was simply returning an&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Which considering how lazy I&amp;rsquo;ve become over the years, and even more so after reading articles a few years ago such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Is_Google_Making_Us_Stupid%3F&#34;&gt;Is Google making us stupid&lt;/a&gt; by Atlantic technology writer Nicholas Carr, I couldn&amp;rsquo;t wait to gobble it up or try to leave it up to Google to offer the best match to this undesired behavior I was getting.&lt;/p&gt;
 &lt;p&gt;The first query by the algorithms of Google returned an issue over at &lt;a href=&#34;https://github.com/Jguer/yay/issues/1087&#34; target=&#34;_blank&#34;&gt;yay: error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;But thinking about it again, the issue pertained mostly to &lt;a href=&#34;https://aur.archlinux.org/packages/yay/&#34; target=&#34;_blank&#34;&gt; aur.archlinux.org/packages/yay/&lt;/a&gt; which I&amp;rsquo;ve never installed. Perhaps I had done it years earlier on another different system, but not on the current machines I&amp;rsquo;ve been running.&lt;/p&gt;
@@ -353,8 +551,7 @@ DESCRIPTION
 &lt;p&gt;All the libraries for which &lt;code&gt;javaws&lt;/code&gt; depended upon and for which it was being tested even under a different system seemed to have been installed. This included, &lt;strong&gt;jdk8-openjdk..&lt;/strong&gt; and its counterparts.&lt;/p&gt;
 &lt;p&gt;Apparently, during the installation, the path that had been set for &lt;code&gt;javaws&lt;/code&gt; had been incorrectly identified.&lt;/p&gt;
 &lt;p&gt;The error read as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/usr/bin/javaws line 197: no such file or directory.
-
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/usr/bin/javaws line 197: no such file or directory.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Upon further inspection of the line in question, is hard to pinpoint whether therein lied the problem or not&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Upon going ahead and after opening the &lt;code&gt;javaws&lt;/code&gt; executable, I noticed that the path had been incorrectly set indeed by either some of the libraries during the initialization&amp;hellip;. It was pointing out to a different location &lt;strong&gt;rather&lt;/strong&gt; than where the files for the java environment were located instead.&lt;/p&gt;
 &lt;p&gt;Modifying the file in question and instructing it to open up without further ado, seemed to resolve the problem. Thus &lt;code&gt;java=/location/of/java/default/&lt;/code&gt; worked without a problem.&lt;/p&gt;
@@ -368,13 +565,13 @@ DESCRIPTION
         <author></author>
         <guid>https://imfrom.github.io/post/pacman-unable-to-lock-database/</guid>
         <description>&lt;p&gt;On a recent pacman upgrade, I encountered the error:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;:: Synchronizing package databases...
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;:: Synchronizing package databases...
 error: failed to update core (unable to lock database)
 error: failed to update extra (unable to lock database)
 error: failed to update community (unable to lock database)
 error: failed to synchronize all databases
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;the solution everytime is to remove the &lt;code&gt;db.lck&lt;/code&gt; from the &lt;code&gt;/var/lib/&lt;/code&gt; directory and restart pacman.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;rm /var/lib/db.lck
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rm /var/lib/db.lck
 pacman -Syyu
 &lt;/code&gt;&lt;/pre&gt;</description>
       </item>
@@ -632,7 +829,7 @@ suffix &lt;code&gt;.md&lt;/code&gt; extension&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt; systemctl enable sddm.service
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;But it wasn&amp;rsquo;t clear at first, but just after rebooting the system - although at this point my faulty memory is not helping me remember whether it was a reboot or by logging out of the system, that I noticed that the timezone differed from that of the desktop environment.&lt;/p&gt;
-&lt;p&gt;Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &amp;lsquo;timedatectl&amp;rsquo; were the same. The reasoning behind this assumption is that by calling out the &lt;code&gt;timedatectl status&lt;/code&gt; as the &lt;a href=&#34;https://wiki.archlinux.org/index.php/System_time#Time_zone&#34; target=&#34;_blank&#34;&gt;Arch Wiki suggested&lt;/a&gt;, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.&lt;/p&gt;
+&lt;p&gt;Perhaps it was SDDM Wayland that got it right this time around and not the DE XFCE according to the locale currently in use. The timezone that SDDM picked up and hence the entry that was returned after calling out &amp;rsquo;timedatectl&amp;rsquo; were the same. The reasoning behind this assumption is that by calling out the &lt;code&gt;timedatectl status&lt;/code&gt; as the &lt;a href=&#34;https://wiki.archlinux.org/index.php/System_time#Time_zone&#34; target=&#34;_blank&#34;&gt;Arch Wiki suggested&lt;/a&gt;, returned indeed what was expected, albeit wrongly set at one point by me, but nonetheless correct.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt; datetimectl status
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;matched SDDM clock settings. The timezone had been incorrectly set at one point.&lt;/p&gt;
@@ -863,7 +1060,7 @@ framework of say for example, what the Free Software
 Foundation accepts.&lt;/p&gt;
 &lt;p&gt;This is not the case. Most Linux distros, and even more
 those that are amongst the most popular, are not very clear
-in their terms with the programs that the distro&#39; s
+in their terms with the programs that the distro&amp;rsquo; s
 developers include and consequently employ within it, for further mass
 use. No distribution out there but only a handful of them do
 this.&lt;/p&gt;
@@ -886,14 +1083,14 @@ Software Foundation to get a glimpse at what this is about.&lt;/p&gt;
 &lt;p&gt;But to make matters even worse, the user who was trying to
 make his silly point, brought up one if not the most
 inaccurate and misleading source of Linux Market Share
-measure rankings&#39; markers out there, a website named
+measure rankings&amp;rsquo; markers out there, a website named
 &lt;strong&gt;Distrowatch&lt;/strong&gt; that lists the most popular GNU/Linux
 distributions.&lt;/p&gt;
 &lt;p&gt;Which takes me to the second rant about why the above cannot be taken as an
 statistical absolute. For &lt;strong&gt;Distrowatch&lt;/strong&gt; is just a community driven, heavily
 edited, bureaucratically biased reviewed epicenter which sits on the web  with
 layers of html markup with a domain registration.  Let me emphasize once again
-about its biased one sided view about the certain distros&#39; Linux Market Share.
+about its biased one sided view about the certain distros&amp;rsquo; Linux Market Share.
 It is important to do so because it is almost and will always be imprecise to
 measure the use of GNU/Linux distributions across the spectrum and compare
 these - whether community or commercially based&lt;/p&gt;
@@ -989,7 +1186,7 @@ href=&#34;http://futurist.se/gldt/&#34; target=&#34;_blank&#34;&gt;futurist.se&l
 &lt;p&gt;&lt;strong&gt;1&lt;/strong&gt;- &lt;a name=&#34;nonfree&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://www.gnu.org/distros/common-distros.en.html&#34; target=&#34;_blank&#34;&gt;Explaining Why We Don&amp;rsquo;t Endorse Other Systems&lt;/a&gt;&lt;a href=&#34;#nonfreeref&#34;&gt;↵&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2&lt;/strong&gt;-&lt;a name=&#34;stack&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://books.google.com/books?id=YZIoDQAAQBAJ&#34;
 target=&#34;_blank&#34;&gt;Stack Frames: A Look From Inside&lt;/a&gt;&lt;a href=&#34;#stackref&#34;&gt;↵&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3&lt;/strong&gt;-&lt;a name=&#34;linuxcounter&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://www.linuxcounter.net/statistics/distributions&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.linuxcounter.net/statistics/distributions&#34;&gt;www.linuxcounter.net/statistics/distributions&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#linuxcounterref&#34;&gt;↵&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3&lt;/strong&gt;-&lt;a name=&#34;linuxcounter&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://www.linuxcounter.net/statistics/distributions&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;https://www.linuxcounter.net/statistics/distributions&#34;&gt;www.linuxcounter.net/statistics/distributions&lt;/a&gt;&lt;/a&gt;&lt;a href=&#34;#linuxcounterref&#34;&gt;↵&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4&lt;/strong&gt;-&lt;a name=&#34;lwn&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://lwn.net/Distributions&#34;
 target=&#34;_blan&#34;&gt;lwn.net/Distributions&lt;/a&gt;&lt;a href=&#34;#lwnref&#34;&gt;↵&lt;/a&gt;&lt;/p&gt;
 </description>

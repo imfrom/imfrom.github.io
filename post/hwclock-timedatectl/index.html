@@ -73,9 +73,9 @@
 <p>On the other hand, if multiple systems are to be used, it may be useful to better have the hardware clock synchronized in UTC in case that time zone and DST Daylight Savings Time come into effect.</p>
 <p>Omitting appending something as simple as <code>--localtime</code> would certainly display the UTC on multiple systems under any hardware.</p>
 <p>In case of any trouble setting it up afterwards may resolve the issue</p>
-<pre><code>timedatectl set-timezone 
+<pre tabindex="0"><code>timedatectl set-timezone 
 </code></pre><p>Alternatively, one may invoke:</p>
-<pre><code>hwclock --set --date 'mm/dd/yyyy 00:00:00'
+<pre tabindex="0"><code>hwclock --set --date &#39;mm/dd/yyyy 00:00:00&#39;
 hwclock --hctosys --localtime
 </code></pre></div>
 
