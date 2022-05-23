@@ -71,7 +71,7 @@
   <span class="post-date">Feb 8, 2017</span>
   <p>O como se dice en Inglés: <em>capitalization</em>, se puede lograr fácilmente en <a href="http://www.vim.org/" target="_blank">vim </a> mediante el empleo de mayúsculas al comienzo de oraciones a través del uso de una expresión regular o regex, sin la necesidad de utilizar algún que otro script (que puede causar efectos secundarios en el funcionamiento), para lograr el reemplazo de las minúsculas.</p>
 <p>En el website de programadores de superuser.com, <a href="http://superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim" target="_blank">superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim</a> se hace esta misma pregunta para lograr el reemplazo automático de minúsculas por mayúsculas al principio de cada oración.</p>
-<p>Una de las repuestas <a href="https://imfrom.github.io/post/reemplazo-de-minusculas-por-mayuscula-en-oracion/#script"><sup id="fnref">1</sup></a> hace énfasis de esto mediante la adición de un unas líneas de script o programa de ejecución.</p>
+<p>Una de las repuestas <a href="#script"><sup id="fnref">1</sup></a> hace énfasis de esto mediante la adición de un unas líneas de script o programa de ejecución.</p>
 <p>El problema que esto conlleva, y como uno de los usuarios comentó,</p>
 <blockquote>
 <p>The only problem is this script seems to add a noticeable lag when typing</p>
@@ -96,8 +96,9 @@
 <pre><code> $ :%s/^\w/\U&amp;/ge | %s/\. \w/\U&amp;/ge 
 </code></pre>
 <p><strong>Footnotes</strong></p>
-<p><a href="https://imfrom.github.io/post/reemplazo-de-minusculas-por-mayuscula-en-oracion/#fnref"> ↩︎</a>
-   <a name="script"> </a>Respuesta de usuario de vim para el empleo de un script que reemplace minúscula por mayúscula pero que causa lag en documentos <a href="http://superuser.com/a/737155">http://superuser.com/a/737155</a></p>
+<p><a href="#fnref"> ↩︎ </a>
+   <a name="script"> </a> Respuesta de usuario de vim para el empleo de un script que reemplace minúscula por mayúscula pero que causa lag en documentos <a
+href="http://superuser.com/a/737155" target="_blank"> http://superuser.com/a/737155</a>
 </div>
 
       </div>

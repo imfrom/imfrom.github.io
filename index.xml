@@ -2362,7 +2362,7 @@ One user pointed out that by disconnecting and connecting the external DVD right
         <guid>https://imfrom.github.io/post/reemplazar-con-vim/</guid>
         <description>&lt;p&gt;O como se dice en Inglés: &lt;em&gt;capitalization&lt;/em&gt;, se puede lograr fácilmente en &lt;a href=&#34;http://www.vim.org/&#34; target=&#34;_blank&#34;&gt;vim &lt;/a&gt; mediante el empleo de mayúsculas al comienzo de oraciones a través del uso de una expresión regular o regex, sin la necesidad de utilizar algún que otro script (que puede causar efectos secundarios en el funcionamiento), para lograr el reemplazo de las minúsculas.&lt;/p&gt;
 &lt;p&gt;En el website de programadores de superuser.com, &lt;a href=&#34;http://superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim&#34; target=&#34;_blank&#34;&gt;superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim&lt;/a&gt; se hace esta misma pregunta para lograr el reemplazo automático de minúsculas por mayúsculas al principio de cada oración.&lt;/p&gt;
-&lt;p&gt;Una de las repuestas &lt;a href=&#34;https://imfrom.github.io/post/reemplazo-de-minusculas-por-mayuscula-en-oracion/#script&#34;&gt;&lt;sup id=&#34;fnref&#34;&gt;1&lt;/sup&gt;&lt;/a&gt; hace énfasis de esto mediante la adición de un unas líneas de script o programa de ejecución.&lt;/p&gt;
+&lt;p&gt;Una de las repuestas &lt;a href=&#34;#script&#34;&gt;&lt;sup id=&#34;fnref&#34;&gt;1&lt;/sup&gt;&lt;/a&gt; hace énfasis de esto mediante la adición de un unas líneas de script o programa de ejecución.&lt;/p&gt;
 &lt;p&gt;El problema que esto conlleva, y como uno de los usuarios comentó,&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The only problem is this script seems to add a noticeable lag when typing&lt;/p&gt;
@@ -2387,8 +2387,9 @@ One user pointed out that by disconnecting and connecting the external DVD right
 &lt;pre&gt;&lt;code&gt; $ :%s/^\w/\U&amp;amp;/ge | %s/\. \w/\U&amp;amp;/ge 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Footnotes&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://imfrom.github.io/post/reemplazo-de-minusculas-por-mayuscula-en-oracion/#fnref&#34;&gt; ↩︎&lt;/a&gt;
-   &lt;a name=&#34;script&#34;&gt; &lt;/a&gt;Respuesta de usuario de vim para el empleo de un script que reemplace minúscula por mayúscula pero que causa lag en documentos &lt;a href=&#34;http://superuser.com/a/737155&#34;&gt;http://superuser.com/a/737155&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#fnref&#34;&gt; ↩︎ &lt;/a&gt;
+   &lt;a name=&#34;script&#34;&gt; &lt;/a&gt; Respuesta de usuario de vim para el empleo de un script que reemplace minúscula por mayúscula pero que causa lag en documentos &lt;a
+href=&#34;http://superuser.com/a/737155&#34; target=&#34;_blank&#34;&gt; http://superuser.com/a/737155&lt;/a&gt;
 </description>
       </item>
     
