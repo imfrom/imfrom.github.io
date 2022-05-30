@@ -631,7 +631,27 @@ usr/share/locale/tr/LC_MESSAGES/guake.mo
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alternatively, one may invoke:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hwclock --set --date &amp;#39;mm/dd/yyyy 00:00:00&amp;#39;
 hwclock --hctosys --localtime
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alternatively, if there&amp;rsquo;s any problem with the above, the
+&lt;a href=&#34;https://wiki.archlinux.org/title/System_time#Troubleshooting&#34;&gt;https://wiki.archlinux.org/title/System_time#Troubleshooting&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
+&lt;p&gt;Clock shows a value that is neither UTC nor local time&lt;/p&gt;
+&lt;p&gt;This might be caused by a number of reasons. For example, if your hardware clock is running on local time, but timedatectl is set to assume it is in UTC, the result would be that your timezone&amp;rsquo;s offset to UTC effectively gets applied twice, resulting in wrong values for your local time and UTC.&lt;/p&gt;
+&lt;p&gt;To force your clock to the correct time, and to also write the correct UTC to your hardware clock, follow these steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Setup ntpd (enabling it as a service is not necessary).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set your time zone correctly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run ntpd -qg to manually synchronize your clock with the network, ignoring large deviations between local UTC and network UTC.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run hwclock &amp;ndash;systohc to write the current software UTC time to the hardware clock.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       </item>
     
       <item>
