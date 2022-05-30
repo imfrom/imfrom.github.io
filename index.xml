@@ -185,6 +185,7 @@ example, states, in regards to the audio:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;audio_pwm_mode=2
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://imfrom.github.io/images/archlinuxarmrpi4wiki.png&#34; alt=&#34;wiki&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Source: &lt;a href=&#34;https://archlinuxarm.org/wiki/Raspberry_Pi&#34;&gt;https://archlinuxarm.org/wiki/Raspberry_Pi&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;resolved-with-snd_bcm2835_enable_headphones1&#34;&gt;Resolved with snd_bcm2835_enable_headphones=1&lt;/h2&gt;
 &lt;p&gt;What worked in my case were a few lines on the configuration file
 that I personally never thought that were going to resolve the sound
 issue.&lt;/p&gt;
